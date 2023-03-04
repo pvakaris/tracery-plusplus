@@ -67,11 +67,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
     {
       case TraceryPPPackage.MODEL: return createModel();
       case TraceryPPPackage.STATEMENT: return createStatement();
-      case TraceryPPPackage.TITLE: return createTitle();
-      case TraceryPPPackage.START_SYMBOL: return createStartSymbol();
+      case TraceryPPPackage.RULE: return createRule();
+      case TraceryPPPackage.VARIABLE: return createVariable();
       case TraceryPPPackage.LIST: return createList();
       case TraceryPPPackage.WORD: return createWord();
-      case TraceryPPPackage.SENTENCE: return createSentence();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,10 +106,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public Title createTitle()
+  public Rule createRule()
   {
-    TitleImpl title = new TitleImpl();
-    return title;
+    RuleImpl rule = new RuleImpl();
+    return rule;
   }
 
   /**
@@ -119,10 +118,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public StartSymbol createStartSymbol()
+  public Variable createVariable()
   {
-    StartSymbolImpl startSymbol = new StartSymbolImpl();
-    return startSymbol;
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**
@@ -147,18 +146,6 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
   {
     WordImpl word = new WordImpl();
     return word;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Sentence createSentence()
-  {
-    SentenceImpl sentence = new SentenceImpl();
-    return sentence;
   }
 
   /**

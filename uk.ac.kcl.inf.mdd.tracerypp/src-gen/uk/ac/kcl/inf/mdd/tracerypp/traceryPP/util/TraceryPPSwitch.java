@@ -87,18 +87,18 @@ public class TraceryPPSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPPPackage.TITLE:
+      case TraceryPPPackage.RULE:
       {
-        Title title = (Title)theEObject;
-        T result = caseTitle(title);
-        if (result == null) result = caseStatement(title);
+        Rule rule = (Rule)theEObject;
+        T result = caseRule(rule);
+        if (result == null) result = caseStatement(rule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPPPackage.START_SYMBOL:
+      case TraceryPPPackage.VARIABLE:
       {
-        StartSymbol startSymbol = (StartSymbol)theEObject;
-        T result = caseStartSymbol(startSymbol);
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,14 +113,6 @@ public class TraceryPPSwitch<T> extends Switch<T>
       {
         Word word = (Word)theEObject;
         T result = caseWord(word);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TraceryPPPackage.SENTENCE:
-      {
-        Sentence sentence = (Sentence)theEObject;
-        T result = caseSentence(sentence);
-        if (result == null) result = caseStatement(sentence);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,33 +153,33 @@ public class TraceryPPSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Title</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Title</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Rule</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTitle(Title object)
+  public T caseRule(Rule object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Start Symbol</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Start Symbol</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStartSymbol(StartSymbol object)
+  public T caseVariable(Variable object)
   {
     return null;
   }
@@ -220,22 +212,6 @@ public class TraceryPPSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWord(Word object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sentence</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSentence(Sentence object)
   {
     return null;
   }

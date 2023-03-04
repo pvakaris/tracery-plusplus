@@ -8,28 +8,26 @@ Model:
 ;
 	
 Statement:
-	Title |
-	Sentence
+	Rule
 ;
 
-Title:
-	start_symbol = StartSymbol  'can have values: ' list = List
+Rule:
+	start_symbol = Variable  " can have values: " list = List
 ;
 
-StartSymbol:
+Variable:
 	title = ID
 ;
 
 List:
-	word = Word ((', ' | ',') word = Word)*
+	word = Word (sep=Separator word = Word)*
+;
+
+Separator:
+	"," | "or"
 ;
 
 Word:
 	word = STRING
 ;
-
-Sentence:
-	word = STRING
-;
-
 

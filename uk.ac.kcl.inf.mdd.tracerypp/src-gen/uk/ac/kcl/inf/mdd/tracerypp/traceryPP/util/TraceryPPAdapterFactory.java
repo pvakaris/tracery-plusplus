@@ -86,14 +86,14 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
-      public Adapter caseTitle(Title object)
+      public Adapter caseRule(Rule object)
       {
-        return createTitleAdapter();
+        return createRuleAdapter();
       }
       @Override
-      public Adapter caseStartSymbol(StartSymbol object)
+      public Adapter caseVariable(Variable object)
       {
-        return createStartSymbolAdapter();
+        return createVariableAdapter();
       }
       @Override
       public Adapter caseList(List object)
@@ -104,11 +104,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
       public Adapter caseWord(Word object)
       {
         return createWordAdapter();
-      }
-      @Override
-      public Adapter caseSentence(Sentence object)
-      {
-        return createSentenceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -163,31 +158,31 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Title <em>Title</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Title
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule
    * @generated
    */
-  public Adapter createTitleAdapter()
+  public Adapter createRuleAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StartSymbol <em>Start Symbol</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StartSymbol
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable
    * @generated
    */
-  public Adapter createStartSymbolAdapter()
+  public Adapter createVariableAdapter()
   {
     return null;
   }
@@ -218,21 +213,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWordAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence <em>Sentence</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence
-   * @generated
-   */
-  public Adapter createSentenceAdapter()
   {
     return null;
   }

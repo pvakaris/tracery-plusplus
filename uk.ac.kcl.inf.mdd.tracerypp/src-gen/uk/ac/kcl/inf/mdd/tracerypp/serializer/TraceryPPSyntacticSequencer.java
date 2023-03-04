@@ -10,9 +10,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
@@ -21,12 +18,10 @@ import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryPPGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryPPGrammarAccess) access;
-		match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListAccess().getCommaKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()));
 	}
 	
 	@Override
@@ -41,24 +36,8 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0.equals(syntax))
-				emit_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     ', ' | ','
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     word=Word (ambiguity) word=Word
-	 
-	 * </pre>
-	 */
-	protected void emit_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

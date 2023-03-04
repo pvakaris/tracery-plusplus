@@ -10,21 +10,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Model/statements"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Statement"/>
-    <genClasses ecoreClass="TraceryPP.ecore#//Title">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Title/start_symbol"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Title/list"/>
+    <genClasses ecoreClass="TraceryPP.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Rule/start_symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Rule/list"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPP.ecore#//StartSymbol">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//StartSymbol/title"/>
+    <genClasses ecoreClass="TraceryPP.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Variable/title"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//List">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//List/word"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//List/sep"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Word">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Word/word"/>
-    </genClasses>
-    <genClasses ecoreClass="TraceryPP.ecore#//Sentence">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Sentence/word"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

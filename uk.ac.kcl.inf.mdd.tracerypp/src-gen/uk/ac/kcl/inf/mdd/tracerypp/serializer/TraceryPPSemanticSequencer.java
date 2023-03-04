@@ -17,10 +17,9 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StartSymbol;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Title;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
 
 @SuppressWarnings("all")
@@ -43,14 +42,11 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case TraceryPPPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case TraceryPPPackage.SENTENCE:
-				sequence_Sentence(context, (Sentence) semanticObject); 
+			case TraceryPPPackage.RULE:
+				sequence_Rule(context, (Rule) semanticObject); 
 				return; 
-			case TraceryPPPackage.START_SYMBOL:
-				sequence_StartSymbol(context, (StartSymbol) semanticObject); 
-				return; 
-			case TraceryPPPackage.TITLE:
-				sequence_Title(context, (Title) semanticObject); 
+			case TraceryPPPackage.VARIABLE:
+				sequence_Variable(context, (Variable) semanticObject); 
 				return; 
 			case TraceryPPPackage.WORD:
 				sequence_Word(context, (Word) semanticObject); 
@@ -66,7 +62,7 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     List returns List
 	 *
 	 * Constraint:
-	 *     (word=Word word=Word*)
+	 *     (word=Word (sep=Separator word=Word)*)
 	 * </pre>
 	 */
 	protected void sequence_List(ISerializationContext context, List semanticObject) {
@@ -91,20 +87,23 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Statement returns Sentence
-	 *     Sentence returns Sentence
+	 *     Statement returns Rule
+	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     word=STRING
+	 *     (start_symbol=Variable list=List)
 	 * </pre>
 	 */
-	protected void sequence_Sentence(ISerializationContext context, Sentence semanticObject) {
+	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.SENTENCE__WORD) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.SENTENCE__WORD));
+			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.RULE__START_SYMBOL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.RULE__START_SYMBOL));
+			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.RULE__LIST) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.RULE__LIST));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSentenceAccess().getWordSTRINGTerminalRuleCall_0(), semanticObject.getWord());
+		feeder.accept(grammarAccess.getRuleAccess().getStart_symbolVariableParserRuleCall_0_0(), semanticObject.getStart_symbol());
+		feeder.accept(grammarAccess.getRuleAccess().getListListParserRuleCall_2_0(), semanticObject.getList());
 		feeder.finish();
 	}
 	
@@ -112,43 +111,19 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     StartSymbol returns StartSymbol
+	 *     Variable returns Variable
 	 *
 	 * Constraint:
 	 *     title=ID
 	 * </pre>
 	 */
-	protected void sequence_StartSymbol(ISerializationContext context, StartSymbol semanticObject) {
+	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.START_SYMBOL__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.START_SYMBOL__TITLE));
+			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.VARIABLE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.VARIABLE__TITLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0(), semanticObject.getTitle());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Statement returns Title
-	 *     Title returns Title
-	 *
-	 * Constraint:
-	 *     (start_symbol=StartSymbol list=List)
-	 * </pre>
-	 */
-	protected void sequence_Title(ISerializationContext context, Title semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.TITLE__START_SYMBOL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.TITLE__START_SYMBOL));
-			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.TITLE__LIST) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.TITLE__LIST));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTitleAccess().getStart_symbolStartSymbolParserRuleCall_0_0(), semanticObject.getStart_symbol());
-		feeder.accept(grammarAccess.getTitleAccess().getListListParserRuleCall_2_0(), semanticObject.getList());
+		feeder.accept(grammarAccess.getVariableAccess().getTitleIDTerminalRuleCall_0(), semanticObject.getTitle());
 		feeder.finish();
 	}
 	

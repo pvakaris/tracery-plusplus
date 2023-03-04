@@ -42,22 +42,22 @@ public interface TraceryPPFactory extends EFactory
   Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>Title</em>'.
+   * Returns a new object of class '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Title</em>'.
+   * @return a new object of class '<em>Rule</em>'.
    * @generated
    */
-  Title createTitle();
+  Rule createRule();
 
   /**
-   * Returns a new object of class '<em>Start Symbol</em>'.
+   * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Start Symbol</em>'.
+   * @return a new object of class '<em>Variable</em>'.
    * @generated
    */
-  StartSymbol createStartSymbol();
+  Variable createVariable();
 
   /**
    * Returns a new object of class '<em>List</em>'.
@@ -76,15 +76,6 @@ public interface TraceryPPFactory extends EFactory
    * @generated
    */
   Word createWord();
-
-  /**
-   * Returns a new object of class '<em>Sentence</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sentence</em>'.
-   * @generated
-   */
-  Sentence createSentence();
 
   /**
    * Returns the package supported by this factory.

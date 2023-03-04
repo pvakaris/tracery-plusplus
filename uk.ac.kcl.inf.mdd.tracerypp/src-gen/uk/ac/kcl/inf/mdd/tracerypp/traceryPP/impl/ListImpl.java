@@ -25,6 +25,7 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getSep <em>Sep</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +41,26 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * @ordered
    */
   protected Word word;
+
+  /**
+   * The default value of the '{@link #getSep() <em>Sep</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSep()
+   * @generated
+   * @ordered
+   */
+  protected static final String SEP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSep() <em>Sep</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSep()
+   * @generated
+   * @ordered
+   */
+  protected String sep = SEP_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,6 +139,31 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * @generated
    */
   @Override
+  public String getSep()
+  {
+    return sep;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSep(String newSep)
+  {
+    String oldSep = sep;
+    sep = newSep;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.LIST__SEP, oldSep, sep));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -140,6 +186,8 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
     {
       case TraceryPPPackage.LIST__WORD:
         return getWord();
+      case TraceryPPPackage.LIST__SEP:
+        return getSep();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -156,6 +204,9 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
     {
       case TraceryPPPackage.LIST__WORD:
         setWord((Word)newValue);
+        return;
+      case TraceryPPPackage.LIST__SEP:
+        setSep((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -174,6 +225,9 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
       case TraceryPPPackage.LIST__WORD:
         setWord((Word)null);
         return;
+      case TraceryPPPackage.LIST__SEP:
+        setSep(SEP_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -190,8 +244,27 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
     {
       case TraceryPPPackage.LIST__WORD:
         return word != null;
+      case TraceryPPPackage.LIST__SEP:
+        return SEP_EDEFAULT == null ? sep != null : !SEP_EDEFAULT.equals(sep);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (sep: ");
+    result.append(sep);
+    result.append(')');
+    return result.toString();
   }
 
 } //ListImpl

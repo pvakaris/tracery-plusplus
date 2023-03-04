@@ -31,19 +31,18 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryPPGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
-			builder.put(grammarAccess.getListAccess().getAlternatives_1_0(), "rule__List__Alternatives_1_0");
-			builder.put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
+			builder.put(grammarAccess.getSeparatorAccess().getAlternatives(), "rule__Separator__Alternatives");
+			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
 			builder.put(grammarAccess.getListAccess().getGroup_1(), "rule__List__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment(), "rule__Model__StatementsAssignment");
-			builder.put(grammarAccess.getTitleAccess().getStart_symbolAssignment_0(), "rule__Title__Start_symbolAssignment_0");
-			builder.put(grammarAccess.getTitleAccess().getListAssignment_2(), "rule__Title__ListAssignment_2");
-			builder.put(grammarAccess.getStartSymbolAccess().getTitleAssignment(), "rule__StartSymbol__TitleAssignment");
+			builder.put(grammarAccess.getRuleAccess().getStart_symbolAssignment_0(), "rule__Rule__Start_symbolAssignment_0");
+			builder.put(grammarAccess.getRuleAccess().getListAssignment_2(), "rule__Rule__ListAssignment_2");
+			builder.put(grammarAccess.getVariableAccess().getTitleAssignment(), "rule__Variable__TitleAssignment");
 			builder.put(grammarAccess.getListAccess().getWordAssignment_0(), "rule__List__WordAssignment_0");
+			builder.put(grammarAccess.getListAccess().getSepAssignment_1_0(), "rule__List__SepAssignment_1_0");
 			builder.put(grammarAccess.getListAccess().getWordAssignment_1_1(), "rule__List__WordAssignment_1_1");
 			builder.put(grammarAccess.getWordAccess().getWordAssignment(), "rule__Word__WordAssignment");
-			builder.put(grammarAccess.getSentenceAccess().getWordAssignment(), "rule__Sentence__WordAssignment");
 		}
 	}
 	

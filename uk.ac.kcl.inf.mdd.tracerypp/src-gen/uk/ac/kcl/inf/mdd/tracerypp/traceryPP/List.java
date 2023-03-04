@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getSep <em>Sep</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList()
@@ -44,5 +45,27 @@ public interface List extends EObject
    * @generated
    */
   void setWord(Word value);
+
+  /**
+   * Returns the value of the '<em><b>Sep</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sep</em>' attribute.
+   * @see #setSep(String)
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList_Sep()
+   * @model
+   * @generated
+   */
+  String getSep();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getSep <em>Sep</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sep</em>' attribute.
+   * @see #getSep()
+   * @generated
+   */
+  void setSep(String value);
 
 } // List

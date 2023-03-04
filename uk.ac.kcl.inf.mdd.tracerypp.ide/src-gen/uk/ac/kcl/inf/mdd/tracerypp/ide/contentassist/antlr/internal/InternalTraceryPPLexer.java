@@ -42,11 +42,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:11:7: ( ', ' )
-            // InternalTraceryPP.g:11:9: ', '
+            // InternalTraceryPP.g:11:7: ( ',' )
+            // InternalTraceryPP.g:11:9: ','
             {
-            match(", "); 
-
+            match(','); 
 
             }
 
@@ -63,10 +62,11 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:12:7: ( ',' )
-            // InternalTraceryPP.g:12:9: ','
+            // InternalTraceryPP.g:12:7: ( 'or' )
+            // InternalTraceryPP.g:12:9: 'or'
             {
-            match(','); 
+            match("or"); 
+
 
             }
 
@@ -83,10 +83,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:13:7: ( 'can have values: ' )
-            // InternalTraceryPP.g:13:9: 'can have values: '
+            // InternalTraceryPP.g:13:7: ( ' can have values: ' )
+            // InternalTraceryPP.g:13:9: ' can have values: '
             {
-            match("can have values: "); 
+            match(" can have values: "); 
 
 
             }
@@ -104,10 +104,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:578:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalTraceryPP.g:578:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTraceryPP.g:557:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalTraceryPP.g:557:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalTraceryPP.g:578:11: ( '^' )?
+            // InternalTraceryPP.g:557:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -116,7 +116,7 @@ public class InternalTraceryPPLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalTraceryPP.g:578:11: '^'
+                    // InternalTraceryPP.g:557:11: '^'
                     {
                     match('^'); 
 
@@ -134,7 +134,7 @@ public class InternalTraceryPPLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalTraceryPP.g:578:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTraceryPP.g:557:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -183,10 +183,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:580:10: ( ( '0' .. '9' )+ )
-            // InternalTraceryPP.g:580:12: ( '0' .. '9' )+
+            // InternalTraceryPP.g:559:10: ( ( '0' .. '9' )+ )
+            // InternalTraceryPP.g:559:12: ( '0' .. '9' )+
             {
-            // InternalTraceryPP.g:580:12: ( '0' .. '9' )+
+            // InternalTraceryPP.g:559:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -200,7 +200,7 @@ public class InternalTraceryPPLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalTraceryPP.g:580:13: '0' .. '9'
+            	    // InternalTraceryPP.g:559:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -232,10 +232,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:582:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalTraceryPP.g:582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTraceryPP.g:561:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalTraceryPP.g:561:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalTraceryPP.g:582:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTraceryPP.g:561:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -253,10 +253,10 @@ public class InternalTraceryPPLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalTraceryPP.g:582:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalTraceryPP.g:561:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalTraceryPP.g:582:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalTraceryPP.g:561:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -272,7 +272,7 @@ public class InternalTraceryPPLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalTraceryPP.g:582:21: '\\\\' .
+                    	    // InternalTraceryPP.g:561:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -280,7 +280,7 @@ public class InternalTraceryPPLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTraceryPP.g:582:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalTraceryPP.g:561:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -305,10 +305,10 @@ public class InternalTraceryPPLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPP.g:582:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalTraceryPP.g:561:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalTraceryPP.g:582:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalTraceryPP.g:561:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -324,7 +324,7 @@ public class InternalTraceryPPLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalTraceryPP.g:582:54: '\\\\' .
+                    	    // InternalTraceryPP.g:561:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -332,7 +332,7 @@ public class InternalTraceryPPLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTraceryPP.g:582:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalTraceryPP.g:561:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -375,12 +375,12 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:584:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalTraceryPP.g:584:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalTraceryPP.g:563:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalTraceryPP.g:563:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalTraceryPP.g:584:24: ( options {greedy=false; } : . )*
+            // InternalTraceryPP.g:563:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -405,7 +405,7 @@ public class InternalTraceryPPLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalTraceryPP.g:584:52: .
+            	    // InternalTraceryPP.g:563:52: .
             	    {
             	    matchAny(); 
 
@@ -435,12 +435,12 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:586:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalTraceryPP.g:586:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalTraceryPP.g:565:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalTraceryPP.g:565:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalTraceryPP.g:586:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalTraceryPP.g:565:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -453,7 +453,7 @@ public class InternalTraceryPPLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalTraceryPP.g:586:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalTraceryPP.g:565:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -473,7 +473,7 @@ public class InternalTraceryPPLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalTraceryPP.g:586:40: ( ( '\\r' )? '\\n' )?
+            // InternalTraceryPP.g:565:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -482,9 +482,9 @@ public class InternalTraceryPPLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalTraceryPP.g:586:41: ( '\\r' )? '\\n'
+                    // InternalTraceryPP.g:565:41: ( '\\r' )? '\\n'
                     {
-                    // InternalTraceryPP.g:586:41: ( '\\r' )?
+                    // InternalTraceryPP.g:565:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -493,7 +493,7 @@ public class InternalTraceryPPLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalTraceryPP.g:586:41: '\\r'
+                            // InternalTraceryPP.g:565:41: '\\r'
                             {
                             match('\r'); 
 
@@ -525,10 +525,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:588:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalTraceryPP.g:588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTraceryPP.g:567:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalTraceryPP.g:567:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalTraceryPP.g:588:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTraceryPP.g:567:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -582,8 +582,8 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:590:16: ( . )
-            // InternalTraceryPP.g:590:18: .
+            // InternalTraceryPP.g:569:16: ( . )
+            // InternalTraceryPP.g:569:18: .
             {
             matchAny(); 
 
@@ -680,39 +680,39 @@ public class InternalTraceryPPLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\14\1\16\1\12\2\uffff\3\12\4\uffff\1\16\6\uffff\1\16\1\uffff";
+        "\2\uffff\1\16\1\20\1\13\2\uffff\3\13\3\uffff\1\25\10\uffff";
     static final String DFA12_eofS =
         "\26\uffff";
     static final String DFA12_minS =
-        "\1\0\1\40\1\141\1\101\2\uffff\2\0\1\52\4\uffff\1\156\6\uffff\1\40\1\uffff";
+        "\1\0\1\uffff\1\162\1\143\1\101\2\uffff\2\0\1\52\3\uffff\1\60\10\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\40\1\141\1\172\2\uffff\2\uffff\1\57\4\uffff\1\156\6\uffff\1\40\1\uffff";
+        "\1\uffff\1\uffff\1\162\1\143\1\172\2\uffff\2\uffff\1\57\3\uffff\1\172\10\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\5\3\uffff\1\11\1\12\1\1\1\2\1\uffff\1\4\1\5\1\6\1\7\1\10\1\11\1\uffff\1\3";
+        "\1\uffff\1\1\3\uffff\1\4\1\5\3\uffff\1\11\1\12\1\1\1\uffff\1\4\1\3\1\11\1\5\1\6\1\7\1\10\1\2";
     static final String DFA12_specialS =
-        "\1\2\5\uffff\1\0\1\1\16\uffff}>";
+        "\1\0\6\uffff\1\1\1\2\15\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\12\2\11\2\12\1\11\22\12\1\11\1\12\1\6\4\12\1\7\4\12\1\1\2\12\1\10\12\5\7\12\32\4\3\12\1\3\1\4\1\12\2\4\1\2\27\4\uff85\12",
-            "\1\13",
+            "\11\13\2\12\2\13\1\12\22\13\1\3\1\13\1\7\4\13\1\10\4\13\1\1\2\13\1\11\12\6\7\13\32\5\3\13\1\4\1\5\1\13\16\5\1\2\13\5\uff85\13",
+            "",
             "\1\15",
+            "\1\17",
             "\32\16\4\uffff\1\16\1\uffff\32\16",
             "",
             "",
-            "\0\20",
-            "\0\20",
-            "\1\21\4\uffff\1\22",
+            "\0\22",
+            "\0\22",
+            "\1\23\4\uffff\1\24",
+            "",
+            "",
+            "",
+            "\12\16\7\uffff\32\16\4\uffff\1\16\1\uffff\32\16",
             "",
             "",
             "",
             "",
-            "\1\24",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\25",
             ""
     };
 
@@ -753,12 +753,30 @@ public class InternalTraceryPPLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_6 = input.LA(1);
+                        int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_6>='\u0000' && LA12_6<='\uFFFF')) ) {s = 16;}
+                        if ( (LA12_0==',') ) {s = 1;}
 
-                        else s = 10;
+                        else if ( (LA12_0=='o') ) {s = 2;}
+
+                        else if ( (LA12_0==' ') ) {s = 3;}
+
+                        else if ( (LA12_0=='^') ) {s = 4;}
+
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='n')||(LA12_0>='p' && LA12_0<='z')) ) {s = 5;}
+
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 6;}
+
+                        else if ( (LA12_0=='\"') ) {s = 7;}
+
+                        else if ( (LA12_0=='\'') ) {s = 8;}
+
+                        else if ( (LA12_0=='/') ) {s = 9;}
+
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r') ) {s = 10;}
+
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 11;}
 
                         if ( s>=0 ) return s;
                         break;
@@ -766,35 +784,19 @@ public class InternalTraceryPPLexer extends Lexer {
                         int LA12_7 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_7>='\u0000' && LA12_7<='\uFFFF')) ) {s = 16;}
+                        if ( ((LA12_7>='\u0000' && LA12_7<='\uFFFF')) ) {s = 18;}
 
-                        else s = 10;
+                        else s = 11;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_0 = input.LA(1);
+                        int LA12_8 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0==',') ) {s = 1;}
+                        if ( ((LA12_8>='\u0000' && LA12_8<='\uFFFF')) ) {s = 18;}
 
-                        else if ( (LA12_0=='c') ) {s = 2;}
-
-                        else if ( (LA12_0=='^') ) {s = 3;}
-
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='b')||(LA12_0>='d' && LA12_0<='z')) ) {s = 4;}
-
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 5;}
-
-                        else if ( (LA12_0=='\"') ) {s = 6;}
-
-                        else if ( (LA12_0=='\'') ) {s = 7;}
-
-                        else if ( (LA12_0=='/') ) {s = 8;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 9;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 10;}
+                        else s = 11;
 
                         if ( s>=0 ) return s;
                         break;
