@@ -115,7 +115,7 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     StartSymbol returns StartSymbol
 	 *
 	 * Constraint:
-	 *     title=STRING
+	 *     title=ID
 	 * </pre>
 	 */
 	protected void sequence_StartSymbol(ISerializationContext context, StartSymbol semanticObject) {
@@ -124,7 +124,7 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.START_SYMBOL__TITLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0(), semanticObject.getTitle());
 		feeder.finish();
 	}
 	

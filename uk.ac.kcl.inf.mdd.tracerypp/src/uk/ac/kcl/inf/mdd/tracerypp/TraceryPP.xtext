@@ -1,9 +1,11 @@
 grammar uk.ac.kcl.inf.mdd.tracerypp.TraceryPP with org.eclipse.xtext.common.Terminals
 
+
 generate traceryPP "http://www.ac.uk/kcl/inf/mdd/tracerypp/TraceryPP"
 
 Model:
-	statements+=Statement*;
+	statements += Statement*
+;
 	
 Statement:
 	Title |
@@ -11,15 +13,15 @@ Statement:
 ;
 
 Title:
-	start_symbol = StartSymbol  "can have values:" list = List
+	start_symbol = StartSymbol  'can have values: ' list = List
 ;
 
 StartSymbol:
-	title = STRING
+	title = ID
 ;
 
 List:
-	word = Word (("," | ", ") word = Word)*
+	word = Word ((', ' | ',') word = Word)*
 ;
 
 Word:

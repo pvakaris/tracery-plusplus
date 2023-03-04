@@ -167,7 +167,7 @@ ruleTitle returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='can have values:'
+		otherlv_1='can have values: '
 		{
 			newLeafNode(otherlv_1, grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1());
 		}
@@ -210,9 +210,9 @@ ruleStartSymbol returns [EObject current=null]
 }:
 	(
 		(
-			lv_title_0_0=RULE_STRING
+			lv_title_0_0=RULE_ID
 			{
-				newLeafNode(lv_title_0_0, grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0());
+				newLeafNode(lv_title_0_0, grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -222,7 +222,7 @@ ruleStartSymbol returns [EObject current=null]
 					$current,
 					"title",
 					lv_title_0_0,
-					"org.eclipse.xtext.common.Terminals.STRING");
+					"org.eclipse.xtext.common.Terminals.ID");
 			}
 		)
 	)
@@ -265,14 +265,14 @@ ruleList returns [EObject current=null]
 		)
 		(
 			(
-				otherlv_1=','
+				otherlv_1=', '
 				{
-					newLeafNode(otherlv_1, grammarAccess.getListAccess().getCommaKeyword_1_0_0());
+					newLeafNode(otherlv_1, grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0());
 				}
 				    |
-				otherlv_2=', '
+				otherlv_2=','
 				{
-					newLeafNode(otherlv_2, grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1());
+					newLeafNode(otherlv_2, grammarAccess.getListAccess().getCommaKeyword_1_0_1());
 				}
 			)
 			(

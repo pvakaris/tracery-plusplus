@@ -22,11 +22,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTraceryPPParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "', '", "'can have values:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "', '", "','", "'can have values: '"
     };
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
-    public static final int RULE_STRING=4;
+    public static final int RULE_STRING=5;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_INT=6;
@@ -121,7 +121,7 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==RULE_STRING) ) {
+                if ( ((LA1_0>=RULE_ID && LA1_0<=RULE_STRING)) ) {
                     alt1=1;
                 }
 
@@ -639,21 +639,11 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==RULE_STRING) ) {
-                int LA2_1 = input.LA(2);
-
-                if ( (LA2_1==13) ) {
-                    alt2=1;
-                }
-                else if ( (LA2_1==EOF||LA2_1==RULE_STRING) ) {
-                    alt2=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 2, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA2_0==RULE_ID) ) {
+                alt2=1;
+            }
+            else if ( (LA2_0==RULE_STRING) ) {
+                alt2=2;
             }
             else {
                 NoViableAltException nvae =
@@ -718,13 +708,13 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__List__Alternatives_1_0"
-    // InternalTraceryPP.g:248:1: rule__List__Alternatives_1_0 : ( ( ',' ) | ( ', ' ) );
+    // InternalTraceryPP.g:248:1: rule__List__Alternatives_1_0 : ( ( ', ' ) | ( ',' ) );
     public final void rule__List__Alternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPP.g:252:1: ( ( ',' ) | ( ', ' ) )
+            // InternalTraceryPP.g:252:1: ( ( ', ' ) | ( ',' ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -742,14 +732,14 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
             }
             switch (alt3) {
                 case 1 :
-                    // InternalTraceryPP.g:253:2: ( ',' )
+                    // InternalTraceryPP.g:253:2: ( ', ' )
                     {
-                    // InternalTraceryPP.g:253:2: ( ',' )
-                    // InternalTraceryPP.g:254:3: ','
+                    // InternalTraceryPP.g:253:2: ( ', ' )
+                    // InternalTraceryPP.g:254:3: ', '
                     {
-                     before(grammarAccess.getListAccess().getCommaKeyword_1_0_0()); 
+                     before(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()); 
                     match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getListAccess().getCommaKeyword_1_0_0()); 
+                     after(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()); 
 
                     }
 
@@ -757,14 +747,14 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPP.g:259:2: ( ', ' )
+                    // InternalTraceryPP.g:259:2: ( ',' )
                     {
-                    // InternalTraceryPP.g:259:2: ( ', ' )
-                    // InternalTraceryPP.g:260:3: ', '
+                    // InternalTraceryPP.g:259:2: ( ',' )
+                    // InternalTraceryPP.g:260:3: ','
                     {
-                     before(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1()); 
+                     before(grammarAccess.getListAccess().getCommaKeyword_1_0_1()); 
                     match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1()); 
+                     after(grammarAccess.getListAccess().getCommaKeyword_1_0_1()); 
 
                     }
 
@@ -912,17 +902,17 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Title__Group__1__Impl"
-    // InternalTraceryPP.g:308:1: rule__Title__Group__1__Impl : ( 'can have values:' ) ;
+    // InternalTraceryPP.g:308:1: rule__Title__Group__1__Impl : ( 'can have values: ' ) ;
     public final void rule__Title__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPP.g:312:1: ( ( 'can have values:' ) )
-            // InternalTraceryPP.g:313:1: ( 'can have values:' )
+            // InternalTraceryPP.g:312:1: ( ( 'can have values: ' ) )
+            // InternalTraceryPP.g:313:1: ( 'can have values: ' )
             {
-            // InternalTraceryPP.g:313:1: ( 'can have values:' )
-            // InternalTraceryPP.g:314:2: 'can have values:'
+            // InternalTraceryPP.g:313:1: ( 'can have values: ' )
+            // InternalTraceryPP.g:314:2: 'can have values: '
             {
              before(grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1()); 
             match(input,13,FOLLOW_2); 
@@ -1500,21 +1490,21 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__StartSymbol__TitleAssignment"
-    // InternalTraceryPP.g:503:1: rule__StartSymbol__TitleAssignment : ( RULE_STRING ) ;
+    // InternalTraceryPP.g:503:1: rule__StartSymbol__TitleAssignment : ( RULE_ID ) ;
     public final void rule__StartSymbol__TitleAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPP.g:507:1: ( ( RULE_STRING ) )
-            // InternalTraceryPP.g:508:2: ( RULE_STRING )
+            // InternalTraceryPP.g:507:1: ( ( RULE_ID ) )
+            // InternalTraceryPP.g:508:2: ( RULE_ID )
             {
-            // InternalTraceryPP.g:508:2: ( RULE_STRING )
-            // InternalTraceryPP.g:509:3: RULE_STRING
+            // InternalTraceryPP.g:508:2: ( RULE_ID )
+            // InternalTraceryPP.g:509:3: RULE_ID
             {
-             before(grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0()); 
+             before(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0()); 
 
             }
 
@@ -1698,9 +1688,9 @@ public class InternalTraceryPPParser extends AbstractInternalContentAssistParser
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000032L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001800L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000001802L});
 

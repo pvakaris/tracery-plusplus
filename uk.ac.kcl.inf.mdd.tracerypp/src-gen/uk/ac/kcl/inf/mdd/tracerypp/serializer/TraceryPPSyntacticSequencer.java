@@ -21,12 +21,12 @@ import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryPPGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_List_CommaKeyword_1_0_0_or_CommaSpaceKeyword_1_0_1;
+	protected AbstractElementAlias match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryPPGrammarAccess) access;
-		match_List_CommaKeyword_1_0_0_or_CommaSpaceKeyword_1_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListAccess().getCommaKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1()));
+		match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListAccess().getCommaKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()));
 	}
 	
 	@Override
@@ -41,8 +41,8 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_List_CommaKeyword_1_0_0_or_CommaSpaceKeyword_1_0_1.equals(syntax))
-				emit_List_CommaKeyword_1_0_0_or_CommaSpaceKeyword_1_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0.equals(syntax))
+				emit_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -50,14 +50,14 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ',' | ', '
+	 *     ', ' | ','
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     word=Word (ambiguity) word=Word
 	 
 	 * </pre>
 	 */
-	protected void emit_List_CommaKeyword_1_0_0_or_CommaSpaceKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_List_CommaKeyword_1_0_1_or_CommaSpaceKeyword_1_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

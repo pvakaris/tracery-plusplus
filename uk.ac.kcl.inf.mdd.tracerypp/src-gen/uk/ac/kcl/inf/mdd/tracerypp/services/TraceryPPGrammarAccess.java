@@ -28,10 +28,11 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cStatementsStatementParserRuleCall_0 = (RuleCall)cStatementsAssignment.eContents().get(0);
 		
 		//Model:
-		//    statements+=Statement*;
+		//    statements += Statement*
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//statements+=Statement*
+		//statements += Statement*
 		public Assignment getStatementsAssignment() { return cStatementsAssignment; }
 		
 		//Statement
@@ -69,11 +70,11 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cListListParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
 		
 		//Title:
-		//    start_symbol = StartSymbol  "can have values:" list = List
+		//    start_symbol = StartSymbol  'can have values: ' list = List
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//start_symbol = StartSymbol  "can have values:" list = List
+		//start_symbol = StartSymbol  'can have values: ' list = List
 		public Group getGroup() { return cGroup; }
 		
 		//start_symbol = StartSymbol
@@ -82,7 +83,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//StartSymbol
 		public RuleCall getStart_symbolStartSymbolParserRuleCall_0_0() { return cStart_symbolStartSymbolParserRuleCall_0_0; }
 		
-		//"can have values:"
+		//'can have values: '
 		public Keyword getCanHaveValuesKeyword_1() { return cCanHaveValuesKeyword_1; }
 		
 		//list = List
@@ -94,18 +95,18 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	public class StartSymbolElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.StartSymbol");
 		private final Assignment cTitleAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_0 = (RuleCall)cTitleAssignment.eContents().get(0);
+		private final RuleCall cTitleIDTerminalRuleCall_0 = (RuleCall)cTitleAssignment.eContents().get(0);
 		
 		//StartSymbol:
-		//    title = STRING
+		//    title = ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//title = STRING
+		//title = ID
 		public Assignment getTitleAssignment() { return cTitleAssignment; }
 		
-		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_0() { return cTitleSTRINGTerminalRuleCall_0; }
+		//ID
+		public RuleCall getTitleIDTerminalRuleCall_0() { return cTitleIDTerminalRuleCall_0; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.List");
@@ -114,17 +115,17 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final RuleCall cWordWordParserRuleCall_0_0 = (RuleCall)cWordAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_1_0 = (Alternatives)cGroup_1.eContents().get(0);
-		private final Keyword cCommaKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
-		private final Keyword cCommaSpaceKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
+		private final Keyword cCommaSpaceKeyword_1_0_0 = (Keyword)cAlternatives_1_0.eContents().get(0);
+		private final Keyword cCommaKeyword_1_0_1 = (Keyword)cAlternatives_1_0.eContents().get(1);
 		private final Assignment cWordAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cWordWordParserRuleCall_1_1_0 = (RuleCall)cWordAssignment_1_1.eContents().get(0);
 		
 		//List:
-		//    word = Word (("," | ", ") word = Word)*
+		//    word = Word ((', ' | ',') word = Word)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//word = Word (("," | ", ") word = Word)*
+		//word = Word ((', ' | ',') word = Word)*
 		public Group getGroup() { return cGroup; }
 		
 		//word = Word
@@ -133,17 +134,17 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Word
 		public RuleCall getWordWordParserRuleCall_0_0() { return cWordWordParserRuleCall_0_0; }
 		
-		//(("," | ", ") word = Word)*
+		//((', ' | ',') word = Word)*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//("," | ", ")
+		//(', ' | ',')
 		public Alternatives getAlternatives_1_0() { return cAlternatives_1_0; }
 		
-		//","
-		public Keyword getCommaKeyword_1_0_0() { return cCommaKeyword_1_0_0; }
+		//', '
+		public Keyword getCommaSpaceKeyword_1_0_0() { return cCommaSpaceKeyword_1_0_0; }
 		
-		//", "
-		public Keyword getCommaSpaceKeyword_1_0_1() { return cCommaSpaceKeyword_1_0_1; }
+		//','
+		public Keyword getCommaKeyword_1_0_1() { return cCommaKeyword_1_0_1; }
 		
 		//word = Word
 		public Assignment getWordAssignment_1_1() { return cWordAssignment_1_1; }
@@ -239,7 +240,8 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 
 	
 	//Model:
-	//    statements+=Statement*;
+	//    statements += Statement*
+	//;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -261,7 +263,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//Title:
-	//    start_symbol = StartSymbol  "can have values:" list = List
+	//    start_symbol = StartSymbol  'can have values: ' list = List
 	//;
 	public TitleElements getTitleAccess() {
 		return pTitle;
@@ -272,7 +274,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//StartSymbol:
-	//    title = STRING
+	//    title = ID
 	//;
 	public StartSymbolElements getStartSymbolAccess() {
 		return pStartSymbol;
@@ -283,7 +285,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	}
 	
 	//List:
-	//    word = Word (("," | ", ") word = Word)*
+	//    word = Word ((', ' | ',') word = Word)*
 	//;
 	public ListElements getListAccess() {
 		return pList;

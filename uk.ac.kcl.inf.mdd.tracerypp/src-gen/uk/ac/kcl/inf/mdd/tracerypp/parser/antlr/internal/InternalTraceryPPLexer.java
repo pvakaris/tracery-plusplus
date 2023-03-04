@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalTraceryPPLexer extends Lexer {
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
-    public static final int RULE_STRING=4;
+    public static final int RULE_STRING=5;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int RULE_INT=6;
@@ -42,10 +42,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:11:7: ( 'can have values:' )
-            // InternalTraceryPP.g:11:9: 'can have values:'
+            // InternalTraceryPP.g:11:7: ( 'can have values: ' )
+            // InternalTraceryPP.g:11:9: 'can have values: '
             {
-            match("can have values:"); 
+            match("can have values: "); 
 
 
             }
@@ -63,10 +63,11 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:12:7: ( ',' )
-            // InternalTraceryPP.g:12:9: ','
+            // InternalTraceryPP.g:12:7: ( ', ' )
+            // InternalTraceryPP.g:12:9: ', '
             {
-            match(','); 
+            match(", "); 
+
 
             }
 
@@ -83,11 +84,10 @@ public class InternalTraceryPPLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTraceryPP.g:13:7: ( ', ' )
-            // InternalTraceryPP.g:13:9: ', '
+            // InternalTraceryPP.g:13:7: ( ',' )
+            // InternalTraceryPP.g:13:9: ','
             {
-            match(", "); 
-
+            match(','); 
 
             }
 
@@ -688,7 +688,7 @@ public class InternalTraceryPPLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\1\141\1\40\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\10\uffff\1\40\1\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\5\3\uffff\1\11\1\12\1\uffff\1\4\1\3\1\2\1\5\1\6\1\7\1\10\1\11\1\uffff\1\1";
+        "\4\uffff\1\4\1\5\3\uffff\1\11\1\12\1\uffff\1\4\1\2\1\3\1\5\1\6\1\7\1\10\1\11\1\uffff\1\1";
     static final String DFA12_specialS =
         "\1\2\5\uffff\1\0\1\1\16\uffff}>";
     static final String[] DFA12_transitionS = {

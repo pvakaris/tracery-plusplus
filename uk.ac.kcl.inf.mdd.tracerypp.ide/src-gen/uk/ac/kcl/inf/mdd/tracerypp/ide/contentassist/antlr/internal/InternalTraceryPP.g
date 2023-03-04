@@ -251,15 +251,15 @@ rule__List__Alternatives_1_0
 	}
 :
 	(
-		{ before(grammarAccess.getListAccess().getCommaKeyword_1_0_0()); }
-		','
-		{ after(grammarAccess.getListAccess().getCommaKeyword_1_0_0()); }
+		{ before(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()); }
+		', '
+		{ after(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1()); }
-		', '
-		{ after(grammarAccess.getListAccess().getCommaSpaceKeyword_1_0_1()); }
+		{ before(grammarAccess.getListAccess().getCommaKeyword_1_0_1()); }
+		','
+		{ after(grammarAccess.getListAccess().getCommaKeyword_1_0_1()); }
 	)
 ;
 finally {
@@ -312,7 +312,7 @@ rule__Title__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1()); }
-	'can have values:'
+	'can have values: '
 	{ after(grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1()); }
 )
 ;
@@ -506,9 +506,9 @@ rule__StartSymbol__TitleAssignment
 	}
 :
 	(
-		{ before(grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getStartSymbolAccess().getTitleSTRINGTerminalRuleCall_0()); }
+		{ before(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0()); }
+		RULE_ID
+		{ after(grammarAccess.getStartSymbolAccess().getTitleIDTerminalRuleCall_0()); }
 	)
 ;
 finally {
