@@ -225,6 +225,34 @@ public interface TraceryPPPackage extends EPackage
    */
   int WORD_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceImpl <em>Sentence</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getSentence()
+   * @generated
+   */
+  int SENTENCE = 6;
+
+  /**
+   * The feature id for the '<em><b>Word</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENTENCE__WORD = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Sentence</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SENTENCE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model <em>Model</em>}'.
@@ -351,6 +379,27 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    */
   EAttribute getWord_Word();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence <em>Sentence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sentence</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence
+   * @generated
+   */
+  EClass getSentence();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence#getWord <em>Word</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Word</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence#getWord()
+   * @see #getSentence()
+   * @generated
+   */
+  EAttribute getSentence_Word();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -482,6 +531,24 @@ public interface TraceryPPPackage extends EPackage
      * @generated
      */
     EAttribute WORD__WORD = eINSTANCE.getWord_Word();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceImpl <em>Sentence</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getSentence()
+     * @generated
+     */
+    EClass SENTENCE = eINSTANCE.getSentence();
+
+    /**
+     * The meta object literal for the '<em><b>Word</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SENTENCE__WORD = eINSTANCE.getSentence_Word();
 
   }
 

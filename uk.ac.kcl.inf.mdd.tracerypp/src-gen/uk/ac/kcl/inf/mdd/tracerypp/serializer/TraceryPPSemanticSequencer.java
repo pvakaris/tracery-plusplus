@@ -17,6 +17,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StartSymbol;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Title;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
@@ -41,6 +42,9 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case TraceryPPPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case TraceryPPPackage.SENTENCE:
+				sequence_Sentence(context, (Sentence) semanticObject); 
 				return; 
 			case TraceryPPPackage.START_SYMBOL:
 				sequence_StartSymbol(context, (StartSymbol) semanticObject); 
@@ -81,6 +85,27 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns Sentence
+	 *     Sentence returns Sentence
+	 *
+	 * Constraint:
+	 *     word=STRING
+	 * </pre>
+	 */
+	protected void sequence_Sentence(ISerializationContext context, Sentence semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPPPackage.Literals.SENTENCE__WORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPPPackage.Literals.SENTENCE__WORD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSentenceAccess().getWordSTRINGTerminalRuleCall_0(), semanticObject.getWord());
+		feeder.finish();
 	}
 	
 	

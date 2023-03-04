@@ -111,14 +111,25 @@ ruleStatement returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getStatementAccess().getTitleParserRuleCall());
-	}
-	this_Title_0=ruleTitle
-	{
-		$current = $this_Title_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getTitleParserRuleCall_0());
+		}
+		this_Title_0=ruleTitle
+		{
+			$current = $this_Title_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getSentenceParserRuleCall_1());
+		}
+		this_Sentence_1=ruleSentence
+		{
+			$current = $this_Sentence_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
 ;
 
 // Entry rule entryRuleTitle
@@ -156,7 +167,7 @@ ruleTitle returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1=' can have values: '
+		otherlv_1='can have values:'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1());
 		}
@@ -311,6 +322,41 @@ ruleWord returns [EObject current=null]
 			{
 				if ($current==null) {
 					$current = createModelElement(grammarAccess.getWordRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"word",
+					lv_word_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleSentence
+entryRuleSentence returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSentenceRule()); }
+	iv_ruleSentence=ruleSentence
+	{ $current=$iv_ruleSentence.current; }
+	EOF;
+
+// Rule Sentence
+ruleSentence returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_word_0_0=RULE_STRING
+			{
+				newLeafNode(lv_word_0_0, grammarAccess.getSentenceAccess().getWordSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getSentenceRule());
 				}
 				setWithLastConsumed(
 					$current,

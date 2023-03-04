@@ -1,6 +1,6 @@
-' can have values: '=13
 ', '=12
 ','=11
+'can have values:'=13
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=6

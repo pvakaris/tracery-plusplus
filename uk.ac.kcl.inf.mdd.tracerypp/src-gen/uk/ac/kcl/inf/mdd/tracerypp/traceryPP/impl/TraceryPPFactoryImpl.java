@@ -71,6 +71,7 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
       case TraceryPPPackage.START_SYMBOL: return createStartSymbol();
       case TraceryPPPackage.LIST: return createList();
       case TraceryPPPackage.WORD: return createWord();
+      case TraceryPPPackage.SENTENCE: return createSentence();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -146,6 +147,18 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
   {
     WordImpl word = new WordImpl();
     return word;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Sentence createSentence()
+  {
+    SentenceImpl sentence = new SentenceImpl();
+    return sentence;
   }
 
   /**

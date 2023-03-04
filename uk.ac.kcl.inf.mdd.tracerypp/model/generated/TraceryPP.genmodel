@@ -23,5 +23,8 @@
     <genClasses ecoreClass="TraceryPP.ecore#//Word">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Word/word"/>
     </genClasses>
+    <genClasses ecoreClass="TraceryPP.ecore#//Sentence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Sentence/word"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

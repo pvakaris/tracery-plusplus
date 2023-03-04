@@ -90,9 +90,9 @@ ruleStatement
 	}
 	:
 	(
-		{ before(grammarAccess.getStatementAccess().getTitleParserRuleCall()); }
-		ruleTitle
-		{ after(grammarAccess.getStatementAccess().getTitleParserRuleCall()); }
+		{ before(grammarAccess.getStatementAccess().getAlternatives()); }
+		(rule__Statement__Alternatives)
+		{ after(grammarAccess.getStatementAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -199,6 +199,52 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleSentence
+entryRuleSentence
+:
+{ before(grammarAccess.getSentenceRule()); }
+	 ruleSentence
+{ after(grammarAccess.getSentenceRule()); } 
+	 EOF 
+;
+
+// Rule Sentence
+ruleSentence 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getSentenceAccess().getWordAssignment()); }
+		(rule__Sentence__WordAssignment)
+		{ after(grammarAccess.getSentenceAccess().getWordAssignment()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Statement__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getStatementAccess().getTitleParserRuleCall_0()); }
+		ruleTitle
+		{ after(grammarAccess.getStatementAccess().getTitleParserRuleCall_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getStatementAccess().getSentenceParserRuleCall_1()); }
+		ruleSentence
+		{ after(grammarAccess.getStatementAccess().getSentenceParserRuleCall_1()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__List__Alternatives_1_0
 	@init {
 		int stackSize = keepStackSize();
@@ -266,7 +312,7 @@ rule__Title__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1()); }
-	' can have values: '
+	'can have values:'
 	{ after(grammarAccess.getTitleAccess().getCanHaveValuesKeyword_1()); }
 )
 ;
@@ -508,6 +554,21 @@ rule__Word__WordAssignment
 		{ before(grammarAccess.getWordAccess().getWordSTRINGTerminalRuleCall_0()); }
 		RULE_STRING
 		{ after(grammarAccess.getWordAccess().getWordSTRINGTerminalRuleCall_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Sentence__WordAssignment
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getSentenceAccess().getWordSTRINGTerminalRuleCall_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getSentenceAccess().getWordSTRINGTerminalRuleCall_0()); }
 	)
 ;
 finally {

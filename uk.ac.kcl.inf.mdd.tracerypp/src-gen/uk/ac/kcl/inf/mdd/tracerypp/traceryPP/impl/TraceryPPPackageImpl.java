@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Sentence;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StartSymbol;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Statement;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Title;
@@ -68,6 +69,13 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   private EClass wordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sentenceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -269,6 +277,28 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
+  public EClass getSentence()
+  {
+    return sentenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSentence_Word()
+  {
+    return (EAttribute)sentenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public TraceryPPFactory getTraceryPPFactory()
   {
     return (TraceryPPFactory)getEFactoryInstance();
@@ -311,6 +341,9 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
 
     wordEClass = createEClass(WORD);
     createEAttribute(wordEClass, WORD__WORD);
+
+    sentenceEClass = createEClass(SENTENCE);
+    createEAttribute(sentenceEClass, SENTENCE__WORD);
   }
 
   /**
@@ -343,6 +376,7 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
 
     // Add supertypes to classes
     titleEClass.getESuperTypes().add(this.getStatement());
+    sentenceEClass.getESuperTypes().add(this.getStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -362,6 +396,9 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
 
     initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWord_Word(), ecorePackage.getEString(), "word", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sentenceEClass, Sentence.class, "Sentence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSentence_Word(), ecorePackage.getEString(), "word", null, 0, 1, Sentence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

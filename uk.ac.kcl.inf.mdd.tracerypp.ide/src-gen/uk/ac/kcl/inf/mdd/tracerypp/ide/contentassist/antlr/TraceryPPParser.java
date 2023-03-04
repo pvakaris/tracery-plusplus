@@ -31,6 +31,7 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryPPGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getListAccess().getAlternatives_1_0(), "rule__List__Alternatives_1_0");
 			builder.put(grammarAccess.getTitleAccess().getGroup(), "rule__Title__Group__0");
 			builder.put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
@@ -42,6 +43,7 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getListAccess().getWordAssignment_0(), "rule__List__WordAssignment_0");
 			builder.put(grammarAccess.getListAccess().getWordAssignment_1_1(), "rule__List__WordAssignment_1_1");
 			builder.put(grammarAccess.getWordAccess().getWordAssignment(), "rule__Word__WordAssignment");
+			builder.put(grammarAccess.getSentenceAccess().getWordAssignment(), "rule__Sentence__WordAssignment");
 		}
 	}
 	

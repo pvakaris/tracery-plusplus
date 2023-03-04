@@ -78,6 +78,15 @@ public interface TraceryPPFactory extends EFactory
   Word createWord();
 
   /**
+   * Returns a new object of class '<em>Sentence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sentence</em>'.
+   * @generated
+   */
+  Sentence createSentence();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

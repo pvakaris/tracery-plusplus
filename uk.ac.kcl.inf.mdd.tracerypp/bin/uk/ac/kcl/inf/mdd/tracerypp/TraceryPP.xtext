@@ -9,13 +9,11 @@ Statement:
 	Title |
 	Sentence
 ;
-	
 
 Title:
-	start_symbol = StartSymbol  " can have values: " list = List
+	start_symbol = StartSymbol  "can have values:" list = List
 ;
 
-// color can have values: orange, blue, green...
 StartSymbol:
 	title = STRING
 ;
@@ -29,7 +27,7 @@ Word:
 ;
 
 Sentence:
-	
+	word = STRING
 ;
 
 
