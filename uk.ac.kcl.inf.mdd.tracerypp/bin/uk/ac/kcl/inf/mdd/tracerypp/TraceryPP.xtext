@@ -3,7 +3,33 @@ grammar uk.ac.kcl.inf.mdd.tracerypp.TraceryPP with org.eclipse.xtext.common.Term
 generate traceryPP "http://www.ac.uk/kcl/inf/mdd/tracerypp/TraceryPP"
 
 Model:
-	greetings+=Greeting*;
+	statements+=Statement*;
 	
-Greeting:
-	'Hello' name=ID '!';
+Statement:
+	Title |
+	Sentence
+;
+	
+
+Title:
+	start_symbol = StartSymbol  " can have values: " list = List
+;
+
+// color can have values: orange, blue, green...
+StartSymbol:
+	title = STRING
+;
+
+List:
+	word = Word (("," | ", ") word = Word)*
+;
+
+Word:
+	word = STRING
+;
+
+Sentence:
+	
+;
+
+
