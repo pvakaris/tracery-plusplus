@@ -1,0 +1,9 @@
+grammar uk.ac.kcl.inf.mdd.tracerypp.TraceryPP with org.eclipse.xtext.common.Terminals
+
+generate traceryPP "http://www.ac.uk/kcl/inf/mdd/tracerypp/TraceryPP"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
