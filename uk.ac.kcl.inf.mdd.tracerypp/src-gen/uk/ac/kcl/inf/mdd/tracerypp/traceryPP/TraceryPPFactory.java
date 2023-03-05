@@ -51,15 +51,6 @@ public interface TraceryPPFactory extends EFactory
   Definition createDefinition();
 
   /**
-   * Returns a new object of class '<em>Rule</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Rule</em>'.
-   * @generated
-   */
-  Rule createRule();
-
-  /**
    * Returns a new object of class '<em>Story</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,13 +69,22 @@ public interface TraceryPPFactory extends EFactory
   ListDefinition createListDefinition();
 
   /**
-   * Returns a new object of class '<em>Sentence Rule</em>'.
+   * Returns a new object of class '<em>Object Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sentence Rule</em>'.
+   * @return a new object of class '<em>Object Definition</em>'.
    * @generated
    */
-  SentenceRule createSentenceRule();
+  ObjectDefinition createObjectDefinition();
+
+  /**
+   * Returns a new object of class '<em>Word</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Word</em>'.
+   * @generated
+   */
+  Word createWord();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.
@@ -96,15 +96,6 @@ public interface TraceryPPFactory extends EFactory
   Variable createVariable();
 
   /**
-   * Returns a new object of class '<em>List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>List</em>'.
-   * @generated
-   */
-  List createList();
-
-  /**
    * Returns a new object of class '<em>Story Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,13 +105,49 @@ public interface TraceryPPFactory extends EFactory
   StoryVariable createStoryVariable();
 
   /**
-   * Returns a new object of class '<em>Word</em>'.
+   * Returns a new object of class '<em>Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Word</em>'.
+   * @return a new object of class '<em>Attribute</em>'.
    * @generated
    */
-  Word createWord();
+  Attribute createAttribute();
+
+  /**
+   * Returns a new object of class '<em>Advanced Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Advanced Attribute</em>'.
+   * @generated
+   */
+  AdvancedAttribute createAdvancedAttribute();
+
+  /**
+   * Returns a new object of class '<em>Object Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Attribute</em>'.
+   * @generated
+   */
+  ObjectAttribute createObjectAttribute();
+
+  /**
+   * Returns a new object of class '<em>Word List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Word List</em>'.
+   * @generated
+   */
+  WordList createWordList();
+
+  /**
+   * Returns a new object of class '<em>Attribute List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute List</em>'.
+   * @generated
+   */
+  AttributeList createAttributeList();
 
   /**
    * Returns the package supported by this factory.

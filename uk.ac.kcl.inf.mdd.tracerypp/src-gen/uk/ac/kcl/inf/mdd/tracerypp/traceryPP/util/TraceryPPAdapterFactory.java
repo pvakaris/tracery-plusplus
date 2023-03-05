@@ -91,11 +91,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createDefinitionAdapter();
       }
       @Override
-      public Adapter caseRule(Rule object)
-      {
-        return createRuleAdapter();
-      }
-      @Override
       public Adapter caseStory(Story object)
       {
         return createStoryAdapter();
@@ -106,9 +101,14 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createListDefinitionAdapter();
       }
       @Override
-      public Adapter caseSentenceRule(SentenceRule object)
+      public Adapter caseObjectDefinition(ObjectDefinition object)
       {
-        return createSentenceRuleAdapter();
+        return createObjectDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseWord(Word object)
+      {
+        return createWordAdapter();
       }
       @Override
       public Adapter caseVariable(Variable object)
@@ -116,19 +116,34 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createVariableAdapter();
       }
       @Override
-      public Adapter caseList(List object)
-      {
-        return createListAdapter();
-      }
-      @Override
       public Adapter caseStoryVariable(StoryVariable object)
       {
         return createStoryVariableAdapter();
       }
       @Override
-      public Adapter caseWord(Word object)
+      public Adapter caseAttribute(Attribute object)
       {
-        return createWordAdapter();
+        return createAttributeAdapter();
+      }
+      @Override
+      public Adapter caseAdvancedAttribute(AdvancedAttribute object)
+      {
+        return createAdvancedAttributeAdapter();
+      }
+      @Override
+      public Adapter caseObjectAttribute(ObjectAttribute object)
+      {
+        return createObjectAttributeAdapter();
+      }
+      @Override
+      public Adapter caseWordList(WordList object)
+      {
+        return createWordListAdapter();
+      }
+      @Override
+      public Adapter caseAttributeList(AttributeList object)
+      {
+        return createAttributeListAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -198,21 +213,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule <em>Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule
-   * @generated
-   */
-  public Adapter createRuleAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story <em>Story</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -243,16 +243,31 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule <em>Sentence Rule</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition <em>Object Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition
    * @generated
    */
-  public Adapter createSentenceRuleAdapter()
+  public Adapter createObjectDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word <em>Word</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word
+   * @generated
+   */
+  public Adapter createWordAdapter()
   {
     return null;
   }
@@ -273,21 +288,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List <em>List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List
-   * @generated
-   */
-  public Adapter createListAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StoryVariable <em>Story Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -303,16 +303,76 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word <em>Word</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute
    * @generated
    */
-  public Adapter createWordAdapter()
+  public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute <em>Advanced Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute
+   * @generated
+   */
+  public Adapter createAdvancedAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute <em>Object Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute
+   * @generated
+   */
+  public Adapter createObjectAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList <em>Word List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList
+   * @generated
+   */
+  public Adapter createWordListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList <em>Attribute List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList
+   * @generated
+   */
+  public Adapter createAttributeListAdapter()
   {
     return null;
   }

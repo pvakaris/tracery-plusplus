@@ -10,12 +10,14 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Definition;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDefinition;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule;
-import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Statement;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StoryVariable;
@@ -23,6 +25,7 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPFactory;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,13 +61,6 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass ruleEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass storyEClass = null;
 
   /**
@@ -79,7 +75,14 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass sentenceRuleEClass = null;
+  private EClass objectDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wordEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -93,13 +96,6 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass listEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass storyVariableEClass = null;
 
   /**
@@ -107,7 +103,35 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass wordEClass = null;
+  private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass advancedAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass objectAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wordListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass attributeListEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -199,6 +223,17 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
+  public EReference getModel_Story()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getStatement()
   {
     return statementEClass;
@@ -213,17 +248,6 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
   public EClass getDefinition()
   {
     return definitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getRule()
-  {
-    return ruleEClass;
   }
 
   /**
@@ -287,9 +311,9 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EClass getSentenceRule()
+  public EClass getObjectDefinition()
   {
-    return sentenceRuleEClass;
+    return objectDefinitionEClass;
   }
 
   /**
@@ -298,9 +322,42 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EReference getSentenceRule_Start_symbol()
+  public EReference getObjectDefinition_Object()
   {
-    return (EReference)sentenceRuleEClass.getEStructuralFeatures().get(0);
+    return (EReference)objectDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectDefinition_Attributes()
+  {
+    return (EReference)objectDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWord()
+  {
+    return wordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWord_Value()
+  {
+    return (EAttribute)wordEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -323,50 +380,6 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
   public EAttribute getVariable_Value()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getList()
-  {
-    return listEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getList_Words()
-  {
-    return (EReference)listEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getList_Sep()
-  {
-    return (EAttribute)listEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getList_Word()
-  {
-    return (EReference)listEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -408,9 +421,9 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EClass getWord()
+  public EClass getAttribute()
   {
-    return wordEClass;
+    return attributeEClass;
   }
 
   /**
@@ -419,9 +432,163 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EAttribute getWord_Value()
+  public EAttribute getAttribute_Definition()
   {
-    return (EAttribute)wordEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAdvancedAttribute()
+  {
+    return advancedAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAdvancedAttribute_Definition()
+  {
+    return (EAttribute)advancedAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAdvancedAttribute_Value()
+  {
+    return (EAttribute)advancedAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getObjectAttribute()
+  {
+    return objectAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getObjectAttribute_Object()
+  {
+    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getObjectAttribute_Attribute()
+  {
+    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getWordList()
+  {
+    return wordListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWordList_Words()
+  {
+    return (EReference)wordListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWordList_Sep()
+  {
+    return (EAttribute)wordListEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getWordList_Word()
+  {
+    return (EReference)wordListEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAttributeList()
+  {
+    return attributeListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeList_Attributes()
+  {
+    return (EReference)attributeListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAttributeList_Sep()
+  {
+    return (EAttribute)attributeListEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAttributeList_Attribute()
+  {
+    return (EReference)attributeListEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -457,12 +624,11 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__STATEMENTS);
+    createEReference(modelEClass, MODEL__STORY);
 
     statementEClass = createEClass(STATEMENT);
 
     definitionEClass = createEClass(DEFINITION);
-
-    ruleEClass = createEClass(RULE);
 
     storyEClass = createEClass(STORY);
     createEReference(storyEClass, STORY__STORY);
@@ -471,23 +637,40 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     createEReference(listDefinitionEClass, LIST_DEFINITION__START_SYMBOL);
     createEReference(listDefinitionEClass, LIST_DEFINITION__LIST);
 
-    sentenceRuleEClass = createEClass(SENTENCE_RULE);
-    createEReference(sentenceRuleEClass, SENTENCE_RULE__START_SYMBOL);
+    objectDefinitionEClass = createEClass(OBJECT_DEFINITION);
+    createEReference(objectDefinitionEClass, OBJECT_DEFINITION__OBJECT);
+    createEReference(objectDefinitionEClass, OBJECT_DEFINITION__ATTRIBUTES);
+
+    wordEClass = createEClass(WORD);
+    createEAttribute(wordEClass, WORD__VALUE);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__VALUE);
-
-    listEClass = createEClass(LIST);
-    createEReference(listEClass, LIST__WORDS);
-    createEAttribute(listEClass, LIST__SEP);
-    createEReference(listEClass, LIST__WORD);
 
     storyVariableEClass = createEClass(STORY_VARIABLE);
     createEAttribute(storyVariableEClass, STORY_VARIABLE__VALUE);
     createEAttribute(storyVariableEClass, STORY_VARIABLE__MODIFIERS);
 
-    wordEClass = createEClass(WORD);
-    createEAttribute(wordEClass, WORD__VALUE);
+    attributeEClass = createEClass(ATTRIBUTE);
+    createEAttribute(attributeEClass, ATTRIBUTE__DEFINITION);
+
+    advancedAttributeEClass = createEClass(ADVANCED_ATTRIBUTE);
+    createEAttribute(advancedAttributeEClass, ADVANCED_ATTRIBUTE__DEFINITION);
+    createEAttribute(advancedAttributeEClass, ADVANCED_ATTRIBUTE__VALUE);
+
+    objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
+    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__OBJECT);
+    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTE);
+
+    wordListEClass = createEClass(WORD_LIST);
+    createEReference(wordListEClass, WORD_LIST__WORDS);
+    createEAttribute(wordListEClass, WORD_LIST__SEP);
+    createEReference(wordListEClass, WORD_LIST__WORD);
+
+    attributeListEClass = createEClass(ATTRIBUTE_LIST);
+    createEReference(attributeListEClass, ATTRIBUTE_LIST__ATTRIBUTES);
+    createEAttribute(attributeListEClass, ATTRIBUTE_LIST__SEP);
+    createEReference(attributeListEClass, ATTRIBUTE_LIST__ATTRIBUTE);
   }
 
   /**
@@ -520,45 +703,59 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
 
     // Add supertypes to classes
     definitionEClass.getESuperTypes().add(this.getStatement());
-    ruleEClass.getESuperTypes().add(this.getStatement());
-    storyEClass.getESuperTypes().add(this.getStatement());
     listDefinitionEClass.getESuperTypes().add(this.getDefinition());
-    sentenceRuleEClass.getESuperTypes().add(this.getRule());
+    objectDefinitionEClass.getESuperTypes().add(this.getDefinition());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Statements(), this.getStatement(), null, "statements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Story(), this.getStory(), null, "story", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(storyEClass, Story.class, "Story", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStory_Story(), ecorePackage.getEObject(), null, "story", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listDefinitionEClass, ListDefinition.class, "ListDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListDefinition_Start_symbol(), this.getVariable(), null, "start_symbol", null, 0, 1, ListDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getListDefinition_List(), this.getList(), null, "list", null, 0, 1, ListDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListDefinition_List(), this.getWordList(), null, "list", null, 0, 1, ListDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(sentenceRuleEClass, SentenceRule.class, "SentenceRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSentenceRule_Start_symbol(), this.getVariable(), null, "start_symbol", null, 0, 1, SentenceRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(objectDefinitionEClass, ObjectDefinition.class, "ObjectDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectDefinition_Object(), this.getVariable(), null, "object", null, 0, 1, ObjectDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectDefinition_Attributes(), this.getAttributeList(), null, "attributes", null, 0, 1, ObjectDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWord_Value(), ecorePackage.getEString(), "value", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Value(), ecorePackage.getEString(), "value", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getList_Words(), this.getWord(), null, "words", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getList_Sep(), ecorePackage.getEString(), "sep", null, 0, 1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getList_Word(), this.getWord(), null, "word", null, 0, 1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storyVariableEClass, StoryVariable.class, "StoryVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStoryVariable_Value(), ecorePackage.getEString(), "value", null, 0, 1, StoryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStoryVariable_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, StoryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWord_Value(), ecorePackage.getEString(), "value", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAttribute_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(advancedAttributeEClass, AdvancedAttribute.class, "AdvancedAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAdvancedAttribute_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, AdvancedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAdvancedAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, AdvancedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getObjectAttribute_Object(), ecorePackage.getEString(), "object", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectAttribute_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wordListEClass, WordList.class, "WordList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getWordList_Words(), this.getWord(), null, "words", null, 0, -1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWordList_Sep(), ecorePackage.getEString(), "sep", null, 0, 1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWordList_Word(), this.getWord(), null, "word", null, 0, 1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(attributeListEClass, AttributeList.class, "AttributeList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAttributeList_Attributes(), ecorePackage.getEObject(), null, "attributes", null, 0, -1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAttributeList_Sep(), ecorePackage.getEString(), "sep", null, 0, 1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttributeList_Attribute(), ecorePackage.getEObject(), null, "attribute", null, 0, 1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -6,20 +6,16 @@ generate traceryPP "http://www.ac.uk/kcl/inf/mdd/tracerypp/TraceryPP"
 
 Model:
 	statements += Statement*
+	story = Story
 ;
 	
 Statement:
-	Definition |
-	Rule |
-	Story
+	Definition
 ;
 
 Definition:
-	ListDefinition
-;
-
-Rule:
-	SentenceRule
+	ListDefinition |
+	ObjectDefinition
 ;
 
 /*
@@ -28,7 +24,7 @@ Rule:
  */
 Story:
 	"The story looks like this:"
-	story += ( Word | StoryVariable )*
+	story += ( Word | StoryVariable | ObjectAttribute )*
 ;
 
 /*
@@ -38,32 +34,52 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDefinition:
-	start_symbol = Variable  (" can have values: " | " can be: ") list = List
+	start_symbol = Variable  (" can have values: " | " can be: ") list = WordList
 ;
 
-SentenceRule:
-	start_symbol = Variable
+ObjectDefinition:
+	object = Variable " is an object."
+	"It has these attributes: " attributes = AttributeList
 ;
-
 
 /*
 	Basic building blocks
  */
 
+Word:
+	value = STRING
+;
+
 Variable:
 	value = ID
 ;
 
-List:
+StoryVariable:
+	value = ID modifiers += (Modifier)*
+;
+
+Attribute:
+	definition = ID
+;
+
+AdvancedAttribute:
+	definition = ID "=" value = STRING
+;
+
+ObjectAttribute:
+	object = ID "." attribute = ID
+;
+
+WordList:
 	words += Word (sep=Separator word = Word)*
+;
+
+AttributeList:
+	attributes += (Attribute | AdvancedAttribute) (sep=Separator attribute = (Attribute | AdvancedAttribute))*
 ;
 
 Separator:
 	"," | "or"
-;
-
-StoryVariable:
-	value = ID modifiers += (Modifier)*
 ;
 
 Modifier:
@@ -93,10 +109,3 @@ ArticleModifier:
 PastTenseModifier:
 	".ed"
 ;
-
-Word:
-	value = STRING
-;
-
-
-

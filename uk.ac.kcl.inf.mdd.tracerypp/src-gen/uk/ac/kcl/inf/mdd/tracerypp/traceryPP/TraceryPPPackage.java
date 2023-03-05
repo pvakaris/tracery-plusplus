@@ -77,13 +77,22 @@ public interface TraceryPPPackage extends EPackage
   int MODEL__STATEMENTS = 0;
 
   /**
+   * The feature id for the '<em><b>Story</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__STORY = 1;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int MODEL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StatementImpl <em>Statement</em>}' class.
@@ -124,25 +133,6 @@ public interface TraceryPPPackage extends EPackage
   int DEFINITION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.RuleImpl <em>Rule</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.RuleImpl
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getRule()
-   * @generated
-   */
-  int RULE = 3;
-
-  /**
-   * The number of structural features of the '<em>Rule</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RULE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StoryImpl <em>Story</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -150,7 +140,7 @@ public interface TraceryPPPackage extends EPackage
    * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getStory()
    * @generated
    */
-  int STORY = 4;
+  int STORY = 3;
 
   /**
    * The feature id for the '<em><b>Story</b></em>' containment reference list.
@@ -159,7 +149,7 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORY__STORY = STATEMENT_FEATURE_COUNT + 0;
+  int STORY__STORY = 0;
 
   /**
    * The number of structural features of the '<em>Story</em>' class.
@@ -168,7 +158,7 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+  int STORY_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListDefinitionImpl <em>List Definition</em>}' class.
@@ -178,7 +168,7 @@ public interface TraceryPPPackage extends EPackage
    * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getListDefinition()
    * @generated
    */
-  int LIST_DEFINITION = 5;
+  int LIST_DEFINITION = 4;
 
   /**
    * The feature id for the '<em><b>Start symbol</b></em>' containment reference.
@@ -208,32 +198,69 @@ public interface TraceryPPPackage extends EPackage
   int LIST_DEFINITION_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceRuleImpl <em>Sentence Rule</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectDefinitionImpl <em>Object Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceRuleImpl
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getSentenceRule()
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectDefinitionImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getObjectDefinition()
    * @generated
    */
-  int SENTENCE_RULE = 6;
+  int OBJECT_DEFINITION = 5;
 
   /**
-   * The feature id for the '<em><b>Start symbol</b></em>' containment reference.
+   * The feature id for the '<em><b>Object</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENTENCE_RULE__START_SYMBOL = RULE_FEATURE_COUNT + 0;
+  int OBJECT_DEFINITION__OBJECT = DEFINITION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Sentence Rule</em>' class.
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SENTENCE_RULE_FEATURE_COUNT = RULE_FEATURE_COUNT + 1;
+  int OBJECT_DEFINITION__ATTRIBUTES = DEFINITION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Object Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DEFINITION_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl <em>Word</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWord()
+   * @generated
+   */
+  int WORD = 6;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Word</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.VariableImpl <em>Variable</em>}' class.
@@ -264,52 +291,6 @@ public interface TraceryPPPackage extends EPackage
   int VARIABLE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl <em>List</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getList()
-   * @generated
-   */
-  int LIST = 8;
-
-  /**
-   * The feature id for the '<em><b>Words</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST__WORDS = 0;
-
-  /**
-   * The feature id for the '<em><b>Sep</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST__SEP = 1;
-
-  /**
-   * The feature id for the '<em><b>Word</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST__WORD = 2;
-
-  /**
-   * The number of structural features of the '<em>List</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StoryVariableImpl <em>Story Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -317,7 +298,7 @@ public interface TraceryPPPackage extends EPackage
    * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getStoryVariable()
    * @generated
    */
-  int STORY_VARIABLE = 9;
+  int STORY_VARIABLE = 8;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -347,14 +328,51 @@ public interface TraceryPPPackage extends EPackage
   int STORY_VARIABLE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl <em>Word</em>}' class.
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeImpl <em>Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWord()
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAttribute()
    * @generated
    */
-  int WORD = 10;
+  int ATTRIBUTE = 9;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__DEFINITION = 0;
+
+  /**
+   * The number of structural features of the '<em>Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AdvancedAttributeImpl <em>Advanced Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AdvancedAttributeImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAdvancedAttribute()
+   * @generated
+   */
+  int ADVANCED_ATTRIBUTE = 10;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADVANCED_ATTRIBUTE__DEFINITION = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -363,16 +381,145 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WORD__VALUE = 0;
+  int ADVANCED_ATTRIBUTE__VALUE = 1;
 
   /**
-   * The number of structural features of the '<em>Word</em>' class.
+   * The number of structural features of the '<em>Advanced Attribute</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORD_FEATURE_COUNT = 1;
+  int ADVANCED_ATTRIBUTE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectAttributeImpl <em>Object Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectAttributeImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getObjectAttribute()
+   * @generated
+   */
+  int OBJECT_ATTRIBUTE = 11;
+
+  /**
+   * The feature id for the '<em><b>Object</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_ATTRIBUTE__OBJECT = 0;
+
+  /**
+   * The feature id for the '<em><b>Attribute</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_ATTRIBUTE__ATTRIBUTE = 1;
+
+  /**
+   * The number of structural features of the '<em>Object Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_ATTRIBUTE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordListImpl <em>Word List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordListImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWordList()
+   * @generated
+   */
+  int WORD_LIST = 12;
+
+  /**
+   * The feature id for the '<em><b>Words</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_LIST__WORDS = 0;
+
+  /**
+   * The feature id for the '<em><b>Sep</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_LIST__SEP = 1;
+
+  /**
+   * The feature id for the '<em><b>Word</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_LIST__WORD = 2;
+
+  /**
+   * The number of structural features of the '<em>Word List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WORD_LIST_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeListImpl <em>Attribute List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeListImpl
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAttributeList()
+   * @generated
+   */
+  int ATTRIBUTE_LIST = 13;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_LIST__ATTRIBUTES = 0;
+
+  /**
+   * The feature id for the '<em><b>Sep</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_LIST__SEP = 1;
+
+  /**
+   * The feature id for the '<em><b>Attribute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_LIST__ATTRIBUTE = 2;
+
+  /**
+   * The number of structural features of the '<em>Attribute List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE_LIST_FEATURE_COUNT = 3;
 
 
   /**
@@ -397,6 +544,17 @@ public interface TraceryPPPackage extends EPackage
   EReference getModel_Statements();
 
   /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model#getStory <em>Story</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Story</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model#getStory()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Story();
+
+  /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Statement <em>Statement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -415,16 +573,6 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    */
   EClass getDefinition();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule <em>Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Rule</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule
-   * @generated
-   */
-  EClass getRule();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story <em>Story</em>}'.
@@ -480,25 +628,57 @@ public interface TraceryPPPackage extends EPackage
   EReference getListDefinition_List();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule <em>Sentence Rule</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition <em>Object Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sentence Rule</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule
+   * @return the meta object for class '<em>Object Definition</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition
    * @generated
    */
-  EClass getSentenceRule();
+  EClass getObjectDefinition();
 
   /**
-   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule#getStart_symbol <em>Start symbol</em>}'.
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition#getObject <em>Object</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Start symbol</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule#getStart_symbol()
-   * @see #getSentenceRule()
+   * @return the meta object for the containment reference '<em>Object</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition#getObject()
+   * @see #getObjectDefinition()
    * @generated
    */
-  EReference getSentenceRule_Start_symbol();
+  EReference getObjectDefinition_Object();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attributes</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition#getAttributes()
+   * @see #getObjectDefinition()
+   * @generated
+   */
+  EReference getObjectDefinition_Attributes();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word <em>Word</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Word</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word
+   * @generated
+   */
+  EClass getWord();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue()
+   * @see #getWord()
+   * @generated
+   */
+  EAttribute getWord_Value();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable <em>Variable</em>}'.
@@ -520,49 +700,6 @@ public interface TraceryPPPackage extends EPackage
    * @generated
    */
   EAttribute getVariable_Value();
-
-  /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List <em>List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>List</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List
-   * @generated
-   */
-  EClass getList();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWords <em>Words</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Words</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWords()
-   * @see #getList()
-   * @generated
-   */
-  EReference getList_Words();
-
-  /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getSep <em>Sep</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Sep</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getSep()
-   * @see #getList()
-   * @generated
-   */
-  EAttribute getList_Sep();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Word</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord()
-   * @see #getList()
-   * @generated
-   */
-  EReference getList_Word();
 
   /**
    * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StoryVariable <em>Story Variable</em>}'.
@@ -597,25 +734,175 @@ public interface TraceryPPPackage extends EPackage
   EAttribute getStoryVariable_Modifiers();
 
   /**
-   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word <em>Word</em>}'.
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Word</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word
+   * @return the meta object for class '<em>Attribute</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute
    * @generated
    */
-  EClass getWord();
+  EClass getAttribute();
 
   /**
-   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute#getDefinition <em>Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Definition</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute#getDefinition()
+   * @see #getAttribute()
+   * @generated
+   */
+  EAttribute getAttribute_Definition();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute <em>Advanced Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Advanced Attribute</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute
+   * @generated
+   */
+  EClass getAdvancedAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute#getDefinition <em>Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Definition</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute#getDefinition()
+   * @see #getAdvancedAttribute()
+   * @generated
+   */
+  EAttribute getAdvancedAttribute_Definition();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue()
-   * @see #getWord()
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute#getValue()
+   * @see #getAdvancedAttribute()
    * @generated
    */
-  EAttribute getWord_Value();
+  EAttribute getAdvancedAttribute_Value();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute <em>Object Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Object Attribute</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute
+   * @generated
+   */
+  EClass getObjectAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute#getObject <em>Object</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Object</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute#getObject()
+   * @see #getObjectAttribute()
+   * @generated
+   */
+  EAttribute getObjectAttribute_Object();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Attribute</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute#getAttribute()
+   * @see #getObjectAttribute()
+   * @generated
+   */
+  EAttribute getObjectAttribute_Attribute();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList <em>Word List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Word List</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList
+   * @generated
+   */
+  EClass getWordList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getWords <em>Words</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Words</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getWords()
+   * @see #getWordList()
+   * @generated
+   */
+  EReference getWordList_Words();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getSep <em>Sep</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sep</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getSep()
+   * @see #getWordList()
+   * @generated
+   */
+  EAttribute getWordList_Sep();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getWord <em>Word</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Word</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.WordList#getWord()
+   * @see #getWordList()
+   * @generated
+   */
+  EReference getWordList_Word();
+
+  /**
+   * Returns the meta object for class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList <em>Attribute List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Attribute List</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList
+   * @generated
+   */
+  EClass getAttributeList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getAttributes()
+   * @see #getAttributeList()
+   * @generated
+   */
+  EReference getAttributeList_Attributes();
+
+  /**
+   * Returns the meta object for the attribute '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getSep <em>Sep</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sep</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getSep()
+   * @see #getAttributeList()
+   * @generated
+   */
+  EAttribute getAttributeList_Sep();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attribute</em>'.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList#getAttribute()
+   * @see #getAttributeList()
+   * @generated
+   */
+  EReference getAttributeList_Attribute();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -659,6 +946,14 @@ public interface TraceryPPPackage extends EPackage
     EReference MODEL__STATEMENTS = eINSTANCE.getModel_Statements();
 
     /**
+     * The meta object literal for the '<em><b>Story</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__STORY = eINSTANCE.getModel_Story();
+
+    /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StatementImpl <em>Statement</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -677,16 +972,6 @@ public interface TraceryPPPackage extends EPackage
      * @generated
      */
     EClass DEFINITION = eINSTANCE.getDefinition();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.RuleImpl <em>Rule</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.RuleImpl
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getRule()
-     * @generated
-     */
-    EClass RULE = eINSTANCE.getRule();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StoryImpl <em>Story</em>}' class.
@@ -733,22 +1018,48 @@ public interface TraceryPPPackage extends EPackage
     EReference LIST_DEFINITION__LIST = eINSTANCE.getListDefinition_List();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceRuleImpl <em>Sentence Rule</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectDefinitionImpl <em>Object Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.SentenceRuleImpl
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getSentenceRule()
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectDefinitionImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getObjectDefinition()
      * @generated
      */
-    EClass SENTENCE_RULE = eINSTANCE.getSentenceRule();
+    EClass OBJECT_DEFINITION = eINSTANCE.getObjectDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Start symbol</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Object</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SENTENCE_RULE__START_SYMBOL = eINSTANCE.getSentenceRule_Start_symbol();
+    EReference OBJECT_DEFINITION__OBJECT = eINSTANCE.getObjectDefinition_Object();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBJECT_DEFINITION__ATTRIBUTES = eINSTANCE.getObjectDefinition_Attributes();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl <em>Word</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWord()
+     * @generated
+     */
+    EClass WORD = eINSTANCE.getWord();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORD__VALUE = eINSTANCE.getWord_Value();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.VariableImpl <em>Variable</em>}' class.
@@ -767,40 +1078,6 @@ public interface TraceryPPPackage extends EPackage
      * @generated
      */
     EAttribute VARIABLE__VALUE = eINSTANCE.getVariable_Value();
-
-    /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl <em>List</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getList()
-     * @generated
-     */
-    EClass LIST = eINSTANCE.getList();
-
-    /**
-     * The meta object literal for the '<em><b>Words</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST__WORDS = eINSTANCE.getList_Words();
-
-    /**
-     * The meta object literal for the '<em><b>Sep</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LIST__SEP = eINSTANCE.getList_Sep();
-
-    /**
-     * The meta object literal for the '<em><b>Word</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST__WORD = eINSTANCE.getList_Word();
 
     /**
      * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.StoryVariableImpl <em>Story Variable</em>}' class.
@@ -829,14 +1106,40 @@ public interface TraceryPPPackage extends EPackage
     EAttribute STORY_VARIABLE__MODIFIERS = eINSTANCE.getStoryVariable_Modifiers();
 
     /**
-     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl <em>Word</em>}' class.
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeImpl <em>Attribute</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl
-     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWord()
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAttribute()
      * @generated
      */
-    EClass WORD = eINSTANCE.getWord();
+    EClass ATTRIBUTE = eINSTANCE.getAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE__DEFINITION = eINSTANCE.getAttribute_Definition();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AdvancedAttributeImpl <em>Advanced Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AdvancedAttributeImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAdvancedAttribute()
+     * @generated
+     */
+    EClass ADVANCED_ATTRIBUTE = eINSTANCE.getAdvancedAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ADVANCED_ATTRIBUTE__DEFINITION = eINSTANCE.getAdvancedAttribute_Definition();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -844,7 +1147,101 @@ public interface TraceryPPPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute WORD__VALUE = eINSTANCE.getWord_Value();
+    EAttribute ADVANCED_ATTRIBUTE__VALUE = eINSTANCE.getAdvancedAttribute_Value();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectAttributeImpl <em>Object Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ObjectAttributeImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getObjectAttribute()
+     * @generated
+     */
+    EClass OBJECT_ATTRIBUTE = eINSTANCE.getObjectAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Object</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OBJECT_ATTRIBUTE__OBJECT = eINSTANCE.getObjectAttribute_Object();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OBJECT_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getObjectAttribute_Attribute();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordListImpl <em>Word List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordListImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getWordList()
+     * @generated
+     */
+    EClass WORD_LIST = eINSTANCE.getWordList();
+
+    /**
+     * The meta object literal for the '<em><b>Words</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORD_LIST__WORDS = eINSTANCE.getWordList_Words();
+
+    /**
+     * The meta object literal for the '<em><b>Sep</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WORD_LIST__SEP = eINSTANCE.getWordList_Sep();
+
+    /**
+     * The meta object literal for the '<em><b>Word</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference WORD_LIST__WORD = eINSTANCE.getWordList_Word();
+
+    /**
+     * The meta object literal for the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeListImpl <em>Attribute List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.AttributeListImpl
+     * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.TraceryPPPackageImpl#getAttributeList()
+     * @generated
+     */
+    EClass ATTRIBUTE_LIST = eINSTANCE.getAttributeList();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_LIST__ATTRIBUTES = eINSTANCE.getAttributeList_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Sep</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ATTRIBUTE_LIST__SEP = eINSTANCE.getAttributeList_Sep();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ATTRIBUTE_LIST__ATTRIBUTE = eINSTANCE.getAttributeList_Attribute();
 
   }
 

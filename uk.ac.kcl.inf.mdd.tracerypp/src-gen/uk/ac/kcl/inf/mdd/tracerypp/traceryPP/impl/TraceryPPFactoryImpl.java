@@ -68,14 +68,17 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
       case TraceryPPPackage.MODEL: return createModel();
       case TraceryPPPackage.STATEMENT: return createStatement();
       case TraceryPPPackage.DEFINITION: return createDefinition();
-      case TraceryPPPackage.RULE: return createRule();
       case TraceryPPPackage.STORY: return createStory();
       case TraceryPPPackage.LIST_DEFINITION: return createListDefinition();
-      case TraceryPPPackage.SENTENCE_RULE: return createSentenceRule();
-      case TraceryPPPackage.VARIABLE: return createVariable();
-      case TraceryPPPackage.LIST: return createList();
-      case TraceryPPPackage.STORY_VARIABLE: return createStoryVariable();
+      case TraceryPPPackage.OBJECT_DEFINITION: return createObjectDefinition();
       case TraceryPPPackage.WORD: return createWord();
+      case TraceryPPPackage.VARIABLE: return createVariable();
+      case TraceryPPPackage.STORY_VARIABLE: return createStoryVariable();
+      case TraceryPPPackage.ATTRIBUTE: return createAttribute();
+      case TraceryPPPackage.ADVANCED_ATTRIBUTE: return createAdvancedAttribute();
+      case TraceryPPPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
+      case TraceryPPPackage.WORD_LIST: return createWordList();
+      case TraceryPPPackage.ATTRIBUTE_LIST: return createAttributeList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -123,18 +126,6 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public Rule createRule()
-  {
-    RuleImpl rule = new RuleImpl();
-    return rule;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Story createStory()
   {
     StoryImpl story = new StoryImpl();
@@ -159,10 +150,22 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public SentenceRule createSentenceRule()
+  public ObjectDefinition createObjectDefinition()
   {
-    SentenceRuleImpl sentenceRule = new SentenceRuleImpl();
-    return sentenceRule;
+    ObjectDefinitionImpl objectDefinition = new ObjectDefinitionImpl();
+    return objectDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Word createWord()
+  {
+    WordImpl word = new WordImpl();
+    return word;
   }
 
   /**
@@ -183,18 +186,6 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public List createList()
-  {
-    ListImpl list = new ListImpl();
-    return list;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public StoryVariable createStoryVariable()
   {
     StoryVariableImpl storyVariable = new StoryVariableImpl();
@@ -207,10 +198,58 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public Word createWord()
+  public Attribute createAttribute()
   {
-    WordImpl word = new WordImpl();
-    return word;
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AdvancedAttribute createAdvancedAttribute()
+  {
+    AdvancedAttributeImpl advancedAttribute = new AdvancedAttributeImpl();
+    return advancedAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ObjectAttribute createObjectAttribute()
+  {
+    ObjectAttributeImpl objectAttribute = new ObjectAttributeImpl();
+    return objectAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WordList createWordList()
+  {
+    WordListImpl wordList = new WordListImpl();
+    return wordList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AttributeList createAttributeList()
+  {
+    AttributeListImpl attributeList = new AttributeListImpl();
+    return attributeList;
   }
 
   /**

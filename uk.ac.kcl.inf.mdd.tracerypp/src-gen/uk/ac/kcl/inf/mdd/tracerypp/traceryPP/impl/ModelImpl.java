@@ -5,6 +5,7 @@ package uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Statement;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
 
 /**
@@ -30,6 +33,7 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ModelImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ModelImpl#getStory <em>Story</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +49,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<Statement> statements;
+
+  /**
+   * The cached value of the '{@link #getStory() <em>Story</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStory()
+   * @generated
+   * @ordered
+   */
+  protected Story story;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,12 +102,64 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public Story getStory()
+  {
+    return story;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStory(Story newStory, NotificationChain msgs)
+  {
+    Story oldStory = story;
+    story = newStory;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryPPPackage.MODEL__STORY, oldStory, newStory);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStory(Story newStory)
+  {
+    if (newStory != story)
+    {
+      NotificationChain msgs = null;
+      if (story != null)
+        msgs = ((InternalEObject)story).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryPPPackage.MODEL__STORY, null, msgs);
+      if (newStory != null)
+        msgs = ((InternalEObject)newStory).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryPPPackage.MODEL__STORY, null, msgs);
+      msgs = basicSetStory(newStory, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.MODEL__STORY, newStory, newStory));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case TraceryPPPackage.MODEL__STATEMENTS:
         return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+      case TraceryPPPackage.MODEL__STORY:
+        return basicSetStory(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -110,6 +176,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case TraceryPPPackage.MODEL__STATEMENTS:
         return getStatements();
+      case TraceryPPPackage.MODEL__STORY:
+        return getStory();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,6 +197,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getStatements().clear();
         getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
+      case TraceryPPPackage.MODEL__STORY:
+        setStory((Story)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -146,6 +217,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case TraceryPPPackage.MODEL__STATEMENTS:
         getStatements().clear();
         return;
+      case TraceryPPPackage.MODEL__STORY:
+        setStory((Story)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -162,6 +236,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case TraceryPPPackage.MODEL__STATEMENTS:
         return statements != null && !statements.isEmpty();
+      case TraceryPPPackage.MODEL__STORY:
+        return story != null;
     }
     return super.eIsSet(featureID);
   }

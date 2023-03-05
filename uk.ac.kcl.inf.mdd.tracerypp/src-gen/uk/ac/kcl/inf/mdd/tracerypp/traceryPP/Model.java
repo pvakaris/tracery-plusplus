@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model#getStatements <em>Statements</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model#getStory <em>Story</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getModel()
@@ -36,5 +37,27 @@ public interface Model extends EObject
    * @generated
    */
   EList<Statement> getStatements();
+
+  /**
+   * Returns the value of the '<em><b>Story</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Story</em>' containment reference.
+   * @see #setStory(Story)
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getModel_Story()
+   * @model containment="true"
+   * @generated
+   */
+  Story getStory();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model#getStory <em>Story</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Story</em>' containment reference.
+   * @see #getStory()
+   * @generated
+   */
+  void setStory(Story value);
 
 } // Model
