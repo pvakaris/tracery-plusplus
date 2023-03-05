@@ -8,6 +8,8 @@ Thus, we aspire to take this a step further by introducing a more sophisticated 
 
 This language enables users to define the behaviour of their social media posts using a higher level of abstraction and a more straightforward syntax. With the implementation of Tracery++, people will have greater flexibility and autonomy in content generation, regardless of their technical background.
 
+The code written in tpp modelling language will be translated into Tracery Javascript code using automated code generation tools. In addition, the modelling language also includes a test suite that can check if the .tpp files are well formed and do  not contain any inaccuracies.
+
 ## Example
 
 **File extension is .tpp**
@@ -48,7 +50,7 @@ The story looks like this:
 ```
 ## Modifiers
 
-Each variable can be attached a modifier:
+Each variable can be attached one or more modifiers:
 
 - .a - adds a/an in front of the word
 - .capitalize - capitalizes the first letter
