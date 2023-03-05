@@ -42,6 +42,15 @@ public interface TraceryPPFactory extends EFactory
   Statement createStatement();
 
   /**
+   * Returns a new object of class '<em>Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Definition</em>'.
+   * @generated
+   */
+  Definition createDefinition();
+
+  /**
    * Returns a new object of class '<em>Rule</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +58,33 @@ public interface TraceryPPFactory extends EFactory
    * @generated
    */
   Rule createRule();
+
+  /**
+   * Returns a new object of class '<em>Story</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Story</em>'.
+   * @generated
+   */
+  Story createStory();
+
+  /**
+   * Returns a new object of class '<em>List Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Definition</em>'.
+   * @generated
+   */
+  ListDefinition createListDefinition();
+
+  /**
+   * Returns a new object of class '<em>Sentence Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sentence Rule</em>'.
+   * @generated
+   */
+  SentenceRule createSentenceRule();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.
@@ -67,6 +103,15 @@ public interface TraceryPPFactory extends EFactory
    * @generated
    */
   List createList();
+
+  /**
+   * Returns a new object of class '<em>Story Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Story Variable</em>'.
+   * @generated
+   */
+  StoryVariable createStoryVariable();
 
   /**
    * Returns a new object of class '<em>Word</em>'.

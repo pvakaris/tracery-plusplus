@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getWord()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Word extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Word</b></em>' attribute.
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Word</em>' attribute.
-   * @see #setWord(String)
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getWord_Word()
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getWord_Value()
    * @model
    * @generated
    */
-  String getWord();
+  String getValue();
 
   /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getWord <em>Word</em>}' attribute.
+   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Word</em>' attribute.
-   * @see #getWord()
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
    * @generated
    */
-  void setWord(String value);
+  void setValue(String value);
 
 } // Word

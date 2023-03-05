@@ -21,7 +21,7 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.WordImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +29,24 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
 public class WordImpl extends MinimalEObjectImpl.Container implements Word
 {
   /**
-   * The default value of the '{@link #getWord() <em>Word</em>}' attribute.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWord()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String WORD_EDEFAULT = null;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getWord() <em>Word</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWord()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected String word = WORD_EDEFAULT;
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +75,9 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
    * @generated
    */
   @Override
-  public String getWord()
+  public String getValue()
   {
-    return word;
+    return value;
   }
 
   /**
@@ -86,12 +86,12 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
    * @generated
    */
   @Override
-  public void setWord(String newWord)
+  public void setValue(String newValue)
   {
-    String oldWord = word;
-    word = newWord;
+    String oldValue = value;
+    value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.WORD__WORD, oldWord, word));
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.WORD__VALUE, oldValue, value));
   }
 
   /**
@@ -104,8 +104,8 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
   {
     switch (featureID)
     {
-      case TraceryPPPackage.WORD__WORD:
-        return getWord();
+      case TraceryPPPackage.WORD__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
   {
     switch (featureID)
     {
-      case TraceryPPPackage.WORD__WORD:
-        setWord((String)newValue);
+      case TraceryPPPackage.WORD__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
   {
     switch (featureID)
     {
-      case TraceryPPPackage.WORD__WORD:
-        setWord(WORD_EDEFAULT);
+      case TraceryPPPackage.WORD__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
   {
     switch (featureID)
     {
-      case TraceryPPPackage.WORD__WORD:
-        return WORD_EDEFAULT == null ? word != null : !WORD_EDEFAULT.equals(word);
+      case TraceryPPPackage.WORD__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +171,8 @@ public class WordImpl extends MinimalEObjectImpl.Container implements Word
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (word: ");
-    result.append(word);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

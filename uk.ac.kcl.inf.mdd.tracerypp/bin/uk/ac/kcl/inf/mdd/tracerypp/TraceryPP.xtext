@@ -1,33 +1,102 @@
 grammar uk.ac.kcl.inf.mdd.tracerypp.TraceryPP with org.eclipse.xtext.common.Terminals
 
-
 generate traceryPP "http://www.ac.uk/kcl/inf/mdd/tracerypp/TraceryPP"
+
+// Version 1.0
 
 Model:
 	statements += Statement*
 ;
 	
 Statement:
-	Rule
+	Definition |
+	Rule |
+	Story
+;
+
+Definition:
+	ListDefinition
 ;
 
 Rule:
-	start_symbol = Variable  " can have values: " list = List
+	SentenceRule
 ;
 
+/*
+	Used to define what the story should look like.
+	There must be only one story in the model for now.
+ */
+Story:
+	"The story looks like this:"
+	story += ( Word | StoryVariable )*
+;
+
+/*
+	Define a variable and give that variable a list of values it can take.
+	Examples of use:
+		colors can have values: green, blue, orange
+		fruit can be: banana or apple or pear
+ */
+ListDefinition:
+	start_symbol = Variable  (" can have values: " | " can be: ") list = List
+;
+
+SentenceRule:
+	start_symbol = Variable
+;
+
+
+/*
+	Basic building blocks
+ */
+
 Variable:
-	title = ID
+	value = ID
 ;
 
 List:
-	word = Word (sep=Separator word = Word)*
+	words += Word (sep=Separator word = Word)*
 ;
 
 Separator:
 	"," | "or"
 ;
 
-Word:
-	word = STRING
+StoryVariable:
+	value = ID modifiers += (Modifier)*
 ;
+
+Modifier:
+	CapitalizationModifier |
+	FullCapitalizationModifier |
+	PluralityModifier |
+	ArticleModifier |
+	PastTenseModifier
+;
+
+CapitalizationModifier:
+	".capitalize"
+;
+
+FullCapitalizationModifier:
+	".CAPITALIZE"
+;
+
+PluralityModifier:
+	".s"
+;
+
+ArticleModifier:
+	".a"
+;
+
+PastTenseModifier:
+	".ed"
+;
+
+Word:
+	value = STRING
+;
+
+
 

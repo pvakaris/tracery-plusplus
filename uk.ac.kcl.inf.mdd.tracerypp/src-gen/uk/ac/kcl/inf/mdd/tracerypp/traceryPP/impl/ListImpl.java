@@ -3,14 +3,21 @@
  */
 package uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage;
@@ -24,8 +31,9 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getWords <em>Words</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getSep <em>Sep</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.impl.ListImpl#getWord <em>Word</em>}</li>
  * </ul>
  *
  * @generated
@@ -33,14 +41,14 @@ import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word;
 public class ListImpl extends MinimalEObjectImpl.Container implements List
 {
   /**
-   * The cached value of the '{@link #getWord() <em>Word</em>}' containment reference.
+   * The cached value of the '{@link #getWords() <em>Words</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getWord()
+   * @see #getWords()
    * @generated
    * @ordered
    */
-  protected Word word;
+  protected EList<Word> words;
 
   /**
    * The default value of the '{@link #getSep() <em>Sep</em>}' attribute.
@@ -63,6 +71,16 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   protected String sep = SEP_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getWord() <em>Word</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getWord()
+   * @generated
+   * @ordered
+   */
+  protected Word word;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -81,6 +99,46 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   protected EClass eStaticClass()
   {
     return TraceryPPPackage.Literals.LIST;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Word> getWords()
+  {
+    if (words == null)
+    {
+      words = new EObjectContainmentEList<Word>(Word.class, this, TraceryPPPackage.LIST__WORDS);
+    }
+    return words;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getSep()
+  {
+    return sep;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSep(String newSep)
+  {
+    String oldSep = sep;
+    sep = newSep;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.LIST__SEP, oldSep, sep));
   }
 
   /**
@@ -139,35 +197,12 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * @generated
    */
   @Override
-  public String getSep()
-  {
-    return sep;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setSep(String newSep)
-  {
-    String oldSep = sep;
-    sep = newSep;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPPPackage.LIST__SEP, oldSep, sep));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case TraceryPPPackage.LIST__WORDS:
+        return ((InternalEList<?>)getWords()).basicRemove(otherEnd, msgs);
       case TraceryPPPackage.LIST__WORD:
         return basicSetWord(null, msgs);
     }
@@ -184,10 +219,12 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case TraceryPPPackage.LIST__WORD:
-        return getWord();
+      case TraceryPPPackage.LIST__WORDS:
+        return getWords();
       case TraceryPPPackage.LIST__SEP:
         return getSep();
+      case TraceryPPPackage.LIST__WORD:
+        return getWord();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,16 +234,21 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case TraceryPPPackage.LIST__WORD:
-        setWord((Word)newValue);
+      case TraceryPPPackage.LIST__WORDS:
+        getWords().clear();
+        getWords().addAll((Collection<? extends Word>)newValue);
         return;
       case TraceryPPPackage.LIST__SEP:
         setSep((String)newValue);
+        return;
+      case TraceryPPPackage.LIST__WORD:
+        setWord((Word)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,11 +264,14 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case TraceryPPPackage.LIST__WORD:
-        setWord((Word)null);
+      case TraceryPPPackage.LIST__WORDS:
+        getWords().clear();
         return;
       case TraceryPPPackage.LIST__SEP:
         setSep(SEP_EDEFAULT);
+        return;
+      case TraceryPPPackage.LIST__WORD:
+        setWord((Word)null);
         return;
     }
     super.eUnset(featureID);
@@ -242,10 +287,12 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case TraceryPPPackage.LIST__WORD:
-        return word != null;
+      case TraceryPPPackage.LIST__WORDS:
+        return words != null && !words.isEmpty();
       case TraceryPPPackage.LIST__SEP:
         return SEP_EDEFAULT == null ? sep != null : !SEP_EDEFAULT.equals(sep);
+      case TraceryPPPackage.LIST__WORD:
+        return word != null;
     }
     return super.eIsSet(featureID);
   }

@@ -7,19 +7,36 @@
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//Statement">
+  <eClassifiers xsi:type="ecore:EClass" name="Definition" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Story" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="story" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListDefinition" eSuperTypes="#//Definition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="start_symbol" eType="#//Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//List" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SentenceRule" eSuperTypes="#//Rule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start_symbol" eType="#//Variable"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="List">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="word" eType="#//Word" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"
+        eType="#//Word" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sep" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="word" eType="#//Word" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StoryVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Word">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="word" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -3,6 +3,8 @@
  */
 package uk.ac.kcl.inf.mdd.tracerypp.traceryPP;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWords <em>Words</em>}</li>
  *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getSep <em>Sep</em>}</li>
+ *   <li>{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}</li>
  * </ul>
  *
  * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList()
@@ -25,26 +28,16 @@ import org.eclipse.emf.ecore.EObject;
 public interface List extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Word</b></em>' containment reference.
+   * Returns the value of the '<em><b>Words</b></em>' containment reference list.
+   * The list contents are of type {@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Word}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Word</em>' containment reference.
-   * @see #setWord(Word)
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList_Word()
+   * @return the value of the '<em>Words</em>' containment reference list.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList_Words()
    * @model containment="true"
    * @generated
    */
-  Word getWord();
-
-  /**
-   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Word</em>' containment reference.
-   * @see #getWord()
-   * @generated
-   */
-  void setWord(Word value);
+  EList<Word> getWords();
 
   /**
    * Returns the value of the '<em><b>Sep</b></em>' attribute.
@@ -67,5 +60,27 @@ public interface List extends EObject
    * @generated
    */
   void setSep(String value);
+
+  /**
+   * Returns the value of the '<em><b>Word</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Word</em>' containment reference.
+   * @see #setWord(Word)
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.TraceryPPPackage#getList_Word()
+   * @model containment="true"
+   * @generated
+   */
+  Word getWord();
+
+  /**
+   * Sets the value of the '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.List#getWord <em>Word</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Word</em>' containment reference.
+   * @see #getWord()
+   * @generated
+   */
+  void setWord(Word value);
 
 } // List

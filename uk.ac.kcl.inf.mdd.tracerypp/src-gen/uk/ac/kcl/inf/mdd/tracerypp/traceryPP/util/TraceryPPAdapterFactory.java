@@ -86,9 +86,29 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
+      public Adapter caseDefinition(Definition object)
+      {
+        return createDefinitionAdapter();
+      }
+      @Override
       public Adapter caseRule(Rule object)
       {
         return createRuleAdapter();
+      }
+      @Override
+      public Adapter caseStory(Story object)
+      {
+        return createStoryAdapter();
+      }
+      @Override
+      public Adapter caseListDefinition(ListDefinition object)
+      {
+        return createListDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseSentenceRule(SentenceRule object)
+      {
+        return createSentenceRuleAdapter();
       }
       @Override
       public Adapter caseVariable(Variable object)
@@ -99,6 +119,11 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
       public Adapter caseList(List object)
       {
         return createListAdapter();
+      }
+      @Override
+      public Adapter caseStoryVariable(StoryVariable object)
+      {
+        return createStoryVariableAdapter();
       }
       @Override
       public Adapter caseWord(Word object)
@@ -158,6 +183,21 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Definition <em>Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Definition
+   * @generated
+   */
+  public Adapter createDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Rule <em>Rule</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -168,6 +208,51 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story <em>Story</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story
+   * @generated
+   */
+  public Adapter createStoryAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDefinition <em>List Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDefinition
+   * @generated
+   */
+  public Adapter createListDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule <em>Sentence Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.SentenceRule
+   * @generated
+   */
+  public Adapter createSentenceRuleAdapter()
   {
     return null;
   }
@@ -198,6 +283,21 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StoryVariable <em>Story Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.StoryVariable
+   * @generated
+   */
+  public Adapter createStoryVariableAdapter()
   {
     return null;
   }

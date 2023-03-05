@@ -67,9 +67,14 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
     {
       case TraceryPPPackage.MODEL: return createModel();
       case TraceryPPPackage.STATEMENT: return createStatement();
+      case TraceryPPPackage.DEFINITION: return createDefinition();
       case TraceryPPPackage.RULE: return createRule();
+      case TraceryPPPackage.STORY: return createStory();
+      case TraceryPPPackage.LIST_DEFINITION: return createListDefinition();
+      case TraceryPPPackage.SENTENCE_RULE: return createSentenceRule();
       case TraceryPPPackage.VARIABLE: return createVariable();
       case TraceryPPPackage.LIST: return createList();
+      case TraceryPPPackage.STORY_VARIABLE: return createStoryVariable();
       case TraceryPPPackage.WORD: return createWord();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -106,10 +111,58 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
+  public Definition createDefinition()
+  {
+    DefinitionImpl definition = new DefinitionImpl();
+    return definition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Rule createRule()
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Story createStory()
+  {
+    StoryImpl story = new StoryImpl();
+    return story;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ListDefinition createListDefinition()
+  {
+    ListDefinitionImpl listDefinition = new ListDefinitionImpl();
+    return listDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SentenceRule createSentenceRule()
+  {
+    SentenceRuleImpl sentenceRule = new SentenceRuleImpl();
+    return sentenceRule;
   }
 
   /**
@@ -134,6 +187,18 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
   {
     ListImpl list = new ListImpl();
     return list;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StoryVariable createStoryVariable()
+  {
+    StoryVariableImpl storyVariable = new StoryVariableImpl();
+    return storyVariable;
   }
 
   /**
