@@ -35,18 +35,20 @@ It has these attributes: name="United Kingdom", capital="London"
 
 The story looks like this:
 
-	// Blue was the sky and Bob was walking down the street.
 	color.capitalize " was the sky and " name.capitalize " was walking down the " place "."
-	
-	// Yesterday in the morning I resigned from my position at JPMorgan.
 	"Yesterday in the " time_of_day " I " action.ed " from my position at " firm "."
-	
-	// A banana was lying on the ground.
 	fruit.a " was lying on the ground."
-	
-	// John was slowly walking on the streets of London, looking at the beautiful old architecture.
 	hero.name " was slowly walking on the streets of " country.capital ", looking at the beautiful old architecture."
 	
+```
+
+The text created by the modelling language would looks something like this:
+
+```
+Blue was the sky and Bob was walking down the street.
+Yesterday in the morning I resigned from my position at JPMorgan.
+A banana was lying on the ground.
+John was slowly walking on the streets of London, looking at the beautiful old architecture.
 ```
 ## Modifiers
 
