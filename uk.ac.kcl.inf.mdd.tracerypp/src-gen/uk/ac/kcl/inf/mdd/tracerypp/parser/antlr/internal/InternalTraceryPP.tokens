@@ -1,6 +1,3 @@
-' can be: '=13
-' can have values: '=12
-' is an object.'=14
 ','=18
 '.'=17
 '.CAPITALIZE'=21
@@ -9,15 +6,18 @@
 '.ed'=24
 '.s'=22
 '='=16
-'It has these attributes: '=15
-'The story looks like this:'=11
+'It has these attributes:'=15
+'The story:'=11
+'can be:'=13
+'can have values:'=12
+'is an object.'=14
 'or'=19
 RULE_ANY_OTHER=10
-RULE_ID=5
+RULE_ID=4
 RULE_INT=6
 RULE_ML_COMMENT=7
 RULE_SL_COMMENT=8
-RULE_STRING=4
+RULE_STRING=5
 RULE_WS=9
 T__11=11
 T__12=12

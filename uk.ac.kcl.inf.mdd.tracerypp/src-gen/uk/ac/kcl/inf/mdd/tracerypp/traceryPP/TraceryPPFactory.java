@@ -42,13 +42,13 @@ public interface TraceryPPFactory extends EFactory
   Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>Definition</em>'.
+   * Returns a new object of class '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Definition</em>'.
+   * @return a new object of class '<em>Declaration</em>'.
    * @generated
    */
-  Definition createDefinition();
+  Declaration createDeclaration();
 
   /**
    * Returns a new object of class '<em>Story</em>'.
@@ -60,22 +60,22 @@ public interface TraceryPPFactory extends EFactory
   Story createStory();
 
   /**
-   * Returns a new object of class '<em>List Definition</em>'.
+   * Returns a new object of class '<em>List Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Definition</em>'.
+   * @return a new object of class '<em>List Declaration</em>'.
    * @generated
    */
-  ListDefinition createListDefinition();
+  ListDeclaration createListDeclaration();
 
   /**
-   * Returns a new object of class '<em>Object Definition</em>'.
+   * Returns a new object of class '<em>Object Declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Object Definition</em>'.
+   * @return a new object of class '<em>Object Declaration</em>'.
    * @generated
    */
-  ObjectDefinition createObjectDefinition();
+  ObjectDeclaration createObjectDeclaration();
 
   /**
    * Returns a new object of class '<em>Word</em>'.
@@ -112,15 +112,6 @@ public interface TraceryPPFactory extends EFactory
    * @generated
    */
   Attribute createAttribute();
-
-  /**
-   * Returns a new object of class '<em>Advanced Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Advanced Attribute</em>'.
-   * @generated
-   */
-  AdvancedAttribute createAdvancedAttribute();
 
   /**
    * Returns a new object of class '<em>Object Attribute</em>'.

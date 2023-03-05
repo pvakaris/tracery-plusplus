@@ -21,19 +21,35 @@ import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryPPGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ListDefinition_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0;
+	protected AbstractElementAlias match_AttributeList_CommaKeyword_1_0_p;
+	protected AbstractElementAlias match_ListDeclaration_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0;
+	protected AbstractElementAlias match_WordList_SeparatorParserRuleCall_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryPPGrammarAccess) access;
-		match_ListDefinition_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDefinitionAccess().getCanBeKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getListDefinitionAccess().getCanHaveValuesKeyword_1_0()));
+		match_AttributeList_CommaKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getAttributeListAccess().getCommaKeyword_1_0());
+		match_ListDeclaration_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanBeKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanHaveValuesKeyword_1_0()));
+		match_WordList_SeparatorParserRuleCall_1_0_p = new TokenAlias(true, false, grammarAccess.getWordListAccess().getSeparatorParserRuleCall_1_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getSeparatorRule())
+			return getSeparatorToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * Separator:
+	 * 	"," | "or"
+	 * ;
+	 */
+	protected String getSeparatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ",";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -41,8 +57,12 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ListDefinition_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0.equals(syntax))
-				emit_ListDefinition_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_AttributeList_CommaKeyword_1_0_p.equals(syntax))
+				emit_AttributeList_CommaKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ListDeclaration_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0.equals(syntax))
+				emit_ListDeclaration_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_WordList_SeparatorParserRuleCall_1_0_p.equals(syntax))
+				emit_WordList_SeparatorParserRuleCall_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -50,14 +70,42 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ' can have values: ' | ' can be: '
+	 *     ','+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     attributes+=Attribute (ambiguity) attributes+=Attribute
+	 
+	 * </pre>
+	 */
+	protected void emit_AttributeList_CommaKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'can have values:' | 'can be:'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     start_symbol=Variable (ambiguity) list=WordList
 	 
 	 * </pre>
 	 */
-	protected void emit_ListDefinition_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ListDeclaration_CanBeKeyword_1_1_or_CanHaveValuesKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     Separator+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     words+=Word (ambiguity) words+=Word
+	 
+	 * </pre>
+	 */
+	protected void emit_WordList_SeparatorParserRuleCall_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

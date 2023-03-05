@@ -87,11 +87,11 @@ public class TraceryPPSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPPPackage.DEFINITION:
+      case TraceryPPPackage.DECLARATION:
       {
-        Definition definition = (Definition)theEObject;
-        T result = caseDefinition(definition);
-        if (result == null) result = caseStatement(definition);
+        Declaration declaration = (Declaration)theEObject;
+        T result = caseDeclaration(declaration);
+        if (result == null) result = caseStatement(declaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -102,21 +102,21 @@ public class TraceryPPSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPPPackage.LIST_DEFINITION:
+      case TraceryPPPackage.LIST_DECLARATION:
       {
-        ListDefinition listDefinition = (ListDefinition)theEObject;
-        T result = caseListDefinition(listDefinition);
-        if (result == null) result = caseDefinition(listDefinition);
-        if (result == null) result = caseStatement(listDefinition);
+        ListDeclaration listDeclaration = (ListDeclaration)theEObject;
+        T result = caseListDeclaration(listDeclaration);
+        if (result == null) result = caseDeclaration(listDeclaration);
+        if (result == null) result = caseStatement(listDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPPPackage.OBJECT_DEFINITION:
+      case TraceryPPPackage.OBJECT_DECLARATION:
       {
-        ObjectDefinition objectDefinition = (ObjectDefinition)theEObject;
-        T result = caseObjectDefinition(objectDefinition);
-        if (result == null) result = caseDefinition(objectDefinition);
-        if (result == null) result = caseStatement(objectDefinition);
+        ObjectDeclaration objectDeclaration = (ObjectDeclaration)theEObject;
+        T result = caseObjectDeclaration(objectDeclaration);
+        if (result == null) result = caseDeclaration(objectDeclaration);
+        if (result == null) result = caseStatement(objectDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,13 +145,6 @@ public class TraceryPPSwitch<T> extends Switch<T>
       {
         Attribute attribute = (Attribute)theEObject;
         T result = caseAttribute(attribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TraceryPPPackage.ADVANCED_ATTRIBUTE:
-      {
-        AdvancedAttribute advancedAttribute = (AdvancedAttribute)theEObject;
-        T result = caseAdvancedAttribute(advancedAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -213,17 +206,17 @@ public class TraceryPPSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefinition(Definition object)
+  public T caseDeclaration(Declaration object)
   {
     return null;
   }
@@ -245,33 +238,33 @@ public class TraceryPPSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListDefinition(ListDefinition object)
+  public T caseListDeclaration(ListDeclaration object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Object Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Object Declaration</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Object Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Object Declaration</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseObjectDefinition(ObjectDefinition object)
+  public T caseObjectDeclaration(ObjectDeclaration object)
   {
     return null;
   }
@@ -336,22 +329,6 @@ public class TraceryPPSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttribute(Attribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Advanced Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Advanced Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAdvancedAttribute(AdvancedAttribute object)
   {
     return null;
   }

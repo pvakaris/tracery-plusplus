@@ -11,48 +11,41 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Model/story"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Statement"/>
-    <genClasses ecoreClass="TraceryPP.ecore#//Definition"/>
+    <genClasses ecoreClass="TraceryPP.ecore#//Declaration"/>
     <genClasses ecoreClass="TraceryPP.ecore#//Story">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Story/story"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPP.ecore#//ListDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDefinition/start_symbol"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDefinition/list"/>
+    <genClasses ecoreClass="TraceryPP.ecore#//ListDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDeclaration/start_symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDeclaration/list"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPP.ecore#//ObjectDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectDefinition/object"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectDefinition/attributes"/>
+    <genClasses ecoreClass="TraceryPP.ecore#//ObjectDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//ObjectDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectDeclaration/attributes"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Word">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Word/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Variable/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Variable/name"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//StoryVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//StoryVariable/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//StoryVariable/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//StoryVariable/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Attribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Attribute/definition"/>
-    </genClasses>
-    <genClasses ecoreClass="TraceryPP.ecore#//AdvancedAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//AdvancedAttribute/definition"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//AdvancedAttribute/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Attribute/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//ObjectAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//ObjectAttribute/object"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectAttribute/object"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//ObjectAttribute/attribute"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//WordList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//WordList/words"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//WordList/sep"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//WordList/word"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//AttributeList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//AttributeList/attributes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//AttributeList/sep"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//AttributeList/attribute"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

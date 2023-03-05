@@ -67,15 +67,14 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
     {
       case TraceryPPPackage.MODEL: return createModel();
       case TraceryPPPackage.STATEMENT: return createStatement();
-      case TraceryPPPackage.DEFINITION: return createDefinition();
+      case TraceryPPPackage.DECLARATION: return createDeclaration();
       case TraceryPPPackage.STORY: return createStory();
-      case TraceryPPPackage.LIST_DEFINITION: return createListDefinition();
-      case TraceryPPPackage.OBJECT_DEFINITION: return createObjectDefinition();
+      case TraceryPPPackage.LIST_DECLARATION: return createListDeclaration();
+      case TraceryPPPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case TraceryPPPackage.WORD: return createWord();
       case TraceryPPPackage.VARIABLE: return createVariable();
       case TraceryPPPackage.STORY_VARIABLE: return createStoryVariable();
       case TraceryPPPackage.ATTRIBUTE: return createAttribute();
-      case TraceryPPPackage.ADVANCED_ATTRIBUTE: return createAdvancedAttribute();
       case TraceryPPPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
       case TraceryPPPackage.WORD_LIST: return createWordList();
       case TraceryPPPackage.ATTRIBUTE_LIST: return createAttributeList();
@@ -114,10 +113,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public Definition createDefinition()
+  public Declaration createDeclaration()
   {
-    DefinitionImpl definition = new DefinitionImpl();
-    return definition;
+    DeclarationImpl declaration = new DeclarationImpl();
+    return declaration;
   }
 
   /**
@@ -138,10 +137,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public ListDefinition createListDefinition()
+  public ListDeclaration createListDeclaration()
   {
-    ListDefinitionImpl listDefinition = new ListDefinitionImpl();
-    return listDefinition;
+    ListDeclarationImpl listDeclaration = new ListDeclarationImpl();
+    return listDeclaration;
   }
 
   /**
@@ -150,10 +149,10 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
    * @generated
    */
   @Override
-  public ObjectDefinition createObjectDefinition()
+  public ObjectDeclaration createObjectDeclaration()
   {
-    ObjectDefinitionImpl objectDefinition = new ObjectDefinitionImpl();
-    return objectDefinition;
+    ObjectDeclarationImpl objectDeclaration = new ObjectDeclarationImpl();
+    return objectDeclaration;
   }
 
   /**
@@ -202,18 +201,6 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AdvancedAttribute createAdvancedAttribute()
-  {
-    AdvancedAttributeImpl advancedAttribute = new AdvancedAttributeImpl();
-    return advancedAttribute;
   }
 
   /**

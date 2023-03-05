@@ -10,12 +10,12 @@ Model:
 ;
 	
 Statement:
-	Definition
+	Declaration
 ;
 
-Definition:
-	ListDefinition |
-	ObjectDefinition
+Declaration:
+	ListDeclaration |
+	ObjectDeclaration
 ;
 
 /*
@@ -23,7 +23,7 @@ Definition:
 	There must be only one story in the model for now.
  */
 Story:
-	"The story looks like this:"
+	{Story} "The story:"
 	story += ( Word | StoryVariable | ObjectAttribute )*
 ;
 
@@ -33,13 +33,13 @@ Story:
 		colors can have values: green, blue, orange
 		fruit can be: banana or apple or pear
  */
-ListDefinition:
-	start_symbol = Variable  (" can have values: " | " can be: ") list = WordList
+ListDeclaration:
+	start_symbol = Variable  ("can have values:" | "can be:") list = WordList
 ;
 
-ObjectDefinition:
-	object = Variable " is an object."
-	"It has these attributes: " attributes = AttributeList
+ObjectDeclaration:
+	name = ID "is an object."
+	"It has these attributes:" attributes = AttributeList
 ;
 
 /*
@@ -51,31 +51,29 @@ Word:
 ;
 
 Variable:
-	value = ID
+	name = ID
 ;
 
 StoryVariable:
-	value = ID modifiers += (Modifier)*
+	variable = [Variable]
+	modifiers += Modifier*
 ;
 
 Attribute:
-	definition = ID
-;
-
-AdvancedAttribute:
-	definition = ID "=" value = STRING
+	name = ID |
+	name = ID "=" value = STRING
 ;
 
 ObjectAttribute:
-	object = ID "." attribute = ID
+	object = [ObjectDeclaration] "." attribute = ID
 ;
 
 WordList:
-	words += Word (sep=Separator word = Word)*
+	words += Word (Separator + words += Word)*
 ;
 
 AttributeList:
-	attributes += (Attribute | AdvancedAttribute) (sep=Separator attribute = (Attribute | AdvancedAttribute))*
+	attributes += Attribute (',' + attributes += Attribute)*
 ;
 
 Separator:

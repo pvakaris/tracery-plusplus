@@ -86,9 +86,9 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
-      public Adapter caseDefinition(Definition object)
+      public Adapter caseDeclaration(Declaration object)
       {
-        return createDefinitionAdapter();
+        return createDeclarationAdapter();
       }
       @Override
       public Adapter caseStory(Story object)
@@ -96,14 +96,14 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createStoryAdapter();
       }
       @Override
-      public Adapter caseListDefinition(ListDefinition object)
+      public Adapter caseListDeclaration(ListDeclaration object)
       {
-        return createListDefinitionAdapter();
+        return createListDeclarationAdapter();
       }
       @Override
-      public Adapter caseObjectDefinition(ObjectDefinition object)
+      public Adapter caseObjectDeclaration(ObjectDeclaration object)
       {
-        return createObjectDefinitionAdapter();
+        return createObjectDeclarationAdapter();
       }
       @Override
       public Adapter caseWord(Word object)
@@ -124,11 +124,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAttribute(Attribute object)
       {
         return createAttributeAdapter();
-      }
-      @Override
-      public Adapter caseAdvancedAttribute(AdvancedAttribute object)
-      {
-        return createAdvancedAttributeAdapter();
       }
       @Override
       public Adapter caseObjectAttribute(ObjectAttribute object)
@@ -198,16 +193,16 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Definition <em>Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Declaration <em>Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Definition
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Declaration
    * @generated
    */
-  public Adapter createDefinitionAdapter()
+  public Adapter createDeclarationAdapter()
   {
     return null;
   }
@@ -228,31 +223,31 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDefinition <em>List Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDeclaration <em>List Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDefinition
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDeclaration
    * @generated
    */
-  public Adapter createListDefinitionAdapter()
+  public Adapter createListDeclarationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition <em>Object Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDeclaration <em>Object Declaration</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDefinition
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectDeclaration
    * @generated
    */
-  public Adapter createObjectDefinitionAdapter()
+  public Adapter createObjectDeclarationAdapter()
   {
     return null;
   }
@@ -313,21 +308,6 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute <em>Advanced Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AdvancedAttribute
-   * @generated
-   */
-  public Adapter createAdvancedAttributeAdapter()
   {
     return null;
   }

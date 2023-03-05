@@ -31,19 +31,18 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryPPGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
-			builder.put(grammarAccess.getStoryAccess().getStoryAlternatives_1_0(), "rule__Story__StoryAlternatives_1_0");
-			builder.put(grammarAccess.getListDefinitionAccess().getAlternatives_1(), "rule__ListDefinition__Alternatives_1");
-			builder.put(grammarAccess.getAttributeListAccess().getAttributesAlternatives_0_0(), "rule__AttributeList__AttributesAlternatives_0_0");
-			builder.put(grammarAccess.getAttributeListAccess().getAttributeAlternatives_1_1_0(), "rule__AttributeList__AttributeAlternatives_1_1_0");
+			builder.put(grammarAccess.getDeclarationAccess().getAlternatives(), "rule__Declaration__Alternatives");
+			builder.put(grammarAccess.getStoryAccess().getStoryAlternatives_2_0(), "rule__Story__StoryAlternatives_2_0");
+			builder.put(grammarAccess.getListDeclarationAccess().getAlternatives_1(), "rule__ListDeclaration__Alternatives_1");
+			builder.put(grammarAccess.getAttributeAccess().getAlternatives(), "rule__Attribute__Alternatives");
 			builder.put(grammarAccess.getSeparatorAccess().getAlternatives(), "rule__Separator__Alternatives");
 			builder.put(grammarAccess.getModifierAccess().getAlternatives(), "rule__Modifier__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getStoryAccess().getGroup(), "rule__Story__Group__0");
-			builder.put(grammarAccess.getListDefinitionAccess().getGroup(), "rule__ListDefinition__Group__0");
-			builder.put(grammarAccess.getObjectDefinitionAccess().getGroup(), "rule__ObjectDefinition__Group__0");
+			builder.put(grammarAccess.getListDeclarationAccess().getGroup(), "rule__ListDeclaration__Group__0");
+			builder.put(grammarAccess.getObjectDeclarationAccess().getGroup(), "rule__ObjectDeclaration__Group__0");
 			builder.put(grammarAccess.getStoryVariableAccess().getGroup(), "rule__StoryVariable__Group__0");
-			builder.put(grammarAccess.getAdvancedAttributeAccess().getGroup(), "rule__AdvancedAttribute__Group__0");
+			builder.put(grammarAccess.getAttributeAccess().getGroup_1(), "rule__Attribute__Group_1__0");
 			builder.put(grammarAccess.getObjectAttributeAccess().getGroup(), "rule__ObjectAttribute__Group__0");
 			builder.put(grammarAccess.getWordListAccess().getGroup(), "rule__WordList__Group__0");
 			builder.put(grammarAccess.getWordListAccess().getGroup_1(), "rule__WordList__Group_1__0");
@@ -51,26 +50,24 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeListAccess().getGroup_1(), "rule__AttributeList__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment_0(), "rule__Model__StatementsAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getStoryAssignment_1(), "rule__Model__StoryAssignment_1");
-			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_1(), "rule__Story__StoryAssignment_1");
-			builder.put(grammarAccess.getListDefinitionAccess().getStart_symbolAssignment_0(), "rule__ListDefinition__Start_symbolAssignment_0");
-			builder.put(grammarAccess.getListDefinitionAccess().getListAssignment_2(), "rule__ListDefinition__ListAssignment_2");
-			builder.put(grammarAccess.getObjectDefinitionAccess().getObjectAssignment_0(), "rule__ObjectDefinition__ObjectAssignment_0");
-			builder.put(grammarAccess.getObjectDefinitionAccess().getAttributesAssignment_3(), "rule__ObjectDefinition__AttributesAssignment_3");
+			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_2(), "rule__Story__StoryAssignment_2");
+			builder.put(grammarAccess.getListDeclarationAccess().getStart_symbolAssignment_0(), "rule__ListDeclaration__Start_symbolAssignment_0");
+			builder.put(grammarAccess.getListDeclarationAccess().getListAssignment_2(), "rule__ListDeclaration__ListAssignment_2");
+			builder.put(grammarAccess.getObjectDeclarationAccess().getNameAssignment_0(), "rule__ObjectDeclaration__NameAssignment_0");
+			builder.put(grammarAccess.getObjectDeclarationAccess().getAttributesAssignment_3(), "rule__ObjectDeclaration__AttributesAssignment_3");
 			builder.put(grammarAccess.getWordAccess().getValueAssignment(), "rule__Word__ValueAssignment");
-			builder.put(grammarAccess.getVariableAccess().getValueAssignment(), "rule__Variable__ValueAssignment");
-			builder.put(grammarAccess.getStoryVariableAccess().getValueAssignment_0(), "rule__StoryVariable__ValueAssignment_0");
+			builder.put(grammarAccess.getVariableAccess().getNameAssignment(), "rule__Variable__NameAssignment");
+			builder.put(grammarAccess.getStoryVariableAccess().getVariableAssignment_0(), "rule__StoryVariable__VariableAssignment_0");
 			builder.put(grammarAccess.getStoryVariableAccess().getModifiersAssignment_1(), "rule__StoryVariable__ModifiersAssignment_1");
-			builder.put(grammarAccess.getAttributeAccess().getDefinitionAssignment(), "rule__Attribute__DefinitionAssignment");
-			builder.put(grammarAccess.getAdvancedAttributeAccess().getDefinitionAssignment_0(), "rule__AdvancedAttribute__DefinitionAssignment_0");
-			builder.put(grammarAccess.getAdvancedAttributeAccess().getValueAssignment_2(), "rule__AdvancedAttribute__ValueAssignment_2");
+			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");
+			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1_0(), "rule__Attribute__NameAssignment_1_0");
+			builder.put(grammarAccess.getAttributeAccess().getValueAssignment_1_2(), "rule__Attribute__ValueAssignment_1_2");
 			builder.put(grammarAccess.getObjectAttributeAccess().getObjectAssignment_0(), "rule__ObjectAttribute__ObjectAssignment_0");
 			builder.put(grammarAccess.getObjectAttributeAccess().getAttributeAssignment_2(), "rule__ObjectAttribute__AttributeAssignment_2");
 			builder.put(grammarAccess.getWordListAccess().getWordsAssignment_0(), "rule__WordList__WordsAssignment_0");
-			builder.put(grammarAccess.getWordListAccess().getSepAssignment_1_0(), "rule__WordList__SepAssignment_1_0");
-			builder.put(grammarAccess.getWordListAccess().getWordAssignment_1_1(), "rule__WordList__WordAssignment_1_1");
+			builder.put(grammarAccess.getWordListAccess().getWordsAssignment_1_1(), "rule__WordList__WordsAssignment_1_1");
 			builder.put(grammarAccess.getAttributeListAccess().getAttributesAssignment_0(), "rule__AttributeList__AttributesAssignment_0");
-			builder.put(grammarAccess.getAttributeListAccess().getSepAssignment_1_0(), "rule__AttributeList__SepAssignment_1_0");
-			builder.put(grammarAccess.getAttributeListAccess().getAttributeAssignment_1_1(), "rule__AttributeList__AttributeAssignment_1_1");
+			builder.put(grammarAccess.getAttributeListAccess().getAttributesAssignment_1_1(), "rule__AttributeList__AttributesAssignment_1_1");
 		}
 	}
 	
