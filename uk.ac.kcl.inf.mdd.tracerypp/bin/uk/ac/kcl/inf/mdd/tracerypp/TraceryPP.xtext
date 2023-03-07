@@ -11,7 +11,7 @@ Model:
 	
 Statement:
 	Declaration
-	// Rule (for example if else or something simmilar)
+	// Rule (for example if else or something similar)
 ;
 
 Declaration:
@@ -35,7 +35,7 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDeclaration:
-	name = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
+	name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
 ;
 
 /*
@@ -47,7 +47,7 @@ ListDeclaration:
  */
 ObjectDeclaration:
 	name = ID "is" "an" "object."
-	"It" "has" "attributes:" attributes = AttributeList
+	"It" "has" "attributes" AssignmentOperator attributes = AttributeList
 ;
 
 /*
@@ -69,7 +69,7 @@ StoryVariable:
 
 Attribute:
 	name = ExistingVariable |
-	name = Variable "=" value = STRING
+	name = Variable AssignmentOperator value = STRING
 ;
 
 ExistingVariable:
@@ -124,6 +124,10 @@ PastTenseModifier:
 /*
 	Helpers
  */
+ 
+AssignmentOperator:
+	"=" | ":" | "-"
+;
 
 SeparatorOr:
 	"," | "or"
