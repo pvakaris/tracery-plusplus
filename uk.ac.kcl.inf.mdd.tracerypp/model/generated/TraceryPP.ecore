@@ -42,7 +42,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WordList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"

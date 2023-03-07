@@ -23,7 +23,7 @@ Declaration:
 	There must be only one story in the model for now.
  */
 Story:
-	{Story} "The story:"
+	{Story} "The" "story:"
 	story += ( Word | StoryVariable | ObjectAttribute )*
 ;
 
@@ -34,12 +34,12 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDeclaration:
-	start_symbol = Variable  ("can have values:" | "can be:") list = WordList
+	start_symbol = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
 ;
 
 ObjectDeclaration:
-	name = ID "is an object."
-	"It has these attributes:" attributes = AttributeList
+	name = ID "is" "an" "object."
+	"It" "has" "these" "attributes:" attributes = AttributeList
 ;
 
 /*
@@ -65,11 +65,11 @@ Attribute:
 ;
 
 ObjectAttribute:
-	object = [ObjectDeclaration] "." attribute = ID
+	object = [ObjectDeclaration] "." attribute = [Attribute]
 ;
 
 WordList:
-	words += Word (Separator + words += Word)*
+	words += Word (Separator words += Word)*
 ;
 
 AttributeList:
