@@ -69,15 +69,19 @@ ObjectAttribute:
 ;
 
 WordList:
-	words += Word (Separator words += Word)*
+	words += Word (SeparatorOr words += Word)*
 ;
 
 AttributeList:
-	attributes += Attribute (',' + attributes += Attribute)*
+	attributes += Attribute ( SeparatorAnd attributes += Attribute)*
 ;
 
-Separator:
+SeparatorOr:
 	"," | "or"
+;
+
+SeparatorAnd:
+	',' | "and"
 ;
 
 Modifier:
