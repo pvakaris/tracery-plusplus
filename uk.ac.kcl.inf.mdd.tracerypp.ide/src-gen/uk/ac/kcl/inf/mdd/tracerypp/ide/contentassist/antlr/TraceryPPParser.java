@@ -54,7 +54,7 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getStatementsAssignment_0(), "rule__Model__StatementsAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getStoryAssignment_1(), "rule__Model__StoryAssignment_1");
 			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_3(), "rule__Story__StoryAssignment_3");
-			builder.put(grammarAccess.getListDeclarationAccess().getStart_symbolAssignment_0(), "rule__ListDeclaration__Start_symbolAssignment_0");
+			builder.put(grammarAccess.getListDeclarationAccess().getNameAssignment_0(), "rule__ListDeclaration__NameAssignment_0");
 			builder.put(grammarAccess.getListDeclarationAccess().getListAssignment_2(), "rule__ListDeclaration__ListAssignment_2");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getNameAssignment_0(), "rule__ObjectDeclaration__NameAssignment_0");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getAttributesAssignment_7(), "rule__ObjectDeclaration__AttributesAssignment_7");
@@ -65,8 +65,10 @@ public class TraceryPPParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1_0(), "rule__Attribute__NameAssignment_1_0");
 			builder.put(grammarAccess.getAttributeAccess().getValueAssignment_1_2(), "rule__Attribute__ValueAssignment_1_2");
+			builder.put(grammarAccess.getExistingVariableAccess().getPointerAssignment(), "rule__ExistingVariable__PointerAssignment");
 			builder.put(grammarAccess.getObjectAttributeAccess().getObjectAssignment_0(), "rule__ObjectAttribute__ObjectAssignment_0");
 			builder.put(grammarAccess.getObjectAttributeAccess().getAttributeAssignment_2(), "rule__ObjectAttribute__AttributeAssignment_2");
+			builder.put(grammarAccess.getObjectAttributeAccess().getModifiersAssignment_3(), "rule__ObjectAttribute__ModifiersAssignment_3");
 			builder.put(grammarAccess.getWordListAccess().getWordsAssignment_0(), "rule__WordList__WordsAssignment_0");
 			builder.put(grammarAccess.getWordListAccess().getWordsAssignment_1_1(), "rule__WordList__WordsAssignment_1_1");
 			builder.put(grammarAccess.getAttributeListAccess().getAttributesAssignment_0(), "rule__AttributeList__AttributesAssignment_0");

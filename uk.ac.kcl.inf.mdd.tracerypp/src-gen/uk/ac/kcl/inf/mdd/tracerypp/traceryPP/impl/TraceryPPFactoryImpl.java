@@ -75,6 +75,7 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
       case TraceryPPPackage.VARIABLE: return createVariable();
       case TraceryPPPackage.STORY_VARIABLE: return createStoryVariable();
       case TraceryPPPackage.ATTRIBUTE: return createAttribute();
+      case TraceryPPPackage.EXISTING_VARIABLE: return createExistingVariable();
       case TraceryPPPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
       case TraceryPPPackage.WORD_LIST: return createWordList();
       case TraceryPPPackage.ATTRIBUTE_LIST: return createAttributeList();
@@ -201,6 +202,18 @@ public class TraceryPPFactoryImpl extends EFactoryImpl implements TraceryPPFacto
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ExistingVariable createExistingVariable()
+  {
+    ExistingVariableImpl existingVariable = new ExistingVariableImpl();
+    return existingVariable;
   }
 
   /**

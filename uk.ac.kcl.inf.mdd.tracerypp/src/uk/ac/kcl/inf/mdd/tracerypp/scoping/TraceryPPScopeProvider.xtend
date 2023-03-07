@@ -8,11 +8,8 @@ import org.eclipse.xtext.scoping.IScope
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute
 import org.eclipse.emf.ecore.EReference
 import static org.eclipse.xtext.scoping.Scopes.*
-
-//import static extension org.eclipse.xtext.EcoreUtil2.*
-//import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Story
-//import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model
-//import org.eclipse.emf.ecore.EObject
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Variable
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ExistingVariable
 
 /**
  * This class contains custom scoping description.
@@ -22,11 +19,26 @@ import static org.eclipse.xtext.scoping.Scopes.*
  */
 class TraceryPPScopeProvider extends AbstractDeclarativeScopeProvider {
 	
+	
+	// Scope for accessing object attributes in the story
 	def IScope scope_ObjectAttribute_attribute(ObjectAttribute context, EReference ref) {
         val objectDeclaration = context.object
-        if (objectDeclaration !== null) {
-            scopeFor(objectDeclaration.attributes.attributes)
-        } else {
+        if (objectDeclaration !== null) {        	
+            val attributeContainer = objectDeclaration.attributes.attributes
+            val list = newArrayList
+            for(attribute : attributeContainer) {
+            	// Add attribute names to the list and then scope for
+            	val variable = attribute.name
+            	if (variable instanceof Variable) {
+            		list.add(variable)
+            	}
+            	else if(variable instanceof ExistingVariable) {
+            		list.add(variable.pointer)
+            	}
+            }
+        	scopeFor(list)
+        }
+        else {
             IScope.NULLSCOPE
         }
     }

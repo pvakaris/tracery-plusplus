@@ -11,7 +11,7 @@ Model:
 	
 Statement:
 	Declaration
-	// Rule
+	// Rule (for example if else or something simmilar)
 ;
 
 Declaration:
@@ -35,7 +35,7 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDeclaration:
-	start_symbol = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
+	name = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
 ;
 
 /*
@@ -68,12 +68,17 @@ StoryVariable:
 ;
 
 Attribute:
-	name = ID |
-	name = ID "=" value = STRING
+	name = ExistingVariable |
+	name = Variable "=" value = STRING
+;
+
+ExistingVariable:
+    pointer = [Variable]
 ;
 
 ObjectAttribute:
-	object = [ObjectDeclaration] "." attribute = [Attribute]
+	object = [ObjectDeclaration] "." attribute = [Variable]
+	modifiers += Modifier*
 ;
 
 WordList:

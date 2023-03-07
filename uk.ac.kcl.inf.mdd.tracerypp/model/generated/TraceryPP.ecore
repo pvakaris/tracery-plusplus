@@ -15,7 +15,7 @@
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListDeclaration" eSuperTypes="#//Declaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start_symbol" eType="#//Variable"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//WordList"
         containment="true"/>
@@ -37,12 +37,18 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExistingVariable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WordList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"

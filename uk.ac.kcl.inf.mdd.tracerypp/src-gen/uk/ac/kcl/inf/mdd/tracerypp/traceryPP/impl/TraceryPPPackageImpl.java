@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Attribute;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.AttributeList;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Declaration;
+import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ExistingVariable;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ListDeclaration;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.Model;
 import uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ObjectAttribute;
@@ -103,6 +104,13 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass existingVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -281,7 +289,7 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EReference getListDeclaration_Start_symbol()
+  public EReference getListDeclaration_Name()
   {
     return (EReference)listDeclarationEClass.getEStructuralFeatures().get(0);
   }
@@ -424,9 +432,9 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
    * @generated
    */
   @Override
-  public EAttribute getAttribute_Name()
+  public EReference getAttribute_Name()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -438,6 +446,28 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
   public EAttribute getAttribute_Value()
   {
     return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getExistingVariable()
+  {
+    return existingVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getExistingVariable_Pointer()
+  {
+    return (EReference)existingVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -471,6 +501,17 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
   public EReference getObjectAttribute_Attribute()
   {
     return (EReference)objectAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getObjectAttribute_Modifiers()
+  {
+    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -560,7 +601,7 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     createEReference(storyEClass, STORY__STORY);
 
     listDeclarationEClass = createEClass(LIST_DECLARATION);
-    createEReference(listDeclarationEClass, LIST_DECLARATION__START_SYMBOL);
+    createEReference(listDeclarationEClass, LIST_DECLARATION__NAME);
     createEReference(listDeclarationEClass, LIST_DECLARATION__LIST);
 
     objectDeclarationEClass = createEClass(OBJECT_DECLARATION);
@@ -578,12 +619,16 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     createEAttribute(storyVariableEClass, STORY_VARIABLE__MODIFIERS);
 
     attributeEClass = createEClass(ATTRIBUTE);
-    createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+    createEReference(attributeEClass, ATTRIBUTE__NAME);
     createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
+
+    existingVariableEClass = createEClass(EXISTING_VARIABLE);
+    createEReference(existingVariableEClass, EXISTING_VARIABLE__POINTER);
 
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__OBJECT);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTE);
+    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__MODIFIERS);
 
     wordListEClass = createEClass(WORD_LIST);
     createEReference(wordListEClass, WORD_LIST__WORDS);
@@ -638,7 +683,7 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     initEReference(getStory_Story(), ecorePackage.getEObject(), null, "story", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listDeclarationEClass, ListDeclaration.class, "ListDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListDeclaration_Start_symbol(), this.getVariable(), null, "start_symbol", null, 0, 1, ListDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListDeclaration_Name(), this.getVariable(), null, "name", null, 0, 1, ListDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getListDeclaration_List(), this.getWordList(), null, "list", null, 0, 1, ListDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectDeclarationEClass, ObjectDeclaration.class, "ObjectDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -656,12 +701,16 @@ public class TraceryPPPackageImpl extends EPackageImpl implements TraceryPPPacka
     initEAttribute(getStoryVariable_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, StoryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAttribute_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(existingVariableEClass, ExistingVariable.class, "ExistingVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExistingVariable_Pointer(), this.getVariable(), null, "pointer", null, 0, 1, ExistingVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectAttribute_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectAttribute_Attribute(), this.getVariable(), null, "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectAttribute_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wordListEClass, WordList.class, "WordList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWordList_Words(), this.getWord(), null, "words", null, 0, -1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

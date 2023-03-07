@@ -79,7 +79,7 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('can' 'have' 'values:') | ('can' 'be:')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     start_symbol=Variable (ambiguity) list=WordList
+	 *     name=Variable (ambiguity) list=WordList
 	 
 	 * </pre>
 	 */

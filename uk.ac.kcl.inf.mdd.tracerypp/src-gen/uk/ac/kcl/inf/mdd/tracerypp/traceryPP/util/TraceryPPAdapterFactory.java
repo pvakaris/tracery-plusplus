@@ -126,6 +126,11 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
         return createAttributeAdapter();
       }
       @Override
+      public Adapter caseExistingVariable(ExistingVariable object)
+      {
+        return createExistingVariableAdapter();
+      }
+      @Override
       public Adapter caseObjectAttribute(ObjectAttribute object)
       {
         return createObjectAttributeAdapter();
@@ -308,6 +313,21 @@ public class TraceryPPAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ExistingVariable <em>Existing Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uk.ac.kcl.inf.mdd.tracerypp.traceryPP.ExistingVariable
+   * @generated
+   */
+  public Adapter createExistingVariableAdapter()
   {
     return null;
   }

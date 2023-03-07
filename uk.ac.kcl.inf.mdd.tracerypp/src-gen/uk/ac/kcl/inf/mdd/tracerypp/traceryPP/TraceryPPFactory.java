@@ -114,6 +114,15 @@ public interface TraceryPPFactory extends EFactory
   Attribute createAttribute();
 
   /**
+   * Returns a new object of class '<em>Existing Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Existing Variable</em>'.
+   * @generated
+   */
+  ExistingVariable createExistingVariable();
+
+  /**
    * Returns a new object of class '<em>Object Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

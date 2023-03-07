@@ -16,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Story/story"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//ListDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDeclaration/start_symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDeclaration/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ListDeclaration/list"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//ObjectDeclaration">
@@ -34,12 +34,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//StoryVariable/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//Attribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Attribute/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//Attribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPP.ecore#//ExistingVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ExistingVariable/pointer"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//ObjectAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectAttribute/object"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//ObjectAttribute/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPP.ecore#//ObjectAttribute/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPP.ecore#//WordList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPP.ecore#//WordList/words"/>
