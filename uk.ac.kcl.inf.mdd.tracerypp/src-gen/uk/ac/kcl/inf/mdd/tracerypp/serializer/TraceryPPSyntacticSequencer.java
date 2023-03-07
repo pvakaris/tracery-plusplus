@@ -22,29 +22,40 @@ import uk.ac.kcl.inf.mdd.tracerypp.services.TraceryPPGrammarAccess;
 public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryPPGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_AttributeList_CommaKeyword_1_0_p;
 	protected AbstractElementAlias match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryPPGrammarAccess) access;
-		match_AttributeList_CommaKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getAttributeListAccess().getCommaKeyword_1_0());
 		match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1())));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getSeparatorRule())
-			return getSeparatorToken(semanticObject, ruleCall, node);
+		if (ruleCall.getRule() == grammarAccess.getSeparatorAndRule())
+			return getSeparatorAndToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSeparatorOrRule())
+			return getSeparatorOrToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
 	/**
-	 * Separator:
+	 * SeparatorAnd:
+	 * 	',' | "and"
+	 * ;
+	 */
+	protected String getSeparatorAndToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ",";
+	}
+	
+	/**
+	 * SeparatorOr:
 	 * 	"," | "or"
 	 * ;
 	 */
-	protected String getSeparatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+	protected String getSeparatorOrToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return ",";
@@ -56,28 +67,12 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_AttributeList_CommaKeyword_1_0_p.equals(syntax))
-				emit_AttributeList_CommaKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__.equals(syntax))
+			if (match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__.equals(syntax))
 				emit_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     ','+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     attributes+=Attribute (ambiguity) attributes+=Attribute
-	 
-	 * </pre>
-	 */
-	protected void emit_AttributeList_CommaKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:

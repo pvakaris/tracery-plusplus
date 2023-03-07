@@ -11,6 +11,7 @@ Model:
 	
 Statement:
 	Declaration
+	// Rule
 ;
 
 Declaration:
@@ -37,9 +38,16 @@ ListDeclaration:
 	start_symbol = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
 ;
 
+/*
+	Define an object that has attributes. If the attribute value is not specified, the attribute name
+	must be the same as one of the lists. The value will be selected randomly.
+	Examples of use:
+		hero is an object.
+		It has attributes: name = "John", occupation
+ */
 ObjectDeclaration:
 	name = ID "is" "an" "object."
-	"It" "has" "these" "attributes:" attributes = AttributeList
+	"It" "has" "attributes:" attributes = AttributeList
 ;
 
 /*
@@ -76,13 +84,9 @@ AttributeList:
 	attributes += Attribute ( SeparatorAnd attributes += Attribute)*
 ;
 
-SeparatorOr:
-	"," | "or"
-;
-
-SeparatorAnd:
-	',' | "and"
-;
+/*
+	Modifiers
+ */
 
 Modifier:
 	CapitalizationModifier |
@@ -110,4 +114,16 @@ ArticleModifier:
 
 PastTenseModifier:
 	".ed"
+;
+
+/*
+	Helpers
+ */
+
+SeparatorOr:
+	"," | "or"
+;
+
+SeparatorAnd:
+	',' | "and"
 ;

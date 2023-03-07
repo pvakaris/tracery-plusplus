@@ -190,7 +190,7 @@ public class TraceryPPSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0(), semanticObject.getAttributes());
+		feeder.accept(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_7_0(), semanticObject.getAttributes());
 		feeder.finish();
 	}
 	

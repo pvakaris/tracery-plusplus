@@ -403,20 +403,16 @@ ruleObjectDeclaration returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5());
 		}
-		otherlv_6='these'
+		otherlv_6='attributes:'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getObjectDeclarationAccess().getTheseKeyword_6());
-		}
-		otherlv_7='attributes:'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_7_0());
 				}
-				lv_attributes_8_0=ruleAttributeList
+				lv_attributes_7_0=ruleAttributeList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
@@ -424,7 +420,7 @@ ruleObjectDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"attributes",
-						lv_attributes_8_0,
+						lv_attributes_7_0,
 						"uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.AttributeList");
 					afterParserOrEnumRuleCall();
 				}
@@ -720,9 +716,9 @@ ruleWordList returns [EObject current=null]
 		)
 		(
 			{
-				newCompositeNode(grammarAccess.getWordListAccess().getSeparatorParserRuleCall_1_0());
+				newCompositeNode(grammarAccess.getWordListAccess().getSeparatorOrParserRuleCall_1_0());
 			}
-			ruleSeparator
+			ruleSeparatorOr
 			{
 				afterParserOrEnumRuleCall();
 			}
@@ -785,12 +781,13 @@ ruleAttributeList returns [EObject current=null]
 			)
 		)
 		(
-			(
-				otherlv_1=','
-				{
-					newLeafNode(otherlv_1, grammarAccess.getAttributeListAccess().getCommaKeyword_1_0());
-				}
-			)+
+			{
+				newCompositeNode(grammarAccess.getAttributeListAccess().getSeparatorAndParserRuleCall_1_0());
+			}
+			ruleSeparatorAnd
+			{
+				afterParserOrEnumRuleCall();
+			}
 			(
 				(
 					{
@@ -811,36 +808,6 @@ ruleAttributeList returns [EObject current=null]
 				)
 			)
 		)*
-	)
-;
-
-// Entry rule entryRuleSeparator
-entryRuleSeparator returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getSeparatorRule()); }
-	iv_ruleSeparator=ruleSeparator
-	{ $current=$iv_ruleSeparator.current.getText(); }
-	EOF;
-
-// Rule Separator
-ruleSeparator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw=','
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getSeparatorAccess().getCommaKeyword_0());
-		}
-		    |
-		kw='or'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getSeparatorAccess().getOrKeyword_1());
-		}
 	)
 ;
 
@@ -1025,6 +992,66 @@ rulePastTenseModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
 		$current.merge(kw);
 		newLeafNode(kw, grammarAccess.getPastTenseModifierAccess().getEdKeyword());
 	}
+;
+
+// Entry rule entryRuleSeparatorOr
+entryRuleSeparatorOr returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getSeparatorOrRule()); }
+	iv_ruleSeparatorOr=ruleSeparatorOr
+	{ $current=$iv_ruleSeparatorOr.current.getText(); }
+	EOF;
+
+// Rule SeparatorOr
+ruleSeparatorOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw=','
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorOrAccess().getCommaKeyword_0());
+		}
+		    |
+		kw='or'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorOrAccess().getOrKeyword_1());
+		}
+	)
+;
+
+// Entry rule entryRuleSeparatorAnd
+entryRuleSeparatorAnd returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getSeparatorAndRule()); }
+	iv_ruleSeparatorAnd=ruleSeparatorAnd
+	{ $current=$iv_ruleSeparatorAnd.current.getText(); }
+	EOF;
+
+// Rule SeparatorAnd
+ruleSeparatorAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw=','
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorAndAccess().getCommaKeyword_0());
+		}
+		    |
+		kw='and'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorAndAccess().getAndKeyword_1());
+		}
+	)
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
