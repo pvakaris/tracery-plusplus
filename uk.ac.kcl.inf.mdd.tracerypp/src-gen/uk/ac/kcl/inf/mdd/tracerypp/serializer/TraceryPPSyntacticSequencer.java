@@ -32,11 +32,24 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getSeparatorAndRule())
+		if (ruleCall.getRule() == grammarAccess.getAssignmentOperatorRule())
+			return getAssignmentOperatorToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSeparatorAndRule())
 			return getSeparatorAndToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getSeparatorOrRule())
 			return getSeparatorOrToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * AssignmentOperator:
+	 * 	"=" | ":" | "-"
+	 * ;
+	 */
+	protected String getAssignmentOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "=";
 	}
 	
 	/**
@@ -76,10 +89,10 @@ public class TraceryPPSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('can' 'have' 'values:') | ('can' 'be:')
+	 *     ('can' 'have' 'values') | ('can' 'be')
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=Variable (ambiguity) list=WordList
+	 *     name=Variable (ambiguity) AssignmentOperator list=WordList
 	 
 	 * </pre>
 	 */

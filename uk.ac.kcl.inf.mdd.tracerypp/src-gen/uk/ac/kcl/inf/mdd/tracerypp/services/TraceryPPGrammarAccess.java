@@ -61,7 +61,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		
 		//Statement:
 		//    Declaration
-		//    // Rule (for example if else or something simmilar)
+		//    // Rule (for example if else or something similar)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -153,8 +153,9 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Keyword cCanKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cBeKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cListAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cListWordListParserRuleCall_2_0 = (RuleCall)cListAssignment_2.eContents().get(0);
+		private final RuleCall cAssignmentOperatorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cListAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cListWordListParserRuleCall_3_0 = (RuleCall)cListAssignment_3.eContents().get(0);
 		
 		///*
 		//    Define a variable and give that variable a list of values it can take.
@@ -163,11 +164,11 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//        fruit can be: banana or apple or pear
 		// */
 		//ListDeclaration:
-		//    name = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
+		//    name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
+		//name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
 		public Group getGroup() { return cGroup; }
 		
 		//name = Variable
@@ -176,10 +177,10 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Variable
 		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
 		
-		//("can" "have" "values:" | "can" "be:")
+		//("can" "have" "values" | "can" "be")
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//"can" "have" "values:"
+		//"can" "have" "values"
 		public Group getGroup_1_0() { return cGroup_1_0; }
 		
 		//"can"
@@ -188,23 +189,26 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//"have"
 		public Keyword getHaveKeyword_1_0_1() { return cHaveKeyword_1_0_1; }
 		
-		//"values:"
+		//"values"
 		public Keyword getValuesKeyword_1_0_2() { return cValuesKeyword_1_0_2; }
 		
-		//"can" "be:"
+		//"can" "be"
 		public Group getGroup_1_1() { return cGroup_1_1; }
 		
 		//"can"
 		public Keyword getCanKeyword_1_1_0() { return cCanKeyword_1_1_0; }
 		
-		//"be:"
+		//"be"
 		public Keyword getBeKeyword_1_1_1() { return cBeKeyword_1_1_1; }
 		
+		//AssignmentOperator
+		public RuleCall getAssignmentOperatorParserRuleCall_2() { return cAssignmentOperatorParserRuleCall_2; }
+		
 		//list = WordList
-		public Assignment getListAssignment_2() { return cListAssignment_2; }
+		public Assignment getListAssignment_3() { return cListAssignment_3; }
 		
 		//WordList
-		public RuleCall getListWordListParserRuleCall_2_0() { return cListWordListParserRuleCall_2_0; }
+		public RuleCall getListWordListParserRuleCall_3_0() { return cListWordListParserRuleCall_3_0; }
 	}
 	public class ObjectDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.ObjectDeclaration");
@@ -217,8 +221,9 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Keyword cItKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Keyword cHasKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cAttributesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cAttributesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cAttributesAttributeListParserRuleCall_7_0 = (RuleCall)cAttributesAssignment_7.eContents().get(0);
+		private final RuleCall cAssignmentOperatorParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Assignment cAttributesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cAttributesAttributeListParserRuleCall_8_0 = (RuleCall)cAttributesAssignment_8.eContents().get(0);
 		
 		///*
 		//    Define an object that has attributes. If the attribute value is not specified, the attribute name
@@ -229,12 +234,12 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		// */
 		//ObjectDeclaration:
 		//    name = ID "is" "an" "object."
-		//    "It" "has" "attributes:" attributes = AttributeList
+		//    "It" "has" "attributes" AssignmentOperator attributes = AttributeList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name = ID "is" "an" "object."
-		//"It" "has" "attributes:" attributes = AttributeList
+		//"It" "has" "attributes" AssignmentOperator attributes = AttributeList
 		public Group getGroup() { return cGroup; }
 		
 		//name = ID
@@ -258,14 +263,17 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//"has"
 		public Keyword getHasKeyword_5() { return cHasKeyword_5; }
 		
-		//"attributes:"
+		//"attributes"
 		public Keyword getAttributesKeyword_6() { return cAttributesKeyword_6; }
 		
+		//AssignmentOperator
+		public RuleCall getAssignmentOperatorParserRuleCall_7() { return cAssignmentOperatorParserRuleCall_7; }
+		
 		//attributes = AttributeList
-		public Assignment getAttributesAssignment_7() { return cAttributesAssignment_7; }
+		public Assignment getAttributesAssignment_8() { return cAttributesAssignment_8; }
 		
 		//AttributeList
-		public RuleCall getAttributesAttributeListParserRuleCall_7_0() { return cAttributesAttributeListParserRuleCall_7_0; }
+		public RuleCall getAttributesAttributeListParserRuleCall_8_0() { return cAttributesAttributeListParserRuleCall_8_0; }
 	}
 	public class WordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.Word");
@@ -344,18 +352,18 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cNameVariableParserRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final RuleCall cAssignmentOperatorParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
 		
 		//Attribute:
 		//    name = ExistingVariable |
-		//    name = Variable "=" value = STRING
+		//    name = Variable AssignmentOperator value = STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name = ExistingVariable |
-		//name = Variable "=" value = STRING
+		//name = Variable AssignmentOperator value = STRING
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//name = ExistingVariable
@@ -364,7 +372,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//ExistingVariable
 		public RuleCall getNameExistingVariableParserRuleCall_0_0() { return cNameExistingVariableParserRuleCall_0_0; }
 		
-		//name = Variable "=" value = STRING
+		//name = Variable AssignmentOperator value = STRING
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//name = Variable
@@ -373,8 +381,8 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//Variable
 		public RuleCall getNameVariableParserRuleCall_1_0_0() { return cNameVariableParserRuleCall_1_0_0; }
 		
-		//"="
-		public Keyword getEqualsSignKeyword_1_1() { return cEqualsSignKeyword_1_1; }
+		//AssignmentOperator
+		public RuleCall getAssignmentOperatorParserRuleCall_1_1() { return cAssignmentOperatorParserRuleCall_1_1; }
 		
 		//value = STRING
 		public Assignment getValueAssignment_1_2() { return cValueAssignment_1_2; }
@@ -627,15 +635,39 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		//".ed"
 		public Keyword getEdKeyword() { return cEdKeyword; }
 	}
+	public class AssignmentOperatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.AssignmentOperator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		///*
+		//    Helpers
+		// */
+		//AssignmentOperator:
+		//    "=" | ":" | "-"
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"=" | ":" | "-"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_0() { return cEqualsSignKeyword_0; }
+		
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//"-"
+		public Keyword getHyphenMinusKeyword_2() { return cHyphenMinusKeyword_2; }
+	}
 	public class SeparatorOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.SeparatorOr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cCommaKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cOrKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		///*
-		//    Helpers
-		// */
 		//SeparatorOr:
 		//    "," | "or"
 		//;
@@ -692,6 +724,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	private final PluralityModifierElements pPluralityModifier;
 	private final ArticleModifierElements pArticleModifier;
 	private final PastTenseModifierElements pPastTenseModifier;
+	private final AssignmentOperatorElements pAssignmentOperator;
 	private final SeparatorOrElements pSeparatorOr;
 	private final SeparatorAndElements pSeparatorAnd;
 	
@@ -724,6 +757,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 		this.pPluralityModifier = new PluralityModifierElements();
 		this.pArticleModifier = new ArticleModifierElements();
 		this.pPastTenseModifier = new PastTenseModifierElements();
+		this.pAssignmentOperator = new AssignmentOperatorElements();
 		this.pSeparatorOr = new SeparatorOrElements();
 		this.pSeparatorAnd = new SeparatorAndElements();
 	}
@@ -770,7 +804,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Statement:
 	//    Declaration
-	//    // Rule (for example if else or something simmilar)
+	//    // Rule (for example if else or something similar)
 	//;
 	public StatementElements getStatementAccess() {
 		return pStatement;
@@ -815,7 +849,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	//        fruit can be: banana or apple or pear
 	// */
 	//ListDeclaration:
-	//    name = Variable  ("can" "have" "values:" | "can" "be:") list = WordList
+	//    name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
 	//;
 	public ListDeclarationElements getListDeclarationAccess() {
 		return pListDeclaration;
@@ -834,7 +868,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	// */
 	//ObjectDeclaration:
 	//    name = ID "is" "an" "object."
-	//    "It" "has" "attributes:" attributes = AttributeList
+	//    "It" "has" "attributes" AssignmentOperator attributes = AttributeList
 	//;
 	public ObjectDeclarationElements getObjectDeclarationAccess() {
 		return pObjectDeclaration;
@@ -883,7 +917,7 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	
 	//Attribute:
 	//    name = ExistingVariable |
-	//    name = Variable "=" value = STRING
+	//    name = Variable AssignmentOperator value = STRING
 	//;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
@@ -1014,6 +1048,17 @@ public class TraceryPPGrammarAccess extends AbstractElementFinder.AbstractGramma
 	///*
 	//    Helpers
 	// */
+	//AssignmentOperator:
+	//    "=" | ":" | "-"
+	//;
+	public AssignmentOperatorElements getAssignmentOperatorAccess() {
+		return pAssignmentOperator;
+	}
+	
+	public ParserRule getAssignmentOperatorRule() {
+		return getAssignmentOperatorAccess().getRule();
+	}
+	
 	//SeparatorOr:
 	//    "," | "or"
 	//;

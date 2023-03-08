@@ -310,7 +310,7 @@ ruleListDeclaration returns [EObject current=null]
 				{
 					newLeafNode(otherlv_2, grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1());
 				}
-				otherlv_3='values:'
+				otherlv_3='values'
 				{
 					newLeafNode(otherlv_3, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2());
 				}
@@ -321,18 +321,25 @@ ruleListDeclaration returns [EObject current=null]
 				{
 					newLeafNode(otherlv_4, grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0());
 				}
-				otherlv_5='be:'
+				otherlv_5='be'
 				{
 					newLeafNode(otherlv_5, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1());
 				}
 			)
 		)
+		{
+			newCompositeNode(grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2());
+		}
+		ruleAssignmentOperator
+		{
+			afterParserOrEnumRuleCall();
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getListDeclarationAccess().getListWordListParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getListDeclarationAccess().getListWordListParserRuleCall_3_0());
 				}
-				lv_list_6_0=ruleWordList
+				lv_list_7_0=ruleWordList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getListDeclarationRule());
@@ -340,7 +347,7 @@ ruleListDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"list",
-						lv_list_6_0,
+						lv_list_7_0,
 						"uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.WordList");
 					afterParserOrEnumRuleCall();
 				}
@@ -403,16 +410,23 @@ ruleObjectDeclaration returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5());
 		}
-		otherlv_6='attributes:'
+		otherlv_6='attributes'
 		{
 			newLeafNode(otherlv_6, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
+		}
+		{
+			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7());
+		}
+		ruleAssignmentOperator
+		{
+			afterParserOrEnumRuleCall();
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0());
 				}
-				lv_attributes_7_0=ruleAttributeList
+				lv_attributes_8_0=ruleAttributeList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
@@ -420,7 +434,7 @@ ruleObjectDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"attributes",
-						lv_attributes_7_0,
+						lv_attributes_8_0,
 						"uk.ac.kcl.inf.mdd.tracerypp.TraceryPP.AttributeList");
 					afterParserOrEnumRuleCall();
 				}
@@ -606,9 +620,12 @@ ruleAttribute returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_2='='
 			{
-				newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getEqualsSignKeyword_1_1());
+				newCompositeNode(grammarAccess.getAttributeAccess().getAssignmentOperatorParserRuleCall_1_1());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
 			}
 			(
 				(
@@ -1043,6 +1060,42 @@ rulePastTenseModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeR
 		$current.merge(kw);
 		newLeafNode(kw, grammarAccess.getPastTenseModifierAccess().getEdKeyword());
 	}
+;
+
+// Entry rule entryRuleAssignmentOperator
+entryRuleAssignmentOperator returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getAssignmentOperatorRule()); }
+	iv_ruleAssignmentOperator=ruleAssignmentOperator
+	{ $current=$iv_ruleAssignmentOperator.current.getText(); }
+	EOF;
+
+// Rule AssignmentOperator
+ruleAssignmentOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='='
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getEqualsSignKeyword_0());
+		}
+		    |
+		kw=':'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getColonKeyword_1());
+		}
+		    |
+		kw='-'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getHyphenMinusKeyword_2());
+		}
+	)
 ;
 
 // Entry rule entryRuleSeparatorOr
