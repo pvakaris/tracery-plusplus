@@ -39,7 +39,7 @@ The story looks like this:
 	"Yesterday in the " time_of_day " I " action.ed " from my position at " firm "."
 	fruit.a " was lying on the ground."
 	hero.name " was slowly walking on the streets of " country.capital ", looking at the beautiful old architecture."
-	
+
 ```
 
 The text created by the modelling language would looks something like this:
@@ -50,6 +50,7 @@ Yesterday in the morning I resigned from my position at JPMorgan.
 A banana was lying on the ground.
 John was slowly walking on the streets of London, looking at the beautiful old architecture.
 ```
+
 ## Modifiers
 
 Each variable can be attached one or more modifiers:
@@ -59,6 +60,11 @@ Each variable can be attached one or more modifiers:
 - .CAPITALIZE - capitalizes all the letters in the word
 - .ed - gives the verb a past tense
 - .s - adds s at the end of the word to make it plural
+
+## How to use
+
+1. Import this project using Import --> Git --> Projects from Git -->
+2. Open Java Perspective from Window --> Perspective --> Open Perspective --> Java
 
 ## Authors
 
