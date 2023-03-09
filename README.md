@@ -63,8 +63,9 @@ Each variable can be attached one or more modifiers:
 
 ## How to use
 
-1. Import this project using Import --> Git --> Projects from Git -->
+1. Import this project using Import --> Git --> Projects from Git --> Clone URI
 2. Open Java Perspective from Window --> Perspective --> Open Perspective --> Java
+3. 
 
 ## Authors
 
