@@ -51,6 +51,7 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getObjectDeclarationAccess().getGroup(), "rule__ObjectDeclaration__Group__0");
 			builder.put(grammarAccess.getStoryVariableAccess().getGroup(), "rule__StoryVariable__Group__0");
 			builder.put(grammarAccess.getAttributeAccess().getGroup_1(), "rule__Attribute__Group_1__0");
+			builder.put(grammarAccess.getAttributeAccess().getGroup_2(), "rule__Attribute__Group_2__0");
 			builder.put(grammarAccess.getObjectAttributeAccess().getGroup(), "rule__ObjectAttribute__Group__0");
 			builder.put(grammarAccess.getWordListAccess().getGroup(), "rule__WordList__Group__0");
 			builder.put(grammarAccess.getWordListAccess().getGroup_1(), "rule__WordList__Group_1__0");
@@ -70,6 +71,9 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_0(), "rule__Attribute__NameAssignment_0");
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1_0(), "rule__Attribute__NameAssignment_1_0");
 			builder.put(grammarAccess.getAttributeAccess().getValueAssignment_1_2(), "rule__Attribute__ValueAssignment_1_2");
+			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_2_0(), "rule__Attribute__NameAssignment_2_0");
+			builder.put(grammarAccess.getAttributeAccess().getValueAssignment_2_2(), "rule__Attribute__ValueAssignment_2_2");
+			builder.put(grammarAccess.getPointerisAccess().getIAssignment(), "rule__Pointeris__IAssignment");
 			builder.put(grammarAccess.getExistingVariableAccess().getPointerAssignment(), "rule__ExistingVariable__PointerAssignment");
 			builder.put(grammarAccess.getObjectAttributeAccess().getObjectAssignment_0(), "rule__ObjectAttribute__ObjectAssignment_0");
 			builder.put(grammarAccess.getObjectAttributeAccess().getAttributeAssignment_2(), "rule__ObjectAttribute__AttributeAssignment_2");

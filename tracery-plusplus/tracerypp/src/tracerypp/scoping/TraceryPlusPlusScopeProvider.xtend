@@ -11,6 +11,7 @@ import static org.eclipse.xtext.scoping.Scopes.*
 import tracerypp.traceryPlusPlus.ObjectAttribute
 import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.ExistingVariable
+import tracerypp.traceryPlusPlus.Attribute
 
 /**
  * This class contains custom scoping description.
@@ -43,4 +44,11 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
             IScope.NULLSCOPE
         }
     }
+    
+	def IScope scope_Attribute_value(Attribute context, EReference ref) {
+	    val value = context.value
+	    print(value)
+	    return IScope.NULLSCOPE
+	}
+	    
 }

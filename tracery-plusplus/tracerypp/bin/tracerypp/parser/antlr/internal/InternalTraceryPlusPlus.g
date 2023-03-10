@@ -684,7 +684,79 @@ ruleAttribute returns [EObject current=null]
 				)
 			)
 		)
+		    |
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttributeAccess().getNameVariableParserRuleCall_2_0_0());
+					}
+					lv_name_4_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+						}
+						set(
+							$current,
+							"name",
+							lv_name_4_0,
+							"tracerypp.TraceryPlusPlus.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			{
+				newCompositeNode(grammarAccess.getAttributeAccess().getAssignmentOperatorParserRuleCall_2_1());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAttributeAccess().getValueEVarrParserRuleCall_2_2_0());
+					}
+					lv_value_6_0=ruleEVarr
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAttributeRule());
+						}
+						set(
+							$current,
+							"value",
+							lv_value_6_0,
+							"tracerypp.TraceryPlusPlus.EVarr");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
 	)
+;
+
+// Entry rule entryRuleEVarr
+entryRuleEVarr returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEVarrRule()); }
+	iv_ruleEVarr=ruleEVarr
+	{ $current=$iv_ruleEVarr.current.getText(); }
+	EOF;
+
+// Rule EVarr
+ruleEVarr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	this_ID_0=RULE_ID
+	{
+		$current.merge(this_ID_0);
+	}
+	{
+		newLeafNode(this_ID_0, grammarAccess.getEVarrAccess().getIDTerminalRuleCall());
+	}
 ;
 
 // Entry rule entryRuleExistingVariable

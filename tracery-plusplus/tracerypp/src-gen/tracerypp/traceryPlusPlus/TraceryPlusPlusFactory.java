@@ -114,6 +114,15 @@ public interface TraceryPlusPlusFactory extends EFactory
   Attribute createAttribute();
 
   /**
+   * Returns a new object of class '<em>Pointeris</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pointeris</em>'.
+   * @generated
+   */
+  Pointeris createPointeris();
+
+  /**
    * Returns a new object of class '<em>Existing Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

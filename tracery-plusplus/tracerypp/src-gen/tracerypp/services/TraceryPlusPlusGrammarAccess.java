@@ -395,15 +395,23 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cAssignmentOperatorParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final Assignment cValueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cValueAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cNameAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cNameVariableParserRuleCall_2_0_0 = (RuleCall)cNameAssignment_2_0.eContents().get(0);
+		private final RuleCall cAssignmentOperatorParserRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Assignment cValueAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cValueEVarrParserRuleCall_2_2_0 = (RuleCall)cValueAssignment_2_2.eContents().get(0);
 		
 		//Attribute:
 		//    name = ExistingVariable |
-		//    name = Variable AssignmentOperator value = STRING
+		//    name = Variable AssignmentOperator value = STRING |
+		//    name = Variable AssignmentOperator value = EVarr
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//name = ExistingVariable |
-		//name = Variable AssignmentOperator value = STRING
+		//name = Variable AssignmentOperator value = STRING |
+		//name = Variable AssignmentOperator value = EVarr
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//name = ExistingVariable
@@ -429,6 +437,56 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_2_0() { return cValueSTRINGTerminalRuleCall_1_2_0; }
+		
+		//name = Variable AssignmentOperator value = EVarr
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//name = Variable
+		public Assignment getNameAssignment_2_0() { return cNameAssignment_2_0; }
+		
+		//Variable
+		public RuleCall getNameVariableParserRuleCall_2_0_0() { return cNameVariableParserRuleCall_2_0_0; }
+		
+		//AssignmentOperator
+		public RuleCall getAssignmentOperatorParserRuleCall_2_1() { return cAssignmentOperatorParserRuleCall_2_1; }
+		
+		//value = EVarr
+		public Assignment getValueAssignment_2_2() { return cValueAssignment_2_2; }
+		
+		//EVarr
+		public RuleCall getValueEVarrParserRuleCall_2_2_0() { return cValueEVarrParserRuleCall_2_2_0; }
+	}
+	public class EVarrElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.EVarr");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//EVarr:
+		//    ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+	public class PointerisElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Pointeris");
+		private final Assignment cIAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cIVariableCrossReference_0 = (CrossReference)cIAssignment.eContents().get(0);
+		private final RuleCall cIVariableIDTerminalRuleCall_0_1 = (RuleCall)cIVariableCrossReference_0.eContents().get(1);
+		
+		//Pointeris:
+		//    i = [Variable]
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//i = [Variable]
+		public Assignment getIAssignment() { return cIAssignment; }
+		
+		//[Variable]
+		public CrossReference getIVariableCrossReference_0() { return cIVariableCrossReference_0; }
+		
+		//ID
+		public RuleCall getIVariableIDTerminalRuleCall_0_1() { return cIVariableIDTerminalRuleCall_0_1; }
 	}
 	public class ExistingVariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ExistingVariable");
@@ -754,6 +812,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final VariableElements pVariable;
 	private final StoryVariableElements pStoryVariable;
 	private final AttributeElements pAttribute;
+	private final EVarrElements pEVarr;
+	private final PointerisElements pPointeris;
 	private final ExistingVariableElements pExistingVariable;
 	private final ObjectAttributeElements pObjectAttribute;
 	private final WordListElements pWordList;
@@ -787,6 +847,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pVariable = new VariableElements();
 		this.pStoryVariable = new StoryVariableElements();
 		this.pAttribute = new AttributeElements();
+		this.pEVarr = new EVarrElements();
+		this.pPointeris = new PointerisElements();
 		this.pExistingVariable = new ExistingVariableElements();
 		this.pObjectAttribute = new ObjectAttributeElements();
 		this.pWordList = new WordListElements();
@@ -957,7 +1019,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//Attribute:
 	//    name = ExistingVariable |
-	//    name = Variable AssignmentOperator value = STRING
+	//    name = Variable AssignmentOperator value = STRING |
+	//    name = Variable AssignmentOperator value = EVarr
 	//;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
@@ -965,6 +1028,28 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	public ParserRule getAttributeRule() {
 		return getAttributeAccess().getRule();
+	}
+	
+	//EVarr:
+	//    ID
+	//;
+	public EVarrElements getEVarrAccess() {
+		return pEVarr;
+	}
+	
+	public ParserRule getEVarrRule() {
+		return getEVarrAccess().getRule();
+	}
+	
+	//Pointeris:
+	//    i = [Variable]
+	//;
+	public PointerisElements getPointerisAccess() {
+		return pPointeris;
+	}
+	
+	public ParserRule getPointerisRule() {
+		return getPointerisAccess().getRule();
 	}
 	
 	//ExistingVariable:

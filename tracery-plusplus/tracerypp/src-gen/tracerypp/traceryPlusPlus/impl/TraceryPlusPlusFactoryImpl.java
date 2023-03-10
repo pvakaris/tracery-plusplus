@@ -75,6 +75,7 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.VARIABLE: return createVariable();
       case TraceryPlusPlusPackage.STORY_VARIABLE: return createStoryVariable();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
+      case TraceryPlusPlusPackage.POINTERIS: return createPointeris();
       case TraceryPlusPlusPackage.EXISTING_VARIABLE: return createExistingVariable();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
       case TraceryPlusPlusPackage.WORD_LIST: return createWordList();
@@ -202,6 +203,18 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Pointeris createPointeris()
+  {
+    PointerisImpl pointeris = new PointerisImpl();
+    return pointeris;
   }
 
   /**

@@ -11,6 +11,7 @@ import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ExistingVariable;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
@@ -56,5 +57,11 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
+  }
+
+  public IScope scope_Attribute_value(final Attribute context, final EReference ref) {
+    final String value = context.getValue();
+    InputOutput.<String>print(value);
+    return IScope.NULLSCOPE;
   }
 }

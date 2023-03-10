@@ -126,6 +126,11 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createAttributeAdapter();
       }
       @Override
+      public Adapter casePointeris(Pointeris object)
+      {
+        return createPointerisAdapter();
+      }
+      @Override
       public Adapter caseExistingVariable(ExistingVariable object)
       {
         return createExistingVariableAdapter();
@@ -313,6 +318,21 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Pointeris <em>Pointeris</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tracerypp.traceryPlusPlus.Pointeris
+   * @generated
+   */
+  public Adapter createPointerisAdapter()
   {
     return null;
   }

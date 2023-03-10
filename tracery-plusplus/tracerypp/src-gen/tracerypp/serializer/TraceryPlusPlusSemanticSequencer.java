@@ -21,6 +21,7 @@ import tracerypp.traceryPlusPlus.ExistingVariable;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pointeris;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
@@ -60,6 +61,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.OBJECT_DECLARATION:
 				sequence_ObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.POINTERIS:
+				sequence_Pointeris(context, (Pointeris) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.STORY:
 				sequence_Story(context, (Story) semanticObject); 
@@ -104,7 +108,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Attribute returns Attribute
 	 *
 	 * Constraint:
-	 *     (name=ExistingVariable | (name=Variable value=STRING))
+	 *     (name=ExistingVariable | (name=Variable value=STRING) | (name=Variable value=EVarr))
 	 * </pre>
 	 */
 	protected void sequence_Attribute(ISerializationContext context, Attribute semanticObject) {
@@ -192,6 +196,26 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0(), semanticObject.getAttributes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Pointeris returns Pointeris
+	 *
+	 * Constraint:
+	 *     i=[Variable|ID]
+	 * </pre>
+	 */
+	protected void sequence_Pointeris(ISerializationContext context, Pointeris semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.POINTERIS__I) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.POINTERIS__I));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPointerisAccess().getIVariableIDTerminalRuleCall_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.POINTERIS__I, false));
 		feeder.finish();
 	}
 	

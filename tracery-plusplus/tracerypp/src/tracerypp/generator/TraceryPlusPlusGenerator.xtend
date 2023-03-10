@@ -89,6 +89,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		val name = objectDeclaration.name.toString
 		val setter = "set" + name.substring(0, 1).toUpperCase() + name.substring(1)
 		
+		
 		return '''"«setter»": ["« FOR attribute : objectDeclaration.attributes.attributes »« getStringForAttribute(attribute, name) »« ENDFOR »"],'''
 	}
 	
@@ -98,7 +99,15 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
     		// Example: hero has attributes - name = "John
     		// This will give ---> [heroName:John]
     		val variableName = variable.name
-    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value»]'''
+    		if (attribute.value instanceof String) {
+    			
+    			return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value»]'''
+    		}
+    		else {
+    			print("aaa")
+    			return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«attribute.value»#]'''
+    		}
+    		
     	}
     	else if(variable instanceof ExistingVariable) {
     		// Example: hero has attributes - occupation

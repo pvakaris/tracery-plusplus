@@ -37,6 +37,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Attribute/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Attribute/value"/>
     </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Pointeris">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Pointeris/i"/>
+    </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ExistingVariable">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ExistingVariable/pointer"/>
     </genClasses>

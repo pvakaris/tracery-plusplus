@@ -17,6 +17,7 @@ import tracerypp.traceryPlusPlus.ExistingVariable;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pointeris;
 import tracerypp.traceryPlusPlus.Statement;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
@@ -104,6 +105,13 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   private EClass attributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pointerisEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -454,6 +462,28 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
+  public EClass getPointeris()
+  {
+    return pointerisEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPointeris_I()
+  {
+    return (EReference)pointerisEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getExistingVariable()
   {
     return existingVariableEClass;
@@ -622,6 +652,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     createEReference(attributeEClass, ATTRIBUTE__NAME);
     createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
 
+    pointerisEClass = createEClass(POINTERIS);
+    createEReference(pointerisEClass, POINTERIS__I);
+
     existingVariableEClass = createEClass(EXISTING_VARIABLE);
     createEReference(existingVariableEClass, EXISTING_VARIABLE__POINTER);
 
@@ -703,6 +736,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttribute_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pointerisEClass, Pointeris.class, "Pointeris", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPointeris_I(), this.getVariable(), null, "i", null, 0, 1, Pointeris.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(existingVariableEClass, ExistingVariable.class, "ExistingVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExistingVariable_Pointer(), this.getVariable(), null, "pointer", null, 0, 1, ExistingVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

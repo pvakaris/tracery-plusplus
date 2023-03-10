@@ -365,6 +365,34 @@ public interface TraceryPlusPlusPackage extends EPackage
   int ATTRIBUTE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.PointerisImpl <em>Pointeris</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.impl.PointerisImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPointeris()
+   * @generated
+   */
+  int POINTERIS = 10;
+
+  /**
+   * The feature id for the '<em><b>I</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTERIS__I = 0;
+
+  /**
+   * The number of structural features of the '<em>Pointeris</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTERIS_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ExistingVariableImpl <em>Existing Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -372,7 +400,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getExistingVariable()
    * @generated
    */
-  int EXISTING_VARIABLE = 10;
+  int EXISTING_VARIABLE = 11;
 
   /**
    * The feature id for the '<em><b>Pointer</b></em>' reference.
@@ -400,7 +428,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 11;
+  int OBJECT_ATTRIBUTE = 12;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' reference.
@@ -446,7 +474,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getWordList()
    * @generated
    */
-  int WORD_LIST = 12;
+  int WORD_LIST = 13;
 
   /**
    * The feature id for the '<em><b>Words</b></em>' containment reference list.
@@ -474,7 +502,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getAttributeList()
    * @generated
    */
-  int ATTRIBUTE_LIST = 13;
+  int ATTRIBUTE_LIST = 14;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -737,6 +765,27 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EAttribute getAttribute_Value();
+
+  /**
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Pointeris <em>Pointeris</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pointeris</em>'.
+   * @see tracerypp.traceryPlusPlus.Pointeris
+   * @generated
+   */
+  EClass getPointeris();
+
+  /**
+   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.Pointeris#getI <em>I</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>I</em>'.
+   * @see tracerypp.traceryPlusPlus.Pointeris#getI()
+   * @see #getPointeris()
+   * @generated
+   */
+  EReference getPointeris_I();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ExistingVariable <em>Existing Variable</em>}'.
@@ -1070,6 +1119,24 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.PointerisImpl <em>Pointeris</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.impl.PointerisImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPointeris()
+     * @generated
+     */
+    EClass POINTERIS = eINSTANCE.getPointeris();
+
+    /**
+     * The meta object literal for the '<em><b>I</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINTERIS__I = eINSTANCE.getPointeris_I();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ExistingVariableImpl <em>Existing Variable</em>}' class.

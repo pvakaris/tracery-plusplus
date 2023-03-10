@@ -14,6 +14,7 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
@@ -192,35 +193,52 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     final EObject variable = attribute.getName();
     if ((variable instanceof Variable)) {
       final String variableName = ((Variable)variable).getName();
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("[");
-      String _upperCase = variableName.substring(0, 1).toUpperCase();
-      String _plus = (objectName + _upperCase);
-      String _substring = variableName.substring(1);
-      String _plus_1 = (_plus + _substring);
-      _builder.append(_plus_1);
-      _builder.append(":");
       String _value = attribute.getValue();
-      _builder.append(_value);
-      _builder.append("]");
-      return _builder.toString();
-    } else {
-      if ((variable instanceof ExistingVariable)) {
-        final String variableName_1 = ((ExistingVariable)variable).getPointer().getName();
+      if ((_value instanceof String)) {
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("[");
+        String _upperCase = variableName.substring(0, 1).toUpperCase();
+        String _plus = (objectName + _upperCase);
+        String _substring = variableName.substring(1);
+        String _plus_1 = (_plus + _substring);
+        _builder.append(_plus_1);
+        _builder.append(":");
+        String _value_1 = attribute.getValue();
+        _builder.append(_value_1);
+        _builder.append("]");
+        return _builder.toString();
+      } else {
+        InputOutput.<String>print("aaa");
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append("[");
-        String _upperCase_1 = variableName_1.substring(0, 1).toUpperCase();
+        String _upperCase_1 = variableName.substring(0, 1).toUpperCase();
         String _plus_2 = (objectName + _upperCase_1);
-        String _substring_1 = variableName_1.substring(1);
+        String _substring_1 = variableName.substring(1);
         String _plus_3 = (_plus_2 + _substring_1);
         _builder_1.append(_plus_3);
         _builder_1.append(":#");
-        _builder_1.append(variableName_1);
+        String _value_2 = attribute.getValue();
+        _builder_1.append(_value_2);
         _builder_1.append("#]");
         return _builder_1.toString();
-      } else {
+      }
+    } else {
+      if ((variable instanceof ExistingVariable)) {
+        final String variableName_1 = ((ExistingVariable)variable).getPointer().getName();
         StringConcatenation _builder_2 = new StringConcatenation();
+        _builder_2.append("[");
+        String _upperCase_2 = variableName_1.substring(0, 1).toUpperCase();
+        String _plus_4 = (objectName + _upperCase_2);
+        String _substring_2 = variableName_1.substring(1);
+        String _plus_5 = (_plus_4 + _substring_2);
+        _builder_2.append(_plus_5);
+        _builder_2.append(":#");
+        _builder_2.append(variableName_1);
+        _builder_2.append("#]");
         return _builder_2.toString();
+      } else {
+        StringConcatenation _builder_3 = new StringConcatenation();
+        return _builder_3.toString();
       }
     }
   }

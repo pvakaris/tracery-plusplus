@@ -41,6 +41,9 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pointeris">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="i" eType="#//Variable"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExistingVariable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" eType="#//Variable"/>
   </eClassifiers>

@@ -575,11 +575,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    else if ( (LA3_0==RULE_ID) ) {
             	        int LA3_2 = input.LA(2);
 
-            	        if ( (LA3_2==28) ) {
-            	            alt3=3;
-            	        }
-            	        else if ( (LA3_2==EOF||(LA3_2>=RULE_ID && LA3_2<=RULE_STRING)||(LA3_2>=29 && LA3_2<=33)) ) {
+            	        if ( (LA3_2==EOF||(LA3_2>=RULE_ID && LA3_2<=RULE_STRING)||(LA3_2>=29 && LA3_2<=33)) ) {
             	            alt3=2;
+            	        }
+            	        else if ( (LA3_2==28) ) {
+            	            alt3=3;
             	        }
             	        else {
             	            NoViableAltException nvae =
@@ -1664,7 +1664,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalTraceryPlusPlus.g:613:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) ) ;
+    // InternalTraceryPlusPlus.g:613:1: ruleAttribute returns [EObject current=null] : ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) | ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) ) ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1673,33 +1673,95 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
         EObject lv_name_1_0 = null;
 
+        EObject lv_name_4_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_6_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:619:2: ( ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) ) )
-            // InternalTraceryPlusPlus.g:620:2: ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) )
+            // InternalTraceryPlusPlus.g:619:2: ( ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) | ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) ) ) )
+            // InternalTraceryPlusPlus.g:620:2: ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) | ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) ) )
             {
-            // InternalTraceryPlusPlus.g:620:2: ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) )
-            int alt11=2;
+            // InternalTraceryPlusPlus.g:620:2: ( ( (lv_name_0_0= ruleExistingVariable ) ) | ( ( (lv_name_1_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_3_0= RULE_STRING ) ) ) | ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) ) )
+            int alt11=3;
             int LA11_0 = input.LA(1);
 
             if ( (LA11_0==RULE_ID) ) {
-                int LA11_1 = input.LA(2);
+                switch ( input.LA(2) ) {
+                case 34:
+                    {
+                    int LA11_2 = input.LA(3);
 
-                if ( (LA11_1==EOF||LA11_1==RULE_ID||LA11_1==11||LA11_1==17||LA11_1==37||LA11_1==39) ) {
+                    if ( (LA11_2==RULE_ID) ) {
+                        alt11=3;
+                    }
+                    else if ( (LA11_2==RULE_STRING) ) {
+                        alt11=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 11, 2, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 35:
+                    {
+                    int LA11_3 = input.LA(3);
+
+                    if ( (LA11_3==RULE_STRING) ) {
+                        alt11=2;
+                    }
+                    else if ( (LA11_3==RULE_ID) ) {
+                        alt11=3;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 11, 3, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 36:
+                    {
+                    int LA11_4 = input.LA(3);
+
+                    if ( (LA11_4==RULE_ID) ) {
+                        alt11=3;
+                    }
+                    else if ( (LA11_4==RULE_STRING) ) {
+                        alt11=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 11, 4, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case EOF:
+                case RULE_ID:
+                case 11:
+                case 17:
+                case 37:
+                case 39:
+                    {
                     alt11=1;
-                }
-                else if ( ((LA11_1>=34 && LA11_1<=36)) ) {
-                    alt11=2;
-                }
-                else {
+                    }
+                    break;
+                default:
                     NoViableAltException nvae =
                         new NoViableAltException("", 11, 1, input);
 
                     throw nvae;
                 }
+
             }
             else {
                 NoViableAltException nvae =
@@ -1825,6 +1887,91 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 3 :
+                    // InternalTraceryPlusPlus.g:688:3: ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) )
+                    {
+                    // InternalTraceryPlusPlus.g:688:3: ( ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) ) )
+                    // InternalTraceryPlusPlus.g:689:4: ( (lv_name_4_0= ruleVariable ) ) ruleAssignmentOperator ( (lv_value_6_0= ruleEVarr ) )
+                    {
+                    // InternalTraceryPlusPlus.g:689:4: ( (lv_name_4_0= ruleVariable ) )
+                    // InternalTraceryPlusPlus.g:690:5: (lv_name_4_0= ruleVariable )
+                    {
+                    // InternalTraceryPlusPlus.g:690:5: (lv_name_4_0= ruleVariable )
+                    // InternalTraceryPlusPlus.g:691:6: lv_name_4_0= ruleVariable
+                    {
+
+                    						newCompositeNode(grammarAccess.getAttributeAccess().getNameVariableParserRuleCall_2_0_0());
+                    					
+                    pushFollow(FOLLOW_9);
+                    lv_name_4_0=ruleVariable();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getAttributeRule());
+                    						}
+                    						set(
+                    							current,
+                    							"name",
+                    							lv_name_4_0,
+                    							"tracerypp.TraceryPlusPlus.Variable");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    				newCompositeNode(grammarAccess.getAttributeAccess().getAssignmentOperatorParserRuleCall_2_1());
+                    			
+                    pushFollow(FOLLOW_14);
+                    ruleAssignmentOperator();
+
+                    state._fsp--;
+
+
+                    				afterParserOrEnumRuleCall();
+                    			
+                    // InternalTraceryPlusPlus.g:715:4: ( (lv_value_6_0= ruleEVarr ) )
+                    // InternalTraceryPlusPlus.g:716:5: (lv_value_6_0= ruleEVarr )
+                    {
+                    // InternalTraceryPlusPlus.g:716:5: (lv_value_6_0= ruleEVarr )
+                    // InternalTraceryPlusPlus.g:717:6: lv_value_6_0= ruleEVarr
+                    {
+
+                    						newCompositeNode(grammarAccess.getAttributeAccess().getValueEVarrParserRuleCall_2_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_6_0=ruleEVarr();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getAttributeRule());
+                    						}
+                    						set(
+                    							current,
+                    							"value",
+                    							lv_value_6_0,
+                    							"tracerypp.TraceryPlusPlus.EVarr");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1847,8 +1994,84 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleAttribute"
 
 
+    // $ANTLR start "entryRuleEVarr"
+    // InternalTraceryPlusPlus.g:739:1: entryRuleEVarr returns [String current=null] : iv_ruleEVarr= ruleEVarr EOF ;
+    public final String entryRuleEVarr() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleEVarr = null;
+
+
+        try {
+            // InternalTraceryPlusPlus.g:739:45: (iv_ruleEVarr= ruleEVarr EOF )
+            // InternalTraceryPlusPlus.g:740:2: iv_ruleEVarr= ruleEVarr EOF
+            {
+             newCompositeNode(grammarAccess.getEVarrRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEVarr=ruleEVarr();
+
+            state._fsp--;
+
+             current =iv_ruleEVarr.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEVarr"
+
+
+    // $ANTLR start "ruleEVarr"
+    // InternalTraceryPlusPlus.g:746:1: ruleEVarr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_ID_0= RULE_ID ;
+    public final AntlrDatatypeRuleToken ruleEVarr() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_ID_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalTraceryPlusPlus.g:752:2: (this_ID_0= RULE_ID )
+            // InternalTraceryPlusPlus.g:753:2: this_ID_0= RULE_ID
+            {
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            		current.merge(this_ID_0);
+            	
+
+            		newLeafNode(this_ID_0, grammarAccess.getEVarrAccess().getIDTerminalRuleCall());
+            	
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEVarr"
+
+
     // $ANTLR start "entryRuleExistingVariable"
-    // InternalTraceryPlusPlus.g:691:1: entryRuleExistingVariable returns [EObject current=null] : iv_ruleExistingVariable= ruleExistingVariable EOF ;
+    // InternalTraceryPlusPlus.g:763:1: entryRuleExistingVariable returns [EObject current=null] : iv_ruleExistingVariable= ruleExistingVariable EOF ;
     public final EObject entryRuleExistingVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1856,8 +2079,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:691:57: (iv_ruleExistingVariable= ruleExistingVariable EOF )
-            // InternalTraceryPlusPlus.g:692:2: iv_ruleExistingVariable= ruleExistingVariable EOF
+            // InternalTraceryPlusPlus.g:763:57: (iv_ruleExistingVariable= ruleExistingVariable EOF )
+            // InternalTraceryPlusPlus.g:764:2: iv_ruleExistingVariable= ruleExistingVariable EOF
             {
              newCompositeNode(grammarAccess.getExistingVariableRule()); 
             pushFollow(FOLLOW_1);
@@ -1884,7 +2107,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExistingVariable"
-    // InternalTraceryPlusPlus.g:698:1: ruleExistingVariable returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:770:1: ruleExistingVariable returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleExistingVariable() throws RecognitionException {
         EObject current = null;
 
@@ -1894,14 +2117,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:704:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:705:2: ( (otherlv_0= RULE_ID ) )
+            // InternalTraceryPlusPlus.g:776:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:777:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:705:2: ( (otherlv_0= RULE_ID ) )
-            // InternalTraceryPlusPlus.g:706:3: (otherlv_0= RULE_ID )
+            // InternalTraceryPlusPlus.g:777:2: ( (otherlv_0= RULE_ID ) )
+            // InternalTraceryPlusPlus.g:778:3: (otherlv_0= RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:706:3: (otherlv_0= RULE_ID )
-            // InternalTraceryPlusPlus.g:707:4: otherlv_0= RULE_ID
+            // InternalTraceryPlusPlus.g:778:3: (otherlv_0= RULE_ID )
+            // InternalTraceryPlusPlus.g:779:4: otherlv_0= RULE_ID
             {
 
             				if (current==null) {
@@ -1938,7 +2161,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleObjectAttribute"
-    // InternalTraceryPlusPlus.g:721:1: entryRuleObjectAttribute returns [EObject current=null] : iv_ruleObjectAttribute= ruleObjectAttribute EOF ;
+    // InternalTraceryPlusPlus.g:793:1: entryRuleObjectAttribute returns [EObject current=null] : iv_ruleObjectAttribute= ruleObjectAttribute EOF ;
     public final EObject entryRuleObjectAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1946,8 +2169,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:721:56: (iv_ruleObjectAttribute= ruleObjectAttribute EOF )
-            // InternalTraceryPlusPlus.g:722:2: iv_ruleObjectAttribute= ruleObjectAttribute EOF
+            // InternalTraceryPlusPlus.g:793:56: (iv_ruleObjectAttribute= ruleObjectAttribute EOF )
+            // InternalTraceryPlusPlus.g:794:2: iv_ruleObjectAttribute= ruleObjectAttribute EOF
             {
              newCompositeNode(grammarAccess.getObjectAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -1974,7 +2197,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleObjectAttribute"
-    // InternalTraceryPlusPlus.g:728:1: ruleObjectAttribute returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* ) ;
+    // InternalTraceryPlusPlus.g:800:1: ruleObjectAttribute returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* ) ;
     public final EObject ruleObjectAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -1988,17 +2211,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:734:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* ) )
-            // InternalTraceryPlusPlus.g:735:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* )
+            // InternalTraceryPlusPlus.g:806:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* ) )
+            // InternalTraceryPlusPlus.g:807:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* )
             {
-            // InternalTraceryPlusPlus.g:735:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* )
-            // InternalTraceryPlusPlus.g:736:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )*
+            // InternalTraceryPlusPlus.g:807:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )* )
+            // InternalTraceryPlusPlus.g:808:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ( (lv_modifiers_3_0= ruleModifier ) )*
             {
-            // InternalTraceryPlusPlus.g:736:3: ( (otherlv_0= RULE_ID ) )
-            // InternalTraceryPlusPlus.g:737:4: (otherlv_0= RULE_ID )
+            // InternalTraceryPlusPlus.g:808:3: ( (otherlv_0= RULE_ID ) )
+            // InternalTraceryPlusPlus.g:809:4: (otherlv_0= RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:737:4: (otherlv_0= RULE_ID )
-            // InternalTraceryPlusPlus.g:738:5: otherlv_0= RULE_ID
+            // InternalTraceryPlusPlus.g:809:4: (otherlv_0= RULE_ID )
+            // InternalTraceryPlusPlus.g:810:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -2019,11 +2242,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_1());
             		
-            // InternalTraceryPlusPlus.g:753:3: ( (otherlv_2= RULE_ID ) )
-            // InternalTraceryPlusPlus.g:754:4: (otherlv_2= RULE_ID )
+            // InternalTraceryPlusPlus.g:825:3: ( (otherlv_2= RULE_ID ) )
+            // InternalTraceryPlusPlus.g:826:4: (otherlv_2= RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:754:4: (otherlv_2= RULE_ID )
-            // InternalTraceryPlusPlus.g:755:5: otherlv_2= RULE_ID
+            // InternalTraceryPlusPlus.g:826:4: (otherlv_2= RULE_ID )
+            // InternalTraceryPlusPlus.g:827:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
@@ -2040,7 +2263,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryPlusPlus.g:766:3: ( (lv_modifiers_3_0= ruleModifier ) )*
+            // InternalTraceryPlusPlus.g:838:3: ( (lv_modifiers_3_0= ruleModifier ) )*
             loop12:
             do {
                 int alt12=2;
@@ -2053,10 +2276,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:767:4: (lv_modifiers_3_0= ruleModifier )
+            	    // InternalTraceryPlusPlus.g:839:4: (lv_modifiers_3_0= ruleModifier )
             	    {
-            	    // InternalTraceryPlusPlus.g:767:4: (lv_modifiers_3_0= ruleModifier )
-            	    // InternalTraceryPlusPlus.g:768:5: lv_modifiers_3_0= ruleModifier
+            	    // InternalTraceryPlusPlus.g:839:4: (lv_modifiers_3_0= ruleModifier )
+            	    // InternalTraceryPlusPlus.g:840:5: lv_modifiers_3_0= ruleModifier
             	    {
 
             	    					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_3_0());
@@ -2112,7 +2335,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWordList"
-    // InternalTraceryPlusPlus.g:789:1: entryRuleWordList returns [EObject current=null] : iv_ruleWordList= ruleWordList EOF ;
+    // InternalTraceryPlusPlus.g:861:1: entryRuleWordList returns [EObject current=null] : iv_ruleWordList= ruleWordList EOF ;
     public final EObject entryRuleWordList() throws RecognitionException {
         EObject current = null;
 
@@ -2120,8 +2343,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:789:49: (iv_ruleWordList= ruleWordList EOF )
-            // InternalTraceryPlusPlus.g:790:2: iv_ruleWordList= ruleWordList EOF
+            // InternalTraceryPlusPlus.g:861:49: (iv_ruleWordList= ruleWordList EOF )
+            // InternalTraceryPlusPlus.g:862:2: iv_ruleWordList= ruleWordList EOF
             {
              newCompositeNode(grammarAccess.getWordListRule()); 
             pushFollow(FOLLOW_1);
@@ -2148,7 +2371,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWordList"
-    // InternalTraceryPlusPlus.g:796:1: ruleWordList returns [EObject current=null] : ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* ) ;
+    // InternalTraceryPlusPlus.g:868:1: ruleWordList returns [EObject current=null] : ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* ) ;
     public final EObject ruleWordList() throws RecognitionException {
         EObject current = null;
 
@@ -2161,17 +2384,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:802:2: ( ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* ) )
-            // InternalTraceryPlusPlus.g:803:2: ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* )
+            // InternalTraceryPlusPlus.g:874:2: ( ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* ) )
+            // InternalTraceryPlusPlus.g:875:2: ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* )
             {
-            // InternalTraceryPlusPlus.g:803:2: ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* )
-            // InternalTraceryPlusPlus.g:804:3: ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )*
+            // InternalTraceryPlusPlus.g:875:2: ( ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )* )
+            // InternalTraceryPlusPlus.g:876:3: ( (lv_words_0_0= ruleWord ) ) ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )*
             {
-            // InternalTraceryPlusPlus.g:804:3: ( (lv_words_0_0= ruleWord ) )
-            // InternalTraceryPlusPlus.g:805:4: (lv_words_0_0= ruleWord )
+            // InternalTraceryPlusPlus.g:876:3: ( (lv_words_0_0= ruleWord ) )
+            // InternalTraceryPlusPlus.g:877:4: (lv_words_0_0= ruleWord )
             {
-            // InternalTraceryPlusPlus.g:805:4: (lv_words_0_0= ruleWord )
-            // InternalTraceryPlusPlus.g:806:5: lv_words_0_0= ruleWord
+            // InternalTraceryPlusPlus.g:877:4: (lv_words_0_0= ruleWord )
+            // InternalTraceryPlusPlus.g:878:5: lv_words_0_0= ruleWord
             {
 
             					newCompositeNode(grammarAccess.getWordListAccess().getWordsWordParserRuleCall_0_0());
@@ -2198,7 +2421,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryPlusPlus.g:823:3: ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )*
+            // InternalTraceryPlusPlus.g:895:3: ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -2211,7 +2434,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:824:4: ruleSeparatorOr ( (lv_words_2_0= ruleWord ) )
+            	    // InternalTraceryPlusPlus.g:896:4: ruleSeparatorOr ( (lv_words_2_0= ruleWord ) )
             	    {
 
             	    				newCompositeNode(grammarAccess.getWordListAccess().getSeparatorOrParserRuleCall_1_0());
@@ -2224,11 +2447,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             	    				afterParserOrEnumRuleCall();
             	    			
-            	    // InternalTraceryPlusPlus.g:831:4: ( (lv_words_2_0= ruleWord ) )
-            	    // InternalTraceryPlusPlus.g:832:5: (lv_words_2_0= ruleWord )
+            	    // InternalTraceryPlusPlus.g:903:4: ( (lv_words_2_0= ruleWord ) )
+            	    // InternalTraceryPlusPlus.g:904:5: (lv_words_2_0= ruleWord )
             	    {
-            	    // InternalTraceryPlusPlus.g:832:5: (lv_words_2_0= ruleWord )
-            	    // InternalTraceryPlusPlus.g:833:6: lv_words_2_0= ruleWord
+            	    // InternalTraceryPlusPlus.g:904:5: (lv_words_2_0= ruleWord )
+            	    // InternalTraceryPlusPlus.g:905:6: lv_words_2_0= ruleWord
             	    {
 
             	    						newCompositeNode(grammarAccess.getWordListAccess().getWordsWordParserRuleCall_1_1_0());
@@ -2287,7 +2510,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttributeList"
-    // InternalTraceryPlusPlus.g:855:1: entryRuleAttributeList returns [EObject current=null] : iv_ruleAttributeList= ruleAttributeList EOF ;
+    // InternalTraceryPlusPlus.g:927:1: entryRuleAttributeList returns [EObject current=null] : iv_ruleAttributeList= ruleAttributeList EOF ;
     public final EObject entryRuleAttributeList() throws RecognitionException {
         EObject current = null;
 
@@ -2295,8 +2518,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:855:54: (iv_ruleAttributeList= ruleAttributeList EOF )
-            // InternalTraceryPlusPlus.g:856:2: iv_ruleAttributeList= ruleAttributeList EOF
+            // InternalTraceryPlusPlus.g:927:54: (iv_ruleAttributeList= ruleAttributeList EOF )
+            // InternalTraceryPlusPlus.g:928:2: iv_ruleAttributeList= ruleAttributeList EOF
             {
              newCompositeNode(grammarAccess.getAttributeListRule()); 
             pushFollow(FOLLOW_1);
@@ -2323,7 +2546,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeList"
-    // InternalTraceryPlusPlus.g:862:1: ruleAttributeList returns [EObject current=null] : ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* ) ;
+    // InternalTraceryPlusPlus.g:934:1: ruleAttributeList returns [EObject current=null] : ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* ) ;
     public final EObject ruleAttributeList() throws RecognitionException {
         EObject current = null;
 
@@ -2336,17 +2559,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:868:2: ( ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* ) )
-            // InternalTraceryPlusPlus.g:869:2: ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* )
+            // InternalTraceryPlusPlus.g:940:2: ( ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* ) )
+            // InternalTraceryPlusPlus.g:941:2: ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* )
             {
-            // InternalTraceryPlusPlus.g:869:2: ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* )
-            // InternalTraceryPlusPlus.g:870:3: ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )*
+            // InternalTraceryPlusPlus.g:941:2: ( ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )* )
+            // InternalTraceryPlusPlus.g:942:3: ( (lv_attributes_0_0= ruleAttribute ) ) ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )*
             {
-            // InternalTraceryPlusPlus.g:870:3: ( (lv_attributes_0_0= ruleAttribute ) )
-            // InternalTraceryPlusPlus.g:871:4: (lv_attributes_0_0= ruleAttribute )
+            // InternalTraceryPlusPlus.g:942:3: ( (lv_attributes_0_0= ruleAttribute ) )
+            // InternalTraceryPlusPlus.g:943:4: (lv_attributes_0_0= ruleAttribute )
             {
-            // InternalTraceryPlusPlus.g:871:4: (lv_attributes_0_0= ruleAttribute )
-            // InternalTraceryPlusPlus.g:872:5: lv_attributes_0_0= ruleAttribute
+            // InternalTraceryPlusPlus.g:943:4: (lv_attributes_0_0= ruleAttribute )
+            // InternalTraceryPlusPlus.g:944:5: lv_attributes_0_0= ruleAttribute
             {
 
             					newCompositeNode(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_0_0());
@@ -2373,7 +2596,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTraceryPlusPlus.g:889:3: ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )*
+            // InternalTraceryPlusPlus.g:961:3: ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )*
             loop14:
             do {
                 int alt14=2;
@@ -2386,7 +2609,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:890:4: ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) )
+            	    // InternalTraceryPlusPlus.g:962:4: ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) )
             	    {
 
             	    				newCompositeNode(grammarAccess.getAttributeListAccess().getSeparatorAndParserRuleCall_1_0());
@@ -2399,11 +2622,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             	    				afterParserOrEnumRuleCall();
             	    			
-            	    // InternalTraceryPlusPlus.g:897:4: ( (lv_attributes_2_0= ruleAttribute ) )
-            	    // InternalTraceryPlusPlus.g:898:5: (lv_attributes_2_0= ruleAttribute )
+            	    // InternalTraceryPlusPlus.g:969:4: ( (lv_attributes_2_0= ruleAttribute ) )
+            	    // InternalTraceryPlusPlus.g:970:5: (lv_attributes_2_0= ruleAttribute )
             	    {
-            	    // InternalTraceryPlusPlus.g:898:5: (lv_attributes_2_0= ruleAttribute )
-            	    // InternalTraceryPlusPlus.g:899:6: lv_attributes_2_0= ruleAttribute
+            	    // InternalTraceryPlusPlus.g:970:5: (lv_attributes_2_0= ruleAttribute )
+            	    // InternalTraceryPlusPlus.g:971:6: lv_attributes_2_0= ruleAttribute
             	    {
 
             	    						newCompositeNode(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_1_1_0());
@@ -2462,7 +2685,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModifier"
-    // InternalTraceryPlusPlus.g:921:1: entryRuleModifier returns [String current=null] : iv_ruleModifier= ruleModifier EOF ;
+    // InternalTraceryPlusPlus.g:993:1: entryRuleModifier returns [String current=null] : iv_ruleModifier= ruleModifier EOF ;
     public final String entryRuleModifier() throws RecognitionException {
         String current = null;
 
@@ -2470,8 +2693,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:921:48: (iv_ruleModifier= ruleModifier EOF )
-            // InternalTraceryPlusPlus.g:922:2: iv_ruleModifier= ruleModifier EOF
+            // InternalTraceryPlusPlus.g:993:48: (iv_ruleModifier= ruleModifier EOF )
+            // InternalTraceryPlusPlus.g:994:2: iv_ruleModifier= ruleModifier EOF
             {
              newCompositeNode(grammarAccess.getModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -2498,7 +2721,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModifier"
-    // InternalTraceryPlusPlus.g:928:1: ruleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier ) ;
+    // InternalTraceryPlusPlus.g:1000:1: ruleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier ) ;
     public final AntlrDatatypeRuleToken ruleModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2517,10 +2740,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:934:2: ( (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier ) )
-            // InternalTraceryPlusPlus.g:935:2: (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier )
+            // InternalTraceryPlusPlus.g:1006:2: ( (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier ) )
+            // InternalTraceryPlusPlus.g:1007:2: (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier )
             {
-            // InternalTraceryPlusPlus.g:935:2: (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier )
+            // InternalTraceryPlusPlus.g:1007:2: (this_CapitalizationModifier_0= ruleCapitalizationModifier | this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier | this_PluralityModifier_2= rulePluralityModifier | this_ArticleModifier_3= ruleArticleModifier | this_PastTenseModifier_4= rulePastTenseModifier )
             int alt15=5;
             switch ( input.LA(1) ) {
             case 29:
@@ -2557,7 +2780,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:936:3: this_CapitalizationModifier_0= ruleCapitalizationModifier
+                    // InternalTraceryPlusPlus.g:1008:3: this_CapitalizationModifier_0= ruleCapitalizationModifier
                     {
 
                     			newCompositeNode(grammarAccess.getModifierAccess().getCapitalizationModifierParserRuleCall_0());
@@ -2577,7 +2800,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:947:3: this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier
+                    // InternalTraceryPlusPlus.g:1019:3: this_FullCapitalizationModifier_1= ruleFullCapitalizationModifier
                     {
 
                     			newCompositeNode(grammarAccess.getModifierAccess().getFullCapitalizationModifierParserRuleCall_1());
@@ -2597,7 +2820,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:958:3: this_PluralityModifier_2= rulePluralityModifier
+                    // InternalTraceryPlusPlus.g:1030:3: this_PluralityModifier_2= rulePluralityModifier
                     {
 
                     			newCompositeNode(grammarAccess.getModifierAccess().getPluralityModifierParserRuleCall_2());
@@ -2617,7 +2840,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalTraceryPlusPlus.g:969:3: this_ArticleModifier_3= ruleArticleModifier
+                    // InternalTraceryPlusPlus.g:1041:3: this_ArticleModifier_3= ruleArticleModifier
                     {
 
                     			newCompositeNode(grammarAccess.getModifierAccess().getArticleModifierParserRuleCall_3());
@@ -2637,7 +2860,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalTraceryPlusPlus.g:980:3: this_PastTenseModifier_4= rulePastTenseModifier
+                    // InternalTraceryPlusPlus.g:1052:3: this_PastTenseModifier_4= rulePastTenseModifier
                     {
 
                     			newCompositeNode(grammarAccess.getModifierAccess().getPastTenseModifierParserRuleCall_4());
@@ -2679,7 +2902,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCapitalizationModifier"
-    // InternalTraceryPlusPlus.g:994:1: entryRuleCapitalizationModifier returns [String current=null] : iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF ;
+    // InternalTraceryPlusPlus.g:1066:1: entryRuleCapitalizationModifier returns [String current=null] : iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF ;
     public final String entryRuleCapitalizationModifier() throws RecognitionException {
         String current = null;
 
@@ -2687,8 +2910,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:994:62: (iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF )
-            // InternalTraceryPlusPlus.g:995:2: iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF
+            // InternalTraceryPlusPlus.g:1066:62: (iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF )
+            // InternalTraceryPlusPlus.g:1067:2: iv_ruleCapitalizationModifier= ruleCapitalizationModifier EOF
             {
              newCompositeNode(grammarAccess.getCapitalizationModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -2715,7 +2938,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCapitalizationModifier"
-    // InternalTraceryPlusPlus.g:1001:1: ruleCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.capitalize' ;
+    // InternalTraceryPlusPlus.g:1073:1: ruleCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.capitalize' ;
     public final AntlrDatatypeRuleToken ruleCapitalizationModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2725,8 +2948,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1007:2: (kw= '.capitalize' )
-            // InternalTraceryPlusPlus.g:1008:2: kw= '.capitalize'
+            // InternalTraceryPlusPlus.g:1079:2: (kw= '.capitalize' )
+            // InternalTraceryPlusPlus.g:1080:2: kw= '.capitalize'
             {
             kw=(Token)match(input,29,FOLLOW_2); 
 
@@ -2753,7 +2976,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFullCapitalizationModifier"
-    // InternalTraceryPlusPlus.g:1016:1: entryRuleFullCapitalizationModifier returns [String current=null] : iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF ;
+    // InternalTraceryPlusPlus.g:1088:1: entryRuleFullCapitalizationModifier returns [String current=null] : iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF ;
     public final String entryRuleFullCapitalizationModifier() throws RecognitionException {
         String current = null;
 
@@ -2761,8 +2984,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1016:66: (iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF )
-            // InternalTraceryPlusPlus.g:1017:2: iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF
+            // InternalTraceryPlusPlus.g:1088:66: (iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF )
+            // InternalTraceryPlusPlus.g:1089:2: iv_ruleFullCapitalizationModifier= ruleFullCapitalizationModifier EOF
             {
              newCompositeNode(grammarAccess.getFullCapitalizationModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -2789,7 +3012,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFullCapitalizationModifier"
-    // InternalTraceryPlusPlus.g:1023:1: ruleFullCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.CAPITALIZE' ;
+    // InternalTraceryPlusPlus.g:1095:1: ruleFullCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.CAPITALIZE' ;
     public final AntlrDatatypeRuleToken ruleFullCapitalizationModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2799,8 +3022,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1029:2: (kw= '.CAPITALIZE' )
-            // InternalTraceryPlusPlus.g:1030:2: kw= '.CAPITALIZE'
+            // InternalTraceryPlusPlus.g:1101:2: (kw= '.CAPITALIZE' )
+            // InternalTraceryPlusPlus.g:1102:2: kw= '.CAPITALIZE'
             {
             kw=(Token)match(input,30,FOLLOW_2); 
 
@@ -2827,7 +3050,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePluralityModifier"
-    // InternalTraceryPlusPlus.g:1038:1: entryRulePluralityModifier returns [String current=null] : iv_rulePluralityModifier= rulePluralityModifier EOF ;
+    // InternalTraceryPlusPlus.g:1110:1: entryRulePluralityModifier returns [String current=null] : iv_rulePluralityModifier= rulePluralityModifier EOF ;
     public final String entryRulePluralityModifier() throws RecognitionException {
         String current = null;
 
@@ -2835,8 +3058,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1038:57: (iv_rulePluralityModifier= rulePluralityModifier EOF )
-            // InternalTraceryPlusPlus.g:1039:2: iv_rulePluralityModifier= rulePluralityModifier EOF
+            // InternalTraceryPlusPlus.g:1110:57: (iv_rulePluralityModifier= rulePluralityModifier EOF )
+            // InternalTraceryPlusPlus.g:1111:2: iv_rulePluralityModifier= rulePluralityModifier EOF
             {
              newCompositeNode(grammarAccess.getPluralityModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -2863,7 +3086,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePluralityModifier"
-    // InternalTraceryPlusPlus.g:1045:1: rulePluralityModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.s' ;
+    // InternalTraceryPlusPlus.g:1117:1: rulePluralityModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.s' ;
     public final AntlrDatatypeRuleToken rulePluralityModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2873,8 +3096,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1051:2: (kw= '.s' )
-            // InternalTraceryPlusPlus.g:1052:2: kw= '.s'
+            // InternalTraceryPlusPlus.g:1123:2: (kw= '.s' )
+            // InternalTraceryPlusPlus.g:1124:2: kw= '.s'
             {
             kw=(Token)match(input,31,FOLLOW_2); 
 
@@ -2901,7 +3124,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArticleModifier"
-    // InternalTraceryPlusPlus.g:1060:1: entryRuleArticleModifier returns [String current=null] : iv_ruleArticleModifier= ruleArticleModifier EOF ;
+    // InternalTraceryPlusPlus.g:1132:1: entryRuleArticleModifier returns [String current=null] : iv_ruleArticleModifier= ruleArticleModifier EOF ;
     public final String entryRuleArticleModifier() throws RecognitionException {
         String current = null;
 
@@ -2909,8 +3132,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1060:55: (iv_ruleArticleModifier= ruleArticleModifier EOF )
-            // InternalTraceryPlusPlus.g:1061:2: iv_ruleArticleModifier= ruleArticleModifier EOF
+            // InternalTraceryPlusPlus.g:1132:55: (iv_ruleArticleModifier= ruleArticleModifier EOF )
+            // InternalTraceryPlusPlus.g:1133:2: iv_ruleArticleModifier= ruleArticleModifier EOF
             {
              newCompositeNode(grammarAccess.getArticleModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -2937,7 +3160,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArticleModifier"
-    // InternalTraceryPlusPlus.g:1067:1: ruleArticleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.a' ;
+    // InternalTraceryPlusPlus.g:1139:1: ruleArticleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.a' ;
     public final AntlrDatatypeRuleToken ruleArticleModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2947,8 +3170,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1073:2: (kw= '.a' )
-            // InternalTraceryPlusPlus.g:1074:2: kw= '.a'
+            // InternalTraceryPlusPlus.g:1145:2: (kw= '.a' )
+            // InternalTraceryPlusPlus.g:1146:2: kw= '.a'
             {
             kw=(Token)match(input,32,FOLLOW_2); 
 
@@ -2975,7 +3198,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePastTenseModifier"
-    // InternalTraceryPlusPlus.g:1082:1: entryRulePastTenseModifier returns [String current=null] : iv_rulePastTenseModifier= rulePastTenseModifier EOF ;
+    // InternalTraceryPlusPlus.g:1154:1: entryRulePastTenseModifier returns [String current=null] : iv_rulePastTenseModifier= rulePastTenseModifier EOF ;
     public final String entryRulePastTenseModifier() throws RecognitionException {
         String current = null;
 
@@ -2983,8 +3206,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1082:57: (iv_rulePastTenseModifier= rulePastTenseModifier EOF )
-            // InternalTraceryPlusPlus.g:1083:2: iv_rulePastTenseModifier= rulePastTenseModifier EOF
+            // InternalTraceryPlusPlus.g:1154:57: (iv_rulePastTenseModifier= rulePastTenseModifier EOF )
+            // InternalTraceryPlusPlus.g:1155:2: iv_rulePastTenseModifier= rulePastTenseModifier EOF
             {
              newCompositeNode(grammarAccess.getPastTenseModifierRule()); 
             pushFollow(FOLLOW_1);
@@ -3011,7 +3234,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePastTenseModifier"
-    // InternalTraceryPlusPlus.g:1089:1: rulePastTenseModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.ed' ;
+    // InternalTraceryPlusPlus.g:1161:1: rulePastTenseModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '.ed' ;
     public final AntlrDatatypeRuleToken rulePastTenseModifier() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3021,8 +3244,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1095:2: (kw= '.ed' )
-            // InternalTraceryPlusPlus.g:1096:2: kw= '.ed'
+            // InternalTraceryPlusPlus.g:1167:2: (kw= '.ed' )
+            // InternalTraceryPlusPlus.g:1168:2: kw= '.ed'
             {
             kw=(Token)match(input,33,FOLLOW_2); 
 
@@ -3049,7 +3272,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAssignmentOperator"
-    // InternalTraceryPlusPlus.g:1104:1: entryRuleAssignmentOperator returns [String current=null] : iv_ruleAssignmentOperator= ruleAssignmentOperator EOF ;
+    // InternalTraceryPlusPlus.g:1176:1: entryRuleAssignmentOperator returns [String current=null] : iv_ruleAssignmentOperator= ruleAssignmentOperator EOF ;
     public final String entryRuleAssignmentOperator() throws RecognitionException {
         String current = null;
 
@@ -3057,8 +3280,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1104:58: (iv_ruleAssignmentOperator= ruleAssignmentOperator EOF )
-            // InternalTraceryPlusPlus.g:1105:2: iv_ruleAssignmentOperator= ruleAssignmentOperator EOF
+            // InternalTraceryPlusPlus.g:1176:58: (iv_ruleAssignmentOperator= ruleAssignmentOperator EOF )
+            // InternalTraceryPlusPlus.g:1177:2: iv_ruleAssignmentOperator= ruleAssignmentOperator EOF
             {
              newCompositeNode(grammarAccess.getAssignmentOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -3085,7 +3308,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAssignmentOperator"
-    // InternalTraceryPlusPlus.g:1111:1: ruleAssignmentOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '=' | kw= ':' | kw= '-' ) ;
+    // InternalTraceryPlusPlus.g:1183:1: ruleAssignmentOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '=' | kw= ':' | kw= '-' ) ;
     public final AntlrDatatypeRuleToken ruleAssignmentOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3095,10 +3318,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1117:2: ( (kw= '=' | kw= ':' | kw= '-' ) )
-            // InternalTraceryPlusPlus.g:1118:2: (kw= '=' | kw= ':' | kw= '-' )
+            // InternalTraceryPlusPlus.g:1189:2: ( (kw= '=' | kw= ':' | kw= '-' ) )
+            // InternalTraceryPlusPlus.g:1190:2: (kw= '=' | kw= ':' | kw= '-' )
             {
-            // InternalTraceryPlusPlus.g:1118:2: (kw= '=' | kw= ':' | kw= '-' )
+            // InternalTraceryPlusPlus.g:1190:2: (kw= '=' | kw= ':' | kw= '-' )
             int alt16=3;
             switch ( input.LA(1) ) {
             case 34:
@@ -3125,7 +3348,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
             switch (alt16) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1119:3: kw= '='
+                    // InternalTraceryPlusPlus.g:1191:3: kw= '='
                     {
                     kw=(Token)match(input,34,FOLLOW_2); 
 
@@ -3136,7 +3359,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1125:3: kw= ':'
+                    // InternalTraceryPlusPlus.g:1197:3: kw= ':'
                     {
                     kw=(Token)match(input,35,FOLLOW_2); 
 
@@ -3147,7 +3370,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1131:3: kw= '-'
+                    // InternalTraceryPlusPlus.g:1203:3: kw= '-'
                     {
                     kw=(Token)match(input,36,FOLLOW_2); 
 
@@ -3180,7 +3403,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSeparatorOr"
-    // InternalTraceryPlusPlus.g:1140:1: entryRuleSeparatorOr returns [String current=null] : iv_ruleSeparatorOr= ruleSeparatorOr EOF ;
+    // InternalTraceryPlusPlus.g:1212:1: entryRuleSeparatorOr returns [String current=null] : iv_ruleSeparatorOr= ruleSeparatorOr EOF ;
     public final String entryRuleSeparatorOr() throws RecognitionException {
         String current = null;
 
@@ -3188,8 +3411,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1140:51: (iv_ruleSeparatorOr= ruleSeparatorOr EOF )
-            // InternalTraceryPlusPlus.g:1141:2: iv_ruleSeparatorOr= ruleSeparatorOr EOF
+            // InternalTraceryPlusPlus.g:1212:51: (iv_ruleSeparatorOr= ruleSeparatorOr EOF )
+            // InternalTraceryPlusPlus.g:1213:2: iv_ruleSeparatorOr= ruleSeparatorOr EOF
             {
              newCompositeNode(grammarAccess.getSeparatorOrRule()); 
             pushFollow(FOLLOW_1);
@@ -3216,7 +3439,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSeparatorOr"
-    // InternalTraceryPlusPlus.g:1147:1: ruleSeparatorOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ',' | kw= 'or' ) ;
+    // InternalTraceryPlusPlus.g:1219:1: ruleSeparatorOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ',' | kw= 'or' ) ;
     public final AntlrDatatypeRuleToken ruleSeparatorOr() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3226,10 +3449,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1153:2: ( (kw= ',' | kw= 'or' ) )
-            // InternalTraceryPlusPlus.g:1154:2: (kw= ',' | kw= 'or' )
+            // InternalTraceryPlusPlus.g:1225:2: ( (kw= ',' | kw= 'or' ) )
+            // InternalTraceryPlusPlus.g:1226:2: (kw= ',' | kw= 'or' )
             {
-            // InternalTraceryPlusPlus.g:1154:2: (kw= ',' | kw= 'or' )
+            // InternalTraceryPlusPlus.g:1226:2: (kw= ',' | kw= 'or' )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -3247,7 +3470,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1155:3: kw= ','
+                    // InternalTraceryPlusPlus.g:1227:3: kw= ','
                     {
                     kw=(Token)match(input,37,FOLLOW_2); 
 
@@ -3258,7 +3481,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1161:3: kw= 'or'
+                    // InternalTraceryPlusPlus.g:1233:3: kw= 'or'
                     {
                     kw=(Token)match(input,38,FOLLOW_2); 
 
@@ -3291,7 +3514,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSeparatorAnd"
-    // InternalTraceryPlusPlus.g:1170:1: entryRuleSeparatorAnd returns [String current=null] : iv_ruleSeparatorAnd= ruleSeparatorAnd EOF ;
+    // InternalTraceryPlusPlus.g:1242:1: entryRuleSeparatorAnd returns [String current=null] : iv_ruleSeparatorAnd= ruleSeparatorAnd EOF ;
     public final String entryRuleSeparatorAnd() throws RecognitionException {
         String current = null;
 
@@ -3299,8 +3522,8 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTraceryPlusPlus.g:1170:52: (iv_ruleSeparatorAnd= ruleSeparatorAnd EOF )
-            // InternalTraceryPlusPlus.g:1171:2: iv_ruleSeparatorAnd= ruleSeparatorAnd EOF
+            // InternalTraceryPlusPlus.g:1242:52: (iv_ruleSeparatorAnd= ruleSeparatorAnd EOF )
+            // InternalTraceryPlusPlus.g:1243:2: iv_ruleSeparatorAnd= ruleSeparatorAnd EOF
             {
              newCompositeNode(grammarAccess.getSeparatorAndRule()); 
             pushFollow(FOLLOW_1);
@@ -3327,7 +3550,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSeparatorAnd"
-    // InternalTraceryPlusPlus.g:1177:1: ruleSeparatorAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ',' | kw= 'and' ) ;
+    // InternalTraceryPlusPlus.g:1249:1: ruleSeparatorAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= ',' | kw= 'and' ) ;
     public final AntlrDatatypeRuleToken ruleSeparatorAnd() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -3337,10 +3560,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:1183:2: ( (kw= ',' | kw= 'and' ) )
-            // InternalTraceryPlusPlus.g:1184:2: (kw= ',' | kw= 'and' )
+            // InternalTraceryPlusPlus.g:1255:2: ( (kw= ',' | kw= 'and' ) )
+            // InternalTraceryPlusPlus.g:1256:2: (kw= ',' | kw= 'and' )
             {
-            // InternalTraceryPlusPlus.g:1184:2: (kw= ',' | kw= 'and' )
+            // InternalTraceryPlusPlus.g:1256:2: (kw= ',' | kw= 'and' )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -3358,7 +3581,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1185:3: kw= ','
+                    // InternalTraceryPlusPlus.g:1257:3: kw= ','
                     {
                     kw=(Token)match(input,37,FOLLOW_2); 
 
@@ -3369,7 +3592,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1191:3: kw= 'and'
+                    // InternalTraceryPlusPlus.g:1263:3: kw= 'and'
                     {
                     kw=(Token)match(input,39,FOLLOW_2); 
 

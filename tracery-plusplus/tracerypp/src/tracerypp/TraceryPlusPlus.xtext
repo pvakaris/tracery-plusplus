@@ -69,7 +69,8 @@ StoryVariable:
 
 Attribute:
 	name = ExistingVariable |
-	name = Variable AssignmentOperator value = STRING
+	name = Variable AssignmentOperator value = ExistingVariable |
+	name = Variable AssignmentOperator value = Word
 ;
 
 ExistingVariable:
