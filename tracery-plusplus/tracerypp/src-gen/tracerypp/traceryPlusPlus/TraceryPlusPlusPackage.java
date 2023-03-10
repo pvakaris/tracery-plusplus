@@ -58,14 +58,14 @@ public interface TraceryPlusPlusPackage extends EPackage
   TraceryPlusPlusPackage eINSTANCE = tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.TraceryPlusPlusProgramImpl <em>Program</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.ModelImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModel()
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusProgramImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getTraceryPlusPlusProgram()
    * @generated
    */
-  int MODEL = 0;
+  int TRACERY_PLUS_PLUS_PROGRAM = 0;
 
   /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -74,7 +74,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__STATEMENTS = 0;
+  int TRACERY_PLUS_PLUS_PROGRAM__STATEMENTS = 0;
 
   /**
    * The feature id for the '<em><b>Story</b></em>' containment reference.
@@ -83,16 +83,16 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__STORY = 1;
+  int TRACERY_PLUS_PLUS_PROGRAM__STORY = 1;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Program</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int TRACERY_PLUS_PLUS_PROGRAM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.StatementImpl <em>Statement</em>}' class.
@@ -496,36 +496,36 @@ public interface TraceryPlusPlusPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.TraceryPlusPlusProgram <em>Program</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see tracerypp.traceryPlusPlus.Model
+   * @return the meta object for class '<em>Program</em>'.
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
    * @generated
    */
-  EClass getModel();
+  EClass getTraceryPlusPlusProgram();
 
   /**
-   * Returns the meta object for the containment reference list '{@link tracerypp.traceryPlusPlus.Model#getStatements <em>Statements</em>}'.
+   * Returns the meta object for the containment reference list '{@link tracerypp.traceryPlusPlus.TraceryPlusPlusProgram#getStatements <em>Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Statements</em>'.
-   * @see tracerypp.traceryPlusPlus.Model#getStatements()
-   * @see #getModel()
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusProgram#getStatements()
+   * @see #getTraceryPlusPlusProgram()
    * @generated
    */
-  EReference getModel_Statements();
+  EReference getTraceryPlusPlusProgram_Statements();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.Model#getStory <em>Story</em>}'.
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.TraceryPlusPlusProgram#getStory <em>Story</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Story</em>'.
-   * @see tracerypp.traceryPlusPlus.Model#getStory()
-   * @see #getModel()
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusProgram#getStory()
+   * @see #getTraceryPlusPlusProgram()
    * @generated
    */
-  EReference getModel_Story();
+  EReference getTraceryPlusPlusProgram_Story();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Statement <em>Statement</em>}'.
@@ -868,14 +868,14 @@ public interface TraceryPlusPlusPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.TraceryPlusPlusProgramImpl <em>Program</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.ModelImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModel()
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusProgramImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getTraceryPlusPlusProgram()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass TRACERY_PLUS_PLUS_PROGRAM = eINSTANCE.getTraceryPlusPlusProgram();
 
     /**
      * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
@@ -883,7 +883,7 @@ public interface TraceryPlusPlusPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__STATEMENTS = eINSTANCE.getModel_Statements();
+    EReference TRACERY_PLUS_PLUS_PROGRAM__STATEMENTS = eINSTANCE.getTraceryPlusPlusProgram_Statements();
 
     /**
      * The meta object literal for the '<em><b>Story</b></em>' containment reference feature.
@@ -891,7 +891,7 @@ public interface TraceryPlusPlusPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__STORY = eINSTANCE.getModel_Story();
+    EReference TRACERY_PLUS_PLUS_PROGRAM__STORY = eINSTANCE.getTraceryPlusPlusProgram_Story();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.StatementImpl <em>Statement</em>}' class.

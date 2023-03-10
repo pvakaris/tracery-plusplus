@@ -43,7 +43,7 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAssignmentOperatorAccess().getAlternatives(), "rule__AssignmentOperator__Alternatives");
 			builder.put(grammarAccess.getSeparatorOrAccess().getAlternatives(), "rule__SeparatorOr__Alternatives");
 			builder.put(grammarAccess.getSeparatorAndAccess().getAlternatives(), "rule__SeparatorAnd__Alternatives");
-			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getTraceryPlusPlusProgramAccess().getGroup(), "rule__TraceryPlusPlusProgram__Group__0");
 			builder.put(grammarAccess.getStoryAccess().getGroup(), "rule__Story__Group__0");
 			builder.put(grammarAccess.getListDeclarationAccess().getGroup(), "rule__ListDeclaration__Group__0");
 			builder.put(grammarAccess.getListDeclarationAccess().getGroup_1_0(), "rule__ListDeclaration__Group_1_0__0");
@@ -56,8 +56,8 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWordListAccess().getGroup_1(), "rule__WordList__Group_1__0");
 			builder.put(grammarAccess.getAttributeListAccess().getGroup(), "rule__AttributeList__Group__0");
 			builder.put(grammarAccess.getAttributeListAccess().getGroup_1(), "rule__AttributeList__Group_1__0");
-			builder.put(grammarAccess.getModelAccess().getStatementsAssignment_0(), "rule__Model__StatementsAssignment_0");
-			builder.put(grammarAccess.getModelAccess().getStoryAssignment_1(), "rule__Model__StoryAssignment_1");
+			builder.put(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsAssignment_0(), "rule__TraceryPlusPlusProgram__StatementsAssignment_0");
+			builder.put(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1(), "rule__TraceryPlusPlusProgram__StoryAssignment_1");
 			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_3(), "rule__Story__StoryAssignment_3");
 			builder.put(grammarAccess.getListDeclarationAccess().getNameAssignment_0(), "rule__ListDeclaration__NameAssignment_0");
 			builder.put(grammarAccess.getListDeclarationAccess().getListAssignment_3(), "rule__ListDeclaration__ListAssignment_3");

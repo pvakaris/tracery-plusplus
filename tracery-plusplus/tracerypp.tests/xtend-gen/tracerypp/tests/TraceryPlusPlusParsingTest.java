@@ -15,14 +15,14 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import tracerypp.traceryPlusPlus.Model;
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 
 @ExtendWith(InjectionExtension.class)
 @InjectWith(TraceryPlusPlusInjectorProvider.class)
 @SuppressWarnings("all")
 public class TraceryPlusPlusParsingTest {
   @Inject
-  private ParseHelper<Model> parseHelper;
+  private ParseHelper<TraceryPlusPlusProgram> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class TraceryPlusPlusParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
+      final TraceryPlusPlusProgram result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

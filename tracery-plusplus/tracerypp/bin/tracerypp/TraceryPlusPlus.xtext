@@ -4,11 +4,11 @@ generate traceryPlusPlus "http://www.TraceryPlusPlus.tracerypp"
 
 // Version 1.0
 
-Model:
+TraceryPlusPlusProgram:
 	statements += Statement*
 	story = Story
 ;
-	
+	 
 Statement:
 	Declaration
 	// Rule (for example if else or something similar)

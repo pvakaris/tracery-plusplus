@@ -76,9 +76,9 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
     new TraceryPlusPlusSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseTraceryPlusPlusProgram(TraceryPlusPlusProgram object)
       {
-        return createModelAdapter();
+        return createTraceryPlusPlusProgramAdapter();
       }
       @Override
       public Adapter caseStatement(Statement object)
@@ -168,16 +168,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.TraceryPlusPlusProgram <em>Program</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.Model
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
    * @generated
    */
-  public Adapter createModelAdapter()
+  public Adapter createTraceryPlusPlusProgramAdapter()
   {
     return null;
   }

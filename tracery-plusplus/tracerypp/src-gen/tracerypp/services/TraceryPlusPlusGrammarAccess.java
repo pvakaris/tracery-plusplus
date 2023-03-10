@@ -24,8 +24,8 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Model");
+	public class TraceryPlusPlusProgramElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.TraceryPlusPlusProgram");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cStatementsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cStatementsStatementParserRuleCall_0_0 = (RuleCall)cStatementsAssignment_0.eContents().get(0);
@@ -33,7 +33,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cStoryStoryParserRuleCall_1_0 = (RuleCall)cStoryAssignment_1.eContents().get(0);
 		
 		//// Version 1.0
-		//Model:
+		//TraceryPlusPlusProgram:
 		//    statements += Statement*
 		//    story = Story
 		//;
@@ -744,7 +744,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	
-	private final ModelElements pModel;
+	private final TraceryPlusPlusProgramElements pTraceryPlusPlusProgram;
 	private final StatementElements pStatement;
 	private final DeclarationElements pDeclaration;
 	private final StoryElements pStory;
@@ -777,7 +777,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
+		this.pTraceryPlusPlusProgram = new TraceryPlusPlusProgramElements();
 		this.pStatement = new StatementElements();
 		this.pDeclaration = new DeclarationElements();
 		this.pStory = new StoryElements();
@@ -830,16 +830,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 
 	
 	//// Version 1.0
-	//Model:
+	//TraceryPlusPlusProgram:
 	//    statements += Statement*
 	//    story = Story
 	//;
-	public ModelElements getModelAccess() {
-		return pModel;
+	public TraceryPlusPlusProgramElements getTraceryPlusPlusProgramAccess() {
+		return pTraceryPlusPlusProgram;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getTraceryPlusPlusProgramRule() {
+		return getTraceryPlusPlusProgramAccess().getRule();
 	}
 	
 	//Statement:

@@ -89,7 +89,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
         @Override
         protected String getFirstRuleName() {
-        	return "Model";
+        	return "TraceryPlusPlusProgram";
        	}
 
        	@Override
@@ -100,25 +100,25 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
 
-    // $ANTLR start "entryRuleModel"
-    // InternalTraceryPlusPlus.g:64:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
-    public final EObject entryRuleModel() throws RecognitionException {
+    // $ANTLR start "entryRuleTraceryPlusPlusProgram"
+    // InternalTraceryPlusPlus.g:64:1: entryRuleTraceryPlusPlusProgram returns [EObject current=null] : iv_ruleTraceryPlusPlusProgram= ruleTraceryPlusPlusProgram EOF ;
+    public final EObject entryRuleTraceryPlusPlusProgram() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleModel = null;
+        EObject iv_ruleTraceryPlusPlusProgram = null;
 
 
         try {
-            // InternalTraceryPlusPlus.g:64:46: (iv_ruleModel= ruleModel EOF )
-            // InternalTraceryPlusPlus.g:65:2: iv_ruleModel= ruleModel EOF
+            // InternalTraceryPlusPlus.g:64:63: (iv_ruleTraceryPlusPlusProgram= ruleTraceryPlusPlusProgram EOF )
+            // InternalTraceryPlusPlus.g:65:2: iv_ruleTraceryPlusPlusProgram= ruleTraceryPlusPlusProgram EOF
             {
-             newCompositeNode(grammarAccess.getModelRule()); 
+             newCompositeNode(grammarAccess.getTraceryPlusPlusProgramRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleModel=ruleModel();
+            iv_ruleTraceryPlusPlusProgram=ruleTraceryPlusPlusProgram();
 
             state._fsp--;
 
-             current =iv_ruleModel; 
+             current =iv_ruleTraceryPlusPlusProgram; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -133,12 +133,12 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleModel"
+    // $ANTLR end "entryRuleTraceryPlusPlusProgram"
 
 
-    // $ANTLR start "ruleModel"
-    // InternalTraceryPlusPlus.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) ) ;
-    public final EObject ruleModel() throws RecognitionException {
+    // $ANTLR start "ruleTraceryPlusPlusProgram"
+    // InternalTraceryPlusPlus.g:71:1: ruleTraceryPlusPlusProgram returns [EObject current=null] : ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) ) ;
+    public final EObject ruleTraceryPlusPlusProgram() throws RecognitionException {
         EObject current = null;
 
         EObject lv_statements_0_0 = null;
@@ -175,7 +175,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    // InternalTraceryPlusPlus.g:81:5: lv_statements_0_0= ruleStatement
             	    {
 
-            	    					newCompositeNode(grammarAccess.getModelAccess().getStatementsStatementParserRuleCall_0_0());
+            	    					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsStatementParserRuleCall_0_0());
             	    				
             	    pushFollow(FOLLOW_3);
             	    lv_statements_0_0=ruleStatement();
@@ -184,7 +184,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
             	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getModelRule());
+            	    						current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
             	    					}
             	    					add(
             	    						current,
@@ -212,7 +212,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:100:5: lv_story_1_0= ruleStory
             {
 
-            					newCompositeNode(grammarAccess.getModelAccess().getStoryStoryParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryStoryParserRuleCall_1_0());
             				
             pushFollow(FOLLOW_2);
             lv_story_1_0=ruleStory();
@@ -221,7 +221,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getModelRule());
+            						current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
             					}
             					set(
             						current,
@@ -255,7 +255,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleModel"
+    // $ANTLR end "ruleTraceryPlusPlusProgram"
 
 
     // $ANTLR start "entryRuleStatement"

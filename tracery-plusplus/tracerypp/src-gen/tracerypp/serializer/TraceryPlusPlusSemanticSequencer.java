@@ -19,12 +19,12 @@ import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.ExistingVariable;
 import tracerypp.traceryPlusPlus.ListDeclaration;
-import tracerypp.traceryPlusPlus.Model;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Variable;
 import tracerypp.traceryPlusPlus.Word;
 import tracerypp.traceryPlusPlus.WordList;
@@ -55,9 +55,6 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 			case TraceryPlusPlusPackage.LIST_DECLARATION:
 				sequence_ListDeclaration(context, (ListDeclaration) semanticObject); 
 				return; 
-			case TraceryPlusPlusPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
-				return; 
 			case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE:
 				sequence_ObjectAttribute(context, (ObjectAttribute) semanticObject); 
 				return; 
@@ -69,6 +66,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.STORY_VARIABLE:
 				sequence_StoryVariable(context, (StoryVariable) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.TRACERY_PLUS_PLUS_PROGRAM:
+				sequence_TraceryPlusPlusProgram(context, (TraceryPlusPlusProgram) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -160,20 +160,6 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Model returns Model
-	 *
-	 * Constraint:
-	 *     (statements+=Statement* story=Story)
-	 * </pre>
-	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     ObjectAttribute returns ObjectAttribute
 	 *
 	 * Constraint:
@@ -234,6 +220,20 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 * </pre>
 	 */
 	protected void sequence_Story(ISerializationContext context, Story semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     TraceryPlusPlusProgram returns TraceryPlusPlusProgram
+	 *
+	 * Constraint:
+	 *     (statements+=Statement* story=Story)
+	 * </pre>
+	 */
+	protected void sequence_TraceryPlusPlusProgram(ISerializationContext context, TraceryPlusPlusProgram semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

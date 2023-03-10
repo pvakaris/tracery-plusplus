@@ -15,7 +15,6 @@ import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.Declaration;
 import tracerypp.traceryPlusPlus.ExistingVariable;
 import tracerypp.traceryPlusPlus.ListDeclaration;
-import tracerypp.traceryPlusPlus.Model;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.Statement;
@@ -23,6 +22,7 @@ import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusFactory;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Variable;
 import tracerypp.traceryPlusPlus.Word;
 import tracerypp.traceryPlusPlus.WordList;
@@ -40,7 +40,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
+  private EClass traceryPlusPlusProgramEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -201,9 +201,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getTraceryPlusPlusProgram()
   {
-    return modelEClass;
+    return traceryPlusPlusProgramEClass;
   }
 
   /**
@@ -212,9 +212,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getModel_Statements()
+  public EReference getTraceryPlusPlusProgram_Statements()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)traceryPlusPlusProgramEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -223,9 +223,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getModel_Story()
+  public EReference getTraceryPlusPlusProgram_Story()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return (EReference)traceryPlusPlusProgramEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -589,9 +589,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__STATEMENTS);
-    createEReference(modelEClass, MODEL__STORY);
+    traceryPlusPlusProgramEClass = createEClass(TRACERY_PLUS_PLUS_PROGRAM);
+    createEReference(traceryPlusPlusProgramEClass, TRACERY_PLUS_PLUS_PROGRAM__STATEMENTS);
+    createEReference(traceryPlusPlusProgramEClass, TRACERY_PLUS_PLUS_PROGRAM__STORY);
 
     statementEClass = createEClass(STATEMENT);
 
@@ -671,9 +671,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     objectDeclarationEClass.getESuperTypes().add(this.getDeclaration());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Statements(), this.getStatement(), null, "statements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Story(), this.getStory(), null, "story", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(traceryPlusPlusProgramEClass, TraceryPlusPlusProgram.class, "TraceryPlusPlusProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTraceryPlusPlusProgram_Statements(), this.getStatement(), null, "statements", null, 0, -1, TraceryPlusPlusProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTraceryPlusPlusProgram_Story(), this.getStory(), null, "story", null, 0, 1, TraceryPlusPlusProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -65,7 +65,7 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     switch (eClass.getClassifierID())
     {
-      case TraceryPlusPlusPackage.MODEL: return createModel();
+      case TraceryPlusPlusPackage.TRACERY_PLUS_PLUS_PROGRAM: return createTraceryPlusPlusProgram();
       case TraceryPlusPlusPackage.STATEMENT: return createStatement();
       case TraceryPlusPlusPackage.DECLARATION: return createDeclaration();
       case TraceryPlusPlusPackage.STORY: return createStory();
@@ -90,10 +90,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public Model createModel()
+  public TraceryPlusPlusProgram createTraceryPlusPlusProgram()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
+    TraceryPlusPlusProgramImpl traceryPlusPlusProgram = new TraceryPlusPlusProgramImpl();
+    return traceryPlusPlusProgram;
   }
 
   /**

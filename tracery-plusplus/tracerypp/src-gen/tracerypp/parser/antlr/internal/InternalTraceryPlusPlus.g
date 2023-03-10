@@ -43,7 +43,7 @@ import tracerypp.services.TraceryPlusPlusGrammarAccess;
 
     @Override
     protected String getFirstRuleName() {
-    	return "Model";
+    	return "TraceryPlusPlusProgram";
    	}
 
    	@Override
@@ -60,15 +60,15 @@ import tracerypp.services.TraceryPlusPlusGrammarAccess;
     }
 }
 
-// Entry rule entryRuleModel
-entryRuleModel returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getModelRule()); }
-	iv_ruleModel=ruleModel
-	{ $current=$iv_ruleModel.current; }
+// Entry rule entryRuleTraceryPlusPlusProgram
+entryRuleTraceryPlusPlusProgram returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTraceryPlusPlusProgramRule()); }
+	iv_ruleTraceryPlusPlusProgram=ruleTraceryPlusPlusProgram
+	{ $current=$iv_ruleTraceryPlusPlusProgram.current; }
 	EOF;
 
-// Rule Model
-ruleModel returns [EObject current=null]
+// Rule TraceryPlusPlusProgram
+ruleTraceryPlusPlusProgram returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -79,12 +79,12 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getStatementsStatementParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsStatementParserRuleCall_0_0());
 				}
 				lv_statements_0_0=ruleStatement
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
 					}
 					add(
 						$current,
@@ -98,12 +98,12 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getStoryStoryParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryStoryParserRuleCall_1_0());
 				}
 				lv_story_1_0=ruleStory
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
 					}
 					set(
 						$current,

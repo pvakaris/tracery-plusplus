@@ -10,13 +10,13 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-import tracerypp.traceryPlusPlus.Model
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
 
 @ExtendWith(InjectionExtension)
 @InjectWith(TraceryPlusPlusInjectorProvider)
 class TraceryPlusPlusParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<TraceryPlusPlusProgram> parseHelper
 	
 	@Test
 	def void loadModel() {

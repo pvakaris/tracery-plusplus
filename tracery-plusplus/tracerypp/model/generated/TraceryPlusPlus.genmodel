@@ -6,9 +6,9 @@
     copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="TraceryPlusPlus" basePackage="tracerypp" disposableProviderFactory="true"
       fileExtensions="tpp" ecorePackage="TraceryPlusPlus.ecore#/">
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Model/statements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Model/story"/>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//TraceryPlusPlusProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//TraceryPlusPlusProgram/statements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//TraceryPlusPlusProgram/story"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Statement"/>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Declaration"/>

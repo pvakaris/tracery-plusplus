@@ -24,13 +24,13 @@ public interface TraceryPlusPlusFactory extends EFactory
   TraceryPlusPlusFactory eINSTANCE = tracerypp.traceryPlusPlus.impl.TraceryPlusPlusFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Program</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Program</em>'.
    * @generated
    */
-  Model createModel();
+  TraceryPlusPlusProgram createTraceryPlusPlusProgram();
 
   /**
    * Returns a new object of class '<em>Statement</em>'.
