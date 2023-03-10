@@ -9,6 +9,7 @@ villainOccupation can be: "evil queen", "dragon", "witch", "sorcerer", "giant", 
 location can have values: "castle", "kingdom", "forest", "desert", "island", "mountain", "ocean", "city", "village", "cave"
 favFood can be: "pumpkin pie", "chocolate cake", "apple tart", "strawberry sorbet", "crème brûlée", "cheesecake", "lemon meringue pie", "carrot cake", "banana bread", "pecan pie"
 negativeAdverb can have values: "unhappily", "miserably", "gloomily", "melancholically", "sorrowfully", "regrettably", "unfortunately", "woefully", "piteously", "pathetically"
+friend can be: "Fairy Godmother", "Wizard Merlin", "Hobbit Samwise", "Lion Aslan", "Dragon Saphira", "Dwarf Gimli", "Elf Legolas", "Owl Hedwig", "Dog Fang", "Cat Crookshanks"
 
 There is a prince
 He has attributes: name = princeName, location
@@ -27,6 +28,6 @@ The story:
 
 " As the sun did set in the sky, "prince.name" did humbly beseech "princess.name" to become his bride. She, with much joy in her heart, did accept his suit, and they did begin the planning of their dream wedding."
 
-" Sadly, their happiness was short-lived, for an "villainPersonality" "villain.occupation" by name of "villain.name" did appear and threaten to ruin all. But with the aid of their wise and loyal friend, the fairy godmother, "prince.name" and "princess.name" did overcome the "villain.occupation" through the power of magic."
+" Sadly, their happiness was short-lived, for an "villainPersonality" "villain.occupation" by name of "villain.name" did appear and threaten to ruin all. But with the aid of their wise and loyal friend"friend", "prince.name" and "princess.name" did overcome the "villain.occupation" through the power of magic."
 
 " From that day forth, "prince.name" and "princess.name" did dwell together in great happiness, enjoying each other's company and their favorite "princess.favFood" together in their fair "princess.location"."
