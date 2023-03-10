@@ -1,7 +1,15 @@
 {
-	"name": ["Arjun","Yuuma","Darcy","Mia","Chiaki","Izzi","Azra","Lina"],
-	"animal": ["unicorn","raven","sparrow","scorpion","coyote","eagle","owl","lizard","zebra","duck","kitten"],
-	"mood": ["vexed","indignant","impassioned","wistful","astute","courteous"],
-	"story": ["#hero# traveled with her pet #heroPet#.  #hero# was never #mood#, for the #heroPet# was always too #mood#."],
-	"origin": ["#[hero:#name#][heroPet:#animal#]story#"]
+	"color": ["green", "blue", "red", "white", "black", "yellow", "orange"],
+	"fruit": ["banana", "apple", "orange", "mango", "pear"],
+	"action": ["resign"],
+	"name": ["Charlie", "Bob"],
+	"place": ["road", "street", "beach"],
+	"time_of_day": ["morning", "afternoon", "evening", "night"],
+	"firm": ["JPMorgan", "HSBC", "Barclays"],
+	"occupation": ["teacher", "plumber", "astronaut", "banker", "dancer"],
+	"negative_adj": ["bad", "horrible"],
+	"setHero": ["[heroName:John][heroOccupation:#occupation#]"],
+	"setCountry": ["[countryName:United Kingdom][countryMain_city:London]"],
+	"story": ["#color.capitalize# was the sky and #name.capitalize# was walking down the #place#. Yesterday in the #time_of_day# I #action.ed# from my position at #firm#. #fruit.a.capitalize# was lying on the ground. #heroName# was slowly walking on the streets of #countryMain_city#, looking at the beautiful old architecture."],
+	"origin": ["#[#setHero#][#setCountry#]story#"]
 }
