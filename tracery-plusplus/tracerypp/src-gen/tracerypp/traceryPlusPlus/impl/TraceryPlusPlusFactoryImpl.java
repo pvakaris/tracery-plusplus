@@ -75,8 +75,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.VARIABLE: return createVariable();
       case TraceryPlusPlusPackage.STORY_VARIABLE: return createStoryVariable();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
-      case TraceryPlusPlusPackage.POINTERIS: return createPointeris();
       case TraceryPlusPlusPackage.EXISTING_VARIABLE: return createExistingVariable();
+      case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE: return createJustNameAttribute();
+      case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
+      case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
       case TraceryPlusPlusPackage.WORD_LIST: return createWordList();
       case TraceryPlusPlusPackage.ATTRIBUTE_LIST: return createAttributeList();
@@ -211,10 +213,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public Pointeris createPointeris()
+  public ExistingVariable createExistingVariable()
   {
-    PointerisImpl pointeris = new PointerisImpl();
-    return pointeris;
+    ExistingVariableImpl existingVariable = new ExistingVariableImpl();
+    return existingVariable;
   }
 
   /**
@@ -223,10 +225,34 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public ExistingVariable createExistingVariable()
+  public JustNameAttribute createJustNameAttribute()
   {
-    ExistingVariableImpl existingVariable = new ExistingVariableImpl();
-    return existingVariable;
+    JustNameAttributeImpl justNameAttribute = new JustNameAttributeImpl();
+    return justNameAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NameExistingListAttribute createNameExistingListAttribute()
+  {
+    NameExistingListAttributeImpl nameExistingListAttribute = new NameExistingListAttributeImpl();
+    return nameExistingListAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NameValueAttribute createNameValueAttribute()
+  {
+    NameValueAttributeImpl nameValueAttribute = new NameValueAttributeImpl();
+    return nameValueAttribute;
   }
 
   /**

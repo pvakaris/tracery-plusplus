@@ -14,10 +14,12 @@ import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.Declaration;
 import tracerypp.traceryPlusPlus.ExistingVariable;
+import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
+import tracerypp.traceryPlusPlus.NameExistingListAttribute;
+import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
-import tracerypp.traceryPlusPlus.Pointeris;
 import tracerypp.traceryPlusPlus.Statement;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
@@ -111,14 +113,28 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass pointerisEClass = null;
+  private EClass existingVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass existingVariableEClass = null;
+  private EClass justNameAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameExistingListAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameValueAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -440,50 +456,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getAttribute_Name()
-  {
-    return (EReference)attributeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getAttribute_Value()
-  {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getPointeris()
-  {
-    return pointerisEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getPointeris_I()
-  {
-    return (EReference)pointerisEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getExistingVariable()
   {
     return existingVariableEClass;
@@ -498,6 +470,94 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
   public EReference getExistingVariable_Pointer()
   {
     return (EReference)existingVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getJustNameAttribute()
+  {
+    return justNameAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getJustNameAttribute_Name()
+  {
+    return (EReference)justNameAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNameExistingListAttribute()
+  {
+    return nameExistingListAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExistingListAttribute_Name()
+  {
+    return (EReference)nameExistingListAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameExistingListAttribute_Value()
+  {
+    return (EReference)nameExistingListAttributeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNameValueAttribute()
+  {
+    return nameValueAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameValueAttribute_Name()
+  {
+    return (EReference)nameValueAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNameValueAttribute_Value()
+  {
+    return (EReference)nameValueAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -649,14 +709,20 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     createEAttribute(storyVariableEClass, STORY_VARIABLE__MODIFIERS);
 
     attributeEClass = createEClass(ATTRIBUTE);
-    createEReference(attributeEClass, ATTRIBUTE__NAME);
-    createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
-
-    pointerisEClass = createEClass(POINTERIS);
-    createEReference(pointerisEClass, POINTERIS__I);
 
     existingVariableEClass = createEClass(EXISTING_VARIABLE);
     createEReference(existingVariableEClass, EXISTING_VARIABLE__POINTER);
+
+    justNameAttributeEClass = createEClass(JUST_NAME_ATTRIBUTE);
+    createEReference(justNameAttributeEClass, JUST_NAME_ATTRIBUTE__NAME);
+
+    nameExistingListAttributeEClass = createEClass(NAME_EXISTING_LIST_ATTRIBUTE);
+    createEReference(nameExistingListAttributeEClass, NAME_EXISTING_LIST_ATTRIBUTE__NAME);
+    createEReference(nameExistingListAttributeEClass, NAME_EXISTING_LIST_ATTRIBUTE__VALUE);
+
+    nameValueAttributeEClass = createEClass(NAME_VALUE_ATTRIBUTE);
+    createEReference(nameValueAttributeEClass, NAME_VALUE_ATTRIBUTE__NAME);
+    createEReference(nameValueAttributeEClass, NAME_VALUE_ATTRIBUTE__VALUE);
 
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__OBJECT);
@@ -702,6 +768,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     declarationEClass.getESuperTypes().add(this.getStatement());
     listDeclarationEClass.getESuperTypes().add(this.getDeclaration());
     objectDeclarationEClass.getESuperTypes().add(this.getDeclaration());
+    justNameAttributeEClass.getESuperTypes().add(this.getAttribute());
+    nameExistingListAttributeEClass.getESuperTypes().add(this.getAttribute());
+    nameValueAttributeEClass.getESuperTypes().add(this.getAttribute());
 
     // Initialize classes and features; add operations and parameters
     initEClass(traceryPlusPlusProgramEClass, TraceryPlusPlusProgram.class, "TraceryPlusPlusProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -734,14 +803,20 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEAttribute(getStoryVariable_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, StoryVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAttribute_Name(), ecorePackage.getEObject(), null, "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(pointerisEClass, Pointeris.class, "Pointeris", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPointeris_I(), this.getVariable(), null, "i", null, 0, 1, Pointeris.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(existingVariableEClass, ExistingVariable.class, "ExistingVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExistingVariable_Pointer(), this.getVariable(), null, "pointer", null, 0, 1, ExistingVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(justNameAttributeEClass, JustNameAttribute.class, "JustNameAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getJustNameAttribute_Name(), this.getExistingVariable(), null, "name", null, 0, 1, JustNameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nameExistingListAttributeEClass, NameExistingListAttribute.class, "NameExistingListAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNameExistingListAttribute_Name(), this.getVariable(), null, "name", null, 0, 1, NameExistingListAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameExistingListAttribute_Value(), this.getExistingVariable(), null, "value", null, 0, 1, NameExistingListAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nameValueAttributeEClass, NameValueAttribute.class, "NameValueAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNameValueAttribute_Name(), this.getVariable(), null, "name", null, 0, 1, NameValueAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNameValueAttribute_Value(), this.getWord(), null, "value", null, 0, 1, NameValueAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectAttribute_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

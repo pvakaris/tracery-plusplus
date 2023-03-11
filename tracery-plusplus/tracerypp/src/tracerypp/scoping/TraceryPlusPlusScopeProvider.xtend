@@ -9,9 +9,9 @@ import org.eclipse.xtext.scoping.IScope
 import org.eclipse.emf.ecore.EReference
 import static org.eclipse.xtext.scoping.Scopes.*
 import tracerypp.traceryPlusPlus.ObjectAttribute
-import tracerypp.traceryPlusPlus.Variable
-import tracerypp.traceryPlusPlus.ExistingVariable
-import tracerypp.traceryPlusPlus.Attribute
+import tracerypp.traceryPlusPlus.JustNameAttribute
+import tracerypp.traceryPlusPlus.NameExistingListAttribute
+import tracerypp.traceryPlusPlus.NameValueAttribute
 
 /**
  * This class contains custom scoping description.
@@ -30,12 +30,14 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
             val list = newArrayList
             for(attribute : attributeContainer) {
             	// Add attribute names to the list and then scope for
-            	val variable = attribute.name
-            	if (variable instanceof Variable) {
-            		list.add(variable)
+            	if (attribute instanceof JustNameAttribute) {
+            		list.add(attribute.name.pointer)
             	}
-            	else if(variable instanceof ExistingVariable) {
-            		list.add(variable.pointer)
+            	else if(attribute instanceof NameExistingListAttribute) {
+            		list.add(attribute.name)
+            	}
+            	else if(attribute instanceof NameValueAttribute) {
+            		list.add(attribute.name)
             	}
             }
         	scopeFor(list)
@@ -44,11 +46,5 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
             IScope.NULLSCOPE
         }
     }
-    
-	def IScope scope_Attribute_value(Attribute context, EReference ref) {
-	    val value = context.value
-	    print(value)
-	    return IScope.NULLSCOPE
-	}
 	    
 }

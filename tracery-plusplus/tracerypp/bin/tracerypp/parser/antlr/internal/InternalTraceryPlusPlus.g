@@ -618,145 +618,33 @@ ruleAttribute returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAttributeAccess().getNameExistingVariableParserRuleCall_0_0());
-				}
-				lv_name_0_0=ruleExistingVariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAttributeRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_0_0,
-						"tracerypp.TraceryPlusPlus.ExistingVariable");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAttributeAccess().getJustNameAttributeParserRuleCall_0());
+		}
+		this_JustNameAttribute_0=ruleJustNameAttribute
+		{
+			$current = $this_JustNameAttribute_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getNameVariableParserRuleCall_1_0_0());
-					}
-					lv_name_1_0=ruleVariable
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
-						}
-						set(
-							$current,
-							"name",
-							lv_name_1_0,
-							"tracerypp.TraceryPlusPlus.Variable");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			{
-				newCompositeNode(grammarAccess.getAttributeAccess().getAssignmentOperatorParserRuleCall_1_1());
-			}
-			ruleAssignmentOperator
-			{
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					lv_value_3_0=RULE_STRING
-					{
-						newLeafNode(lv_value_3_0, grammarAccess.getAttributeAccess().getValueSTRINGTerminalRuleCall_1_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAttributeRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"value",
-							lv_value_3_0,
-							"org.eclipse.xtext.common.Terminals.STRING");
-					}
-				)
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_1());
+		}
+		this_NameExistingListAttribute_1=ruleNameExistingListAttribute
+		{
+			$current = $this_NameExistingListAttribute_1.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getNameVariableParserRuleCall_2_0_0());
-					}
-					lv_name_4_0=ruleVariable
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
-						}
-						set(
-							$current,
-							"name",
-							lv_name_4_0,
-							"tracerypp.TraceryPlusPlus.Variable");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			{
-				newCompositeNode(grammarAccess.getAttributeAccess().getAssignmentOperatorParserRuleCall_2_1());
-			}
-			ruleAssignmentOperator
-			{
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAttributeAccess().getValueEVarrParserRuleCall_2_2_0());
-					}
-					lv_value_6_0=ruleEVarr
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAttributeRule());
-						}
-						set(
-							$current,
-							"value",
-							lv_value_6_0,
-							"tracerypp.TraceryPlusPlus.EVarr");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_2());
+		}
+		this_NameValueAttribute_2=ruleNameValueAttribute
+		{
+			$current = $this_NameValueAttribute_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
-;
-
-// Entry rule entryRuleEVarr
-entryRuleEVarr returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getEVarrRule()); }
-	iv_ruleEVarr=ruleEVarr
-	{ $current=$iv_ruleEVarr.current.getText(); }
-	EOF;
-
-// Rule EVarr
-ruleEVarr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	this_ID_0=RULE_ID
-	{
-		$current.merge(this_ID_0);
-	}
-	{
-		newLeafNode(this_ID_0, grammarAccess.getEVarrAccess().getIDTerminalRuleCall());
-	}
 ;
 
 // Entry rule entryRuleExistingVariable
@@ -785,6 +673,170 @@ ruleExistingVariable returns [EObject current=null]
 			{
 				newLeafNode(otherlv_0, grammarAccess.getExistingVariableAccess().getPointerVariableCrossReference_0());
 			}
+		)
+	)
+;
+
+// Entry rule entryRuleJustNameAttribute
+entryRuleJustNameAttribute returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getJustNameAttributeRule()); }
+	iv_ruleJustNameAttribute=ruleJustNameAttribute
+	{ $current=$iv_ruleJustNameAttribute.current; }
+	EOF;
+
+// Rule JustNameAttribute
+ruleJustNameAttribute returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getJustNameAttributeAccess().getNameExistingVariableParserRuleCall_0());
+			}
+			lv_name_0_0=ruleExistingVariable
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getJustNameAttributeRule());
+				}
+				set(
+					$current,
+					"name",
+					lv_name_0_0,
+					"tracerypp.TraceryPlusPlus.ExistingVariable");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleNameExistingListAttribute
+entryRuleNameExistingListAttribute returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNameExistingListAttributeRule()); }
+	iv_ruleNameExistingListAttribute=ruleNameExistingListAttribute
+	{ $current=$iv_ruleNameExistingListAttribute.current; }
+	EOF;
+
+// Rule NameExistingListAttribute
+ruleNameExistingListAttribute returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getNameVariableParserRuleCall_0_0());
+				}
+				lv_name_0_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNameExistingListAttributeRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_0_0,
+						"tracerypp.TraceryPlusPlus.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		{
+			newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getAssignmentOperatorParserRuleCall_1());
+		}
+		ruleAssignmentOperator
+		{
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getValueExistingVariableParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleExistingVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNameExistingListAttributeRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_2_0,
+						"tracerypp.TraceryPlusPlus.ExistingVariable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNameValueAttribute
+entryRuleNameValueAttribute returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNameValueAttributeRule()); }
+	iv_ruleNameValueAttribute=ruleNameValueAttribute
+	{ $current=$iv_ruleNameValueAttribute.current; }
+	EOF;
+
+// Rule NameValueAttribute
+ruleNameValueAttribute returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNameValueAttributeAccess().getNameVariableParserRuleCall_0_0());
+				}
+				lv_name_0_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNameValueAttributeRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_0_0,
+						"tracerypp.TraceryPlusPlus.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		{
+			newCompositeNode(grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1());
+		}
+		ruleAssignmentOperator
+		{
+			afterParserOrEnumRuleCall();
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNameValueAttributeAccess().getValueWordParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleWord
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNameValueAttributeRule());
+					}
+					set(
+						$current,
+						"value",
+						lv_value_2_0,
+						"tracerypp.TraceryPlusPlus.Word");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
 	)
 ;

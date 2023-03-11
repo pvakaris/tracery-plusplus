@@ -114,15 +114,6 @@ public interface TraceryPlusPlusFactory extends EFactory
   Attribute createAttribute();
 
   /**
-   * Returns a new object of class '<em>Pointeris</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pointeris</em>'.
-   * @generated
-   */
-  Pointeris createPointeris();
-
-  /**
    * Returns a new object of class '<em>Existing Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +121,33 @@ public interface TraceryPlusPlusFactory extends EFactory
    * @generated
    */
   ExistingVariable createExistingVariable();
+
+  /**
+   * Returns a new object of class '<em>Just Name Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Just Name Attribute</em>'.
+   * @generated
+   */
+  JustNameAttribute createJustNameAttribute();
+
+  /**
+   * Returns a new object of class '<em>Name Existing List Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Existing List Attribute</em>'.
+   * @generated
+   */
+  NameExistingListAttribute createNameExistingListAttribute();
+
+  /**
+   * Returns a new object of class '<em>Name Value Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Value Attribute</em>'.
+   * @generated
+   */
+  NameValueAttribute createNameValueAttribute();
 
   /**
    * Returns a new object of class '<em>Object Attribute</em>'.

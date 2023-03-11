@@ -148,17 +148,34 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.POINTERIS:
-      {
-        Pointeris pointeris = (Pointeris)theEObject;
-        T result = casePointeris(pointeris);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TraceryPlusPlusPackage.EXISTING_VARIABLE:
       {
         ExistingVariable existingVariable = (ExistingVariable)theEObject;
         T result = caseExistingVariable(existingVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE:
+      {
+        JustNameAttribute justNameAttribute = (JustNameAttribute)theEObject;
+        T result = caseJustNameAttribute(justNameAttribute);
+        if (result == null) result = caseAttribute(justNameAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE:
+      {
+        NameExistingListAttribute nameExistingListAttribute = (NameExistingListAttribute)theEObject;
+        T result = caseNameExistingListAttribute(nameExistingListAttribute);
+        if (result == null) result = caseAttribute(nameExistingListAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE:
+      {
+        NameValueAttribute nameValueAttribute = (NameValueAttribute)theEObject;
+        T result = caseNameValueAttribute(nameValueAttribute);
+        if (result == null) result = caseAttribute(nameValueAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -348,22 +365,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Pointeris</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Pointeris</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePointeris(Pointeris object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Existing Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -375,6 +376,54 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExistingVariable(ExistingVariable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Just Name Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Just Name Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseJustNameAttribute(JustNameAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Existing List Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Existing List Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameExistingListAttribute(NameExistingListAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Value Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Value Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameValueAttribute(NameValueAttribute object)
   {
     return null;
   }

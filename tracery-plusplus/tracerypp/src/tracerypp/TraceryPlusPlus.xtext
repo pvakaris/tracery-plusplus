@@ -68,13 +68,25 @@ StoryVariable:
 ;
 
 Attribute:
-	name = ExistingVariable |
-	name = Variable AssignmentOperator value = ExistingVariable |
-	name = Variable AssignmentOperator value = Word
+	JustNameAttribute |
+	NameExistingListAttribute |
+	NameValueAttribute
 ;
 
 ExistingVariable:
     pointer = [Variable]
+;
+
+JustNameAttribute:
+	name = ExistingVariable
+;
+
+NameExistingListAttribute:
+	name = Variable AssignmentOperator value = ExistingVariable
+;
+
+NameValueAttribute:
+	name = Variable AssignmentOperator value = Word
 ;
 
 ObjectAttribute:

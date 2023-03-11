@@ -33,15 +33,20 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//StoryVariable/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//StoryVariable/modifiers"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Attribute">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Attribute/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Attribute/value"/>
-    </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Pointeris">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Pointeris/i"/>
-    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Attribute"/>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ExistingVariable">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ExistingVariable/pointer"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//JustNameAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//JustNameAttribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//NameExistingListAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameExistingListAttribute/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameExistingListAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//NameValueAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameValueAttribute/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameValueAttribute/value"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/object"/>

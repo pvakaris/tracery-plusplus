@@ -17,8 +17,9 @@ import tracerypp.traceryPlusPlus.ObjectDeclaration
 import java.util.List
 import tracerypp.traceryPlusPlus.Statement
 import tracerypp.traceryPlusPlus.Attribute
-import tracerypp.traceryPlusPlus.Variable
-import tracerypp.traceryPlusPlus.ExistingVariable
+import tracerypp.traceryPlusPlus.JustNameAttribute
+import tracerypp.traceryPlusPlus.NameExistingListAttribute
+import tracerypp.traceryPlusPlus.NameValueAttribute
 
 /**
  * Generates code from your model files on save.
@@ -94,26 +95,24 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	}
 	
 	def getStringForAttribute(Attribute attribute, String objectName) {
-		val variable = attribute.name
-    	if (variable instanceof Variable) {
+    	if (attribute instanceof NameValueAttribute) {
     		// Example: hero has attributes - name = "John
     		// This will give ---> [heroName:John]
-    		val variableName = variable.name
-    		if (attribute.value instanceof String) {
-    			
-    			return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value»]'''
-    		}
-    		else {
-    			print("aaa")
-    			return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«attribute.value»#]'''
-    		}
-    		
+    		val variableName = attribute.name.name
+    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value.value»]'''
     	}
-    	else if(variable instanceof ExistingVariable) {
+    	else if(attribute instanceof JustNameAttribute) {
     		// Example: hero has attributes - occupation
     		// This will give ---> [heroOccupation:#occupation#]
-    		val variableName = variable.pointer.name
+    		val variableName = attribute.name.pointer.name
     		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«variableName»#]'''
+    	}
+    	else if(attribute instanceof NameExistingListAttribute) {
+    		// Example: hero has attributes - name = princeNames
+    		// This will give ---> [heroName:#princeNames#]
+    		val variableName = attribute.name.name
+    		val value = attribute.value.pointer.name
+    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«value»#]'''
     	}
     	else {
     		// This place should never be reached

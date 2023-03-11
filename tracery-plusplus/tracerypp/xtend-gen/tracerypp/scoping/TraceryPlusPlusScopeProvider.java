@@ -5,15 +5,15 @@ package tracerypp.scoping;
 
 import java.util.ArrayList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import tracerypp.traceryPlusPlus.Attribute;
-import tracerypp.traceryPlusPlus.ExistingVariable;
+import tracerypp.traceryPlusPlus.JustNameAttribute;
+import tracerypp.traceryPlusPlus.NameExistingListAttribute;
+import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.Variable;
@@ -37,13 +37,14 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
           final EList<Attribute> attributeContainer = objectDeclaration.getAttributes().getAttributes();
           final ArrayList<Variable> list = CollectionLiterals.<Variable>newArrayList();
           for (final Attribute attribute : attributeContainer) {
-            {
-              final EObject variable = attribute.getName();
-              if ((variable instanceof Variable)) {
-                list.add(((Variable)variable));
+            if ((attribute instanceof JustNameAttribute)) {
+              list.add(((JustNameAttribute)attribute).getName().getPointer());
+            } else {
+              if ((attribute instanceof NameExistingListAttribute)) {
+                list.add(((NameExistingListAttribute)attribute).getName());
               } else {
-                if ((variable instanceof ExistingVariable)) {
-                  list.add(((ExistingVariable)variable).getPointer());
+                if ((attribute instanceof NameValueAttribute)) {
+                  list.add(((NameValueAttribute)attribute).getName());
                 }
               }
             }
@@ -57,11 +58,5 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
-  }
-
-  public IScope scope_Attribute_value(final Attribute context, final EReference ref) {
-    final String value = context.getValue();
-    InputOutput.<String>print(value);
-    return IScope.NULLSCOPE;
   }
 }

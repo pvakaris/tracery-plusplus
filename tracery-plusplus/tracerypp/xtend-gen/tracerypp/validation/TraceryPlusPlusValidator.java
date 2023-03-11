@@ -3,6 +3,13 @@
  */
 package tracerypp.validation;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
+import java.util.List;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import tracerypp.traceryPlusPlus.ObjectDeclaration;
+
 /**
  * This class contains custom validation rules.
  * 
@@ -10,4 +17,21 @@ package tracerypp.validation;
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
+  @Check
+  public void checkUniqueObjectName(final ObjectDeclaration object) {
+    final String objectName = object.getName();
+    final List<ObjectDeclaration> model = IterableExtensions.<ObjectDeclaration>toList(Iterables.<ObjectDeclaration>filter(object.eContainer().eContents(), ObjectDeclaration.class));
+    int count = 0;
+    for (final ObjectDeclaration obj : model) {
+      String _name = obj.getName();
+      boolean _equals = Objects.equal(_name, objectName);
+      if (_equals) {
+        int _count = count;
+        count = (_count + 1);
+      }
+    }
+    if ((count > 1)) {
+      this.error((("Object with name \'" + objectName) + "\' already exists."), null);
+    }
+  }
 }

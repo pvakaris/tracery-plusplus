@@ -3,6 +3,8 @@
  */
 package tracerypp.validation
 
+import org.eclipse.xtext.validation.Check
+import tracerypp.traceryPlusPlus.ObjectDeclaration
 
 /**
  * This class contains custom validation rules. 
@@ -10,16 +12,20 @@ package tracerypp.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
-	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					TraceryPlusPlusPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+
+	@Check
+	def checkUniqueObjectName(ObjectDeclaration object) {
+	   val objectName = object.name
+	   val model = object.eContainer().eContents.filter(ObjectDeclaration).toList
+	   var count = 0
+	   for (obj : model) {
+	   	if (obj.name == objectName) {
+	   		count += 1;
+	   	}
+	   }
+	   if (count > 1) {
+	      error("Object with name '" + objectName + "' already exists.", null)
+	   }
+	}
 	
 }
