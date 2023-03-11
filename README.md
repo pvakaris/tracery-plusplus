@@ -4,7 +4,7 @@ A user-friendly modelling infrastructure based on [Tracery](https://tracery.io) 
 
 Since Tracery is a Javascript-based module, defining preferred text structures using it can be challenging for those without programming experience due to its complexity.
 
-Thus, we aspire to take this a step further by introducing a more sophisticated and easily accessible modelling language, Tracery++, which is built using XText.
+Thus, we aspire to fix this by taking it a step further by introducing a more sophisticated and easily accessible modelling language, Tracery++, which is built using XText.
 
 This language enables users to define the behaviour of their social media posts using a higher level of abstraction and a more straightforward syntax. With the implementation of Tracery++, people will have greater flexibility and autonomy in content generation, regardless of their technical background.
 
