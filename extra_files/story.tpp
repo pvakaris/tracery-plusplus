@@ -15,14 +15,14 @@ There is a prince
 He has attributes: name = princeName, location
 
 There is a princess
-He has attributes: name = princessName
+She has attributes: name = princessName, location, favFood
 
 There is an villain
 It has attributes: name = villain_name, occupation = villainOccupation
 
 
 The story:
-"Hark! Once upon a time, there was a maiden who was "personality.a" princess. She did dwell in a fair "princess.location", and was known far and wide for her "trait" and her great love of "favFood"."
+" Hark! Once upon a time, there was a maiden who was "personality.a" princess. She did dwell in a fair "princess.location", and was known far and wide for her "trait" and her great love of "princess.favFood"."
 
 " One day, a "personality" prince by name of "prince.name" did journey from a far-off land to visit "princess.name". The twain did spend the whole day exploring the "princess.location" and acquainting themselves with each other."
 
