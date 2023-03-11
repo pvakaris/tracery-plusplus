@@ -39,8 +39,7 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	   for (var i = 0; i < objectAttributes.size; i++) {
 	      for (var j = i + 1; j < objectAttributes.size; j++) {
 	         if (getAttributeName(objectAttributes.get(i)) == getAttributeName(objectAttributes.get(j))) {
-	            error("Attribute name " + getAttributeName(objectAttributes.get(i)) + " is used more than once.", null)
-	            return
+	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once.", null)
 	         }
 	      }
 	   }
@@ -49,13 +48,13 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	
 	def getAttributeName(Attribute attribute) {
 		if (attribute instanceof JustNameAttribute) {
-    		return attribute.name.pointer
+    		return attribute.name.pointer.name
     	}
     	else if(attribute instanceof NameExistingListAttribute) {
-    		return attribute.name
+    		return attribute.name.name
     	}
     	else if(attribute instanceof NameValueAttribute) {
-    		return attribute.name
+    		return attribute.name.name
     	}
 	}
 	
