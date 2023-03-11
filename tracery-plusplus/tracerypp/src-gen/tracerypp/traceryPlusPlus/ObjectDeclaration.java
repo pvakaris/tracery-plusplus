@@ -14,6 +14,7 @@ package tracerypp.traceryPlusPlus;
  * </p>
  * <ul>
  *   <li>{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getName <em>Name</em>}</li>
+ *   <li>{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getPronouns <em>Pronouns</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
@@ -44,6 +45,28 @@ public interface ObjectDeclaration extends Declaration
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Pronouns</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Pronouns</em>' containment reference.
+   * @see #setPronouns(Pronouns)
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getObjectDeclaration_Pronouns()
+   * @model containment="true"
+   * @generated
+   */
+  Pronouns getPronouns();
+
+  /**
+   * Sets the value of the '{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getPronouns <em>Pronouns</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Pronouns</em>' containment reference.
+   * @see #getPronouns()
+   * @generated
+   */
+  void setPronouns(Pronouns value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference.

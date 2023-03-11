@@ -14,12 +14,14 @@ import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.Declaration;
 import tracerypp.traceryPlusPlus.ExistingVariable;
+import tracerypp.traceryPlusPlus.HePronouns;
 import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
@@ -156,6 +158,20 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   private EClass attributeListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pronounsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hePronounsEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -357,9 +373,20 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getObjectDeclaration_Attributes()
+  public EReference getObjectDeclaration_Pronouns()
   {
     return (EReference)objectDeclarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectDeclaration_Attributes()
+  {
+    return (EReference)objectDeclarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -654,6 +681,83 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
+  public EClass getPronouns()
+  {
+    return pronounsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPronouns_Values()
+  {
+    return (EReference)pronounsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getHePronouns()
+  {
+    return hePronounsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHePronouns_They()
+  {
+    return (EAttribute)hePronounsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHePronouns_Them()
+  {
+    return (EAttribute)hePronounsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHePronouns_Their()
+  {
+    return (EAttribute)hePronounsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHePronouns_Theirs()
+  {
+    return (EAttribute)hePronounsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public TraceryPlusPlusFactory getTraceryPlusPlusFactory()
   {
     return (TraceryPlusPlusFactory)getEFactoryInstance();
@@ -696,6 +800,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     objectDeclarationEClass = createEClass(OBJECT_DECLARATION);
     createEAttribute(objectDeclarationEClass, OBJECT_DECLARATION__NAME);
+    createEReference(objectDeclarationEClass, OBJECT_DECLARATION__PRONOUNS);
     createEReference(objectDeclarationEClass, OBJECT_DECLARATION__ATTRIBUTES);
 
     wordEClass = createEClass(WORD);
@@ -734,6 +839,15 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     attributeListEClass = createEClass(ATTRIBUTE_LIST);
     createEReference(attributeListEClass, ATTRIBUTE_LIST__ATTRIBUTES);
+
+    pronounsEClass = createEClass(PRONOUNS);
+    createEReference(pronounsEClass, PRONOUNS__VALUES);
+
+    hePronounsEClass = createEClass(HE_PRONOUNS);
+    createEAttribute(hePronounsEClass, HE_PRONOUNS__THEY);
+    createEAttribute(hePronounsEClass, HE_PRONOUNS__THEM);
+    createEAttribute(hePronounsEClass, HE_PRONOUNS__THEIR);
+    createEAttribute(hePronounsEClass, HE_PRONOUNS__THEIRS);
   }
 
   /**
@@ -790,6 +904,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(objectDeclarationEClass, ObjectDeclaration.class, "ObjectDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getObjectDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectDeclaration_Pronouns(), this.getPronouns(), null, "pronouns", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectDeclaration_Attributes(), this.getAttributeList(), null, "attributes", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -828,6 +943,15 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(attributeListEClass, AttributeList.class, "AttributeList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttributeList_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AttributeList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pronounsEClass, Pronouns.class, "Pronouns", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPronouns_Values(), this.getHePronouns(), null, "values", null, 0, 1, Pronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(hePronounsEClass, HePronouns.class, "HePronouns", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHePronouns_They(), ecorePackage.getEString(), "they", null, 0, 1, HePronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHePronouns_Them(), ecorePackage.getEString(), "them", null, 0, 1, HePronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHePronouns_Their(), ecorePackage.getEString(), "their", null, 0, 1, HePronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHePronouns_Theirs(), ecorePackage.getEString(), "theirs", null, 0, 1, HePronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

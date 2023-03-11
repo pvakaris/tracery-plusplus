@@ -177,6 +177,24 @@ public interface TraceryPlusPlusFactory extends EFactory
   AttributeList createAttributeList();
 
   /**
+   * Returns a new object of class '<em>Pronouns</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pronouns</em>'.
+   * @generated
+   */
+  Pronouns createPronouns();
+
+  /**
+   * Returns a new object of class '<em>He Pronouns</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>He Pronouns</em>'.
+   * @generated
+   */
+  HePronouns createHePronouns();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

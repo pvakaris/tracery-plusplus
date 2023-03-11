@@ -217,13 +217,22 @@ public interface TraceryPlusPlusPackage extends EPackage
   int OBJECT_DECLARATION__NAME = DECLARATION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Pronouns</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_DECLARATION__PRONOUNS = DECLARATION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION__ATTRIBUTES = DECLARATION_FEATURE_COUNT + 1;
+  int OBJECT_DECLARATION__ATTRIBUTES = DECLARATION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Object Declaration</em>' class.
@@ -232,7 +241,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+  int OBJECT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.WordImpl <em>Word</em>}' class.
@@ -578,6 +587,89 @@ public interface TraceryPlusPlusPackage extends EPackage
    */
   int ATTRIBUTE_LIST_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.PronounsImpl <em>Pronouns</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.impl.PronounsImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronouns()
+   * @generated
+   */
+  int PRONOUNS = 17;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRONOUNS__VALUES = 0;
+
+  /**
+   * The number of structural features of the '<em>Pronouns</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRONOUNS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.HePronounsImpl <em>He Pronouns</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.impl.HePronounsImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getHePronouns()
+   * @generated
+   */
+  int HE_PRONOUNS = 18;
+
+  /**
+   * The feature id for the '<em><b>They</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HE_PRONOUNS__THEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Them</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HE_PRONOUNS__THEM = 1;
+
+  /**
+   * The feature id for the '<em><b>Their</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HE_PRONOUNS__THEIR = 2;
+
+  /**
+   * The feature id for the '<em><b>Theirs</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HE_PRONOUNS__THEIRS = 3;
+
+  /**
+   * The number of structural features of the '<em>He Pronouns</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HE_PRONOUNS_FEATURE_COUNT = 4;
+
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.TraceryPlusPlusProgram <em>Program</em>}'.
@@ -704,6 +796,17 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EAttribute getObjectDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getPronouns <em>Pronouns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pronouns</em>'.
+   * @see tracerypp.traceryPlusPlus.ObjectDeclaration#getPronouns()
+   * @see #getObjectDeclaration()
+   * @generated
+   */
+  EReference getObjectDeclaration_Pronouns();
 
   /**
    * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getAttributes <em>Attributes</em>}'.
@@ -992,6 +1095,81 @@ public interface TraceryPlusPlusPackage extends EPackage
   EReference getAttributeList_Attributes();
 
   /**
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Pronouns <em>Pronouns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pronouns</em>'.
+   * @see tracerypp.traceryPlusPlus.Pronouns
+   * @generated
+   */
+  EClass getPronouns();
+
+  /**
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.Pronouns#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Values</em>'.
+   * @see tracerypp.traceryPlusPlus.Pronouns#getValues()
+   * @see #getPronouns()
+   * @generated
+   */
+  EReference getPronouns_Values();
+
+  /**
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.HePronouns <em>He Pronouns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>He Pronouns</em>'.
+   * @see tracerypp.traceryPlusPlus.HePronouns
+   * @generated
+   */
+  EClass getHePronouns();
+
+  /**
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getThey <em>They</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>They</em>'.
+   * @see tracerypp.traceryPlusPlus.HePronouns#getThey()
+   * @see #getHePronouns()
+   * @generated
+   */
+  EAttribute getHePronouns_They();
+
+  /**
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getThem <em>Them</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Them</em>'.
+   * @see tracerypp.traceryPlusPlus.HePronouns#getThem()
+   * @see #getHePronouns()
+   * @generated
+   */
+  EAttribute getHePronouns_Them();
+
+  /**
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getTheir <em>Their</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Their</em>'.
+   * @see tracerypp.traceryPlusPlus.HePronouns#getTheir()
+   * @see #getHePronouns()
+   * @generated
+   */
+  EAttribute getHePronouns_Their();
+
+  /**
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getTheirs <em>Theirs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Theirs</em>'.
+   * @see tracerypp.traceryPlusPlus.HePronouns#getTheirs()
+   * @see #getHePronouns()
+   * @generated
+   */
+  EAttribute getHePronouns_Theirs();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1121,6 +1299,14 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EAttribute OBJECT_DECLARATION__NAME = eINSTANCE.getObjectDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Pronouns</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBJECT_DECLARATION__PRONOUNS = eINSTANCE.getObjectDeclaration_Pronouns();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference feature.
@@ -1359,6 +1545,66 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EReference ATTRIBUTE_LIST__ATTRIBUTES = eINSTANCE.getAttributeList_Attributes();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.PronounsImpl <em>Pronouns</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.impl.PronounsImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronouns()
+     * @generated
+     */
+    EClass PRONOUNS = eINSTANCE.getPronouns();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRONOUNS__VALUES = eINSTANCE.getPronouns_Values();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.HePronounsImpl <em>He Pronouns</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.impl.HePronounsImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getHePronouns()
+     * @generated
+     */
+    EClass HE_PRONOUNS = eINSTANCE.getHePronouns();
+
+    /**
+     * The meta object literal for the '<em><b>They</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HE_PRONOUNS__THEY = eINSTANCE.getHePronouns_They();
+
+    /**
+     * The meta object literal for the '<em><b>Them</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HE_PRONOUNS__THEM = eINSTANCE.getHePronouns_Them();
+
+    /**
+     * The meta object literal for the '<em><b>Their</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HE_PRONOUNS__THEIR = eINSTANCE.getHePronouns_Their();
+
+    /**
+     * The meta object literal for the '<em><b>Theirs</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HE_PRONOUNS__THEIRS = eINSTANCE.getHePronouns_Theirs();
 
   }
 

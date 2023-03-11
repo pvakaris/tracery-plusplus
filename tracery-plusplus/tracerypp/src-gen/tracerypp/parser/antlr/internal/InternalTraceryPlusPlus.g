@@ -417,40 +417,38 @@ ruleObjectDeclaration returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_6='He'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getObjectDeclarationAccess().getHeKeyword_4_0());
-			}
-			    |
-			otherlv_7='She'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getObjectDeclarationAccess().getSheKeyword_4_1());
-			}
-			    |
-			otherlv_8='It'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getObjectDeclarationAccess().getItKeyword_4_2());
-			}
-			    |
-			otherlv_9='They'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getObjectDeclarationAccess().getTheyKeyword_4_3());
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getPronounsPronounsParserRuleCall_4_0());
+				}
+				lv_pronouns_6_0=rulePronouns
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
+					}
+					set(
+						$current,
+						"pronouns",
+						lv_pronouns_6_0,
+						"tracerypp.TraceryPlusPlus.Pronouns");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
 		(
-			otherlv_10='has'
+			otherlv_7='has'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5_0());
+				newLeafNode(otherlv_7, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5_0());
 			}
 			    |
-			otherlv_11='have'
+			otherlv_8='have'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1());
+				newLeafNode(otherlv_8, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1());
 			}
 		)
-		otherlv_12='attributes'
+		otherlv_9='attributes'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
 		}
 		{
 			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7());
@@ -464,7 +462,7 @@ ruleObjectDeclaration returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0());
 				}
-				lv_attributes_14_0=ruleAttributeList
+				lv_attributes_11_0=ruleAttributeList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectDeclarationRule());
@@ -472,7 +470,7 @@ ruleObjectDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"attributes",
-						lv_attributes_14_0,
+						lv_attributes_11_0,
 						"tracerypp.TraceryPlusPlus.AttributeList");
 					afterParserOrEnumRuleCall();
 				}
@@ -1038,6 +1036,123 @@ ruleAttributeList returns [EObject current=null]
 				)
 			)
 		)*
+	)
+;
+
+// Entry rule entryRulePronouns
+entryRulePronouns returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPronounsRule()); }
+	iv_rulePronouns=rulePronouns
+	{ $current=$iv_rulePronouns.current; }
+	EOF;
+
+// Rule Pronouns
+rulePronouns returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='He'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPronounsAccess().getHeKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getPronounsAccess().getValuesHePronounsParserRuleCall_1_0());
+				}
+				lv_values_1_0=ruleHePronouns
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPronounsRule());
+					}
+					set(
+						$current,
+						"values",
+						lv_values_1_0,
+						"tracerypp.TraceryPlusPlus.HePronouns");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleHePronouns
+entryRuleHePronouns returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHePronounsRule()); }
+	iv_ruleHePronouns=ruleHePronouns
+	{ $current=$iv_ruleHePronouns.current; }
+	EOF;
+
+// Rule HePronouns
+ruleHePronouns returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_they_0_0='he'
+				{
+					newLeafNode(lv_they_0_0, grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHePronounsRule());
+					}
+					setWithLastConsumed($current, "they", lv_they_0_0, "he");
+				}
+			)
+		)
+		(
+			(
+				lv_them_1_0='him'
+				{
+					newLeafNode(lv_them_1_0, grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHePronounsRule());
+					}
+					setWithLastConsumed($current, "them", lv_them_1_0, "him");
+				}
+			)
+		)
+		(
+			(
+				lv_their_2_0='his'
+				{
+					newLeafNode(lv_their_2_0, grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHePronounsRule());
+					}
+					setWithLastConsumed($current, "their", lv_their_2_0, "his");
+				}
+			)
+		)
+		(
+			(
+				lv_theirs_3_0='his'
+				{
+					newLeafNode(lv_theirs_3_0, grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHePronounsRule());
+					}
+					setWithLastConsumed($current, "theirs", lv_theirs_3_0, "his");
+				}
+			)
+		)
 	)
 ;
 

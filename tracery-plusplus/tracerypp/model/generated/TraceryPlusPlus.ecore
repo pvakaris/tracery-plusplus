@@ -22,6 +22,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration" eSuperTypes="#//Declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pronouns" eType="#//Pronouns"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//AttributeList"
         containment="true"/>
   </eClassifiers>
@@ -69,5 +71,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="AttributeList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pronouns">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" eType="#//HePronouns"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HePronouns">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="they" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="them" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="their" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="theirs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

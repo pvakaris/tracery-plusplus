@@ -47,7 +47,7 @@ ListDeclaration:
  */
 ObjectDeclaration:
 	"There" ("is" | "are") ("a" | "an")? name = ID
-	("He" | "She" | "It" | "They") ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+	pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
 ;
 
 /*
@@ -100,6 +100,10 @@ WordList:
 
 AttributeList:
 	attributes += Attribute ( SeparatorAnd attributes += Attribute)*
+;
+
+Pronouns:
+	"He" | "She" | "It" | "They"
 ;
 
 /*

@@ -21,6 +21,7 @@
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ObjectDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectDeclaration/pronouns"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectDeclaration/attributes"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Word">
@@ -58,6 +59,15 @@
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//AttributeList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//AttributeList/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//Pronouns">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//Pronouns/values"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//HePronouns">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//HePronouns/they"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//HePronouns/them"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//HePronouns/their"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//HePronouns/theirs"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

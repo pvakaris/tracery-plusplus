@@ -200,6 +200,20 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TraceryPlusPlusPackage.PRONOUNS:
+      {
+        Pronouns pronouns = (Pronouns)theEObject;
+        T result = casePronouns(pronouns);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.HE_PRONOUNS:
+      {
+        HePronouns hePronouns = (HePronouns)theEObject;
+        T result = caseHePronouns(hePronouns);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -472,6 +486,38 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttributeList(AttributeList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pronouns</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pronouns</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePronouns(Pronouns object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>He Pronouns</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>He Pronouns</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHePronouns(HePronouns object)
   {
     return null;
   }

@@ -222,11 +222,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Keyword cAnKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Keyword cHeKeyword_4_0 = (Keyword)cAlternatives_4.eContents().get(0);
-		private final Keyword cSheKeyword_4_1 = (Keyword)cAlternatives_4.eContents().get(1);
-		private final Keyword cItKeyword_4_2 = (Keyword)cAlternatives_4.eContents().get(2);
-		private final Keyword cTheyKeyword_4_3 = (Keyword)cAlternatives_4.eContents().get(3);
+		private final Assignment cPronounsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPronounsPronounsParserRuleCall_4_0 = (RuleCall)cPronounsAssignment_4.eContents().get(0);
 		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
 		private final Keyword cHasKeyword_5_0 = (Keyword)cAlternatives_5.eContents().get(0);
 		private final Keyword cHaveKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
@@ -244,12 +241,12 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		// */
 		//ObjectDeclaration:
 		//    "There" ("is" | "are") ("a" | "an")? name = ID
-		//    ("He" | "She" | "It" | "They") ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+		//    pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"There" ("is" | "are") ("a" | "an")? name = ID
-		//("He" | "She" | "It" | "They") ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+		//pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
 		public Group getGroup() { return cGroup; }
 		
 		//"There"
@@ -279,20 +276,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 		
-		//("He" | "She" | "It" | "They")
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
+		//pronouns = Pronouns
+		public Assignment getPronounsAssignment_4() { return cPronounsAssignment_4; }
 		
-		//"He"
-		public Keyword getHeKeyword_4_0() { return cHeKeyword_4_0; }
-		
-		//"She"
-		public Keyword getSheKeyword_4_1() { return cSheKeyword_4_1; }
-		
-		//"It"
-		public Keyword getItKeyword_4_2() { return cItKeyword_4_2; }
-		
-		//"They"
-		public Keyword getTheyKeyword_4_3() { return cTheyKeyword_4_3; }
+		//Pronouns
+		public RuleCall getPronounsPronounsParserRuleCall_4_0() { return cPronounsPronounsParserRuleCall_4_0; }
 		
 		//("has" | "have")
 		public Alternatives getAlternatives_5() { return cAlternatives_5; }
@@ -634,6 +622,83 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//Attribute
 		public RuleCall getAttributesAttributeParserRuleCall_1_1_0() { return cAttributesAttributeParserRuleCall_1_1_0; }
 	}
+	public class PronounsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Pronouns");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHeKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesHePronounsParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		
+		///*
+		//    Pronouns
+		// */
+		//Pronouns:
+		//    "He" values = HePronouns
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"He" values = HePronouns
+		public Group getGroup() { return cGroup; }
+		
+		//"He"
+		public Keyword getHeKeyword_0() { return cHeKeyword_0; }
+		
+		//values = HePronouns
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+		
+		//HePronouns
+		public RuleCall getValuesHePronounsParserRuleCall_1_0() { return cValuesHePronounsParserRuleCall_1_0; }
+	}
+	public class HePronounsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.HePronouns");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTheyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cTheyHeKeyword_0_0 = (Keyword)cTheyAssignment_0.eContents().get(0);
+		private final Assignment cThemAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cThemHimKeyword_1_0 = (Keyword)cThemAssignment_1.eContents().get(0);
+		private final Assignment cTheirAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cTheirHisKeyword_2_0 = (Keyword)cTheirAssignment_2.eContents().get(0);
+		private final Assignment cTheirsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cTheirsHisKeyword_3_0 = (Keyword)cTheirsAssignment_3.eContents().get(0);
+		
+		//HePronouns:
+		//    they = "he"
+		//    them = "him"
+		//    their = "his"
+		//    theirs = "his"
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//they = "he"
+		//them = "him"
+		//their = "his"
+		//theirs = "his"
+		public Group getGroup() { return cGroup; }
+		
+		//they = "he"
+		public Assignment getTheyAssignment_0() { return cTheyAssignment_0; }
+		
+		//"he"
+		public Keyword getTheyHeKeyword_0_0() { return cTheyHeKeyword_0_0; }
+		
+		//them = "him"
+		public Assignment getThemAssignment_1() { return cThemAssignment_1; }
+		
+		//"him"
+		public Keyword getThemHimKeyword_1_0() { return cThemHimKeyword_1_0; }
+		
+		//their = "his"
+		public Assignment getTheirAssignment_2() { return cTheirAssignment_2; }
+		
+		//"his"
+		public Keyword getTheirHisKeyword_2_0() { return cTheirHisKeyword_2_0; }
+		
+		//theirs = "his"
+		public Assignment getTheirsAssignment_3() { return cTheirsAssignment_3; }
+		
+		//"his"
+		public Keyword getTheirsHisKeyword_3_0() { return cTheirsHisKeyword_3_0; }
+	}
 	public class ModifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Modifier");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -823,6 +888,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final ObjectAttributeElements pObjectAttribute;
 	private final WordListElements pWordList;
 	private final AttributeListElements pAttributeList;
+	private final PronounsElements pPronouns;
+	private final HePronounsElements pHePronouns;
 	private final ModifierElements pModifier;
 	private final CapitalizationModifierElements pCapitalizationModifier;
 	private final FullCapitalizationModifierElements pFullCapitalizationModifier;
@@ -859,6 +926,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pObjectAttribute = new ObjectAttributeElements();
 		this.pWordList = new WordListElements();
 		this.pAttributeList = new AttributeListElements();
+		this.pPronouns = new PronounsElements();
+		this.pHePronouns = new HePronounsElements();
 		this.pModifier = new ModifierElements();
 		this.pCapitalizationModifier = new CapitalizationModifierElements();
 		this.pFullCapitalizationModifier = new FullCapitalizationModifierElements();
@@ -976,7 +1045,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	// */
 	//ObjectDeclaration:
 	//    "There" ("is" | "are") ("a" | "an")? name = ID
-	//    ("He" | "She" | "It" | "They") ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+	//    pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
 	//;
 	public ObjectDeclarationElements getObjectDeclarationAccess() {
 		return pObjectDeclaration;
@@ -1112,6 +1181,34 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	public ParserRule getAttributeListRule() {
 		return getAttributeListAccess().getRule();
+	}
+	
+	///*
+	//    Pronouns
+	// */
+	//Pronouns:
+	//    "He" values = HePronouns
+	//;
+	public PronounsElements getPronounsAccess() {
+		return pPronouns;
+	}
+	
+	public ParserRule getPronounsRule() {
+		return getPronounsAccess().getRule();
+	}
+	
+	//HePronouns:
+	//    they = "he"
+	//    them = "him"
+	//    their = "his"
+	//    theirs = "his"
+	//;
+	public HePronounsElements getHePronounsAccess() {
+		return pHePronouns;
+	}
+	
+	public ParserRule getHePronounsRule() {
+		return getHePronounsAccess().getRule();
 	}
 	
 	///*

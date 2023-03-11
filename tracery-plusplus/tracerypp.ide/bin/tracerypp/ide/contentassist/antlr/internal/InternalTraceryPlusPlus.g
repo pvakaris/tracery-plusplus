@@ -474,6 +474,56 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRulePronouns
+entryRulePronouns
+:
+{ before(grammarAccess.getPronounsRule()); }
+	 rulePronouns
+{ after(grammarAccess.getPronounsRule()); } 
+	 EOF 
+;
+
+// Rule Pronouns
+rulePronouns 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getPronounsAccess().getGroup()); }
+		(rule__Pronouns__Group__0)
+		{ after(grammarAccess.getPronounsAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleHePronouns
+entryRuleHePronouns
+:
+{ before(grammarAccess.getHePronounsRule()); }
+	 ruleHePronouns
+{ after(grammarAccess.getHePronounsRule()); } 
+	 EOF 
+;
+
+// Rule HePronouns
+ruleHePronouns 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getHePronounsAccess().getGroup()); }
+		(rule__HePronouns__Group__0)
+		{ after(grammarAccess.getHePronounsAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 // Entry rule entryRuleModifier
 entryRuleModifier
 :
@@ -804,39 +854,6 @@ rule__ObjectDeclaration__Alternatives_2
 		{ before(grammarAccess.getObjectDeclarationAccess().getAnKeyword_2_1()); }
 		'an'
 		{ after(grammarAccess.getObjectDeclarationAccess().getAnKeyword_2_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ObjectDeclaration__Alternatives_4
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getObjectDeclarationAccess().getHeKeyword_4_0()); }
-		'He'
-		{ after(grammarAccess.getObjectDeclarationAccess().getHeKeyword_4_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getObjectDeclarationAccess().getSheKeyword_4_1()); }
-		'She'
-		{ after(grammarAccess.getObjectDeclarationAccess().getSheKeyword_4_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getObjectDeclarationAccess().getItKeyword_4_2()); }
-		'It'
-		{ after(grammarAccess.getObjectDeclarationAccess().getItKeyword_4_2()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getObjectDeclarationAccess().getTheyKeyword_4_3()); }
-		'They'
-		{ after(grammarAccess.getObjectDeclarationAccess().getTheyKeyword_4_3()); }
 	)
 ;
 finally {
@@ -1530,9 +1547,9 @@ rule__ObjectDeclaration__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getObjectDeclarationAccess().getAlternatives_4()); }
-	(rule__ObjectDeclaration__Alternatives_4)
-	{ after(grammarAccess.getObjectDeclarationAccess().getAlternatives_4()); }
+	{ before(grammarAccess.getObjectDeclarationAccess().getPronounsAssignment_4()); }
+	(rule__ObjectDeclaration__PronounsAssignment_4)
+	{ after(grammarAccess.getObjectDeclarationAccess().getPronounsAssignment_4()); }
 )
 ;
 finally {
@@ -2187,6 +2204,168 @@ finally {
 }
 
 
+rule__Pronouns__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Pronouns__Group__0__Impl
+	rule__Pronouns__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Pronouns__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPronounsAccess().getHeKeyword_0()); }
+	'He'
+	{ after(grammarAccess.getPronounsAccess().getHeKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Pronouns__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Pronouns__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Pronouns__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getPronounsAccess().getValuesAssignment_1()); }
+	(rule__Pronouns__ValuesAssignment_1)
+	{ after(grammarAccess.getPronounsAccess().getValuesAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__HePronouns__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HePronouns__Group__0__Impl
+	rule__HePronouns__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHePronounsAccess().getTheyAssignment_0()); }
+	(rule__HePronouns__TheyAssignment_0)
+	{ after(grammarAccess.getHePronounsAccess().getTheyAssignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HePronouns__Group__1__Impl
+	rule__HePronouns__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHePronounsAccess().getThemAssignment_1()); }
+	(rule__HePronouns__ThemAssignment_1)
+	{ after(grammarAccess.getHePronounsAccess().getThemAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HePronouns__Group__2__Impl
+	rule__HePronouns__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHePronounsAccess().getTheirAssignment_2()); }
+	(rule__HePronouns__TheirAssignment_2)
+	{ after(grammarAccess.getHePronounsAccess().getTheirAssignment_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__HePronouns__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getHePronounsAccess().getTheirsAssignment_3()); }
+	(rule__HePronouns__TheirsAssignment_3)
+	{ after(grammarAccess.getHePronounsAccess().getTheirsAssignment_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__TraceryPlusPlusProgram__StatementsAssignment_0
 	@init {
 		int stackSize = keepStackSize();
@@ -2271,6 +2450,21 @@ rule__ObjectDeclaration__NameAssignment_3
 		{ before(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_3_0()); }
 		RULE_ID
 		{ after(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ObjectDeclaration__PronounsAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getObjectDeclarationAccess().getPronounsPronounsParserRuleCall_4_0()); }
+		rulePronouns
+		{ after(grammarAccess.getObjectDeclarationAccess().getPronounsPronounsParserRuleCall_4_0()); }
 	)
 ;
 finally {
@@ -2557,6 +2751,97 @@ rule__AttributeList__AttributesAssignment_1_1
 		{ before(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_1_1_0()); }
 		ruleAttribute
 		{ after(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_1_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Pronouns__ValuesAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getPronounsAccess().getValuesHePronounsParserRuleCall_1_0()); }
+		ruleHePronouns
+		{ after(grammarAccess.getPronounsAccess().getValuesHePronounsParserRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__TheyAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0()); }
+		(
+			{ before(grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0()); }
+			'he'
+			{ after(grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0()); }
+		)
+		{ after(grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__ThemAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0()); }
+		(
+			{ before(grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0()); }
+			'him'
+			{ after(grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0()); }
+		)
+		{ after(grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__TheirAssignment_2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0()); }
+		(
+			{ before(grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0()); }
+			'his'
+			{ after(grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0()); }
+		)
+		{ after(grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HePronouns__TheirsAssignment_3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0()); }
+		(
+			{ before(grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0()); }
+			'his'
+			{ after(grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0()); }
+		)
+		{ after(grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0()); }
 	)
 ;
 finally {

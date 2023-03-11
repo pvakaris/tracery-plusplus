@@ -17,12 +17,14 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import tracerypp.services.TraceryPlusPlusGrammarAccess;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.ExistingVariable;
+import tracerypp.traceryPlusPlus.HePronouns;
 import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.StoryVariable;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
@@ -51,6 +53,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 			case TraceryPlusPlusPackage.EXISTING_VARIABLE:
 				sequence_ExistingVariable(context, (ExistingVariable) semanticObject); 
 				return; 
+			case TraceryPlusPlusPackage.HE_PRONOUNS:
+				sequence_HePronouns(context, (HePronouns) semanticObject); 
+				return; 
 			case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE:
 				sequence_JustNameAttribute(context, (JustNameAttribute) semanticObject); 
 				return; 
@@ -68,6 +73,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.OBJECT_DECLARATION:
 				sequence_ObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.PRONOUNS:
+				sequence_Pronouns(context, (Pronouns) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.STORY:
 				sequence_Story(context, (Story) semanticObject); 
@@ -122,6 +130,35 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExistingVariableAccess().getPointerVariableIDTerminalRuleCall_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.EXISTING_VARIABLE__POINTER, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     HePronouns returns HePronouns
+	 *
+	 * Constraint:
+	 *     (they='he' them='him' their='his' theirs='his')
+	 * </pre>
+	 */
+	protected void sequence_HePronouns(ISerializationContext context, HePronouns semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEY));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEM));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEIR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEIR));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEIRS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.HE_PRONOUNS__THEIRS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0(), semanticObject.getThey());
+		feeder.accept(grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0(), semanticObject.getThem());
+		feeder.accept(grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0(), semanticObject.getTheir());
+		feeder.accept(grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0(), semanticObject.getTheirs());
 		feeder.finish();
 	}
 	
@@ -242,19 +279,42 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     ObjectDeclaration returns ObjectDeclaration
 	 *
 	 * Constraint:
-	 *     (name=ID attributes=AttributeList)
+	 *     (name=ID pronouns=Pronouns attributes=AttributeList)
 	 * </pre>
 	 */
 	protected void sequence_ObjectDeclaration(ISerializationContext context, ObjectDeclaration semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__PRONOUNS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__PRONOUNS));
 			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__ATTRIBUTES) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION__ATTRIBUTES));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_3_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getObjectDeclarationAccess().getPronounsPronounsParserRuleCall_4_0(), semanticObject.getPronouns());
 		feeder.accept(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0(), semanticObject.getAttributes());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Pronouns returns Pronouns
+	 *
+	 * Constraint:
+	 *     values=HePronouns
+	 * </pre>
+	 */
+	protected void sequence_Pronouns(ISerializationContext context, Pronouns semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.PRONOUNS__VALUES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.PRONOUNS__VALUES));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPronounsAccess().getValuesHePronounsParserRuleCall_1_0(), semanticObject.getValues());
 		feeder.finish();
 	}
 	

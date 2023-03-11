@@ -25,7 +25,6 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	protected AbstractElementAlias match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__;
 	protected AbstractElementAlias match_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0;
 	protected AbstractElementAlias match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1;
-	protected AbstractElementAlias match_ObjectDeclaration_HeKeyword_4_0_or_ItKeyword_4_2_or_SheKeyword_4_1_or_TheyKeyword_4_3;
 	protected AbstractElementAlias match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q;
 	
 	@Inject
@@ -34,7 +33,6 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 		match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1())));
 		match_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAreKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getIsKeyword_1_0()));
 		match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1()));
-		match_ObjectDeclaration_HeKeyword_4_0_or_ItKeyword_4_2_or_SheKeyword_4_1_or_TheyKeyword_4_3 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHeKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getItKeyword_4_2()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getSheKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getTheyKeyword_4_3()));
 		match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAnKeyword_2_1()));
 	}
 	
@@ -94,8 +92,6 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 				emit_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1.equals(syntax))
 				emit_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_ObjectDeclaration_HeKeyword_4_0_or_ItKeyword_4_2_or_SheKeyword_4_1_or_TheyKeyword_4_3.equals(syntax))
-				emit_ObjectDeclaration_HeKeyword_4_0_or_ItKeyword_4_2_or_SheKeyword_4_1_or_TheyKeyword_4_3(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q.equals(syntax))
 				emit_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -136,25 +132,11 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	 *     'has' | 'have'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=ID ('He' | 'She' | 'It' | 'They') (ambiguity) 'attributes' AssignmentOperator attributes=AttributeList
+	 *     pronouns=Pronouns (ambiguity) 'attributes' AssignmentOperator attributes=AttributeList
 	 
 	 * </pre>
 	 */
 	protected void emit_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     'He' | 'She' | 'It' | 'They'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=ID (ambiguity) ('has' | 'have') 'attributes' AssignmentOperator attributes=AttributeList
-	 
-	 * </pre>
-	 */
-	protected void emit_ObjectDeclaration_HeKeyword_4_0_or_ItKeyword_4_2_or_SheKeyword_4_1_or_TheyKeyword_4_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

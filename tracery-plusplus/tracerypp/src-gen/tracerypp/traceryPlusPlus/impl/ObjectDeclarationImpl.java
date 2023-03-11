@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 
 /**
@@ -24,6 +25,7 @@ import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
  * </p>
  * <ul>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getPronouns <em>Pronouns</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
@@ -50,6 +52,16 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPronouns() <em>Pronouns</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPronouns()
+   * @generated
+   * @ordered
+   */
+  protected Pronouns pronouns;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference.
@@ -113,6 +125,56 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
    * @generated
    */
   @Override
+  public Pronouns getPronouns()
+  {
+    return pronouns;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPronouns(Pronouns newPronouns, NotificationChain msgs)
+  {
+    Pronouns oldPronouns = pronouns;
+    pronouns = newPronouns;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS, oldPronouns, newPronouns);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPronouns(Pronouns newPronouns)
+  {
+    if (newPronouns != pronouns)
+    {
+      NotificationChain msgs = null;
+      if (pronouns != null)
+        msgs = ((InternalEObject)pronouns).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS, null, msgs);
+      if (newPronouns != null)
+        msgs = ((InternalEObject)newPronouns).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS, null, msgs);
+      msgs = basicSetPronouns(newPronouns, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS, newPronouns, newPronouns));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AttributeList getAttributes()
   {
     return attributes;
@@ -167,6 +229,8 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   {
     switch (featureID)
     {
+      case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
+        return basicSetPronouns(null, msgs);
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         return basicSetAttributes(null, msgs);
     }
@@ -185,6 +249,8 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
     {
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
         return getName();
+      case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
+        return getPronouns();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         return getAttributes();
     }
@@ -203,6 +269,9 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
     {
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
         setName((String)newValue);
+        return;
+      case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
+        setPronouns((Pronouns)newValue);
         return;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         setAttributes((AttributeList)newValue);
@@ -224,6 +293,9 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
+        setPronouns((Pronouns)null);
+        return;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         setAttributes((AttributeList)null);
         return;
@@ -243,6 +315,8 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
     {
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
+        return pronouns != null;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         return attributes != null;
     }
