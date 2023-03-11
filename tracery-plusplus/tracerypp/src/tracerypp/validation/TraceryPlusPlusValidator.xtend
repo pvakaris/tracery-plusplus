@@ -5,6 +5,10 @@ package tracerypp.validation
 
 import org.eclipse.xtext.validation.Check
 import tracerypp.traceryPlusPlus.ObjectDeclaration
+import tracerypp.traceryPlusPlus.Attribute
+import tracerypp.traceryPlusPlus.JustNameAttribute
+import tracerypp.traceryPlusPlus.NameExistingListAttribute
+import tracerypp.traceryPlusPlus.NameValueAttribute
 
 /**
  * This class contains custom validation rules. 
@@ -26,6 +30,33 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	   if (count > 1) {
 	      error("Object with name '" + objectName + "' already exists.", null)
 	   }
+	}
+	
+	@Check
+	def checkUniqueObjectAttribute(ObjectDeclaration object) {
+	   val objectAttributes = object.attributes.attributes
+	   
+	   for (var i = 0; i < objectAttributes.size; i++) {
+	      for (var j = i + 1; j < objectAttributes.size; j++) {
+	         if (getAttributeName(objectAttributes.get(i)) == getAttributeName(objectAttributes.get(j))) {
+	            error("Attribute name " + getAttributeName(objectAttributes.get(i)) + " is used more than once.", null)
+	            return
+	         }
+	      }
+	   }
+	   
+	}
+	
+	def getAttributeName(Attribute attribute) {
+		if (attribute instanceof JustNameAttribute) {
+    		return attribute.name.pointer
+    	}
+    	else if(attribute instanceof NameExistingListAttribute) {
+    		return attribute.name
+    	}
+    	else if(attribute instanceof NameValueAttribute) {
+    		return attribute.name
+    	}
 	}
 	
 }

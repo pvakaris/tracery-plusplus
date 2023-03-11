@@ -6,9 +6,15 @@ package tracerypp.validation;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import tracerypp.traceryPlusPlus.Attribute;
+import tracerypp.traceryPlusPlus.JustNameAttribute;
+import tracerypp.traceryPlusPlus.NameExistingListAttribute;
+import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Variable;
 
 /**
  * This class contains custom validation rules.
@@ -33,5 +39,39 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
     if ((count > 1)) {
       this.error((("Object with name \'" + objectName) + "\' already exists."), null);
     }
+  }
+
+  @Check
+  public void checkUniqueObjectAttribute(final ObjectDeclaration object) {
+    final EList<Attribute> objectAttributes = object.getAttributes().getAttributes();
+    for (int i = 0; (i < objectAttributes.size()); i++) {
+      for (int j = (i + 1); (j < objectAttributes.size()); j++) {
+        Variable _attributeName = this.getAttributeName(objectAttributes.get(i));
+        Variable _attributeName_1 = this.getAttributeName(objectAttributes.get(j));
+        boolean _equals = Objects.equal(_attributeName, _attributeName_1);
+        if (_equals) {
+          Variable _attributeName_2 = this.getAttributeName(objectAttributes.get(i));
+          String _plus = ("Attribute name " + _attributeName_2);
+          String _plus_1 = (_plus + " is used more than once.");
+          this.error(_plus_1, null);
+          return;
+        }
+      }
+    }
+  }
+
+  public Variable getAttributeName(final Attribute attribute) {
+    if ((attribute instanceof JustNameAttribute)) {
+      return ((JustNameAttribute)attribute).getName().getPointer();
+    } else {
+      if ((attribute instanceof NameExistingListAttribute)) {
+        return ((NameExistingListAttribute)attribute).getName();
+      } else {
+        if ((attribute instanceof NameValueAttribute)) {
+          return ((NameValueAttribute)attribute).getName();
+        }
+      }
+    }
+    return null;
   }
 }
