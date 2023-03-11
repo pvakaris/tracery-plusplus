@@ -3,6 +3,7 @@
  */
 package tracerypp.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.util.Arrays;
 import java.util.List;
@@ -24,9 +25,11 @@ import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
 import tracerypp.traceryPlusPlus.StoryVariable;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
+import tracerypp.traceryPlusPlus.Variable;
 import tracerypp.traceryPlusPlus.Word;
 
 /**
@@ -103,22 +106,43 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
 
   protected String _generateJsonStoryEntry(final ObjectAttribute objectAttribute) {
     final String object = objectAttribute.getObject().getName();
-    final String attribute = objectAttribute.getAttribute().getName();
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("#");
-    String _upperCase = attribute.substring(0, 1).toUpperCase();
-    String _plus = (object + _upperCase);
-    String _substring = attribute.substring(1);
-    String _plus_1 = (_plus + _substring);
-    _builder.append(_plus_1);
-    {
-      EList<String> _modifiers = objectAttribute.getModifiers();
-      for(final String mod : _modifiers) {
-        _builder.append(mod);
+    Variable _attribute = objectAttribute.getAttribute();
+    boolean _tripleNotEquals = (_attribute != null);
+    if (_tripleNotEquals) {
+      final String attribute = objectAttribute.getAttribute().getName();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("#");
+      String _upperCase = attribute.substring(0, 1).toUpperCase();
+      String _plus = (object + _upperCase);
+      String _substring = attribute.substring(1);
+      String _plus_1 = (_plus + _substring);
+      _builder.append(_plus_1);
+      {
+        EList<String> _modifiers = objectAttribute.getModifiers();
+        for(final String mod : _modifiers) {
+          _builder.append(mod);
+        }
       }
+      _builder.append("#");
+      return _builder.toString();
+    } else {
+      final String attribute_1 = objectAttribute.getPronoun().getName();
+      StringConcatenation _builder_1 = new StringConcatenation();
+      _builder_1.append("#");
+      String _upperCase_1 = attribute_1.substring(0, 1).toUpperCase();
+      String _plus_2 = (object + _upperCase_1);
+      String _substring_1 = attribute_1.substring(1);
+      String _plus_3 = (_plus_2 + _substring_1);
+      _builder_1.append(_plus_3);
+      {
+        EList<String> _modifiers_1 = objectAttribute.getModifiers();
+        for(final String mod_1 : _modifiers_1) {
+          _builder_1.append(mod_1);
+        }
+      }
+      _builder_1.append("#");
+      return _builder_1.toString();
     }
-    _builder.append("#");
-    return _builder.toString();
   }
 
   protected String _generateJsonStoryEntry(final Word word) {
@@ -174,6 +198,7 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     String _plus = ("set" + _upperCase);
     String _substring = name.substring(1);
     final String setter = (_plus + _substring);
+    final String pronouns = this.matchPronouns(objectDeclaration.getPronouns(), name);
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\"");
     _builder.append(setter);
@@ -185,8 +210,34 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         _builder.append(_stringForAttribute);
       }
     }
+    _builder.append(pronouns);
     _builder.append("\"],");
     return _builder.toString();
+  }
+
+  public String matchPronouns(final Pronouns pronouns, final String name) {
+    final String value = pronouns.getValue();
+    boolean _equals = Objects.equal(value, "He");
+    if (_equals) {
+      return (((((((("[" + name) + "They:he][") + name) + "Them:him][") + name) + "Their:his][") + name) + "Theirs:his]");
+    } else {
+      boolean _equals_1 = Objects.equal(value, "She");
+      if (_equals_1) {
+        return (((((((("[" + name) + "They:she][") + name) + "Them:her][") + name) + "Their:her][") + name) + "Theirs:hers]");
+      } else {
+        boolean _equals_2 = Objects.equal(value, "It");
+        if (_equals_2) {
+          return (((((((("[" + name) + "They:it][") + name) + "Them:it][") + name) + "Their:its][") + name) + "Theirs:its]");
+        } else {
+          boolean _equals_3 = Objects.equal(value, "They");
+          if (_equals_3) {
+            return (((((((("[" + name) + "They:they][") + name) + "Them:them][") + name) + "Their:their][") + name) + "Theirs:theirs]");
+          } else {
+            return "pimpalauskas";
+          }
+        }
+      }
+    }
   }
 
   public String getStringForAttribute(final Attribute attribute, final String objectName) {

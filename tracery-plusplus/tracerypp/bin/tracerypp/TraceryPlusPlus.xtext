@@ -90,7 +90,8 @@ NameValueAttribute:
 ;
 
 ObjectAttribute:
-	object = [ObjectDeclaration] "." attribute = [Variable]
+	(object = [ObjectDeclaration] "." attribute = [Variable] |
+	object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
 	modifiers += Modifier*
 ;
 
@@ -103,7 +104,11 @@ AttributeList:
 ;
 
 Pronouns:
-	"He" | "She" | "It" | "They"
+	value = "He" | value = "She" | value = "It" | value = "They"
+;
+
+PronounIdentifier:
+	name = ("they" | "them" | "their" | "theirs")
 ;
 
 /*

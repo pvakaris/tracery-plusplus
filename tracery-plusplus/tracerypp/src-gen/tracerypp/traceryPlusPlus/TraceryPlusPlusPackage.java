@@ -514,13 +514,22 @@ public interface TraceryPlusPlusPackage extends EPackage
   int OBJECT_ATTRIBUTE__ATTRIBUTE = 1;
 
   /**
+   * The feature id for the '<em><b>Pronoun</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBJECT_ATTRIBUTE__PRONOUN = 2;
+
+  /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE__MODIFIERS = 2;
+  int OBJECT_ATTRIBUTE__MODIFIERS = 3;
 
   /**
    * The number of structural features of the '<em>Object Attribute</em>' class.
@@ -529,7 +538,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_ATTRIBUTE_FEATURE_COUNT = 3;
+  int OBJECT_ATTRIBUTE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.WordListImpl <em>Word List</em>}' class.
@@ -598,13 +607,13 @@ public interface TraceryPlusPlusPackage extends EPackage
   int PRONOUNS = 17;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRONOUNS__VALUES = 0;
+  int PRONOUNS__VALUE = 0;
 
   /**
    * The number of structural features of the '<em>Pronouns</em>' class.
@@ -616,59 +625,32 @@ public interface TraceryPlusPlusPackage extends EPackage
   int PRONOUNS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.HePronounsImpl <em>He Pronouns</em>}' class.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl <em>Pronoun Identifier</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.HePronounsImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getHePronouns()
+   * @see tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
    * @generated
    */
-  int HE_PRONOUNS = 18;
+  int PRONOUN_IDENTIFIER = 18;
 
   /**
-   * The feature id for the '<em><b>They</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HE_PRONOUNS__THEY = 0;
+  int PRONOUN_IDENTIFIER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Them</b></em>' attribute.
+   * The number of structural features of the '<em>Pronoun Identifier</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HE_PRONOUNS__THEM = 1;
-
-  /**
-   * The feature id for the '<em><b>Their</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HE_PRONOUNS__THEIR = 2;
-
-  /**
-   * The feature id for the '<em><b>Theirs</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HE_PRONOUNS__THEIRS = 3;
-
-  /**
-   * The number of structural features of the '<em>He Pronouns</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HE_PRONOUNS_FEATURE_COUNT = 4;
+  int PRONOUN_IDENTIFIER_FEATURE_COUNT = 1;
 
 
   /**
@@ -1042,6 +1024,17 @@ public interface TraceryPlusPlusPackage extends EPackage
   EReference getObjectAttribute_Attribute();
 
   /**
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getPronoun <em>Pronoun</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pronoun</em>'.
+   * @see tracerypp.traceryPlusPlus.ObjectAttribute#getPronoun()
+   * @see #getObjectAttribute()
+   * @generated
+   */
+  EReference getObjectAttribute_Pronoun();
+
+  /**
    * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers <em>Modifiers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1105,69 +1098,36 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getPronouns();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.Pronouns#getValues <em>Values</em>}'.
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Pronouns#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Values</em>'.
-   * @see tracerypp.traceryPlusPlus.Pronouns#getValues()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see tracerypp.traceryPlusPlus.Pronouns#getValue()
    * @see #getPronouns()
    * @generated
    */
-  EReference getPronouns_Values();
+  EAttribute getPronouns_Value();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.HePronouns <em>He Pronouns</em>}'.
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>He Pronouns</em>'.
-   * @see tracerypp.traceryPlusPlus.HePronouns
+   * @return the meta object for class '<em>Pronoun Identifier</em>'.
+   * @see tracerypp.traceryPlusPlus.PronounIdentifier
    * @generated
    */
-  EClass getHePronouns();
+  EClass getPronounIdentifier();
 
   /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getThey <em>They</em>}'.
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.PronounIdentifier#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>They</em>'.
-   * @see tracerypp.traceryPlusPlus.HePronouns#getThey()
-   * @see #getHePronouns()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tracerypp.traceryPlusPlus.PronounIdentifier#getName()
+   * @see #getPronounIdentifier()
    * @generated
    */
-  EAttribute getHePronouns_They();
-
-  /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getThem <em>Them</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Them</em>'.
-   * @see tracerypp.traceryPlusPlus.HePronouns#getThem()
-   * @see #getHePronouns()
-   * @generated
-   */
-  EAttribute getHePronouns_Them();
-
-  /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getTheir <em>Their</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Their</em>'.
-   * @see tracerypp.traceryPlusPlus.HePronouns#getTheir()
-   * @see #getHePronouns()
-   * @generated
-   */
-  EAttribute getHePronouns_Their();
-
-  /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.HePronouns#getTheirs <em>Theirs</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Theirs</em>'.
-   * @see tracerypp.traceryPlusPlus.HePronouns#getTheirs()
-   * @see #getHePronouns()
-   * @generated
-   */
-  EAttribute getHePronouns_Theirs();
+  EAttribute getPronounIdentifier_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1503,6 +1463,14 @@ public interface TraceryPlusPlusPackage extends EPackage
     EReference OBJECT_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getObjectAttribute_Attribute();
 
     /**
+     * The meta object literal for the '<em><b>Pronoun</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBJECT_ATTRIBUTE__PRONOUN = eINSTANCE.getObjectAttribute_Pronoun();
+
+    /**
      * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1557,54 +1525,30 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass PRONOUNS = eINSTANCE.getPronouns();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRONOUNS__VALUES = eINSTANCE.getPronouns_Values();
+    EAttribute PRONOUNS__VALUE = eINSTANCE.getPronouns_Value();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.HePronounsImpl <em>He Pronouns</em>}' class.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl <em>Pronoun Identifier</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.HePronounsImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getHePronouns()
+     * @see tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
      * @generated
      */
-    EClass HE_PRONOUNS = eINSTANCE.getHePronouns();
+    EClass PRONOUN_IDENTIFIER = eINSTANCE.getPronounIdentifier();
 
     /**
-     * The meta object literal for the '<em><b>They</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute HE_PRONOUNS__THEY = eINSTANCE.getHePronouns_They();
-
-    /**
-     * The meta object literal for the '<em><b>Them</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HE_PRONOUNS__THEM = eINSTANCE.getHePronouns_Them();
-
-    /**
-     * The meta object literal for the '<em><b>Their</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HE_PRONOUNS__THEIR = eINSTANCE.getHePronouns_Their();
-
-    /**
-     * The meta object literal for the '<em><b>Theirs</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HE_PRONOUNS__THEIRS = eINSTANCE.getHePronouns_Theirs();
+    EAttribute PRONOUN_IDENTIFIER__NAME = eINSTANCE.getPronounIdentifier_Name();
 
   }
 

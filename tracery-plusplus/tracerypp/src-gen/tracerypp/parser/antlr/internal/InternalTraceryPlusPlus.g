@@ -857,40 +857,83 @@ ruleObjectAttribute returns [EObject current=null]
 	(
 		(
 			(
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getObjectAttributeRule());
+							}
+						}
+						otherlv_0=RULE_ID
+						{
+							newLeafNode(otherlv_0, grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationCrossReference_0_0_0_0());
+						}
+					)
+				)
+				otherlv_1='.'
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getObjectAttributeRule());
-					}
+					newLeafNode(otherlv_1, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_0_0_1());
 				}
-				otherlv_0=RULE_ID
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getObjectAttributeRule());
+							}
+						}
+						otherlv_2=RULE_ID
+						{
+							newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getAttributeVariableCrossReference_0_0_2_0());
+						}
+					)
+				)
+			)
+			    |
+			(
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getObjectAttributeRule());
+							}
+						}
+						otherlv_3=RULE_ID
+						{
+							newLeafNode(otherlv_3, grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationCrossReference_0_1_0_0());
+						}
+					)
+				)
+				otherlv_4='.'
 				{
-					newLeafNode(otherlv_0, grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationCrossReference_0_0());
+					newLeafNode(otherlv_4, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_0_1_1());
 				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getObjectAttributeAccess().getPronounPronounIdentifierParserRuleCall_0_1_2_0());
+						}
+						lv_pronoun_5_0=rulePronounIdentifier
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getObjectAttributeRule());
+							}
+							set(
+								$current,
+								"pronoun",
+								lv_pronoun_5_0,
+								"tracerypp.TraceryPlusPlus.PronounIdentifier");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 			)
 		)
-		otherlv_1='.'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_1());
-		}
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getObjectAttributeRule());
-					}
+					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_1_0());
 				}
-				otherlv_2=RULE_ID
-				{
-					newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getAttributeVariableCrossReference_2_0());
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_3_0());
-				}
-				lv_modifiers_3_0=ruleModifier
+				lv_modifiers_6_0=ruleModifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectAttributeRule());
@@ -898,7 +941,7 @@ ruleObjectAttribute returns [EObject current=null]
 					add(
 						$current,
 						"modifiers",
-						lv_modifiers_3_0,
+						lv_modifiers_6_0,
 						"tracerypp.TraceryPlusPlus.Modifier");
 					afterParserOrEnumRuleCall();
 				}
@@ -1055,41 +1098,77 @@ rulePronouns returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='He'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getPronounsAccess().getHeKeyword_0());
-		}
 		(
 			(
+				lv_value_0_0='He'
 				{
-					newCompositeNode(grammarAccess.getPronounsAccess().getValuesHePronounsParserRuleCall_1_0());
+					newLeafNode(lv_value_0_0, grammarAccess.getPronounsAccess().getValueHeKeyword_0_0());
 				}
-				lv_values_1_0=ruleHePronouns
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPronounsRule());
+						$current = createModelElement(grammarAccess.getPronounsRule());
 					}
-					set(
-						$current,
-						"values",
-						lv_values_1_0,
-						"tracerypp.TraceryPlusPlus.HePronouns");
-					afterParserOrEnumRuleCall();
+					setWithLastConsumed($current, "value", lv_value_0_0, "He");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_value_1_0='She'
+				{
+					newLeafNode(lv_value_1_0, grammarAccess.getPronounsAccess().getValueSheKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPronounsRule());
+					}
+					setWithLastConsumed($current, "value", lv_value_1_0, "She");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_value_2_0='It'
+				{
+					newLeafNode(lv_value_2_0, grammarAccess.getPronounsAccess().getValueItKeyword_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPronounsRule());
+					}
+					setWithLastConsumed($current, "value", lv_value_2_0, "It");
+				}
+			)
+		)
+		    |
+		(
+			(
+				lv_value_3_0='They'
+				{
+					newLeafNode(lv_value_3_0, grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPronounsRule());
+					}
+					setWithLastConsumed($current, "value", lv_value_3_0, "They");
 				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleHePronouns
-entryRuleHePronouns returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getHePronounsRule()); }
-	iv_ruleHePronouns=ruleHePronouns
-	{ $current=$iv_ruleHePronouns.current; }
+// Entry rule entryRulePronounIdentifier
+entryRulePronounIdentifier returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPronounIdentifierRule()); }
+	iv_rulePronounIdentifier=rulePronounIdentifier
+	{ $current=$iv_rulePronounIdentifier.current; }
 	EOF;
 
-// Rule HePronouns
-ruleHePronouns returns [EObject current=null]
+// Rule PronounIdentifier
+rulePronounIdentifier returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1099,57 +1178,48 @@ ruleHePronouns returns [EObject current=null]
 	(
 		(
 			(
-				lv_they_0_0='he'
+				lv_name_0_1='they'
 				{
-					newLeafNode(lv_they_0_0, grammarAccess.getHePronounsAccess().getTheyHeKeyword_0_0());
+					newLeafNode(lv_name_0_1, grammarAccess.getPronounIdentifierAccess().getNameTheyKeyword_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHePronounsRule());
+						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
 					}
-					setWithLastConsumed($current, "they", lv_they_0_0, "he");
+					setWithLastConsumed($current, "name", lv_name_0_1, null);
 				}
-			)
-		)
-		(
-			(
-				lv_them_1_0='him'
+				    |
+				lv_name_0_2='them'
 				{
-					newLeafNode(lv_them_1_0, grammarAccess.getHePronounsAccess().getThemHimKeyword_1_0());
+					newLeafNode(lv_name_0_2, grammarAccess.getPronounIdentifierAccess().getNameThemKeyword_0_1());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHePronounsRule());
+						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
 					}
-					setWithLastConsumed($current, "them", lv_them_1_0, "him");
+					setWithLastConsumed($current, "name", lv_name_0_2, null);
 				}
-			)
-		)
-		(
-			(
-				lv_their_2_0='his'
+				    |
+				lv_name_0_3='their'
 				{
-					newLeafNode(lv_their_2_0, grammarAccess.getHePronounsAccess().getTheirHisKeyword_2_0());
+					newLeafNode(lv_name_0_3, grammarAccess.getPronounIdentifierAccess().getNameTheirKeyword_0_2());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHePronounsRule());
+						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
 					}
-					setWithLastConsumed($current, "their", lv_their_2_0, "his");
+					setWithLastConsumed($current, "name", lv_name_0_3, null);
 				}
-			)
-		)
-		(
-			(
-				lv_theirs_3_0='his'
+				    |
+				lv_name_0_4='theirs'
 				{
-					newLeafNode(lv_theirs_3_0, grammarAccess.getHePronounsAccess().getTheirsHisKeyword_3_0());
+					newLeafNode(lv_name_0_4, grammarAccess.getPronounIdentifierAccess().getNameTheirsKeyword_0_3());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getHePronounsRule());
+						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
 					}
-					setWithLastConsumed($current, "theirs", lv_theirs_3_0, "his");
+					setWithLastConsumed($current, "name", lv_name_0_4, null);
 				}
 			)
 		)

@@ -20,6 +20,7 @@ import tracerypp.traceryPlusPlus.Attribute
 import tracerypp.traceryPlusPlus.JustNameAttribute
 import tracerypp.traceryPlusPlus.NameExistingListAttribute
 import tracerypp.traceryPlusPlus.NameValueAttribute
+import tracerypp.traceryPlusPlus.Pronouns
 
 /**
  * Generates code from your model files on save.
@@ -65,8 +66,15 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	
 	dispatch def generateJsonStoryEntry(ObjectAttribute objectAttribute) {
 		val object = objectAttribute.object.name
-		val attribute = objectAttribute.attribute.name
-		return '''#«object + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : objectAttribute.modifiers »« mod »« ENDFOR »#'''
+		if(objectAttribute.attribute !== null) {
+			val attribute = objectAttribute.attribute.name
+			return '''#«object + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : objectAttribute.modifiers »« mod »« ENDFOR »#'''
+		}
+		else {
+			val attribute = objectAttribute.pronoun.name
+			return '''#«object + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : objectAttribute.modifiers »« mod »« ENDFOR »#'''
+		}
+		
 	}
 	
 	// Retrieve the plain string value
@@ -89,9 +97,27 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		// If the object was called "hero", generate a name "setHero"
 		val name = objectDeclaration.name.toString
 		val setter = "set" + name.substring(0, 1).toUpperCase() + name.substring(1)
+		val pronouns = matchPronouns(objectDeclaration.pronouns, name)
 		
-		
-		return '''"«setter»": ["« FOR attribute : objectDeclaration.attributes.attributes »« getStringForAttribute(attribute, name) »« ENDFOR »"],'''
+		return '''"«setter»": ["« FOR attribute : objectDeclaration.attributes.attributes »« getStringForAttribute(attribute, name) »« ENDFOR »«pronouns»"],'''
+	}
+	
+	def matchPronouns(Pronouns pronouns, String name) {
+		val value = pronouns.value
+		if (value == "He") {
+			return "[" + name + "They:he][" + name + "Them:him][" + name + "Their:his][" + name + "Theirs:his]"
+		}
+		else if (value == "She") {
+			return "[" + name + "They:she][" + name + "Them:her][" + name + "Their:her][" + name + "Theirs:hers]"
+		}
+		else if (value == "It") {
+			return "[" + name + "They:it][" + name + "Them:it][" + name + "Their:its][" + name + "Theirs:its]"
+		}
+		else if (value == "They") {
+			return "[" + name + "They:they][" + name + "Them:them][" + name + "Their:their][" + name + "Theirs:theirs]"
+		}
+		else
+		return "pimpalauskas"
 	}
 	
 	def getStringForAttribute(Attribute attribute, String objectName) {

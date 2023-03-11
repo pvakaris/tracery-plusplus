@@ -83,7 +83,7 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.WORD_LIST: return createWordList();
       case TraceryPlusPlusPackage.ATTRIBUTE_LIST: return createAttributeList();
       case TraceryPlusPlusPackage.PRONOUNS: return createPronouns();
-      case TraceryPlusPlusPackage.HE_PRONOUNS: return createHePronouns();
+      case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER: return createPronounIdentifier();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -311,10 +311,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public HePronouns createHePronouns()
+  public PronounIdentifier createPronounIdentifier()
   {
-    HePronounsImpl hePronouns = new HePronounsImpl();
-    return hePronouns;
+    PronounIdentifierImpl pronounIdentifier = new PronounIdentifierImpl();
+    return pronounIdentifier;
   }
 
   /**

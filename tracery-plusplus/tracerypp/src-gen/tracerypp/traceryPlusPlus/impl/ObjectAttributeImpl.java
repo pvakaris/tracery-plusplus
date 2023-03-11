@@ -6,6 +6,7 @@ package tracerypp.traceryPlusPlus.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.Variable;
 
@@ -32,6 +34,7 @@ import tracerypp.traceryPlusPlus.Variable;
  * <ul>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getObject <em>Object</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getPronoun <em>Pronoun</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getModifiers <em>Modifiers</em>}</li>
  * </ul>
  *
@@ -58,6 +61,16 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected Variable attribute;
+
+  /**
+   * The cached value of the '{@link #getPronoun() <em>Pronoun</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPronoun()
+   * @generated
+   * @ordered
+   */
+  protected PronounIdentifier pronoun;
 
   /**
    * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' attribute list.
@@ -186,6 +199,56 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public PronounIdentifier getPronoun()
+  {
+    return pronoun;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPronoun(PronounIdentifier newPronoun, NotificationChain msgs)
+  {
+    PronounIdentifier oldPronoun = pronoun;
+    pronoun = newPronoun;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, oldPronoun, newPronoun);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPronoun(PronounIdentifier newPronoun)
+  {
+    if (newPronoun != pronoun)
+    {
+      NotificationChain msgs = null;
+      if (pronoun != null)
+        msgs = ((InternalEObject)pronoun).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, null, msgs);
+      if (newPronoun != null)
+        msgs = ((InternalEObject)newPronoun).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, null, msgs);
+      msgs = basicSetPronoun(newPronoun, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, newPronoun, newPronoun));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<String> getModifiers()
   {
     if (modifiers == null)
@@ -193,6 +256,22 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
       modifiers = new EDataTypeEList<String>(String.class, this, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS);
     }
     return modifiers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
+        return basicSetPronoun(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -211,6 +290,8 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         if (resolve) return getAttribute();
         return basicGetAttribute();
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
+        return getPronoun();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
         return getModifiers();
     }
@@ -233,6 +314,9 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Variable)newValue);
+        return;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
+        setPronoun((PronounIdentifier)newValue);
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
         getModifiers().clear();
@@ -258,6 +342,9 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Variable)null);
         return;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
+        setPronoun((PronounIdentifier)null);
+        return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
         getModifiers().clear();
         return;
@@ -279,6 +366,8 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
         return object != null;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         return attribute != null;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
+        return pronoun != null;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
         return modifiers != null && !modifiers.isEmpty();
     }

@@ -166,9 +166,9 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createPronounsAdapter();
       }
       @Override
-      public Adapter caseHePronouns(HePronouns object)
+      public Adapter casePronounIdentifier(PronounIdentifier object)
       {
-        return createHePronounsAdapter();
+        return createPronounIdentifierAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -463,16 +463,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.HePronouns <em>He Pronouns</em>}'.
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.HePronouns
+   * @see tracerypp.traceryPlusPlus.PronounIdentifier
    * @generated
    */
-  public Adapter createHePronounsAdapter()
+  public Adapter createPronounIdentifierAdapter()
   {
     return null;
   }

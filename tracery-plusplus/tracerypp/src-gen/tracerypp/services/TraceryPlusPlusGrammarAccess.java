@@ -503,52 +503,91 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	public class ObjectAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ObjectAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cObjectObjectDeclarationCrossReference_0_0 = (CrossReference)cObjectAssignment_0.eContents().get(0);
-		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAttributeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cAttributeVariableCrossReference_2_0 = (CrossReference)cAttributeAssignment_2.eContents().get(0);
-		private final RuleCall cAttributeVariableIDTerminalRuleCall_2_0_1 = (RuleCall)cAttributeVariableCrossReference_2_0.eContents().get(1);
-		private final Assignment cModifiersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cModifiersModifierParserRuleCall_3_0 = (RuleCall)cModifiersAssignment_3.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
+		private final Assignment cObjectAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
+		private final CrossReference cObjectObjectDeclarationCrossReference_0_0_0_0 = (CrossReference)cObjectAssignment_0_0_0.eContents().get(0);
+		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_0_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
+		private final Assignment cAttributeAssignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
+		private final CrossReference cAttributeVariableCrossReference_0_0_2_0 = (CrossReference)cAttributeAssignment_0_0_2.eContents().get(0);
+		private final RuleCall cAttributeVariableIDTerminalRuleCall_0_0_2_0_1 = (RuleCall)cAttributeVariableCrossReference_0_0_2_0.eContents().get(1);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Assignment cObjectAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
+		private final CrossReference cObjectObjectDeclarationCrossReference_0_1_0_0 = (CrossReference)cObjectAssignment_0_1_0.eContents().get(0);
+		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_1_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
+		private final Assignment cPronounAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
+		private final RuleCall cPronounPronounIdentifierParserRuleCall_0_1_2_0 = (RuleCall)cPronounAssignment_0_1_2.eContents().get(0);
+		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
 		
 		//ObjectAttribute:
-		//    object = [ObjectDeclaration] "." attribute = [Variable]
+		//    (object = [ObjectDeclaration] "." attribute = [Variable] |
+		//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
 		//    modifiers += Modifier*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//object = [ObjectDeclaration] "." attribute = [Variable]
+		//(object = [ObjectDeclaration] "." attribute = [Variable] |
+		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
 		//modifiers += Modifier*
 		public Group getGroup() { return cGroup; }
 		
+		//(object = [ObjectDeclaration] "." attribute = [Variable] |
+		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//object = [ObjectDeclaration] "." attribute = [Variable]
+		public Group getGroup_0_0() { return cGroup_0_0; }
+		
 		//object = [ObjectDeclaration]
-		public Assignment getObjectAssignment_0() { return cObjectAssignment_0; }
+		public Assignment getObjectAssignment_0_0_0() { return cObjectAssignment_0_0_0; }
 		
 		//[ObjectDeclaration]
-		public CrossReference getObjectObjectDeclarationCrossReference_0_0() { return cObjectObjectDeclarationCrossReference_0_0; }
+		public CrossReference getObjectObjectDeclarationCrossReference_0_0_0_0() { return cObjectObjectDeclarationCrossReference_0_0_0_0; }
 		
 		//ID
-		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_0_1; }
+		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1; }
 		
 		//"."
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+		public Keyword getFullStopKeyword_0_0_1() { return cFullStopKeyword_0_0_1; }
 		
 		//attribute = [Variable]
-		public Assignment getAttributeAssignment_2() { return cAttributeAssignment_2; }
+		public Assignment getAttributeAssignment_0_0_2() { return cAttributeAssignment_0_0_2; }
 		
 		//[Variable]
-		public CrossReference getAttributeVariableCrossReference_2_0() { return cAttributeVariableCrossReference_2_0; }
+		public CrossReference getAttributeVariableCrossReference_0_0_2_0() { return cAttributeVariableCrossReference_0_0_2_0; }
 		
 		//ID
-		public RuleCall getAttributeVariableIDTerminalRuleCall_2_0_1() { return cAttributeVariableIDTerminalRuleCall_2_0_1; }
+		public RuleCall getAttributeVariableIDTerminalRuleCall_0_0_2_0_1() { return cAttributeVariableIDTerminalRuleCall_0_0_2_0_1; }
+		
+		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+		public Group getGroup_0_1() { return cGroup_0_1; }
+		
+		//object = [ObjectDeclaration]
+		public Assignment getObjectAssignment_0_1_0() { return cObjectAssignment_0_1_0; }
+		
+		//[ObjectDeclaration]
+		public CrossReference getObjectObjectDeclarationCrossReference_0_1_0_0() { return cObjectObjectDeclarationCrossReference_0_1_0_0; }
+		
+		//ID
+		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1; }
+		
+		//"."
+		public Keyword getFullStopKeyword_0_1_1() { return cFullStopKeyword_0_1_1; }
+		
+		//pronoun = PronounIdentifier
+		public Assignment getPronounAssignment_0_1_2() { return cPronounAssignment_0_1_2; }
+		
+		//PronounIdentifier
+		public RuleCall getPronounPronounIdentifierParserRuleCall_0_1_2_0() { return cPronounPronounIdentifierParserRuleCall_0_1_2_0; }
 		
 		//modifiers += Modifier*
-		public Assignment getModifiersAssignment_3() { return cModifiersAssignment_3; }
+		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
 		
 		//Modifier
-		public RuleCall getModifiersModifierParserRuleCall_3_0() { return cModifiersModifierParserRuleCall_3_0; }
+		public RuleCall getModifiersModifierParserRuleCall_1_0() { return cModifiersModifierParserRuleCall_1_0; }
 	}
 	public class WordListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.WordList");
@@ -624,80 +663,79 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	public class PronounsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Pronouns");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValuesHePronounsParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cValueHeKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cValueSheKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cValueItKeyword_2_0 = (Keyword)cValueAssignment_2.eContents().get(0);
+		private final Assignment cValueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cValueTheyKeyword_3_0 = (Keyword)cValueAssignment_3.eContents().get(0);
 		
-		///*
-		//    Pronouns
-		// */
 		//Pronouns:
-		//    "He" values = HePronouns
+		//    value = "He" | value = "She" | value = "It" | value = "They"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"He" values = HePronouns
-		public Group getGroup() { return cGroup; }
+		//value = "He" | value = "She" | value = "It" | value = "They"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//value = "He"
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
 		
 		//"He"
-		public Keyword getHeKeyword_0() { return cHeKeyword_0; }
+		public Keyword getValueHeKeyword_0_0() { return cValueHeKeyword_0_0; }
 		
-		//values = HePronouns
-		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+		//value = "She"
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
-		//HePronouns
-		public RuleCall getValuesHePronounsParserRuleCall_1_0() { return cValuesHePronounsParserRuleCall_1_0; }
+		//"She"
+		public Keyword getValueSheKeyword_1_0() { return cValueSheKeyword_1_0; }
+		
+		//value = "It"
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//"It"
+		public Keyword getValueItKeyword_2_0() { return cValueItKeyword_2_0; }
+		
+		//value = "They"
+		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		
+		//"They"
+		public Keyword getValueTheyKeyword_3_0() { return cValueTheyKeyword_3_0; }
 	}
-	public class HePronounsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.HePronouns");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTheyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cTheyHeKeyword_0_0 = (Keyword)cTheyAssignment_0.eContents().get(0);
-		private final Assignment cThemAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cThemHimKeyword_1_0 = (Keyword)cThemAssignment_1.eContents().get(0);
-		private final Assignment cTheirAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Keyword cTheirHisKeyword_2_0 = (Keyword)cTheirAssignment_2.eContents().get(0);
-		private final Assignment cTheirsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cTheirsHisKeyword_3_0 = (Keyword)cTheirsAssignment_3.eContents().get(0);
+	public class PronounIdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.PronounIdentifier");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
+		private final Keyword cNameTheyKeyword_0_0 = (Keyword)cNameAlternatives_0.eContents().get(0);
+		private final Keyword cNameThemKeyword_0_1 = (Keyword)cNameAlternatives_0.eContents().get(1);
+		private final Keyword cNameTheirKeyword_0_2 = (Keyword)cNameAlternatives_0.eContents().get(2);
+		private final Keyword cNameTheirsKeyword_0_3 = (Keyword)cNameAlternatives_0.eContents().get(3);
 		
-		//HePronouns:
-		//    they = "he"
-		//    them = "him"
-		//    their = "his"
-		//    theirs = "his"
+		//PronounIdentifier:
+		//    name = ("they" | "them" | "their" | "theirs")
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//they = "he"
-		//them = "him"
-		//their = "his"
-		//theirs = "his"
-		public Group getGroup() { return cGroup; }
+		//name = ("they" | "them" | "their" | "theirs")
+		public Assignment getNameAssignment() { return cNameAssignment; }
 		
-		//they = "he"
-		public Assignment getTheyAssignment_0() { return cTheyAssignment_0; }
+		//("they" | "them" | "their" | "theirs")
+		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
 		
-		//"he"
-		public Keyword getTheyHeKeyword_0_0() { return cTheyHeKeyword_0_0; }
+		//"they"
+		public Keyword getNameTheyKeyword_0_0() { return cNameTheyKeyword_0_0; }
 		
-		//them = "him"
-		public Assignment getThemAssignment_1() { return cThemAssignment_1; }
+		//"them"
+		public Keyword getNameThemKeyword_0_1() { return cNameThemKeyword_0_1; }
 		
-		//"him"
-		public Keyword getThemHimKeyword_1_0() { return cThemHimKeyword_1_0; }
+		//"their"
+		public Keyword getNameTheirKeyword_0_2() { return cNameTheirKeyword_0_2; }
 		
-		//their = "his"
-		public Assignment getTheirAssignment_2() { return cTheirAssignment_2; }
-		
-		//"his"
-		public Keyword getTheirHisKeyword_2_0() { return cTheirHisKeyword_2_0; }
-		
-		//theirs = "his"
-		public Assignment getTheirsAssignment_3() { return cTheirsAssignment_3; }
-		
-		//"his"
-		public Keyword getTheirsHisKeyword_3_0() { return cTheirsHisKeyword_3_0; }
+		//"theirs"
+		public Keyword getNameTheirsKeyword_0_3() { return cNameTheirsKeyword_0_3; }
 	}
 	public class ModifierElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Modifier");
@@ -889,7 +927,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final WordListElements pWordList;
 	private final AttributeListElements pAttributeList;
 	private final PronounsElements pPronouns;
-	private final HePronounsElements pHePronouns;
+	private final PronounIdentifierElements pPronounIdentifier;
 	private final ModifierElements pModifier;
 	private final CapitalizationModifierElements pCapitalizationModifier;
 	private final FullCapitalizationModifierElements pFullCapitalizationModifier;
@@ -927,7 +965,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pWordList = new WordListElements();
 		this.pAttributeList = new AttributeListElements();
 		this.pPronouns = new PronounsElements();
-		this.pHePronouns = new HePronounsElements();
+		this.pPronounIdentifier = new PronounIdentifierElements();
 		this.pModifier = new ModifierElements();
 		this.pCapitalizationModifier = new CapitalizationModifierElements();
 		this.pFullCapitalizationModifier = new FullCapitalizationModifierElements();
@@ -1150,7 +1188,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//ObjectAttribute:
-	//    object = [ObjectDeclaration] "." attribute = [Variable]
+	//    (object = [ObjectDeclaration] "." attribute = [Variable] |
+	//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
 	//    modifiers += Modifier*
 	//;
 	public ObjectAttributeElements getObjectAttributeAccess() {
@@ -1183,11 +1222,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getAttributeListAccess().getRule();
 	}
 	
-	///*
-	//    Pronouns
-	// */
 	//Pronouns:
-	//    "He" values = HePronouns
+	//    value = "He" | value = "She" | value = "It" | value = "They"
 	//;
 	public PronounsElements getPronounsAccess() {
 		return pPronouns;
@@ -1197,18 +1233,15 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getPronounsAccess().getRule();
 	}
 	
-	//HePronouns:
-	//    they = "he"
-	//    them = "him"
-	//    their = "his"
-	//    theirs = "his"
+	//PronounIdentifier:
+	//    name = ("they" | "them" | "their" | "theirs")
 	//;
-	public HePronounsElements getHePronounsAccess() {
-		return pHePronouns;
+	public PronounIdentifierElements getPronounIdentifierAccess() {
+		return pPronounIdentifier;
 	}
 	
-	public ParserRule getHePronounsRule() {
-		return getHePronounsAccess().getRule();
+	public ParserRule getPronounIdentifierRule() {
+		return getPronounIdentifierAccess().getRule();
 	}
 	
 	///*
