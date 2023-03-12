@@ -86,9 +86,9 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createStatementAdapter();
       }
       @Override
-      public Adapter caseDeclaration(Declaration object)
+      public Adapter caseVariable(Variable object)
       {
-        return createDeclarationAdapter();
+        return createVariableAdapter();
       }
       @Override
       public Adapter caseStory(Story object)
@@ -111,24 +111,14 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createWordAdapter();
       }
       @Override
-      public Adapter caseVariable(Variable object)
+      public Adapter caseListVariable(ListVariable object)
       {
-        return createVariableAdapter();
-      }
-      @Override
-      public Adapter caseStoryVariable(StoryVariable object)
-      {
-        return createStoryVariableAdapter();
+        return createListVariableAdapter();
       }
       @Override
       public Adapter caseAttribute(Attribute object)
       {
         return createAttributeAdapter();
-      }
-      @Override
-      public Adapter caseExistingVariable(ExistingVariable object)
-      {
-        return createExistingVariableAdapter();
       }
       @Override
       public Adapter caseJustNameAttribute(JustNameAttribute object)
@@ -223,16 +213,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Declaration <em>Declaration</em>}'.
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.Declaration
+   * @see tracerypp.traceryPlusPlus.Variable
    * @generated
    */
-  public Adapter createDeclarationAdapter()
+  public Adapter createVariableAdapter()
   {
     return null;
   }
@@ -298,31 +288,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Variable <em>Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ListVariable <em>List Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.Variable
+   * @see tracerypp.traceryPlusPlus.ListVariable
    * @generated
    */
-  public Adapter createVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.StoryVariable <em>Story Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.StoryVariable
-   * @generated
-   */
-  public Adapter createStoryVariableAdapter()
+  public Adapter createListVariableAdapter()
   {
     return null;
   }
@@ -338,21 +313,6 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ExistingVariable <em>Existing Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.ExistingVariable
-   * @generated
-   */
-  public Adapter createExistingVariableAdapter()
   {
     return null;
   }

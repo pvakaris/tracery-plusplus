@@ -8,7 +8,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.Variable;
@@ -26,7 +25,7 @@ import tracerypp.traceryPlusPlus.Variable;
  *
  * @generated
  */
-public class VariableImpl extends MinimalEObjectImpl.Container implements Variable
+public class VariableImpl extends StatementImpl implements Variable
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

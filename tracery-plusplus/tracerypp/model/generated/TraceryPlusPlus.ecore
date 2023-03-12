@@ -9,58 +9,45 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Declaration" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Story">
     <eStructuralFeatures xsi:type="ecore:EReference" name="story" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListDeclaration" eSuperTypes="#//Declaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ListDeclaration" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//WordList"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration" eSuperTypes="#//Declaration">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectDeclaration" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pronouns" eType="#//Pronouns"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//AttributeList"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Word">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StoryVariable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ListVariable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//ListDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ExistingVariable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" eType="#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="JustNameAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//ExistingVariable"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JustNameAttribute" eSuperTypes="#//Attribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="NameExistingListAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ExistingVariable"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//ListDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NameValueAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Variable"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Word"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pronoun" eType="#//PronounIdentifier"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"

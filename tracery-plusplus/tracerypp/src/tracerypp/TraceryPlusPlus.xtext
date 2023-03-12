@@ -10,11 +10,11 @@ TraceryPlusPlusProgram:
 ;
 	 
 Statement:
-	Declaration
+	Variable
 	// Rule (for example if else or something similar)
 ;
 
-Declaration:
+Variable:
 	ListDeclaration |
 	ObjectDeclaration
 ;
@@ -25,7 +25,7 @@ Declaration:
  */
 Story:
 	{Story} "The" "story" AssignmentOperator?
-	story += ( Word | StoryVariable | ObjectAttribute )*
+	story += ( Word | ListVariable | ObjectAttribute )*
 ;
 
 /*
@@ -35,7 +35,7 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDeclaration:
-	name = Variable  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
+	name = ID  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
 ;
 
 /*
@@ -55,15 +55,11 @@ ObjectDeclaration:
  */
 
 Word:
-	value = STRING
+	name = STRING
 ;
 
-Variable:
-	name = ID
-;
-
-StoryVariable:
-	variable = [Variable]
+ListVariable:
+	variable = [ListDeclaration]
 	modifiers += Modifier*
 ;
 
@@ -73,25 +69,20 @@ Attribute:
 	NameValueAttribute
 ;
 
-ExistingVariable:
-    pointer = [Variable]
-;
-
 JustNameAttribute:
-	name = ExistingVariable
+	name = ID // Was: name = [ListDeclaration] | Solved in code generation
 ;
 
 NameExistingListAttribute:
-	name = Variable (AssignmentOperator | "from")? value = ExistingVariable
+	name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 ;
 
 NameValueAttribute:
-	name = Variable AssignmentOperator? value = Word
+	name = ID AssignmentOperator? value = Word
 ;
 
 ObjectAttribute:
-	(object = [ObjectDeclaration] "." attribute = [Variable] |
-	object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
+	object = [ObjectDeclaration] "." (attribute = [Attribute] | pronoun = PronounIdentifier)
 	modifiers += Modifier*
 ;
 
@@ -148,7 +139,7 @@ PastTenseModifier:
  */
  
 AssignmentOperator:
-	"=" | ":" | "-" | "-->"
+	"=" | ":" | "-" | "-->" | "equal" "to"
 ;
 
 SeparatorOr:

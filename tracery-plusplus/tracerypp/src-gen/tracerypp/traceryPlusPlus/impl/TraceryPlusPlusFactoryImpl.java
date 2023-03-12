@@ -67,15 +67,13 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
     {
       case TraceryPlusPlusPackage.TRACERY_PLUS_PLUS_PROGRAM: return createTraceryPlusPlusProgram();
       case TraceryPlusPlusPackage.STATEMENT: return createStatement();
-      case TraceryPlusPlusPackage.DECLARATION: return createDeclaration();
+      case TraceryPlusPlusPackage.VARIABLE: return createVariable();
       case TraceryPlusPlusPackage.STORY: return createStory();
       case TraceryPlusPlusPackage.LIST_DECLARATION: return createListDeclaration();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case TraceryPlusPlusPackage.WORD: return createWord();
-      case TraceryPlusPlusPackage.VARIABLE: return createVariable();
-      case TraceryPlusPlusPackage.STORY_VARIABLE: return createStoryVariable();
+      case TraceryPlusPlusPackage.LIST_VARIABLE: return createListVariable();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
-      case TraceryPlusPlusPackage.EXISTING_VARIABLE: return createExistingVariable();
       case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE: return createJustNameAttribute();
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
       case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
@@ -119,10 +117,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public Declaration createDeclaration()
+  public Variable createVariable()
   {
-    DeclarationImpl declaration = new DeclarationImpl();
-    return declaration;
+    VariableImpl variable = new VariableImpl();
+    return variable;
   }
 
   /**
@@ -179,22 +177,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public Variable createVariable()
+  public ListVariable createListVariable()
   {
-    VariableImpl variable = new VariableImpl();
-    return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public StoryVariable createStoryVariable()
-  {
-    StoryVariableImpl storyVariable = new StoryVariableImpl();
-    return storyVariable;
+    ListVariableImpl listVariable = new ListVariableImpl();
+    return listVariable;
   }
 
   /**
@@ -207,18 +193,6 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ExistingVariable createExistingVariable()
-  {
-    ExistingVariableImpl existingVariable = new ExistingVariableImpl();
-    return existingVariable;
   }
 
   /**

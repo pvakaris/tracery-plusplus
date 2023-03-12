@@ -42,13 +42,13 @@ public interface TraceryPlusPlusFactory extends EFactory
   Statement createStatement();
 
   /**
-   * Returns a new object of class '<em>Declaration</em>'.
+   * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Declaration</em>'.
+   * @return a new object of class '<em>Variable</em>'.
    * @generated
    */
-  Declaration createDeclaration();
+  Variable createVariable();
 
   /**
    * Returns a new object of class '<em>Story</em>'.
@@ -87,22 +87,13 @@ public interface TraceryPlusPlusFactory extends EFactory
   Word createWord();
 
   /**
-   * Returns a new object of class '<em>Variable</em>'.
+   * Returns a new object of class '<em>List Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
+   * @return a new object of class '<em>List Variable</em>'.
    * @generated
    */
-  Variable createVariable();
-
-  /**
-   * Returns a new object of class '<em>Story Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Story Variable</em>'.
-   * @generated
-   */
-  StoryVariable createStoryVariable();
+  ListVariable createListVariable();
 
   /**
    * Returns a new object of class '<em>Attribute</em>'.
@@ -112,15 +103,6 @@ public interface TraceryPlusPlusFactory extends EFactory
    * @generated
    */
   Attribute createAttribute();
-
-  /**
-   * Returns a new object of class '<em>Existing Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Existing Variable</em>'.
-   * @generated
-   */
-  ExistingVariable createExistingVariable();
 
   /**
    * Returns a new object of class '<em>Just Name Attribute</em>'.

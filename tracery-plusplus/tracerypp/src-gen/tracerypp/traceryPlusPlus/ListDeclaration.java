@@ -13,7 +13,6 @@ package tracerypp.traceryPlusPlus;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link tracerypp.traceryPlusPlus.ListDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.ListDeclaration#getList <em>List</em>}</li>
  * </ul>
  *
@@ -21,30 +20,8 @@ package tracerypp.traceryPlusPlus;
  * @model
  * @generated
  */
-public interface ListDeclaration extends Declaration
+public interface ListDeclaration extends Variable
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(Variable)
-   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getListDeclaration_Name()
-   * @model containment="true"
-   * @generated
-   */
-  Variable getName();
-
-  /**
-   * Sets the value of the '{@link tracerypp.traceryPlusPlus.ListDeclaration#getName <em>Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
-   * @generated
-   */
-  void setName(Variable value);
-
   /**
    * Returns the value of the '<em><b>List</b></em>' containment reference.
    * <!-- begin-user-doc -->

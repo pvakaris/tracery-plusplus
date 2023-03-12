@@ -3,20 +3,12 @@
  */
 package tracerypp.scoping;
 
-import java.util.ArrayList;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import tracerypp.traceryPlusPlus.Attribute;
-import tracerypp.traceryPlusPlus.JustNameAttribute;
-import tracerypp.traceryPlusPlus.NameExistingListAttribute;
-import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
-import tracerypp.traceryPlusPlus.Variable;
 
 /**
  * This class contains custom scoping description.
@@ -32,26 +24,7 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       final ObjectDeclaration objectDeclaration = context.getObject();
       IScope _xifexpression = null;
       if ((objectDeclaration != null)) {
-        IScope _xblockexpression_1 = null;
-        {
-          final EList<Attribute> attributeContainer = objectDeclaration.getAttributes().getAttributes();
-          final ArrayList<Variable> list = CollectionLiterals.<Variable>newArrayList();
-          for (final Attribute attribute : attributeContainer) {
-            if ((attribute instanceof JustNameAttribute)) {
-              list.add(((JustNameAttribute)attribute).getName().getPointer());
-            } else {
-              if ((attribute instanceof NameExistingListAttribute)) {
-                list.add(((NameExistingListAttribute)attribute).getName());
-              } else {
-                if ((attribute instanceof NameValueAttribute)) {
-                  list.add(((NameValueAttribute)attribute).getName());
-                }
-              }
-            }
-          }
-          _xblockexpression_1 = Scopes.scopeFor(list);
-        }
-        _xifexpression = _xblockexpression_1;
+        _xifexpression = Scopes.scopeFor(objectDeclaration.getAttributes().getAttributes());
       } else {
         _xifexpression = IScope.NULLSCOPE;
       }

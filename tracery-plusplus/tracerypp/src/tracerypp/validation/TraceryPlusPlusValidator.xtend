@@ -9,6 +9,7 @@ import tracerypp.traceryPlusPlus.Attribute
 import tracerypp.traceryPlusPlus.JustNameAttribute
 import tracerypp.traceryPlusPlus.NameExistingListAttribute
 import tracerypp.traceryPlusPlus.NameValueAttribute
+import tracerypp.traceryPlusPlus.ListDeclaration
 
 /**
  * This class contains custom validation rules. 
@@ -33,6 +34,21 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	}
 	
 	@Check
+	def checkUniqueListName(ListDeclaration list) {
+	   val listName = list.name
+	   val model = list.eContainer().eContents.filter(ListDeclaration).toList
+	   var count = 0
+	   for (obj : model) {
+	   	if (obj.name == listName) {
+	   		count += 1;
+	   	}
+	   }
+	   if (count > 1) {
+	      error("List with name '" + listName + "' already exists.", null)
+	   }
+	}
+	
+	@Check
 	def checkUniqueObjectAttribute(ObjectDeclaration object) {
 	   val objectAttributes = object.attributes.attributes
 	   
@@ -48,13 +64,13 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	
 	def getAttributeName(Attribute attribute) {
 		if (attribute instanceof JustNameAttribute) {
-    		return attribute.name.pointer.name
+    		return attribute.name
     	}
     	else if(attribute instanceof NameExistingListAttribute) {
-    		return attribute.name.name
+    		return attribute.name
     	}
     	else if(attribute instanceof NameValueAttribute) {
-    		return attribute.name.name
+    		return attribute.name
     	}
 	}
 	

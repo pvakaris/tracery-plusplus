@@ -11,6 +11,7 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.JustNameAttribute;
+import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
@@ -41,6 +42,24 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
   }
 
   @Check
+  public void checkUniqueListName(final ListDeclaration list) {
+    final String listName = list.getName();
+    final List<ListDeclaration> model = IterableExtensions.<ListDeclaration>toList(Iterables.<ListDeclaration>filter(list.eContainer().eContents(), ListDeclaration.class));
+    int count = 0;
+    for (final ListDeclaration obj : model) {
+      String _name = obj.getName();
+      boolean _equals = Objects.equal(_name, listName);
+      if (_equals) {
+        int _count = count;
+        count = (_count + 1);
+      }
+    }
+    if ((count > 1)) {
+      this.error((("List with name \'" + listName) + "\' already exists."), null);
+    }
+  }
+
+  @Check
   public void checkUniqueObjectAttribute(final ObjectDeclaration object) {
     final EList<Attribute> objectAttributes = object.getAttributes().getAttributes();
     for (int i = 0; (i < objectAttributes.size()); i++) {
@@ -60,13 +79,13 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 
   public String getAttributeName(final Attribute attribute) {
     if ((attribute instanceof JustNameAttribute)) {
-      return ((JustNameAttribute)attribute).getName().getPointer().getName();
+      return ((JustNameAttribute)attribute).getName();
     } else {
       if ((attribute instanceof NameExistingListAttribute)) {
-        return ((NameExistingListAttribute)attribute).getName().getName();
+        return ((NameExistingListAttribute)attribute).getName();
       } else {
         if ((attribute instanceof NameValueAttribute)) {
-          return ((NameValueAttribute)attribute).getName().getName();
+          return ((NameValueAttribute)attribute).getName();
         }
       }
     }

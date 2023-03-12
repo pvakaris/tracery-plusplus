@@ -57,24 +57,24 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Statement");
-		private final RuleCall cDeclarationParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cVariableParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Statement:
-		//    Declaration
+		//    Variable
 		//    // Rule (for example if else or something similar)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Declaration
-		public RuleCall getDeclarationParserRuleCall() { return cDeclarationParserRuleCall; }
+		//Variable
+		public RuleCall getVariableParserRuleCall() { return cVariableParserRuleCall; }
 	}
-	public class DeclarationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Declaration");
+	public class VariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Variable");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cListDeclarationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cObjectDeclarationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//Declaration:
+		//Variable:
 		//    ListDeclaration |
 		//    ObjectDeclaration
 		//;
@@ -100,7 +100,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Assignment cStoryAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final Alternatives cStoryAlternatives_4_0 = (Alternatives)cStoryAssignment_4.eContents().get(0);
 		private final RuleCall cStoryWordParserRuleCall_4_0_0 = (RuleCall)cStoryAlternatives_4_0.eContents().get(0);
-		private final RuleCall cStoryStoryVariableParserRuleCall_4_0_1 = (RuleCall)cStoryAlternatives_4_0.eContents().get(1);
+		private final RuleCall cStoryListVariableParserRuleCall_4_0_1 = (RuleCall)cStoryAlternatives_4_0.eContents().get(1);
 		private final RuleCall cStoryObjectAttributeParserRuleCall_4_0_2 = (RuleCall)cStoryAlternatives_4_0.eContents().get(2);
 		
 		///*
@@ -109,12 +109,12 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		// */
 		//Story:
 		//    {Story} "The" "story" AssignmentOperator?
-		//    story += ( Word | StoryVariable | ObjectAttribute )*
+		//    story += ( Word | ListVariable | ObjectAttribute )*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Story} "The" "story" AssignmentOperator?
-		//story += ( Word | StoryVariable | ObjectAttribute )*
+		//story += ( Word | ListVariable | ObjectAttribute )*
 		public Group getGroup() { return cGroup; }
 		
 		//{Story}
@@ -129,17 +129,17 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//AssignmentOperator?
 		public RuleCall getAssignmentOperatorParserRuleCall_3() { return cAssignmentOperatorParserRuleCall_3; }
 		
-		//story += ( Word | StoryVariable | ObjectAttribute )*
+		//story += ( Word | ListVariable | ObjectAttribute )*
 		public Assignment getStoryAssignment_4() { return cStoryAssignment_4; }
 		
-		//( Word | StoryVariable | ObjectAttribute )
+		//( Word | ListVariable | ObjectAttribute )
 		public Alternatives getStoryAlternatives_4_0() { return cStoryAlternatives_4_0; }
 		
 		//Word
 		public RuleCall getStoryWordParserRuleCall_4_0_0() { return cStoryWordParserRuleCall_4_0_0; }
 		
-		//StoryVariable
-		public RuleCall getStoryStoryVariableParserRuleCall_4_0_1() { return cStoryStoryVariableParserRuleCall_4_0_1; }
+		//ListVariable
+		public RuleCall getStoryListVariableParserRuleCall_4_0_1() { return cStoryListVariableParserRuleCall_4_0_1; }
 		
 		//ObjectAttribute
 		public RuleCall getStoryObjectAttributeParserRuleCall_4_0_2() { return cStoryObjectAttributeParserRuleCall_4_0_2; }
@@ -148,7 +148,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ListDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameVariableParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
 		private final Keyword cCanKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
@@ -158,7 +158,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Keyword cCanKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cBeKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
 		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
-		private final Keyword cHasKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Alternatives cAlternatives_1_2_0 = (Alternatives)cGroup_1_2.eContents().get(0);
+		private final Keyword cHasKeyword_1_2_0_0 = (Keyword)cAlternatives_1_2_0.eContents().get(0);
+		private final Keyword cHaveKeyword_1_2_0_1 = (Keyword)cAlternatives_1_2_0.eContents().get(1);
 		private final Keyword cValuesKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		private final RuleCall cAssignmentOperatorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cListAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -171,20 +173,20 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//        fruit can be: banana or apple or pear
 		// */
 		//ListDeclaration:
-		//    name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
+		//    name = ID  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
+		//name = ID  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
 		public Group getGroup() { return cGroup; }
 		
-		//name = Variable
+		//name = ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//Variable
-		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
-		//("can" "have" "values" | "can" "be" | "has" "values")
+		//("can" "have" "values" | "can" "be" | ("has" | "have") "values")
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//"can" "have" "values"
@@ -208,11 +210,17 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"be"
 		public Keyword getBeKeyword_1_1_1() { return cBeKeyword_1_1_1; }
 		
-		//"has" "values"
+		//("has" | "have") "values"
 		public Group getGroup_1_2() { return cGroup_1_2; }
 		
+		//("has" | "have")
+		public Alternatives getAlternatives_1_2_0() { return cAlternatives_1_2_0; }
+		
 		//"has"
-		public Keyword getHasKeyword_1_2_0() { return cHasKeyword_1_2_0; }
+		public Keyword getHasKeyword_1_2_0_0() { return cHasKeyword_1_2_0_0; }
+		
+		//"have"
+		public Keyword getHaveKeyword_1_2_0_1() { return cHaveKeyword_1_2_0_1; }
 		
 		//"values"
 		public Keyword getValuesKeyword_1_2_1() { return cValuesKeyword_1_2_1; }
@@ -321,66 +329,50 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	public class WordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Word");
-		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		///*
 		//    Basic building blocks
 		// */
 		//Word:
-		//    value = STRING
+		//    name = STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value = STRING
-		public Assignment getValueAssignment() { return cValueAssignment; }
-		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
-	}
-	public class VariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Variable");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
-		
-		//Variable:
-		//    name = ID
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//name = ID
+		//name = STRING
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0() { return cNameSTRINGTerminalRuleCall_0; }
 	}
-	public class StoryVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.StoryVariable");
+	public class ListVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ListVariable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cVariableVariableCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
-		private final RuleCall cVariableVariableIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableVariableCrossReference_0_0.eContents().get(1);
+		private final CrossReference cVariableListDeclarationCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
+		private final RuleCall cVariableListDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableListDeclarationCrossReference_0_0.eContents().get(1);
 		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
 		
-		//StoryVariable:
-		//    variable = [Variable]
+		//ListVariable:
+		//    variable = [ListDeclaration]
 		//    modifiers += Modifier*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//variable = [Variable]
+		//variable = [ListDeclaration]
 		//modifiers += Modifier*
 		public Group getGroup() { return cGroup; }
 		
-		//variable = [Variable]
+		//variable = [ListDeclaration]
 		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
 		
-		//[Variable]
-		public CrossReference getVariableVariableCrossReference_0_0() { return cVariableVariableCrossReference_0_0; }
+		//[ListDeclaration]
+		public CrossReference getVariableListDeclarationCrossReference_0_0() { return cVariableListDeclarationCrossReference_0_0; }
 		
 		//ID
-		public RuleCall getVariableVariableIDTerminalRuleCall_0_0_1() { return cVariableVariableIDTerminalRuleCall_0_0_1; }
+		public RuleCall getVariableListDeclarationIDTerminalRuleCall_0_0_1() { return cVariableListDeclarationIDTerminalRuleCall_0_0_1; }
 		
 		//modifiers += Modifier*
 		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
@@ -416,66 +408,47 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//NameValueAttribute
 		public RuleCall getNameValueAttributeParserRuleCall_2() { return cNameValueAttributeParserRuleCall_2; }
 	}
-	public class ExistingVariableElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ExistingVariable");
-		private final Assignment cPointerAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cPointerVariableCrossReference_0 = (CrossReference)cPointerAssignment.eContents().get(0);
-		private final RuleCall cPointerVariableIDTerminalRuleCall_0_1 = (RuleCall)cPointerVariableCrossReference_0.eContents().get(1);
-		
-		//ExistingVariable:
-		//    pointer = [Variable]
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//pointer = [Variable]
-		public Assignment getPointerAssignment() { return cPointerAssignment; }
-		
-		//[Variable]
-		public CrossReference getPointerVariableCrossReference_0() { return cPointerVariableCrossReference_0; }
-		
-		//ID
-		public RuleCall getPointerVariableIDTerminalRuleCall_0_1() { return cPointerVariableIDTerminalRuleCall_0_1; }
-	}
 	public class JustNameAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.JustNameAttribute");
 		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameExistingVariableParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//JustNameAttribute:
-		//    name = ExistingVariable
+		//    name = ID // Was: name = [ListDeclaration] | solve in code generation
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = ExistingVariable
+		//name = ID
 		public Assignment getNameAssignment() { return cNameAssignment; }
 		
-		//ExistingVariable
-		public RuleCall getNameExistingVariableParserRuleCall_0() { return cNameExistingVariableParserRuleCall_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 	public class NameExistingListAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.NameExistingListAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameVariableParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final RuleCall cAssignmentOperatorParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
 		private final Keyword cFromKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueExistingVariableParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final CrossReference cValueListDeclarationCrossReference_2_0 = (CrossReference)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueListDeclarationIDTerminalRuleCall_2_0_1 = (RuleCall)cValueListDeclarationCrossReference_2_0.eContents().get(1);
 		
 		//NameExistingListAttribute:
-		//    name = Variable (AssignmentOperator | "from")? value = ExistingVariable
+		//    name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable (AssignmentOperator | "from")? value = ExistingVariable
+		//name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 		public Group getGroup() { return cGroup; }
 		
-		//name = Variable
+		//name = ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//Variable
-		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
 		//(AssignmentOperator | "from")?
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
@@ -486,34 +459,37 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"from"
 		public Keyword getFromKeyword_1_1() { return cFromKeyword_1_1; }
 		
-		//value = ExistingVariable
+		//value = [ListDeclaration]
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//ExistingVariable
-		public RuleCall getValueExistingVariableParserRuleCall_2_0() { return cValueExistingVariableParserRuleCall_2_0; }
+		//[ListDeclaration]
+		public CrossReference getValueListDeclarationCrossReference_2_0() { return cValueListDeclarationCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getValueListDeclarationIDTerminalRuleCall_2_0_1() { return cValueListDeclarationIDTerminalRuleCall_2_0_1; }
 	}
 	public class NameValueAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.NameValueAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameVariableParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final RuleCall cAssignmentOperatorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueWordParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//NameValueAttribute:
-		//    name = Variable AssignmentOperator? value = Word
+		//    name = ID AssignmentOperator? value = Word
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable AssignmentOperator? value = Word
+		//name = ID AssignmentOperator? value = Word
 		public Group getGroup() { return cGroup; }
 		
-		//name = Variable
+		//name = ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//Variable
-		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
 		//AssignmentOperator?
 		public RuleCall getAssignmentOperatorParserRuleCall_1() { return cAssignmentOperatorParserRuleCall_1; }
@@ -527,91 +503,64 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	public class ObjectAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ObjectAttribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Group cGroup_0_0 = (Group)cAlternatives_0.eContents().get(0);
-		private final Assignment cObjectAssignment_0_0_0 = (Assignment)cGroup_0_0.eContents().get(0);
-		private final CrossReference cObjectObjectDeclarationCrossReference_0_0_0_0 = (CrossReference)cObjectAssignment_0_0_0.eContents().get(0);
-		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_0_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_0_0_1 = (Keyword)cGroup_0_0.eContents().get(1);
-		private final Assignment cAttributeAssignment_0_0_2 = (Assignment)cGroup_0_0.eContents().get(2);
-		private final CrossReference cAttributeVariableCrossReference_0_0_2_0 = (CrossReference)cAttributeAssignment_0_0_2.eContents().get(0);
-		private final RuleCall cAttributeVariableIDTerminalRuleCall_0_0_2_0_1 = (RuleCall)cAttributeVariableCrossReference_0_0_2_0.eContents().get(1);
-		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
-		private final Assignment cObjectAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final CrossReference cObjectObjectDeclarationCrossReference_0_1_0_0 = (CrossReference)cObjectAssignment_0_1_0.eContents().get(0);
-		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_1_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
-		private final Assignment cPronounAssignment_0_1_2 = (Assignment)cGroup_0_1.eContents().get(2);
-		private final RuleCall cPronounPronounIdentifierParserRuleCall_0_1_2_0 = (RuleCall)cPronounAssignment_0_1_2.eContents().get(0);
-		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
+		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cObjectObjectDeclarationCrossReference_0_0 = (CrossReference)cObjectAssignment_0.eContents().get(0);
+		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cAttributeAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final CrossReference cAttributeAttributeCrossReference_2_0_0 = (CrossReference)cAttributeAssignment_2_0.eContents().get(0);
+		private final RuleCall cAttributeAttributeIDTerminalRuleCall_2_0_0_1 = (RuleCall)cAttributeAttributeCrossReference_2_0_0.eContents().get(1);
+		private final Assignment cPronounAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cPronounPronounIdentifierParserRuleCall_2_1_0 = (RuleCall)cPronounAssignment_2_1.eContents().get(0);
+		private final Assignment cModifiersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cModifiersModifierParserRuleCall_3_0 = (RuleCall)cModifiersAssignment_3.eContents().get(0);
 		
 		//ObjectAttribute:
-		//    (object = [ObjectDeclaration] "." attribute = [Variable] |
-		//    object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
+		//    object = [ObjectDeclaration] "." (attribute = [Attribute] | pronoun = PronounIdentifier)
 		//    modifiers += Modifier*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(object = [ObjectDeclaration] "." attribute = [Variable] |
-		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
+		//object = [ObjectDeclaration] "." (attribute = [Attribute] | pronoun = PronounIdentifier)
 		//modifiers += Modifier*
 		public Group getGroup() { return cGroup; }
 		
-		//(object = [ObjectDeclaration] "." attribute = [Variable] |
-		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//object = [ObjectDeclaration] "." attribute = [Variable]
-		public Group getGroup_0_0() { return cGroup_0_0; }
-		
 		//object = [ObjectDeclaration]
-		public Assignment getObjectAssignment_0_0_0() { return cObjectAssignment_0_0_0; }
+		public Assignment getObjectAssignment_0() { return cObjectAssignment_0; }
 		
 		//[ObjectDeclaration]
-		public CrossReference getObjectObjectDeclarationCrossReference_0_0_0_0() { return cObjectObjectDeclarationCrossReference_0_0_0_0; }
+		public CrossReference getObjectObjectDeclarationCrossReference_0_0() { return cObjectObjectDeclarationCrossReference_0_0; }
 		
 		//ID
-		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_0_0_0_1; }
+		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_0_1; }
 		
 		//"."
-		public Keyword getFullStopKeyword_0_0_1() { return cFullStopKeyword_0_0_1; }
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
 		
-		//attribute = [Variable]
-		public Assignment getAttributeAssignment_0_0_2() { return cAttributeAssignment_0_0_2; }
+		//(attribute = [Attribute] | pronoun = PronounIdentifier)
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
-		//[Variable]
-		public CrossReference getAttributeVariableCrossReference_0_0_2_0() { return cAttributeVariableCrossReference_0_0_2_0; }
+		//attribute = [Attribute]
+		public Assignment getAttributeAssignment_2_0() { return cAttributeAssignment_2_0; }
 		
-		//ID
-		public RuleCall getAttributeVariableIDTerminalRuleCall_0_0_2_0_1() { return cAttributeVariableIDTerminalRuleCall_0_0_2_0_1; }
-		
-		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier
-		public Group getGroup_0_1() { return cGroup_0_1; }
-		
-		//object = [ObjectDeclaration]
-		public Assignment getObjectAssignment_0_1_0() { return cObjectAssignment_0_1_0; }
-		
-		//[ObjectDeclaration]
-		public CrossReference getObjectObjectDeclarationCrossReference_0_1_0_0() { return cObjectObjectDeclarationCrossReference_0_1_0_0; }
+		//[Attribute]
+		public CrossReference getAttributeAttributeCrossReference_2_0_0() { return cAttributeAttributeCrossReference_2_0_0; }
 		
 		//ID
-		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1; }
-		
-		//"."?
-		public Keyword getFullStopKeyword_0_1_1() { return cFullStopKeyword_0_1_1; }
+		public RuleCall getAttributeAttributeIDTerminalRuleCall_2_0_0_1() { return cAttributeAttributeIDTerminalRuleCall_2_0_0_1; }
 		
 		//pronoun = PronounIdentifier
-		public Assignment getPronounAssignment_0_1_2() { return cPronounAssignment_0_1_2; }
+		public Assignment getPronounAssignment_2_1() { return cPronounAssignment_2_1; }
 		
 		//PronounIdentifier
-		public RuleCall getPronounPronounIdentifierParserRuleCall_0_1_2_0() { return cPronounPronounIdentifierParserRuleCall_0_1_2_0; }
+		public RuleCall getPronounPronounIdentifierParserRuleCall_2_1_0() { return cPronounPronounIdentifierParserRuleCall_2_1_0; }
 		
 		//modifiers += Modifier*
-		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
+		public Assignment getModifiersAssignment_3() { return cModifiersAssignment_3; }
 		
 		//Modifier
-		public RuleCall getModifiersModifierParserRuleCall_1_0() { return cModifiersModifierParserRuleCall_1_0; }
+		public RuleCall getModifiersModifierParserRuleCall_3_0() { return cModifiersModifierParserRuleCall_3_0; }
 	}
 	public class WordListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.WordList");
@@ -871,16 +820,19 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Keyword cColonKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cHyphenMinusHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cEqualKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cToKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
 		
 		///*
 		//    Helpers
 		// */
 		//AssignmentOperator:
-		//    "=" | ":" | "-" | "-->"
+		//    "=" | ":" | "-" | "-->" | "equal" "to"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"=" | ":" | "-" | "-->"
+		//"=" | ":" | "-" | "-->" | "equal" "to"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//"="
@@ -894,6 +846,15 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//"-->"
 		public Keyword getHyphenMinusHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusHyphenMinusGreaterThanSignKeyword_3; }
+		
+		//"equal" "to"
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//"equal"
+		public Keyword getEqualKeyword_4_0() { return cEqualKeyword_4_0; }
+		
+		//"to"
+		public Keyword getToKeyword_4_1() { return cToKeyword_4_1; }
 	}
 	public class SeparatorOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SeparatorOr");
@@ -947,15 +908,13 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	private final TraceryPlusPlusProgramElements pTraceryPlusPlusProgram;
 	private final StatementElements pStatement;
-	private final DeclarationElements pDeclaration;
+	private final VariableElements pVariable;
 	private final StoryElements pStory;
 	private final ListDeclarationElements pListDeclaration;
 	private final ObjectDeclarationElements pObjectDeclaration;
 	private final WordElements pWord;
-	private final VariableElements pVariable;
-	private final StoryVariableElements pStoryVariable;
+	private final ListVariableElements pListVariable;
 	private final AttributeElements pAttribute;
-	private final ExistingVariableElements pExistingVariable;
 	private final JustNameAttributeElements pJustNameAttribute;
 	private final NameExistingListAttributeElements pNameExistingListAttribute;
 	private final NameValueAttributeElements pNameValueAttribute;
@@ -985,15 +944,13 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.gaTerminals = gaTerminals;
 		this.pTraceryPlusPlusProgram = new TraceryPlusPlusProgramElements();
 		this.pStatement = new StatementElements();
-		this.pDeclaration = new DeclarationElements();
+		this.pVariable = new VariableElements();
 		this.pStory = new StoryElements();
 		this.pListDeclaration = new ListDeclarationElements();
 		this.pObjectDeclaration = new ObjectDeclarationElements();
 		this.pWord = new WordElements();
-		this.pVariable = new VariableElements();
-		this.pStoryVariable = new StoryVariableElements();
+		this.pListVariable = new ListVariableElements();
 		this.pAttribute = new AttributeElements();
-		this.pExistingVariable = new ExistingVariableElements();
 		this.pJustNameAttribute = new JustNameAttributeElements();
 		this.pNameExistingListAttribute = new NameExistingListAttributeElements();
 		this.pNameValueAttribute = new NameValueAttributeElements();
@@ -1054,7 +1011,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//Statement:
-	//    Declaration
+	//    Variable
 	//    // Rule (for example if else or something similar)
 	//;
 	public StatementElements getStatementAccess() {
@@ -1065,16 +1022,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getStatementAccess().getRule();
 	}
 	
-	//Declaration:
+	//Variable:
 	//    ListDeclaration |
 	//    ObjectDeclaration
 	//;
-	public DeclarationElements getDeclarationAccess() {
-		return pDeclaration;
+	public VariableElements getVariableAccess() {
+		return pVariable;
 	}
 	
-	public ParserRule getDeclarationRule() {
-		return getDeclarationAccess().getRule();
+	public ParserRule getVariableRule() {
+		return getVariableAccess().getRule();
 	}
 	
 	///*
@@ -1083,7 +1040,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	// */
 	//Story:
 	//    {Story} "The" "story" AssignmentOperator?
-	//    story += ( Word | StoryVariable | ObjectAttribute )*
+	//    story += ( Word | ListVariable | ObjectAttribute )*
 	//;
 	public StoryElements getStoryAccess() {
 		return pStory;
@@ -1100,7 +1057,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//        fruit can be: banana or apple or pear
 	// */
 	//ListDeclaration:
-	//    name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
+	//    name = ID  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
 	//;
 	public ListDeclarationElements getListDeclarationAccess() {
 		return pListDeclaration;
@@ -1133,7 +1090,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//    Basic building blocks
 	// */
 	//Word:
-	//    value = STRING
+	//    name = STRING
 	//;
 	public WordElements getWordAccess() {
 		return pWord;
@@ -1143,27 +1100,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getWordAccess().getRule();
 	}
 	
-	//Variable:
-	//    name = ID
-	//;
-	public VariableElements getVariableAccess() {
-		return pVariable;
-	}
-	
-	public ParserRule getVariableRule() {
-		return getVariableAccess().getRule();
-	}
-	
-	//StoryVariable:
-	//    variable = [Variable]
+	//ListVariable:
+	//    variable = [ListDeclaration]
 	//    modifiers += Modifier*
 	//;
-	public StoryVariableElements getStoryVariableAccess() {
-		return pStoryVariable;
+	public ListVariableElements getListVariableAccess() {
+		return pListVariable;
 	}
 	
-	public ParserRule getStoryVariableRule() {
-		return getStoryVariableAccess().getRule();
+	public ParserRule getListVariableRule() {
+		return getListVariableAccess().getRule();
 	}
 	
 	//Attribute:
@@ -1179,19 +1125,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getAttributeAccess().getRule();
 	}
 	
-	//ExistingVariable:
-	//    pointer = [Variable]
-	//;
-	public ExistingVariableElements getExistingVariableAccess() {
-		return pExistingVariable;
-	}
-	
-	public ParserRule getExistingVariableRule() {
-		return getExistingVariableAccess().getRule();
-	}
-	
 	//JustNameAttribute:
-	//    name = ExistingVariable
+	//    name = ID // Was: name = [ListDeclaration] | solve in code generation
 	//;
 	public JustNameAttributeElements getJustNameAttributeAccess() {
 		return pJustNameAttribute;
@@ -1202,7 +1137,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//NameExistingListAttribute:
-	//    name = Variable (AssignmentOperator | "from")? value = ExistingVariable
+	//    name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 	//;
 	public NameExistingListAttributeElements getNameExistingListAttributeAccess() {
 		return pNameExistingListAttribute;
@@ -1213,7 +1148,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//NameValueAttribute:
-	//    name = Variable AssignmentOperator? value = Word
+	//    name = ID AssignmentOperator? value = Word
 	//;
 	public NameValueAttributeElements getNameValueAttributeAccess() {
 		return pNameValueAttribute;
@@ -1224,8 +1159,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//ObjectAttribute:
-	//    (object = [ObjectDeclaration] "." attribute = [Variable] |
-	//    object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
+	//    object = [ObjectDeclaration] "." (attribute = [Attribute] | pronoun = PronounIdentifier)
 	//    modifiers += Modifier*
 	//;
 	public ObjectAttributeElements getObjectAttributeAccess() {
@@ -1357,7 +1291,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//    Helpers
 	// */
 	//AssignmentOperator:
-	//    "=" | ":" | "-" | "-->"
+	//    "=" | ":" | "-" | "-->" | "equal" "to"
 	//;
 	public AssignmentOperatorElements getAssignmentOperatorAccess() {
 		return pAssignmentOperator;

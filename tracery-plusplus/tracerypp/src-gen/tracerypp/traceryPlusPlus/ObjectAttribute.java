@@ -55,12 +55,12 @@ public interface ObjectAttribute extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Attribute</em>' reference.
-   * @see #setAttribute(Variable)
+   * @see #setAttribute(Attribute)
    * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getObjectAttribute_Attribute()
    * @model
    * @generated
    */
-  Variable getAttribute();
+  Attribute getAttribute();
 
   /**
    * Sets the value of the '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getAttribute <em>Attribute</em>}' reference.
@@ -70,7 +70,7 @@ public interface ObjectAttribute extends EObject
    * @see #getAttribute()
    * @generated
    */
-  void setAttribute(Variable value);
+  void setAttribute(Attribute value);
 
   /**
    * Returns the value of the '<em><b>Pronoun</b></em>' containment reference.

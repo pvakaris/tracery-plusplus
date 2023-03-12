@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
-import tracerypp.traceryPlusPlus.Variable;
 import tracerypp.traceryPlusPlus.WordList;
 
 /**
@@ -24,24 +23,13 @@ import tracerypp.traceryPlusPlus.WordList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tracerypp.traceryPlusPlus.impl.ListDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ListDeclarationImpl#getList <em>List</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ListDeclarationImpl extends DeclarationImpl implements ListDeclaration
+public class ListDeclarationImpl extends VariableImpl implements ListDeclaration
 {
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected Variable name;
-
   /**
    * The cached value of the '{@link #getList() <em>List</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -71,56 +59,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   protected EClass eStaticClass()
   {
     return TraceryPlusPlusPackage.Literals.LIST_DECLARATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Variable getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetName(Variable newName, NotificationChain msgs)
-  {
-    Variable oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.LIST_DECLARATION__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(Variable newName)
-  {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.LIST_DECLARATION__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.LIST_DECLARATION__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.LIST_DECLARATION__NAME, newName, newName));
   }
 
   /**
@@ -183,8 +121,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.LIST_DECLARATION__NAME:
-        return basicSetName(null, msgs);
       case TraceryPlusPlusPackage.LIST_DECLARATION__LIST:
         return basicSetList(null, msgs);
     }
@@ -201,8 +137,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.LIST_DECLARATION__NAME:
-        return getName();
       case TraceryPlusPlusPackage.LIST_DECLARATION__LIST:
         return getList();
     }
@@ -219,9 +153,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.LIST_DECLARATION__NAME:
-        setName((Variable)newValue);
-        return;
       case TraceryPlusPlusPackage.LIST_DECLARATION__LIST:
         setList((WordList)newValue);
         return;
@@ -239,9 +170,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.LIST_DECLARATION__NAME:
-        setName((Variable)null);
-        return;
       case TraceryPlusPlusPackage.LIST_DECLARATION__LIST:
         setList((WordList)null);
         return;
@@ -259,8 +187,6 @@ public class ListDeclarationImpl extends DeclarationImpl implements ListDeclarat
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.LIST_DECLARATION__NAME:
-        return name != null;
       case TraceryPlusPlusPackage.LIST_DECLARATION__LIST:
         return list != null;
     }

@@ -24,35 +24,14 @@ import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getPronouns <em>Pronouns</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDeclaration
+public class ObjectDeclarationImpl extends VariableImpl implements ObjectDeclaration
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getPronouns() <em>Pronouns</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -92,31 +71,6 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   protected EClass eStaticClass()
   {
     return TraceryPlusPlusPackage.Literals.OBJECT_DECLARATION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -247,8 +201,6 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
-        return getName();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
         return getPronouns();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
@@ -267,9 +219,6 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
-        setName((String)newValue);
-        return;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
         setPronouns((Pronouns)newValue);
         return;
@@ -290,9 +239,6 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
         setPronouns((Pronouns)null);
         return;
@@ -313,31 +259,12 @@ public class ObjectDeclarationImpl extends DeclarationImpl implements ObjectDecl
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_DECLARATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__PRONOUNS:
         return pronouns != null;
       case TraceryPlusPlusPackage.OBJECT_DECLARATION__ATTRIBUTES:
         return attributes != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ObjectDeclarationImpl

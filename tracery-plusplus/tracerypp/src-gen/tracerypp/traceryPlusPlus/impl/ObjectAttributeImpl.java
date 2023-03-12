@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
+import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
-import tracerypp.traceryPlusPlus.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @generated
    * @ordered
    */
-  protected Variable attribute;
+  protected Attribute attribute;
 
   /**
    * The cached value of the '{@link #getPronoun() <em>Pronoun</em>}' containment reference.
@@ -154,12 +154,12 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public Variable getAttribute()
+  public Attribute getAttribute()
   {
     if (attribute != null && attribute.eIsProxy())
     {
       InternalEObject oldAttribute = (InternalEObject)attribute;
-      attribute = (Variable)eResolveProxy(oldAttribute);
+      attribute = (Attribute)eResolveProxy(oldAttribute);
       if (attribute != oldAttribute)
       {
         if (eNotificationRequired())
@@ -174,7 +174,7 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable basicGetAttribute()
+  public Attribute basicGetAttribute()
   {
     return attribute;
   }
@@ -185,9 +185,9 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setAttribute(Variable newAttribute)
+  public void setAttribute(Attribute newAttribute)
   {
-    Variable oldAttribute = attribute;
+    Attribute oldAttribute = attribute;
     attribute = newAttribute;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE, oldAttribute, attribute));
@@ -313,7 +313,7 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
         setObject((ObjectDeclaration)newValue);
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
-        setAttribute((Variable)newValue);
+        setAttribute((Attribute)newValue);
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
         setPronoun((PronounIdentifier)newValue);
@@ -340,7 +340,7 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
         setObject((ObjectDeclaration)null);
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
-        setAttribute((Variable)null);
+        setAttribute((Attribute)null);
         return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
         setPronoun((PronounIdentifier)null);

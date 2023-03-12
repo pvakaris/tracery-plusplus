@@ -114,23 +114,32 @@ public interface TraceryPlusPlusPackage extends EPackage
   int STATEMENT_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.DeclarationImpl <em>Declaration</em>}' class.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.VariableImpl <em>Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.DeclarationImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getDeclaration()
+   * @see tracerypp.traceryPlusPlus.impl.VariableImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getVariable()
    * @generated
    */
-  int DECLARATION = 2;
+  int VARIABLE = 2;
 
   /**
-   * The number of structural features of the '<em>Declaration</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+  int VARIABLE__NAME = STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.StoryImpl <em>Story</em>}' class.
@@ -171,13 +180,13 @@ public interface TraceryPlusPlusPackage extends EPackage
   int LIST_DECLARATION = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_DECLARATION__NAME = DECLARATION_FEATURE_COUNT + 0;
+  int LIST_DECLARATION__NAME = VARIABLE__NAME;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -186,7 +195,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_DECLARATION__LIST = DECLARATION_FEATURE_COUNT + 1;
+  int LIST_DECLARATION__LIST = VARIABLE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>List Declaration</em>' class.
@@ -195,7 +204,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 2;
+  int LIST_DECLARATION_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ObjectDeclarationImpl <em>Object Declaration</em>}' class.
@@ -214,7 +223,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION__NAME = DECLARATION_FEATURE_COUNT + 0;
+  int OBJECT_DECLARATION__NAME = VARIABLE__NAME;
 
   /**
    * The feature id for the '<em><b>Pronouns</b></em>' containment reference.
@@ -223,7 +232,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION__PRONOUNS = DECLARATION_FEATURE_COUNT + 1;
+  int OBJECT_DECLARATION__PRONOUNS = VARIABLE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference.
@@ -232,7 +241,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION__ATTRIBUTES = DECLARATION_FEATURE_COUNT + 2;
+  int OBJECT_DECLARATION__ATTRIBUTES = VARIABLE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Object Declaration</em>' class.
@@ -241,7 +250,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBJECT_DECLARATION_FEATURE_COUNT = DECLARATION_FEATURE_COUNT + 3;
+  int OBJECT_DECLARATION_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.WordImpl <em>Word</em>}' class.
@@ -254,13 +263,13 @@ public interface TraceryPlusPlusPackage extends EPackage
   int WORD = 6;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WORD__VALUE = 0;
+  int WORD__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Word</em>' class.
@@ -272,42 +281,14 @@ public interface TraceryPlusPlusPackage extends EPackage
   int WORD_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.VariableImpl <em>Variable</em>}' class.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ListVariableImpl <em>List Variable</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.VariableImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getVariable()
+   * @see tracerypp.traceryPlusPlus.impl.ListVariableImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListVariable()
    * @generated
    */
-  int VARIABLE = 7;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.StoryVariableImpl <em>Story Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.StoryVariableImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getStoryVariable()
-   * @generated
-   */
-  int STORY_VARIABLE = 8;
+  int LIST_VARIABLE = 7;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -316,7 +297,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORY_VARIABLE__VARIABLE = 0;
+  int LIST_VARIABLE__VARIABLE = 0;
 
   /**
    * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
@@ -325,16 +306,16 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORY_VARIABLE__MODIFIERS = 1;
+  int LIST_VARIABLE__MODIFIERS = 1;
 
   /**
-   * The number of structural features of the '<em>Story Variable</em>' class.
+   * The number of structural features of the '<em>List Variable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STORY_VARIABLE_FEATURE_COUNT = 2;
+  int LIST_VARIABLE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -344,7 +325,16 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 9;
+  int ATTRIBUTE = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATTRIBUTE__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Attribute</em>' class.
@@ -353,35 +343,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ExistingVariableImpl <em>Existing Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.ExistingVariableImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getExistingVariable()
-   * @generated
-   */
-  int EXISTING_VARIABLE = 10;
-
-  /**
-   * The feature id for the '<em><b>Pointer</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXISTING_VARIABLE__POINTER = 0;
-
-  /**
-   * The number of structural features of the '<em>Existing Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXISTING_VARIABLE_FEATURE_COUNT = 1;
+  int ATTRIBUTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl <em>Just Name Attribute</em>}' class.
@@ -391,16 +353,16 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getJustNameAttribute()
    * @generated
    */
-  int JUST_NAME_ATTRIBUTE = 11;
+  int JUST_NAME_ATTRIBUTE = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int JUST_NAME_ATTRIBUTE__NAME = ATTRIBUTE_FEATURE_COUNT + 0;
+  int JUST_NAME_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
   /**
    * The number of structural features of the '<em>Just Name Attribute</em>' class.
@@ -409,7 +371,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int JUST_NAME_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
+  int JUST_NAME_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.NameExistingListAttributeImpl <em>Name Existing List Attribute</em>}' class.
@@ -419,25 +381,25 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameExistingListAttribute()
    * @generated
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE = 12;
+  int NAME_EXISTING_LIST_ATTRIBUTE = 10;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE__NAME = ATTRIBUTE_FEATURE_COUNT + 0;
+  int NAME_EXISTING_LIST_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 1;
+  int NAME_EXISTING_LIST_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Name Existing List Attribute</em>' class.
@@ -446,7 +408,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
+  int NAME_EXISTING_LIST_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.NameValueAttributeImpl <em>Name Value Attribute</em>}' class.
@@ -456,16 +418,16 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameValueAttribute()
    * @generated
    */
-  int NAME_VALUE_ATTRIBUTE = 13;
+  int NAME_VALUE_ATTRIBUTE = 11;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_VALUE_ATTRIBUTE__NAME = ATTRIBUTE_FEATURE_COUNT + 0;
+  int NAME_VALUE_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -474,7 +436,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_VALUE_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 1;
+  int NAME_VALUE_ATTRIBUTE__VALUE = ATTRIBUTE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Name Value Attribute</em>' class.
@@ -483,7 +445,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_VALUE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
+  int NAME_VALUE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl <em>Object Attribute</em>}' class.
@@ -493,7 +455,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 14;
+  int OBJECT_ATTRIBUTE = 12;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' reference.
@@ -548,7 +510,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getWordList()
    * @generated
    */
-  int WORD_LIST = 15;
+  int WORD_LIST = 13;
 
   /**
    * The feature id for the '<em><b>Words</b></em>' containment reference list.
@@ -576,7 +538,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getAttributeList()
    * @generated
    */
-  int ATTRIBUTE_LIST = 16;
+  int ATTRIBUTE_LIST = 14;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -604,7 +566,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronouns()
    * @generated
    */
-  int PRONOUNS = 17;
+  int PRONOUNS = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -632,7 +594,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
    * @generated
    */
-  int PRONOUN_IDENTIFIER = 18;
+  int PRONOUN_IDENTIFIER = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -696,14 +658,25 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getStatement();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Declaration <em>Declaration</em>}'.
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Declaration</em>'.
-   * @see tracerypp.traceryPlusPlus.Declaration
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see tracerypp.traceryPlusPlus.Variable
    * @generated
    */
-  EClass getDeclaration();
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Variable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tracerypp.traceryPlusPlus.Variable#getName()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Name();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Story <em>Story</em>}'.
@@ -737,17 +710,6 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getListDeclaration();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ListDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.ListDeclaration#getName()
-   * @see #getListDeclaration()
-   * @generated
-   */
-  EReference getListDeclaration_Name();
-
-  /**
    * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ListDeclaration#getList <em>List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -767,17 +729,6 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EClass getObjectDeclaration();
-
-  /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.ObjectDeclaration#getName()
-   * @see #getObjectDeclaration()
-   * @generated
-   */
-  EAttribute getObjectDeclaration_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectDeclaration#getPronouns <em>Pronouns</em>}'.
@@ -812,68 +763,47 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getWord();
 
   /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Word#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see tracerypp.traceryPlusPlus.Word#getValue()
-   * @see #getWord()
-   * @generated
-   */
-  EAttribute getWord_Value();
-
-  /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Variable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.Variable
-   * @generated
-   */
-  EClass getVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Variable#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Word#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.Variable#getName()
-   * @see #getVariable()
+   * @see tracerypp.traceryPlusPlus.Word#getName()
+   * @see #getWord()
    * @generated
    */
-  EAttribute getVariable_Name();
+  EAttribute getWord_Name();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.StoryVariable <em>Story Variable</em>}'.
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ListVariable <em>List Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Story Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.StoryVariable
+   * @return the meta object for class '<em>List Variable</em>'.
+   * @see tracerypp.traceryPlusPlus.ListVariable
    * @generated
    */
-  EClass getStoryVariable();
+  EClass getListVariable();
 
   /**
-   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.StoryVariable#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.ListVariable#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.StoryVariable#getVariable()
-   * @see #getStoryVariable()
+   * @see tracerypp.traceryPlusPlus.ListVariable#getVariable()
+   * @see #getListVariable()
    * @generated
    */
-  EReference getStoryVariable_Variable();
+  EReference getListVariable_Variable();
 
   /**
-   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.StoryVariable#getModifiers <em>Modifiers</em>}'.
+   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ListVariable#getModifiers <em>Modifiers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute list '<em>Modifiers</em>'.
-   * @see tracerypp.traceryPlusPlus.StoryVariable#getModifiers()
-   * @see #getStoryVariable()
+   * @see tracerypp.traceryPlusPlus.ListVariable#getModifiers()
+   * @see #getListVariable()
    * @generated
    */
-  EAttribute getStoryVariable_Modifiers();
+  EAttribute getListVariable_Modifiers();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Attribute <em>Attribute</em>}'.
@@ -886,25 +816,15 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getAttribute();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ExistingVariable <em>Existing Variable</em>}'.
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.Attribute#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Existing Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.ExistingVariable
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see tracerypp.traceryPlusPlus.Attribute#getName()
+   * @see #getAttribute()
    * @generated
    */
-  EClass getExistingVariable();
-
-  /**
-   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.ExistingVariable#getPointer <em>Pointer</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Pointer</em>'.
-   * @see tracerypp.traceryPlusPlus.ExistingVariable#getPointer()
-   * @see #getExistingVariable()
-   * @generated
-   */
-  EReference getExistingVariable_Pointer();
+  EAttribute getAttribute_Name();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.JustNameAttribute <em>Just Name Attribute</em>}'.
@@ -917,17 +837,6 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getJustNameAttribute();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.JustNameAttribute#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.JustNameAttribute#getName()
-   * @see #getJustNameAttribute()
-   * @generated
-   */
-  EReference getJustNameAttribute_Name();
-
-  /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.NameExistingListAttribute <em>Name Existing List Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -938,21 +847,10 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getNameExistingListAttribute();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.NameExistingListAttribute#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.NameExistingListAttribute#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.NameExistingListAttribute#getName()
-   * @see #getNameExistingListAttribute()
-   * @generated
-   */
-  EReference getNameExistingListAttribute_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.NameExistingListAttribute#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @return the meta object for the reference '<em>Value</em>'.
    * @see tracerypp.traceryPlusPlus.NameExistingListAttribute#getValue()
    * @see #getNameExistingListAttribute()
    * @generated
@@ -968,17 +866,6 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EClass getNameValueAttribute();
-
-  /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.NameValueAttribute#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.NameValueAttribute#getName()
-   * @see #getNameValueAttribute()
-   * @generated
-   */
-  EReference getNameValueAttribute_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.NameValueAttribute#getValue <em>Value</em>}'.
@@ -1189,14 +1076,22 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass STATEMENT = eINSTANCE.getStatement();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.DeclarationImpl <em>Declaration</em>}' class.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.VariableImpl <em>Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.DeclarationImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getDeclaration()
+     * @see tracerypp.traceryPlusPlus.impl.VariableImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getVariable()
      * @generated
      */
-    EClass DECLARATION = eINSTANCE.getDeclaration();
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.StoryImpl <em>Story</em>}' class.
@@ -1227,14 +1122,6 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass LIST_DECLARATION = eINSTANCE.getListDeclaration();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_DECLARATION__NAME = eINSTANCE.getListDeclaration_Name();
-
-    /**
      * The meta object literal for the '<em><b>List</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1251,14 +1138,6 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EClass OBJECT_DECLARATION = eINSTANCE.getObjectDeclaration();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OBJECT_DECLARATION__NAME = eINSTANCE.getObjectDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Pronouns</b></em>' containment reference feature.
@@ -1287,40 +1166,22 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass WORD = eINSTANCE.getWord();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute WORD__VALUE = eINSTANCE.getWord_Value();
-
-    /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.VariableImpl <em>Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.VariableImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getVariable()
-     * @generated
-     */
-    EClass VARIABLE = eINSTANCE.getVariable();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+    EAttribute WORD__NAME = eINSTANCE.getWord_Name();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.StoryVariableImpl <em>Story Variable</em>}' class.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ListVariableImpl <em>List Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.StoryVariableImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getStoryVariable()
+     * @see tracerypp.traceryPlusPlus.impl.ListVariableImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListVariable()
      * @generated
      */
-    EClass STORY_VARIABLE = eINSTANCE.getStoryVariable();
+    EClass LIST_VARIABLE = eINSTANCE.getListVariable();
 
     /**
      * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
@@ -1328,7 +1189,7 @@ public interface TraceryPlusPlusPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STORY_VARIABLE__VARIABLE = eINSTANCE.getStoryVariable_Variable();
+    EReference LIST_VARIABLE__VARIABLE = eINSTANCE.getListVariable_Variable();
 
     /**
      * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
@@ -1336,7 +1197,7 @@ public interface TraceryPlusPlusPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STORY_VARIABLE__MODIFIERS = eINSTANCE.getStoryVariable_Modifiers();
+    EAttribute LIST_VARIABLE__MODIFIERS = eINSTANCE.getListVariable_Modifiers();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -1349,22 +1210,12 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ExistingVariableImpl <em>Existing Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.ExistingVariableImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getExistingVariable()
-     * @generated
-     */
-    EClass EXISTING_VARIABLE = eINSTANCE.getExistingVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Pointer</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXISTING_VARIABLE__POINTER = eINSTANCE.getExistingVariable_Pointer();
+    EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl <em>Just Name Attribute</em>}' class.
@@ -1377,14 +1228,6 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass JUST_NAME_ATTRIBUTE = eINSTANCE.getJustNameAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference JUST_NAME_ATTRIBUTE__NAME = eINSTANCE.getJustNameAttribute_Name();
-
-    /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.NameExistingListAttributeImpl <em>Name Existing List Attribute</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1395,15 +1238,7 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass NAME_EXISTING_LIST_ATTRIBUTE = eINSTANCE.getNameExistingListAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_EXISTING_LIST_ATTRIBUTE__NAME = eINSTANCE.getNameExistingListAttribute_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1419,14 +1254,6 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EClass NAME_VALUE_ATTRIBUTE = eINSTANCE.getNameValueAttribute();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NAME_VALUE_ATTRIBUTE__NAME = eINSTANCE.getNameValueAttribute_Name();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.

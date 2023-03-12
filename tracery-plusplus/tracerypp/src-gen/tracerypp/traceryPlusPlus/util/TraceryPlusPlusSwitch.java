@@ -87,11 +87,11 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.DECLARATION:
+      case TraceryPlusPlusPackage.VARIABLE:
       {
-        Declaration declaration = (Declaration)theEObject;
-        T result = caseDeclaration(declaration);
-        if (result == null) result = caseStatement(declaration);
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = caseStatement(variable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,7 +106,7 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
       {
         ListDeclaration listDeclaration = (ListDeclaration)theEObject;
         T result = caseListDeclaration(listDeclaration);
-        if (result == null) result = caseDeclaration(listDeclaration);
+        if (result == null) result = caseVariable(listDeclaration);
         if (result == null) result = caseStatement(listDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -115,7 +115,7 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
       {
         ObjectDeclaration objectDeclaration = (ObjectDeclaration)theEObject;
         T result = caseObjectDeclaration(objectDeclaration);
-        if (result == null) result = caseDeclaration(objectDeclaration);
+        if (result == null) result = caseVariable(objectDeclaration);
         if (result == null) result = caseStatement(objectDeclaration);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -127,17 +127,10 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.VARIABLE:
+      case TraceryPlusPlusPackage.LIST_VARIABLE:
       {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TraceryPlusPlusPackage.STORY_VARIABLE:
-      {
-        StoryVariable storyVariable = (StoryVariable)theEObject;
-        T result = caseStoryVariable(storyVariable);
+        ListVariable listVariable = (ListVariable)theEObject;
+        T result = caseListVariable(listVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,13 +138,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
       {
         Attribute attribute = (Attribute)theEObject;
         T result = caseAttribute(attribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TraceryPlusPlusPackage.EXISTING_VARIABLE:
-      {
-        ExistingVariable existingVariable = (ExistingVariable)theEObject;
-        T result = caseExistingVariable(existingVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -251,17 +237,17 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Declaration</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDeclaration(Declaration object)
+  public T caseVariable(Variable object)
   {
     return null;
   }
@@ -331,33 +317,17 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List Variable</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List Variable</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariable(Variable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Story Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Story Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStoryVariable(StoryVariable object)
+  public T caseListVariable(ListVariable object)
   {
     return null;
   }
@@ -374,22 +344,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttribute(Attribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Existing Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Existing Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExistingVariable(ExistingVariable object)
   {
     return null;
   }
