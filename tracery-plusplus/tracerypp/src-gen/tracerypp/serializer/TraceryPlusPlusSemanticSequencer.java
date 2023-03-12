@@ -18,11 +18,12 @@ import tracerypp.services.TraceryPlusPlusGrammarAccess;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
-import tracerypp.traceryPlusPlus.ListVariable;
+import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.ObjectPronoun;
 import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Story;
@@ -54,8 +55,8 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 			case TraceryPlusPlusPackage.LIST_DECLARATION:
 				sequence_ListDeclaration(context, (ListDeclaration) semanticObject); 
 				return; 
-			case TraceryPlusPlusPackage.LIST_VARIABLE:
-				sequence_ListVariable(context, (ListVariable) semanticObject); 
+			case TraceryPlusPlusPackage.LIST_USE:
+				sequence_ListUse(context, (ListUse) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE:
 				sequence_NameExistingListAttribute(context, (NameExistingListAttribute) semanticObject); 
@@ -68,6 +69,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.OBJECT_DECLARATION:
 				sequence_ObjectDeclaration(context, (ObjectDeclaration) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.OBJECT_PRONOUN:
+				sequence_ObjectPronoun(context, (ObjectPronoun) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER:
 				sequence_PronounIdentifier(context, (PronounIdentifier) semanticObject); 
@@ -155,13 +159,13 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     ListVariable returns ListVariable
+	 *     ListUse returns ListUse
 	 *
 	 * Constraint:
 	 *     (variable=[ListDeclaration|ID] modifiers+=Modifier*)
 	 * </pre>
 	 */
-	protected void sequence_ListVariable(ISerializationContext context, ListVariable semanticObject) {
+	protected void sequence_ListUse(ISerializationContext context, ListUse semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -217,10 +221,11 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ObjectUse returns ObjectAttribute
 	 *     ObjectAttribute returns ObjectAttribute
 	 *
 	 * Constraint:
-	 *     (object=[ObjectDeclaration|ID] (attribute=[Attribute|ID] | pronoun=PronounIdentifier) modifiers+=Modifier*)
+	 *     (object=[ObjectDeclaration|ID] attribute=[Attribute|ID] modifiers+=Modifier*)
 	 * </pre>
 	 */
 	protected void sequence_ObjectAttribute(ISerializationContext context, ObjectAttribute semanticObject) {
@@ -259,6 +264,21 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ObjectUse returns ObjectPronoun
+	 *     ObjectPronoun returns ObjectPronoun
+	 *
+	 * Constraint:
+	 *     (object=[ObjectDeclaration|ID] pronoun=PronounIdentifier modifiers+=Modifier*)
+	 * </pre>
+	 */
+	protected void sequence_ObjectPronoun(ISerializationContext context, ObjectPronoun semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     PronounIdentifier returns PronounIdentifier
 	 *
 	 * Constraint:
@@ -290,7 +310,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Story returns Story
 	 *
 	 * Constraint:
-	 *     (story+=Word | story+=ListVariable | story+=ObjectAttribute)*
+	 *     (story+=Word | story+=ListUse | story+=ObjectUse)*
 	 * </pre>
 	 */
 	protected void sequence_Story(ISerializationContext context, Story semanticObject) {
@@ -332,16 +352,16 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Word returns Word
 	 *
 	 * Constraint:
-	 *     name=STRING
+	 *     value=STRING
 	 * </pre>
 	 */
 	protected void sequence_Word(ISerializationContext context, Word semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.WORD__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.WORD__NAME));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.WORD__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.WORD__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWordAccess().getNameSTRINGTerminalRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWordAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

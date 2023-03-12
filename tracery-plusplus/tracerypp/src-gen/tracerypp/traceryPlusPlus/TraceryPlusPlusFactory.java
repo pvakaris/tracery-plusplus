@@ -87,13 +87,13 @@ public interface TraceryPlusPlusFactory extends EFactory
   Word createWord();
 
   /**
-   * Returns a new object of class '<em>List Variable</em>'.
+   * Returns a new object of class '<em>List Use</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Variable</em>'.
+   * @return a new object of class '<em>List Use</em>'.
    * @generated
    */
-  ListVariable createListVariable();
+  ListUse createListUse();
 
   /**
    * Returns a new object of class '<em>Attribute</em>'.
@@ -132,6 +132,15 @@ public interface TraceryPlusPlusFactory extends EFactory
   NameValueAttribute createNameValueAttribute();
 
   /**
+   * Returns a new object of class '<em>Object Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Use</em>'.
+   * @generated
+   */
+  ObjectUse createObjectUse();
+
+  /**
    * Returns a new object of class '<em>Object Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -139,6 +148,15 @@ public interface TraceryPlusPlusFactory extends EFactory
    * @generated
    */
   ObjectAttribute createObjectAttribute();
+
+  /**
+   * Returns a new object of class '<em>Object Pronoun</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Object Pronoun</em>'.
+   * @generated
+   */
+  ObjectPronoun createObjectPronoun();
 
   /**
    * Returns a new object of class '<em>Word List</em>'.

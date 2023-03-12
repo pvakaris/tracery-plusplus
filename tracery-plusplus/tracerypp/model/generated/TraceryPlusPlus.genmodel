@@ -25,11 +25,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectDeclaration/attributes"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Word">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Word/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Word/value"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ListVariable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListVariable/variable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ListVariable/modifiers"/>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ListUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListUse/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ListUse/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Attribute/name"/>
@@ -41,11 +41,15 @@
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//NameValueAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameValueAttribute/value"/>
     </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectUse/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ObjectUse/modifiers"/>
+    </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/object"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/attribute"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/pronoun"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ObjectAttribute/modifiers"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectPronoun">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectPronoun/pronoun"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//WordList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//WordList/words"/>

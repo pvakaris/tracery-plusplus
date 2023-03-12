@@ -14,11 +14,13 @@ import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
-import tracerypp.traceryPlusPlus.ListVariable;
+import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.ObjectPronoun;
+import tracerypp.traceryPlusPlus.ObjectUse;
 import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
@@ -92,7 +94,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass listVariableEClass = null;
+  private EClass listUseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -127,7 +129,21 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass objectUseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass objectAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass objectPronounEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -379,7 +395,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getWord_Name()
+  public EAttribute getWord_Value()
   {
     return (EAttribute)wordEClass.getEStructuralFeatures().get(0);
   }
@@ -390,9 +406,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EClass getListVariable()
+  public EClass getListUse()
   {
-    return listVariableEClass;
+    return listUseEClass;
   }
 
   /**
@@ -401,9 +417,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getListVariable_Variable()
+  public EReference getListUse_Variable()
   {
-    return (EReference)listVariableEClass.getEStructuralFeatures().get(0);
+    return (EReference)listUseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -412,9 +428,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getListVariable_Modifiers()
+  public EAttribute getListUse_Modifiers()
   {
-    return (EAttribute)listVariableEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)listUseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -500,6 +516,39 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
+  public EClass getObjectUse()
+  {
+    return objectUseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getObjectUse_Object()
+  {
+    return (EReference)objectUseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getObjectUse_Modifiers()
+  {
+    return (EAttribute)objectUseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getObjectAttribute()
   {
     return objectAttributeEClass;
@@ -511,7 +560,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getObjectAttribute_Object()
+  public EReference getObjectAttribute_Attribute()
   {
     return (EReference)objectAttributeEClass.getEStructuralFeatures().get(0);
   }
@@ -522,9 +571,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getObjectAttribute_Attribute()
+  public EClass getObjectPronoun()
   {
-    return (EReference)objectAttributeEClass.getEStructuralFeatures().get(1);
+    return objectPronounEClass;
   }
 
   /**
@@ -533,20 +582,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getObjectAttribute_Pronoun()
+  public EReference getObjectPronoun_Pronoun()
   {
-    return (EReference)objectAttributeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getObjectAttribute_Modifiers()
-  {
-    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(3);
+    return (EReference)objectPronounEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -688,11 +726,11 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     createEReference(objectDeclarationEClass, OBJECT_DECLARATION__ATTRIBUTES);
 
     wordEClass = createEClass(WORD);
-    createEAttribute(wordEClass, WORD__NAME);
+    createEAttribute(wordEClass, WORD__VALUE);
 
-    listVariableEClass = createEClass(LIST_VARIABLE);
-    createEReference(listVariableEClass, LIST_VARIABLE__VARIABLE);
-    createEAttribute(listVariableEClass, LIST_VARIABLE__MODIFIERS);
+    listUseEClass = createEClass(LIST_USE);
+    createEReference(listUseEClass, LIST_USE__VARIABLE);
+    createEAttribute(listUseEClass, LIST_USE__MODIFIERS);
 
     attributeEClass = createEClass(ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -705,11 +743,15 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     nameValueAttributeEClass = createEClass(NAME_VALUE_ATTRIBUTE);
     createEReference(nameValueAttributeEClass, NAME_VALUE_ATTRIBUTE__VALUE);
 
+    objectUseEClass = createEClass(OBJECT_USE);
+    createEReference(objectUseEClass, OBJECT_USE__OBJECT);
+    createEAttribute(objectUseEClass, OBJECT_USE__MODIFIERS);
+
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
-    createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__OBJECT);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTE);
-    createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__PRONOUN);
-    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__MODIFIERS);
+
+    objectPronounEClass = createEClass(OBJECT_PRONOUN);
+    createEReference(objectPronounEClass, OBJECT_PRONOUN__PRONOUN);
 
     wordListEClass = createEClass(WORD_LIST);
     createEReference(wordListEClass, WORD_LIST__WORDS);
@@ -759,6 +801,8 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     justNameAttributeEClass.getESuperTypes().add(this.getAttribute());
     nameExistingListAttributeEClass.getESuperTypes().add(this.getAttribute());
     nameValueAttributeEClass.getESuperTypes().add(this.getAttribute());
+    objectAttributeEClass.getESuperTypes().add(this.getObjectUse());
+    objectPronounEClass.getESuperTypes().add(this.getObjectUse());
 
     // Initialize classes and features; add operations and parameters
     initEClass(traceryPlusPlusProgramEClass, TraceryPlusPlusProgram.class, "TraceryPlusPlusProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -781,11 +825,11 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEReference(getObjectDeclaration_Attributes(), this.getAttributeList(), null, "attributes", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWord_Name(), ecorePackage.getEString(), "name", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWord_Value(), ecorePackage.getEString(), "value", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(listVariableEClass, ListVariable.class, "ListVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListVariable_Variable(), this.getListDeclaration(), null, "variable", null, 0, 1, ListVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getListVariable_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ListVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(listUseEClass, ListUse.class, "ListUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListUse_Variable(), this.getListDeclaration(), null, "variable", null, 0, 1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getListUse_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -798,11 +842,15 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEClass(nameValueAttributeEClass, NameValueAttribute.class, "NameValueAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNameValueAttribute_Value(), this.getWord(), null, "value", null, 0, 1, NameValueAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(objectUseEClass, ObjectUse.class, "ObjectUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectUse_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, ObjectUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectUse_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getObjectAttribute_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObjectAttribute_Pronoun(), this.getPronounIdentifier(), null, "pronoun", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjectAttribute_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(objectPronounEClass, ObjectPronoun.class, "ObjectPronoun", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getObjectPronoun_Pronoun(), this.getPronounIdentifier(), null, "pronoun", null, 0, 1, ObjectPronoun.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wordListEClass, WordList.class, "WordList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWordList_Words(), this.getWord(), null, "words", null, 0, -1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

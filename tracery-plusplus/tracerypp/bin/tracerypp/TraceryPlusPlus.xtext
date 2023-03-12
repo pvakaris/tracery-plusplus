@@ -25,7 +25,7 @@ Variable:
  */
 Story:
 	{Story} "The" "story" AssignmentOperator?
-	story += ( Word | ListVariable | ObjectAttribute )*
+	story += ( Word | ListUse | ObjectUse )*
 ;
 
 /*
@@ -55,10 +55,10 @@ ObjectDeclaration:
  */
 
 Word:
-	name = STRING
+	value = STRING
 ;
 
-ListVariable:
+ListUse:
 	variable = [ListDeclaration]
 	modifiers += Modifier*
 ;
@@ -81,8 +81,18 @@ NameValueAttribute:
 	name = ID AssignmentOperator? value = Word
 ;
 
+ObjectUse:
+	ObjectAttribute |
+	ObjectPronoun
+;
+
 ObjectAttribute:
-	object = [ObjectDeclaration] "." (attribute = [Attribute] | pronoun = PronounIdentifier)
+	object = [ObjectDeclaration] "." attribute = [Attribute]
+	modifiers += Modifier*
+;
+
+ObjectPronoun:
+	object = [ObjectDeclaration] "." pronoun = PronounIdentifier
 	modifiers += Modifier*
 ;
 

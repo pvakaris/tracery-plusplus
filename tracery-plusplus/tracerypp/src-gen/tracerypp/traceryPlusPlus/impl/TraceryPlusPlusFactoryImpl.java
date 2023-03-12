@@ -72,12 +72,14 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.LIST_DECLARATION: return createListDeclaration();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case TraceryPlusPlusPackage.WORD: return createWord();
-      case TraceryPlusPlusPackage.LIST_VARIABLE: return createListVariable();
+      case TraceryPlusPlusPackage.LIST_USE: return createListUse();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
       case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE: return createJustNameAttribute();
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
       case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
+      case TraceryPlusPlusPackage.OBJECT_USE: return createObjectUse();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
+      case TraceryPlusPlusPackage.OBJECT_PRONOUN: return createObjectPronoun();
       case TraceryPlusPlusPackage.WORD_LIST: return createWordList();
       case TraceryPlusPlusPackage.ATTRIBUTE_LIST: return createAttributeList();
       case TraceryPlusPlusPackage.PRONOUNS: return createPronouns();
@@ -177,10 +179,10 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public ListVariable createListVariable()
+  public ListUse createListUse()
   {
-    ListVariableImpl listVariable = new ListVariableImpl();
-    return listVariable;
+    ListUseImpl listUse = new ListUseImpl();
+    return listUse;
   }
 
   /**
@@ -237,10 +239,34 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
+  public ObjectUse createObjectUse()
+  {
+    ObjectUseImpl objectUse = new ObjectUseImpl();
+    return objectUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ObjectAttribute createObjectAttribute()
   {
     ObjectAttributeImpl objectAttribute = new ObjectAttributeImpl();
     return objectAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ObjectPronoun createObjectPronoun()
+  {
+    ObjectPronounImpl objectPronoun = new ObjectPronounImpl();
+    return objectPronoun;
   }
 
   /**

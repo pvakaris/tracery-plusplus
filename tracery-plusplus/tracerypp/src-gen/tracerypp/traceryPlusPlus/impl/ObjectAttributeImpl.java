@@ -3,25 +3,15 @@
  */
 package tracerypp.traceryPlusPlus.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
-import tracerypp.traceryPlusPlus.ObjectDeclaration;
-import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 
 /**
@@ -32,26 +22,13 @@ import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getObject <em>Object</em>}</li>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getAttribute <em>Attribute</em>}</li>
- *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getPronoun <em>Pronoun</em>}</li>
- *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getModifiers <em>Modifiers</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements ObjectAttribute
+public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribute
 {
-  /**
-   * The cached value of the '{@link #getObject() <em>Object</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getObject()
-   * @generated
-   * @ordered
-   */
-  protected ObjectDeclaration object;
-
   /**
    * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' reference.
    * <!-- begin-user-doc -->
@@ -61,26 +38,6 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected Attribute attribute;
-
-  /**
-   * The cached value of the '{@link #getPronoun() <em>Pronoun</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPronoun()
-   * @generated
-   * @ordered
-   */
-  protected PronounIdentifier pronoun;
-
-  /**
-   * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getModifiers()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> modifiers;
 
   /**
    * <!-- begin-user-doc -->
@@ -101,51 +58,6 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
   protected EClass eStaticClass()
   {
     return TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ObjectDeclaration getObject()
-  {
-    if (object != null && object.eIsProxy())
-    {
-      InternalEObject oldObject = (InternalEObject)object;
-      object = (ObjectDeclaration)eResolveProxy(oldObject);
-      if (object != oldObject)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT, oldObject, object));
-      }
-    }
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ObjectDeclaration basicGetObject()
-  {
-    return object;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setObject(ObjectDeclaration newObject)
-  {
-    ObjectDeclaration oldObject = object;
-    object = newObject;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT, oldObject, object));
   }
 
   /**
@@ -199,101 +111,13 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public PronounIdentifier getPronoun()
-  {
-    return pronoun;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPronoun(PronounIdentifier newPronoun, NotificationChain msgs)
-  {
-    PronounIdentifier oldPronoun = pronoun;
-    pronoun = newPronoun;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, oldPronoun, newPronoun);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPronoun(PronounIdentifier newPronoun)
-  {
-    if (newPronoun != pronoun)
-    {
-      NotificationChain msgs = null;
-      if (pronoun != null)
-        msgs = ((InternalEObject)pronoun).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, null, msgs);
-      if (newPronoun != null)
-        msgs = ((InternalEObject)newPronoun).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, null, msgs);
-      msgs = basicSetPronoun(newPronoun, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN, newPronoun, newPronoun));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<String> getModifiers()
-  {
-    if (modifiers == null)
-    {
-      modifiers = new EDataTypeEList<String>(String.class, this, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS);
-    }
-    return modifiers;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
-        return basicSetPronoun(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT:
-        if (resolve) return getObject();
-        return basicGetObject();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         if (resolve) return getAttribute();
         return basicGetAttribute();
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
-        return getPronoun();
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
-        return getModifiers();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -303,24 +127,13 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT:
-        setObject((ObjectDeclaration)newValue);
-        return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Attribute)newValue);
-        return;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
-        setPronoun((PronounIdentifier)newValue);
-        return;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
-        getModifiers().clear();
-        getModifiers().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -336,17 +149,8 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT:
-        setObject((ObjectDeclaration)null);
-        return;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Attribute)null);
-        return;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
-        setPronoun((PronounIdentifier)null);
-        return;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
-        getModifiers().clear();
         return;
     }
     super.eUnset(featureID);
@@ -362,33 +166,10 @@ public class ObjectAttributeImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__OBJECT:
-        return object != null;
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         return attribute != null;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__PRONOUN:
-        return pronoun != null;
-      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
-        return modifiers != null && !modifiers.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (modifiers: ");
-    result.append(modifiers);
-    result.append(')');
-    return result.toString();
   }
 
 } //ObjectAttributeImpl

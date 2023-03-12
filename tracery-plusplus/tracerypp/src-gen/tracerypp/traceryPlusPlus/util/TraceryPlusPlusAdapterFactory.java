@@ -111,9 +111,9 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createWordAdapter();
       }
       @Override
-      public Adapter caseListVariable(ListVariable object)
+      public Adapter caseListUse(ListUse object)
       {
-        return createListVariableAdapter();
+        return createListUseAdapter();
       }
       @Override
       public Adapter caseAttribute(Attribute object)
@@ -136,9 +136,19 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createNameValueAttributeAdapter();
       }
       @Override
+      public Adapter caseObjectUse(ObjectUse object)
+      {
+        return createObjectUseAdapter();
+      }
+      @Override
       public Adapter caseObjectAttribute(ObjectAttribute object)
       {
         return createObjectAttributeAdapter();
+      }
+      @Override
+      public Adapter caseObjectPronoun(ObjectPronoun object)
+      {
+        return createObjectPronounAdapter();
       }
       @Override
       public Adapter caseWordList(WordList object)
@@ -288,16 +298,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ListVariable <em>List Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ListUse <em>List Use</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.ListVariable
+   * @see tracerypp.traceryPlusPlus.ListUse
    * @generated
    */
-  public Adapter createListVariableAdapter()
+  public Adapter createListUseAdapter()
   {
     return null;
   }
@@ -363,6 +373,21 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ObjectUse <em>Object Use</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tracerypp.traceryPlusPlus.ObjectUse
+   * @generated
+   */
+  public Adapter createObjectUseAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ObjectAttribute <em>Object Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -373,6 +398,21 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createObjectAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ObjectPronoun <em>Object Pronoun</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tracerypp.traceryPlusPlus.ObjectPronoun
+   * @generated
+   */
+  public Adapter createObjectPronounAdapter()
   {
     return null;
   }

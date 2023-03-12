@@ -127,10 +127,10 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.LIST_VARIABLE:
+      case TraceryPlusPlusPackage.LIST_USE:
       {
-        ListVariable listVariable = (ListVariable)theEObject;
-        T result = caseListVariable(listVariable);
+        ListUse listUse = (ListUse)theEObject;
+        T result = caseListUse(listUse);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -165,10 +165,26 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TraceryPlusPlusPackage.OBJECT_USE:
+      {
+        ObjectUse objectUse = (ObjectUse)theEObject;
+        T result = caseObjectUse(objectUse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE:
       {
         ObjectAttribute objectAttribute = (ObjectAttribute)theEObject;
         T result = caseObjectAttribute(objectAttribute);
+        if (result == null) result = caseObjectUse(objectAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.OBJECT_PRONOUN:
+      {
+        ObjectPronoun objectPronoun = (ObjectPronoun)theEObject;
+        T result = caseObjectPronoun(objectPronoun);
+        if (result == null) result = caseObjectUse(objectPronoun);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -317,17 +333,17 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>List Use</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>List Use</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseListVariable(ListVariable object)
+  public T caseListUse(ListUse object)
   {
     return null;
   }
@@ -397,6 +413,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Use</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Use</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectUse(ObjectUse object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Object Attribute</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -408,6 +440,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseObjectAttribute(ObjectAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Object Pronoun</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Object Pronoun</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObjectPronoun(ObjectPronoun object)
   {
     return null;
   }

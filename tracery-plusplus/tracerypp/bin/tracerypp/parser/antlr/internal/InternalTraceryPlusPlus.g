@@ -238,9 +238,9 @@ ruleStory returns [EObject current=null]
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getStoryAccess().getStoryListVariableParserRuleCall_4_0_1());
+						newCompositeNode(grammarAccess.getStoryAccess().getStoryListUseParserRuleCall_4_0_1());
 					}
-					lv_story_4_2=ruleListVariable
+					lv_story_4_2=ruleListUse
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStoryRule());
@@ -249,14 +249,14 @@ ruleStory returns [EObject current=null]
 							$current,
 							"story",
 							lv_story_4_2,
-							"tracerypp.TraceryPlusPlus.ListVariable");
+							"tracerypp.TraceryPlusPlus.ListUse");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getStoryAccess().getStoryObjectAttributeParserRuleCall_4_0_2());
+						newCompositeNode(grammarAccess.getStoryAccess().getStoryObjectUseParserRuleCall_4_0_2());
 					}
-					lv_story_4_3=ruleObjectAttribute
+					lv_story_4_3=ruleObjectUse
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStoryRule());
@@ -265,7 +265,7 @@ ruleStory returns [EObject current=null]
 							$current,
 							"story",
 							lv_story_4_3,
-							"tracerypp.TraceryPlusPlus.ObjectAttribute");
+							"tracerypp.TraceryPlusPlus.ObjectUse");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -528,9 +528,9 @@ ruleWord returns [EObject current=null]
 }:
 	(
 		(
-			lv_name_0_0=RULE_STRING
+			lv_value_0_0=RULE_STRING
 			{
-				newLeafNode(lv_name_0_0, grammarAccess.getWordAccess().getNameSTRINGTerminalRuleCall_0());
+				newLeafNode(lv_value_0_0, grammarAccess.getWordAccess().getValueSTRINGTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
@@ -538,23 +538,23 @@ ruleWord returns [EObject current=null]
 				}
 				setWithLastConsumed(
 					$current,
-					"name",
-					lv_name_0_0,
+					"value",
+					lv_value_0_0,
 					"org.eclipse.xtext.common.Terminals.STRING");
 			}
 		)
 	)
 ;
 
-// Entry rule entryRuleListVariable
-entryRuleListVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getListVariableRule()); }
-	iv_ruleListVariable=ruleListVariable
-	{ $current=$iv_ruleListVariable.current; }
+// Entry rule entryRuleListUse
+entryRuleListUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListUseRule()); }
+	iv_ruleListUse=ruleListUse
+	{ $current=$iv_ruleListUse.current; }
 	EOF;
 
-// Rule ListVariable
-ruleListVariable returns [EObject current=null]
+// Rule ListUse
+ruleListUse returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -566,24 +566,24 @@ ruleListVariable returns [EObject current=null]
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getListVariableRule());
+						$current = createModelElement(grammarAccess.getListUseRule());
 					}
 				}
 				otherlv_0=RULE_ID
 				{
-					newLeafNode(otherlv_0, grammarAccess.getListVariableAccess().getVariableListDeclarationCrossReference_0_0());
+					newLeafNode(otherlv_0, grammarAccess.getListUseAccess().getVariableListDeclarationCrossReference_0_0());
 				}
 			)
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getListVariableAccess().getModifiersModifierParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0());
 				}
 				lv_modifiers_1_0=ruleModifier
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getListVariableRule());
+						$current = createModelElementForParent(grammarAccess.getListUseRule());
 					}
 					add(
 						$current,
@@ -806,6 +806,42 @@ ruleNameValueAttribute returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleObjectUse
+entryRuleObjectUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getObjectUseRule()); }
+	iv_ruleObjectUse=ruleObjectUse
+	{ $current=$iv_ruleObjectUse.current; }
+	EOF;
+
+// Rule ObjectUse
+ruleObjectUse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getObjectUseAccess().getObjectAttributeParserRuleCall_0());
+		}
+		this_ObjectAttribute_0=ruleObjectAttribute
+		{
+			$current = $this_ObjectAttribute_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getObjectUseAccess().getObjectPronounParserRuleCall_1());
+		}
+		this_ObjectPronoun_1=ruleObjectPronoun
+		{
+			$current = $this_ObjectPronoun_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleObjectAttribute
 entryRuleObjectAttribute returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getObjectAttributeRule()); }
@@ -841,37 +877,15 @@ ruleObjectAttribute returns [EObject current=null]
 		}
 		(
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getObjectAttributeRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObjectAttributeRule());
 					}
-					otherlv_2=RULE_ID
-					{
-						newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getAttributeAttributeCrossReference_2_0_0());
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getObjectAttributeAccess().getPronounPronounIdentifierParserRuleCall_2_1_0());
-					}
-					lv_pronoun_3_0=rulePronounIdentifier
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getObjectAttributeRule());
-						}
-						set(
-							$current,
-							"pronoun",
-							lv_pronoun_3_0,
-							"tracerypp.TraceryPlusPlus.PronounIdentifier");
-						afterParserOrEnumRuleCall();
-					}
-				)
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getObjectAttributeAccess().getAttributeAttributeCrossReference_2_0());
+				}
 			)
 		)
 		(
@@ -879,7 +893,7 @@ ruleObjectAttribute returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_3_0());
 				}
-				lv_modifiers_4_0=ruleModifier
+				lv_modifiers_3_0=ruleModifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectAttributeRule());
@@ -887,7 +901,81 @@ ruleObjectAttribute returns [EObject current=null]
 					add(
 						$current,
 						"modifiers",
-						lv_modifiers_4_0,
+						lv_modifiers_3_0,
+						"tracerypp.TraceryPlusPlus.Modifier");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleObjectPronoun
+entryRuleObjectPronoun returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getObjectPronounRule()); }
+	iv_ruleObjectPronoun=ruleObjectPronoun
+	{ $current=$iv_ruleObjectPronoun.current; }
+	EOF;
+
+// Rule ObjectPronoun
+ruleObjectPronoun returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObjectPronounRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getObjectPronounAccess().getObjectObjectDeclarationCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='.'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getObjectPronounAccess().getFullStopKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierParserRuleCall_2_0());
+				}
+				lv_pronoun_2_0=rulePronounIdentifier
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectPronounRule());
+					}
+					set(
+						$current,
+						"pronoun",
+						lv_pronoun_2_0,
+						"tracerypp.TraceryPlusPlus.PronounIdentifier");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getObjectPronounAccess().getModifiersModifierParserRuleCall_3_0());
+				}
+				lv_modifiers_3_0=ruleModifier
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getObjectPronounRule());
+					}
+					add(
+						$current,
+						"modifiers",
+						lv_modifiers_3_0,
 						"tracerypp.TraceryPlusPlus.Modifier");
 					afterParserOrEnumRuleCall();
 				}
