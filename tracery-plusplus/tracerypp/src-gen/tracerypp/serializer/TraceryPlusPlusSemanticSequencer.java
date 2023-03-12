@@ -16,7 +16,6 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import tracerypp.services.TraceryPlusPlusGrammarAccess;
 import tracerypp.traceryPlusPlus.AttributeList;
-import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
@@ -48,9 +47,6 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 			switch (semanticObject.eClass().getClassifierID()) {
 			case TraceryPlusPlusPackage.ATTRIBUTE_LIST:
 				sequence_AttributeList(context, (AttributeList) semanticObject); 
-				return; 
-			case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE:
-				sequence_JustNameAttribute(context, (JustNameAttribute) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.LIST_DECLARATION:
 				sequence_ListDeclaration(context, (ListDeclaration) semanticObject); 
@@ -107,27 +103,6 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 */
 	protected void sequence_AttributeList(ISerializationContext context, AttributeList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Attribute returns JustNameAttribute
-	 *     JustNameAttribute returns JustNameAttribute
-	 *
-	 * Constraint:
-	 *     name=ID
-	 * </pre>
-	 */
-	protected void sequence_JustNameAttribute(ISerializationContext context, JustNameAttribute semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.ATTRIBUTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.ATTRIBUTE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getJustNameAttributeAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

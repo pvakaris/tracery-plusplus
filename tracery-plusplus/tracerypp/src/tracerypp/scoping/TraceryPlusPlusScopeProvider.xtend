@@ -9,6 +9,8 @@ import static org.eclipse.xtext.scoping.Scopes.*
 import tracerypp.traceryPlusPlus.ObjectAttribute
 import tracerypp.traceryPlusPlus.ObjectDeclaration
 import tracerypp.traceryPlusPlus.ListDeclaration
+import tracerypp.traceryPlusPlus.NameValueAttribute
+import tracerypp.traceryPlusPlus.NameExistingListAttribute
 
 /**
  * This class contains custom scoping description.
@@ -22,8 +24,20 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
 	// Scope for accessing object attributes in the story
 	def IScope scope_ObjectAttribute_attribute(ObjectAttribute context, EReference ref) {
         val objectDeclaration = context.object
-        if (objectDeclaration !== null) {        	
-        	scopeFor(objectDeclaration.attributes.attributes)
+        if (objectDeclaration !== null) {
+        	var attr = newArrayList
+        	for (a : objectDeclaration.attributes.attributes) {
+        		if (a instanceof NameValueAttribute){
+        			attr.add(a)
+        		}
+        		else if (a instanceof NameExistingListAttribute){
+        			attr.add(a)
+        		}
+//        		else if (a instanceof JustNameAttribute) {
+//		    		return a.name.name
+//		    	}
+        	}
+        	scopeFor(attr)
         }
         else {
             IScope.NULLSCOPE
@@ -33,8 +47,14 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
 	def IScope scope_ObjectDeclaration_attributes(ObjectDeclaration context, EReference ref) {
         val objectDeclaration = context.name
         if (objectDeclaration !== null) {
-        	val attributeNames = context.attributes.attributes.map[a | a.name.toString()]
-
+        	val attributeNames = context.attributes.attributes.map[a | {
+        		if (a instanceof NameValueAttribute){
+        			a.name.toString()
+        		}
+        		else if (a instanceof NameExistingListAttribute){
+        			a.name.toString()
+        		}
+        	}]
 	        // Filter ListDeclaration objects whose name doesn't match any attribute names
 	        val listDeclarations = context.eResource.allContents.filter(ListDeclaration)
 	                                   .filter[ld | !(attributeNames.contains(ld.name.toString()))].toList

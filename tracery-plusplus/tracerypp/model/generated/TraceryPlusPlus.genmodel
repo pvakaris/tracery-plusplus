@@ -34,7 +34,6 @@
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Attribute/name"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//JustNameAttribute"/>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//NameExistingListAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameExistingListAttribute/value"/>
     </genClasses>

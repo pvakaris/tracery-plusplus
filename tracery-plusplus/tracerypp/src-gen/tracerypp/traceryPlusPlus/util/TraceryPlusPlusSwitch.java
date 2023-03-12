@@ -141,14 +141,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE:
-      {
-        JustNameAttribute justNameAttribute = (JustNameAttribute)theEObject;
-        T result = caseJustNameAttribute(justNameAttribute);
-        if (result == null) result = caseAttribute(justNameAttribute);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE:
       {
         NameExistingListAttribute nameExistingListAttribute = (NameExistingListAttribute)theEObject;
@@ -360,22 +352,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttribute(Attribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Just Name Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Just Name Attribute</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJustNameAttribute(JustNameAttribute object)
   {
     return null;
   }

@@ -4,16 +4,21 @@
 package tracerypp.scoping;
 
 import com.google.common.collect.Iterators;
+import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
+import tracerypp.traceryPlusPlus.NameExistingListAttribute;
+import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 
@@ -31,7 +36,22 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       final ObjectDeclaration objectDeclaration = context.getObject();
       IScope _xifexpression = null;
       if ((objectDeclaration != null)) {
-        _xifexpression = Scopes.scopeFor(objectDeclaration.getAttributes().getAttributes());
+        IScope _xblockexpression_1 = null;
+        {
+          ArrayList<Attribute> attr = CollectionLiterals.<Attribute>newArrayList();
+          EList<Attribute> _attributes = objectDeclaration.getAttributes().getAttributes();
+          for (final Attribute a : _attributes) {
+            if ((a instanceof NameValueAttribute)) {
+              attr.add(a);
+            } else {
+              if ((a instanceof NameExistingListAttribute)) {
+                attr.add(a);
+              }
+            }
+          }
+          _xblockexpression_1 = Scopes.scopeFor(attr);
+        }
+        _xifexpression = _xblockexpression_1;
       } else {
         _xifexpression = IScope.NULLSCOPE;
       }
@@ -49,7 +69,17 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
         IScope _xblockexpression_1 = null;
         {
           final Function1<Attribute, String> _function = (Attribute a) -> {
-            return a.getName().toString();
+            String _xifexpression_1 = null;
+            if ((a instanceof NameValueAttribute)) {
+              _xifexpression_1 = ((NameValueAttribute)a).getName().toString();
+            } else {
+              String _xifexpression_2 = null;
+              if ((a instanceof NameExistingListAttribute)) {
+                _xifexpression_2 = ((NameExistingListAttribute)a).getName().toString();
+              }
+              _xifexpression_1 = _xifexpression_2;
+            }
+            return _xifexpression_1;
           };
           final List<String> attributeNames = ListExtensions.<Attribute, String>map(context.getAttributes().getAttributes(), _function);
           final Function1<ListDeclaration, Boolean> _function_1 = (ListDeclaration ld) -> {

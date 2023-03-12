@@ -75,7 +75,6 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWordAccess().getValueAssignment(), "rule__Word__ValueAssignment");
 			builder.put(grammarAccess.getListUseAccess().getVariableAssignment_0(), "rule__ListUse__VariableAssignment_0");
 			builder.put(grammarAccess.getListUseAccess().getModifiersAssignment_1(), "rule__ListUse__ModifiersAssignment_1");
-			builder.put(grammarAccess.getJustNameAttributeAccess().getNameAssignment(), "rule__JustNameAttribute__NameAssignment");
 			builder.put(grammarAccess.getNameExistingListAttributeAccess().getNameAssignment_0(), "rule__NameExistingListAttribute__NameAssignment_0");
 			builder.put(grammarAccess.getNameExistingListAttributeAccess().getValueAssignment_2(), "rule__NameExistingListAttribute__ValueAssignment_2");
 			builder.put(grammarAccess.getNameValueAttributeAccess().getNameAssignment_0(), "rule__NameValueAttribute__NameAssignment_0");

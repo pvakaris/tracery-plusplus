@@ -383,46 +383,24 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Attribute");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cJustNameAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cNameExistingListAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cNameValueAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cNameExistingListAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNameValueAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Attribute:
-		//    JustNameAttribute |
 		//    NameExistingListAttribute |
 		//    NameValueAttribute
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//JustNameAttribute |
 		//NameExistingListAttribute |
 		//NameValueAttribute
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//JustNameAttribute
-		public RuleCall getJustNameAttributeParserRuleCall_0() { return cJustNameAttributeParserRuleCall_0; }
-		
 		//NameExistingListAttribute
-		public RuleCall getNameExistingListAttributeParserRuleCall_1() { return cNameExistingListAttributeParserRuleCall_1; }
+		public RuleCall getNameExistingListAttributeParserRuleCall_0() { return cNameExistingListAttributeParserRuleCall_0; }
 		
 		//NameValueAttribute
-		public RuleCall getNameValueAttributeParserRuleCall_2() { return cNameValueAttributeParserRuleCall_2; }
-	}
-	public class JustNameAttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.JustNameAttribute");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
-		
-		//JustNameAttribute:
-		//    name = ID // Was: name = [ListDeclaration] | Solved in code generation
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//name = ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
+		public RuleCall getNameValueAttributeParserRuleCall_1() { return cNameValueAttributeParserRuleCall_1; }
 	}
 	public class NameExistingListAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.NameExistingListAttribute");
@@ -436,6 +414,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final CrossReference cValueListDeclarationCrossReference_2_0 = (CrossReference)cValueAssignment_2.eContents().get(0);
 		private final RuleCall cValueListDeclarationIDTerminalRuleCall_2_0_1 = (RuleCall)cValueListDeclarationCrossReference_2_0.eContents().get(1);
 		
+		///* NOT IN USE CURRENTLY
+		//JustNameAttribute:
+		//    name = [ListDeclaration]
+		//;
+		//*/
 		//NameExistingListAttribute:
 		//    name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 		//;
@@ -971,7 +954,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final WordElements pWord;
 	private final ListUseElements pListUse;
 	private final AttributeElements pAttribute;
-	private final JustNameAttributeElements pJustNameAttribute;
 	private final NameExistingListAttributeElements pNameExistingListAttribute;
 	private final NameValueAttributeElements pNameValueAttribute;
 	private final ObjectUseElements pObjectUse;
@@ -1009,7 +991,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pWord = new WordElements();
 		this.pListUse = new ListUseElements();
 		this.pAttribute = new AttributeElements();
-		this.pJustNameAttribute = new JustNameAttributeElements();
 		this.pNameExistingListAttribute = new NameExistingListAttributeElements();
 		this.pNameValueAttribute = new NameValueAttributeElements();
 		this.pObjectUse = new ObjectUseElements();
@@ -1173,7 +1154,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//Attribute:
-	//    JustNameAttribute |
 	//    NameExistingListAttribute |
 	//    NameValueAttribute
 	//;
@@ -1185,17 +1165,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getAttributeAccess().getRule();
 	}
 	
+	///* NOT IN USE CURRENTLY
 	//JustNameAttribute:
-	//    name = ID // Was: name = [ListDeclaration] | Solved in code generation
+	//    name = [ListDeclaration]
 	//;
-	public JustNameAttributeElements getJustNameAttributeAccess() {
-		return pJustNameAttribute;
-	}
-	
-	public ParserRule getJustNameAttributeRule() {
-		return getJustNameAttributeAccess().getRule();
-	}
-	
+	//*/
 	//NameExistingListAttribute:
 	//    name = ID (AssignmentOperator | "from")? value = [ListDeclaration]
 	//;

@@ -64,14 +64,15 @@ ListUse:
 ;
 
 Attribute:
-	JustNameAttribute |
 	NameExistingListAttribute |
 	NameValueAttribute
 ;
+/* NOT IN USE CURRENTLY 
 
 JustNameAttribute:
-	name = ID // Was: name = [ListDeclaration] | Solved in code generation
+	name = [ListDeclaration] 
 ;
+*/
 
 NameExistingListAttribute:
 	name = ID (AssignmentOperator | "from")? value = [ListDeclaration]

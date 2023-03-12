@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
-import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
@@ -102,13 +101,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   private EClass attributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass justNameAttributeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -461,17 +453,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EClass getJustNameAttribute()
-  {
-    return justNameAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getNameExistingListAttribute()
   {
     return nameExistingListAttributeEClass;
@@ -735,8 +716,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     attributeEClass = createEClass(ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 
-    justNameAttributeEClass = createEClass(JUST_NAME_ATTRIBUTE);
-
     nameExistingListAttributeEClass = createEClass(NAME_EXISTING_LIST_ATTRIBUTE);
     createEReference(nameExistingListAttributeEClass, NAME_EXISTING_LIST_ATTRIBUTE__VALUE);
 
@@ -798,7 +777,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     variableEClass.getESuperTypes().add(this.getStatement());
     listDeclarationEClass.getESuperTypes().add(this.getVariable());
     objectDeclarationEClass.getESuperTypes().add(this.getVariable());
-    justNameAttributeEClass.getESuperTypes().add(this.getAttribute());
     nameExistingListAttributeEClass.getESuperTypes().add(this.getAttribute());
     nameValueAttributeEClass.getESuperTypes().add(this.getAttribute());
     objectAttributeEClass.getESuperTypes().add(this.getObjectUse());
@@ -833,8 +811,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(justNameAttributeEClass, JustNameAttribute.class, "JustNameAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(nameExistingListAttributeEClass, NameExistingListAttribute.class, "NameExistingListAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getNameExistingListAttribute_Value(), this.getListDeclaration(), null, "value", null, 0, 1, NameExistingListAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

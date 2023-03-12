@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
-import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
@@ -78,15 +77,11 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
   }
 
   public String getAttributeName(final Attribute attribute) {
-    if ((attribute instanceof JustNameAttribute)) {
-      return ((JustNameAttribute)attribute).getName();
+    if ((attribute instanceof NameExistingListAttribute)) {
+      return ((NameExistingListAttribute)attribute).getName();
     } else {
-      if ((attribute instanceof NameExistingListAttribute)) {
-        return ((NameExistingListAttribute)attribute).getName();
-      } else {
-        if ((attribute instanceof NameValueAttribute)) {
-          return ((NameValueAttribute)attribute).getName();
-        }
+      if ((attribute instanceof NameValueAttribute)) {
+        return ((NameValueAttribute)attribute).getName();
       }
     }
     return null;

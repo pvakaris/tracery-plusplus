@@ -121,11 +121,6 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createAttributeAdapter();
       }
       @Override
-      public Adapter caseJustNameAttribute(JustNameAttribute object)
-      {
-        return createJustNameAttributeAdapter();
-      }
-      @Override
       public Adapter caseNameExistingListAttribute(NameExistingListAttribute object)
       {
         return createNameExistingListAttributeAdapter();
@@ -323,21 +318,6 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.JustNameAttribute <em>Just Name Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.JustNameAttribute
-   * @generated
-   */
-  public Adapter createJustNameAttributeAdapter()
   {
     return null;
   }

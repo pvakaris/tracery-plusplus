@@ -74,7 +74,6 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.WORD: return createWord();
       case TraceryPlusPlusPackage.LIST_USE: return createListUse();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
-      case TraceryPlusPlusPackage.JUST_NAME_ATTRIBUTE: return createJustNameAttribute();
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
       case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
       case TraceryPlusPlusPackage.OBJECT_USE: return createObjectUse();
@@ -195,18 +194,6 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     AttributeImpl attribute = new AttributeImpl();
     return attribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public JustNameAttribute createJustNameAttribute()
-  {
-    JustNameAttributeImpl justNameAttribute = new JustNameAttributeImpl();
-    return justNameAttribute;
   }
 
   /**

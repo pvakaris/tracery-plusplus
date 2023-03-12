@@ -18,7 +18,6 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
-import tracerypp.traceryPlusPlus.JustNameAttribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
@@ -108,7 +107,7 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   protected String _generateJsonStoryEntry(final ObjectUse object) {
     final String objectName = object.getObject().getName();
     if ((object instanceof ObjectAttribute)) {
-      final String attribute = ((ObjectAttribute)object).getAttribute().getName();
+      final String attribute = this.getAttributeName(((ObjectAttribute)object).getAttribute());
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("#");
       String _upperCase = attribute.substring(0, 1).toUpperCase();
@@ -233,8 +232,9 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
       _builder.append("]");
       return _builder.toString();
     } else {
-      if ((attribute instanceof JustNameAttribute)) {
-        final String variableName_1 = ((JustNameAttribute)attribute).getName();
+      if ((attribute instanceof NameExistingListAttribute)) {
+        final String variableName_1 = ((NameExistingListAttribute)attribute).getName();
+        final ListDeclaration list = ((NameExistingListAttribute)attribute).getValue();
         StringConcatenation _builder_1 = new StringConcatenation();
         _builder_1.append("[");
         String _upperCase_1 = variableName_1.substring(0, 1).toUpperCase();
@@ -243,29 +243,13 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         String _plus_3 = (_plus_2 + _substring_1);
         _builder_1.append(_plus_3);
         _builder_1.append(":#");
-        _builder_1.append(variableName_1);
+        String _name = list.getName();
+        _builder_1.append(_name);
         _builder_1.append("#]");
         return _builder_1.toString();
       } else {
-        if ((attribute instanceof NameExistingListAttribute)) {
-          final String variableName_2 = ((NameExistingListAttribute)attribute).getName();
-          final ListDeclaration list = ((NameExistingListAttribute)attribute).getValue();
-          StringConcatenation _builder_2 = new StringConcatenation();
-          _builder_2.append("[");
-          String _upperCase_2 = variableName_2.substring(0, 1).toUpperCase();
-          String _plus_4 = (objectName + _upperCase_2);
-          String _substring_2 = variableName_2.substring(1);
-          String _plus_5 = (_plus_4 + _substring_2);
-          _builder_2.append(_plus_5);
-          _builder_2.append(":#");
-          String _name = list.getName();
-          _builder_2.append(_name);
-          _builder_2.append("#]");
-          return _builder_2.toString();
-        } else {
-          StringConcatenation _builder_3 = new StringConcatenation();
-          return _builder_3.toString();
-        }
+        StringConcatenation _builder_2 = new StringConcatenation();
+        return _builder_2.toString();
       }
     }
   }
@@ -273,6 +257,17 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   protected CharSequence _generateJsonDeclaration(final Variable listDeclaration) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
+  }
+
+  public String getAttributeName(final Attribute attribute) {
+    if ((attribute instanceof NameExistingListAttribute)) {
+      return ((NameExistingListAttribute)attribute).getName();
+    } else {
+      if ((attribute instanceof NameValueAttribute)) {
+        return ((NameValueAttribute)attribute).getName();
+      }
+    }
+    return null;
   }
 
   public String matchPronouns(final Pronouns pronouns, final String name) {

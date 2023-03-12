@@ -105,15 +105,6 @@ public interface TraceryPlusPlusFactory extends EFactory
   Attribute createAttribute();
 
   /**
-   * Returns a new object of class '<em>Just Name Attribute</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Just Name Attribute</em>'.
-   * @generated
-   */
-  JustNameAttribute createJustNameAttribute();
-
-  /**
    * Returns a new object of class '<em>Name Existing List Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

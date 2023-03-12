@@ -274,31 +274,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleJustNameAttribute
-entryRuleJustNameAttribute
-:
-{ before(grammarAccess.getJustNameAttributeRule()); }
-	 ruleJustNameAttribute
-{ after(grammarAccess.getJustNameAttributeRule()); } 
-	 EOF 
-;
-
-// Rule JustNameAttribute
-ruleJustNameAttribute 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getJustNameAttributeAccess().getNameAssignment()); }
-		(rule__JustNameAttribute__NameAssignment)
-		{ after(grammarAccess.getJustNameAttributeAccess().getNameAssignment()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleNameExistingListAttribute
 entryRuleNameExistingListAttribute
 :
@@ -914,21 +889,15 @@ rule__Attribute__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getAttributeAccess().getJustNameAttributeParserRuleCall_0()); }
-		ruleJustNameAttribute
-		{ after(grammarAccess.getAttributeAccess().getJustNameAttributeParserRuleCall_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_1()); }
+		{ before(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_0()); }
 		ruleNameExistingListAttribute
-		{ after(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_1()); }
+		{ after(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_2()); }
+		{ before(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_1()); }
 		ruleNameValueAttribute
-		{ after(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_2()); }
+		{ after(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_1()); }
 	)
 ;
 finally {
@@ -2769,21 +2738,6 @@ rule__ListUse__ModifiersAssignment_1
 		{ before(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0()); }
 		ruleModifier
 		{ after(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__JustNameAttribute__NameAssignment
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getJustNameAttributeAccess().getNameIDTerminalRuleCall_0()); }
-		RULE_ID
-		{ after(grammarAccess.getJustNameAttributeAccess().getNameIDTerminalRuleCall_0()); }
 	)
 ;
 finally {

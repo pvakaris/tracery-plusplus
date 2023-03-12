@@ -346,34 +346,6 @@ public interface TraceryPlusPlusPackage extends EPackage
   int ATTRIBUTE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl <em>Just Name Attribute</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getJustNameAttribute()
-   * @generated
-   */
-  int JUST_NAME_ATTRIBUTE = 9;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JUST_NAME_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
-
-  /**
-   * The number of structural features of the '<em>Just Name Attribute</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int JUST_NAME_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.NameExistingListAttributeImpl <em>Name Existing List Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -381,7 +353,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameExistingListAttribute()
    * @generated
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE = 10;
+  int NAME_EXISTING_LIST_ATTRIBUTE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -418,7 +390,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameValueAttribute()
    * @generated
    */
-  int NAME_VALUE_ATTRIBUTE = 11;
+  int NAME_VALUE_ATTRIBUTE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -455,7 +427,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getObjectUse()
    * @generated
    */
-  int OBJECT_USE = 12;
+  int OBJECT_USE = 11;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' reference.
@@ -492,7 +464,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getObjectAttribute()
    * @generated
    */
-  int OBJECT_ATTRIBUTE = 13;
+  int OBJECT_ATTRIBUTE = 12;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' reference.
@@ -538,7 +510,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getObjectPronoun()
    * @generated
    */
-  int OBJECT_PRONOUN = 14;
+  int OBJECT_PRONOUN = 13;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' reference.
@@ -584,7 +556,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getWordList()
    * @generated
    */
-  int WORD_LIST = 15;
+  int WORD_LIST = 14;
 
   /**
    * The feature id for the '<em><b>Words</b></em>' containment reference list.
@@ -612,7 +584,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getAttributeList()
    * @generated
    */
-  int ATTRIBUTE_LIST = 16;
+  int ATTRIBUTE_LIST = 15;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -640,7 +612,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronouns()
    * @generated
    */
-  int PRONOUNS = 17;
+  int PRONOUNS = 16;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -668,7 +640,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
    * @generated
    */
-  int PRONOUN_IDENTIFIER = 18;
+  int PRONOUN_IDENTIFIER = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -899,16 +871,6 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EAttribute getAttribute_Name();
-
-  /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.JustNameAttribute <em>Just Name Attribute</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Just Name Attribute</em>'.
-   * @see tracerypp.traceryPlusPlus.JustNameAttribute
-   * @generated
-   */
-  EClass getJustNameAttribute();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.NameExistingListAttribute <em>Name Existing List Attribute</em>}'.
@@ -1310,16 +1272,6 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
-
-    /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl <em>Just Name Attribute</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.JustNameAttributeImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getJustNameAttribute()
-     * @generated
-     */
-    EClass JUST_NAME_ATTRIBUTE = eINSTANCE.getJustNameAttribute();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.NameExistingListAttributeImpl <em>Name Existing List Attribute</em>}' class.

@@ -15,7 +15,6 @@ import tracerypp.traceryPlusPlus.ObjectDeclaration
 import java.util.List
 import tracerypp.traceryPlusPlus.Statement
 import tracerypp.traceryPlusPlus.Attribute
-import tracerypp.traceryPlusPlus.JustNameAttribute
 import tracerypp.traceryPlusPlus.NameExistingListAttribute
 import tracerypp.traceryPlusPlus.NameValueAttribute
 import tracerypp.traceryPlusPlus.Pronouns
@@ -69,7 +68,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	dispatch def generateJsonStoryEntry(ObjectUse object) {
 		val objectName = object.object.name
 		if(object instanceof ObjectAttribute) {
-			val attribute = object.attribute.name
+			val attribute = getAttributeName(object.attribute)
 			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : object.modifiers »« mod »« ENDFOR »#'''
 		}
 		else if(object instanceof ObjectPronoun) {
@@ -112,12 +111,12 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
     		val variableName = attribute.name
     		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value.value»]'''
     	}
-    	else if(attribute instanceof JustNameAttribute) {
-    		// Example: hero has attributes - occupation
-    		// This will give ---> [heroOccupation:#occupation#]
-    		val variableName = attribute.name
-    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«variableName»#]'''
-    	}
+//    	else if(attribute instanceof JustNameAttribute) {
+//    		// Example: hero has attributes - occupation
+//    		// This will give ---> [heroOccupation:#occupation#]
+//    		val variableName = attribute.name.name
+//    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«variableName»#]'''
+//    	}
     	else if(attribute instanceof NameExistingListAttribute) {
     		// Example: hero has attributes - name = princeNames
     		// This will give ---> [heroName:#princeNames#]
@@ -133,6 +132,18 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	
 	// The default text for Declaration
 	dispatch def generateJsonDeclaration(Variable listDeclaration) ''''''
+	
+	def getAttributeName(Attribute attribute) {
+    	if(attribute instanceof NameExistingListAttribute) {
+    		return attribute.name
+    	}
+    	else if(attribute instanceof NameValueAttribute) {
+    		return attribute.name
+    	}
+//    	else if (attribute instanceof JustNameAttribute) {
+//    		return attribute.pointer.name
+//    	}
+	}
 	
 	// Method to match the pronouns
 	def matchPronouns(Pronouns pronouns, String name) {

@@ -614,66 +614,22 @@ ruleAttribute returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getAttributeAccess().getJustNameAttributeParserRuleCall_0());
+			newCompositeNode(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_0());
 		}
-		this_JustNameAttribute_0=ruleJustNameAttribute
+		this_NameExistingListAttribute_0=ruleNameExistingListAttribute
 		{
-			$current = $this_JustNameAttribute_0.current;
+			$current = $this_NameExistingListAttribute_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getAttributeAccess().getNameExistingListAttributeParserRuleCall_1());
+			newCompositeNode(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_1());
 		}
-		this_NameExistingListAttribute_1=ruleNameExistingListAttribute
+		this_NameValueAttribute_1=ruleNameValueAttribute
 		{
-			$current = $this_NameExistingListAttribute_1.current;
+			$current = $this_NameValueAttribute_1.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getAttributeAccess().getNameValueAttributeParserRuleCall_2());
-		}
-		this_NameValueAttribute_2=ruleNameValueAttribute
-		{
-			$current = $this_NameValueAttribute_2.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleJustNameAttribute
-entryRuleJustNameAttribute returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getJustNameAttributeRule()); }
-	iv_ruleJustNameAttribute=ruleJustNameAttribute
-	{ $current=$iv_ruleJustNameAttribute.current; }
-	EOF;
-
-// Rule JustNameAttribute
-ruleJustNameAttribute returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getJustNameAttributeAccess().getNameIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getJustNameAttributeRule());
-				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
-		)
 	)
 ;
 

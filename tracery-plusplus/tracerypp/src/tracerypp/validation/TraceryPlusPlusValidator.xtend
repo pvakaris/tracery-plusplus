@@ -6,7 +6,6 @@ package tracerypp.validation
 import org.eclipse.xtext.validation.Check
 import tracerypp.traceryPlusPlus.ObjectDeclaration
 import tracerypp.traceryPlusPlus.Attribute
-import tracerypp.traceryPlusPlus.JustNameAttribute
 import tracerypp.traceryPlusPlus.NameExistingListAttribute
 import tracerypp.traceryPlusPlus.NameValueAttribute
 import tracerypp.traceryPlusPlus.ListDeclaration
@@ -63,15 +62,15 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	}
 	
 	def getAttributeName(Attribute attribute) {
-		if (attribute instanceof JustNameAttribute) {
-    		return attribute.name
-    	}
-    	else if(attribute instanceof NameExistingListAttribute) {
+    	if(attribute instanceof NameExistingListAttribute) {
     		return attribute.name
     	}
     	else if(attribute instanceof NameValueAttribute) {
     		return attribute.name
     	}
+//    	else if(attribute instanceof JustNameAttribute) {
+//    		return attribute.name.name
+//    	}
 	}
 	
 }
