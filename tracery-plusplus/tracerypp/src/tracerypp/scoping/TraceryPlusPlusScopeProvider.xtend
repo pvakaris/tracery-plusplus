@@ -7,6 +7,8 @@ import org.eclipse.xtext.scoping.IScope
 import org.eclipse.emf.ecore.EReference
 import static org.eclipse.xtext.scoping.Scopes.*
 import tracerypp.traceryPlusPlus.ObjectAttribute
+import tracerypp.traceryPlusPlus.ObjectDeclaration
+import tracerypp.traceryPlusPlus.ListDeclaration
 
 /**
  * This class contains custom scoping description.
@@ -22,6 +24,22 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
         val objectDeclaration = context.object
         if (objectDeclaration !== null) {        	
         	scopeFor(objectDeclaration.attributes.attributes)
+        }
+        else {
+            IScope.NULLSCOPE
+        }
+    }
+    
+	def IScope scope_ObjectDeclaration_attributes(ObjectDeclaration context, EReference ref) {
+        val objectDeclaration = context.name
+        if (objectDeclaration !== null) {
+        	val attributeNames = context.attributes.attributes.map[a | a.name.toString()]
+
+	        // Filter ListDeclaration objects whose name doesn't match any attribute names
+	        val listDeclarations = context.eResource.allContents.filter(ListDeclaration)
+	                                   .filter[ld | !(attributeNames.contains(ld.name.toString()))].toList
+	                                   
+	        scopeFor(listDeclarations)
         }
         else {
             IScope.NULLSCOPE

@@ -3,10 +3,17 @@
  */
 package tracerypp.scoping;
 
+import com.google.common.collect.Iterators;
+import java.util.List;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
+import tracerypp.traceryPlusPlus.Attribute;
+import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 
@@ -25,6 +32,34 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       IScope _xifexpression = null;
       if ((objectDeclaration != null)) {
         _xifexpression = Scopes.scopeFor(objectDeclaration.getAttributes().getAttributes());
+      } else {
+        _xifexpression = IScope.NULLSCOPE;
+      }
+      _xblockexpression = _xifexpression;
+    }
+    return _xblockexpression;
+  }
+
+  public IScope scope_ObjectDeclaration_attributes(final ObjectDeclaration context, final EReference ref) {
+    IScope _xblockexpression = null;
+    {
+      final String objectDeclaration = context.getName();
+      IScope _xifexpression = null;
+      if ((objectDeclaration != null)) {
+        IScope _xblockexpression_1 = null;
+        {
+          final Function1<Attribute, String> _function = (Attribute a) -> {
+            return a.getName().toString();
+          };
+          final List<String> attributeNames = ListExtensions.<Attribute, String>map(context.getAttributes().getAttributes(), _function);
+          final Function1<ListDeclaration, Boolean> _function_1 = (ListDeclaration ld) -> {
+            boolean _contains = attributeNames.contains(ld.getName().toString());
+            return Boolean.valueOf((!_contains));
+          };
+          final List<ListDeclaration> listDeclarations = IteratorExtensions.<ListDeclaration>toList(IteratorExtensions.<ListDeclaration>filter(Iterators.<ListDeclaration>filter(context.eResource().getAllContents(), ListDeclaration.class), _function_1));
+          _xblockexpression_1 = Scopes.scopeFor(listDeclarations);
+        }
+        _xifexpression = _xblockexpression_1;
       } else {
         _xifexpression = IScope.NULLSCOPE;
       }
