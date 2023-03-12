@@ -205,17 +205,26 @@ ruleStory returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getStoryAccess().getTheKeyword_1());
 		}
-		otherlv_2='story:'
+		otherlv_2='story'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getStoryAccess().getStoryKeyword_2());
 		}
 		(
+			{
+				newCompositeNode(grammarAccess.getStoryAccess().getAssignmentOperatorParserRuleCall_3());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)?
+		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getStoryAccess().getStoryWordParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getStoryAccess().getStoryWordParserRuleCall_4_0_0());
 					}
-					lv_story_3_1=ruleWord
+					lv_story_4_1=ruleWord
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStoryRule());
@@ -223,15 +232,15 @@ ruleStory returns [EObject current=null]
 						add(
 							$current,
 							"story",
-							lv_story_3_1,
+							lv_story_4_1,
 							"tracerypp.TraceryPlusPlus.Word");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getStoryAccess().getStoryStoryVariableParserRuleCall_3_0_1());
+						newCompositeNode(grammarAccess.getStoryAccess().getStoryStoryVariableParserRuleCall_4_0_1());
 					}
-					lv_story_3_2=ruleStoryVariable
+					lv_story_4_2=ruleStoryVariable
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStoryRule());
@@ -239,15 +248,15 @@ ruleStory returns [EObject current=null]
 						add(
 							$current,
 							"story",
-							lv_story_3_2,
+							lv_story_4_2,
 							"tracerypp.TraceryPlusPlus.StoryVariable");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getStoryAccess().getStoryObjectAttributeParserRuleCall_3_0_2());
+						newCompositeNode(grammarAccess.getStoryAccess().getStoryObjectAttributeParserRuleCall_4_0_2());
 					}
-					lv_story_3_3=ruleObjectAttribute
+					lv_story_4_3=ruleObjectAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getStoryRule());
@@ -255,7 +264,7 @@ ruleStory returns [EObject current=null]
 						add(
 							$current,
 							"story",
-							lv_story_3_3,
+							lv_story_4_3,
 							"tracerypp.TraceryPlusPlus.ObjectAttribute");
 						afterParserOrEnumRuleCall();
 					}
@@ -326,20 +335,33 @@ ruleListDeclaration returns [EObject current=null]
 					newLeafNode(otherlv_5, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1());
 				}
 			)
+			    |
+			(
+				otherlv_6='has'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getListDeclarationAccess().getHasKeyword_1_2_0());
+				}
+				otherlv_7='values'
+				{
+					newLeafNode(otherlv_7, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_2_1());
+				}
+			)
 		)
-		{
-			newCompositeNode(grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2());
-		}
-		ruleAssignmentOperator
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			{
+				newCompositeNode(grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)?
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getListDeclarationAccess().getListWordListParserRuleCall_3_0());
 				}
-				lv_list_7_0=ruleWordList
+				lv_list_9_0=ruleWordList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getListDeclarationRule());
@@ -347,7 +369,7 @@ ruleListDeclaration returns [EObject current=null]
 					set(
 						$current,
 						"list",
-						lv_list_7_0,
+						lv_list_9_0,
 						"tracerypp.TraceryPlusPlus.WordList");
 					afterParserOrEnumRuleCall();
 				}
@@ -446,17 +468,21 @@ ruleObjectDeclaration returns [EObject current=null]
 				newLeafNode(otherlv_8, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1());
 			}
 		)
-		otherlv_9='attributes'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
-		}
-		{
-			newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7());
-		}
-		ruleAssignmentOperator
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			otherlv_9='attributes'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
+			}
+		)?
+		(
+			{
+				newCompositeNode(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)?
 		(
 			(
 				{
@@ -746,19 +772,26 @@ ruleNameExistingListAttribute returns [EObject current=null]
 				}
 			)
 		)
-		{
-			newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getAssignmentOperatorParserRuleCall_1());
-		}
-		ruleAssignmentOperator
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			{
+				newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getAssignmentOperatorParserRuleCall_1_0());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			otherlv_2='from'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getNameExistingListAttributeAccess().getFromKeyword_1_1());
+			}
+		)?
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getNameExistingListAttributeAccess().getValueExistingVariableParserRuleCall_2_0());
 				}
-				lv_value_2_0=ruleExistingVariable
+				lv_value_3_0=ruleExistingVariable
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNameExistingListAttributeRule());
@@ -766,7 +799,7 @@ ruleNameExistingListAttribute returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_2_0,
+						lv_value_3_0,
 						"tracerypp.TraceryPlusPlus.ExistingVariable");
 					afterParserOrEnumRuleCall();
 				}
@@ -810,13 +843,15 @@ ruleNameValueAttribute returns [EObject current=null]
 				}
 			)
 		)
-		{
-			newCompositeNode(grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1());
-		}
-		ruleAssignmentOperator
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			{
+				newCompositeNode(grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1());
+			}
+			ruleAssignmentOperator
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)?
 		(
 			(
 				{
@@ -903,10 +938,12 @@ ruleObjectAttribute returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_4='.'
-				{
-					newLeafNode(otherlv_4, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_0_1_1());
-				}
+				(
+					otherlv_4='.'
+					{
+						newLeafNode(otherlv_4, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_0_1_1());
+					}
+				)?
 				(
 					(
 						{
@@ -1442,6 +1479,12 @@ ruleAssignmentOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatype
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getHyphenMinusKeyword_2());
 		}
+		    |
+		kw='-->'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getHyphenMinusHyphenMinusGreaterThanSignKeyword_3());
+		}
 	)
 ;
 
@@ -1472,6 +1515,12 @@ ruleSeparatorOr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getSeparatorOrAccess().getOrKeyword_1());
 		}
+		    |
+		kw='||'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorOrAccess().getVerticalLineVerticalLineKeyword_2());
+		}
 	)
 ;
 
@@ -1501,6 +1550,12 @@ ruleSeparatorAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 		{
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getSeparatorAndAccess().getAndKeyword_1());
+		}
+		    |
+		kw='&&'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getSeparatorAndAccess().getAmpersandAmpersandKeyword_2());
 		}
 	)
 ;

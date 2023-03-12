@@ -24,7 +24,7 @@ Declaration:
 	There must be only one story in the model for now.
  */
 Story:
-	{Story} "The" "story:"
+	{Story} "The" "story" AssignmentOperator?
 	story += ( Word | StoryVariable | ObjectAttribute )*
 ;
 
@@ -35,7 +35,7 @@ Story:
 		fruit can be: banana or apple or pear
  */
 ListDeclaration:
-	name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
+	name = Variable  ("can" "have" "values" | "can" "be" | ("has" | "have") "values") AssignmentOperator? list = WordList
 ;
 
 /*
@@ -47,7 +47,7 @@ ListDeclaration:
  */
 ObjectDeclaration:
 	"There" ("is" | "are") ("a" | "an")? name = ID
-	pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+	pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 ;
 
 /*
@@ -82,16 +82,16 @@ JustNameAttribute:
 ;
 
 NameExistingListAttribute:
-	name = Variable AssignmentOperator value = ExistingVariable
+	name = Variable (AssignmentOperator | "from")? value = ExistingVariable
 ;
 
 NameValueAttribute:
-	name = Variable AssignmentOperator value = Word
+	name = Variable AssignmentOperator? value = Word
 ;
 
 ObjectAttribute:
 	(object = [ObjectDeclaration] "." attribute = [Variable] |
-	object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+	object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
 	modifiers += Modifier*
 ;
 
@@ -103,6 +103,10 @@ AttributeList:
 	attributes += Attribute ( SeparatorAnd attributes += Attribute)*
 ;
 
+/*
+	Modifiers
+ */
+ 
 Pronouns:
 	value = "He" | value = "She" | value = "It" | value = "They"
 ;
@@ -110,10 +114,6 @@ Pronouns:
 PronounIdentifier:
 	name = ("they" | "them" | "their" | "theirs")
 ;
-
-/*
-	Modifiers
- */
 
 Modifier:
 	CapitalizationModifier |
@@ -148,13 +148,13 @@ PastTenseModifier:
  */
  
 AssignmentOperator:
-	"=" | ":" | "-"
+	"=" | ":" | "-" | "-->"
 ;
 
 SeparatorOr:
-	"," | "or"
+	"," | "or" | "||"
 ;
 
 SeparatorAnd:
-	',' | "and"
+	',' | "and" | "&&"
 ;

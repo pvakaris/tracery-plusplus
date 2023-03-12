@@ -22,18 +22,32 @@ import tracerypp.services.TraceryPlusPlusGrammarAccess;
 public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TraceryPlusPlusGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__;
+	protected AbstractElementAlias match_ListDeclaration_AssignmentOperatorParserRuleCall_2_q;
+	protected AbstractElementAlias match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1___or___HasKeyword_1_2_0_ValuesKeyword_1_2_1__;
+	protected AbstractElementAlias match_NameExistingListAttribute___AssignmentOperatorParserRuleCall_1_0_or_FromKeyword_1_1__q;
+	protected AbstractElementAlias match_NameValueAttribute_AssignmentOperatorParserRuleCall_1_q;
+	protected AbstractElementAlias match_ObjectAttribute_FullStopKeyword_0_1_1_q;
 	protected AbstractElementAlias match_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0;
+	protected AbstractElementAlias match_ObjectDeclaration_AssignmentOperatorParserRuleCall_7_q;
+	protected AbstractElementAlias match_ObjectDeclaration_AttributesKeyword_6_q;
 	protected AbstractElementAlias match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1;
 	protected AbstractElementAlias match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q;
+	protected AbstractElementAlias match_Story_AssignmentOperatorParserRuleCall_3_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TraceryPlusPlusGrammarAccess) access;
-		match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1())));
+		match_ListDeclaration_AssignmentOperatorParserRuleCall_2_q = new TokenAlias(false, true, grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2());
+		match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1___or___HasKeyword_1_2_0_ValuesKeyword_1_2_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getHasKeyword_1_2_0()), new TokenAlias(false, false, grammarAccess.getListDeclarationAccess().getValuesKeyword_1_2_1())));
+		match_NameExistingListAttribute___AssignmentOperatorParserRuleCall_1_0_or_FromKeyword_1_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getNameExistingListAttributeAccess().getAssignmentOperatorParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getNameExistingListAttributeAccess().getFromKeyword_1_1()));
+		match_NameValueAttribute_AssignmentOperatorParserRuleCall_1_q = new TokenAlias(false, true, grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1());
+		match_ObjectAttribute_FullStopKeyword_0_1_1_q = new TokenAlias(false, true, grammarAccess.getObjectAttributeAccess().getFullStopKeyword_0_1_1());
 		match_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAreKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getIsKeyword_1_0()));
+		match_ObjectDeclaration_AssignmentOperatorParserRuleCall_7_q = new TokenAlias(false, true, grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7());
+		match_ObjectDeclaration_AttributesKeyword_6_q = new TokenAlias(false, true, grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6());
 		match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1()));
 		match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAnKeyword_2_1()));
+		match_Story_AssignmentOperatorParserRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getStoryAccess().getAssignmentOperatorParserRuleCall_3());
 	}
 	
 	@Override
@@ -49,7 +63,7 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	
 	/**
 	 * AssignmentOperator:
-	 * 	"=" | ":" | "-"
+	 * 	"=" | ":" | "-" | "-->"
 	 * ;
 	 */
 	protected String getAssignmentOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -60,7 +74,7 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	
 	/**
 	 * SeparatorAnd:
-	 * 	',' | "and"
+	 * 	',' | "and" | "&&"
 	 * ;
 	 */
 	protected String getSeparatorAndToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -71,7 +85,7 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	
 	/**
 	 * SeparatorOr:
-	 * 	"," | "or"
+	 * 	"," | "or" | "||"
 	 * ;
 	 */
 	protected String getSeparatorOrToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -86,14 +100,28 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__.equals(syntax))
-				emit_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_ListDeclaration_AssignmentOperatorParserRuleCall_2_q.equals(syntax))
+				emit_ListDeclaration_AssignmentOperatorParserRuleCall_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1___or___HasKeyword_1_2_0_ValuesKeyword_1_2_1__.equals(syntax))
+				emit_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1___or___HasKeyword_1_2_0_ValuesKeyword_1_2_1__(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NameExistingListAttribute___AssignmentOperatorParserRuleCall_1_0_or_FromKeyword_1_1__q.equals(syntax))
+				emit_NameExistingListAttribute___AssignmentOperatorParserRuleCall_1_0_or_FromKeyword_1_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_NameValueAttribute_AssignmentOperatorParserRuleCall_1_q.equals(syntax))
+				emit_NameValueAttribute_AssignmentOperatorParserRuleCall_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectAttribute_FullStopKeyword_0_1_1_q.equals(syntax))
+				emit_ObjectAttribute_FullStopKeyword_0_1_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0.equals(syntax))
 				emit_ObjectDeclaration_AreKeyword_1_1_or_IsKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectDeclaration_AssignmentOperatorParserRuleCall_7_q.equals(syntax))
+				emit_ObjectDeclaration_AssignmentOperatorParserRuleCall_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ObjectDeclaration_AttributesKeyword_6_q.equals(syntax))
+				emit_ObjectDeclaration_AttributesKeyword_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1.equals(syntax))
 				emit_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q.equals(syntax))
 				emit_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Story_AssignmentOperatorParserRuleCall_3_q.equals(syntax))
+				emit_Story_AssignmentOperatorParserRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -101,14 +129,70 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('can' 'have' 'values') | ('can' 'be')
+	 *     AssignmentOperator?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=Variable (ambiguity) AssignmentOperator list=WordList
+	 *     name=Variable (('can' 'have' 'values') | ('can' 'be') | ('has' 'values')) (ambiguity) list=WordList
 	 
 	 * </pre>
 	 */
-	protected void emit_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_ListDeclaration_AssignmentOperatorParserRuleCall_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('can' 'have' 'values') | ('can' 'be') | ('has' 'values')
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Variable (ambiguity) AssignmentOperator? list=WordList
+	 
+	 * </pre>
+	 */
+	protected void emit_ListDeclaration___CanKeyword_1_0_0_HaveKeyword_1_0_1_ValuesKeyword_1_0_2___or___CanKeyword_1_1_0_BeKeyword_1_1_1___or___HasKeyword_1_2_0_ValuesKeyword_1_2_1__(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     (AssignmentOperator | 'from')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Variable (ambiguity) value=ExistingVariable
+	 
+	 * </pre>
+	 */
+	protected void emit_NameExistingListAttribute___AssignmentOperatorParserRuleCall_1_0_or_FromKeyword_1_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     AssignmentOperator?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=Variable (ambiguity) value=Word
+	 
+	 * </pre>
+	 */
+	protected void emit_NameValueAttribute_AssignmentOperatorParserRuleCall_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '.'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     object=[ObjectDeclaration|ID] (ambiguity) pronoun=PronounIdentifier
+	 
+	 * </pre>
+	 */
+	protected void emit_ObjectAttribute_FullStopKeyword_0_1_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -129,10 +213,38 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     AssignmentOperator?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     pronouns=Pronouns ('has' | 'have') 'attributes'? (ambiguity) attributes=AttributeList
+	 
+	 * </pre>
+	 */
+	protected void emit_ObjectDeclaration_AssignmentOperatorParserRuleCall_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'attributes'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     pronouns=Pronouns ('has' | 'have') (ambiguity) AssignmentOperator? attributes=AttributeList
+	 
+	 * </pre>
+	 */
+	protected void emit_ObjectDeclaration_AttributesKeyword_6_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     'has' | 'have'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     pronouns=Pronouns (ambiguity) 'attributes' AssignmentOperator attributes=AttributeList
+	 *     pronouns=Pronouns (ambiguity) 'attributes'? AssignmentOperator? attributes=AttributeList
 	 
 	 * </pre>
 	 */
@@ -151,6 +263,23 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	 * </pre>
 	 */
 	protected void emit_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     AssignmentOperator?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'The' 'story' (ambiguity) (rule start)
+	 *     (rule start) 'The' 'story' (ambiguity) story+=ObjectAttribute
+	 *     (rule start) 'The' 'story' (ambiguity) story+=StoryVariable
+	 *     (rule start) 'The' 'story' (ambiguity) story+=Word
+	 
+	 * </pre>
+	 */
+	protected void emit_Story_AssignmentOperatorParserRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

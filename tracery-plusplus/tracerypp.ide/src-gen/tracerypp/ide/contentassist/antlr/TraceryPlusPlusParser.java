@@ -32,12 +32,13 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TraceryPlusPlusGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getDeclarationAccess().getAlternatives(), "rule__Declaration__Alternatives");
-			builder.put(grammarAccess.getStoryAccess().getStoryAlternatives_3_0(), "rule__Story__StoryAlternatives_3_0");
+			builder.put(grammarAccess.getStoryAccess().getStoryAlternatives_4_0(), "rule__Story__StoryAlternatives_4_0");
 			builder.put(grammarAccess.getListDeclarationAccess().getAlternatives_1(), "rule__ListDeclaration__Alternatives_1");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getAlternatives_1(), "rule__ObjectDeclaration__Alternatives_1");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getAlternatives_2(), "rule__ObjectDeclaration__Alternatives_2");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getAlternatives_5(), "rule__ObjectDeclaration__Alternatives_5");
 			builder.put(grammarAccess.getAttributeAccess().getAlternatives(), "rule__Attribute__Alternatives");
+			builder.put(grammarAccess.getNameExistingListAttributeAccess().getAlternatives_1(), "rule__NameExistingListAttribute__Alternatives_1");
 			builder.put(grammarAccess.getObjectAttributeAccess().getAlternatives_0(), "rule__ObjectAttribute__Alternatives_0");
 			builder.put(grammarAccess.getPronounsAccess().getAlternatives(), "rule__Pronouns__Alternatives");
 			builder.put(grammarAccess.getPronounIdentifierAccess().getNameAlternatives_0(), "rule__PronounIdentifier__NameAlternatives_0");
@@ -50,6 +51,7 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getListDeclarationAccess().getGroup(), "rule__ListDeclaration__Group__0");
 			builder.put(grammarAccess.getListDeclarationAccess().getGroup_1_0(), "rule__ListDeclaration__Group_1_0__0");
 			builder.put(grammarAccess.getListDeclarationAccess().getGroup_1_1(), "rule__ListDeclaration__Group_1_1__0");
+			builder.put(grammarAccess.getListDeclarationAccess().getGroup_1_2(), "rule__ListDeclaration__Group_1_2__0");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getGroup(), "rule__ObjectDeclaration__Group__0");
 			builder.put(grammarAccess.getStoryVariableAccess().getGroup(), "rule__StoryVariable__Group__0");
 			builder.put(grammarAccess.getNameExistingListAttributeAccess().getGroup(), "rule__NameExistingListAttribute__Group__0");
@@ -63,7 +65,7 @@ public class TraceryPlusPlusParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAttributeListAccess().getGroup_1(), "rule__AttributeList__Group_1__0");
 			builder.put(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsAssignment_0(), "rule__TraceryPlusPlusProgram__StatementsAssignment_0");
 			builder.put(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1(), "rule__TraceryPlusPlusProgram__StoryAssignment_1");
-			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_3(), "rule__Story__StoryAssignment_3");
+			builder.put(grammarAccess.getStoryAccess().getStoryAssignment_4(), "rule__Story__StoryAssignment_4");
 			builder.put(grammarAccess.getListDeclarationAccess().getNameAssignment_0(), "rule__ListDeclaration__NameAssignment_0");
 			builder.put(grammarAccess.getListDeclarationAccess().getListAssignment_3(), "rule__ListDeclaration__ListAssignment_3");
 			builder.put(grammarAccess.getObjectDeclarationAccess().getNameAssignment_3(), "rule__ObjectDeclaration__NameAssignment_3");

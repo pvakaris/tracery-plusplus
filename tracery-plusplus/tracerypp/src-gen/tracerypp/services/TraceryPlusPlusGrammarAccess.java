@@ -96,23 +96,24 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Action cStoryAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTheKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cStoryKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStoryAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cStoryAlternatives_3_0 = (Alternatives)cStoryAssignment_3.eContents().get(0);
-		private final RuleCall cStoryWordParserRuleCall_3_0_0 = (RuleCall)cStoryAlternatives_3_0.eContents().get(0);
-		private final RuleCall cStoryStoryVariableParserRuleCall_3_0_1 = (RuleCall)cStoryAlternatives_3_0.eContents().get(1);
-		private final RuleCall cStoryObjectAttributeParserRuleCall_3_0_2 = (RuleCall)cStoryAlternatives_3_0.eContents().get(2);
+		private final RuleCall cAssignmentOperatorParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Assignment cStoryAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Alternatives cStoryAlternatives_4_0 = (Alternatives)cStoryAssignment_4.eContents().get(0);
+		private final RuleCall cStoryWordParserRuleCall_4_0_0 = (RuleCall)cStoryAlternatives_4_0.eContents().get(0);
+		private final RuleCall cStoryStoryVariableParserRuleCall_4_0_1 = (RuleCall)cStoryAlternatives_4_0.eContents().get(1);
+		private final RuleCall cStoryObjectAttributeParserRuleCall_4_0_2 = (RuleCall)cStoryAlternatives_4_0.eContents().get(2);
 		
 		///*
 		//    Used to define what the story should look like.
 		//    There must be only one story in the model for now.
 		// */
 		//Story:
-		//    {Story} "The" "story:"
+		//    {Story} "The" "story" AssignmentOperator?
 		//    story += ( Word | StoryVariable | ObjectAttribute )*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Story} "The" "story:"
+		//{Story} "The" "story" AssignmentOperator?
 		//story += ( Word | StoryVariable | ObjectAttribute )*
 		public Group getGroup() { return cGroup; }
 		
@@ -122,23 +123,26 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"The"
 		public Keyword getTheKeyword_1() { return cTheKeyword_1; }
 		
-		//"story:"
+		//"story"
 		public Keyword getStoryKeyword_2() { return cStoryKeyword_2; }
 		
+		//AssignmentOperator?
+		public RuleCall getAssignmentOperatorParserRuleCall_3() { return cAssignmentOperatorParserRuleCall_3; }
+		
 		//story += ( Word | StoryVariable | ObjectAttribute )*
-		public Assignment getStoryAssignment_3() { return cStoryAssignment_3; }
+		public Assignment getStoryAssignment_4() { return cStoryAssignment_4; }
 		
 		//( Word | StoryVariable | ObjectAttribute )
-		public Alternatives getStoryAlternatives_3_0() { return cStoryAlternatives_3_0; }
+		public Alternatives getStoryAlternatives_4_0() { return cStoryAlternatives_4_0; }
 		
 		//Word
-		public RuleCall getStoryWordParserRuleCall_3_0_0() { return cStoryWordParserRuleCall_3_0_0; }
+		public RuleCall getStoryWordParserRuleCall_4_0_0() { return cStoryWordParserRuleCall_4_0_0; }
 		
 		//StoryVariable
-		public RuleCall getStoryStoryVariableParserRuleCall_3_0_1() { return cStoryStoryVariableParserRuleCall_3_0_1; }
+		public RuleCall getStoryStoryVariableParserRuleCall_4_0_1() { return cStoryStoryVariableParserRuleCall_4_0_1; }
 		
 		//ObjectAttribute
-		public RuleCall getStoryObjectAttributeParserRuleCall_3_0_2() { return cStoryObjectAttributeParserRuleCall_3_0_2; }
+		public RuleCall getStoryObjectAttributeParserRuleCall_4_0_2() { return cStoryObjectAttributeParserRuleCall_4_0_2; }
 	}
 	public class ListDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ListDeclaration");
@@ -153,6 +157,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
 		private final Keyword cCanKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
 		private final Keyword cBeKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Keyword cHasKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cValuesKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		private final RuleCall cAssignmentOperatorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cListAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cListWordListParserRuleCall_3_0 = (RuleCall)cListAssignment_3.eContents().get(0);
@@ -164,11 +171,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//        fruit can be: banana or apple or pear
 		// */
 		//ListDeclaration:
-		//    name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
+		//    name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
+		//name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
 		public Group getGroup() { return cGroup; }
 		
 		//name = Variable
@@ -177,7 +184,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//Variable
 		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
 		
-		//("can" "have" "values" | "can" "be")
+		//("can" "have" "values" | "can" "be" | "has" "values")
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//"can" "have" "values"
@@ -201,7 +208,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"be"
 		public Keyword getBeKeyword_1_1_1() { return cBeKeyword_1_1_1; }
 		
-		//AssignmentOperator
+		//"has" "values"
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		//"has"
+		public Keyword getHasKeyword_1_2_0() { return cHasKeyword_1_2_0; }
+		
+		//"values"
+		public Keyword getValuesKeyword_1_2_1() { return cValuesKeyword_1_2_1; }
+		
+		//AssignmentOperator?
 		public RuleCall getAssignmentOperatorParserRuleCall_2() { return cAssignmentOperatorParserRuleCall_2; }
 		
 		//list = WordList
@@ -241,12 +257,12 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		// */
 		//ObjectDeclaration:
 		//    "There" ("is" | "are") ("a" | "an")? name = ID
-		//    pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+		//    pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"There" ("is" | "are") ("a" | "an")? name = ID
-		//pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+		//pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 		public Group getGroup() { return cGroup; }
 		
 		//"There"
@@ -291,10 +307,10 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"have"
 		public Keyword getHaveKeyword_5_1() { return cHaveKeyword_5_1; }
 		
-		//"attributes"
+		//"attributes"?
 		public Keyword getAttributesKeyword_6() { return cAttributesKeyword_6; }
 		
-		//AssignmentOperator
+		//AssignmentOperator?
 		public RuleCall getAssignmentOperatorParserRuleCall_7() { return cAssignmentOperatorParserRuleCall_7; }
 		
 		//attributes = AttributeList
@@ -441,16 +457,18 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameVariableParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final RuleCall cAssignmentOperatorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cAssignmentOperatorParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final Keyword cFromKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueExistingVariableParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//NameExistingListAttribute:
-		//    name = Variable AssignmentOperator value = ExistingVariable
+		//    name = Variable (AssignmentOperator | "from")? value = ExistingVariable
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable AssignmentOperator value = ExistingVariable
+		//name = Variable (AssignmentOperator | "from")? value = ExistingVariable
 		public Group getGroup() { return cGroup; }
 		
 		//name = Variable
@@ -459,8 +477,14 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//Variable
 		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
 		
+		//(AssignmentOperator | "from")?
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//AssignmentOperator
-		public RuleCall getAssignmentOperatorParserRuleCall_1() { return cAssignmentOperatorParserRuleCall_1; }
+		public RuleCall getAssignmentOperatorParserRuleCall_1_0() { return cAssignmentOperatorParserRuleCall_1_0; }
+		
+		//"from"
+		public Keyword getFromKeyword_1_1() { return cFromKeyword_1_1; }
 		
 		//value = ExistingVariable
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
@@ -478,11 +502,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cValueWordParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//NameValueAttribute:
-		//    name = Variable AssignmentOperator value = Word
+		//    name = Variable AssignmentOperator? value = Word
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = Variable AssignmentOperator value = Word
+		//name = Variable AssignmentOperator? value = Word
 		public Group getGroup() { return cGroup; }
 		
 		//name = Variable
@@ -491,7 +515,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//Variable
 		public RuleCall getNameVariableParserRuleCall_0_0() { return cNameVariableParserRuleCall_0_0; }
 		
-		//AssignmentOperator
+		//AssignmentOperator?
 		public RuleCall getAssignmentOperatorParserRuleCall_1() { return cAssignmentOperatorParserRuleCall_1; }
 		
 		//value = Word
@@ -524,18 +548,18 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//ObjectAttribute:
 		//    (object = [ObjectDeclaration] "." attribute = [Variable] |
-		//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+		//    object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
 		//    modifiers += Modifier*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//(object = [ObjectDeclaration] "." attribute = [Variable] |
-		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
 		//modifiers += Modifier*
 		public Group getGroup() { return cGroup; }
 		
 		//(object = [ObjectDeclaration] "." attribute = [Variable] |
-		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
 		//object = [ObjectDeclaration] "." attribute = [Variable]
@@ -562,7 +586,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getAttributeVariableIDTerminalRuleCall_0_0_2_0_1() { return cAttributeVariableIDTerminalRuleCall_0_0_2_0_1; }
 		
-		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+		//object = [ObjectDeclaration] "."? pronoun = PronounIdentifier
 		public Group getGroup_0_1() { return cGroup_0_1; }
 		
 		//object = [ObjectDeclaration]
@@ -574,7 +598,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_1_0_0_1; }
 		
-		//"."
+		//"."?
 		public Keyword getFullStopKeyword_0_1_1() { return cFullStopKeyword_0_1_1; }
 		
 		//pronoun = PronounIdentifier
@@ -673,6 +697,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Assignment cValueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
 		private final Keyword cValueTheyKeyword_3_0 = (Keyword)cValueAssignment_3.eContents().get(0);
 		
+		///*
+		//    Modifiers
+		// */
 		//Pronouns:
 		//    value = "He" | value = "She" | value = "It" | value = "They"
 		//;
@@ -746,9 +773,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cArticleModifierParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cPastTenseModifierParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
-		///*
-		//    Modifiers
-		// */
 		//Modifier:
 		//    CapitalizationModifier |
 		//    FullCapitalizationModifier |
@@ -846,16 +870,17 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Keyword cEqualsSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cHyphenMinusHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
 		///*
 		//    Helpers
 		// */
 		//AssignmentOperator:
-		//    "=" | ":" | "-"
+		//    "=" | ":" | "-" | "-->"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"=" | ":" | "-"
+		//"=" | ":" | "-" | "-->"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//"="
@@ -866,19 +891,23 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//"-"
 		public Keyword getHyphenMinusKeyword_2() { return cHyphenMinusKeyword_2; }
+		
+		//"-->"
+		public Keyword getHyphenMinusHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusHyphenMinusGreaterThanSignKeyword_3; }
 	}
 	public class SeparatorOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SeparatorOr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cCommaKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cOrKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cVerticalLineVerticalLineKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//SeparatorOr:
-		//    "," | "or"
+		//    "," | "or" | "||"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"," | "or"
+		//"," | "or" | "||"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//","
@@ -886,19 +915,23 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//"or"
 		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
+		
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_2() { return cVerticalLineVerticalLineKeyword_2; }
 	}
 	public class SeparatorAndElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SeparatorAnd");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cCommaKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cAndKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAmpersandAmpersandKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//SeparatorAnd:
-		//    ',' | "and"
+		//    ',' | "and" | "&&"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//',' | "and"
+		//',' | "and" | "&&"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//','
@@ -906,6 +939,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//"and"
 		public Keyword getAndKeyword_1() { return cAndKeyword_1; }
+		
+		//"&&"
+		public Keyword getAmpersandAmpersandKeyword_2() { return cAmpersandAmpersandKeyword_2; }
 	}
 	
 	
@@ -1046,7 +1082,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//    There must be only one story in the model for now.
 	// */
 	//Story:
-	//    {Story} "The" "story:"
+	//    {Story} "The" "story" AssignmentOperator?
 	//    story += ( Word | StoryVariable | ObjectAttribute )*
 	//;
 	public StoryElements getStoryAccess() {
@@ -1064,7 +1100,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//        fruit can be: banana or apple or pear
 	// */
 	//ListDeclaration:
-	//    name = Variable  ("can" "have" "values" | "can" "be") AssignmentOperator list = WordList
+	//    name = Variable  ("can" "have" "values" | "can" "be" | "has" "values") AssignmentOperator? list = WordList
 	//;
 	public ListDeclarationElements getListDeclarationAccess() {
 		return pListDeclaration;
@@ -1083,7 +1119,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	// */
 	//ObjectDeclaration:
 	//    "There" ("is" | "are") ("a" | "an")? name = ID
-	//    pronouns = Pronouns ("has" | "have") "attributes" AssignmentOperator attributes = AttributeList
+	//    pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 	//;
 	public ObjectDeclarationElements getObjectDeclarationAccess() {
 		return pObjectDeclaration;
@@ -1166,7 +1202,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//NameExistingListAttribute:
-	//    name = Variable AssignmentOperator value = ExistingVariable
+	//    name = Variable (AssignmentOperator | "from")? value = ExistingVariable
 	//;
 	public NameExistingListAttributeElements getNameExistingListAttributeAccess() {
 		return pNameExistingListAttribute;
@@ -1177,7 +1213,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//NameValueAttribute:
-	//    name = Variable AssignmentOperator value = Word
+	//    name = Variable AssignmentOperator? value = Word
 	//;
 	public NameValueAttributeElements getNameValueAttributeAccess() {
 		return pNameValueAttribute;
@@ -1189,7 +1225,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//ObjectAttribute:
 	//    (object = [ObjectDeclaration] "." attribute = [Variable] |
-	//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier)
+	//    object = [ObjectDeclaration] "."? pronoun = PronounIdentifier)
 	//    modifiers += Modifier*
 	//;
 	public ObjectAttributeElements getObjectAttributeAccess() {
@@ -1222,6 +1258,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getAttributeListAccess().getRule();
 	}
 	
+	///*
+	//    Modifiers
+	// */
 	//Pronouns:
 	//    value = "He" | value = "She" | value = "It" | value = "They"
 	//;
@@ -1244,9 +1283,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getPronounIdentifierAccess().getRule();
 	}
 	
-	///*
-	//    Modifiers
-	// */
 	//Modifier:
 	//    CapitalizationModifier |
 	//    FullCapitalizationModifier |
@@ -1321,7 +1357,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//    Helpers
 	// */
 	//AssignmentOperator:
-	//    "=" | ":" | "-"
+	//    "=" | ":" | "-" | "-->"
 	//;
 	public AssignmentOperatorElements getAssignmentOperatorAccess() {
 		return pAssignmentOperator;
@@ -1332,7 +1368,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//SeparatorOr:
-	//    "," | "or"
+	//    "," | "or" | "||"
 	//;
 	public SeparatorOrElements getSeparatorOrAccess() {
 		return pSeparatorOr;
@@ -1343,7 +1379,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//SeparatorAnd:
-	//    ',' | "and"
+	//    ',' | "and" | "&&"
 	//;
 	public SeparatorAndElements getSeparatorAndAccess() {
 		return pSeparatorAnd;
