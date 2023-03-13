@@ -68,11 +68,14 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.TRACERY_PLUS_PLUS_PROGRAM: return createTraceryPlusPlusProgram();
       case TraceryPlusPlusPackage.STATEMENT: return createStatement();
       case TraceryPlusPlusPackage.VARIABLE: return createVariable();
+      case TraceryPlusPlusPackage.VARIABLE_USE: return createVariableUse();
       case TraceryPlusPlusPackage.STORY: return createStory();
       case TraceryPlusPlusPackage.LIST_DECLARATION: return createListDeclaration();
       case TraceryPlusPlusPackage.OBJECT_DECLARATION: return createObjectDeclaration();
+      case TraceryPlusPlusPackage.SUBSTORY_DECLARATION: return createSubstoryDeclaration();
       case TraceryPlusPlusPackage.WORD: return createWord();
       case TraceryPlusPlusPackage.LIST_USE: return createListUse();
+      case TraceryPlusPlusPackage.SUBSTORY_USE: return createSubstoryUse();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
       case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
@@ -130,6 +133,18 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
+  public VariableUse createVariableUse()
+  {
+    VariableUseImpl variableUse = new VariableUseImpl();
+    return variableUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Story createStory()
   {
     StoryImpl story = new StoryImpl();
@@ -166,6 +181,18 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
+  public SubstoryDeclaration createSubstoryDeclaration()
+  {
+    SubstoryDeclarationImpl substoryDeclaration = new SubstoryDeclarationImpl();
+    return substoryDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Word createWord()
   {
     WordImpl word = new WordImpl();
@@ -182,6 +209,18 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     ListUseImpl listUse = new ListUseImpl();
     return listUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SubstoryUse createSubstoryUse()
+  {
+    SubstoryUseImpl substoryUse = new SubstoryUseImpl();
+    return substoryUse;
   }
 
   /**

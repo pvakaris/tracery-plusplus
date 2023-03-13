@@ -255,8 +255,7 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) 'The' 'story' (ambiguity) (rule start)
-	 *     (rule start) 'The' 'story' (ambiguity) story+=ListUse
-	 *     (rule start) 'The' 'story' (ambiguity) story+=ObjectUse
+	 *     (rule start) 'The' 'story' (ambiguity) story+=VariableUse
 	 *     (rule start) 'The' 'story' (ambiguity) story+=Word
 	 
 	 * </pre>

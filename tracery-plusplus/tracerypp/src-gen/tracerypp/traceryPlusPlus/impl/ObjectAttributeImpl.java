@@ -3,12 +3,18 @@
  */
 package tracerypp.traceryPlusPlus.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
@@ -23,6 +29,7 @@ import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
  * </p>
  * <ul>
  *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link tracerypp.traceryPlusPlus.impl.ObjectAttributeImpl#getModifiers <em>Modifiers</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +45,16 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
    * @ordered
    */
   protected Attribute attribute;
+
+  /**
+   * The cached value of the '{@link #getModifiers() <em>Modifiers</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifiers()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> modifiers;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,6 +128,21 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
    * @generated
    */
   @Override
+  public EList<String> getModifiers()
+  {
+    if (modifiers == null)
+    {
+      modifiers = new EDataTypeEList<String>(String.class, this, TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS);
+    }
+    return modifiers;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -118,6 +150,8 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         if (resolve) return getAttribute();
         return basicGetAttribute();
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
+        return getModifiers();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -127,6 +161,7 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -134,6 +169,10 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
     {
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Attribute)newValue);
+        return;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
+        getModifiers().clear();
+        getModifiers().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -152,6 +191,9 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         setAttribute((Attribute)null);
         return;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
+        getModifiers().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -168,8 +210,27 @@ public class ObjectAttributeImpl extends ObjectUseImpl implements ObjectAttribut
     {
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__ATTRIBUTE:
         return attribute != null;
+      case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE__MODIFIERS:
+        return modifiers != null && !modifiers.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (modifiers: ");
+    result.append(modifiers);
+    result.append(')');
+    return result.toString();
   }
 
 } //ObjectAttributeImpl

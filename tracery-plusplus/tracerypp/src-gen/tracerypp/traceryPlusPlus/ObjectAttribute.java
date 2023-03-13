@@ -3,6 +3,7 @@
  */
 package tracerypp.traceryPlusPlus;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +15,7 @@ package tracerypp.traceryPlusPlus;
  * </p>
  * <ul>
  *   <li>{@link tracerypp.traceryPlusPlus.ObjectAttribute#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers <em>Modifiers</em>}</li>
  * </ul>
  *
  * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getObjectAttribute()
@@ -43,5 +45,17 @@ public interface ObjectAttribute extends ObjectUse
    * @generated
    */
   void setAttribute(Attribute value);
+
+  /**
+   * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modifiers</em>' attribute list.
+   * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getObjectAttribute_Modifiers()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getModifiers();
 
 } // ObjectAttribute

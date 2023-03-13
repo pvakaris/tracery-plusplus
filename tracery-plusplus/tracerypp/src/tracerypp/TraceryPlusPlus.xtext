@@ -16,16 +16,22 @@ Statement:
 
 Variable:
 	ListDeclaration |
-	ObjectDeclaration
+	ObjectDeclaration |
+	SubstoryDeclaration
 ;
 
+VariableUse:
+	ListUse |
+	ObjectUse |
+	SubstoryUse
+;
 /*
 	Used to define what the story should look like.
 	There must be only one story in the model for now.
  */
 Story:
 	{Story} "The" "story" AssignmentOperator?
-	story += ( Word | ListUse | ObjectUse )*
+	story += ( Word | VariableUse )*
 ;
 
 /*
@@ -50,6 +56,10 @@ ObjectDeclaration:
 	pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 ;
 
+SubstoryDeclaration:
+	"substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
+;
+
 /*
 	Basic building blocks
  */
@@ -61,6 +71,10 @@ Word:
 ListUse:
 	variable = [ListDeclaration]
 	modifiers += Modifier*
+;
+
+SubstoryUse:
+	"substory" variable = [SubstoryDeclaration]
 ;
 
 Attribute:
@@ -94,7 +108,6 @@ ObjectAttribute:
 
 ObjectPronoun:
 	object = [ObjectDeclaration] "." pronoun = PronounIdentifier
-	modifiers += Modifier*
 ;
 
 WordList:

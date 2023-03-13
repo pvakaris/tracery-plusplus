@@ -9,6 +9,8 @@ import tracerypp.traceryPlusPlus.Attribute
 import tracerypp.traceryPlusPlus.NameExistingListAttribute
 import tracerypp.traceryPlusPlus.NameValueAttribute
 import tracerypp.traceryPlusPlus.ListDeclaration
+import tracerypp.traceryPlusPlus.Variable
+import tracerypp.traceryPlusPlus.SubstoryDeclaration
 
 /**
  * This class contains custom validation rules. 
@@ -17,50 +19,59 @@ import tracerypp.traceryPlusPlus.ListDeclaration
  */
 class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 
+	/*
+	 * Check that there are no identical variable names
+	 */
 	@Check
-	def checkUniqueObjectName(ObjectDeclaration object) {
-	   val objectName = object.name
-	   val model = object.eContainer().eContents.filter(ObjectDeclaration).toList
+	def checkUniqueVariableName(Variable variable) {
+	   val variableName = variable.name
+	   val model = variable.eContainer().eContents.filter(Variable).toList
 	   var count = 0
 	   for (obj : model) {
-	   	if (obj.name == objectName) {
-	   		count += 1;
-	   	}
+	        if (obj.name == variableName) {
+	            count += 1;
+	            if (count > 1) {
+	                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", null)
+	            }
+	        }
 	   }
-	   if (count > 1) {
-	      error("Object with name '" + objectName + "' already exists.", null)
-	   }
+	}
+	
+	@Check
+	def checkUniqueObjectName(ObjectDeclaration object) {
+	    checkUniqueVariableName(object)
 	}
 	
 	@Check
 	def checkUniqueListName(ListDeclaration list) {
-	   val listName = list.name
-	   val model = list.eContainer().eContents.filter(ListDeclaration).toList
-	   var count = 0
-	   for (obj : model) {
-	   	if (obj.name == listName) {
-	   		count += 1;
-	   	}
-	   }
-	   if (count > 1) {
-	      error("List with name '" + listName + "' already exists.", null)
-	   }
+	    checkUniqueVariableName(list)
 	}
 	
 	@Check
+	def checkUniqueSubstoryName(SubstoryDeclaration substory) {
+	    checkUniqueVariableName(substory)
+	}
+	
+	/*
+	 * Check that no two attributes defined for the same object have the same name
+	 */
+	@Check
 	def checkUniqueObjectAttribute(ObjectDeclaration object) {
 	   val objectAttributes = object.attributes.attributes
-	   
 	   for (var i = 0; i < objectAttributes.size; i++) {
 	      for (var j = i + 1; j < objectAttributes.size; j++) {
 	         if (getAttributeName(objectAttributes.get(i)) == getAttributeName(objectAttributes.get(j))) {
-	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once.", null)
+	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once when defining the object '" + object.name + "'.", null)
 	         }
 	      }
 	   }
-	   
 	}
 	
+	
+	/*
+	 * Was used before because the structure for retrieving the attribute name was different for
+	 * different ways of defining the attribute
+	 */
 	def getAttributeName(Attribute attribute) {
     	if(attribute instanceof NameExistingListAttribute) {
     		return attribute.name
@@ -73,4 +84,15 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 //    	}
 	}
 	
+	/*
+	 * Used to get the text to be showed to the user when a mistake is detected defining a variable
+	 */
+	def getType(Variable obj) {
+        switch (obj) {
+	        ObjectDeclaration: return "Object"
+	        ListDeclaration: return "List"
+	        SubstoryDeclaration: return "Substory"
+	        default: return "Variable"
+    	}
+	}
 }

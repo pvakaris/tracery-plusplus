@@ -51,6 +51,15 @@ public interface TraceryPlusPlusFactory extends EFactory
   Variable createVariable();
 
   /**
+   * Returns a new object of class '<em>Variable Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Use</em>'.
+   * @generated
+   */
+  VariableUse createVariableUse();
+
+  /**
    * Returns a new object of class '<em>Story</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -78,6 +87,15 @@ public interface TraceryPlusPlusFactory extends EFactory
   ObjectDeclaration createObjectDeclaration();
 
   /**
+   * Returns a new object of class '<em>Substory Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Substory Declaration</em>'.
+   * @generated
+   */
+  SubstoryDeclaration createSubstoryDeclaration();
+
+  /**
    * Returns a new object of class '<em>Word</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +112,15 @@ public interface TraceryPlusPlusFactory extends EFactory
    * @generated
    */
   ListUse createListUse();
+
+  /**
+   * Returns a new object of class '<em>Substory Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Substory Use</em>'.
+   * @generated
+   */
+  SubstoryUse createSubstoryUse();
 
   /**
    * Returns a new object of class '<em>Attribute</em>'.

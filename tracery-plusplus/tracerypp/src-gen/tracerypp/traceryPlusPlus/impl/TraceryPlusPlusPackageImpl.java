@@ -24,10 +24,13 @@ import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
 import tracerypp.traceryPlusPlus.Story;
+import tracerypp.traceryPlusPlus.SubstoryDeclaration;
+import tracerypp.traceryPlusPlus.SubstoryUse;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusFactory;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Variable;
+import tracerypp.traceryPlusPlus.VariableUse;
 import tracerypp.traceryPlusPlus.Word;
 import tracerypp.traceryPlusPlus.WordList;
 
@@ -65,6 +68,13 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass variableUseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass storyEClass = null;
 
   /**
@@ -86,6 +96,13 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass substoryDeclarationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass wordEClass = null;
 
   /**
@@ -94,6 +111,13 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   private EClass listUseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass substoryUseEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -299,6 +323,17 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
+  public EClass getVariableUse()
+  {
+    return variableUseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getStory()
   {
     return storyEClass;
@@ -376,6 +411,28 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
+  public EClass getSubstoryDeclaration()
+  {
+    return substoryDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubstoryDeclaration_Story()
+  {
+    return (EReference)substoryDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getWord()
   {
     return wordEClass;
@@ -423,6 +480,28 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
   public EAttribute getListUse_Modifiers()
   {
     return (EAttribute)listUseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubstoryUse()
+  {
+    return substoryUseEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubstoryUse_Variable()
+  {
+    return (EReference)substoryUseEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -519,17 +598,6 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getObjectUse_Modifiers()
-  {
-    return (EAttribute)objectUseEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getObjectAttribute()
   {
     return objectAttributeEClass;
@@ -544,6 +612,17 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
   public EReference getObjectAttribute_Attribute()
   {
     return (EReference)objectAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getObjectAttribute_Modifiers()
+  {
+    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -696,6 +775,8 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
 
+    variableUseEClass = createEClass(VARIABLE_USE);
+
     storyEClass = createEClass(STORY);
     createEReference(storyEClass, STORY__STORY);
 
@@ -706,12 +787,18 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     createEReference(objectDeclarationEClass, OBJECT_DECLARATION__PRONOUNS);
     createEReference(objectDeclarationEClass, OBJECT_DECLARATION__ATTRIBUTES);
 
+    substoryDeclarationEClass = createEClass(SUBSTORY_DECLARATION);
+    createEReference(substoryDeclarationEClass, SUBSTORY_DECLARATION__STORY);
+
     wordEClass = createEClass(WORD);
     createEAttribute(wordEClass, WORD__VALUE);
 
     listUseEClass = createEClass(LIST_USE);
     createEReference(listUseEClass, LIST_USE__VARIABLE);
     createEAttribute(listUseEClass, LIST_USE__MODIFIERS);
+
+    substoryUseEClass = createEClass(SUBSTORY_USE);
+    createEReference(substoryUseEClass, SUBSTORY_USE__VARIABLE);
 
     attributeEClass = createEClass(ATTRIBUTE);
     createEAttribute(attributeEClass, ATTRIBUTE__NAME);
@@ -724,10 +811,10 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     objectUseEClass = createEClass(OBJECT_USE);
     createEReference(objectUseEClass, OBJECT_USE__OBJECT);
-    createEAttribute(objectUseEClass, OBJECT_USE__MODIFIERS);
 
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTE);
+    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__MODIFIERS);
 
     objectPronounEClass = createEClass(OBJECT_PRONOUN);
     createEReference(objectPronounEClass, OBJECT_PRONOUN__PRONOUN);
@@ -777,8 +864,12 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     variableEClass.getESuperTypes().add(this.getStatement());
     listDeclarationEClass.getESuperTypes().add(this.getVariable());
     objectDeclarationEClass.getESuperTypes().add(this.getVariable());
+    substoryDeclarationEClass.getESuperTypes().add(this.getVariable());
+    listUseEClass.getESuperTypes().add(this.getVariableUse());
+    substoryUseEClass.getESuperTypes().add(this.getVariableUse());
     nameExistingListAttributeEClass.getESuperTypes().add(this.getAttribute());
     nameValueAttributeEClass.getESuperTypes().add(this.getAttribute());
+    objectUseEClass.getESuperTypes().add(this.getVariableUse());
     objectAttributeEClass.getESuperTypes().add(this.getObjectUse());
     objectPronounEClass.getESuperTypes().add(this.getObjectUse());
 
@@ -792,6 +883,8 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(variableUseEClass, VariableUse.class, "VariableUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(storyEClass, Story.class, "Story", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStory_Story(), ecorePackage.getEObject(), null, "story", null, 0, -1, Story.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -802,12 +895,18 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEReference(getObjectDeclaration_Pronouns(), this.getPronouns(), null, "pronouns", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObjectDeclaration_Attributes(), this.getAttributeList(), null, "attributes", null, 0, 1, ObjectDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(substoryDeclarationEClass, SubstoryDeclaration.class, "SubstoryDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubstoryDeclaration_Story(), ecorePackage.getEObject(), null, "story", null, 0, -1, SubstoryDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(wordEClass, Word.class, "Word", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWord_Value(), ecorePackage.getEString(), "value", null, 0, 1, Word.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listUseEClass, ListUse.class, "ListUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListUse_Variable(), this.getListDeclaration(), null, "variable", null, 0, 1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getListUse_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(substoryUseEClass, SubstoryUse.class, "SubstoryUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubstoryUse_Variable(), this.getSubstoryDeclaration(), null, "variable", null, 0, 1, SubstoryUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -820,10 +919,10 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(objectUseEClass, ObjectUse.class, "ObjectUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectUse_Object(), this.getObjectDeclaration(), null, "object", null, 0, 1, ObjectUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjectUse_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectAttribute_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectPronounEClass, ObjectPronoun.class, "ObjectPronoun", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectPronoun_Pronoun(), this.getPronounIdentifier(), null, "pronoun", null, 0, 1, ObjectPronoun.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

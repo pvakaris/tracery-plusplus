@@ -26,6 +26,8 @@ import tracerypp.traceryPlusPlus.ObjectPronoun;
 import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Story;
+import tracerypp.traceryPlusPlus.SubstoryDeclaration;
+import tracerypp.traceryPlusPlus.SubstoryUse;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Word;
@@ -77,6 +79,12 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.STORY:
 				sequence_Story(context, (Story) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.SUBSTORY_DECLARATION:
+				sequence_SubstoryDeclaration(context, (SubstoryDeclaration) semanticObject); 
+				return; 
+			case TraceryPlusPlusPackage.SUBSTORY_USE:
+				sequence_SubstoryUse(context, (SubstoryUse) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.TRACERY_PLUS_PLUS_PROGRAM:
 				sequence_TraceryPlusPlusProgram(context, (TraceryPlusPlusProgram) semanticObject); 
@@ -134,6 +142,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     VariableUse returns ListUse
 	 *     ListUse returns ListUse
 	 *
 	 * Constraint:
@@ -196,6 +205,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     VariableUse returns ObjectAttribute
 	 *     ObjectUse returns ObjectAttribute
 	 *     ObjectAttribute returns ObjectAttribute
 	 *
@@ -239,15 +249,25 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     VariableUse returns ObjectPronoun
 	 *     ObjectUse returns ObjectPronoun
 	 *     ObjectPronoun returns ObjectPronoun
 	 *
 	 * Constraint:
-	 *     (object=[ObjectDeclaration|ID] pronoun=PronounIdentifier modifiers+=Modifier*)
+	 *     (object=[ObjectDeclaration|ID] pronoun=PronounIdentifier)
 	 * </pre>
 	 */
 	protected void sequence_ObjectPronoun(ISerializationContext context, ObjectPronoun semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_PRONOUN__PRONOUN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_PRONOUN__PRONOUN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getObjectPronounAccess().getObjectObjectDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT, false));
+		feeder.accept(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierParserRuleCall_2_0(), semanticObject.getPronoun());
+		feeder.finish();
 	}
 	
 	
@@ -285,11 +305,48 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Story returns Story
 	 *
 	 * Constraint:
-	 *     (story+=Word | story+=ListUse | story+=ObjectUse)*
+	 *     (story+=Word | story+=VariableUse)*
 	 * </pre>
 	 */
 	protected void sequence_Story(ISerializationContext context, Story semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Statement returns SubstoryDeclaration
+	 *     Variable returns SubstoryDeclaration
+	 *     SubstoryDeclaration returns SubstoryDeclaration
+	 *
+	 * Constraint:
+	 *     (name=ID (story+=Word | story+=VariableUse)*)
+	 * </pre>
+	 */
+	protected void sequence_SubstoryDeclaration(ISerializationContext context, SubstoryDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     VariableUse returns SubstoryUse
+	 *     SubstoryUse returns SubstoryUse
+	 *
+	 * Constraint:
+	 *     variable=[SubstoryDeclaration|ID]
+	 * </pre>
+	 */
+	protected void sequence_SubstoryUse(ISerializationContext context, SubstoryUse semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE, false));
+		feeder.finish();
 	}
 	
 	

@@ -95,6 +95,13 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TraceryPlusPlusPackage.VARIABLE_USE:
+      {
+        VariableUse variableUse = (VariableUse)theEObject;
+        T result = caseVariableUse(variableUse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TraceryPlusPlusPackage.STORY:
       {
         Story story = (Story)theEObject;
@@ -120,6 +127,15 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TraceryPlusPlusPackage.SUBSTORY_DECLARATION:
+      {
+        SubstoryDeclaration substoryDeclaration = (SubstoryDeclaration)theEObject;
+        T result = caseSubstoryDeclaration(substoryDeclaration);
+        if (result == null) result = caseVariable(substoryDeclaration);
+        if (result == null) result = caseStatement(substoryDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TraceryPlusPlusPackage.WORD:
       {
         Word word = (Word)theEObject;
@@ -131,6 +147,15 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
       {
         ListUse listUse = (ListUse)theEObject;
         T result = caseListUse(listUse);
+        if (result == null) result = caseVariableUse(listUse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.SUBSTORY_USE:
+      {
+        SubstoryUse substoryUse = (SubstoryUse)theEObject;
+        T result = caseSubstoryUse(substoryUse);
+        if (result == null) result = caseVariableUse(substoryUse);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -161,6 +186,7 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
       {
         ObjectUse objectUse = (ObjectUse)theEObject;
         T result = caseObjectUse(objectUse);
+        if (result == null) result = caseVariableUse(objectUse);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,6 +195,7 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         ObjectAttribute objectAttribute = (ObjectAttribute)theEObject;
         T result = caseObjectAttribute(objectAttribute);
         if (result == null) result = caseObjectUse(objectAttribute);
+        if (result == null) result = caseVariableUse(objectAttribute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -177,6 +204,7 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         ObjectPronoun objectPronoun = (ObjectPronoun)theEObject;
         T result = caseObjectPronoun(objectPronoun);
         if (result == null) result = caseObjectUse(objectPronoun);
+        if (result == null) result = caseVariableUse(objectPronoun);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -261,6 +289,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Use</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Use</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableUse(VariableUse object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Story</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -309,6 +353,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Substory Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Substory Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubstoryDeclaration(SubstoryDeclaration object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Word</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -336,6 +396,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseListUse(ListUse object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Substory Use</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Substory Use</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubstoryUse(SubstoryUse object)
   {
     return null;
   }

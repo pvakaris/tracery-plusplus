@@ -12,6 +12,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableUse"/>
   <eClassifiers xsi:type="ecore:EClass" name="Story">
     <eStructuralFeatures xsi:type="ecore:EReference" name="story" upperBound="-1"
         eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
@@ -26,13 +27,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" eType="#//AttributeList"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubstoryDeclaration" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="story" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Word">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListUse">
+  <eClassifiers xsi:type="ecore:EClass" name="ListUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//ListDeclaration"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubstoryUse" eSuperTypes="#//VariableUse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//SubstoryDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,13 +52,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Word"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ObjectUse">
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectPronoun" eSuperTypes="#//ObjectUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pronoun" eType="#//PronounIdentifier"

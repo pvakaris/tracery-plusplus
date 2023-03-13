@@ -133,12 +133,6 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         String _substring_1 = attribute_1.substring(1);
         String _plus_3 = (_plus_2 + _substring_1);
         _builder_1.append(_plus_3);
-        {
-          EList<String> _modifiers_1 = ((ObjectPronoun)object).getModifiers();
-          for(final String mod_1 : _modifiers_1) {
-            _builder_1.append(mod_1);
-          }
-        }
         _builder_1.append("#");
         return _builder_1.toString();
       }

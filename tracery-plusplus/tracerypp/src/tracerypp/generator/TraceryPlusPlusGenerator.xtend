@@ -22,7 +22,6 @@ import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.ListUse
 import tracerypp.traceryPlusPlus.ObjectUse
 import tracerypp.traceryPlusPlus.ObjectPronoun
-
 /**
  * Generates code from your model files on save.
  * 
@@ -73,7 +72,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		}
 		else if(object instanceof ObjectPronoun) {
 			val attribute = object.pronoun.name
-			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : object.modifiers »« mod »« ENDFOR »#'''
+			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»#'''
 		}
 		
 	}	
@@ -82,6 +81,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	dispatch def generateJsonStoryEntry(Word word) {
 		return '''«word.value»'''
 	}
+
 	
 	// Generates reference to an attribute and adds specified modifiers
 	dispatch def generateJsonStoryEntry(ListUse storyVariable) {
