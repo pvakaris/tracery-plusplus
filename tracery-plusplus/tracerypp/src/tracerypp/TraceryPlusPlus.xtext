@@ -5,13 +5,14 @@ generate traceryPlusPlus "http://www.TraceryPlusPlus.tracerypp"
 // Version 1.0
 
 TraceryPlusPlusProgram:
+	// First all the necessary statements are declared and then the story structure is specified
 	statements += Statement*
 	story = Story
 ;
 	 
 Statement:
 	Variable
-	// Rule (for example if else or something similar)
+	// For future releases: Rule (for example if else or something similar). 
 ;
 
 Variable:
@@ -68,15 +69,6 @@ Word:
 	value = STRING
 ;
 
-ListUse:
-	variable = [ListDeclaration]
-	modifiers += Modifier*
-;
-
-SubstoryUse:
-	"substory" variable = [SubstoryDeclaration]
-;
-
 Attribute:
 	NameExistingListAttribute |
 	NameValueAttribute
@@ -94,6 +86,15 @@ NameExistingListAttribute:
 
 NameValueAttribute:
 	name = ID AssignmentOperator? value = Word
+;
+
+ListUse:
+	variable = [ListDeclaration]
+	modifiers += Modifier*
+;
+
+SubstoryUse:
+	"substory" variable = [SubstoryDeclaration]
 ;
 
 ObjectUse:
