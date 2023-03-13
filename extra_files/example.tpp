@@ -11,7 +11,7 @@ occupation can be: "teacher" or "plumber" or "astronaut" or "banker" or "dancer"
 negative_adj can have values: "bad", "horrible"
 
 There is a hero
-He has attributes: name = "John", occupation // If the attribute's value is not specified, a random value from the attribute_name list will be assigned
+He has attributes: name = "John", occupation = occupation
 
 There is a country
 It has attributes: name = "United Kingdom", main_city="London"

@@ -101,6 +101,7 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         String _join = IterableExtensions.join(ListExtensions.<EObject, String>map(substory.getStory(), _function), "");
         _builder.append(_join, "\t");
         _builder.append("\"],");
+        _builder.append("\n", "\t");
       }
     }
     _builder.newLineIfNotEmpty();

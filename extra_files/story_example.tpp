@@ -11,8 +11,7 @@ personality can have values: "brave", "clever", "handsome", "charming", "mysteri
 villain_personality can have values: 'wicked', 'malevolent', 'sinister', 'villainous', 'diabolical', 'maleficent', 'malignant', 'nefarious', 'demonic', 'fiendish', 'cruel', 'malicious', 'satanic', 'devilish', 'corrupt', 'perverse'
 villain_occupation can be: "evil queen", "dragon", "witch", "sorcerer", "giant", "ogre", "demon", "monster", "villain", "curse"
 negative_adverb can have values: "unhappily", "miserably", "gloomily", "melancholically", "sorrowfully", "regrettably", "unfortunately", "woefully", "piteously", "pathetically"
-
-location can have values: "castle", "kingdom", "forest", "desert", "island", "mountain", "ocean", "city", "village", "cave"
+location_list has values: "castle", "kingdom", "forest", "desert", "island", "mountain", "ocean", "city", "village", "cave"
 favourite_food_list has values: "pumpkin pie", "chocolate cake", "apple tart", "strawberry sorbet", "crème brûlée", "cheesecake", "lemon meringue pie", "carrot cake", "banana bread", "pecan pie"
 friend can be: "Fairy Godmother", "Wizard Merlin", "Hobbit Samwise", "Lion Aslan", "Dragon Saphira", "Dwarf Gimli", "Elf Legolas", "Owl Hedwig", "Dog Fang", "Cat Crookshanks"
 
@@ -20,7 +19,7 @@ There is a prince
 He has attributes: name from possible_prince_names_list
 
 There is a princess
-She has attributes: name from possible_princess_names_list, location = location and food from favourite_food_list
+She has attributes: name from possible_princess_names_list, location from location_list and food from favourite_food_list
 
 There is a villain
 It has name from possible_villain_names_list and occupation from villain_occupation

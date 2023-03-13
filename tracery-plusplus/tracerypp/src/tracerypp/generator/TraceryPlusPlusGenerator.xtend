@@ -60,7 +60,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 				«FOR listDeclaration : program.statements.filter(Variable).filter(ListDeclaration)»«generateJsonListDeclaration(listDeclaration) + '\n'»«ENDFOR /* Add list declarations first*/»
 				«FOR initSubObj : substoryObjectInitialisations »«initSubObj + '\n'»«ENDFOR /* Add all substory object declarations */»
 				«FOR initStoryObj : storyObjectInitialisations »«initStoryObj + '\n'»«ENDFOR /* Add all story object declarations */»
-				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())].join("")»"],«ENDFOR /* Add all substory elements */»
+				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())].join("")»"],«'\n'»«ENDFOR /* Add all substory elements */»
 				"story": ["«program.story.story.map[generateJsonStoryEntry("story")].join("") /* Define the main story element */»"],
 				"origin": ["#«FOR entry : allObjectNames »[#«entry»#]«ENDFOR /* Inside origin all the objects are initialised and the main story element is called */»story#"]
 			}
