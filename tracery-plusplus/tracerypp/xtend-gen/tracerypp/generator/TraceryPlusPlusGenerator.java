@@ -68,7 +68,8 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
       Iterable<ListDeclaration> _filter = Iterables.<ListDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), ListDeclaration.class);
       for(final ListDeclaration listDeclaration : _filter) {
         String _generateJsonListDeclaration = this.generateJsonListDeclaration(listDeclaration);
-        _builder.append(_generateJsonListDeclaration, "\t");
+        String _plus = (_generateJsonListDeclaration + "\n");
+        _builder.append(_plus, "\t");
       }
     }
     _builder.newLineIfNotEmpty();
@@ -97,8 +98,8 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         final Function1<EObject, String> _function = (EObject it) -> {
           return this.generateJsonStoryEntry(it, substory.getName().toString());
         };
-        List<String> _map = ListExtensions.<EObject, String>map(substory.getStory(), _function);
-        _builder.append(_map, "\t");
+        String _join = IterableExtensions.join(ListExtensions.<EObject, String>map(substory.getStory(), _function), "");
+        _builder.append(_join, "\t");
         _builder.append("\"],");
       }
     }
@@ -108,8 +109,8 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     final Function1<EObject, String> _function_1 = (EObject it) -> {
       return this.generateJsonStoryEntry(it, "story");
     };
-    List<String> _map_1 = ListExtensions.<EObject, String>map(program.getStory().getStory(), _function_1);
-    _builder.append(_map_1, "\t");
+    String _join_1 = IterableExtensions.join(ListExtensions.<EObject, String>map(program.getStory().getStory(), _function_1), "");
+    _builder.append(_join_1, "\t");
     _builder.append("\"],");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -306,6 +307,9 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     return strings;
   }
 
+  /**
+   * DISPATCH
+   */
   protected String _generateJsonStoryEntry(final ObjectUse object, final String storyname) {
     final String objectName = object.getObject().getName();
     if ((object instanceof ObjectAttribute)) {

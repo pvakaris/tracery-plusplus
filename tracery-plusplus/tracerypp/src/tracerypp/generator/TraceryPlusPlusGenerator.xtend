@@ -57,11 +57,11 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		// A JSON object
 		return '''
 			{
-				«FOR listDeclaration : program.statements.filter(Variable).filter(ListDeclaration)»«generateJsonListDeclaration(listDeclaration)»«ENDFOR /* Add list declarations first*/»
+				«FOR listDeclaration : program.statements.filter(Variable).filter(ListDeclaration)»«generateJsonListDeclaration(listDeclaration) + '\n'»«ENDFOR /* Add list declarations first*/»
 				«FOR initSubObj : substoryObjectInitialisations »«initSubObj + '\n'»«ENDFOR /* Add all substory object declarations */»
 				«FOR initStoryObj : storyObjectInitialisations »«initStoryObj + '\n'»«ENDFOR /* Add all story object declarations */»
-				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())]»"],«ENDFOR /* Add all substory elements */»
-				"story": ["«program.story.story.map[generateJsonStoryEntry("story")] /* Define the main story element */»"],
+				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())].join("")»"],«ENDFOR /* Add all substory elements */»
+				"story": ["«program.story.story.map[generateJsonStoryEntry("story")].join("") /* Define the main story element */»"],
 				"origin": ["#«FOR entry : allObjectNames »[#«entry»#]«ENDFOR /* Inside origin all the objects are initialised and the main story element is called */»story#"]
 			}
 		'''
@@ -86,7 +86,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return '''"«listDeclaration.name»": [« FOR word : listDeclaration.list.words SEPARATOR ', ' »"« word.value »"« ENDFOR »],'''
 	}
 	
-	// Get the definition of a substory for the JSON object
+	// Get the definition of a substory for the JSON
 	def getSubstoryObjectDeclarations(List<Statement> statements) {
 		var substories = statements.filter(Variable).filter(SubstoryDeclaration)
     	val strings = newArrayList
@@ -176,6 +176,10 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return strings
 	}
 	
+	
+	/* DISPATCH */
+	
+		
 	// Retrieve the right reference to call the right object
 	dispatch def generateJsonStoryEntry(ObjectUse object, String storyname) {
 		val objectName = object.object.name
@@ -205,6 +209,9 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	dispatch def generateJsonStoryEntry(SubstoryUse storyVariable, String storyname) {
 		return '''#«storyVariable.variable.name»#'''
 	}
+	
+	
+	
 	
 	
 	/* 
