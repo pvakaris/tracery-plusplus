@@ -64,11 +64,13 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
-    final Function1<ListDeclaration, String> _function = (ListDeclaration it) -> {
-      return this.generateJsonDeclaration(it);
-    };
-    String _join = IterableExtensions.join(IterableExtensions.<ListDeclaration, String>map(Iterables.<ListDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), ListDeclaration.class), _function), "\n");
-    _builder.append(_join, "\t");
+    {
+      Iterable<ListDeclaration> _filter = Iterables.<ListDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), ListDeclaration.class);
+      for(final ListDeclaration listDeclaration : _filter) {
+        String _generateJsonListDeclaration = this.generateJsonListDeclaration(listDeclaration);
+        _builder.append(_generateJsonListDeclaration, "\t");
+      }
+    }
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     {
@@ -86,16 +88,16 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     {
-      Iterable<SubstoryDeclaration> _filter = Iterables.<SubstoryDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), SubstoryDeclaration.class);
-      for(final SubstoryDeclaration substory : _filter) {
+      Iterable<SubstoryDeclaration> _filter_1 = Iterables.<SubstoryDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), SubstoryDeclaration.class);
+      for(final SubstoryDeclaration substory : _filter_1) {
         _builder.append("\"");
         String _string = substory.getName().toString();
         _builder.append(_string, "\t");
         _builder.append("\": [\"");
-        final Function1<EObject, String> _function_1 = (EObject it) -> {
+        final Function1<EObject, String> _function = (EObject it) -> {
           return this.generateJsonStoryEntry(it, substory.getName().toString());
         };
-        List<String> _map = ListExtensions.<EObject, String>map(substory.getStory(), _function_1);
+        List<String> _map = ListExtensions.<EObject, String>map(substory.getStory(), _function);
         _builder.append(_map, "\t");
         _builder.append("\"],");
       }
@@ -103,10 +105,10 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("\"story\": [\"");
-    final Function1<EObject, String> _function_2 = (EObject it) -> {
+    final Function1<EObject, String> _function_1 = (EObject it) -> {
       return this.generateJsonStoryEntry(it, "story");
     };
-    List<String> _map_1 = ListExtensions.<EObject, String>map(program.getStory().getStory(), _function_2);
+    List<String> _map_1 = ListExtensions.<EObject, String>map(program.getStory().getStory(), _function_1);
     _builder.append(_map_1, "\t");
     _builder.append("\"],");
     _builder.newLineIfNotEmpty();
@@ -140,7 +142,7 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
     return strings;
   }
 
-  protected String _generateJsonDeclaration(final ListDeclaration listDeclaration) {
+  public String generateJsonListDeclaration(final ListDeclaration listDeclaration) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\"");
     String _name = listDeclaration.getName();
@@ -412,10 +414,6 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
         }
       }
     }
-  }
-
-  public String generateJsonDeclaration(final ListDeclaration listDeclaration) {
-    return _generateJsonDeclaration(listDeclaration);
   }
 
   public String generateJsonStoryEntry(final EObject storyVariable, final String storyname) {

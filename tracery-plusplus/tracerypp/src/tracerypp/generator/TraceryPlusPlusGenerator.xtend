@@ -57,7 +57,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		// A JSON object
 		return '''
 			{
-				«program.statements.filter(Variable).filter(ListDeclaration).map[generateJsonDeclaration].join('\n') /* Add list declarations first*/»
+				«FOR listDeclaration : program.statements.filter(Variable).filter(ListDeclaration)»«generateJsonListDeclaration(listDeclaration)»«ENDFOR /* Add list declarations first*/»
 				«FOR initSubObj : substoryObjectInitialisations »«initSubObj + '\n'»«ENDFOR /* Add all substory object declarations */»
 				«FOR initStoryObj : storyObjectInitialisations »«initStoryObj + '\n'»«ENDFOR /* Add all story object declarations */»
 				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())]»"],«ENDFOR /* Add all substory elements */»
@@ -67,6 +67,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		'''
 	}
 	
+	// Shorten a list of object declaration strings 
 	def getObjectNames(List<String> declarations) {
 		var strings = newArrayList
 		for(dec : declarations) {
@@ -81,10 +82,11 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	}
 	
 	// Get lists with attributes
-	dispatch def generateJsonDeclaration(ListDeclaration listDeclaration) {
+	def generateJsonListDeclaration(ListDeclaration listDeclaration) {
 		return '''"«listDeclaration.name»": [« FOR word : listDeclaration.list.words SEPARATOR ', ' »"« word.value »"« ENDFOR »],'''
 	}
 	
+	// Get the definition of a substory for the JSON object
 	def getSubstoryObjectDeclarations(List<Statement> statements) {
 		var substories = statements.filter(Variable).filter(SubstoryDeclaration)
     	val strings = newArrayList
@@ -111,6 +113,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return strings
 	}
 	
+	// Loop through all the existing ObjectDeclaratios and return reference to that ObjectDeclaration that mathces the provided name
 	def findTheRightObjectDeclaration(Iterable<ObjectDeclaration> objectDeclarations, String name) {
 		for(objDeclaration : objectDeclarations) {
 			if(objDeclaration.name.toString() == name) {
@@ -120,6 +123,8 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return null
 	}
 	
+	
+	// Get string representation to use for an attribute when defining the JSON object
 	def getStringForAttribute(Attribute attribute, String objectName, String storyname) {
     	if (attribute instanceof NameValueAttribute) {
     		// Example: hero has attributes - name = "John
@@ -171,11 +176,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return strings
 	}
 	
-	
-	/////////////////////////////////////////////////////////
-	
-	
-	
+	// Retrieve the right reference to call the right object
 	dispatch def generateJsonStoryEntry(ObjectUse object, String storyname) {
 		val objectName = object.object.name
 		if(object instanceof ObjectAttribute) {
@@ -195,23 +196,22 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	}
 
 	
-	// Generates reference to an attribute and adds specified modifiers
+	// Generates reference to list and adds specified modifiers
 	dispatch def generateJsonStoryEntry(ListUse storyVariable, String storyname) {
 		return '''#«storyVariable.variable.name»« FOR mod : storyVariable.modifiers »« mod »« ENDFOR »#'''
 	}
 	
-	// Generates reference to an attribute and adds specified modifiers
+	// Generates reference to the substroy use
 	dispatch def generateJsonStoryEntry(SubstoryUse storyVariable, String storyname) {
 		return '''#«storyVariable.variable.name»#'''
 	}
-	
-	
 	
 	
 	/* 
 	 *      ADDITIONAL HELPER METHODS
 	 */
 	
+	// Was used when different attribute representations contained names at different places
 	def getAttributeName(Attribute attribute) {
     	if(attribute instanceof NameExistingListAttribute) {
     		return attribute.name
