@@ -20,6 +20,16 @@ import tracerypp.traceryPlusPlus.SubstoryDeclaration
 class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 
 	/*
+	 * The variable name 'story' is reserved and thus cannot be specified as any variable name
+	 */
+	@Check
+	def disallowStoryName(Variable variable) {
+	    if (variable.name == "story") {
+	    	error("The name 'story' is reserved and cannot be used as a variable name.", null)
+	    }
+	}
+	
+	/*
 	 * Check that there are no identical variable names
 	 */
 	@Check

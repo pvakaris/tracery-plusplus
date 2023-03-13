@@ -1,5 +1,6 @@
 grammar tracerypp.TraceryPlusPlus with org.eclipse.xtext.common.Terminals
 
+
 generate traceryPlusPlus "http://www.TraceryPlusPlus.tracerypp"
 
 // Version 1.0

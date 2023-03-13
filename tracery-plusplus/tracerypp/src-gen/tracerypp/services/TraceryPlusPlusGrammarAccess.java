@@ -34,15 +34,18 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//// Version 1.0
 		//TraceryPlusPlusProgram:
+		//    // First all the necessary statements are declared and then the story structure is specified
 		//    statements += Statement*
 		//    story = Story
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//// First all the necessary statements are declared and then the story structure is specified
 		//statements += Statement*
 		//story = Story
 		public Group getGroup() { return cGroup; }
 		
+		//// First all the necessary statements are declared and then the story structure is specified
 		//statements += Statement*
 		public Assignment getStatementsAssignment_0() { return cStatementsAssignment_0; }
 		
@@ -61,7 +64,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//Statement:
 		//    Variable
-		//    // Rule (for example if else or something similar)
+		//    // For future releases: Rule (for example if else or something similar).
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -424,68 +427,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
 	}
-	public class ListUseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ListUse");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cVariableListDeclarationCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
-		private final RuleCall cVariableListDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableListDeclarationCrossReference_0_0.eContents().get(1);
-		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
-		
-		//ListUse:
-		//    variable = [ListDeclaration]
-		//    modifiers += Modifier*
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//variable = [ListDeclaration]
-		//modifiers += Modifier*
-		public Group getGroup() { return cGroup; }
-		
-		//variable = [ListDeclaration]
-		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
-		
-		//[ListDeclaration]
-		public CrossReference getVariableListDeclarationCrossReference_0_0() { return cVariableListDeclarationCrossReference_0_0; }
-		
-		//ID
-		public RuleCall getVariableListDeclarationIDTerminalRuleCall_0_0_1() { return cVariableListDeclarationIDTerminalRuleCall_0_0_1; }
-		
-		//modifiers += Modifier*
-		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
-		
-		//Modifier
-		public RuleCall getModifiersModifierParserRuleCall_1_0() { return cModifiersModifierParserRuleCall_1_0; }
-	}
-	public class SubstoryUseElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SubstoryUse");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSubstoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cVariableSubstoryDeclarationCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
-		private final RuleCall cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableSubstoryDeclarationCrossReference_1_0.eContents().get(1);
-		
-		//SubstoryUse:
-		//    "substory" variable = [SubstoryDeclaration]
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"substory" variable = [SubstoryDeclaration]
-		public Group getGroup() { return cGroup; }
-		
-		//"substory"
-		public Keyword getSubstoryKeyword_0() { return cSubstoryKeyword_0; }
-		
-		//variable = [SubstoryDeclaration]
-		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
-		
-		//[SubstoryDeclaration]
-		public CrossReference getVariableSubstoryDeclarationCrossReference_1_0() { return cVariableSubstoryDeclarationCrossReference_1_0; }
-		
-		//ID
-		public RuleCall getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1() { return cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1; }
-	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Attribute");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -588,6 +529,68 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		//Word
 		public RuleCall getValueWordParserRuleCall_2_0() { return cValueWordParserRuleCall_2_0; }
+	}
+	public class ListUseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ListUse");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cVariableListDeclarationCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
+		private final RuleCall cVariableListDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableListDeclarationCrossReference_0_0.eContents().get(1);
+		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
+		
+		//ListUse:
+		//    variable = [ListDeclaration]
+		//    modifiers += Modifier*
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//variable = [ListDeclaration]
+		//modifiers += Modifier*
+		public Group getGroup() { return cGroup; }
+		
+		//variable = [ListDeclaration]
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		
+		//[ListDeclaration]
+		public CrossReference getVariableListDeclarationCrossReference_0_0() { return cVariableListDeclarationCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getVariableListDeclarationIDTerminalRuleCall_0_0_1() { return cVariableListDeclarationIDTerminalRuleCall_0_0_1; }
+		
+		//modifiers += Modifier*
+		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
+		
+		//Modifier
+		public RuleCall getModifiersModifierParserRuleCall_1_0() { return cModifiersModifierParserRuleCall_1_0; }
+	}
+	public class SubstoryUseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SubstoryUse");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSubstoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cVariableSubstoryDeclarationCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
+		private final RuleCall cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableSubstoryDeclarationCrossReference_1_0.eContents().get(1);
+		
+		//SubstoryUse:
+		//    "substory" variable = [SubstoryDeclaration]
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"substory" variable = [SubstoryDeclaration]
+		public Group getGroup() { return cGroup; }
+		
+		//"substory"
+		public Keyword getSubstoryKeyword_0() { return cSubstoryKeyword_0; }
+		
+		//variable = [SubstoryDeclaration]
+		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		
+		//[SubstoryDeclaration]
+		public CrossReference getVariableSubstoryDeclarationCrossReference_1_0() { return cVariableSubstoryDeclarationCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1() { return cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1; }
 	}
 	public class ObjectUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ObjectUse");
@@ -1050,11 +1053,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final ObjectDeclarationElements pObjectDeclaration;
 	private final SubstoryDeclarationElements pSubstoryDeclaration;
 	private final WordElements pWord;
-	private final ListUseElements pListUse;
-	private final SubstoryUseElements pSubstoryUse;
 	private final AttributeElements pAttribute;
 	private final NameExistingListAttributeElements pNameExistingListAttribute;
 	private final NameValueAttributeElements pNameValueAttribute;
+	private final ListUseElements pListUse;
+	private final SubstoryUseElements pSubstoryUse;
 	private final ObjectUseElements pObjectUse;
 	private final ObjectAttributeElements pObjectAttribute;
 	private final ObjectPronounElements pObjectPronoun;
@@ -1090,11 +1093,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pObjectDeclaration = new ObjectDeclarationElements();
 		this.pSubstoryDeclaration = new SubstoryDeclarationElements();
 		this.pWord = new WordElements();
-		this.pListUse = new ListUseElements();
-		this.pSubstoryUse = new SubstoryUseElements();
 		this.pAttribute = new AttributeElements();
 		this.pNameExistingListAttribute = new NameExistingListAttributeElements();
 		this.pNameValueAttribute = new NameValueAttributeElements();
+		this.pListUse = new ListUseElements();
+		this.pSubstoryUse = new SubstoryUseElements();
 		this.pObjectUse = new ObjectUseElements();
 		this.pObjectAttribute = new ObjectAttributeElements();
 		this.pObjectPronoun = new ObjectPronounElements();
@@ -1142,6 +1145,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//// Version 1.0
 	//TraceryPlusPlusProgram:
+	//    // First all the necessary statements are declared and then the story structure is specified
 	//    statements += Statement*
 	//    story = Story
 	//;
@@ -1155,7 +1159,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//Statement:
 	//    Variable
-	//    // Rule (for example if else or something similar)
+	//    // For future releases: Rule (for example if else or something similar).
 	//;
 	public StatementElements getStatementAccess() {
 		return pStatement;
@@ -1268,29 +1272,6 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getWordAccess().getRule();
 	}
 	
-	//ListUse:
-	//    variable = [ListDeclaration]
-	//    modifiers += Modifier*
-	//;
-	public ListUseElements getListUseAccess() {
-		return pListUse;
-	}
-	
-	public ParserRule getListUseRule() {
-		return getListUseAccess().getRule();
-	}
-	
-	//SubstoryUse:
-	//    "substory" variable = [SubstoryDeclaration]
-	//;
-	public SubstoryUseElements getSubstoryUseAccess() {
-		return pSubstoryUse;
-	}
-	
-	public ParserRule getSubstoryUseRule() {
-		return getSubstoryUseAccess().getRule();
-	}
-	
 	//Attribute:
 	//    NameExistingListAttribute |
 	//    NameValueAttribute
@@ -1328,6 +1309,29 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	public ParserRule getNameValueAttributeRule() {
 		return getNameValueAttributeAccess().getRule();
+	}
+	
+	//ListUse:
+	//    variable = [ListDeclaration]
+	//    modifiers += Modifier*
+	//;
+	public ListUseElements getListUseAccess() {
+		return pListUse;
+	}
+	
+	public ParserRule getListUseRule() {
+		return getListUseAccess().getRule();
+	}
+	
+	//SubstoryUse:
+	//    "substory" variable = [SubstoryDeclaration]
+	//;
+	public SubstoryUseElements getSubstoryUseAccess() {
+		return pSubstoryUse;
+	}
+	
+	public ParserRule getSubstoryUseRule() {
+		return getSubstoryUseAccess().getRule();
 	}
 	
 	//ObjectUse:

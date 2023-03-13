@@ -105,24 +105,6 @@ public interface TraceryPlusPlusFactory extends EFactory
   Word createWord();
 
   /**
-   * Returns a new object of class '<em>List Use</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Use</em>'.
-   * @generated
-   */
-  ListUse createListUse();
-
-  /**
-   * Returns a new object of class '<em>Substory Use</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Substory Use</em>'.
-   * @generated
-   */
-  SubstoryUse createSubstoryUse();
-
-  /**
    * Returns a new object of class '<em>Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -148,6 +130,24 @@ public interface TraceryPlusPlusFactory extends EFactory
    * @generated
    */
   NameValueAttribute createNameValueAttribute();
+
+  /**
+   * Returns a new object of class '<em>List Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Use</em>'.
+   * @generated
+   */
+  ListUse createListUse();
+
+  /**
+   * Returns a new object of class '<em>Substory Use</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Substory Use</em>'.
+   * @generated
+   */
+  SubstoryUse createSubstoryUse();
 
   /**
    * Returns a new object of class '<em>Object Use</em>'.

@@ -670,93 +670,6 @@ ruleWord returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleListUse
-entryRuleListUse returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getListUseRule()); }
-	iv_ruleListUse=ruleListUse
-	{ $current=$iv_ruleListUse.current; }
-	EOF;
-
-// Rule ListUse
-ruleListUse returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getListUseRule());
-					}
-				}
-				otherlv_0=RULE_ID
-				{
-					newLeafNode(otherlv_0, grammarAccess.getListUseAccess().getVariableListDeclarationCrossReference_0_0());
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0());
-				}
-				lv_modifiers_1_0=ruleModifier
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getListUseRule());
-					}
-					add(
-						$current,
-						"modifiers",
-						lv_modifiers_1_0,
-						"tracerypp.TraceryPlusPlus.Modifier");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-	)
-;
-
-// Entry rule entryRuleSubstoryUse
-entryRuleSubstoryUse returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSubstoryUseRule()); }
-	iv_ruleSubstoryUse=ruleSubstoryUse
-	{ $current=$iv_ruleSubstoryUse.current; }
-	EOF;
-
-// Rule SubstoryUse
-ruleSubstoryUse returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='substory'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_0());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSubstoryUseRule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_1_0());
-				}
-			)
-		)
-	)
-;
-
 // Entry rule entryRuleAttribute
 entryRuleAttribute returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getAttributeRule()); }
@@ -916,6 +829,93 @@ ruleNameValueAttribute returns [EObject current=null]
 						lv_value_2_0,
 						"tracerypp.TraceryPlusPlus.Word");
 					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleListUse
+entryRuleListUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getListUseRule()); }
+	iv_ruleListUse=ruleListUse
+	{ $current=$iv_ruleListUse.current; }
+	EOF;
+
+// Rule ListUse
+ruleListUse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getListUseRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getListUseAccess().getVariableListDeclarationCrossReference_0_0());
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0());
+				}
+				lv_modifiers_1_0=ruleModifier
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getListUseRule());
+					}
+					add(
+						$current,
+						"modifiers",
+						lv_modifiers_1_0,
+						"tracerypp.TraceryPlusPlus.Modifier");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleSubstoryUse
+entryRuleSubstoryUse returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSubstoryUseRule()); }
+	iv_ruleSubstoryUse=ruleSubstoryUse
+	{ $current=$iv_ruleSubstoryUse.current; }
+	EOF;
+
+// Rule SubstoryUse
+ruleSubstoryUse returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='substory'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSubstoryUseRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_1_0());
 				}
 			)
 		)

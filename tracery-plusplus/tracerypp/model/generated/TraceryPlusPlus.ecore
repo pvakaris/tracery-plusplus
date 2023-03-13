@@ -34,14 +34,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Word">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ListUse" eSuperTypes="#//VariableUse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//ListDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SubstoryUse" eSuperTypes="#//VariableUse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//SubstoryDeclaration"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -51,6 +43,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="NameValueAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Word"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListUse" eSuperTypes="#//VariableUse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//ListDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubstoryUse" eSuperTypes="#//VariableUse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//SubstoryDeclaration"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="object" eType="#//ObjectDeclaration"/>

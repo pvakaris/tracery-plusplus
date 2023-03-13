@@ -31,13 +31,6 @@
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Word">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Word/value"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ListUse">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListUse/variable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ListUse/modifiers"/>
-    </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//SubstoryUse">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//SubstoryUse/variable"/>
-    </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Attribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Attribute/name"/>
     </genClasses>
@@ -46,6 +39,13 @@
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//NameValueAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//NameValueAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ListUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListUse/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ListUse/modifiers"/>
+    </genClasses>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//SubstoryUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//SubstoryUse/variable"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectUse/object"/>

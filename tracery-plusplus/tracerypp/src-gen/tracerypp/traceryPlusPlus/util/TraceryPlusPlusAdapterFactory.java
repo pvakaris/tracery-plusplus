@@ -121,16 +121,6 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
         return createWordAdapter();
       }
       @Override
-      public Adapter caseListUse(ListUse object)
-      {
-        return createListUseAdapter();
-      }
-      @Override
-      public Adapter caseSubstoryUse(SubstoryUse object)
-      {
-        return createSubstoryUseAdapter();
-      }
-      @Override
       public Adapter caseAttribute(Attribute object)
       {
         return createAttributeAdapter();
@@ -144,6 +134,16 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNameValueAttribute(NameValueAttribute object)
       {
         return createNameValueAttributeAdapter();
+      }
+      @Override
+      public Adapter caseListUse(ListUse object)
+      {
+        return createListUseAdapter();
+      }
+      @Override
+      public Adapter caseSubstoryUse(SubstoryUse object)
+      {
+        return createSubstoryUseAdapter();
       }
       @Override
       public Adapter caseObjectUse(ObjectUse object)
@@ -338,36 +338,6 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ListUse <em>List Use</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.ListUse
-   * @generated
-   */
-  public Adapter createListUseAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.SubstoryUse <em>Substory Use</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see tracerypp.traceryPlusPlus.SubstoryUse
-   * @generated
-   */
-  public Adapter createSubstoryUseAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -408,6 +378,36 @@ public class TraceryPlusPlusAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNameValueAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.ListUse <em>List Use</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tracerypp.traceryPlusPlus.ListUse
+   * @generated
+   */
+  public Adapter createListUseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link tracerypp.traceryPlusPlus.SubstoryUse <em>Substory Use</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see tracerypp.traceryPlusPlus.SubstoryUse
+   * @generated
+   */
+  public Adapter createSubstoryUseAdapter()
   {
     return null;
   }

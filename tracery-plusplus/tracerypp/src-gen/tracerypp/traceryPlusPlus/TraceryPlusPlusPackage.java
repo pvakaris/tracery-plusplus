@@ -337,71 +337,6 @@ public interface TraceryPlusPlusPackage extends EPackage
   int WORD_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ListUseImpl <em>List Use</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.ListUseImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListUse()
-   * @generated
-   */
-  int LIST_USE = 9;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_USE__VARIABLE = VARIABLE_USE_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_USE__MODIFIERS = VARIABLE_USE_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>List Use</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.SubstoryUseImpl <em>Substory Use</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.SubstoryUseImpl
-   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getSubstoryUse()
-   * @generated
-   */
-  int SUBSTORY_USE = 10;
-
-  /**
-   * The feature id for the '<em><b>Variable</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUBSTORY_USE__VARIABLE = VARIABLE_USE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Substory Use</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUBSTORY_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.AttributeImpl <em>Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -409,7 +344,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 11;
+  int ATTRIBUTE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -437,7 +372,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameExistingListAttribute()
    * @generated
    */
-  int NAME_EXISTING_LIST_ATTRIBUTE = 12;
+  int NAME_EXISTING_LIST_ATTRIBUTE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -474,7 +409,7 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getNameValueAttribute()
    * @generated
    */
-  int NAME_VALUE_ATTRIBUTE = 13;
+  int NAME_VALUE_ATTRIBUTE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -502,6 +437,71 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @ordered
    */
   int NAME_VALUE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ListUseImpl <em>List Use</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.impl.ListUseImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListUse()
+   * @generated
+   */
+  int LIST_USE = 12;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_USE__VARIABLE = VARIABLE_USE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_USE__MODIFIERS = VARIABLE_USE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>List Use</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.SubstoryUseImpl <em>Substory Use</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.impl.SubstoryUseImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getSubstoryUse()
+   * @generated
+   */
+  int SUBSTORY_USE = 13;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSTORY_USE__VARIABLE = VARIABLE_USE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Substory Use</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSTORY_USE_FEATURE_COUNT = VARIABLE_USE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ObjectUseImpl <em>Object Use</em>}' class.
@@ -917,59 +917,6 @@ public interface TraceryPlusPlusPackage extends EPackage
   EAttribute getWord_Value();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ListUse <em>List Use</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>List Use</em>'.
-   * @see tracerypp.traceryPlusPlus.ListUse
-   * @generated
-   */
-  EClass getListUse();
-
-  /**
-   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.ListUse#getVariable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.ListUse#getVariable()
-   * @see #getListUse()
-   * @generated
-   */
-  EReference getListUse_Variable();
-
-  /**
-   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ListUse#getModifiers <em>Modifiers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Modifiers</em>'.
-   * @see tracerypp.traceryPlusPlus.ListUse#getModifiers()
-   * @see #getListUse()
-   * @generated
-   */
-  EAttribute getListUse_Modifiers();
-
-  /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.SubstoryUse <em>Substory Use</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Substory Use</em>'.
-   * @see tracerypp.traceryPlusPlus.SubstoryUse
-   * @generated
-   */
-  EClass getSubstoryUse();
-
-  /**
-   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.SubstoryUse#getVariable <em>Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Variable</em>'.
-   * @see tracerypp.traceryPlusPlus.SubstoryUse#getVariable()
-   * @see #getSubstoryUse()
-   * @generated
-   */
-  EReference getSubstoryUse_Variable();
-
-  /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.Attribute <em>Attribute</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1031,6 +978,59 @@ public interface TraceryPlusPlusPackage extends EPackage
    * @generated
    */
   EReference getNameValueAttribute_Value();
+
+  /**
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ListUse <em>List Use</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Use</em>'.
+   * @see tracerypp.traceryPlusPlus.ListUse
+   * @generated
+   */
+  EClass getListUse();
+
+  /**
+   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.ListUse#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see tracerypp.traceryPlusPlus.ListUse#getVariable()
+   * @see #getListUse()
+   * @generated
+   */
+  EReference getListUse_Variable();
+
+  /**
+   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ListUse#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see tracerypp.traceryPlusPlus.ListUse#getModifiers()
+   * @see #getListUse()
+   * @generated
+   */
+  EAttribute getListUse_Modifiers();
+
+  /**
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.SubstoryUse <em>Substory Use</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Substory Use</em>'.
+   * @see tracerypp.traceryPlusPlus.SubstoryUse
+   * @generated
+   */
+  EClass getSubstoryUse();
+
+  /**
+   * Returns the meta object for the reference '{@link tracerypp.traceryPlusPlus.SubstoryUse#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see tracerypp.traceryPlusPlus.SubstoryUse#getVariable()
+   * @see #getSubstoryUse()
+   * @generated
+   */
+  EReference getSubstoryUse_Variable();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ObjectUse <em>Object Use</em>}'.
@@ -1376,50 +1376,6 @@ public interface TraceryPlusPlusPackage extends EPackage
     EAttribute WORD__VALUE = eINSTANCE.getWord_Value();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ListUseImpl <em>List Use</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.ListUseImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListUse()
-     * @generated
-     */
-    EClass LIST_USE = eINSTANCE.getListUse();
-
-    /**
-     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_USE__VARIABLE = eINSTANCE.getListUse_Variable();
-
-    /**
-     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LIST_USE__MODIFIERS = eINSTANCE.getListUse_Modifiers();
-
-    /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.SubstoryUseImpl <em>Substory Use</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.SubstoryUseImpl
-     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getSubstoryUse()
-     * @generated
-     */
-    EClass SUBSTORY_USE = eINSTANCE.getSubstoryUse();
-
-    /**
-     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUBSTORY_USE__VARIABLE = eINSTANCE.getSubstoryUse_Variable();
-
-    /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.AttributeImpl <em>Attribute</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1472,6 +1428,50 @@ public interface TraceryPlusPlusPackage extends EPackage
      * @generated
      */
     EReference NAME_VALUE_ATTRIBUTE__VALUE = eINSTANCE.getNameValueAttribute_Value();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ListUseImpl <em>List Use</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.impl.ListUseImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getListUse()
+     * @generated
+     */
+    EClass LIST_USE = eINSTANCE.getListUse();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_USE__VARIABLE = eINSTANCE.getListUse_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIST_USE__MODIFIERS = eINSTANCE.getListUse_Modifiers();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.SubstoryUseImpl <em>Substory Use</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.impl.SubstoryUseImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getSubstoryUse()
+     * @generated
+     */
+    EClass SUBSTORY_USE = eINSTANCE.getSubstoryUse();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBSTORY_USE__VARIABLE = eINSTANCE.getSubstoryUse_Variable();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ObjectUseImpl <em>Object Use</em>}' class.

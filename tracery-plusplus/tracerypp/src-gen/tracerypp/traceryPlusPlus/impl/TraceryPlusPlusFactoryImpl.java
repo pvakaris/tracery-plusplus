@@ -74,11 +74,11 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.OBJECT_DECLARATION: return createObjectDeclaration();
       case TraceryPlusPlusPackage.SUBSTORY_DECLARATION: return createSubstoryDeclaration();
       case TraceryPlusPlusPackage.WORD: return createWord();
-      case TraceryPlusPlusPackage.LIST_USE: return createListUse();
-      case TraceryPlusPlusPackage.SUBSTORY_USE: return createSubstoryUse();
       case TraceryPlusPlusPackage.ATTRIBUTE: return createAttribute();
       case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE: return createNameExistingListAttribute();
       case TraceryPlusPlusPackage.NAME_VALUE_ATTRIBUTE: return createNameValueAttribute();
+      case TraceryPlusPlusPackage.LIST_USE: return createListUse();
+      case TraceryPlusPlusPackage.SUBSTORY_USE: return createSubstoryUse();
       case TraceryPlusPlusPackage.OBJECT_USE: return createObjectUse();
       case TraceryPlusPlusPackage.OBJECT_ATTRIBUTE: return createObjectAttribute();
       case TraceryPlusPlusPackage.OBJECT_PRONOUN: return createObjectPronoun();
@@ -205,30 +205,6 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public ListUse createListUse()
-  {
-    ListUseImpl listUse = new ListUseImpl();
-    return listUse;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public SubstoryUse createSubstoryUse()
-  {
-    SubstoryUseImpl substoryUse = new SubstoryUseImpl();
-    return substoryUse;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Attribute createAttribute()
   {
     AttributeImpl attribute = new AttributeImpl();
@@ -257,6 +233,30 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
   {
     NameValueAttributeImpl nameValueAttribute = new NameValueAttributeImpl();
     return nameValueAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ListUse createListUse()
+  {
+    ListUseImpl listUse = new ListUseImpl();
+    return listUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SubstoryUse createSubstoryUse()
+  {
+    SubstoryUseImpl substoryUse = new SubstoryUseImpl();
+    return substoryUse;
   }
 
   /**

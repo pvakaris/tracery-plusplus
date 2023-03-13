@@ -25,6 +25,18 @@ import tracerypp.traceryPlusPlus.Variable;
 @SuppressWarnings("all")
 public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
   /**
+   * The variable name 'story' is reserved and thus cannot be specified as any variable name
+   */
+  @Check
+  public void disallowStoryName(final Variable variable) {
+    String _name = variable.getName();
+    boolean _equals = Objects.equal(_name, "story");
+    if (_equals) {
+      this.error("The name \'story\' is reserved and cannot be used as a variable name.", null);
+    }
+  }
+
+  /**
    * Check that there are no identical variable names
    */
   @Check

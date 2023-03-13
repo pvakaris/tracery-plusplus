@@ -143,22 +143,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.LIST_USE:
-      {
-        ListUse listUse = (ListUse)theEObject;
-        T result = caseListUse(listUse);
-        if (result == null) result = caseVariableUse(listUse);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TraceryPlusPlusPackage.SUBSTORY_USE:
-      {
-        SubstoryUse substoryUse = (SubstoryUse)theEObject;
-        T result = caseSubstoryUse(substoryUse);
-        if (result == null) result = caseVariableUse(substoryUse);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TraceryPlusPlusPackage.ATTRIBUTE:
       {
         Attribute attribute = (Attribute)theEObject;
@@ -179,6 +163,22 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         NameValueAttribute nameValueAttribute = (NameValueAttribute)theEObject;
         T result = caseNameValueAttribute(nameValueAttribute);
         if (result == null) result = caseAttribute(nameValueAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.LIST_USE:
+      {
+        ListUse listUse = (ListUse)theEObject;
+        T result = caseListUse(listUse);
+        if (result == null) result = caseVariableUse(listUse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TraceryPlusPlusPackage.SUBSTORY_USE:
+      {
+        SubstoryUse substoryUse = (SubstoryUse)theEObject;
+        T result = caseSubstoryUse(substoryUse);
+        if (result == null) result = caseVariableUse(substoryUse);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -385,38 +385,6 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>List Use</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Use</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseListUse(ListUse object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Substory Use</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Substory Use</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubstoryUse(SubstoryUse object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -460,6 +428,38 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNameValueAttribute(NameValueAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Use</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Use</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListUse(ListUse object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Substory Use</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Substory Use</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubstoryUse(SubstoryUse object)
   {
     return null;
   }
