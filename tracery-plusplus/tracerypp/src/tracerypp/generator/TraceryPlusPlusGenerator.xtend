@@ -22,6 +22,10 @@ import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.ListUse
 import tracerypp.traceryPlusPlus.ObjectUse
 import tracerypp.traceryPlusPlus.ObjectPronoun
+import tracerypp.traceryPlusPlus.SubstoryDeclaration
+import tracerypp.traceryPlusPlus.Story
+import tracerypp.traceryPlusPlus.SubstoryUse
+
 /**
  * Generates code from your model files on save.
  * 
@@ -44,48 +48,36 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	
 	// Generate the content of the file
 	def CharSequence generate(TraceryPlusPlusProgram program) {
+		
+		var substoryObjectInitialisations = getSubstoryObjectDeclarations(program.statements)
+		var storyObjectInitialisations = getStoryObjectDeclarations(program.story, program.statements)
+		
+		var allObjectNames = getObjectNames(substoryObjectInitialisations)
+		allObjectNames.addAll(getObjectNames(storyObjectInitialisations))
 		// A JSON object
 		return '''
 			{
-				«program.statements.filter(Variable).map[generateJsonDeclaration].join('\n')»
-				"story": ["«program.story.story.map[generateJsonStoryEntry].join("")»"],
-				"origin": ["#«FOR entry : getObjectDeclarationSetters(program.statements) »[#«entry»#]«ENDFOR»story#"]
+				«program.statements.filter(Variable).filter(ListDeclaration).map[generateJsonDeclaration].join('\n') /* Add list declarations first*/»
+				«FOR initSubObj : substoryObjectInitialisations »«initSubObj + '\n'»«ENDFOR /* Add all substory object declarations */»
+				«FOR initStoryObj : storyObjectInitialisations »«initStoryObj + '\n'»«ENDFOR /* Add all story object declarations */»
+				«FOR substory : program.statements.filter(Variable).filter(SubstoryDeclaration) »"«substory.name.toString()»": ["«  substory.story.map[generateJsonStoryEntry(substory.name.toString())]»"],«ENDFOR /* Add all substory elements */»
+				"story": ["«program.story.story.map[generateJsonStoryEntry("story")] /* Define the main story element */»"],
+				"origin": ["#«FOR entry : allObjectNames »[#«entry»#]«ENDFOR /* Inside origin all the objects are initialised and the main story element is called */»story#"]
 			}
 		'''
 	}
 	
-	// Get setter names for all objects to be used in "origin"
-	def getObjectDeclarationSetters(List<Statement> statements) {
-		var objectDeclarations = statements.filter(Variable).filter(ObjectDeclaration)
-		val setters = objectDeclarations.map[declaration | 
-		    val name = declaration.name.toString
-		    "set" + name.substring(0, 1).toUpperCase() + name.substring(1)
-		]
-		return setters
-	}
-	
-	dispatch def generateJsonStoryEntry(ObjectUse object) {
-		val objectName = object.object.name
-		if(object instanceof ObjectAttribute) {
-			val attribute = getAttributeName(object.attribute)
-			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»« FOR mod : object.modifiers »« mod »« ENDFOR »#'''
+	def getObjectNames(List<String> declarations) {
+		var strings = newArrayList
+		for(dec : declarations) {
+			var name = dec.split(":").get(0)
+			
+			var start = name.indexOf("\"") + 1;
+			var end = name.indexOf("\"", start);
+			
+			strings.add(name.substring(start, end))
 		}
-		else if(object instanceof ObjectPronoun) {
-			val attribute = object.pronoun.name
-			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1)»#'''
-		}
-		
-	}	
-	
-	// Retrieve the plain string value
-	dispatch def generateJsonStoryEntry(Word word) {
-		return '''«word.value»'''
-	}
-
-	
-	// Generates reference to an attribute and adds specified modifiers
-	dispatch def generateJsonStoryEntry(ListUse storyVariable) {
-		return '''#«storyVariable.variable.name»« FOR mod : storyVariable.modifiers »« mod »« ENDFOR »#'''
+		return strings
 	}
 	
 	// Get lists with attributes
@@ -93,23 +85,54 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		return '''"«listDeclaration.name»": [« FOR word : listDeclaration.list.words SEPARATOR ', ' »"« word.value »"« ENDFOR »],'''
 	}
 	
-	// Get object specification
-	dispatch def generateJsonDeclaration(ObjectDeclaration objectDeclaration) {
-		// If the object was called "hero", generate a name "setHero"
-		val name = objectDeclaration.name.toString
-		val setter = "set" + name.substring(0, 1).toUpperCase() + name.substring(1)
-		val pronouns = matchPronouns(objectDeclaration.pronouns, name)
+	def getSubstoryObjectDeclarations(List<Statement> statements) {
+		var substories = statements.filter(Variable).filter(SubstoryDeclaration)
+    	val strings = newArrayList
 		
-		return '''"«setter»": ["« FOR attribute : objectDeclaration.attributes.attributes »« getStringForAttribute(attribute, name) »« ENDFOR »«pronouns»"],'''
+		for(substory : substories) {
+			var objects = substory.story.filter(ObjectUse)
+			var alreadyInitialisedObjects = newArrayList
+			
+			for(objectUse : objects) {
+				val object = objectUse.object
+				val objectName = object.name.toString()
+				// Find the relevant object declaration. It is easier to work that way
+				val objectDeclarations = statements.filter(Variable).filter(ObjectDeclaration)
+				val rightObjectDeclaration = findTheRightObjectDeclaration(objectDeclarations, objectName)
+				
+				if(rightObjectDeclaration !== null && !alreadyInitialisedObjects.contains(rightObjectDeclaration)) {
+					val setter = "set" + objectName.substring(0, 1).toUpperCase() + objectName.substring(1) + "-" + substory.name
+					val pronouns = matchPronouns(rightObjectDeclaration.pronouns, objectName, substory.name)
+					strings.add('''"«setter»": ["« FOR attribute : rightObjectDeclaration.attributes.attributes »« getStringForAttribute(attribute, objectName, substory.name) »« ENDFOR »«pronouns»"],''')
+					alreadyInitialisedObjects.add(rightObjectDeclaration)
+				}
+			}
+		}
+		return strings
 	}
 	
+	def findTheRightObjectDeclaration(Iterable<ObjectDeclaration> objectDeclarations, String name) {
+		for(objDeclaration : objectDeclarations) {
+			if(objDeclaration.name.toString() == name) {
+				return objDeclaration
+			}
+		}
+		return null
+	}
 	
-	def getStringForAttribute(Attribute attribute, String objectName) {
+	def getStringForAttribute(Attribute attribute, String objectName, String storyname) {
     	if (attribute instanceof NameValueAttribute) {
     		// Example: hero has attributes - name = "John
     		// This will give ---> [heroName:John]
     		val variableName = attribute.name
-    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:«attribute.value.value»]'''
+    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1) + "-" + storyname»:«attribute.value.value»]'''
+    	}
+    	else if(attribute instanceof NameExistingListAttribute) {
+    		// Example: hero has attributes - name = princeNames
+    		// This will give ---> [heroName:#princeNames#]
+    		val variableName = attribute.name
+    		val list = attribute.value
+    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1) + "-" + storyname»:#«list.name»#]'''
     	}
 //    	else if(attribute instanceof JustNameAttribute) {
 //    		// Example: hero has attributes - occupation
@@ -117,21 +140,77 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 //    		val variableName = attribute.name.name
 //    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«variableName»#]'''
 //    	}
-    	else if(attribute instanceof NameExistingListAttribute) {
-    		// Example: hero has attributes - name = princeNames
-    		// This will give ---> [heroName:#princeNames#]
-    		val variableName = attribute.name
-    		val list = attribute.value
-    		return '''[«objectName + variableName.substring(0, 1).toUpperCase() + variableName.substring(1)»:#«list.name»#]'''
-    	}
     	else {
     		// This place should never be reached
     		return ''''''
     	}
 	}
 	
-	// The default text for Declaration
-	dispatch def generateJsonDeclaration(Variable listDeclaration) ''''''
+	/*
+	 *	Get a list of variable declarations for the main story part
+	 */
+	def getStoryObjectDeclarations(Story story, List<Statement> statements) {
+		var strings = newArrayList
+		var objects = story.story.filter(ObjectUse)
+		var alreadyInitialisedObjects = newArrayList
+		
+			for(objectUse : objects) {
+				val object = objectUse.object
+				val objectName = object.name.toString()
+				// Find the relevant object declaration. It is easier to work that way
+				val objectDeclarations = statements.filter(Variable).filter(ObjectDeclaration)
+				val rightObjectDeclaration = findTheRightObjectDeclaration(objectDeclarations, objectName)
+				
+				if(rightObjectDeclaration !== null && !alreadyInitialisedObjects.contains(rightObjectDeclaration)) {
+					val setter = "set" + objectName.substring(0, 1).toUpperCase() + objectName.substring(1) + "-story"
+					val pronouns = matchPronouns(rightObjectDeclaration.pronouns, objectName, "story")
+					strings.add('''"«setter»": ["« FOR attribute : rightObjectDeclaration.attributes.attributes »« getStringForAttribute(attribute, objectName, "story") »« ENDFOR »«pronouns»"],''')
+					alreadyInitialisedObjects.add(rightObjectDeclaration)
+				}
+			}
+		return strings
+	}
+	
+	
+	/////////////////////////////////////////////////////////
+	
+	
+	
+	dispatch def generateJsonStoryEntry(ObjectUse object, String storyname) {
+		val objectName = object.object.name
+		if(object instanceof ObjectAttribute) {
+			val attribute = getAttributeName(object.attribute)
+			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1) + "-" + storyname»« FOR mod : object.modifiers »« mod »« ENDFOR »#'''
+		}
+		else if(object instanceof ObjectPronoun) {
+			val attribute = object.pronoun.name
+			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1) + "-" + storyname»#'''
+		}
+		
+	}	
+	
+	// Retrieve the plain string value
+	dispatch def generateJsonStoryEntry(Word word, String storyname) {
+		return '''«word.value»'''
+	}
+
+	
+	// Generates reference to an attribute and adds specified modifiers
+	dispatch def generateJsonStoryEntry(ListUse storyVariable, String storyname) {
+		return '''#«storyVariable.variable.name»« FOR mod : storyVariable.modifiers »« mod »« ENDFOR »#'''
+	}
+	
+	// Generates reference to an attribute and adds specified modifiers
+	dispatch def generateJsonStoryEntry(SubstoryUse storyVariable, String storyname) {
+		return '''#«storyVariable.variable.name»#'''
+	}
+	
+	
+	
+	
+	/* 
+	 *      ADDITIONAL HELPER METHODS
+	 */
 	
 	def getAttributeName(Attribute attribute) {
     	if(attribute instanceof NameExistingListAttribute) {
@@ -146,35 +225,23 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	}
 	
 	// Method to match the pronouns
-	def matchPronouns(Pronouns pronouns, String name) {
+	def matchPronouns(Pronouns pronouns, String name, String storyname) {
 		val value = pronouns.value
 		if (value == "He") {
-			return "[" + name + "They:he][" + name + "Them:him][" + name + "Their:his][" + name + "Theirs:his]"
+			return "[" + name + "They-" + storyname + ":he][" + name + "Them-" + storyname + ":him][" + name + "Their-" + storyname + ":his][" + name + "Theirs-" + storyname + ":his]"
 		}
 		else if (value == "She") {
-			return "[" + name + "They:she][" + name + "Them:her][" + name + "Their:her][" + name + "Theirs:hers]"
+			return "[" + name + "They-" + storyname + ":she][" + name + "Them-" + storyname + ":her][" + name + "Their-" + storyname + ":her][" + name + "Theirs-" + storyname + ":hers]"
 		}
 		else if (value == "It") {
-			return "[" + name + "They:it][" + name + "Them:it][" + name + "Their:its][" + name + "Theirs:its]"
+			return "[" + name + "They-" + storyname + ":it][" + name + "Them-" + storyname + ":it][" + name + "Their-" + storyname + ":its][" + name + "Theirs-" + storyname + ":its]"
 		}
 		else if (value == "They") {
-			return "[" + name + "They:they][" + name + "Them:them][" + name + "Their:their][" + name + "Theirs:theirs]"
+			return "[" + name + "They-" + storyname + ":they][" + name + "Them-" + storyname + ":them][" + name + "Their-" + storyname + ":their][" + name + "Theirs-" + storyname + ":theirs]"
 		}
 		else {
 			return "unknown"
 		}
 	}
 	
-//	// Method to match the pronouns
-//	def matchPronouns(Pronouns pronouns, String name) {
-//		val value = pronouns.value
-//		val pronounMap = #{ 
-//		  "He" -> "[" + name + "They:he][" + name + "Them:him][" + name + "Their:his][" + name + "Theirs:his]", 
-//		  "She" -> "[" + name + "They:she][" + name + "Them:her][" + name + "Their:her][" + name + "Theirs:hers]", 
-//		  "It" -> "[" + name + "They:it][" + name + "Them:it][" + name + "Their:its][" + name + "Theirs:its]",
-//		  "They" -> "[" + name + "They:they][" + name + "Them:them][" + name + "Their:their][" + name + "Theirs:theirs]"
-//		}
-//		return pronounMap.getOrElse(value, "unknown")
-//		
-//	}
 }
