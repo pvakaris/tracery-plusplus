@@ -22,9 +22,12 @@ import org.eclipse.xtext.xbase.lib.ListExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
+import tracerypp.traceryPlusPlus.Modifier;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
+import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.ObjectPronoun;
 import tracerypp.traceryPlusPlus.ObjectUse;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
@@ -312,9 +315,45 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
    * DISPATCH
    */
   protected String _generateJsonStoryEntry(final ObjectUse object, final String storyname) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nAmbiguous feature call.\nThe methods\n\tname() in Enum and\n\tgetName() in PronounIdentifier\nboth match."
-      + "\nType mismatch: cannot convert from ModifierList to Iterable<?>");
+    final String objectName = object.getObject().getName();
+    if ((object instanceof ObjectAttribute)) {
+      final String attribute = this.getAttributeName(((ObjectAttribute)object).getAttribute());
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("#");
+      String _upperCase = attribute.substring(0, 1).toUpperCase();
+      String _plus = (objectName + _upperCase);
+      String _substring = attribute.substring(1);
+      String _plus_1 = (_plus + _substring);
+      String _plus_2 = (_plus_1 + "-");
+      String _plus_3 = (_plus_2 + storyname);
+      _builder.append(_plus_3);
+      {
+        EList<Modifier> _modifiers = ((ObjectAttribute)object).getModifiers().getModifiers();
+        for(final Modifier mod : _modifiers) {
+          String _substring_1 = mod.toString().substring(1);
+          String _plus_4 = ("." + _substring_1);
+          _builder.append(_plus_4);
+        }
+      }
+      _builder.append("#");
+      return _builder.toString();
+    } else {
+      if ((object instanceof ObjectPronoun)) {
+        final String attribute_1 = ((ObjectPronoun)object).getPronoun().toString().substring(1);
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("#");
+        String _upperCase_1 = attribute_1.substring(0, 1).toUpperCase();
+        String _plus_5 = (objectName + _upperCase_1);
+        String _substring_2 = attribute_1.substring(1);
+        String _plus_6 = (_plus_5 + _substring_2);
+        String _plus_7 = (_plus_6 + "-");
+        String _plus_8 = (_plus_7 + storyname);
+        _builder_1.append(_plus_8);
+        _builder_1.append("#");
+        return _builder_1.toString();
+      }
+    }
+    return null;
   }
 
   protected String _generateJsonStoryEntry(final Word word, final String storyname) {
@@ -325,8 +364,20 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   }
 
   protected String _generateJsonStoryEntry(final ListUse storyVariable, final String storyname) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from ModifierList to Iterable<?>");
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("#");
+    String _name = storyVariable.getVariable().getName();
+    _builder.append(_name);
+    {
+      EList<Modifier> _modifiers = storyVariable.getModifiers().getModifiers();
+      for(final Modifier mod : _modifiers) {
+        String _substring = mod.toString().substring(1);
+        String _plus = ("." + _substring);
+        _builder.append(_plus);
+      }
+    }
+    _builder.append("#");
+    return _builder.toString();
   }
 
   protected String _generateJsonStoryEntry(final SubstoryUse storyVariable, final String storyname) {

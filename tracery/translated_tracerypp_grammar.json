@@ -1,8 +1,9 @@
 {
 	"color": ["green", "blue", "red", "white", "black", "yellow", "orange"],
 	"shape": ["square", "circle", "triangle", "hexagon"],
-	"setFigure-small": ["[figureHape-small:#shape#][figurePnt-small:#color#][figureThey-small:it][figureThem-small:it][figureTheir-small:its][figureTheirs-small:its]"],
-	"small": ["I am a small #figurePnt-small# #figureHape-small#."],"big": ["#small# #small# "],
+	"setFigure-small": ["[figureShape-small:#shape#][figurePaint-small:#color#][figureB-small:b][figureThey-small:it][figureThem-small:it][figureTheir-small:its][figureTheirs-small:its]"],
+	"small": ["I am a small #figureShape-small.a# #color#. #figureThey-small# "],
+	"big": ["#small# #small# "],
 	"story": ["#big#"],
 	"origin": ["#[#setFigure-small#]story#"]
 }

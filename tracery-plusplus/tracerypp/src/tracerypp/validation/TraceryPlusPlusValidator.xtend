@@ -18,7 +18,7 @@ import tracerypp.traceryPlusPlus.ModifierList
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  * 
  * Author: Vakaris Paulavicius
- * Version 1.0
+ * Version 1.1
  */
 class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 

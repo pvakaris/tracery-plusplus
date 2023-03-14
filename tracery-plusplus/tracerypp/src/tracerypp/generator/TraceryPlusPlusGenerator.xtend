@@ -188,10 +188,10 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 		val objectName = object.object.name
 		if(object instanceof ObjectAttribute) {
 			val attribute = getAttributeName(object.attribute)
-			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1) + "-" + storyname»« FOR mod : object.modifiers »« mod »« ENDFOR »#'''
+			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1) + "-" + storyname»« FOR mod : object.modifiers.modifiers »« '.' + mod.toString().substring(1)   »« ENDFOR »#'''
 		}
 		else if(object instanceof ObjectPronoun) {
-			val attribute = object.pronoun.name
+			val attribute = object.pronoun.toString().substring(1)
 			return '''#«objectName + attribute.substring(0, 1).toUpperCase() + attribute.substring(1) + "-" + storyname»#'''
 		}
 		
@@ -205,7 +205,7 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	
 	// Generates reference to list and adds specified modifiers
 	dispatch def generateJsonStoryEntry(ListUse storyVariable, String storyname) {
-		return '''#«storyVariable.variable.name»« FOR mod : storyVariable.modifiers »« mod »« ENDFOR »#'''
+		return '''#«storyVariable.variable.name»« FOR mod : storyVariable.modifiers.modifiers »« '.' + mod.toString().substring(1) »« ENDFOR »#'''
 	}
 	
 	// Generates reference to the substroy use

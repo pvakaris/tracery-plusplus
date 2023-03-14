@@ -18,7 +18,7 @@ import tracerypp.traceryPlusPlus.NameExistingListAttribute
  * on how and when to use it.
  * 
  * Author: Vakaris Paulavicius
- * Version 1.0
+ * Version 1.1
  */
 class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
 	
