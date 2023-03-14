@@ -10,6 +10,8 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -32,7 +34,10 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Assignment cStoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cStoryStoryParserRuleCall_1_0 = (RuleCall)cStoryAssignment_1.eContents().get(0);
 		
-		//// Version 1.0
+		///*
+		// * Author: Vakaris Paulavicius
+		// * Version 1.0
+		// */
 		//TraceryPlusPlusProgram:
 		//    // First all the necessary statements are declared and then the story structure is specified
 		//    statements += Statement*
@@ -106,6 +111,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cObjectUseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cSubstoryUseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
+		///*
+		//    Pointers to variables
+		// */
 		//VariableUse:
 		//    ListUse |
 		//    ObjectUse |
@@ -290,11 +298,10 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cAttributesAttributeListParserRuleCall_8_0 = (RuleCall)cAttributesAssignment_8.eContents().get(0);
 		
 		///*
-		//    Define an object that has attributes. If the attribute value is not specified, the attribute name
-		//    must be the same as one of the lists. The value will be selected randomly.
+		//    Define an object that has attributes. If the attribute value points to a list, the value will be selected randomly from that list.
 		//    Examples of use:
 		//        hero is an object.
-		//        It has attributes: name = "John", occupation
+		//        It has attributes: name = "John", occupation = occupation
 		// */
 		//ObjectDeclaration:
 		//    "There" ("is" | "are") ("a" | "an")? name = ID
@@ -374,6 +381,13 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final RuleCall cStoryVariableUseParserRuleCall_4_0_1 = (RuleCall)cStoryAlternatives_4_0.eContents().get(1);
 		private final Keyword cEndSubstoryKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
+		///*
+		//    A substory that can be used in other substories and the story itself.
+		//    Examples of use:
+		//        substory small:
+		//            "I am a small "figure.color" "figure.shape"."
+		//        end-substory
+		// */
 		//SubstoryDeclaration:
 		//    "define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 		//;
@@ -541,16 +555,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final CrossReference cVariableListDeclarationCrossReference_0_0 = (CrossReference)cVariableAssignment_0.eContents().get(0);
 		private final RuleCall cVariableListDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cVariableListDeclarationCrossReference_0_0.eContents().get(1);
 		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cModifiersModifierParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
+		private final RuleCall cModifiersModifierListParserRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
 		
 		//ListUse:
 		//    variable = [ListDeclaration]
-		//    modifiers += Modifier*
+		//    modifiers = ModifierList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//variable = [ListDeclaration]
-		//modifiers += Modifier*
+		//modifiers = ModifierList
 		public Group getGroup() { return cGroup; }
 		
 		//variable = [ListDeclaration]
@@ -562,11 +576,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getVariableListDeclarationIDTerminalRuleCall_0_0_1() { return cVariableListDeclarationIDTerminalRuleCall_0_0_1; }
 		
-		//modifiers += Modifier*
+		//modifiers = ModifierList
 		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
 		
-		//Modifier
-		public RuleCall getModifiersModifierParserRuleCall_1_0() { return cModifiersModifierParserRuleCall_1_0; }
+		//ModifierList
+		public RuleCall getModifiersModifierListParserRuleCall_1_0() { return cModifiersModifierListParserRuleCall_1_0; }
 	}
 	public class SubstoryUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SubstoryUse");
@@ -641,16 +655,16 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final CrossReference cAttributeAttributeCrossReference_2_0 = (CrossReference)cAttributeAssignment_2.eContents().get(0);
 		private final RuleCall cAttributeAttributeIDTerminalRuleCall_2_0_1 = (RuleCall)cAttributeAttributeCrossReference_2_0.eContents().get(1);
 		private final Assignment cModifiersAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cModifiersModifierParserRuleCall_3_0 = (RuleCall)cModifiersAssignment_3.eContents().get(0);
+		private final RuleCall cModifiersModifierListParserRuleCall_3_0 = (RuleCall)cModifiersAssignment_3.eContents().get(0);
 		
 		//ObjectAttribute:
 		//    object = [ObjectDeclaration] "." attribute = [Attribute]
-		//    modifiers += Modifier*
+		//    modifiers = ModifierList
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//object = [ObjectDeclaration] "." attribute = [Attribute]
-		//modifiers += Modifier*
+		//modifiers = ModifierList
 		public Group getGroup() { return cGroup; }
 		
 		//object = [ObjectDeclaration]
@@ -674,11 +688,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getAttributeAttributeIDTerminalRuleCall_2_0_1() { return cAttributeAttributeIDTerminalRuleCall_2_0_1; }
 		
-		//modifiers += Modifier*
+		//modifiers = ModifierList
 		public Assignment getModifiersAssignment_3() { return cModifiersAssignment_3; }
 		
-		//Modifier
-		public RuleCall getModifiersModifierParserRuleCall_3_0() { return cModifiersModifierParserRuleCall_3_0; }
+		//ModifierList
+		public RuleCall getModifiersModifierListParserRuleCall_3_0() { return cModifiersModifierListParserRuleCall_3_0; }
 	}
 	public class ObjectPronounElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ObjectPronoun");
@@ -686,16 +700,17 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Assignment cObjectAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cObjectObjectDeclarationCrossReference_0_0 = (CrossReference)cObjectAssignment_0.eContents().get(0);
 		private final RuleCall cObjectObjectDeclarationIDTerminalRuleCall_0_0_1 = (RuleCall)cObjectObjectDeclarationCrossReference_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cPronounAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPronounPronounIdentifierParserRuleCall_2_0 = (RuleCall)cPronounAssignment_2.eContents().get(0);
+		private final Assignment cPronounAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cPronounPronounIdentifierEnumRuleCall_1_0 = (RuleCall)cPronounAssignment_1.eContents().get(0);
 		
 		//ObjectPronoun:
-		//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+		//    object = [ObjectDeclaration]
+		//    pronoun = PronounIdentifier
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+		//object = [ObjectDeclaration]
+		//pronoun = PronounIdentifier
 		public Group getGroup() { return cGroup; }
 		
 		//object = [ObjectDeclaration]
@@ -707,14 +722,11 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//ID
 		public RuleCall getObjectObjectDeclarationIDTerminalRuleCall_0_0_1() { return cObjectObjectDeclarationIDTerminalRuleCall_0_0_1; }
 		
-		//"."
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
-		
 		//pronoun = PronounIdentifier
-		public Assignment getPronounAssignment_2() { return cPronounAssignment_2; }
+		public Assignment getPronounAssignment_1() { return cPronounAssignment_1; }
 		
 		//PronounIdentifier
-		public RuleCall getPronounPronounIdentifierParserRuleCall_2_0() { return cPronounPronounIdentifierParserRuleCall_2_0; }
+		public RuleCall getPronounPronounIdentifierEnumRuleCall_1_0() { return cPronounPronounIdentifierEnumRuleCall_1_0; }
 	}
 	public class WordListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.WordList");
@@ -790,182 +802,62 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	public class PronounsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Pronouns");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final Keyword cValueHeKeyword_0_0 = (Keyword)cValueAssignment_0.eContents().get(0);
-		private final Assignment cValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cValueSheKeyword_1_0 = (Keyword)cValueAssignment_1.eContents().get(0);
-		private final Assignment cValueAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cValueItKeyword_2_0 = (Keyword)cValueAssignment_2.eContents().get(0);
-		private final Assignment cValueAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final Keyword cValueTheyKeyword_3_0 = (Keyword)cValueAssignment_3.eContents().get(0);
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cValueAlternatives_0 = (Alternatives)cValueAssignment.eContents().get(0);
+		private final Keyword cValueHeKeyword_0_0 = (Keyword)cValueAlternatives_0.eContents().get(0);
+		private final Keyword cValueSheKeyword_0_1 = (Keyword)cValueAlternatives_0.eContents().get(1);
+		private final Keyword cValueItKeyword_0_2 = (Keyword)cValueAlternatives_0.eContents().get(2);
+		private final Keyword cValueTheyKeyword_0_3 = (Keyword)cValueAlternatives_0.eContents().get(3);
 		
 		///*
 		//    Modifiers
 		// */
 		//Pronouns:
-		//    value = "He" | value = "She" | value = "It" | value = "They"
+		//    value = ("He" | "She" | "It" | "They")
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value = "He" | value = "She" | value = "It" | value = "They"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//value = ("He" | "She" | "It" | "They")
+		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//value = "He"
-		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+		//("He" | "She" | "It" | "They")
+		public Alternatives getValueAlternatives_0() { return cValueAlternatives_0; }
 		
 		//"He"
 		public Keyword getValueHeKeyword_0_0() { return cValueHeKeyword_0_0; }
 		
-		//value = "She"
-		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
-		
 		//"She"
-		public Keyword getValueSheKeyword_1_0() { return cValueSheKeyword_1_0; }
-		
-		//value = "It"
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Keyword getValueSheKeyword_0_1() { return cValueSheKeyword_0_1; }
 		
 		//"It"
-		public Keyword getValueItKeyword_2_0() { return cValueItKeyword_2_0; }
-		
-		//value = "They"
-		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
+		public Keyword getValueItKeyword_0_2() { return cValueItKeyword_0_2; }
 		
 		//"They"
-		public Keyword getValueTheyKeyword_3_0() { return cValueTheyKeyword_3_0; }
+		public Keyword getValueTheyKeyword_0_3() { return cValueTheyKeyword_0_3; }
 	}
-	public class PronounIdentifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.PronounIdentifier");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cNameAlternatives_0 = (Alternatives)cNameAssignment.eContents().get(0);
-		private final Keyword cNameTheyKeyword_0_0 = (Keyword)cNameAlternatives_0.eContents().get(0);
-		private final Keyword cNameThemKeyword_0_1 = (Keyword)cNameAlternatives_0.eContents().get(1);
-		private final Keyword cNameTheirKeyword_0_2 = (Keyword)cNameAlternatives_0.eContents().get(2);
-		private final Keyword cNameTheirsKeyword_0_3 = (Keyword)cNameAlternatives_0.eContents().get(3);
+	public class ModifierListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ModifierList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModifierListAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cModifiersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cModifiersModifierEnumRuleCall_1_0 = (RuleCall)cModifiersAssignment_1.eContents().get(0);
 		
-		//PronounIdentifier:
-		//    name = ("they" | "them" | "their" | "theirs")
+		//ModifierList:
+		//    {ModifierList} modifiers += Modifier*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name = ("they" | "them" | "their" | "theirs")
-		public Assignment getNameAssignment() { return cNameAssignment; }
+		//{ModifierList} modifiers += Modifier*
+		public Group getGroup() { return cGroup; }
 		
-		//("they" | "them" | "their" | "theirs")
-		public Alternatives getNameAlternatives_0() { return cNameAlternatives_0; }
+		//{ModifierList}
+		public Action getModifierListAction_0() { return cModifierListAction_0; }
 		
-		//"they"
-		public Keyword getNameTheyKeyword_0_0() { return cNameTheyKeyword_0_0; }
+		//modifiers += Modifier*
+		public Assignment getModifiersAssignment_1() { return cModifiersAssignment_1; }
 		
-		//"them"
-		public Keyword getNameThemKeyword_0_1() { return cNameThemKeyword_0_1; }
-		
-		//"their"
-		public Keyword getNameTheirKeyword_0_2() { return cNameTheirKeyword_0_2; }
-		
-		//"theirs"
-		public Keyword getNameTheirsKeyword_0_3() { return cNameTheirsKeyword_0_3; }
-	}
-	public class ModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Modifier");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cCapitalizationModifierParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cFullCapitalizationModifierParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cPluralityModifierParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cArticleModifierParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cPastTenseModifierParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		
-		//Modifier:
-		//    CapitalizationModifier |
-		//    FullCapitalizationModifier |
-		//    PluralityModifier |
-		//    ArticleModifier |
-		//    PastTenseModifier
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//CapitalizationModifier |
-		//FullCapitalizationModifier |
-		//PluralityModifier |
-		//ArticleModifier |
-		//PastTenseModifier
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//CapitalizationModifier
-		public RuleCall getCapitalizationModifierParserRuleCall_0() { return cCapitalizationModifierParserRuleCall_0; }
-		
-		//FullCapitalizationModifier
-		public RuleCall getFullCapitalizationModifierParserRuleCall_1() { return cFullCapitalizationModifierParserRuleCall_1; }
-		
-		//PluralityModifier
-		public RuleCall getPluralityModifierParserRuleCall_2() { return cPluralityModifierParserRuleCall_2; }
-		
-		//ArticleModifier
-		public RuleCall getArticleModifierParserRuleCall_3() { return cArticleModifierParserRuleCall_3; }
-		
-		//PastTenseModifier
-		public RuleCall getPastTenseModifierParserRuleCall_4() { return cPastTenseModifierParserRuleCall_4; }
-	}
-	public class CapitalizationModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.CapitalizationModifier");
-		private final Keyword cCapitalizeKeyword = (Keyword)rule.eContents().get(1);
-		
-		//CapitalizationModifier:
-		//    ".capitalize"
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//".capitalize"
-		public Keyword getCapitalizeKeyword() { return cCapitalizeKeyword; }
-	}
-	public class FullCapitalizationModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.FullCapitalizationModifier");
-		private final Keyword cCAPITALIZEKeyword = (Keyword)rule.eContents().get(1);
-		
-		//FullCapitalizationModifier:
-		//    ".CAPITALIZE"
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//".CAPITALIZE"
-		public Keyword getCAPITALIZEKeyword() { return cCAPITALIZEKeyword; }
-	}
-	public class PluralityModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.PluralityModifier");
-		private final Keyword cSKeyword = (Keyword)rule.eContents().get(1);
-		
-		//PluralityModifier:
-		//    ".s"
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//".s"
-		public Keyword getSKeyword() { return cSKeyword; }
-	}
-	public class ArticleModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ArticleModifier");
-		private final Keyword cAKeyword = (Keyword)rule.eContents().get(1);
-		
-		//ArticleModifier:
-		//    ".a"
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//".a"
-		public Keyword getAKeyword() { return cAKeyword; }
-	}
-	public class PastTenseModifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.PastTenseModifier");
-		private final Keyword cEdKeyword = (Keyword)rule.eContents().get(1);
-		
-		//PastTenseModifier:
-		//    ".ed"
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//".ed"
-		public Keyword getEdKeyword() { return cEdKeyword; }
+		//Modifier
+		public RuleCall getModifiersModifierEnumRuleCall_1_0() { return cModifiersModifierEnumRuleCall_1_0; }
 	}
 	public class AssignmentOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.AssignmentOperator");
@@ -975,18 +867,20 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		private final Keyword cHyphenMinusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cHyphenMinusHyphenMinusGreaterThanSignKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Keyword cEqualKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cToKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cIsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cEqualKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cToKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Keyword cIsKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		///*
 		//    Helpers
 		// */
 		//AssignmentOperator:
-		//    "=" | ":" | "-" | "-->" | "equal" "to"
+		//    "=" | ":" | "-" | "-->" | "is"? "equal" "to" | "is"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"=" | ":" | "-" | "-->" | "equal" "to"
+		//"=" | ":" | "-" | "-->" | "is"? "equal" "to" | "is"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//"="
@@ -1001,14 +895,20 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//"-->"
 		public Keyword getHyphenMinusHyphenMinusGreaterThanSignKeyword_3() { return cHyphenMinusHyphenMinusGreaterThanSignKeyword_3; }
 		
-		//"equal" "to"
+		//"is"? "equal" "to"
 		public Group getGroup_4() { return cGroup_4; }
 		
+		//"is"?
+		public Keyword getIsKeyword_4_0() { return cIsKeyword_4_0; }
+		
 		//"equal"
-		public Keyword getEqualKeyword_4_0() { return cEqualKeyword_4_0; }
+		public Keyword getEqualKeyword_4_1() { return cEqualKeyword_4_1; }
 		
 		//"to"
-		public Keyword getToKeyword_4_1() { return cToKeyword_4_1; }
+		public Keyword getToKeyword_4_2() { return cToKeyword_4_2; }
+		
+		//"is"
+		public Keyword getIsKeyword_5() { return cIsKeyword_5; }
 	}
 	public class SeparatorOrElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SeparatorOr");
@@ -1059,6 +959,122 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		public Keyword getAmpersandAmpersandKeyword_2() { return cAmpersandAmpersandKeyword_2; }
 	}
 	
+	public class PronounIdentifierElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.PronounIdentifier");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cTheyEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cTheyTheyKeyword_0_0 = (Keyword)cTheyEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cThemEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cThemThemKeyword_1_0 = (Keyword)cThemEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cTheirEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cTheirTheirKeyword_2_0 = (Keyword)cTheirEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cTheirsEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cTheirsTheirsKeyword_3_0 = (Keyword)cTheirsEnumLiteralDeclaration_3.eContents().get(0);
+		
+		///*
+		//    Used to get the correct pronoun of the object
+		// */
+		//enum PronounIdentifier:
+		//    They = ":they" |
+		//    Them = ":them" |
+		//    Their = ":their" |
+		//    Theirs = ":theirs"
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//They = ":they" |
+		//Them = ":them" |
+		//Their = ":their" |
+		//Theirs = ":theirs"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//They = ":they"
+		public EnumLiteralDeclaration getTheyEnumLiteralDeclaration_0() { return cTheyEnumLiteralDeclaration_0; }
+		
+		//":they"
+		public Keyword getTheyTheyKeyword_0_0() { return cTheyTheyKeyword_0_0; }
+		
+		//Them = ":them"
+		public EnumLiteralDeclaration getThemEnumLiteralDeclaration_1() { return cThemEnumLiteralDeclaration_1; }
+		
+		//":them"
+		public Keyword getThemThemKeyword_1_0() { return cThemThemKeyword_1_0; }
+		
+		//Their = ":their"
+		public EnumLiteralDeclaration getTheirEnumLiteralDeclaration_2() { return cTheirEnumLiteralDeclaration_2; }
+		
+		//":their"
+		public Keyword getTheirTheirKeyword_2_0() { return cTheirTheirKeyword_2_0; }
+		
+		//Theirs = ":theirs"
+		public EnumLiteralDeclaration getTheirsEnumLiteralDeclaration_3() { return cTheirsEnumLiteralDeclaration_3; }
+		
+		//":theirs"
+		public Keyword getTheirsTheirsKeyword_3_0() { return cTheirsTheirsKeyword_3_0; }
+	}
+	public class ModifierElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Modifier");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cCapitalizeEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cCapitalizeCapitalizeKeyword_0_0 = (Keyword)cCapitalizeEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFullCapitalizeEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFullCapitalizeCAPITALIZEKeyword_1_0 = (Keyword)cFullCapitalizeEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cPluralEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cPluralSKeyword_2_0 = (Keyword)cPluralEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cArticleEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cArticleAKeyword_3_0 = (Keyword)cArticleEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cPastTenseEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cPastTenseEdKeyword_4_0 = (Keyword)cPastTenseEnumLiteralDeclaration_4.eContents().get(0);
+		
+		///*
+		//    Modifiers to modify attributes or list variables
+		// */
+		//enum Modifier:
+		//    Capitalize="-capitalize" |
+		//    FullCapitalize="-CAPITALIZE" |
+		//    Plural="-s" |
+		//    Article="-a" |
+		//    PastTense="-ed"
+		//;
+		public EnumRule getRule() { return rule; }
+		
+		//Capitalize="-capitalize" |
+		//FullCapitalize="-CAPITALIZE" |
+		//Plural="-s" |
+		//Article="-a" |
+		//PastTense="-ed"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Capitalize="-capitalize"
+		public EnumLiteralDeclaration getCapitalizeEnumLiteralDeclaration_0() { return cCapitalizeEnumLiteralDeclaration_0; }
+		
+		//"-capitalize"
+		public Keyword getCapitalizeCapitalizeKeyword_0_0() { return cCapitalizeCapitalizeKeyword_0_0; }
+		
+		//FullCapitalize="-CAPITALIZE"
+		public EnumLiteralDeclaration getFullCapitalizeEnumLiteralDeclaration_1() { return cFullCapitalizeEnumLiteralDeclaration_1; }
+		
+		//"-CAPITALIZE"
+		public Keyword getFullCapitalizeCAPITALIZEKeyword_1_0() { return cFullCapitalizeCAPITALIZEKeyword_1_0; }
+		
+		//Plural="-s"
+		public EnumLiteralDeclaration getPluralEnumLiteralDeclaration_2() { return cPluralEnumLiteralDeclaration_2; }
+		
+		//"-s"
+		public Keyword getPluralSKeyword_2_0() { return cPluralSKeyword_2_0; }
+		
+		//Article="-a"
+		public EnumLiteralDeclaration getArticleEnumLiteralDeclaration_3() { return cArticleEnumLiteralDeclaration_3; }
+		
+		//"-a"
+		public Keyword getArticleAKeyword_3_0() { return cArticleAKeyword_3_0; }
+		
+		//PastTense="-ed"
+		public EnumLiteralDeclaration getPastTenseEnumLiteralDeclaration_4() { return cPastTenseEnumLiteralDeclaration_4; }
+		
+		//"-ed"
+		public Keyword getPastTenseEdKeyword_4_0() { return cPastTenseEdKeyword_4_0; }
+	}
 	
 	private final TraceryPlusPlusProgramElements pTraceryPlusPlusProgram;
 	private final StatementElements pStatement;
@@ -1080,13 +1096,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	private final WordListElements pWordList;
 	private final AttributeListElements pAttributeList;
 	private final PronounsElements pPronouns;
-	private final PronounIdentifierElements pPronounIdentifier;
-	private final ModifierElements pModifier;
-	private final CapitalizationModifierElements pCapitalizationModifier;
-	private final FullCapitalizationModifierElements pFullCapitalizationModifier;
-	private final PluralityModifierElements pPluralityModifier;
-	private final ArticleModifierElements pArticleModifier;
-	private final PastTenseModifierElements pPastTenseModifier;
+	private final PronounIdentifierElements ePronounIdentifier;
+	private final ModifierListElements pModifierList;
+	private final ModifierElements eModifier;
 	private final AssignmentOperatorElements pAssignmentOperator;
 	private final SeparatorOrElements pSeparatorOr;
 	private final SeparatorAndElements pSeparatorAnd;
@@ -1120,13 +1132,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		this.pWordList = new WordListElements();
 		this.pAttributeList = new AttributeListElements();
 		this.pPronouns = new PronounsElements();
-		this.pPronounIdentifier = new PronounIdentifierElements();
-		this.pModifier = new ModifierElements();
-		this.pCapitalizationModifier = new CapitalizationModifierElements();
-		this.pFullCapitalizationModifier = new FullCapitalizationModifierElements();
-		this.pPluralityModifier = new PluralityModifierElements();
-		this.pArticleModifier = new ArticleModifierElements();
-		this.pPastTenseModifier = new PastTenseModifierElements();
+		this.ePronounIdentifier = new PronounIdentifierElements();
+		this.pModifierList = new ModifierListElements();
+		this.eModifier = new ModifierElements();
 		this.pAssignmentOperator = new AssignmentOperatorElements();
 		this.pSeparatorOr = new SeparatorOrElements();
 		this.pSeparatorAnd = new SeparatorAndElements();
@@ -1159,7 +1167,10 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 
 	
-	//// Version 1.0
+	///*
+	// * Author: Vakaris Paulavicius
+	// * Version 1.0
+	// */
 	//TraceryPlusPlusProgram:
 	//    // First all the necessary statements are declared and then the story structure is specified
 	//    statements += Statement*
@@ -1198,6 +1209,9 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getVariableAccess().getRule();
 	}
 	
+	///*
+	//    Pointers to variables
+	// */
 	//VariableUse:
 	//    ListUse |
 	//    ObjectUse |
@@ -1245,11 +1259,10 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	///*
-	//    Define an object that has attributes. If the attribute value is not specified, the attribute name
-	//    must be the same as one of the lists. The value will be selected randomly.
+	//    Define an object that has attributes. If the attribute value points to a list, the value will be selected randomly from that list.
 	//    Examples of use:
 	//        hero is an object.
-	//        It has attributes: name = "John", occupation
+	//        It has attributes: name = "John", occupation = occupation
 	// */
 	//ObjectDeclaration:
 	//    "There" ("is" | "are") ("a" | "an")? name = ID
@@ -1263,6 +1276,13 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getObjectDeclarationAccess().getRule();
 	}
 	
+	///*
+	//    A substory that can be used in other substories and the story itself.
+	//    Examples of use:
+	//        substory small:
+	//            "I am a small "figure.color" "figure.shape"."
+	//        end-substory
+	// */
 	//SubstoryDeclaration:
 	//    "define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 	//;
@@ -1329,7 +1349,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//ListUse:
 	//    variable = [ListDeclaration]
-	//    modifiers += Modifier*
+	//    modifiers = ModifierList
 	//;
 	public ListUseElements getListUseAccess() {
 		return pListUse;
@@ -1364,7 +1384,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	//ObjectAttribute:
 	//    object = [ObjectDeclaration] "." attribute = [Attribute]
-	//    modifiers += Modifier*
+	//    modifiers = ModifierList
 	//;
 	public ObjectAttributeElements getObjectAttributeAccess() {
 		return pObjectAttribute;
@@ -1375,7 +1395,8 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//ObjectPronoun:
-	//    object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+	//    object = [ObjectDeclaration]
+	//    pronoun = PronounIdentifier
 	//;
 	public ObjectPronounElements getObjectPronounAccess() {
 		return pObjectPronoun;
@@ -1411,7 +1432,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//    Modifiers
 	// */
 	//Pronouns:
-	//    value = "He" | value = "She" | value = "It" | value = "They"
+	//    value = ("He" | "She" | "It" | "They")
 	//;
 	public PronounsElements getPronounsAccess() {
 		return pPronouns;
@@ -1421,92 +1442,57 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		return getPronounsAccess().getRule();
 	}
 	
-	//PronounIdentifier:
-	//    name = ("they" | "them" | "their" | "theirs")
+	///*
+	//    Used to get the correct pronoun of the object
+	// */
+	//enum PronounIdentifier:
+	//    They = ":they" |
+	//    Them = ":them" |
+	//    Their = ":their" |
+	//    Theirs = ":theirs"
 	//;
 	public PronounIdentifierElements getPronounIdentifierAccess() {
-		return pPronounIdentifier;
+		return ePronounIdentifier;
 	}
 	
-	public ParserRule getPronounIdentifierRule() {
+	public EnumRule getPronounIdentifierRule() {
 		return getPronounIdentifierAccess().getRule();
 	}
 	
-	//Modifier:
-	//    CapitalizationModifier |
-	//    FullCapitalizationModifier |
-	//    PluralityModifier |
-	//    ArticleModifier |
-	//    PastTenseModifier
+	//ModifierList:
+	//    {ModifierList} modifiers += Modifier*
+	//;
+	public ModifierListElements getModifierListAccess() {
+		return pModifierList;
+	}
+	
+	public ParserRule getModifierListRule() {
+		return getModifierListAccess().getRule();
+	}
+	
+	///*
+	//    Modifiers to modify attributes or list variables
+	// */
+	//enum Modifier:
+	//    Capitalize="-capitalize" |
+	//    FullCapitalize="-CAPITALIZE" |
+	//    Plural="-s" |
+	//    Article="-a" |
+	//    PastTense="-ed"
 	//;
 	public ModifierElements getModifierAccess() {
-		return pModifier;
+		return eModifier;
 	}
 	
-	public ParserRule getModifierRule() {
+	public EnumRule getModifierRule() {
 		return getModifierAccess().getRule();
-	}
-	
-	//CapitalizationModifier:
-	//    ".capitalize"
-	//;
-	public CapitalizationModifierElements getCapitalizationModifierAccess() {
-		return pCapitalizationModifier;
-	}
-	
-	public ParserRule getCapitalizationModifierRule() {
-		return getCapitalizationModifierAccess().getRule();
-	}
-	
-	//FullCapitalizationModifier:
-	//    ".CAPITALIZE"
-	//;
-	public FullCapitalizationModifierElements getFullCapitalizationModifierAccess() {
-		return pFullCapitalizationModifier;
-	}
-	
-	public ParserRule getFullCapitalizationModifierRule() {
-		return getFullCapitalizationModifierAccess().getRule();
-	}
-	
-	//PluralityModifier:
-	//    ".s"
-	//;
-	public PluralityModifierElements getPluralityModifierAccess() {
-		return pPluralityModifier;
-	}
-	
-	public ParserRule getPluralityModifierRule() {
-		return getPluralityModifierAccess().getRule();
-	}
-	
-	//ArticleModifier:
-	//    ".a"
-	//;
-	public ArticleModifierElements getArticleModifierAccess() {
-		return pArticleModifier;
-	}
-	
-	public ParserRule getArticleModifierRule() {
-		return getArticleModifierAccess().getRule();
-	}
-	
-	//PastTenseModifier:
-	//    ".ed"
-	//;
-	public PastTenseModifierElements getPastTenseModifierAccess() {
-		return pPastTenseModifier;
-	}
-	
-	public ParserRule getPastTenseModifierRule() {
-		return getPastTenseModifierAccess().getRule();
 	}
 	
 	///*
 	//    Helpers
 	// */
 	//AssignmentOperator:
-	//    "=" | ":" | "-" | "-->" | "equal" "to"
+	//    "=" | ":" | "-" | "-->" | "is"? "equal" "to" | "is"
 	//;
 	public AssignmentOperatorElements getAssignmentOperatorAccess() {
 		return pAssignmentOperator;

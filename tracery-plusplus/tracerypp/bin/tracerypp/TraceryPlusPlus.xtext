@@ -102,7 +102,7 @@ NameValueAttribute:
 
 ListUse:
 	variable = [ListDeclaration]
-	modifiers += Modifier*
+	modifiers = ModifierList
 ;
 
 SubstoryUse:
@@ -116,11 +116,12 @@ ObjectUse:
 
 ObjectAttribute:
 	object = [ObjectDeclaration] "." attribute = [Attribute]
-	modifiers += Modifier*
+	modifiers = ModifierList
 ;
 
 ObjectPronoun:
-	object = [ObjectDeclaration] "." pronoun = PronounIdentifier
+	object = [ObjectDeclaration]
+	pronoun = PronounIdentifier
 ;
 
 WordList:
@@ -136,39 +137,32 @@ AttributeList:
  */
  
 Pronouns:
-	value = "He" | value = "She" | value = "It" | value = "They"
+	value = ("He" | "She" | "It" | "They")
 ;
 
-PronounIdentifier:
-	name = ("they" | "them" | "their" | "theirs")
+/*
+	Used to get the correct pronoun of the object
+ */
+enum PronounIdentifier:
+	They = ":they" |
+	Them = ":them" |
+	Their = ":their" |
+	Theirs = ":theirs"
 ;
 
-Modifier:
-	CapitalizationModifier |
-	FullCapitalizationModifier |
-	PluralityModifier |
-	ArticleModifier |
-	PastTenseModifier
+ModifierList:
+	{ModifierList} modifiers += Modifier*
 ;
 
-CapitalizationModifier:
-	".capitalize"
-;
-
-FullCapitalizationModifier:
-	".CAPITALIZE"
-;
-
-PluralityModifier:
-	".s"
-;
-
-ArticleModifier:
-	".a"
-;
-
-PastTenseModifier:
-	".ed"
+/*
+	Modifiers to modify attributes or list variables
+ */
+enum Modifier:
+	Capitalize="-capitalize" |
+	FullCapitalize="-CAPITALIZE" |
+	Plural="-s" |
+	Article="-a" |
+	PastTense="-ed"
 ;
 
 /*
@@ -176,7 +170,7 @@ PastTenseModifier:
  */
  
 AssignmentOperator:
-	"=" | ":" | "-" | "-->" | "equal" "to"
+	"=" | ":" | "-" | "-->" | "is"? "equal" "to" | "is"
 ;
 
 SeparatorOr:

@@ -11,6 +11,7 @@ import tracerypp.traceryPlusPlus.NameValueAttribute
 import tracerypp.traceryPlusPlus.ListDeclaration
 import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.SubstoryDeclaration
+import tracerypp.traceryPlusPlus.ModifierList
 
 /**
  * This class contains custom validation rules. 
@@ -73,7 +74,21 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	   for (var i = 0; i < objectAttributes.size; i++) {
 	      for (var j = i + 1; j < objectAttributes.size; j++) {
 	         if (getAttributeName(objectAttributes.get(i)) == getAttributeName(objectAttributes.get(j))) {
-	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once when defining the object '" + object.name + "'.", null)
+	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once when defining the object." + object.name + "'.", null)
+	         }
+	      }
+	   }
+	}
+	
+	
+	// Validation rule to check for duplicate modifiers in the modifier list
+	@Check
+	def checkDuplicateModifiers(ModifierList modifiers) {
+		val mods = modifiers.modifiers
+	    for (var i = 0; i < mods.size; i++) {
+	      for (var j = i + 1; j < mods.size; j++) {
+	         if (mods.get(i) == mods.get(j)) {
+	            error("Modifier '" + mods.get(i) + "' is used more than once.", null)
 	         }
 	      }
 	   }

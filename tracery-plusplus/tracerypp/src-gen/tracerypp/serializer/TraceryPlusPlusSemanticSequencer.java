@@ -18,12 +18,12 @@ import tracerypp.services.TraceryPlusPlusGrammarAccess;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
+import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.ObjectPronoun;
-import tracerypp.traceryPlusPlus.PronounIdentifier;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.SubstoryDeclaration;
@@ -56,6 +56,9 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 			case TraceryPlusPlusPackage.LIST_USE:
 				sequence_ListUse(context, (ListUse) semanticObject); 
 				return; 
+			case TraceryPlusPlusPackage.MODIFIER_LIST:
+				sequence_ModifierList(context, (ModifierList) semanticObject); 
+				return; 
 			case TraceryPlusPlusPackage.NAME_EXISTING_LIST_ATTRIBUTE:
 				sequence_NameExistingListAttribute(context, (NameExistingListAttribute) semanticObject); 
 				return; 
@@ -70,9 +73,6 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				return; 
 			case TraceryPlusPlusPackage.OBJECT_PRONOUN:
 				sequence_ObjectPronoun(context, (ObjectPronoun) semanticObject); 
-				return; 
-			case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER:
-				sequence_PronounIdentifier(context, (PronounIdentifier) semanticObject); 
 				return; 
 			case TraceryPlusPlusPackage.PRONOUNS:
 				sequence_Pronouns(context, (Pronouns) semanticObject); 
@@ -146,10 +146,33 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     ListUse returns ListUse
 	 *
 	 * Constraint:
-	 *     (variable=[ListDeclaration|ID] modifiers+=Modifier*)
+	 *     (variable=[ListDeclaration|ID] modifiers=ModifierList)
 	 * </pre>
 	 */
 	protected void sequence_ListUse(ISerializationContext context, ListUse semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.LIST_USE__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.LIST_USE__VARIABLE));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.LIST_USE__MODIFIERS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.LIST_USE__MODIFIERS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getListUseAccess().getVariableListDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.LIST_USE__VARIABLE, false));
+		feeder.accept(grammarAccess.getListUseAccess().getModifiersModifierListParserRuleCall_1_0(), semanticObject.getModifiers());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ModifierList returns ModifierList
+	 *
+	 * Constraint:
+	 *     modifiers+=Modifier*
+	 * </pre>
+	 */
+	protected void sequence_ModifierList(ISerializationContext context, ModifierList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -210,11 +233,23 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     ObjectAttribute returns ObjectAttribute
 	 *
 	 * Constraint:
-	 *     (object=[ObjectDeclaration|ID] attribute=[Attribute|ID] modifiers+=Modifier*)
+	 *     (object=[ObjectDeclaration|ID] attribute=[Attribute|ID] modifiers=ModifierList)
 	 * </pre>
 	 */
 	protected void sequence_ObjectAttribute(ISerializationContext context, ObjectAttribute semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTE));
+			if (transientValues.isValueTransient(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE__MODIFIERS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE__MODIFIERS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT, false));
+		feeder.accept(grammarAccess.getObjectAttributeAccess().getAttributeAttributeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.OBJECT_ATTRIBUTE__ATTRIBUTE, false));
+		feeder.accept(grammarAccess.getObjectAttributeAccess().getModifiersModifierListParserRuleCall_3_0(), semanticObject.getModifiers());
+		feeder.finish();
 	}
 	
 	
@@ -266,22 +301,8 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getObjectPronounAccess().getObjectObjectDeclarationIDTerminalRuleCall_0_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.OBJECT_USE__OBJECT, false));
-		feeder.accept(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierParserRuleCall_2_0(), semanticObject.getPronoun());
+		feeder.accept(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierEnumRuleCall_1_0(), semanticObject.getPronoun());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     PronounIdentifier returns PronounIdentifier
-	 *
-	 * Constraint:
-	 *     (name='they' | name='them' | name='their' | name='theirs')
-	 * </pre>
-	 */
-	protected void sequence_PronounIdentifier(ISerializationContext context, PronounIdentifier semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

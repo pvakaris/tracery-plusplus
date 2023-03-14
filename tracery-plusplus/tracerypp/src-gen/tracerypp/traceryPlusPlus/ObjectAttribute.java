@@ -3,7 +3,6 @@
  */
 package tracerypp.traceryPlusPlus;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,15 +46,25 @@ public interface ObjectAttribute extends ObjectUse
   void setAttribute(Attribute value);
 
   /**
-   * Returns the value of the '<em><b>Modifiers</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Modifiers</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Modifiers</em>' attribute list.
+   * @return the value of the '<em>Modifiers</em>' containment reference.
+   * @see #setModifiers(ModifierList)
    * @see tracerypp.traceryPlusPlus.TraceryPlusPlusPackage#getObjectAttribute_Modifiers()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getModifiers();
+  ModifierList getModifiers();
+
+  /**
+   * Sets the value of the '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers <em>Modifiers</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Modifiers</em>' containment reference.
+   * @see #getModifiers()
+   * @generated
+   */
+  void setModifiers(ModifierList value);
 
 } // ObjectAttribute

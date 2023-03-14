@@ -4,6 +4,7 @@
 package tracerypp.traceryPlusPlus.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -85,9 +86,47 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
       case TraceryPlusPlusPackage.WORD_LIST: return createWordList();
       case TraceryPlusPlusPackage.ATTRIBUTE_LIST: return createAttributeList();
       case TraceryPlusPlusPackage.PRONOUNS: return createPronouns();
-      case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER: return createPronounIdentifier();
+      case TraceryPlusPlusPackage.MODIFIER_LIST: return createModifierList();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER:
+        return createPronounIdentifierFromString(eDataType, initialValue);
+      case TraceryPlusPlusPackage.MODIFIER:
+        return createModifierFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER:
+        return convertPronounIdentifierToString(eDataType, instanceValue);
+      case TraceryPlusPlusPackage.MODIFIER:
+        return convertModifierToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -337,10 +376,54 @@ public class TraceryPlusPlusFactoryImpl extends EFactoryImpl implements TraceryP
    * @generated
    */
   @Override
-  public PronounIdentifier createPronounIdentifier()
+  public ModifierList createModifierList()
   {
-    PronounIdentifierImpl pronounIdentifier = new PronounIdentifierImpl();
-    return pronounIdentifier;
+    ModifierListImpl modifierList = new ModifierListImpl();
+    return modifierList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PronounIdentifier createPronounIdentifierFromString(EDataType eDataType, String initialValue)
+  {
+    PronounIdentifier result = PronounIdentifier.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertPronounIdentifierToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Modifier createModifierFromString(EDataType eDataType, String initialValue)
+  {
+    Modifier result = Modifier.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertModifierToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -204,13 +204,13 @@ public interface TraceryPlusPlusFactory extends EFactory
   Pronouns createPronouns();
 
   /**
-   * Returns a new object of class '<em>Pronoun Identifier</em>'.
+   * Returns a new object of class '<em>Modifier List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Pronoun Identifier</em>'.
+   * @return a new object of class '<em>Modifier List</em>'.
    * @generated
    */
-  PronounIdentifier createPronounIdentifier();
+  ModifierList createModifierList();
 
   /**
    * Returns the package supported by this factory.

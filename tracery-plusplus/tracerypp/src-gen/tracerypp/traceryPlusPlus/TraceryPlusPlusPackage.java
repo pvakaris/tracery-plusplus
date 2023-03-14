@@ -5,6 +5,7 @@ package tracerypp.traceryPlusPlus;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -458,7 +459,7 @@ public interface TraceryPlusPlusPackage extends EPackage
   int LIST_USE__VARIABLE = VARIABLE_USE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -560,7 +561,7 @@ public interface TraceryPlusPlusPackage extends EPackage
   int OBJECT_ATTRIBUTE__ATTRIBUTE = OBJECT_USE_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * The feature id for the '<em><b>Modifiers</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -597,7 +598,7 @@ public interface TraceryPlusPlusPackage extends EPackage
   int OBJECT_PRONOUN__OBJECT = OBJECT_USE__OBJECT;
 
   /**
-   * The feature id for the '<em><b>Pronoun</b></em>' containment reference.
+   * The feature id for the '<em><b>Pronoun</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -699,32 +700,52 @@ public interface TraceryPlusPlusPackage extends EPackage
   int PRONOUNS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl <em>Pronoun Identifier</em>}' class.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.impl.ModifierListImpl <em>Modifier List</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl
+   * @see tracerypp.traceryPlusPlus.impl.ModifierListImpl
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModifierList()
+   * @generated
+   */
+  int MODIFIER_LIST = 20;
+
+  /**
+   * The feature id for the '<em><b>Modifiers</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFIER_LIST__MODIFIERS = 0;
+
+  /**
+   * The number of structural features of the '<em>Modifier List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODIFIER_LIST_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.PronounIdentifier
    * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
    * @generated
    */
-  int PRONOUN_IDENTIFIER = 20;
+  int PRONOUN_IDENTIFIER = 21;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The meta object id for the '{@link tracerypp.traceryPlusPlus.Modifier <em>Modifier</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see tracerypp.traceryPlusPlus.Modifier
+   * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModifier()
    * @generated
-   * @ordered
    */
-  int PRONOUN_IDENTIFIER__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Pronoun Identifier</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRONOUN_IDENTIFIER_FEATURE_COUNT = 1;
+  int MODIFIER = 22;
 
 
   /**
@@ -1001,15 +1022,15 @@ public interface TraceryPlusPlusPackage extends EPackage
   EReference getListUse_Variable();
 
   /**
-   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ListUse#getModifiers <em>Modifiers</em>}'.
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ListUse#getModifiers <em>Modifiers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @return the meta object for the containment reference '<em>Modifiers</em>'.
    * @see tracerypp.traceryPlusPlus.ListUse#getModifiers()
    * @see #getListUse()
    * @generated
    */
-  EAttribute getListUse_Modifiers();
+  EReference getListUse_Modifiers();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.SubstoryUse <em>Substory Use</em>}'.
@@ -1075,15 +1096,15 @@ public interface TraceryPlusPlusPackage extends EPackage
   EReference getObjectAttribute_Attribute();
 
   /**
-   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers <em>Modifiers</em>}'.
+   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers <em>Modifiers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @return the meta object for the containment reference '<em>Modifiers</em>'.
    * @see tracerypp.traceryPlusPlus.ObjectAttribute#getModifiers()
    * @see #getObjectAttribute()
    * @generated
    */
-  EAttribute getObjectAttribute_Modifiers();
+  EReference getObjectAttribute_Modifiers();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ObjectPronoun <em>Object Pronoun</em>}'.
@@ -1096,15 +1117,15 @@ public interface TraceryPlusPlusPackage extends EPackage
   EClass getObjectPronoun();
 
   /**
-   * Returns the meta object for the containment reference '{@link tracerypp.traceryPlusPlus.ObjectPronoun#getPronoun <em>Pronoun</em>}'.
+   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.ObjectPronoun#getPronoun <em>Pronoun</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pronoun</em>'.
+   * @return the meta object for the attribute '<em>Pronoun</em>'.
    * @see tracerypp.traceryPlusPlus.ObjectPronoun#getPronoun()
    * @see #getObjectPronoun()
    * @generated
    */
-  EReference getObjectPronoun_Pronoun();
+  EAttribute getObjectPronoun_Pronoun();
 
   /**
    * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.WordList <em>Word List</em>}'.
@@ -1170,25 +1191,45 @@ public interface TraceryPlusPlusPackage extends EPackage
   EAttribute getPronouns_Value();
 
   /**
-   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}'.
+   * Returns the meta object for class '{@link tracerypp.traceryPlusPlus.ModifierList <em>Modifier List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Pronoun Identifier</em>'.
+   * @return the meta object for class '<em>Modifier List</em>'.
+   * @see tracerypp.traceryPlusPlus.ModifierList
+   * @generated
+   */
+  EClass getModifierList();
+
+  /**
+   * Returns the meta object for the attribute list '{@link tracerypp.traceryPlusPlus.ModifierList#getModifiers <em>Modifiers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifiers</em>'.
+   * @see tracerypp.traceryPlusPlus.ModifierList#getModifiers()
+   * @see #getModifierList()
+   * @generated
+   */
+  EAttribute getModifierList_Modifiers();
+
+  /**
+   * Returns the meta object for enum '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Pronoun Identifier</em>'.
    * @see tracerypp.traceryPlusPlus.PronounIdentifier
    * @generated
    */
-  EClass getPronounIdentifier();
+  EEnum getPronounIdentifier();
 
   /**
-   * Returns the meta object for the attribute '{@link tracerypp.traceryPlusPlus.PronounIdentifier#getName <em>Name</em>}'.
+   * Returns the meta object for enum '{@link tracerypp.traceryPlusPlus.Modifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see tracerypp.traceryPlusPlus.PronounIdentifier#getName()
-   * @see #getPronounIdentifier()
+   * @return the meta object for enum '<em>Modifier</em>'.
+   * @see tracerypp.traceryPlusPlus.Modifier
    * @generated
    */
-  EAttribute getPronounIdentifier_Name();
+  EEnum getModifier();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1448,12 +1489,12 @@ public interface TraceryPlusPlusPackage extends EPackage
     EReference LIST_USE__VARIABLE = eINSTANCE.getListUse_Variable();
 
     /**
-     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Modifiers</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LIST_USE__MODIFIERS = eINSTANCE.getListUse_Modifiers();
+    EReference LIST_USE__MODIFIERS = eINSTANCE.getListUse_Modifiers();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.SubstoryUseImpl <em>Substory Use</em>}' class.
@@ -1510,12 +1551,12 @@ public interface TraceryPlusPlusPackage extends EPackage
     EReference OBJECT_ATTRIBUTE__ATTRIBUTE = eINSTANCE.getObjectAttribute_Attribute();
 
     /**
-     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Modifiers</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OBJECT_ATTRIBUTE__MODIFIERS = eINSTANCE.getObjectAttribute_Modifiers();
+    EReference OBJECT_ATTRIBUTE__MODIFIERS = eINSTANCE.getObjectAttribute_Modifiers();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ObjectPronounImpl <em>Object Pronoun</em>}' class.
@@ -1528,12 +1569,12 @@ public interface TraceryPlusPlusPackage extends EPackage
     EClass OBJECT_PRONOUN = eINSTANCE.getObjectPronoun();
 
     /**
-     * The meta object literal for the '<em><b>Pronoun</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Pronoun</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBJECT_PRONOUN__PRONOUN = eINSTANCE.getObjectPronoun_Pronoun();
+    EAttribute OBJECT_PRONOUN__PRONOUN = eINSTANCE.getObjectPronoun_Pronoun();
 
     /**
      * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.WordListImpl <em>Word List</em>}' class.
@@ -1590,22 +1631,42 @@ public interface TraceryPlusPlusPackage extends EPackage
     EAttribute PRONOUNS__VALUE = eINSTANCE.getPronouns_Value();
 
     /**
-     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl <em>Pronoun Identifier</em>}' class.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.impl.ModifierListImpl <em>Modifier List</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see tracerypp.traceryPlusPlus.impl.PronounIdentifierImpl
+     * @see tracerypp.traceryPlusPlus.impl.ModifierListImpl
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModifierList()
+     * @generated
+     */
+    EClass MODIFIER_LIST = eINSTANCE.getModifierList();
+
+    /**
+     * The meta object literal for the '<em><b>Modifiers</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MODIFIER_LIST__MODIFIERS = eINSTANCE.getModifierList_Modifiers();
+
+    /**
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.PronounIdentifier <em>Pronoun Identifier</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.PronounIdentifier
      * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getPronounIdentifier()
      * @generated
      */
-    EClass PRONOUN_IDENTIFIER = eINSTANCE.getPronounIdentifier();
+    EEnum PRONOUN_IDENTIFIER = eINSTANCE.getPronounIdentifier();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '{@link tracerypp.traceryPlusPlus.Modifier <em>Modifier</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see tracerypp.traceryPlusPlus.Modifier
+     * @see tracerypp.traceryPlusPlus.impl.TraceryPlusPlusPackageImpl#getModifier()
      * @generated
      */
-    EAttribute PRONOUN_IDENTIFIER__NAME = eINSTANCE.getPronounIdentifier_Name();
+    EEnum MODIFIER = eINSTANCE.getModifier();
 
   }
 

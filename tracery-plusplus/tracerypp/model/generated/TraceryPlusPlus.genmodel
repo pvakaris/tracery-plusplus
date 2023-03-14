@@ -6,6 +6,19 @@
     copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="TraceryPlusPlus" basePackage="tracerypp" disposableProviderFactory="true"
       fileExtensions="tpp" ecorePackage="TraceryPlusPlus.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TraceryPlusPlus.ecore#//PronounIdentifier">
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//PronounIdentifier/They"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//PronounIdentifier/Them"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//PronounIdentifier/Their"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//PronounIdentifier/Theirs"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TraceryPlusPlus.ecore#//Modifier">
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//Modifier/Capitalize"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//Modifier/FullCapitalize"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//Modifier/Plural"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//Modifier/Article"/>
+      <genEnumLiterals ecoreEnumLiteral="TraceryPlusPlus.ecore#//Modifier/PastTense"/>
+    </genEnums>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//TraceryPlusPlusProgram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//TraceryPlusPlusProgram/statements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//TraceryPlusPlusProgram/story"/>
@@ -42,7 +55,7 @@
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ListUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListUse/variable"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ListUse/modifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ListUse/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//SubstoryUse">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//SubstoryUse/variable"/>
@@ -52,10 +65,10 @@
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/attribute"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ObjectAttribute/modifiers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectAttribute/modifiers"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//ObjectPronoun">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//ObjectPronoun/pronoun"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ObjectPronoun/pronoun"/>
     </genClasses>
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//WordList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TraceryPlusPlus.ecore#//WordList/words"/>
@@ -66,8 +79,8 @@
     <genClasses ecoreClass="TraceryPlusPlus.ecore#//Pronouns">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//Pronouns/value"/>
     </genClasses>
-    <genClasses ecoreClass="TraceryPlusPlus.ecore#//PronounIdentifier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//PronounIdentifier/name"/>
+    <genClasses ecoreClass="TraceryPlusPlus.ecore#//ModifierList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TraceryPlusPlus.ecore#//ModifierList/modifiers"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

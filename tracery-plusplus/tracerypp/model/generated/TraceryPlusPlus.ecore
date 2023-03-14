@@ -46,8 +46,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ListUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//ListDeclaration"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifiers" eType="#//ModifierList"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubstoryUse" eSuperTypes="#//VariableUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//SubstoryDeclaration"/>
@@ -57,12 +57,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectAttribute" eSuperTypes="#//ObjectUse">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifiers" eType="#//ModifierList"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObjectPronoun" eSuperTypes="#//ObjectUse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pronoun" eType="#//PronounIdentifier"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pronoun" eType="#//PronounIdentifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WordList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="words" upperBound="-1"
@@ -75,7 +74,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="Pronouns">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PronounIdentifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PronounIdentifier">
+    <eLiterals name="They" literal=":they"/>
+    <eLiterals name="Them" value="1" literal=":them"/>
+    <eLiterals name="Their" value="2" literal=":their"/>
+    <eLiterals name="Theirs" value="3" literal=":theirs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModifierList">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" unique="false"
+        upperBound="-1" eType="#//Modifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Modifier">
+    <eLiterals name="Capitalize" literal="-capitalize"/>
+    <eLiterals name="FullCapitalize" value="1" literal="-CAPITALIZE"/>
+    <eLiterals name="Plural" value="2" literal="-s"/>
+    <eLiterals name="Article" value="3" literal="-a"/>
+    <eLiterals name="PastTense" value="4" literal="-ed"/>
   </eClassifiers>
 </ecore:EPackage>

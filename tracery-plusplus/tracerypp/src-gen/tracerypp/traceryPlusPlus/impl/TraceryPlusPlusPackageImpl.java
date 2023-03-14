@@ -5,6 +5,7 @@ package tracerypp.traceryPlusPlus.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -14,6 +15,8 @@ import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.AttributeList;
 import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
+import tracerypp.traceryPlusPlus.Modifier;
+import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectAttribute;
@@ -187,7 +190,21 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass pronounIdentifierEClass = null;
+  private EClass modifierListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum pronounIdentifierEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum modifierEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -543,9 +560,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getListUse_Modifiers()
+  public EReference getListUse_Modifiers()
   {
-    return (EAttribute)listUseEClass.getEStructuralFeatures().get(1);
+    return (EReference)listUseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -620,9 +637,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getObjectAttribute_Modifiers()
+  public EReference getObjectAttribute_Modifiers()
   {
-    return (EAttribute)objectAttributeEClass.getEStructuralFeatures().get(1);
+    return (EReference)objectAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -642,9 +659,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EReference getObjectPronoun_Pronoun()
+  public EAttribute getObjectPronoun_Pronoun()
   {
-    return (EReference)objectPronounEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)objectPronounEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -719,9 +736,9 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EClass getPronounIdentifier()
+  public EClass getModifierList()
   {
-    return pronounIdentifierEClass;
+    return modifierListEClass;
   }
 
   /**
@@ -730,9 +747,31 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
    * @generated
    */
   @Override
-  public EAttribute getPronounIdentifier_Name()
+  public EAttribute getModifierList_Modifiers()
   {
-    return (EAttribute)pronounIdentifierEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)modifierListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getPronounIdentifier()
+  {
+    return pronounIdentifierEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getModifier()
+  {
+    return modifierEEnum;
   }
 
   /**
@@ -804,7 +843,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     listUseEClass = createEClass(LIST_USE);
     createEReference(listUseEClass, LIST_USE__VARIABLE);
-    createEAttribute(listUseEClass, LIST_USE__MODIFIERS);
+    createEReference(listUseEClass, LIST_USE__MODIFIERS);
 
     substoryUseEClass = createEClass(SUBSTORY_USE);
     createEReference(substoryUseEClass, SUBSTORY_USE__VARIABLE);
@@ -814,10 +853,10 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     objectAttributeEClass = createEClass(OBJECT_ATTRIBUTE);
     createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__ATTRIBUTE);
-    createEAttribute(objectAttributeEClass, OBJECT_ATTRIBUTE__MODIFIERS);
+    createEReference(objectAttributeEClass, OBJECT_ATTRIBUTE__MODIFIERS);
 
     objectPronounEClass = createEClass(OBJECT_PRONOUN);
-    createEReference(objectPronounEClass, OBJECT_PRONOUN__PRONOUN);
+    createEAttribute(objectPronounEClass, OBJECT_PRONOUN__PRONOUN);
 
     wordListEClass = createEClass(WORD_LIST);
     createEReference(wordListEClass, WORD_LIST__WORDS);
@@ -828,8 +867,12 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     pronounsEClass = createEClass(PRONOUNS);
     createEAttribute(pronounsEClass, PRONOUNS__VALUE);
 
-    pronounIdentifierEClass = createEClass(PRONOUN_IDENTIFIER);
-    createEAttribute(pronounIdentifierEClass, PRONOUN_IDENTIFIER__NAME);
+    modifierListEClass = createEClass(MODIFIER_LIST);
+    createEAttribute(modifierListEClass, MODIFIER_LIST__MODIFIERS);
+
+    // Create enums
+    pronounIdentifierEEnum = createEEnum(PRONOUN_IDENTIFIER);
+    modifierEEnum = createEEnum(MODIFIER);
   }
 
   /**
@@ -912,7 +955,7 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(listUseEClass, ListUse.class, "ListUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getListUse_Variable(), this.getListDeclaration(), null, "variable", null, 0, 1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getListUse_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getListUse_Modifiers(), this.getModifierList(), null, "modifiers", null, 0, 1, ListUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(substoryUseEClass, SubstoryUse.class, "SubstoryUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSubstoryUse_Variable(), this.getSubstoryDeclaration(), null, "variable", null, 0, 1, SubstoryUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -922,10 +965,10 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
 
     initEClass(objectAttributeEClass, ObjectAttribute.class, "ObjectAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getObjectAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getObjectAttribute_Modifiers(), ecorePackage.getEString(), "modifiers", null, 0, -1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObjectAttribute_Modifiers(), this.getModifierList(), null, "modifiers", null, 0, 1, ObjectAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(objectPronounEClass, ObjectPronoun.class, "ObjectPronoun", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getObjectPronoun_Pronoun(), this.getPronounIdentifier(), null, "pronoun", null, 0, 1, ObjectPronoun.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getObjectPronoun_Pronoun(), this.getPronounIdentifier(), "pronoun", null, 0, 1, ObjectPronoun.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(wordListEClass, WordList.class, "WordList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getWordList_Words(), this.getWord(), null, "words", null, 0, -1, WordList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -936,8 +979,22 @@ public class TraceryPlusPlusPackageImpl extends EPackageImpl implements TraceryP
     initEClass(pronounsEClass, Pronouns.class, "Pronouns", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPronouns_Value(), ecorePackage.getEString(), "value", null, 0, 1, Pronouns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(pronounIdentifierEClass, PronounIdentifier.class, "PronounIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPronounIdentifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, PronounIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(modifierListEClass, ModifierList.class, "ModifierList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getModifierList_Modifiers(), this.getModifier(), "modifiers", null, 0, -1, ModifierList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(pronounIdentifierEEnum, PronounIdentifier.class, "PronounIdentifier");
+    addEEnumLiteral(pronounIdentifierEEnum, PronounIdentifier.THEY);
+    addEEnumLiteral(pronounIdentifierEEnum, PronounIdentifier.THEM);
+    addEEnumLiteral(pronounIdentifierEEnum, PronounIdentifier.THEIR);
+    addEEnumLiteral(pronounIdentifierEEnum, PronounIdentifier.THEIRS);
+
+    initEEnum(modifierEEnum, Modifier.class, "Modifier");
+    addEEnumLiteral(modifierEEnum, Modifier.CAPITALIZE);
+    addEEnumLiteral(modifierEEnum, Modifier.FULL_CAPITALIZE);
+    addEEnumLiteral(modifierEEnum, Modifier.PLURAL);
+    addEEnumLiteral(modifierEEnum, Modifier.ARTICLE);
+    addEEnumLiteral(modifierEEnum, Modifier.PAST_TENSE);
 
     // Create resource
     createResource(eNS_URI);

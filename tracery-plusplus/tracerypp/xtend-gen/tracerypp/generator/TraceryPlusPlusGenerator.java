@@ -24,9 +24,7 @@ import tracerypp.traceryPlusPlus.ListDeclaration;
 import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
-import tracerypp.traceryPlusPlus.ObjectAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
-import tracerypp.traceryPlusPlus.ObjectPronoun;
 import tracerypp.traceryPlusPlus.ObjectUse;
 import tracerypp.traceryPlusPlus.Pronouns;
 import tracerypp.traceryPlusPlus.Statement;
@@ -314,43 +312,9 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
    * DISPATCH
    */
   protected String _generateJsonStoryEntry(final ObjectUse object, final String storyname) {
-    final String objectName = object.getObject().getName();
-    if ((object instanceof ObjectAttribute)) {
-      final String attribute = this.getAttributeName(((ObjectAttribute)object).getAttribute());
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("#");
-      String _upperCase = attribute.substring(0, 1).toUpperCase();
-      String _plus = (objectName + _upperCase);
-      String _substring = attribute.substring(1);
-      String _plus_1 = (_plus + _substring);
-      String _plus_2 = (_plus_1 + "-");
-      String _plus_3 = (_plus_2 + storyname);
-      _builder.append(_plus_3);
-      {
-        EList<String> _modifiers = ((ObjectAttribute)object).getModifiers();
-        for(final String mod : _modifiers) {
-          _builder.append(mod);
-        }
-      }
-      _builder.append("#");
-      return _builder.toString();
-    } else {
-      if ((object instanceof ObjectPronoun)) {
-        final String attribute_1 = ((ObjectPronoun)object).getPronoun().getName();
-        StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("#");
-        String _upperCase_1 = attribute_1.substring(0, 1).toUpperCase();
-        String _plus_4 = (objectName + _upperCase_1);
-        String _substring_1 = attribute_1.substring(1);
-        String _plus_5 = (_plus_4 + _substring_1);
-        String _plus_6 = (_plus_5 + "-");
-        String _plus_7 = (_plus_6 + storyname);
-        _builder_1.append(_plus_7);
-        _builder_1.append("#");
-        return _builder_1.toString();
-      }
-    }
-    return null;
+    throw new Error("Unresolved compilation problems:"
+      + "\nAmbiguous feature call.\nThe methods\n\tname() in Enum and\n\tgetName() in PronounIdentifier\nboth match."
+      + "\nType mismatch: cannot convert from ModifierList to Iterable<?>");
   }
 
   protected String _generateJsonStoryEntry(final Word word, final String storyname) {
@@ -361,18 +325,8 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   }
 
   protected String _generateJsonStoryEntry(final ListUse storyVariable, final String storyname) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("#");
-    String _name = storyVariable.getVariable().getName();
-    _builder.append(_name);
-    {
-      EList<String> _modifiers = storyVariable.getModifiers();
-      for(final String mod : _modifiers) {
-        _builder.append(mod);
-      }
-    }
-    _builder.append("#");
-    return _builder.toString();
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from ModifierList to Iterable<?>");
   }
 
   protected String _generateJsonStoryEntry(final SubstoryUse storyVariable, final String storyname) {

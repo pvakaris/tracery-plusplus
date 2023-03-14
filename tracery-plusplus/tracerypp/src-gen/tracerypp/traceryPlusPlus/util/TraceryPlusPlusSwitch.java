@@ -229,10 +229,10 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TraceryPlusPlusPackage.PRONOUN_IDENTIFIER:
+      case TraceryPlusPlusPackage.MODIFIER_LIST:
       {
-        PronounIdentifier pronounIdentifier = (PronounIdentifier)theEObject;
-        T result = casePronounIdentifier(pronounIdentifier);
+        ModifierList modifierList = (ModifierList)theEObject;
+        T result = caseModifierList(modifierList);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -561,17 +561,17 @@ public class TraceryPlusPlusSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Pronoun Identifier</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Modifier List</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Pronoun Identifier</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Modifier List</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePronounIdentifier(PronounIdentifier object)
+  public T caseModifierList(ModifierList object)
   {
     return null;
   }

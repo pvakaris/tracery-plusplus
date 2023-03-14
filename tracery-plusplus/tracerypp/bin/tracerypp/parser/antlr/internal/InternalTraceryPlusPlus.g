@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -873,22 +874,22 @@ ruleListUse returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getListUseAccess().getModifiersModifierListParserRuleCall_1_0());
 				}
-				lv_modifiers_1_0=ruleModifier
+				lv_modifiers_1_0=ruleModifierList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getListUseRule());
 					}
-					add(
+					set(
 						$current,
 						"modifiers",
 						lv_modifiers_1_0,
-						"tracerypp.TraceryPlusPlus.Modifier");
+						"tracerypp.TraceryPlusPlus.ModifierList");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)
 	)
 ;
 
@@ -1024,22 +1025,22 @@ ruleObjectAttribute returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getObjectAttributeAccess().getModifiersModifierListParserRuleCall_3_0());
 				}
-				lv_modifiers_3_0=ruleModifier
+				lv_modifiers_3_0=ruleModifierList
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectAttributeRule());
 					}
-					add(
+					set(
 						$current,
 						"modifiers",
 						lv_modifiers_3_0,
-						"tracerypp.TraceryPlusPlus.Modifier");
+						"tracerypp.TraceryPlusPlus.ModifierList");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)
 	)
 ;
 
@@ -1072,16 +1073,12 @@ ruleObjectPronoun returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='.'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getObjectPronounAccess().getFullStopKeyword_1());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierEnumRuleCall_1_0());
 				}
-				lv_pronoun_2_0=rulePronounIdentifier
+				lv_pronoun_1_0=rulePronounIdentifier
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getObjectPronounRule());
@@ -1089,7 +1086,7 @@ ruleObjectPronoun returns [EObject current=null]
 					set(
 						$current,
 						"pronoun",
-						lv_pronoun_2_0,
+						lv_pronoun_1_0,
 						"tracerypp.TraceryPlusPlus.PronounIdentifier");
 					afterParserOrEnumRuleCall();
 				}
@@ -1248,75 +1245,63 @@ rulePronouns returns [EObject current=null]
 	(
 		(
 			(
-				lv_value_0_0='He'
+				lv_value_0_1='He'
 				{
-					newLeafNode(lv_value_0_0, grammarAccess.getPronounsAccess().getValueHeKeyword_0_0());
+					newLeafNode(lv_value_0_1, grammarAccess.getPronounsAccess().getValueHeKeyword_0_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPronounsRule());
 					}
-					setWithLastConsumed($current, "value", lv_value_0_0, "He");
+					setWithLastConsumed($current, "value", lv_value_0_1, null);
 				}
-			)
-		)
-		    |
-		(
-			(
-				lv_value_1_0='She'
+				    |
+				lv_value_0_2='She'
 				{
-					newLeafNode(lv_value_1_0, grammarAccess.getPronounsAccess().getValueSheKeyword_1_0());
+					newLeafNode(lv_value_0_2, grammarAccess.getPronounsAccess().getValueSheKeyword_0_1());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPronounsRule());
 					}
-					setWithLastConsumed($current, "value", lv_value_1_0, "She");
+					setWithLastConsumed($current, "value", lv_value_0_2, null);
 				}
-			)
-		)
-		    |
-		(
-			(
-				lv_value_2_0='It'
+				    |
+				lv_value_0_3='It'
 				{
-					newLeafNode(lv_value_2_0, grammarAccess.getPronounsAccess().getValueItKeyword_2_0());
+					newLeafNode(lv_value_0_3, grammarAccess.getPronounsAccess().getValueItKeyword_0_2());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPronounsRule());
 					}
-					setWithLastConsumed($current, "value", lv_value_2_0, "It");
+					setWithLastConsumed($current, "value", lv_value_0_3, null);
 				}
-			)
-		)
-		    |
-		(
-			(
-				lv_value_3_0='They'
+				    |
+				lv_value_0_4='They'
 				{
-					newLeafNode(lv_value_3_0, grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0());
+					newLeafNode(lv_value_0_4, grammarAccess.getPronounsAccess().getValueTheyKeyword_0_3());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getPronounsRule());
 					}
-					setWithLastConsumed($current, "value", lv_value_3_0, "They");
+					setWithLastConsumed($current, "value", lv_value_0_4, null);
 				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRulePronounIdentifier
-entryRulePronounIdentifier returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getPronounIdentifierRule()); }
-	iv_rulePronounIdentifier=rulePronounIdentifier
-	{ $current=$iv_rulePronounIdentifier.current; }
+// Entry rule entryRuleModifierList
+entryRuleModifierList returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getModifierListRule()); }
+	iv_ruleModifierList=ruleModifierList
+	{ $current=$iv_ruleModifierList.current; }
 	EOF;
 
-// Rule PronounIdentifier
-rulePronounIdentifier returns [EObject current=null]
+// Rule ModifierList
+ruleModifierList returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1325,236 +1310,32 @@ rulePronounIdentifier returns [EObject current=null]
 }:
 	(
 		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getModifierListAccess().getModifierListAction_0(),
+					$current);
+			}
+		)
+		(
 			(
-				lv_name_0_1='they'
 				{
-					newLeafNode(lv_name_0_1, grammarAccess.getPronounIdentifierAccess().getNameTheyKeyword_0_0());
+					newCompositeNode(grammarAccess.getModifierListAccess().getModifiersModifierEnumRuleCall_1_0());
 				}
+				lv_modifiers_1_0=ruleModifier
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
+						$current = createModelElementForParent(grammarAccess.getModifierListRule());
 					}
-					setWithLastConsumed($current, "name", lv_name_0_1, null);
-				}
-				    |
-				lv_name_0_2='them'
-				{
-					newLeafNode(lv_name_0_2, grammarAccess.getPronounIdentifierAccess().getNameThemKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
-					}
-					setWithLastConsumed($current, "name", lv_name_0_2, null);
-				}
-				    |
-				lv_name_0_3='their'
-				{
-					newLeafNode(lv_name_0_3, grammarAccess.getPronounIdentifierAccess().getNameTheirKeyword_0_2());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
-					}
-					setWithLastConsumed($current, "name", lv_name_0_3, null);
-				}
-				    |
-				lv_name_0_4='theirs'
-				{
-					newLeafNode(lv_name_0_4, grammarAccess.getPronounIdentifierAccess().getNameTheirsKeyword_0_3());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPronounIdentifierRule());
-					}
-					setWithLastConsumed($current, "name", lv_name_0_4, null);
+					add(
+						$current,
+						"modifiers",
+						lv_modifiers_1_0,
+						"tracerypp.TraceryPlusPlus.Modifier");
+					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
 	)
-;
-
-// Entry rule entryRuleModifier
-entryRuleModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getModifierRule()); }
-	iv_ruleModifier=ruleModifier
-	{ $current=$iv_ruleModifier.current.getText(); }
-	EOF;
-
-// Rule Modifier
-ruleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getModifierAccess().getCapitalizationModifierParserRuleCall_0());
-		}
-		this_CapitalizationModifier_0=ruleCapitalizationModifier
-		{
-			$current.merge(this_CapitalizationModifier_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getModifierAccess().getFullCapitalizationModifierParserRuleCall_1());
-		}
-		this_FullCapitalizationModifier_1=ruleFullCapitalizationModifier
-		{
-			$current.merge(this_FullCapitalizationModifier_1);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getModifierAccess().getPluralityModifierParserRuleCall_2());
-		}
-		this_PluralityModifier_2=rulePluralityModifier
-		{
-			$current.merge(this_PluralityModifier_2);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getModifierAccess().getArticleModifierParserRuleCall_3());
-		}
-		this_ArticleModifier_3=ruleArticleModifier
-		{
-			$current.merge(this_ArticleModifier_3);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getModifierAccess().getPastTenseModifierParserRuleCall_4());
-		}
-		this_PastTenseModifier_4=rulePastTenseModifier
-		{
-			$current.merge(this_PastTenseModifier_4);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleCapitalizationModifier
-entryRuleCapitalizationModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCapitalizationModifierRule()); }
-	iv_ruleCapitalizationModifier=ruleCapitalizationModifier
-	{ $current=$iv_ruleCapitalizationModifier.current.getText(); }
-	EOF;
-
-// Rule CapitalizationModifier
-ruleCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='.capitalize'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCapitalizationModifierAccess().getCapitalizeKeyword());
-	}
-;
-
-// Entry rule entryRuleFullCapitalizationModifier
-entryRuleFullCapitalizationModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getFullCapitalizationModifierRule()); }
-	iv_ruleFullCapitalizationModifier=ruleFullCapitalizationModifier
-	{ $current=$iv_ruleFullCapitalizationModifier.current.getText(); }
-	EOF;
-
-// Rule FullCapitalizationModifier
-ruleFullCapitalizationModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='.CAPITALIZE'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getFullCapitalizationModifierAccess().getCAPITALIZEKeyword());
-	}
-;
-
-// Entry rule entryRulePluralityModifier
-entryRulePluralityModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getPluralityModifierRule()); }
-	iv_rulePluralityModifier=rulePluralityModifier
-	{ $current=$iv_rulePluralityModifier.current.getText(); }
-	EOF;
-
-// Rule PluralityModifier
-rulePluralityModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='.s'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getPluralityModifierAccess().getSKeyword());
-	}
-;
-
-// Entry rule entryRuleArticleModifier
-entryRuleArticleModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getArticleModifierRule()); }
-	iv_ruleArticleModifier=ruleArticleModifier
-	{ $current=$iv_ruleArticleModifier.current.getText(); }
-	EOF;
-
-// Rule ArticleModifier
-ruleArticleModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='.a'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getArticleModifierAccess().getAKeyword());
-	}
-;
-
-// Entry rule entryRulePastTenseModifier
-entryRulePastTenseModifier returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getPastTenseModifierRule()); }
-	iv_rulePastTenseModifier=rulePastTenseModifier
-	{ $current=$iv_rulePastTenseModifier.current.getText(); }
-	EOF;
-
-// Rule PastTenseModifier
-rulePastTenseModifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='.ed'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getPastTenseModifierAccess().getEdKeyword());
-	}
 ;
 
 // Entry rule entryRuleAssignmentOperator
@@ -1598,17 +1379,30 @@ ruleAssignmentOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatype
 		}
 		    |
 		(
+			(
+				kw='is'
+				{
+					$current.merge(kw);
+					newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getIsKeyword_4_0());
+				}
+			)?
 			kw='equal'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getEqualKeyword_4_0());
+				newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getEqualKeyword_4_1());
 			}
 			kw='to'
 			{
 				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getToKeyword_4_1());
+				newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getToKeyword_4_2());
 			}
 		)
+		    |
+		kw='is'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getAssignmentOperatorAccess().getIsKeyword_5());
+		}
 	)
 ;
 
@@ -1681,6 +1475,100 @@ ruleSeparatorAnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 			$current.merge(kw);
 			newLeafNode(kw, grammarAccess.getSeparatorAndAccess().getAmpersandAmpersandKeyword_2());
 		}
+	)
+;
+
+// Rule PronounIdentifier
+rulePronounIdentifier returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0=':they'
+			{
+				$current = grammarAccess.getPronounIdentifierAccess().getTheyEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getPronounIdentifierAccess().getTheyEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1=':them'
+			{
+				$current = grammarAccess.getPronounIdentifierAccess().getThemEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getPronounIdentifierAccess().getThemEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2=':their'
+			{
+				$current = grammarAccess.getPronounIdentifierAccess().getTheirEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getPronounIdentifierAccess().getTheirEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3=':theirs'
+			{
+				$current = grammarAccess.getPronounIdentifierAccess().getTheirsEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getPronounIdentifierAccess().getTheirsEnumLiteralDeclaration_3());
+			}
+		)
+	)
+;
+
+// Rule Modifier
+ruleModifier returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='-capitalize'
+			{
+				$current = grammarAccess.getModifierAccess().getCapitalizeEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getModifierAccess().getCapitalizeEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='-CAPITALIZE'
+			{
+				$current = grammarAccess.getModifierAccess().getFullCapitalizeEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getModifierAccess().getFullCapitalizeEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='-s'
+			{
+				$current = grammarAccess.getModifierAccess().getPluralEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getModifierAccess().getPluralEnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='-a'
+			{
+				$current = grammarAccess.getModifierAccess().getArticleEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getModifierAccess().getArticleEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='-ed'
+			{
+				$current = grammarAccess.getModifierAccess().getPastTenseEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getModifierAccess().getPastTenseEnumLiteralDeclaration_4());
+			}
+		)
 	)
 ;
 

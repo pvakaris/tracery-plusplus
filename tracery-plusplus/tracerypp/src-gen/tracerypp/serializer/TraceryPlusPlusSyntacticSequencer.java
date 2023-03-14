@@ -65,7 +65,7 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	
 	/**
 	 * AssignmentOperator:
-	 * 	"=" | ":" | "-" | "-->" | "equal" "to"
+	 * 	"=" | ":" | "-" | "-->" | "is"? "equal" "to" | "is"
 	 * ;
 	 */
 	protected String getAssignmentOperatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
