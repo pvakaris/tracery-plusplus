@@ -2,17 +2,14 @@ color can have values: "green" or "blue" or "red" or "white" or "black" or "yell
 shape can be "square", "circle", "triangle", "hexagon"
 
 There is a figure
-It has hape --> shape and pnt from color
-
-There is a figureStatic
-It has hape --> "ball" and pnt --> "orange"
+It has shape --> shape and color from color, b = "b"
 
 substory small:
-	"I am a small "figure.pnt" "figure.hape"."
+	"I am a small "figure.color" "figure.shape"."
 end-substory
 
 substory big:
-	use substory small " "use substory small" "
+	use substory small" "use substory small
 end-substory
 
 The story:

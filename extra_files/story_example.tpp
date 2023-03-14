@@ -26,7 +26,7 @@ It has name from possible_villain_names_list and occupation from villain_occupat
 
 The story:
 
-"Hark! Once upon a time, there was a maiden who was "personality.a" princess. She did dwell in a fair "princess.location", and was known far and wide for "princess.them" "trait" and her great love of "princess.food"."
+"Hark! Once upon a time, there was a maiden who was "personality-a" princess. She did dwell in a fair "princess.location", and was known far and wide for "princess:them" "trait" and her great love of "princess.food"."
 " One day, a "princess.name" prince by name of "prince.name" did journey from a far-off land to visit "princess.name". The twain did spend the whole day exploring the "princess.location" and acquainting themselves with each other."
 " As the sun did set in the sky, "prince.name" did humbly beseech "princess.name" to become his bride. She, with much joy in her heart, did accept his suit, and they did begin the planning of their dream wedding."
 " Sadly, their happiness was short-lived, for an "villain_personality" "villain.occupation" by name of "villain.name" did appear and threaten to ruin all. But with the aid of their wise and loyal friend "friend", "prince.name" and "princess.name" did overcome the "villain.occupation" through the power of magic."

@@ -14,10 +14,10 @@ There is a hero
 He has attributes: name = "John", occupation = occupation
 
 There is a country
-It has attributes: name = "United Kingdom", main_city="London"
+It has attributes: name = "United Kingdom", capital="London"
 
 The story:
-	color.capitalize " was the sky and " name.capitalize " was walking down the " place ". "
-	"Yesterday in the " time_of_day " I " action.ed " from my position at " firm ". "
-	fruit.a.capitalize " was lying on the ground. "
-	hero.name " was slowly walking on the streets of " country.main_city ", looking at the beautiful old architecture."
+	color-capitalize " was the sky and " name-capitalize " was walking down the " place ". "
+	"Yesterday in the " time_of_day " I " action-ed " from my position at " firm ". "
+	fruit-a-capitalize " was lying on the ground. "
+	hero.name " was slowly walking on the streets of " country.capital", looking at the beautiful old architecture."
