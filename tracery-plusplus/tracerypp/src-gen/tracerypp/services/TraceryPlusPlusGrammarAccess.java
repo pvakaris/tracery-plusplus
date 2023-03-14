@@ -363,50 +363,54 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	public class SubstoryDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SubstoryDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSubstoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStoryAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Alternatives cStoryAlternatives_3_0 = (Alternatives)cStoryAssignment_3.eContents().get(0);
-		private final RuleCall cStoryWordParserRuleCall_3_0_0 = (RuleCall)cStoryAlternatives_3_0.eContents().get(0);
-		private final RuleCall cStoryVariableUseParserRuleCall_3_0_1 = (RuleCall)cStoryAlternatives_3_0.eContents().get(1);
-		private final Keyword cEndSubstoryKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cDefineKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cSubstoryKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStoryAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Alternatives cStoryAlternatives_4_0 = (Alternatives)cStoryAssignment_4.eContents().get(0);
+		private final RuleCall cStoryWordParserRuleCall_4_0_0 = (RuleCall)cStoryAlternatives_4_0.eContents().get(0);
+		private final RuleCall cStoryVariableUseParserRuleCall_4_0_1 = (RuleCall)cStoryAlternatives_4_0.eContents().get(1);
+		private final Keyword cEndSubstoryKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//SubstoryDeclaration:
-		//    "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
+		//    "define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
+		//"define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 		public Group getGroup() { return cGroup; }
 		
+		//"define"?
+		public Keyword getDefineKeyword_0() { return cDefineKeyword_0; }
+		
 		//"substory"
-		public Keyword getSubstoryKeyword_0() { return cSubstoryKeyword_0; }
+		public Keyword getSubstoryKeyword_1() { return cSubstoryKeyword_1; }
 		
 		//name = ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//":"
-		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
 		
 		//story += ( Word | VariableUse )*
-		public Assignment getStoryAssignment_3() { return cStoryAssignment_3; }
+		public Assignment getStoryAssignment_4() { return cStoryAssignment_4; }
 		
 		//( Word | VariableUse )
-		public Alternatives getStoryAlternatives_3_0() { return cStoryAlternatives_3_0; }
+		public Alternatives getStoryAlternatives_4_0() { return cStoryAlternatives_4_0; }
 		
 		//Word
-		public RuleCall getStoryWordParserRuleCall_3_0_0() { return cStoryWordParserRuleCall_3_0_0; }
+		public RuleCall getStoryWordParserRuleCall_4_0_0() { return cStoryWordParserRuleCall_4_0_0; }
 		
 		//VariableUse
-		public RuleCall getStoryVariableUseParserRuleCall_3_0_1() { return cStoryVariableUseParserRuleCall_3_0_1; }
+		public RuleCall getStoryVariableUseParserRuleCall_4_0_1() { return cStoryVariableUseParserRuleCall_4_0_1; }
 		
 		//"end-substory"
-		public Keyword getEndSubstoryKeyword_4() { return cEndSubstoryKeyword_4; }
+		public Keyword getEndSubstoryKeyword_5() { return cEndSubstoryKeyword_5; }
 	}
 	public class WordElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.Word");
@@ -567,30 +571,42 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	public class SubstoryUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.SubstoryUse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSubstoryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVariableAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cVariableSubstoryDeclarationCrossReference_1_0 = (CrossReference)cVariableAssignment_1.eContents().get(0);
-		private final RuleCall cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1 = (RuleCall)cVariableSubstoryDeclarationCrossReference_1_0.eContents().get(1);
+		private final Keyword cUseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cSubstoryKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cSubKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Assignment cVariableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cVariableSubstoryDeclarationCrossReference_2_0 = (CrossReference)cVariableAssignment_2.eContents().get(0);
+		private final RuleCall cVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1 = (RuleCall)cVariableSubstoryDeclarationCrossReference_2_0.eContents().get(1);
 		
 		//SubstoryUse:
-		//    "substory" variable = [SubstoryDeclaration]
+		//    "use" ("substory" | "sub")? variable = [SubstoryDeclaration]
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"substory" variable = [SubstoryDeclaration]
+		//"use" ("substory" | "sub")? variable = [SubstoryDeclaration]
 		public Group getGroup() { return cGroup; }
 		
+		//"use"
+		public Keyword getUseKeyword_0() { return cUseKeyword_0; }
+		
+		//("substory" | "sub")?
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//"substory"
-		public Keyword getSubstoryKeyword_0() { return cSubstoryKeyword_0; }
+		public Keyword getSubstoryKeyword_1_0() { return cSubstoryKeyword_1_0; }
+		
+		//"sub"
+		public Keyword getSubKeyword_1_1() { return cSubKeyword_1_1; }
 		
 		//variable = [SubstoryDeclaration]
-		public Assignment getVariableAssignment_1() { return cVariableAssignment_1; }
+		public Assignment getVariableAssignment_2() { return cVariableAssignment_2; }
 		
 		//[SubstoryDeclaration]
-		public CrossReference getVariableSubstoryDeclarationCrossReference_1_0() { return cVariableSubstoryDeclarationCrossReference_1_0; }
+		public CrossReference getVariableSubstoryDeclarationCrossReference_2_0() { return cVariableSubstoryDeclarationCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1() { return cVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1; }
+		public RuleCall getVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1() { return cVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1; }
 	}
 	public class ObjectUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "tracerypp.TraceryPlusPlus.ObjectUse");
@@ -1248,7 +1264,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//SubstoryDeclaration:
-	//    "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
+	//    "define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 	//;
 	public SubstoryDeclarationElements getSubstoryDeclarationAccess() {
 		return pSubstoryDeclaration;
@@ -1324,7 +1340,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	}
 	
 	//SubstoryUse:
-	//    "substory" variable = [SubstoryDeclaration]
+	//    "use" ("substory" | "sub")? variable = [SubstoryDeclaration]
 	//;
 	public SubstoryUseElements getSubstoryUseAccess() {
 		return pSubstoryUse;

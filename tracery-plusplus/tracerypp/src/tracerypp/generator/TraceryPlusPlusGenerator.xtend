@@ -27,10 +27,13 @@ import tracerypp.traceryPlusPlus.Story
 import tracerypp.traceryPlusPlus.SubstoryUse
 
 /**
- * Generates code from your model files on save.
- * 
+ * Generates code from your model files on save. d
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * 
+ * Author: Vakaris Paulavicius
+ * Version 1.0
  */
+ 
 class TraceryPlusPlusGenerator extends AbstractGenerator {
 
 	// File generation method

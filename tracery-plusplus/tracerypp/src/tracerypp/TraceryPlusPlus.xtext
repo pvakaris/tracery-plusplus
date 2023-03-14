@@ -1,9 +1,11 @@
 grammar tracerypp.TraceryPlusPlus with org.eclipse.xtext.common.Terminals
 
-
 generate traceryPlusPlus "http://www.TraceryPlusPlus.tracerypp"
 
-// Version 1.0
+/*
+ * Author: Vakaris Paulavicius
+ * Version 1.0
+ */ 
 
 TraceryPlusPlusProgram:
 	// First all the necessary statements are declared and then the story structure is specified
@@ -22,6 +24,9 @@ Variable:
 	SubstoryDeclaration
 ;
 
+/*
+	Pointers to variables
+ */
 VariableUse:
 	ListUse |
 	ObjectUse |
@@ -47,19 +52,25 @@ ListDeclaration:
 ;
 
 /*
-	Define an object that has attributes. If the attribute value is not specified, the attribute name
-	must be the same as one of the lists. The value will be selected randomly.
+	Define an object that has attributes. If the attribute value points to a list, the value will be selected randomly from that list.
 	Examples of use:
 		hero is an object.
-		It has attributes: name = "John", occupation
+		It has attributes: name = "John", occupation = occupation
  */
 ObjectDeclaration:
 	"There" ("is" | "are") ("a" | "an")? name = ID
 	pronouns = Pronouns ("has" | "have") "attributes"? AssignmentOperator? attributes = AttributeList
 ;
 
+/*
+	A substory that can be used in other substories and the story itself.
+	Examples of use:
+		substory small:
+			"I am a small "figure.color" "figure.shape"."
+		end-substory
+ */
 SubstoryDeclaration:
-	"substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
+	"define"? "substory" name = ID ":" story += ( Word | VariableUse )* "end-substory"
 ;
 
 /*
@@ -95,7 +106,7 @@ ListUse:
 ;
 
 SubstoryUse:
-	"substory" variable = [SubstoryDeclaration]
+	"use" ("substory" | "sub")? variable = [SubstoryDeclaration]
 ;
 
 ObjectUse:

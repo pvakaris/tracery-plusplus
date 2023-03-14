@@ -38,9 +38,11 @@ import tracerypp.traceryPlusPlus.Variable;
 import tracerypp.traceryPlusPlus.Word;
 
 /**
- * Generates code from your model files on save.
- * 
+ * Generates code from your model files on save. d
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * 
+ * Author: Vakaris Paulavicius
+ * Version 1.0
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusGenerator extends AbstractGenerator {

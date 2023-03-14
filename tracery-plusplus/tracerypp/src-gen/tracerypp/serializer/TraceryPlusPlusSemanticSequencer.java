@@ -345,7 +345,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE, false));
+		feeder.accept(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TraceryPlusPlusPackage.Literals.SUBSTORY_USE__VARIABLE, false));
 		feeder.finish();
 	}
 	

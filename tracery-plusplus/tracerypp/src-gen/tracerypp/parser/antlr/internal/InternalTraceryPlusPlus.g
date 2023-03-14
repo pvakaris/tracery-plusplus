@@ -565,15 +565,21 @@ ruleSubstoryDeclaration returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='substory'
+		(
+			otherlv_0='define'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getSubstoryDeclarationAccess().getDefineKeyword_0());
+			}
+		)?
+		otherlv_1='substory'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_1());
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_2_0, grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -582,22 +588,22 @@ ruleSubstoryDeclaration returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_2_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_2=':'
+		otherlv_3=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_3());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_4_0_0());
 					}
-					lv_story_3_1=ruleWord
+					lv_story_4_1=ruleWord
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSubstoryDeclarationRule());
@@ -605,15 +611,15 @@ ruleSubstoryDeclaration returns [EObject current=null]
 						add(
 							$current,
 							"story",
-							lv_story_3_1,
+							lv_story_4_1,
 							"tracerypp.TraceryPlusPlus.Word");
 						afterParserOrEnumRuleCall();
 					}
 					    |
 					{
-						newCompositeNode(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_3_0_1());
+						newCompositeNode(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_4_0_1());
 					}
-					lv_story_3_2=ruleVariableUse
+					lv_story_4_2=ruleVariableUse
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getSubstoryDeclarationRule());
@@ -621,16 +627,16 @@ ruleSubstoryDeclaration returns [EObject current=null]
 						add(
 							$current,
 							"story",
-							lv_story_3_2,
+							lv_story_4_2,
 							"tracerypp.TraceryPlusPlus.VariableUse");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_4='end-substory'
+		otherlv_5='end-substory'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_5());
 		}
 	)
 ;
@@ -902,10 +908,21 @@ ruleSubstoryUse returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='substory'
+		otherlv_0='use'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getSubstoryUseAccess().getUseKeyword_0());
 		}
+		(
+			otherlv_1='substory'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_1_0());
+			}
+			    |
+			otherlv_2='sub'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getSubstoryUseAccess().getSubKeyword_1_1());
+			}
+		)?
 		(
 			(
 				{
@@ -913,9 +930,9 @@ ruleSubstoryUse returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getSubstoryUseRule());
 					}
 				}
-				otherlv_1=RULE_ID
+				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_1_0());
+					newLeafNode(otherlv_3, grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_2_0());
 				}
 			)
 		)

@@ -19,8 +19,10 @@ import tracerypp.traceryPlusPlus.Variable;
 
 /**
  * This class contains custom validation rules.
- * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * 
+ * Author: Vakaris Paulavicius
+ * Version 1.0
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {

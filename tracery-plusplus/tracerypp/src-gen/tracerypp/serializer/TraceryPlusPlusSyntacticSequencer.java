@@ -32,6 +32,8 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	protected AbstractElementAlias match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1;
 	protected AbstractElementAlias match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q;
 	protected AbstractElementAlias match_Story_AssignmentOperatorParserRuleCall_3_q;
+	protected AbstractElementAlias match_SubstoryDeclaration_DefineKeyword_0_q;
+	protected AbstractElementAlias match_SubstoryUse___SubKeyword_1_1_or_SubstoryKeyword_1_0__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -46,6 +48,8 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 		match_ObjectDeclaration_HasKeyword_5_0_or_HaveKeyword_5_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHasKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getHaveKeyword_5_1()));
 		match_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getObjectDeclarationAccess().getAnKeyword_2_1()));
 		match_Story_AssignmentOperatorParserRuleCall_3_q = new TokenAlias(false, true, grammarAccess.getStoryAccess().getAssignmentOperatorParserRuleCall_3());
+		match_SubstoryDeclaration_DefineKeyword_0_q = new TokenAlias(false, true, grammarAccess.getSubstoryDeclarationAccess().getDefineKeyword_0());
+		match_SubstoryUse___SubKeyword_1_1_or_SubstoryKeyword_1_0__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getSubstoryUseAccess().getSubKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_1_0()));
 	}
 	
 	@Override
@@ -118,6 +122,10 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 				emit_ObjectDeclaration___AKeyword_2_0_or_AnKeyword_2_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Story_AssignmentOperatorParserRuleCall_3_q.equals(syntax))
 				emit_Story_AssignmentOperatorParserRuleCall_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SubstoryDeclaration_DefineKeyword_0_q.equals(syntax))
+				emit_SubstoryDeclaration_DefineKeyword_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_SubstoryUse___SubKeyword_1_1_or_SubstoryKeyword_1_0__q.equals(syntax))
+				emit_SubstoryUse___SubKeyword_1_1_or_SubstoryKeyword_1_0__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -261,6 +269,34 @@ public class TraceryPlusPlusSyntacticSequencer extends AbstractSyntacticSequence
 	 * </pre>
 	 */
 	protected void emit_Story_AssignmentOperatorParserRuleCall_3_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     'define'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'substory' name=ID
+	 
+	 * </pre>
+	 */
+	protected void emit_SubstoryDeclaration_DefineKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('substory' | 'sub')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'use' (ambiguity) variable=[SubstoryDeclaration|ID]
+	 
+	 * </pre>
+	 */
+	protected void emit_SubstoryUse___SubKeyword_1_1_or_SubstoryKeyword_1_0__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

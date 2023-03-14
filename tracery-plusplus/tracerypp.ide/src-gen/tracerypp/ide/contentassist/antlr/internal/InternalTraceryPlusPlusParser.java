@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.capitalize'", "'.CAPITALIZE'", "'.s'", "'.a'", "'.ed'", "'has'", "'have'", "'is'", "'are'", "'a'", "'an'", "'from'", "'they'", "'them'", "'their'", "'theirs'", "'='", "':'", "'-'", "'-->'", "','", "'or'", "'||'", "'and'", "'&&'", "'The'", "'story'", "'can'", "'values'", "'be'", "'There'", "'attributes'", "'substory'", "'end-substory'", "'.'", "'equal'", "'to'", "'He'", "'She'", "'It'", "'They'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'.capitalize'", "'.CAPITALIZE'", "'.s'", "'.a'", "'.ed'", "'has'", "'have'", "'is'", "'are'", "'a'", "'an'", "'from'", "'substory'", "'sub'", "'they'", "'them'", "'their'", "'theirs'", "'='", "':'", "'-'", "'-->'", "','", "'or'", "'||'", "'and'", "'&&'", "'The'", "'story'", "'can'", "'values'", "'be'", "'There'", "'attributes'", "'define'", "'end-substory'", "'use'", "'.'", "'equal'", "'to'", "'He'", "'She'", "'It'", "'They'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -35,6 +35,9 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int T__51=51;
+    public static final int T__52=52;
+    public static final int T__53=53;
+    public static final int T__54=54;
     public static final int RULE_ID=4;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -2378,12 +2381,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                 alt1=1;
                 }
                 break;
-            case 41:
+            case 43:
                 {
                 alt1=2;
                 }
                 break;
-            case 43:
+            case 23:
+            case 45:
                 {
                 alt1=3;
                 }
@@ -2484,11 +2488,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             if ( (LA2_0==RULE_ID) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==45) ) {
-                    alt2=2;
-                }
-                else if ( (LA2_1==EOF||(LA2_1>=RULE_ID && LA2_1<=RULE_STRING)||(LA2_1>=11 && LA2_1<=15)||(LA2_1>=43 && LA2_1<=44)) ) {
+                if ( (LA2_1==EOF||(LA2_1>=RULE_ID && LA2_1<=RULE_STRING)||(LA2_1>=11 && LA2_1<=15)||(LA2_1>=46 && LA2_1<=47)) ) {
                     alt2=1;
+                }
+                else if ( (LA2_1==48) ) {
+                    alt2=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -2497,7 +2501,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     throw nvae;
                 }
             }
-            else if ( (LA2_0==43) ) {
+            else if ( (LA2_0==47) ) {
                 alt2=3;
             }
             else {
@@ -2595,7 +2599,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             if ( (LA3_0==RULE_STRING) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==RULE_ID||LA3_0==43) ) {
+            else if ( (LA3_0==RULE_ID||LA3_0==47) ) {
                 alt3=2;
             }
             else {
@@ -2671,13 +2675,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             int alt4=3;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==38) ) {
+            if ( (LA4_0==40) ) {
                 int LA4_1 = input.LA(2);
 
                 if ( (LA4_1==17) ) {
                     alt4=1;
                 }
-                else if ( (LA4_1==40) ) {
+                else if ( (LA4_1==42) ) {
                     alt4=2;
                 }
                 else {
@@ -3073,9 +3077,9 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__ObjectDeclaration__Alternatives_5"
 
 
-    // $ANTLR start "rule__SubstoryDeclaration__StoryAlternatives_3_0"
-    // InternalTraceryPlusPlus.g:988:1: rule__SubstoryDeclaration__StoryAlternatives_3_0 : ( ( ruleWord ) | ( ruleVariableUse ) );
-    public final void rule__SubstoryDeclaration__StoryAlternatives_3_0() throws RecognitionException {
+    // $ANTLR start "rule__SubstoryDeclaration__StoryAlternatives_4_0"
+    // InternalTraceryPlusPlus.g:988:1: rule__SubstoryDeclaration__StoryAlternatives_4_0 : ( ( ruleWord ) | ( ruleVariableUse ) );
+    public final void rule__SubstoryDeclaration__StoryAlternatives_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3087,7 +3091,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             if ( (LA9_0==RULE_STRING) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==RULE_ID||LA9_0==43) ) {
+            else if ( (LA9_0==RULE_ID||LA9_0==47) ) {
                 alt9=2;
             }
             else {
@@ -3103,13 +3107,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     // InternalTraceryPlusPlus.g:993:2: ( ruleWord )
                     // InternalTraceryPlusPlus.g:994:3: ruleWord
                     {
-                     before(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_3_0_0()); 
+                     before(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_4_0_0()); 
                     pushFollow(FOLLOW_2);
                     ruleWord();
 
                     state._fsp--;
 
-                     after(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_3_0_0()); 
+                     after(grammarAccess.getSubstoryDeclarationAccess().getStoryWordParserRuleCall_4_0_0()); 
 
                     }
 
@@ -3122,13 +3126,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     // InternalTraceryPlusPlus.g:999:2: ( ruleVariableUse )
                     // InternalTraceryPlusPlus.g:1000:3: ruleVariableUse
                     {
-                     before(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_3_0_1()); 
+                     before(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_4_0_1()); 
                     pushFollow(FOLLOW_2);
                     ruleVariableUse();
 
                     state._fsp--;
 
-                     after(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_3_0_1()); 
+                     after(grammarAccess.getSubstoryDeclarationAccess().getStoryVariableUseParserRuleCall_4_0_1()); 
 
                     }
 
@@ -3149,7 +3153,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SubstoryDeclaration__StoryAlternatives_3_0"
+    // $ANTLR end "rule__SubstoryDeclaration__StoryAlternatives_4_0"
 
 
     // $ANTLR start "rule__Attribute__Alternatives"
@@ -3229,7 +3233,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( ((LA11_0>=27 && LA11_0<=30)||LA11_0==46) ) {
+            if ( ((LA11_0>=29 && LA11_0<=32)||LA11_0==49) ) {
                 alt11=1;
             }
             else if ( (LA11_0==22) ) {
@@ -3293,42 +3297,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__NameExistingListAttribute__Alternatives_1"
 
 
-    // $ANTLR start "rule__ObjectUse__Alternatives"
-    // InternalTraceryPlusPlus.g:1051:1: rule__ObjectUse__Alternatives : ( ( ruleObjectAttribute ) | ( ruleObjectPronoun ) );
-    public final void rule__ObjectUse__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__SubstoryUse__Alternatives_1"
+    // InternalTraceryPlusPlus.g:1051:1: rule__SubstoryUse__Alternatives_1 : ( ( 'substory' ) | ( 'sub' ) );
+    public final void rule__SubstoryUse__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1055:1: ( ( ruleObjectAttribute ) | ( ruleObjectPronoun ) )
+            // InternalTraceryPlusPlus.g:1055:1: ( ( 'substory' ) | ( 'sub' ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_ID) ) {
-                int LA12_1 = input.LA(2);
-
-                if ( (LA12_1==45) ) {
-                    int LA12_2 = input.LA(3);
-
-                    if ( (LA12_2==RULE_ID) ) {
-                        alt12=1;
-                    }
-                    else if ( ((LA12_2>=23 && LA12_2<=26)) ) {
-                        alt12=2;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 12, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 12, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA12_0==23) ) {
+                alt12=1;
+            }
+            else if ( (LA12_0==24) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
@@ -3338,10 +3322,101 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             }
             switch (alt12) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1056:2: ( ruleObjectAttribute )
+                    // InternalTraceryPlusPlus.g:1056:2: ( 'substory' )
                     {
-                    // InternalTraceryPlusPlus.g:1056:2: ( ruleObjectAttribute )
-                    // InternalTraceryPlusPlus.g:1057:3: ruleObjectAttribute
+                    // InternalTraceryPlusPlus.g:1056:2: ( 'substory' )
+                    // InternalTraceryPlusPlus.g:1057:3: 'substory'
+                    {
+                     before(grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_1_0()); 
+                    match(input,23,FOLLOW_2); 
+                     after(grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_1_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalTraceryPlusPlus.g:1062:2: ( 'sub' )
+                    {
+                    // InternalTraceryPlusPlus.g:1062:2: ( 'sub' )
+                    // InternalTraceryPlusPlus.g:1063:3: 'sub'
+                    {
+                     before(grammarAccess.getSubstoryUseAccess().getSubKeyword_1_1()); 
+                    match(input,24,FOLLOW_2); 
+                     after(grammarAccess.getSubstoryUseAccess().getSubKeyword_1_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubstoryUse__Alternatives_1"
+
+
+    // $ANTLR start "rule__ObjectUse__Alternatives"
+    // InternalTraceryPlusPlus.g:1072:1: rule__ObjectUse__Alternatives : ( ( ruleObjectAttribute ) | ( ruleObjectPronoun ) );
+    public final void rule__ObjectUse__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryPlusPlus.g:1076:1: ( ( ruleObjectAttribute ) | ( ruleObjectPronoun ) )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==RULE_ID) ) {
+                int LA13_1 = input.LA(2);
+
+                if ( (LA13_1==48) ) {
+                    int LA13_2 = input.LA(3);
+
+                    if ( ((LA13_2>=25 && LA13_2<=28)) ) {
+                        alt13=2;
+                    }
+                    else if ( (LA13_2==RULE_ID) ) {
+                        alt13=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 13, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 13, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+            switch (alt13) {
+                case 1 :
+                    // InternalTraceryPlusPlus.g:1077:2: ( ruleObjectAttribute )
+                    {
+                    // InternalTraceryPlusPlus.g:1077:2: ( ruleObjectAttribute )
+                    // InternalTraceryPlusPlus.g:1078:3: ruleObjectAttribute
                     {
                      before(grammarAccess.getObjectUseAccess().getObjectAttributeParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3357,10 +3432,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1062:2: ( ruleObjectPronoun )
+                    // InternalTraceryPlusPlus.g:1083:2: ( ruleObjectPronoun )
                     {
-                    // InternalTraceryPlusPlus.g:1062:2: ( ruleObjectPronoun )
-                    // InternalTraceryPlusPlus.g:1063:3: ruleObjectPronoun
+                    // InternalTraceryPlusPlus.g:1083:2: ( ruleObjectPronoun )
+                    // InternalTraceryPlusPlus.g:1084:3: ruleObjectPronoun
                     {
                      before(grammarAccess.getObjectUseAccess().getObjectPronounParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3393,52 +3468,52 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Pronouns__Alternatives"
-    // InternalTraceryPlusPlus.g:1072:1: rule__Pronouns__Alternatives : ( ( ( rule__Pronouns__ValueAssignment_0 ) ) | ( ( rule__Pronouns__ValueAssignment_1 ) ) | ( ( rule__Pronouns__ValueAssignment_2 ) ) | ( ( rule__Pronouns__ValueAssignment_3 ) ) );
+    // InternalTraceryPlusPlus.g:1093:1: rule__Pronouns__Alternatives : ( ( ( rule__Pronouns__ValueAssignment_0 ) ) | ( ( rule__Pronouns__ValueAssignment_1 ) ) | ( ( rule__Pronouns__ValueAssignment_2 ) ) | ( ( rule__Pronouns__ValueAssignment_3 ) ) );
     public final void rule__Pronouns__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1076:1: ( ( ( rule__Pronouns__ValueAssignment_0 ) ) | ( ( rule__Pronouns__ValueAssignment_1 ) ) | ( ( rule__Pronouns__ValueAssignment_2 ) ) | ( ( rule__Pronouns__ValueAssignment_3 ) ) )
-            int alt13=4;
+            // InternalTraceryPlusPlus.g:1097:1: ( ( ( rule__Pronouns__ValueAssignment_0 ) ) | ( ( rule__Pronouns__ValueAssignment_1 ) ) | ( ( rule__Pronouns__ValueAssignment_2 ) ) | ( ( rule__Pronouns__ValueAssignment_3 ) ) )
+            int alt14=4;
             switch ( input.LA(1) ) {
-            case 48:
-                {
-                alt13=1;
-                }
-                break;
-            case 49:
-                {
-                alt13=2;
-                }
-                break;
-            case 50:
-                {
-                alt13=3;
-                }
-                break;
             case 51:
                 {
-                alt13=4;
+                alt14=1;
+                }
+                break;
+            case 52:
+                {
+                alt14=2;
+                }
+                break;
+            case 53:
+                {
+                alt14=3;
+                }
+                break;
+            case 54:
+                {
+                alt14=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1077:2: ( ( rule__Pronouns__ValueAssignment_0 ) )
+                    // InternalTraceryPlusPlus.g:1098:2: ( ( rule__Pronouns__ValueAssignment_0 ) )
                     {
-                    // InternalTraceryPlusPlus.g:1077:2: ( ( rule__Pronouns__ValueAssignment_0 ) )
-                    // InternalTraceryPlusPlus.g:1078:3: ( rule__Pronouns__ValueAssignment_0 )
+                    // InternalTraceryPlusPlus.g:1098:2: ( ( rule__Pronouns__ValueAssignment_0 ) )
+                    // InternalTraceryPlusPlus.g:1099:3: ( rule__Pronouns__ValueAssignment_0 )
                     {
                      before(grammarAccess.getPronounsAccess().getValueAssignment_0()); 
-                    // InternalTraceryPlusPlus.g:1079:3: ( rule__Pronouns__ValueAssignment_0 )
-                    // InternalTraceryPlusPlus.g:1079:4: rule__Pronouns__ValueAssignment_0
+                    // InternalTraceryPlusPlus.g:1100:3: ( rule__Pronouns__ValueAssignment_0 )
+                    // InternalTraceryPlusPlus.g:1100:4: rule__Pronouns__ValueAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Pronouns__ValueAssignment_0();
@@ -3456,14 +3531,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1083:2: ( ( rule__Pronouns__ValueAssignment_1 ) )
+                    // InternalTraceryPlusPlus.g:1104:2: ( ( rule__Pronouns__ValueAssignment_1 ) )
                     {
-                    // InternalTraceryPlusPlus.g:1083:2: ( ( rule__Pronouns__ValueAssignment_1 ) )
-                    // InternalTraceryPlusPlus.g:1084:3: ( rule__Pronouns__ValueAssignment_1 )
+                    // InternalTraceryPlusPlus.g:1104:2: ( ( rule__Pronouns__ValueAssignment_1 ) )
+                    // InternalTraceryPlusPlus.g:1105:3: ( rule__Pronouns__ValueAssignment_1 )
                     {
                      before(grammarAccess.getPronounsAccess().getValueAssignment_1()); 
-                    // InternalTraceryPlusPlus.g:1085:3: ( rule__Pronouns__ValueAssignment_1 )
-                    // InternalTraceryPlusPlus.g:1085:4: rule__Pronouns__ValueAssignment_1
+                    // InternalTraceryPlusPlus.g:1106:3: ( rule__Pronouns__ValueAssignment_1 )
+                    // InternalTraceryPlusPlus.g:1106:4: rule__Pronouns__ValueAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Pronouns__ValueAssignment_1();
@@ -3481,14 +3556,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1089:2: ( ( rule__Pronouns__ValueAssignment_2 ) )
+                    // InternalTraceryPlusPlus.g:1110:2: ( ( rule__Pronouns__ValueAssignment_2 ) )
                     {
-                    // InternalTraceryPlusPlus.g:1089:2: ( ( rule__Pronouns__ValueAssignment_2 ) )
-                    // InternalTraceryPlusPlus.g:1090:3: ( rule__Pronouns__ValueAssignment_2 )
+                    // InternalTraceryPlusPlus.g:1110:2: ( ( rule__Pronouns__ValueAssignment_2 ) )
+                    // InternalTraceryPlusPlus.g:1111:3: ( rule__Pronouns__ValueAssignment_2 )
                     {
                      before(grammarAccess.getPronounsAccess().getValueAssignment_2()); 
-                    // InternalTraceryPlusPlus.g:1091:3: ( rule__Pronouns__ValueAssignment_2 )
-                    // InternalTraceryPlusPlus.g:1091:4: rule__Pronouns__ValueAssignment_2
+                    // InternalTraceryPlusPlus.g:1112:3: ( rule__Pronouns__ValueAssignment_2 )
+                    // InternalTraceryPlusPlus.g:1112:4: rule__Pronouns__ValueAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Pronouns__ValueAssignment_2();
@@ -3506,14 +3581,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 4 :
-                    // InternalTraceryPlusPlus.g:1095:2: ( ( rule__Pronouns__ValueAssignment_3 ) )
+                    // InternalTraceryPlusPlus.g:1116:2: ( ( rule__Pronouns__ValueAssignment_3 ) )
                     {
-                    // InternalTraceryPlusPlus.g:1095:2: ( ( rule__Pronouns__ValueAssignment_3 ) )
-                    // InternalTraceryPlusPlus.g:1096:3: ( rule__Pronouns__ValueAssignment_3 )
+                    // InternalTraceryPlusPlus.g:1116:2: ( ( rule__Pronouns__ValueAssignment_3 ) )
+                    // InternalTraceryPlusPlus.g:1117:3: ( rule__Pronouns__ValueAssignment_3 )
                     {
                      before(grammarAccess.getPronounsAccess().getValueAssignment_3()); 
-                    // InternalTraceryPlusPlus.g:1097:3: ( rule__Pronouns__ValueAssignment_3 )
-                    // InternalTraceryPlusPlus.g:1097:4: rule__Pronouns__ValueAssignment_3
+                    // InternalTraceryPlusPlus.g:1118:3: ( rule__Pronouns__ValueAssignment_3 )
+                    // InternalTraceryPlusPlus.g:1118:4: rule__Pronouns__ValueAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Pronouns__ValueAssignment_3();
@@ -3548,51 +3623,51 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PronounIdentifier__NameAlternatives_0"
-    // InternalTraceryPlusPlus.g:1105:1: rule__PronounIdentifier__NameAlternatives_0 : ( ( 'they' ) | ( 'them' ) | ( 'their' ) | ( 'theirs' ) );
+    // InternalTraceryPlusPlus.g:1126:1: rule__PronounIdentifier__NameAlternatives_0 : ( ( 'they' ) | ( 'them' ) | ( 'their' ) | ( 'theirs' ) );
     public final void rule__PronounIdentifier__NameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1109:1: ( ( 'they' ) | ( 'them' ) | ( 'their' ) | ( 'theirs' ) )
-            int alt14=4;
+            // InternalTraceryPlusPlus.g:1130:1: ( ( 'they' ) | ( 'them' ) | ( 'their' ) | ( 'theirs' ) )
+            int alt15=4;
             switch ( input.LA(1) ) {
-            case 23:
-                {
-                alt14=1;
-                }
-                break;
-            case 24:
-                {
-                alt14=2;
-                }
-                break;
             case 25:
                 {
-                alt14=3;
+                alt15=1;
                 }
                 break;
             case 26:
                 {
-                alt14=4;
+                alt15=2;
+                }
+                break;
+            case 27:
+                {
+                alt15=3;
+                }
+                break;
+            case 28:
+                {
+                alt15=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1110:2: ( 'they' )
+                    // InternalTraceryPlusPlus.g:1131:2: ( 'they' )
                     {
-                    // InternalTraceryPlusPlus.g:1110:2: ( 'they' )
-                    // InternalTraceryPlusPlus.g:1111:3: 'they'
+                    // InternalTraceryPlusPlus.g:1131:2: ( 'they' )
+                    // InternalTraceryPlusPlus.g:1132:3: 'they'
                     {
                      before(grammarAccess.getPronounIdentifierAccess().getNameTheyKeyword_0_0()); 
-                    match(input,23,FOLLOW_2); 
+                    match(input,25,FOLLOW_2); 
                      after(grammarAccess.getPronounIdentifierAccess().getNameTheyKeyword_0_0()); 
 
                     }
@@ -3601,13 +3676,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1116:2: ( 'them' )
+                    // InternalTraceryPlusPlus.g:1137:2: ( 'them' )
                     {
-                    // InternalTraceryPlusPlus.g:1116:2: ( 'them' )
-                    // InternalTraceryPlusPlus.g:1117:3: 'them'
+                    // InternalTraceryPlusPlus.g:1137:2: ( 'them' )
+                    // InternalTraceryPlusPlus.g:1138:3: 'them'
                     {
                      before(grammarAccess.getPronounIdentifierAccess().getNameThemKeyword_0_1()); 
-                    match(input,24,FOLLOW_2); 
+                    match(input,26,FOLLOW_2); 
                      after(grammarAccess.getPronounIdentifierAccess().getNameThemKeyword_0_1()); 
 
                     }
@@ -3616,13 +3691,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1122:2: ( 'their' )
+                    // InternalTraceryPlusPlus.g:1143:2: ( 'their' )
                     {
-                    // InternalTraceryPlusPlus.g:1122:2: ( 'their' )
-                    // InternalTraceryPlusPlus.g:1123:3: 'their'
+                    // InternalTraceryPlusPlus.g:1143:2: ( 'their' )
+                    // InternalTraceryPlusPlus.g:1144:3: 'their'
                     {
                      before(grammarAccess.getPronounIdentifierAccess().getNameTheirKeyword_0_2()); 
-                    match(input,25,FOLLOW_2); 
+                    match(input,27,FOLLOW_2); 
                      after(grammarAccess.getPronounIdentifierAccess().getNameTheirKeyword_0_2()); 
 
                     }
@@ -3631,13 +3706,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 4 :
-                    // InternalTraceryPlusPlus.g:1128:2: ( 'theirs' )
+                    // InternalTraceryPlusPlus.g:1149:2: ( 'theirs' )
                     {
-                    // InternalTraceryPlusPlus.g:1128:2: ( 'theirs' )
-                    // InternalTraceryPlusPlus.g:1129:3: 'theirs'
+                    // InternalTraceryPlusPlus.g:1149:2: ( 'theirs' )
+                    // InternalTraceryPlusPlus.g:1150:3: 'theirs'
                     {
                      before(grammarAccess.getPronounIdentifierAccess().getNameTheirsKeyword_0_3()); 
-                    match(input,26,FOLLOW_2); 
+                    match(input,28,FOLLOW_2); 
                      after(grammarAccess.getPronounIdentifierAccess().getNameTheirsKeyword_0_3()); 
 
                     }
@@ -3663,53 +3738,53 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Modifier__Alternatives"
-    // InternalTraceryPlusPlus.g:1138:1: rule__Modifier__Alternatives : ( ( ruleCapitalizationModifier ) | ( ruleFullCapitalizationModifier ) | ( rulePluralityModifier ) | ( ruleArticleModifier ) | ( rulePastTenseModifier ) );
+    // InternalTraceryPlusPlus.g:1159:1: rule__Modifier__Alternatives : ( ( ruleCapitalizationModifier ) | ( ruleFullCapitalizationModifier ) | ( rulePluralityModifier ) | ( ruleArticleModifier ) | ( rulePastTenseModifier ) );
     public final void rule__Modifier__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1142:1: ( ( ruleCapitalizationModifier ) | ( ruleFullCapitalizationModifier ) | ( rulePluralityModifier ) | ( ruleArticleModifier ) | ( rulePastTenseModifier ) )
-            int alt15=5;
+            // InternalTraceryPlusPlus.g:1163:1: ( ( ruleCapitalizationModifier ) | ( ruleFullCapitalizationModifier ) | ( rulePluralityModifier ) | ( ruleArticleModifier ) | ( rulePastTenseModifier ) )
+            int alt16=5;
             switch ( input.LA(1) ) {
             case 11:
                 {
-                alt15=1;
+                alt16=1;
                 }
                 break;
             case 12:
                 {
-                alt15=2;
+                alt16=2;
                 }
                 break;
             case 13:
                 {
-                alt15=3;
+                alt16=3;
                 }
                 break;
             case 14:
                 {
-                alt15=4;
+                alt16=4;
                 }
                 break;
             case 15:
                 {
-                alt15=5;
+                alt16=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1143:2: ( ruleCapitalizationModifier )
+                    // InternalTraceryPlusPlus.g:1164:2: ( ruleCapitalizationModifier )
                     {
-                    // InternalTraceryPlusPlus.g:1143:2: ( ruleCapitalizationModifier )
-                    // InternalTraceryPlusPlus.g:1144:3: ruleCapitalizationModifier
+                    // InternalTraceryPlusPlus.g:1164:2: ( ruleCapitalizationModifier )
+                    // InternalTraceryPlusPlus.g:1165:3: ruleCapitalizationModifier
                     {
                      before(grammarAccess.getModifierAccess().getCapitalizationModifierParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3725,10 +3800,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1149:2: ( ruleFullCapitalizationModifier )
+                    // InternalTraceryPlusPlus.g:1170:2: ( ruleFullCapitalizationModifier )
                     {
-                    // InternalTraceryPlusPlus.g:1149:2: ( ruleFullCapitalizationModifier )
-                    // InternalTraceryPlusPlus.g:1150:3: ruleFullCapitalizationModifier
+                    // InternalTraceryPlusPlus.g:1170:2: ( ruleFullCapitalizationModifier )
+                    // InternalTraceryPlusPlus.g:1171:3: ruleFullCapitalizationModifier
                     {
                      before(grammarAccess.getModifierAccess().getFullCapitalizationModifierParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3744,10 +3819,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1155:2: ( rulePluralityModifier )
+                    // InternalTraceryPlusPlus.g:1176:2: ( rulePluralityModifier )
                     {
-                    // InternalTraceryPlusPlus.g:1155:2: ( rulePluralityModifier )
-                    // InternalTraceryPlusPlus.g:1156:3: rulePluralityModifier
+                    // InternalTraceryPlusPlus.g:1176:2: ( rulePluralityModifier )
+                    // InternalTraceryPlusPlus.g:1177:3: rulePluralityModifier
                     {
                      before(grammarAccess.getModifierAccess().getPluralityModifierParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -3763,10 +3838,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 4 :
-                    // InternalTraceryPlusPlus.g:1161:2: ( ruleArticleModifier )
+                    // InternalTraceryPlusPlus.g:1182:2: ( ruleArticleModifier )
                     {
-                    // InternalTraceryPlusPlus.g:1161:2: ( ruleArticleModifier )
-                    // InternalTraceryPlusPlus.g:1162:3: ruleArticleModifier
+                    // InternalTraceryPlusPlus.g:1182:2: ( ruleArticleModifier )
+                    // InternalTraceryPlusPlus.g:1183:3: ruleArticleModifier
                     {
                      before(grammarAccess.getModifierAccess().getArticleModifierParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -3782,10 +3857,10 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 5 :
-                    // InternalTraceryPlusPlus.g:1167:2: ( rulePastTenseModifier )
+                    // InternalTraceryPlusPlus.g:1188:2: ( rulePastTenseModifier )
                     {
-                    // InternalTraceryPlusPlus.g:1167:2: ( rulePastTenseModifier )
-                    // InternalTraceryPlusPlus.g:1168:3: rulePastTenseModifier
+                    // InternalTraceryPlusPlus.g:1188:2: ( rulePastTenseModifier )
+                    // InternalTraceryPlusPlus.g:1189:3: rulePastTenseModifier
                     {
                      before(grammarAccess.getModifierAccess().getPastTenseModifierParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -3818,56 +3893,56 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AssignmentOperator__Alternatives"
-    // InternalTraceryPlusPlus.g:1177:1: rule__AssignmentOperator__Alternatives : ( ( '=' ) | ( ':' ) | ( '-' ) | ( '-->' ) | ( ( rule__AssignmentOperator__Group_4__0 ) ) );
+    // InternalTraceryPlusPlus.g:1198:1: rule__AssignmentOperator__Alternatives : ( ( '=' ) | ( ':' ) | ( '-' ) | ( '-->' ) | ( ( rule__AssignmentOperator__Group_4__0 ) ) );
     public final void rule__AssignmentOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1181:1: ( ( '=' ) | ( ':' ) | ( '-' ) | ( '-->' ) | ( ( rule__AssignmentOperator__Group_4__0 ) ) )
-            int alt16=5;
+            // InternalTraceryPlusPlus.g:1202:1: ( ( '=' ) | ( ':' ) | ( '-' ) | ( '-->' ) | ( ( rule__AssignmentOperator__Group_4__0 ) ) )
+            int alt17=5;
             switch ( input.LA(1) ) {
-            case 27:
-                {
-                alt16=1;
-                }
-                break;
-            case 28:
-                {
-                alt16=2;
-                }
-                break;
             case 29:
                 {
-                alt16=3;
+                alt17=1;
                 }
                 break;
             case 30:
                 {
-                alt16=4;
+                alt17=2;
                 }
                 break;
-            case 46:
+            case 31:
                 {
-                alt16=5;
+                alt17=3;
+                }
+                break;
+            case 32:
+                {
+                alt17=4;
+                }
+                break;
+            case 49:
+                {
+                alt17=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1182:2: ( '=' )
+                    // InternalTraceryPlusPlus.g:1203:2: ( '=' )
                     {
-                    // InternalTraceryPlusPlus.g:1182:2: ( '=' )
-                    // InternalTraceryPlusPlus.g:1183:3: '='
+                    // InternalTraceryPlusPlus.g:1203:2: ( '=' )
+                    // InternalTraceryPlusPlus.g:1204:3: '='
                     {
                      before(grammarAccess.getAssignmentOperatorAccess().getEqualsSignKeyword_0()); 
-                    match(input,27,FOLLOW_2); 
+                    match(input,29,FOLLOW_2); 
                      after(grammarAccess.getAssignmentOperatorAccess().getEqualsSignKeyword_0()); 
 
                     }
@@ -3876,13 +3951,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1188:2: ( ':' )
+                    // InternalTraceryPlusPlus.g:1209:2: ( ':' )
                     {
-                    // InternalTraceryPlusPlus.g:1188:2: ( ':' )
-                    // InternalTraceryPlusPlus.g:1189:3: ':'
+                    // InternalTraceryPlusPlus.g:1209:2: ( ':' )
+                    // InternalTraceryPlusPlus.g:1210:3: ':'
                     {
                      before(grammarAccess.getAssignmentOperatorAccess().getColonKeyword_1()); 
-                    match(input,28,FOLLOW_2); 
+                    match(input,30,FOLLOW_2); 
                      after(grammarAccess.getAssignmentOperatorAccess().getColonKeyword_1()); 
 
                     }
@@ -3891,13 +3966,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1194:2: ( '-' )
+                    // InternalTraceryPlusPlus.g:1215:2: ( '-' )
                     {
-                    // InternalTraceryPlusPlus.g:1194:2: ( '-' )
-                    // InternalTraceryPlusPlus.g:1195:3: '-'
+                    // InternalTraceryPlusPlus.g:1215:2: ( '-' )
+                    // InternalTraceryPlusPlus.g:1216:3: '-'
                     {
                      before(grammarAccess.getAssignmentOperatorAccess().getHyphenMinusKeyword_2()); 
-                    match(input,29,FOLLOW_2); 
+                    match(input,31,FOLLOW_2); 
                      after(grammarAccess.getAssignmentOperatorAccess().getHyphenMinusKeyword_2()); 
 
                     }
@@ -3906,13 +3981,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 4 :
-                    // InternalTraceryPlusPlus.g:1200:2: ( '-->' )
+                    // InternalTraceryPlusPlus.g:1221:2: ( '-->' )
                     {
-                    // InternalTraceryPlusPlus.g:1200:2: ( '-->' )
-                    // InternalTraceryPlusPlus.g:1201:3: '-->'
+                    // InternalTraceryPlusPlus.g:1221:2: ( '-->' )
+                    // InternalTraceryPlusPlus.g:1222:3: '-->'
                     {
                      before(grammarAccess.getAssignmentOperatorAccess().getHyphenMinusHyphenMinusGreaterThanSignKeyword_3()); 
-                    match(input,30,FOLLOW_2); 
+                    match(input,32,FOLLOW_2); 
                      after(grammarAccess.getAssignmentOperatorAccess().getHyphenMinusHyphenMinusGreaterThanSignKeyword_3()); 
 
                     }
@@ -3921,14 +3996,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 5 :
-                    // InternalTraceryPlusPlus.g:1206:2: ( ( rule__AssignmentOperator__Group_4__0 ) )
+                    // InternalTraceryPlusPlus.g:1227:2: ( ( rule__AssignmentOperator__Group_4__0 ) )
                     {
-                    // InternalTraceryPlusPlus.g:1206:2: ( ( rule__AssignmentOperator__Group_4__0 ) )
-                    // InternalTraceryPlusPlus.g:1207:3: ( rule__AssignmentOperator__Group_4__0 )
+                    // InternalTraceryPlusPlus.g:1227:2: ( ( rule__AssignmentOperator__Group_4__0 ) )
+                    // InternalTraceryPlusPlus.g:1228:3: ( rule__AssignmentOperator__Group_4__0 )
                     {
                      before(grammarAccess.getAssignmentOperatorAccess().getGroup_4()); 
-                    // InternalTraceryPlusPlus.g:1208:3: ( rule__AssignmentOperator__Group_4__0 )
-                    // InternalTraceryPlusPlus.g:1208:4: rule__AssignmentOperator__Group_4__0
+                    // InternalTraceryPlusPlus.g:1229:3: ( rule__AssignmentOperator__Group_4__0 )
+                    // InternalTraceryPlusPlus.g:1229:4: rule__AssignmentOperator__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AssignmentOperator__Group_4__0();
@@ -3963,46 +4038,46 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SeparatorOr__Alternatives"
-    // InternalTraceryPlusPlus.g:1216:1: rule__SeparatorOr__Alternatives : ( ( ',' ) | ( 'or' ) | ( '||' ) );
+    // InternalTraceryPlusPlus.g:1237:1: rule__SeparatorOr__Alternatives : ( ( ',' ) | ( 'or' ) | ( '||' ) );
     public final void rule__SeparatorOr__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1220:1: ( ( ',' ) | ( 'or' ) | ( '||' ) )
-            int alt17=3;
+            // InternalTraceryPlusPlus.g:1241:1: ( ( ',' ) | ( 'or' ) | ( '||' ) )
+            int alt18=3;
             switch ( input.LA(1) ) {
-            case 31:
-                {
-                alt17=1;
-                }
-                break;
-            case 32:
-                {
-                alt17=2;
-                }
-                break;
             case 33:
                 {
-                alt17=3;
+                alt18=1;
+                }
+                break;
+            case 34:
+                {
+                alt18=2;
+                }
+                break;
+            case 35:
+                {
+                alt18=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1221:2: ( ',' )
+                    // InternalTraceryPlusPlus.g:1242:2: ( ',' )
                     {
-                    // InternalTraceryPlusPlus.g:1221:2: ( ',' )
-                    // InternalTraceryPlusPlus.g:1222:3: ','
+                    // InternalTraceryPlusPlus.g:1242:2: ( ',' )
+                    // InternalTraceryPlusPlus.g:1243:3: ','
                     {
                      before(grammarAccess.getSeparatorOrAccess().getCommaKeyword_0()); 
-                    match(input,31,FOLLOW_2); 
+                    match(input,33,FOLLOW_2); 
                      after(grammarAccess.getSeparatorOrAccess().getCommaKeyword_0()); 
 
                     }
@@ -4011,13 +4086,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1227:2: ( 'or' )
+                    // InternalTraceryPlusPlus.g:1248:2: ( 'or' )
                     {
-                    // InternalTraceryPlusPlus.g:1227:2: ( 'or' )
-                    // InternalTraceryPlusPlus.g:1228:3: 'or'
+                    // InternalTraceryPlusPlus.g:1248:2: ( 'or' )
+                    // InternalTraceryPlusPlus.g:1249:3: 'or'
                     {
                      before(grammarAccess.getSeparatorOrAccess().getOrKeyword_1()); 
-                    match(input,32,FOLLOW_2); 
+                    match(input,34,FOLLOW_2); 
                      after(grammarAccess.getSeparatorOrAccess().getOrKeyword_1()); 
 
                     }
@@ -4026,13 +4101,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1233:2: ( '||' )
+                    // InternalTraceryPlusPlus.g:1254:2: ( '||' )
                     {
-                    // InternalTraceryPlusPlus.g:1233:2: ( '||' )
-                    // InternalTraceryPlusPlus.g:1234:3: '||'
+                    // InternalTraceryPlusPlus.g:1254:2: ( '||' )
+                    // InternalTraceryPlusPlus.g:1255:3: '||'
                     {
                      before(grammarAccess.getSeparatorOrAccess().getVerticalLineVerticalLineKeyword_2()); 
-                    match(input,33,FOLLOW_2); 
+                    match(input,35,FOLLOW_2); 
                      after(grammarAccess.getSeparatorOrAccess().getVerticalLineVerticalLineKeyword_2()); 
 
                     }
@@ -4058,46 +4133,46 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SeparatorAnd__Alternatives"
-    // InternalTraceryPlusPlus.g:1243:1: rule__SeparatorAnd__Alternatives : ( ( ',' ) | ( 'and' ) | ( '&&' ) );
+    // InternalTraceryPlusPlus.g:1264:1: rule__SeparatorAnd__Alternatives : ( ( ',' ) | ( 'and' ) | ( '&&' ) );
     public final void rule__SeparatorAnd__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1247:1: ( ( ',' ) | ( 'and' ) | ( '&&' ) )
-            int alt18=3;
+            // InternalTraceryPlusPlus.g:1268:1: ( ( ',' ) | ( 'and' ) | ( '&&' ) )
+            int alt19=3;
             switch ( input.LA(1) ) {
-            case 31:
+            case 33:
                 {
-                alt18=1;
+                alt19=1;
                 }
                 break;
-            case 34:
+            case 36:
                 {
-                alt18=2;
+                alt19=2;
                 }
                 break;
-            case 35:
+            case 37:
                 {
-                alt18=3;
+                alt19=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1248:2: ( ',' )
+                    // InternalTraceryPlusPlus.g:1269:2: ( ',' )
                     {
-                    // InternalTraceryPlusPlus.g:1248:2: ( ',' )
-                    // InternalTraceryPlusPlus.g:1249:3: ','
+                    // InternalTraceryPlusPlus.g:1269:2: ( ',' )
+                    // InternalTraceryPlusPlus.g:1270:3: ','
                     {
                      before(grammarAccess.getSeparatorAndAccess().getCommaKeyword_0()); 
-                    match(input,31,FOLLOW_2); 
+                    match(input,33,FOLLOW_2); 
                      after(grammarAccess.getSeparatorAndAccess().getCommaKeyword_0()); 
 
                     }
@@ -4106,13 +4181,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 2 :
-                    // InternalTraceryPlusPlus.g:1254:2: ( 'and' )
+                    // InternalTraceryPlusPlus.g:1275:2: ( 'and' )
                     {
-                    // InternalTraceryPlusPlus.g:1254:2: ( 'and' )
-                    // InternalTraceryPlusPlus.g:1255:3: 'and'
+                    // InternalTraceryPlusPlus.g:1275:2: ( 'and' )
+                    // InternalTraceryPlusPlus.g:1276:3: 'and'
                     {
                      before(grammarAccess.getSeparatorAndAccess().getAndKeyword_1()); 
-                    match(input,34,FOLLOW_2); 
+                    match(input,36,FOLLOW_2); 
                      after(grammarAccess.getSeparatorAndAccess().getAndKeyword_1()); 
 
                     }
@@ -4121,13 +4196,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                     }
                     break;
                 case 3 :
-                    // InternalTraceryPlusPlus.g:1260:2: ( '&&' )
+                    // InternalTraceryPlusPlus.g:1281:2: ( '&&' )
                     {
-                    // InternalTraceryPlusPlus.g:1260:2: ( '&&' )
-                    // InternalTraceryPlusPlus.g:1261:3: '&&'
+                    // InternalTraceryPlusPlus.g:1281:2: ( '&&' )
+                    // InternalTraceryPlusPlus.g:1282:3: '&&'
                     {
                      before(grammarAccess.getSeparatorAndAccess().getAmpersandAmpersandKeyword_2()); 
-                    match(input,35,FOLLOW_2); 
+                    match(input,37,FOLLOW_2); 
                      after(grammarAccess.getSeparatorAndAccess().getAmpersandAmpersandKeyword_2()); 
 
                     }
@@ -4153,14 +4228,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__Group__0"
-    // InternalTraceryPlusPlus.g:1270:1: rule__TraceryPlusPlusProgram__Group__0 : rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1 ;
+    // InternalTraceryPlusPlus.g:1291:1: rule__TraceryPlusPlusProgram__Group__0 : rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1 ;
     public final void rule__TraceryPlusPlusProgram__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1274:1: ( rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1 )
-            // InternalTraceryPlusPlus.g:1275:2: rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1
+            // InternalTraceryPlusPlus.g:1295:1: ( rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1 )
+            // InternalTraceryPlusPlus.g:1296:2: rule__TraceryPlusPlusProgram__Group__0__Impl rule__TraceryPlusPlusProgram__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__TraceryPlusPlusProgram__Group__0__Impl();
@@ -4191,33 +4266,33 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:1282:1: rule__TraceryPlusPlusProgram__Group__0__Impl : ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* ) ;
+    // InternalTraceryPlusPlus.g:1303:1: rule__TraceryPlusPlusProgram__Group__0__Impl : ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* ) ;
     public final void rule__TraceryPlusPlusProgram__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1286:1: ( ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* ) )
-            // InternalTraceryPlusPlus.g:1287:1: ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* )
+            // InternalTraceryPlusPlus.g:1307:1: ( ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* ) )
+            // InternalTraceryPlusPlus.g:1308:1: ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* )
             {
-            // InternalTraceryPlusPlus.g:1287:1: ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* )
-            // InternalTraceryPlusPlus.g:1288:2: ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )*
+            // InternalTraceryPlusPlus.g:1308:1: ( ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )* )
+            // InternalTraceryPlusPlus.g:1309:2: ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )*
             {
              before(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsAssignment_0()); 
-            // InternalTraceryPlusPlus.g:1289:2: ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )*
-            loop19:
+            // InternalTraceryPlusPlus.g:1310:2: ( rule__TraceryPlusPlusProgram__StatementsAssignment_0 )*
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA19_0==RULE_ID||LA19_0==41||LA19_0==43) ) {
-                    alt19=1;
+                if ( (LA20_0==RULE_ID||LA20_0==23||LA20_0==43||LA20_0==45) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:1289:3: rule__TraceryPlusPlusProgram__StatementsAssignment_0
+            	    // InternalTraceryPlusPlus.g:1310:3: rule__TraceryPlusPlusProgram__StatementsAssignment_0
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__TraceryPlusPlusProgram__StatementsAssignment_0();
@@ -4229,7 +4304,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -4256,14 +4331,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__Group__1"
-    // InternalTraceryPlusPlus.g:1297:1: rule__TraceryPlusPlusProgram__Group__1 : rule__TraceryPlusPlusProgram__Group__1__Impl ;
+    // InternalTraceryPlusPlus.g:1318:1: rule__TraceryPlusPlusProgram__Group__1 : rule__TraceryPlusPlusProgram__Group__1__Impl ;
     public final void rule__TraceryPlusPlusProgram__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1301:1: ( rule__TraceryPlusPlusProgram__Group__1__Impl )
-            // InternalTraceryPlusPlus.g:1302:2: rule__TraceryPlusPlusProgram__Group__1__Impl
+            // InternalTraceryPlusPlus.g:1322:1: ( rule__TraceryPlusPlusProgram__Group__1__Impl )
+            // InternalTraceryPlusPlus.g:1323:2: rule__TraceryPlusPlusProgram__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TraceryPlusPlusProgram__Group__1__Impl();
@@ -4289,21 +4364,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:1308:1: rule__TraceryPlusPlusProgram__Group__1__Impl : ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) ;
+    // InternalTraceryPlusPlus.g:1329:1: rule__TraceryPlusPlusProgram__Group__1__Impl : ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) ;
     public final void rule__TraceryPlusPlusProgram__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1312:1: ( ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) )
-            // InternalTraceryPlusPlus.g:1313:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
+            // InternalTraceryPlusPlus.g:1333:1: ( ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) )
+            // InternalTraceryPlusPlus.g:1334:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
             {
-            // InternalTraceryPlusPlus.g:1313:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
-            // InternalTraceryPlusPlus.g:1314:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
+            // InternalTraceryPlusPlus.g:1334:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
+            // InternalTraceryPlusPlus.g:1335:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
             {
              before(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1()); 
-            // InternalTraceryPlusPlus.g:1315:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
-            // InternalTraceryPlusPlus.g:1315:3: rule__TraceryPlusPlusProgram__StoryAssignment_1
+            // InternalTraceryPlusPlus.g:1336:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
+            // InternalTraceryPlusPlus.g:1336:3: rule__TraceryPlusPlusProgram__StoryAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TraceryPlusPlusProgram__StoryAssignment_1();
@@ -4336,14 +4411,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__0"
-    // InternalTraceryPlusPlus.g:1324:1: rule__Story__Group__0 : rule__Story__Group__0__Impl rule__Story__Group__1 ;
+    // InternalTraceryPlusPlus.g:1345:1: rule__Story__Group__0 : rule__Story__Group__0__Impl rule__Story__Group__1 ;
     public final void rule__Story__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1328:1: ( rule__Story__Group__0__Impl rule__Story__Group__1 )
-            // InternalTraceryPlusPlus.g:1329:2: rule__Story__Group__0__Impl rule__Story__Group__1
+            // InternalTraceryPlusPlus.g:1349:1: ( rule__Story__Group__0__Impl rule__Story__Group__1 )
+            // InternalTraceryPlusPlus.g:1350:2: rule__Story__Group__0__Impl rule__Story__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Story__Group__0__Impl();
@@ -4374,21 +4449,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:1336:1: rule__Story__Group__0__Impl : ( () ) ;
+    // InternalTraceryPlusPlus.g:1357:1: rule__Story__Group__0__Impl : ( () ) ;
     public final void rule__Story__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1340:1: ( ( () ) )
-            // InternalTraceryPlusPlus.g:1341:1: ( () )
+            // InternalTraceryPlusPlus.g:1361:1: ( ( () ) )
+            // InternalTraceryPlusPlus.g:1362:1: ( () )
             {
-            // InternalTraceryPlusPlus.g:1341:1: ( () )
-            // InternalTraceryPlusPlus.g:1342:2: ()
+            // InternalTraceryPlusPlus.g:1362:1: ( () )
+            // InternalTraceryPlusPlus.g:1363:2: ()
             {
              before(grammarAccess.getStoryAccess().getStoryAction_0()); 
-            // InternalTraceryPlusPlus.g:1343:2: ()
-            // InternalTraceryPlusPlus.g:1343:3: 
+            // InternalTraceryPlusPlus.g:1364:2: ()
+            // InternalTraceryPlusPlus.g:1364:3: 
             {
             }
 
@@ -4411,14 +4486,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__1"
-    // InternalTraceryPlusPlus.g:1351:1: rule__Story__Group__1 : rule__Story__Group__1__Impl rule__Story__Group__2 ;
+    // InternalTraceryPlusPlus.g:1372:1: rule__Story__Group__1 : rule__Story__Group__1__Impl rule__Story__Group__2 ;
     public final void rule__Story__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1355:1: ( rule__Story__Group__1__Impl rule__Story__Group__2 )
-            // InternalTraceryPlusPlus.g:1356:2: rule__Story__Group__1__Impl rule__Story__Group__2
+            // InternalTraceryPlusPlus.g:1376:1: ( rule__Story__Group__1__Impl rule__Story__Group__2 )
+            // InternalTraceryPlusPlus.g:1377:2: rule__Story__Group__1__Impl rule__Story__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Story__Group__1__Impl();
@@ -4449,20 +4524,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:1363:1: rule__Story__Group__1__Impl : ( 'The' ) ;
+    // InternalTraceryPlusPlus.g:1384:1: rule__Story__Group__1__Impl : ( 'The' ) ;
     public final void rule__Story__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1367:1: ( ( 'The' ) )
-            // InternalTraceryPlusPlus.g:1368:1: ( 'The' )
+            // InternalTraceryPlusPlus.g:1388:1: ( ( 'The' ) )
+            // InternalTraceryPlusPlus.g:1389:1: ( 'The' )
             {
-            // InternalTraceryPlusPlus.g:1368:1: ( 'The' )
-            // InternalTraceryPlusPlus.g:1369:2: 'The'
+            // InternalTraceryPlusPlus.g:1389:1: ( 'The' )
+            // InternalTraceryPlusPlus.g:1390:2: 'The'
             {
              before(grammarAccess.getStoryAccess().getTheKeyword_1()); 
-            match(input,36,FOLLOW_2); 
+            match(input,38,FOLLOW_2); 
              after(grammarAccess.getStoryAccess().getTheKeyword_1()); 
 
             }
@@ -4486,14 +4561,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__2"
-    // InternalTraceryPlusPlus.g:1378:1: rule__Story__Group__2 : rule__Story__Group__2__Impl rule__Story__Group__3 ;
+    // InternalTraceryPlusPlus.g:1399:1: rule__Story__Group__2 : rule__Story__Group__2__Impl rule__Story__Group__3 ;
     public final void rule__Story__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1382:1: ( rule__Story__Group__2__Impl rule__Story__Group__3 )
-            // InternalTraceryPlusPlus.g:1383:2: rule__Story__Group__2__Impl rule__Story__Group__3
+            // InternalTraceryPlusPlus.g:1403:1: ( rule__Story__Group__2__Impl rule__Story__Group__3 )
+            // InternalTraceryPlusPlus.g:1404:2: rule__Story__Group__2__Impl rule__Story__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Story__Group__2__Impl();
@@ -4524,20 +4599,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:1390:1: rule__Story__Group__2__Impl : ( 'story' ) ;
+    // InternalTraceryPlusPlus.g:1411:1: rule__Story__Group__2__Impl : ( 'story' ) ;
     public final void rule__Story__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1394:1: ( ( 'story' ) )
-            // InternalTraceryPlusPlus.g:1395:1: ( 'story' )
+            // InternalTraceryPlusPlus.g:1415:1: ( ( 'story' ) )
+            // InternalTraceryPlusPlus.g:1416:1: ( 'story' )
             {
-            // InternalTraceryPlusPlus.g:1395:1: ( 'story' )
-            // InternalTraceryPlusPlus.g:1396:2: 'story'
+            // InternalTraceryPlusPlus.g:1416:1: ( 'story' )
+            // InternalTraceryPlusPlus.g:1417:2: 'story'
             {
              before(grammarAccess.getStoryAccess().getStoryKeyword_2()); 
-            match(input,37,FOLLOW_2); 
+            match(input,39,FOLLOW_2); 
              after(grammarAccess.getStoryAccess().getStoryKeyword_2()); 
 
             }
@@ -4561,14 +4636,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__3"
-    // InternalTraceryPlusPlus.g:1405:1: rule__Story__Group__3 : rule__Story__Group__3__Impl rule__Story__Group__4 ;
+    // InternalTraceryPlusPlus.g:1426:1: rule__Story__Group__3 : rule__Story__Group__3__Impl rule__Story__Group__4 ;
     public final void rule__Story__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1409:1: ( rule__Story__Group__3__Impl rule__Story__Group__4 )
-            // InternalTraceryPlusPlus.g:1410:2: rule__Story__Group__3__Impl rule__Story__Group__4
+            // InternalTraceryPlusPlus.g:1430:1: ( rule__Story__Group__3__Impl rule__Story__Group__4 )
+            // InternalTraceryPlusPlus.g:1431:2: rule__Story__Group__3__Impl rule__Story__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Story__Group__3__Impl();
@@ -4599,29 +4674,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__3__Impl"
-    // InternalTraceryPlusPlus.g:1417:1: rule__Story__Group__3__Impl : ( ( ruleAssignmentOperator )? ) ;
+    // InternalTraceryPlusPlus.g:1438:1: rule__Story__Group__3__Impl : ( ( ruleAssignmentOperator )? ) ;
     public final void rule__Story__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1421:1: ( ( ( ruleAssignmentOperator )? ) )
-            // InternalTraceryPlusPlus.g:1422:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1442:1: ( ( ( ruleAssignmentOperator )? ) )
+            // InternalTraceryPlusPlus.g:1443:1: ( ( ruleAssignmentOperator )? )
             {
-            // InternalTraceryPlusPlus.g:1422:1: ( ( ruleAssignmentOperator )? )
-            // InternalTraceryPlusPlus.g:1423:2: ( ruleAssignmentOperator )?
+            // InternalTraceryPlusPlus.g:1443:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1444:2: ( ruleAssignmentOperator )?
             {
              before(grammarAccess.getStoryAccess().getAssignmentOperatorParserRuleCall_3()); 
-            // InternalTraceryPlusPlus.g:1424:2: ( ruleAssignmentOperator )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:1445:2: ( ruleAssignmentOperator )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( ((LA20_0>=27 && LA20_0<=30)||LA20_0==46) ) {
-                alt20=1;
+            if ( ((LA21_0>=29 && LA21_0<=32)||LA21_0==49) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1424:3: ruleAssignmentOperator
+                    // InternalTraceryPlusPlus.g:1445:3: ruleAssignmentOperator
                     {
                     pushFollow(FOLLOW_2);
                     ruleAssignmentOperator();
@@ -4657,14 +4732,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__4"
-    // InternalTraceryPlusPlus.g:1432:1: rule__Story__Group__4 : rule__Story__Group__4__Impl ;
+    // InternalTraceryPlusPlus.g:1453:1: rule__Story__Group__4 : rule__Story__Group__4__Impl ;
     public final void rule__Story__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1436:1: ( rule__Story__Group__4__Impl )
-            // InternalTraceryPlusPlus.g:1437:2: rule__Story__Group__4__Impl
+            // InternalTraceryPlusPlus.g:1457:1: ( rule__Story__Group__4__Impl )
+            // InternalTraceryPlusPlus.g:1458:2: rule__Story__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Story__Group__4__Impl();
@@ -4690,33 +4765,33 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__Group__4__Impl"
-    // InternalTraceryPlusPlus.g:1443:1: rule__Story__Group__4__Impl : ( ( rule__Story__StoryAssignment_4 )* ) ;
+    // InternalTraceryPlusPlus.g:1464:1: rule__Story__Group__4__Impl : ( ( rule__Story__StoryAssignment_4 )* ) ;
     public final void rule__Story__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1447:1: ( ( ( rule__Story__StoryAssignment_4 )* ) )
-            // InternalTraceryPlusPlus.g:1448:1: ( ( rule__Story__StoryAssignment_4 )* )
+            // InternalTraceryPlusPlus.g:1468:1: ( ( ( rule__Story__StoryAssignment_4 )* ) )
+            // InternalTraceryPlusPlus.g:1469:1: ( ( rule__Story__StoryAssignment_4 )* )
             {
-            // InternalTraceryPlusPlus.g:1448:1: ( ( rule__Story__StoryAssignment_4 )* )
-            // InternalTraceryPlusPlus.g:1449:2: ( rule__Story__StoryAssignment_4 )*
+            // InternalTraceryPlusPlus.g:1469:1: ( ( rule__Story__StoryAssignment_4 )* )
+            // InternalTraceryPlusPlus.g:1470:2: ( rule__Story__StoryAssignment_4 )*
             {
              before(grammarAccess.getStoryAccess().getStoryAssignment_4()); 
-            // InternalTraceryPlusPlus.g:1450:2: ( rule__Story__StoryAssignment_4 )*
-            loop21:
+            // InternalTraceryPlusPlus.g:1471:2: ( rule__Story__StoryAssignment_4 )*
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA21_0>=RULE_ID && LA21_0<=RULE_STRING)||LA21_0==43) ) {
-                    alt21=1;
+                if ( ((LA22_0>=RULE_ID && LA22_0<=RULE_STRING)||LA22_0==47) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:1450:3: rule__Story__StoryAssignment_4
+            	    // InternalTraceryPlusPlus.g:1471:3: rule__Story__StoryAssignment_4
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__Story__StoryAssignment_4();
@@ -4728,7 +4803,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop22;
                 }
             } while (true);
 
@@ -4755,14 +4830,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__0"
-    // InternalTraceryPlusPlus.g:1459:1: rule__ListDeclaration__Group__0 : rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1 ;
+    // InternalTraceryPlusPlus.g:1480:1: rule__ListDeclaration__Group__0 : rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1 ;
     public final void rule__ListDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1463:1: ( rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1 )
-            // InternalTraceryPlusPlus.g:1464:2: rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1
+            // InternalTraceryPlusPlus.g:1484:1: ( rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1 )
+            // InternalTraceryPlusPlus.g:1485:2: rule__ListDeclaration__Group__0__Impl rule__ListDeclaration__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__ListDeclaration__Group__0__Impl();
@@ -4793,21 +4868,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:1471:1: rule__ListDeclaration__Group__0__Impl : ( ( rule__ListDeclaration__NameAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:1492:1: rule__ListDeclaration__Group__0__Impl : ( ( rule__ListDeclaration__NameAssignment_0 ) ) ;
     public final void rule__ListDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1475:1: ( ( ( rule__ListDeclaration__NameAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:1476:1: ( ( rule__ListDeclaration__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:1496:1: ( ( ( rule__ListDeclaration__NameAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:1497:1: ( ( rule__ListDeclaration__NameAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:1476:1: ( ( rule__ListDeclaration__NameAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:1477:2: ( rule__ListDeclaration__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:1497:1: ( ( rule__ListDeclaration__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:1498:2: ( rule__ListDeclaration__NameAssignment_0 )
             {
              before(grammarAccess.getListDeclarationAccess().getNameAssignment_0()); 
-            // InternalTraceryPlusPlus.g:1478:2: ( rule__ListDeclaration__NameAssignment_0 )
-            // InternalTraceryPlusPlus.g:1478:3: rule__ListDeclaration__NameAssignment_0
+            // InternalTraceryPlusPlus.g:1499:2: ( rule__ListDeclaration__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:1499:3: rule__ListDeclaration__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__NameAssignment_0();
@@ -4840,14 +4915,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__1"
-    // InternalTraceryPlusPlus.g:1486:1: rule__ListDeclaration__Group__1 : rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2 ;
+    // InternalTraceryPlusPlus.g:1507:1: rule__ListDeclaration__Group__1 : rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2 ;
     public final void rule__ListDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1490:1: ( rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2 )
-            // InternalTraceryPlusPlus.g:1491:2: rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2
+            // InternalTraceryPlusPlus.g:1511:1: ( rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2 )
+            // InternalTraceryPlusPlus.g:1512:2: rule__ListDeclaration__Group__1__Impl rule__ListDeclaration__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__ListDeclaration__Group__1__Impl();
@@ -4878,21 +4953,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:1498:1: rule__ListDeclaration__Group__1__Impl : ( ( rule__ListDeclaration__Alternatives_1 ) ) ;
+    // InternalTraceryPlusPlus.g:1519:1: rule__ListDeclaration__Group__1__Impl : ( ( rule__ListDeclaration__Alternatives_1 ) ) ;
     public final void rule__ListDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1502:1: ( ( ( rule__ListDeclaration__Alternatives_1 ) ) )
-            // InternalTraceryPlusPlus.g:1503:1: ( ( rule__ListDeclaration__Alternatives_1 ) )
+            // InternalTraceryPlusPlus.g:1523:1: ( ( ( rule__ListDeclaration__Alternatives_1 ) ) )
+            // InternalTraceryPlusPlus.g:1524:1: ( ( rule__ListDeclaration__Alternatives_1 ) )
             {
-            // InternalTraceryPlusPlus.g:1503:1: ( ( rule__ListDeclaration__Alternatives_1 ) )
-            // InternalTraceryPlusPlus.g:1504:2: ( rule__ListDeclaration__Alternatives_1 )
+            // InternalTraceryPlusPlus.g:1524:1: ( ( rule__ListDeclaration__Alternatives_1 ) )
+            // InternalTraceryPlusPlus.g:1525:2: ( rule__ListDeclaration__Alternatives_1 )
             {
              before(grammarAccess.getListDeclarationAccess().getAlternatives_1()); 
-            // InternalTraceryPlusPlus.g:1505:2: ( rule__ListDeclaration__Alternatives_1 )
-            // InternalTraceryPlusPlus.g:1505:3: rule__ListDeclaration__Alternatives_1
+            // InternalTraceryPlusPlus.g:1526:2: ( rule__ListDeclaration__Alternatives_1 )
+            // InternalTraceryPlusPlus.g:1526:3: rule__ListDeclaration__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Alternatives_1();
@@ -4925,14 +5000,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__2"
-    // InternalTraceryPlusPlus.g:1513:1: rule__ListDeclaration__Group__2 : rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3 ;
+    // InternalTraceryPlusPlus.g:1534:1: rule__ListDeclaration__Group__2 : rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3 ;
     public final void rule__ListDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1517:1: ( rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3 )
-            // InternalTraceryPlusPlus.g:1518:2: rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3
+            // InternalTraceryPlusPlus.g:1538:1: ( rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3 )
+            // InternalTraceryPlusPlus.g:1539:2: rule__ListDeclaration__Group__2__Impl rule__ListDeclaration__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__ListDeclaration__Group__2__Impl();
@@ -4963,29 +5038,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:1525:1: rule__ListDeclaration__Group__2__Impl : ( ( ruleAssignmentOperator )? ) ;
+    // InternalTraceryPlusPlus.g:1546:1: rule__ListDeclaration__Group__2__Impl : ( ( ruleAssignmentOperator )? ) ;
     public final void rule__ListDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1529:1: ( ( ( ruleAssignmentOperator )? ) )
-            // InternalTraceryPlusPlus.g:1530:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1550:1: ( ( ( ruleAssignmentOperator )? ) )
+            // InternalTraceryPlusPlus.g:1551:1: ( ( ruleAssignmentOperator )? )
             {
-            // InternalTraceryPlusPlus.g:1530:1: ( ( ruleAssignmentOperator )? )
-            // InternalTraceryPlusPlus.g:1531:2: ( ruleAssignmentOperator )?
+            // InternalTraceryPlusPlus.g:1551:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1552:2: ( ruleAssignmentOperator )?
             {
              before(grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2()); 
-            // InternalTraceryPlusPlus.g:1532:2: ( ruleAssignmentOperator )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:1553:2: ( ruleAssignmentOperator )?
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( ((LA22_0>=27 && LA22_0<=30)||LA22_0==46) ) {
-                alt22=1;
+            if ( ((LA23_0>=29 && LA23_0<=32)||LA23_0==49) ) {
+                alt23=1;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1532:3: ruleAssignmentOperator
+                    // InternalTraceryPlusPlus.g:1553:3: ruleAssignmentOperator
                     {
                     pushFollow(FOLLOW_2);
                     ruleAssignmentOperator();
@@ -5021,14 +5096,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__3"
-    // InternalTraceryPlusPlus.g:1540:1: rule__ListDeclaration__Group__3 : rule__ListDeclaration__Group__3__Impl ;
+    // InternalTraceryPlusPlus.g:1561:1: rule__ListDeclaration__Group__3 : rule__ListDeclaration__Group__3__Impl ;
     public final void rule__ListDeclaration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1544:1: ( rule__ListDeclaration__Group__3__Impl )
-            // InternalTraceryPlusPlus.g:1545:2: rule__ListDeclaration__Group__3__Impl
+            // InternalTraceryPlusPlus.g:1565:1: ( rule__ListDeclaration__Group__3__Impl )
+            // InternalTraceryPlusPlus.g:1566:2: rule__ListDeclaration__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Group__3__Impl();
@@ -5054,21 +5129,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group__3__Impl"
-    // InternalTraceryPlusPlus.g:1551:1: rule__ListDeclaration__Group__3__Impl : ( ( rule__ListDeclaration__ListAssignment_3 ) ) ;
+    // InternalTraceryPlusPlus.g:1572:1: rule__ListDeclaration__Group__3__Impl : ( ( rule__ListDeclaration__ListAssignment_3 ) ) ;
     public final void rule__ListDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1555:1: ( ( ( rule__ListDeclaration__ListAssignment_3 ) ) )
-            // InternalTraceryPlusPlus.g:1556:1: ( ( rule__ListDeclaration__ListAssignment_3 ) )
+            // InternalTraceryPlusPlus.g:1576:1: ( ( ( rule__ListDeclaration__ListAssignment_3 ) ) )
+            // InternalTraceryPlusPlus.g:1577:1: ( ( rule__ListDeclaration__ListAssignment_3 ) )
             {
-            // InternalTraceryPlusPlus.g:1556:1: ( ( rule__ListDeclaration__ListAssignment_3 ) )
-            // InternalTraceryPlusPlus.g:1557:2: ( rule__ListDeclaration__ListAssignment_3 )
+            // InternalTraceryPlusPlus.g:1577:1: ( ( rule__ListDeclaration__ListAssignment_3 ) )
+            // InternalTraceryPlusPlus.g:1578:2: ( rule__ListDeclaration__ListAssignment_3 )
             {
              before(grammarAccess.getListDeclarationAccess().getListAssignment_3()); 
-            // InternalTraceryPlusPlus.g:1558:2: ( rule__ListDeclaration__ListAssignment_3 )
-            // InternalTraceryPlusPlus.g:1558:3: rule__ListDeclaration__ListAssignment_3
+            // InternalTraceryPlusPlus.g:1579:2: ( rule__ListDeclaration__ListAssignment_3 )
+            // InternalTraceryPlusPlus.g:1579:3: rule__ListDeclaration__ListAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__ListAssignment_3();
@@ -5101,14 +5176,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__0"
-    // InternalTraceryPlusPlus.g:1567:1: rule__ListDeclaration__Group_1_0__0 : rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1 ;
+    // InternalTraceryPlusPlus.g:1588:1: rule__ListDeclaration__Group_1_0__0 : rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1 ;
     public final void rule__ListDeclaration__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1571:1: ( rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1 )
-            // InternalTraceryPlusPlus.g:1572:2: rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1
+            // InternalTraceryPlusPlus.g:1592:1: ( rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1 )
+            // InternalTraceryPlusPlus.g:1593:2: rule__ListDeclaration__Group_1_0__0__Impl rule__ListDeclaration__Group_1_0__1
             {
             pushFollow(FOLLOW_10);
             rule__ListDeclaration__Group_1_0__0__Impl();
@@ -5139,20 +5214,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__0__Impl"
-    // InternalTraceryPlusPlus.g:1579:1: rule__ListDeclaration__Group_1_0__0__Impl : ( 'can' ) ;
+    // InternalTraceryPlusPlus.g:1600:1: rule__ListDeclaration__Group_1_0__0__Impl : ( 'can' ) ;
     public final void rule__ListDeclaration__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1583:1: ( ( 'can' ) )
-            // InternalTraceryPlusPlus.g:1584:1: ( 'can' )
+            // InternalTraceryPlusPlus.g:1604:1: ( ( 'can' ) )
+            // InternalTraceryPlusPlus.g:1605:1: ( 'can' )
             {
-            // InternalTraceryPlusPlus.g:1584:1: ( 'can' )
-            // InternalTraceryPlusPlus.g:1585:2: 'can'
+            // InternalTraceryPlusPlus.g:1605:1: ( 'can' )
+            // InternalTraceryPlusPlus.g:1606:2: 'can'
             {
              before(grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()); 
-            match(input,38,FOLLOW_2); 
+            match(input,40,FOLLOW_2); 
              after(grammarAccess.getListDeclarationAccess().getCanKeyword_1_0_0()); 
 
             }
@@ -5176,14 +5251,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__1"
-    // InternalTraceryPlusPlus.g:1594:1: rule__ListDeclaration__Group_1_0__1 : rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2 ;
+    // InternalTraceryPlusPlus.g:1615:1: rule__ListDeclaration__Group_1_0__1 : rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2 ;
     public final void rule__ListDeclaration__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1598:1: ( rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2 )
-            // InternalTraceryPlusPlus.g:1599:2: rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2
+            // InternalTraceryPlusPlus.g:1619:1: ( rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2 )
+            // InternalTraceryPlusPlus.g:1620:2: rule__ListDeclaration__Group_1_0__1__Impl rule__ListDeclaration__Group_1_0__2
             {
             pushFollow(FOLLOW_11);
             rule__ListDeclaration__Group_1_0__1__Impl();
@@ -5214,17 +5289,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__1__Impl"
-    // InternalTraceryPlusPlus.g:1606:1: rule__ListDeclaration__Group_1_0__1__Impl : ( 'have' ) ;
+    // InternalTraceryPlusPlus.g:1627:1: rule__ListDeclaration__Group_1_0__1__Impl : ( 'have' ) ;
     public final void rule__ListDeclaration__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1610:1: ( ( 'have' ) )
-            // InternalTraceryPlusPlus.g:1611:1: ( 'have' )
+            // InternalTraceryPlusPlus.g:1631:1: ( ( 'have' ) )
+            // InternalTraceryPlusPlus.g:1632:1: ( 'have' )
             {
-            // InternalTraceryPlusPlus.g:1611:1: ( 'have' )
-            // InternalTraceryPlusPlus.g:1612:2: 'have'
+            // InternalTraceryPlusPlus.g:1632:1: ( 'have' )
+            // InternalTraceryPlusPlus.g:1633:2: 'have'
             {
              before(grammarAccess.getListDeclarationAccess().getHaveKeyword_1_0_1()); 
             match(input,17,FOLLOW_2); 
@@ -5251,14 +5326,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__2"
-    // InternalTraceryPlusPlus.g:1621:1: rule__ListDeclaration__Group_1_0__2 : rule__ListDeclaration__Group_1_0__2__Impl ;
+    // InternalTraceryPlusPlus.g:1642:1: rule__ListDeclaration__Group_1_0__2 : rule__ListDeclaration__Group_1_0__2__Impl ;
     public final void rule__ListDeclaration__Group_1_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1625:1: ( rule__ListDeclaration__Group_1_0__2__Impl )
-            // InternalTraceryPlusPlus.g:1626:2: rule__ListDeclaration__Group_1_0__2__Impl
+            // InternalTraceryPlusPlus.g:1646:1: ( rule__ListDeclaration__Group_1_0__2__Impl )
+            // InternalTraceryPlusPlus.g:1647:2: rule__ListDeclaration__Group_1_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Group_1_0__2__Impl();
@@ -5284,20 +5359,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_0__2__Impl"
-    // InternalTraceryPlusPlus.g:1632:1: rule__ListDeclaration__Group_1_0__2__Impl : ( 'values' ) ;
+    // InternalTraceryPlusPlus.g:1653:1: rule__ListDeclaration__Group_1_0__2__Impl : ( 'values' ) ;
     public final void rule__ListDeclaration__Group_1_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1636:1: ( ( 'values' ) )
-            // InternalTraceryPlusPlus.g:1637:1: ( 'values' )
+            // InternalTraceryPlusPlus.g:1657:1: ( ( 'values' ) )
+            // InternalTraceryPlusPlus.g:1658:1: ( 'values' )
             {
-            // InternalTraceryPlusPlus.g:1637:1: ( 'values' )
-            // InternalTraceryPlusPlus.g:1638:2: 'values'
+            // InternalTraceryPlusPlus.g:1658:1: ( 'values' )
+            // InternalTraceryPlusPlus.g:1659:2: 'values'
             {
              before(grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2()); 
-            match(input,39,FOLLOW_2); 
+            match(input,41,FOLLOW_2); 
              after(grammarAccess.getListDeclarationAccess().getValuesKeyword_1_0_2()); 
 
             }
@@ -5321,14 +5396,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_1__0"
-    // InternalTraceryPlusPlus.g:1648:1: rule__ListDeclaration__Group_1_1__0 : rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1 ;
+    // InternalTraceryPlusPlus.g:1669:1: rule__ListDeclaration__Group_1_1__0 : rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1 ;
     public final void rule__ListDeclaration__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1652:1: ( rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1 )
-            // InternalTraceryPlusPlus.g:1653:2: rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1
+            // InternalTraceryPlusPlus.g:1673:1: ( rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1 )
+            // InternalTraceryPlusPlus.g:1674:2: rule__ListDeclaration__Group_1_1__0__Impl rule__ListDeclaration__Group_1_1__1
             {
             pushFollow(FOLLOW_12);
             rule__ListDeclaration__Group_1_1__0__Impl();
@@ -5359,20 +5434,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_1__0__Impl"
-    // InternalTraceryPlusPlus.g:1660:1: rule__ListDeclaration__Group_1_1__0__Impl : ( 'can' ) ;
+    // InternalTraceryPlusPlus.g:1681:1: rule__ListDeclaration__Group_1_1__0__Impl : ( 'can' ) ;
     public final void rule__ListDeclaration__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1664:1: ( ( 'can' ) )
-            // InternalTraceryPlusPlus.g:1665:1: ( 'can' )
+            // InternalTraceryPlusPlus.g:1685:1: ( ( 'can' ) )
+            // InternalTraceryPlusPlus.g:1686:1: ( 'can' )
             {
-            // InternalTraceryPlusPlus.g:1665:1: ( 'can' )
-            // InternalTraceryPlusPlus.g:1666:2: 'can'
+            // InternalTraceryPlusPlus.g:1686:1: ( 'can' )
+            // InternalTraceryPlusPlus.g:1687:2: 'can'
             {
              before(grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()); 
-            match(input,38,FOLLOW_2); 
+            match(input,40,FOLLOW_2); 
              after(grammarAccess.getListDeclarationAccess().getCanKeyword_1_1_0()); 
 
             }
@@ -5396,14 +5471,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_1__1"
-    // InternalTraceryPlusPlus.g:1675:1: rule__ListDeclaration__Group_1_1__1 : rule__ListDeclaration__Group_1_1__1__Impl ;
+    // InternalTraceryPlusPlus.g:1696:1: rule__ListDeclaration__Group_1_1__1 : rule__ListDeclaration__Group_1_1__1__Impl ;
     public final void rule__ListDeclaration__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1679:1: ( rule__ListDeclaration__Group_1_1__1__Impl )
-            // InternalTraceryPlusPlus.g:1680:2: rule__ListDeclaration__Group_1_1__1__Impl
+            // InternalTraceryPlusPlus.g:1700:1: ( rule__ListDeclaration__Group_1_1__1__Impl )
+            // InternalTraceryPlusPlus.g:1701:2: rule__ListDeclaration__Group_1_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Group_1_1__1__Impl();
@@ -5429,20 +5504,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_1__1__Impl"
-    // InternalTraceryPlusPlus.g:1686:1: rule__ListDeclaration__Group_1_1__1__Impl : ( 'be' ) ;
+    // InternalTraceryPlusPlus.g:1707:1: rule__ListDeclaration__Group_1_1__1__Impl : ( 'be' ) ;
     public final void rule__ListDeclaration__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1690:1: ( ( 'be' ) )
-            // InternalTraceryPlusPlus.g:1691:1: ( 'be' )
+            // InternalTraceryPlusPlus.g:1711:1: ( ( 'be' ) )
+            // InternalTraceryPlusPlus.g:1712:1: ( 'be' )
             {
-            // InternalTraceryPlusPlus.g:1691:1: ( 'be' )
-            // InternalTraceryPlusPlus.g:1692:2: 'be'
+            // InternalTraceryPlusPlus.g:1712:1: ( 'be' )
+            // InternalTraceryPlusPlus.g:1713:2: 'be'
             {
              before(grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1()); 
-            match(input,40,FOLLOW_2); 
+            match(input,42,FOLLOW_2); 
              after(grammarAccess.getListDeclarationAccess().getBeKeyword_1_1_1()); 
 
             }
@@ -5466,14 +5541,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_2__0"
-    // InternalTraceryPlusPlus.g:1702:1: rule__ListDeclaration__Group_1_2__0 : rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1 ;
+    // InternalTraceryPlusPlus.g:1723:1: rule__ListDeclaration__Group_1_2__0 : rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1 ;
     public final void rule__ListDeclaration__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1706:1: ( rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1 )
-            // InternalTraceryPlusPlus.g:1707:2: rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1
+            // InternalTraceryPlusPlus.g:1727:1: ( rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1 )
+            // InternalTraceryPlusPlus.g:1728:2: rule__ListDeclaration__Group_1_2__0__Impl rule__ListDeclaration__Group_1_2__1
             {
             pushFollow(FOLLOW_11);
             rule__ListDeclaration__Group_1_2__0__Impl();
@@ -5504,21 +5579,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_2__0__Impl"
-    // InternalTraceryPlusPlus.g:1714:1: rule__ListDeclaration__Group_1_2__0__Impl : ( ( rule__ListDeclaration__Alternatives_1_2_0 ) ) ;
+    // InternalTraceryPlusPlus.g:1735:1: rule__ListDeclaration__Group_1_2__0__Impl : ( ( rule__ListDeclaration__Alternatives_1_2_0 ) ) ;
     public final void rule__ListDeclaration__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1718:1: ( ( ( rule__ListDeclaration__Alternatives_1_2_0 ) ) )
-            // InternalTraceryPlusPlus.g:1719:1: ( ( rule__ListDeclaration__Alternatives_1_2_0 ) )
+            // InternalTraceryPlusPlus.g:1739:1: ( ( ( rule__ListDeclaration__Alternatives_1_2_0 ) ) )
+            // InternalTraceryPlusPlus.g:1740:1: ( ( rule__ListDeclaration__Alternatives_1_2_0 ) )
             {
-            // InternalTraceryPlusPlus.g:1719:1: ( ( rule__ListDeclaration__Alternatives_1_2_0 ) )
-            // InternalTraceryPlusPlus.g:1720:2: ( rule__ListDeclaration__Alternatives_1_2_0 )
+            // InternalTraceryPlusPlus.g:1740:1: ( ( rule__ListDeclaration__Alternatives_1_2_0 ) )
+            // InternalTraceryPlusPlus.g:1741:2: ( rule__ListDeclaration__Alternatives_1_2_0 )
             {
              before(grammarAccess.getListDeclarationAccess().getAlternatives_1_2_0()); 
-            // InternalTraceryPlusPlus.g:1721:2: ( rule__ListDeclaration__Alternatives_1_2_0 )
-            // InternalTraceryPlusPlus.g:1721:3: rule__ListDeclaration__Alternatives_1_2_0
+            // InternalTraceryPlusPlus.g:1742:2: ( rule__ListDeclaration__Alternatives_1_2_0 )
+            // InternalTraceryPlusPlus.g:1742:3: rule__ListDeclaration__Alternatives_1_2_0
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Alternatives_1_2_0();
@@ -5551,14 +5626,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_2__1"
-    // InternalTraceryPlusPlus.g:1729:1: rule__ListDeclaration__Group_1_2__1 : rule__ListDeclaration__Group_1_2__1__Impl ;
+    // InternalTraceryPlusPlus.g:1750:1: rule__ListDeclaration__Group_1_2__1 : rule__ListDeclaration__Group_1_2__1__Impl ;
     public final void rule__ListDeclaration__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1733:1: ( rule__ListDeclaration__Group_1_2__1__Impl )
-            // InternalTraceryPlusPlus.g:1734:2: rule__ListDeclaration__Group_1_2__1__Impl
+            // InternalTraceryPlusPlus.g:1754:1: ( rule__ListDeclaration__Group_1_2__1__Impl )
+            // InternalTraceryPlusPlus.g:1755:2: rule__ListDeclaration__Group_1_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListDeclaration__Group_1_2__1__Impl();
@@ -5584,20 +5659,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__Group_1_2__1__Impl"
-    // InternalTraceryPlusPlus.g:1740:1: rule__ListDeclaration__Group_1_2__1__Impl : ( 'values' ) ;
+    // InternalTraceryPlusPlus.g:1761:1: rule__ListDeclaration__Group_1_2__1__Impl : ( 'values' ) ;
     public final void rule__ListDeclaration__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1744:1: ( ( 'values' ) )
-            // InternalTraceryPlusPlus.g:1745:1: ( 'values' )
+            // InternalTraceryPlusPlus.g:1765:1: ( ( 'values' ) )
+            // InternalTraceryPlusPlus.g:1766:1: ( 'values' )
             {
-            // InternalTraceryPlusPlus.g:1745:1: ( 'values' )
-            // InternalTraceryPlusPlus.g:1746:2: 'values'
+            // InternalTraceryPlusPlus.g:1766:1: ( 'values' )
+            // InternalTraceryPlusPlus.g:1767:2: 'values'
             {
              before(grammarAccess.getListDeclarationAccess().getValuesKeyword_1_2_1()); 
-            match(input,39,FOLLOW_2); 
+            match(input,41,FOLLOW_2); 
              after(grammarAccess.getListDeclarationAccess().getValuesKeyword_1_2_1()); 
 
             }
@@ -5621,14 +5696,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__0"
-    // InternalTraceryPlusPlus.g:1756:1: rule__ObjectDeclaration__Group__0 : rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1 ;
+    // InternalTraceryPlusPlus.g:1777:1: rule__ObjectDeclaration__Group__0 : rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1 ;
     public final void rule__ObjectDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1760:1: ( rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1 )
-            // InternalTraceryPlusPlus.g:1761:2: rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1
+            // InternalTraceryPlusPlus.g:1781:1: ( rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1 )
+            // InternalTraceryPlusPlus.g:1782:2: rule__ObjectDeclaration__Group__0__Impl rule__ObjectDeclaration__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__ObjectDeclaration__Group__0__Impl();
@@ -5659,20 +5734,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:1768:1: rule__ObjectDeclaration__Group__0__Impl : ( 'There' ) ;
+    // InternalTraceryPlusPlus.g:1789:1: rule__ObjectDeclaration__Group__0__Impl : ( 'There' ) ;
     public final void rule__ObjectDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1772:1: ( ( 'There' ) )
-            // InternalTraceryPlusPlus.g:1773:1: ( 'There' )
+            // InternalTraceryPlusPlus.g:1793:1: ( ( 'There' ) )
+            // InternalTraceryPlusPlus.g:1794:1: ( 'There' )
             {
-            // InternalTraceryPlusPlus.g:1773:1: ( 'There' )
-            // InternalTraceryPlusPlus.g:1774:2: 'There'
+            // InternalTraceryPlusPlus.g:1794:1: ( 'There' )
+            // InternalTraceryPlusPlus.g:1795:2: 'There'
             {
              before(grammarAccess.getObjectDeclarationAccess().getThereKeyword_0()); 
-            match(input,41,FOLLOW_2); 
+            match(input,43,FOLLOW_2); 
              after(grammarAccess.getObjectDeclarationAccess().getThereKeyword_0()); 
 
             }
@@ -5696,14 +5771,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__1"
-    // InternalTraceryPlusPlus.g:1783:1: rule__ObjectDeclaration__Group__1 : rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2 ;
+    // InternalTraceryPlusPlus.g:1804:1: rule__ObjectDeclaration__Group__1 : rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2 ;
     public final void rule__ObjectDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1787:1: ( rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2 )
-            // InternalTraceryPlusPlus.g:1788:2: rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2
+            // InternalTraceryPlusPlus.g:1808:1: ( rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2 )
+            // InternalTraceryPlusPlus.g:1809:2: rule__ObjectDeclaration__Group__1__Impl rule__ObjectDeclaration__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__ObjectDeclaration__Group__1__Impl();
@@ -5734,21 +5809,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:1795:1: rule__ObjectDeclaration__Group__1__Impl : ( ( rule__ObjectDeclaration__Alternatives_1 ) ) ;
+    // InternalTraceryPlusPlus.g:1816:1: rule__ObjectDeclaration__Group__1__Impl : ( ( rule__ObjectDeclaration__Alternatives_1 ) ) ;
     public final void rule__ObjectDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1799:1: ( ( ( rule__ObjectDeclaration__Alternatives_1 ) ) )
-            // InternalTraceryPlusPlus.g:1800:1: ( ( rule__ObjectDeclaration__Alternatives_1 ) )
+            // InternalTraceryPlusPlus.g:1820:1: ( ( ( rule__ObjectDeclaration__Alternatives_1 ) ) )
+            // InternalTraceryPlusPlus.g:1821:1: ( ( rule__ObjectDeclaration__Alternatives_1 ) )
             {
-            // InternalTraceryPlusPlus.g:1800:1: ( ( rule__ObjectDeclaration__Alternatives_1 ) )
-            // InternalTraceryPlusPlus.g:1801:2: ( rule__ObjectDeclaration__Alternatives_1 )
+            // InternalTraceryPlusPlus.g:1821:1: ( ( rule__ObjectDeclaration__Alternatives_1 ) )
+            // InternalTraceryPlusPlus.g:1822:2: ( rule__ObjectDeclaration__Alternatives_1 )
             {
              before(grammarAccess.getObjectDeclarationAccess().getAlternatives_1()); 
-            // InternalTraceryPlusPlus.g:1802:2: ( rule__ObjectDeclaration__Alternatives_1 )
-            // InternalTraceryPlusPlus.g:1802:3: rule__ObjectDeclaration__Alternatives_1
+            // InternalTraceryPlusPlus.g:1823:2: ( rule__ObjectDeclaration__Alternatives_1 )
+            // InternalTraceryPlusPlus.g:1823:3: rule__ObjectDeclaration__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__Alternatives_1();
@@ -5781,14 +5856,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__2"
-    // InternalTraceryPlusPlus.g:1810:1: rule__ObjectDeclaration__Group__2 : rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3 ;
+    // InternalTraceryPlusPlus.g:1831:1: rule__ObjectDeclaration__Group__2 : rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3 ;
     public final void rule__ObjectDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1814:1: ( rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3 )
-            // InternalTraceryPlusPlus.g:1815:2: rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3
+            // InternalTraceryPlusPlus.g:1835:1: ( rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3 )
+            // InternalTraceryPlusPlus.g:1836:2: rule__ObjectDeclaration__Group__2__Impl rule__ObjectDeclaration__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__ObjectDeclaration__Group__2__Impl();
@@ -5819,29 +5894,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:1822:1: rule__ObjectDeclaration__Group__2__Impl : ( ( rule__ObjectDeclaration__Alternatives_2 )? ) ;
+    // InternalTraceryPlusPlus.g:1843:1: rule__ObjectDeclaration__Group__2__Impl : ( ( rule__ObjectDeclaration__Alternatives_2 )? ) ;
     public final void rule__ObjectDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1826:1: ( ( ( rule__ObjectDeclaration__Alternatives_2 )? ) )
-            // InternalTraceryPlusPlus.g:1827:1: ( ( rule__ObjectDeclaration__Alternatives_2 )? )
+            // InternalTraceryPlusPlus.g:1847:1: ( ( ( rule__ObjectDeclaration__Alternatives_2 )? ) )
+            // InternalTraceryPlusPlus.g:1848:1: ( ( rule__ObjectDeclaration__Alternatives_2 )? )
             {
-            // InternalTraceryPlusPlus.g:1827:1: ( ( rule__ObjectDeclaration__Alternatives_2 )? )
-            // InternalTraceryPlusPlus.g:1828:2: ( rule__ObjectDeclaration__Alternatives_2 )?
+            // InternalTraceryPlusPlus.g:1848:1: ( ( rule__ObjectDeclaration__Alternatives_2 )? )
+            // InternalTraceryPlusPlus.g:1849:2: ( rule__ObjectDeclaration__Alternatives_2 )?
             {
              before(grammarAccess.getObjectDeclarationAccess().getAlternatives_2()); 
-            // InternalTraceryPlusPlus.g:1829:2: ( rule__ObjectDeclaration__Alternatives_2 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:1850:2: ( rule__ObjectDeclaration__Alternatives_2 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( ((LA23_0>=20 && LA23_0<=21)) ) {
-                alt23=1;
+            if ( ((LA24_0>=20 && LA24_0<=21)) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1829:3: rule__ObjectDeclaration__Alternatives_2
+                    // InternalTraceryPlusPlus.g:1850:3: rule__ObjectDeclaration__Alternatives_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__ObjectDeclaration__Alternatives_2();
@@ -5877,14 +5952,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__3"
-    // InternalTraceryPlusPlus.g:1837:1: rule__ObjectDeclaration__Group__3 : rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4 ;
+    // InternalTraceryPlusPlus.g:1858:1: rule__ObjectDeclaration__Group__3 : rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4 ;
     public final void rule__ObjectDeclaration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1841:1: ( rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4 )
-            // InternalTraceryPlusPlus.g:1842:2: rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4
+            // InternalTraceryPlusPlus.g:1862:1: ( rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4 )
+            // InternalTraceryPlusPlus.g:1863:2: rule__ObjectDeclaration__Group__3__Impl rule__ObjectDeclaration__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__ObjectDeclaration__Group__3__Impl();
@@ -5915,21 +5990,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__3__Impl"
-    // InternalTraceryPlusPlus.g:1849:1: rule__ObjectDeclaration__Group__3__Impl : ( ( rule__ObjectDeclaration__NameAssignment_3 ) ) ;
+    // InternalTraceryPlusPlus.g:1870:1: rule__ObjectDeclaration__Group__3__Impl : ( ( rule__ObjectDeclaration__NameAssignment_3 ) ) ;
     public final void rule__ObjectDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1853:1: ( ( ( rule__ObjectDeclaration__NameAssignment_3 ) ) )
-            // InternalTraceryPlusPlus.g:1854:1: ( ( rule__ObjectDeclaration__NameAssignment_3 ) )
+            // InternalTraceryPlusPlus.g:1874:1: ( ( ( rule__ObjectDeclaration__NameAssignment_3 ) ) )
+            // InternalTraceryPlusPlus.g:1875:1: ( ( rule__ObjectDeclaration__NameAssignment_3 ) )
             {
-            // InternalTraceryPlusPlus.g:1854:1: ( ( rule__ObjectDeclaration__NameAssignment_3 ) )
-            // InternalTraceryPlusPlus.g:1855:2: ( rule__ObjectDeclaration__NameAssignment_3 )
+            // InternalTraceryPlusPlus.g:1875:1: ( ( rule__ObjectDeclaration__NameAssignment_3 ) )
+            // InternalTraceryPlusPlus.g:1876:2: ( rule__ObjectDeclaration__NameAssignment_3 )
             {
              before(grammarAccess.getObjectDeclarationAccess().getNameAssignment_3()); 
-            // InternalTraceryPlusPlus.g:1856:2: ( rule__ObjectDeclaration__NameAssignment_3 )
-            // InternalTraceryPlusPlus.g:1856:3: rule__ObjectDeclaration__NameAssignment_3
+            // InternalTraceryPlusPlus.g:1877:2: ( rule__ObjectDeclaration__NameAssignment_3 )
+            // InternalTraceryPlusPlus.g:1877:3: rule__ObjectDeclaration__NameAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__NameAssignment_3();
@@ -5962,14 +6037,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__4"
-    // InternalTraceryPlusPlus.g:1864:1: rule__ObjectDeclaration__Group__4 : rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5 ;
+    // InternalTraceryPlusPlus.g:1885:1: rule__ObjectDeclaration__Group__4 : rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5 ;
     public final void rule__ObjectDeclaration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1868:1: ( rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5 )
-            // InternalTraceryPlusPlus.g:1869:2: rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5
+            // InternalTraceryPlusPlus.g:1889:1: ( rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5 )
+            // InternalTraceryPlusPlus.g:1890:2: rule__ObjectDeclaration__Group__4__Impl rule__ObjectDeclaration__Group__5
             {
             pushFollow(FOLLOW_16);
             rule__ObjectDeclaration__Group__4__Impl();
@@ -6000,21 +6075,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__4__Impl"
-    // InternalTraceryPlusPlus.g:1876:1: rule__ObjectDeclaration__Group__4__Impl : ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) ) ;
+    // InternalTraceryPlusPlus.g:1897:1: rule__ObjectDeclaration__Group__4__Impl : ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) ) ;
     public final void rule__ObjectDeclaration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1880:1: ( ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) ) )
-            // InternalTraceryPlusPlus.g:1881:1: ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) )
+            // InternalTraceryPlusPlus.g:1901:1: ( ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) ) )
+            // InternalTraceryPlusPlus.g:1902:1: ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) )
             {
-            // InternalTraceryPlusPlus.g:1881:1: ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) )
-            // InternalTraceryPlusPlus.g:1882:2: ( rule__ObjectDeclaration__PronounsAssignment_4 )
+            // InternalTraceryPlusPlus.g:1902:1: ( ( rule__ObjectDeclaration__PronounsAssignment_4 ) )
+            // InternalTraceryPlusPlus.g:1903:2: ( rule__ObjectDeclaration__PronounsAssignment_4 )
             {
              before(grammarAccess.getObjectDeclarationAccess().getPronounsAssignment_4()); 
-            // InternalTraceryPlusPlus.g:1883:2: ( rule__ObjectDeclaration__PronounsAssignment_4 )
-            // InternalTraceryPlusPlus.g:1883:3: rule__ObjectDeclaration__PronounsAssignment_4
+            // InternalTraceryPlusPlus.g:1904:2: ( rule__ObjectDeclaration__PronounsAssignment_4 )
+            // InternalTraceryPlusPlus.g:1904:3: rule__ObjectDeclaration__PronounsAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__PronounsAssignment_4();
@@ -6047,14 +6122,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__5"
-    // InternalTraceryPlusPlus.g:1891:1: rule__ObjectDeclaration__Group__5 : rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6 ;
+    // InternalTraceryPlusPlus.g:1912:1: rule__ObjectDeclaration__Group__5 : rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6 ;
     public final void rule__ObjectDeclaration__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1895:1: ( rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6 )
-            // InternalTraceryPlusPlus.g:1896:2: rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6
+            // InternalTraceryPlusPlus.g:1916:1: ( rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6 )
+            // InternalTraceryPlusPlus.g:1917:2: rule__ObjectDeclaration__Group__5__Impl rule__ObjectDeclaration__Group__6
             {
             pushFollow(FOLLOW_17);
             rule__ObjectDeclaration__Group__5__Impl();
@@ -6085,21 +6160,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__5__Impl"
-    // InternalTraceryPlusPlus.g:1903:1: rule__ObjectDeclaration__Group__5__Impl : ( ( rule__ObjectDeclaration__Alternatives_5 ) ) ;
+    // InternalTraceryPlusPlus.g:1924:1: rule__ObjectDeclaration__Group__5__Impl : ( ( rule__ObjectDeclaration__Alternatives_5 ) ) ;
     public final void rule__ObjectDeclaration__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1907:1: ( ( ( rule__ObjectDeclaration__Alternatives_5 ) ) )
-            // InternalTraceryPlusPlus.g:1908:1: ( ( rule__ObjectDeclaration__Alternatives_5 ) )
+            // InternalTraceryPlusPlus.g:1928:1: ( ( ( rule__ObjectDeclaration__Alternatives_5 ) ) )
+            // InternalTraceryPlusPlus.g:1929:1: ( ( rule__ObjectDeclaration__Alternatives_5 ) )
             {
-            // InternalTraceryPlusPlus.g:1908:1: ( ( rule__ObjectDeclaration__Alternatives_5 ) )
-            // InternalTraceryPlusPlus.g:1909:2: ( rule__ObjectDeclaration__Alternatives_5 )
+            // InternalTraceryPlusPlus.g:1929:1: ( ( rule__ObjectDeclaration__Alternatives_5 ) )
+            // InternalTraceryPlusPlus.g:1930:2: ( rule__ObjectDeclaration__Alternatives_5 )
             {
              before(grammarAccess.getObjectDeclarationAccess().getAlternatives_5()); 
-            // InternalTraceryPlusPlus.g:1910:2: ( rule__ObjectDeclaration__Alternatives_5 )
-            // InternalTraceryPlusPlus.g:1910:3: rule__ObjectDeclaration__Alternatives_5
+            // InternalTraceryPlusPlus.g:1931:2: ( rule__ObjectDeclaration__Alternatives_5 )
+            // InternalTraceryPlusPlus.g:1931:3: rule__ObjectDeclaration__Alternatives_5
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__Alternatives_5();
@@ -6132,14 +6207,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__6"
-    // InternalTraceryPlusPlus.g:1918:1: rule__ObjectDeclaration__Group__6 : rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7 ;
+    // InternalTraceryPlusPlus.g:1939:1: rule__ObjectDeclaration__Group__6 : rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7 ;
     public final void rule__ObjectDeclaration__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1922:1: ( rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7 )
-            // InternalTraceryPlusPlus.g:1923:2: rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7
+            // InternalTraceryPlusPlus.g:1943:1: ( rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7 )
+            // InternalTraceryPlusPlus.g:1944:2: rule__ObjectDeclaration__Group__6__Impl rule__ObjectDeclaration__Group__7
             {
             pushFollow(FOLLOW_17);
             rule__ObjectDeclaration__Group__6__Impl();
@@ -6170,31 +6245,31 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__6__Impl"
-    // InternalTraceryPlusPlus.g:1930:1: rule__ObjectDeclaration__Group__6__Impl : ( ( 'attributes' )? ) ;
+    // InternalTraceryPlusPlus.g:1951:1: rule__ObjectDeclaration__Group__6__Impl : ( ( 'attributes' )? ) ;
     public final void rule__ObjectDeclaration__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1934:1: ( ( ( 'attributes' )? ) )
-            // InternalTraceryPlusPlus.g:1935:1: ( ( 'attributes' )? )
+            // InternalTraceryPlusPlus.g:1955:1: ( ( ( 'attributes' )? ) )
+            // InternalTraceryPlusPlus.g:1956:1: ( ( 'attributes' )? )
             {
-            // InternalTraceryPlusPlus.g:1935:1: ( ( 'attributes' )? )
-            // InternalTraceryPlusPlus.g:1936:2: ( 'attributes' )?
+            // InternalTraceryPlusPlus.g:1956:1: ( ( 'attributes' )? )
+            // InternalTraceryPlusPlus.g:1957:2: ( 'attributes' )?
             {
              before(grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6()); 
-            // InternalTraceryPlusPlus.g:1937:2: ( 'attributes' )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:1958:2: ( 'attributes' )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA24_0==42) ) {
-                alt24=1;
+            if ( (LA25_0==44) ) {
+                alt25=1;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1937:3: 'attributes'
+                    // InternalTraceryPlusPlus.g:1958:3: 'attributes'
                     {
-                    match(input,42,FOLLOW_2); 
+                    match(input,44,FOLLOW_2); 
 
                     }
                     break;
@@ -6224,14 +6299,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__7"
-    // InternalTraceryPlusPlus.g:1945:1: rule__ObjectDeclaration__Group__7 : rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8 ;
+    // InternalTraceryPlusPlus.g:1966:1: rule__ObjectDeclaration__Group__7 : rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8 ;
     public final void rule__ObjectDeclaration__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1949:1: ( rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8 )
-            // InternalTraceryPlusPlus.g:1950:2: rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8
+            // InternalTraceryPlusPlus.g:1970:1: ( rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8 )
+            // InternalTraceryPlusPlus.g:1971:2: rule__ObjectDeclaration__Group__7__Impl rule__ObjectDeclaration__Group__8
             {
             pushFollow(FOLLOW_17);
             rule__ObjectDeclaration__Group__7__Impl();
@@ -6262,29 +6337,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__7__Impl"
-    // InternalTraceryPlusPlus.g:1957:1: rule__ObjectDeclaration__Group__7__Impl : ( ( ruleAssignmentOperator )? ) ;
+    // InternalTraceryPlusPlus.g:1978:1: rule__ObjectDeclaration__Group__7__Impl : ( ( ruleAssignmentOperator )? ) ;
     public final void rule__ObjectDeclaration__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1961:1: ( ( ( ruleAssignmentOperator )? ) )
-            // InternalTraceryPlusPlus.g:1962:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1982:1: ( ( ( ruleAssignmentOperator )? ) )
+            // InternalTraceryPlusPlus.g:1983:1: ( ( ruleAssignmentOperator )? )
             {
-            // InternalTraceryPlusPlus.g:1962:1: ( ( ruleAssignmentOperator )? )
-            // InternalTraceryPlusPlus.g:1963:2: ( ruleAssignmentOperator )?
+            // InternalTraceryPlusPlus.g:1983:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:1984:2: ( ruleAssignmentOperator )?
             {
              before(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7()); 
-            // InternalTraceryPlusPlus.g:1964:2: ( ruleAssignmentOperator )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:1985:2: ( ruleAssignmentOperator )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( ((LA25_0>=27 && LA25_0<=30)||LA25_0==46) ) {
-                alt25=1;
+            if ( ((LA26_0>=29 && LA26_0<=32)||LA26_0==49) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:1964:3: ruleAssignmentOperator
+                    // InternalTraceryPlusPlus.g:1985:3: ruleAssignmentOperator
                     {
                     pushFollow(FOLLOW_2);
                     ruleAssignmentOperator();
@@ -6320,14 +6395,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__8"
-    // InternalTraceryPlusPlus.g:1972:1: rule__ObjectDeclaration__Group__8 : rule__ObjectDeclaration__Group__8__Impl ;
+    // InternalTraceryPlusPlus.g:1993:1: rule__ObjectDeclaration__Group__8 : rule__ObjectDeclaration__Group__8__Impl ;
     public final void rule__ObjectDeclaration__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1976:1: ( rule__ObjectDeclaration__Group__8__Impl )
-            // InternalTraceryPlusPlus.g:1977:2: rule__ObjectDeclaration__Group__8__Impl
+            // InternalTraceryPlusPlus.g:1997:1: ( rule__ObjectDeclaration__Group__8__Impl )
+            // InternalTraceryPlusPlus.g:1998:2: rule__ObjectDeclaration__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__Group__8__Impl();
@@ -6353,21 +6428,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__Group__8__Impl"
-    // InternalTraceryPlusPlus.g:1983:1: rule__ObjectDeclaration__Group__8__Impl : ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) ) ;
+    // InternalTraceryPlusPlus.g:2004:1: rule__ObjectDeclaration__Group__8__Impl : ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) ) ;
     public final void rule__ObjectDeclaration__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1987:1: ( ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) ) )
-            // InternalTraceryPlusPlus.g:1988:1: ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) )
+            // InternalTraceryPlusPlus.g:2008:1: ( ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) ) )
+            // InternalTraceryPlusPlus.g:2009:1: ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) )
             {
-            // InternalTraceryPlusPlus.g:1988:1: ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) )
-            // InternalTraceryPlusPlus.g:1989:2: ( rule__ObjectDeclaration__AttributesAssignment_8 )
+            // InternalTraceryPlusPlus.g:2009:1: ( ( rule__ObjectDeclaration__AttributesAssignment_8 ) )
+            // InternalTraceryPlusPlus.g:2010:2: ( rule__ObjectDeclaration__AttributesAssignment_8 )
             {
              before(grammarAccess.getObjectDeclarationAccess().getAttributesAssignment_8()); 
-            // InternalTraceryPlusPlus.g:1990:2: ( rule__ObjectDeclaration__AttributesAssignment_8 )
-            // InternalTraceryPlusPlus.g:1990:3: rule__ObjectDeclaration__AttributesAssignment_8
+            // InternalTraceryPlusPlus.g:2011:2: ( rule__ObjectDeclaration__AttributesAssignment_8 )
+            // InternalTraceryPlusPlus.g:2011:3: rule__ObjectDeclaration__AttributesAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__ObjectDeclaration__AttributesAssignment_8();
@@ -6400,14 +6475,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__0"
-    // InternalTraceryPlusPlus.g:1999:1: rule__SubstoryDeclaration__Group__0 : rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1 ;
+    // InternalTraceryPlusPlus.g:2020:1: rule__SubstoryDeclaration__Group__0 : rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1 ;
     public final void rule__SubstoryDeclaration__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2003:1: ( rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1 )
-            // InternalTraceryPlusPlus.g:2004:2: rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1
+            // InternalTraceryPlusPlus.g:2024:1: ( rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1 )
+            // InternalTraceryPlusPlus.g:2025:2: rule__SubstoryDeclaration__Group__0__Impl rule__SubstoryDeclaration__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__SubstoryDeclaration__Group__0__Impl();
@@ -6438,21 +6513,38 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2011:1: rule__SubstoryDeclaration__Group__0__Impl : ( 'substory' ) ;
+    // InternalTraceryPlusPlus.g:2032:1: rule__SubstoryDeclaration__Group__0__Impl : ( ( 'define' )? ) ;
     public final void rule__SubstoryDeclaration__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2015:1: ( ( 'substory' ) )
-            // InternalTraceryPlusPlus.g:2016:1: ( 'substory' )
+            // InternalTraceryPlusPlus.g:2036:1: ( ( ( 'define' )? ) )
+            // InternalTraceryPlusPlus.g:2037:1: ( ( 'define' )? )
             {
-            // InternalTraceryPlusPlus.g:2016:1: ( 'substory' )
-            // InternalTraceryPlusPlus.g:2017:2: 'substory'
+            // InternalTraceryPlusPlus.g:2037:1: ( ( 'define' )? )
+            // InternalTraceryPlusPlus.g:2038:2: ( 'define' )?
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_0()); 
-            match(input,43,FOLLOW_2); 
-             after(grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_0()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getDefineKeyword_0()); 
+            // InternalTraceryPlusPlus.g:2039:2: ( 'define' )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
+
+            if ( (LA27_0==45) ) {
+                alt27=1;
+            }
+            switch (alt27) {
+                case 1 :
+                    // InternalTraceryPlusPlus.g:2039:3: 'define'
+                    {
+                    match(input,45,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSubstoryDeclarationAccess().getDefineKeyword_0()); 
 
             }
 
@@ -6475,14 +6567,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__1"
-    // InternalTraceryPlusPlus.g:2026:1: rule__SubstoryDeclaration__Group__1 : rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2 ;
+    // InternalTraceryPlusPlus.g:2047:1: rule__SubstoryDeclaration__Group__1 : rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2 ;
     public final void rule__SubstoryDeclaration__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2030:1: ( rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2 )
-            // InternalTraceryPlusPlus.g:2031:2: rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2
+            // InternalTraceryPlusPlus.g:2051:1: ( rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2 )
+            // InternalTraceryPlusPlus.g:2052:2: rule__SubstoryDeclaration__Group__1__Impl rule__SubstoryDeclaration__Group__2
             {
             pushFollow(FOLLOW_19);
             rule__SubstoryDeclaration__Group__1__Impl();
@@ -6513,31 +6605,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2038:1: rule__SubstoryDeclaration__Group__1__Impl : ( ( rule__SubstoryDeclaration__NameAssignment_1 ) ) ;
+    // InternalTraceryPlusPlus.g:2059:1: rule__SubstoryDeclaration__Group__1__Impl : ( 'substory' ) ;
     public final void rule__SubstoryDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2042:1: ( ( ( rule__SubstoryDeclaration__NameAssignment_1 ) ) )
-            // InternalTraceryPlusPlus.g:2043:1: ( ( rule__SubstoryDeclaration__NameAssignment_1 ) )
+            // InternalTraceryPlusPlus.g:2063:1: ( ( 'substory' ) )
+            // InternalTraceryPlusPlus.g:2064:1: ( 'substory' )
             {
-            // InternalTraceryPlusPlus.g:2043:1: ( ( rule__SubstoryDeclaration__NameAssignment_1 ) )
-            // InternalTraceryPlusPlus.g:2044:2: ( rule__SubstoryDeclaration__NameAssignment_1 )
+            // InternalTraceryPlusPlus.g:2064:1: ( 'substory' )
+            // InternalTraceryPlusPlus.g:2065:2: 'substory'
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getNameAssignment_1()); 
-            // InternalTraceryPlusPlus.g:2045:2: ( rule__SubstoryDeclaration__NameAssignment_1 )
-            // InternalTraceryPlusPlus.g:2045:3: rule__SubstoryDeclaration__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__SubstoryDeclaration__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSubstoryDeclarationAccess().getNameAssignment_1()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_1()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getSubstoryDeclarationAccess().getSubstoryKeyword_1()); 
 
             }
 
@@ -6560,14 +6642,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__2"
-    // InternalTraceryPlusPlus.g:2053:1: rule__SubstoryDeclaration__Group__2 : rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3 ;
+    // InternalTraceryPlusPlus.g:2074:1: rule__SubstoryDeclaration__Group__2 : rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3 ;
     public final void rule__SubstoryDeclaration__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2057:1: ( rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3 )
-            // InternalTraceryPlusPlus.g:2058:2: rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3
+            // InternalTraceryPlusPlus.g:2078:1: ( rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3 )
+            // InternalTraceryPlusPlus.g:2079:2: rule__SubstoryDeclaration__Group__2__Impl rule__SubstoryDeclaration__Group__3
             {
             pushFollow(FOLLOW_20);
             rule__SubstoryDeclaration__Group__2__Impl();
@@ -6598,21 +6680,31 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:2065:1: rule__SubstoryDeclaration__Group__2__Impl : ( ':' ) ;
+    // InternalTraceryPlusPlus.g:2086:1: rule__SubstoryDeclaration__Group__2__Impl : ( ( rule__SubstoryDeclaration__NameAssignment_2 ) ) ;
     public final void rule__SubstoryDeclaration__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2069:1: ( ( ':' ) )
-            // InternalTraceryPlusPlus.g:2070:1: ( ':' )
+            // InternalTraceryPlusPlus.g:2090:1: ( ( ( rule__SubstoryDeclaration__NameAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2091:1: ( ( rule__SubstoryDeclaration__NameAssignment_2 ) )
             {
-            // InternalTraceryPlusPlus.g:2070:1: ( ':' )
-            // InternalTraceryPlusPlus.g:2071:2: ':'
+            // InternalTraceryPlusPlus.g:2091:1: ( ( rule__SubstoryDeclaration__NameAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2092:2: ( rule__SubstoryDeclaration__NameAssignment_2 )
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_2()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_2()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getNameAssignment_2()); 
+            // InternalTraceryPlusPlus.g:2093:2: ( rule__SubstoryDeclaration__NameAssignment_2 )
+            // InternalTraceryPlusPlus.g:2093:3: rule__SubstoryDeclaration__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__SubstoryDeclaration__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSubstoryDeclarationAccess().getNameAssignment_2()); 
 
             }
 
@@ -6635,16 +6727,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__3"
-    // InternalTraceryPlusPlus.g:2080:1: rule__SubstoryDeclaration__Group__3 : rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4 ;
+    // InternalTraceryPlusPlus.g:2101:1: rule__SubstoryDeclaration__Group__3 : rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4 ;
     public final void rule__SubstoryDeclaration__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2084:1: ( rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4 )
-            // InternalTraceryPlusPlus.g:2085:2: rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4
+            // InternalTraceryPlusPlus.g:2105:1: ( rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4 )
+            // InternalTraceryPlusPlus.g:2106:2: rule__SubstoryDeclaration__Group__3__Impl rule__SubstoryDeclaration__Group__4
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_21);
             rule__SubstoryDeclaration__Group__3__Impl();
 
             state._fsp--;
@@ -6673,49 +6765,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__3__Impl"
-    // InternalTraceryPlusPlus.g:2092:1: rule__SubstoryDeclaration__Group__3__Impl : ( ( rule__SubstoryDeclaration__StoryAssignment_3 )* ) ;
+    // InternalTraceryPlusPlus.g:2113:1: rule__SubstoryDeclaration__Group__3__Impl : ( ':' ) ;
     public final void rule__SubstoryDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2096:1: ( ( ( rule__SubstoryDeclaration__StoryAssignment_3 )* ) )
-            // InternalTraceryPlusPlus.g:2097:1: ( ( rule__SubstoryDeclaration__StoryAssignment_3 )* )
+            // InternalTraceryPlusPlus.g:2117:1: ( ( ':' ) )
+            // InternalTraceryPlusPlus.g:2118:1: ( ':' )
             {
-            // InternalTraceryPlusPlus.g:2097:1: ( ( rule__SubstoryDeclaration__StoryAssignment_3 )* )
-            // InternalTraceryPlusPlus.g:2098:2: ( rule__SubstoryDeclaration__StoryAssignment_3 )*
+            // InternalTraceryPlusPlus.g:2118:1: ( ':' )
+            // InternalTraceryPlusPlus.g:2119:2: ':'
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getStoryAssignment_3()); 
-            // InternalTraceryPlusPlus.g:2099:2: ( rule__SubstoryDeclaration__StoryAssignment_3 )*
-            loop26:
-            do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
-
-                if ( ((LA26_0>=RULE_ID && LA26_0<=RULE_STRING)||LA26_0==43) ) {
-                    alt26=1;
-                }
-
-
-                switch (alt26) {
-            	case 1 :
-            	    // InternalTraceryPlusPlus.g:2099:3: rule__SubstoryDeclaration__StoryAssignment_3
-            	    {
-            	    pushFollow(FOLLOW_7);
-            	    rule__SubstoryDeclaration__StoryAssignment_3();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop26;
-                }
-            } while (true);
-
-             after(grammarAccess.getSubstoryDeclarationAccess().getStoryAssignment_3()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_3()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_3()); 
 
             }
 
@@ -6738,17 +6802,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__4"
-    // InternalTraceryPlusPlus.g:2107:1: rule__SubstoryDeclaration__Group__4 : rule__SubstoryDeclaration__Group__4__Impl ;
+    // InternalTraceryPlusPlus.g:2128:1: rule__SubstoryDeclaration__Group__4 : rule__SubstoryDeclaration__Group__4__Impl rule__SubstoryDeclaration__Group__5 ;
     public final void rule__SubstoryDeclaration__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2111:1: ( rule__SubstoryDeclaration__Group__4__Impl )
-            // InternalTraceryPlusPlus.g:2112:2: rule__SubstoryDeclaration__Group__4__Impl
+            // InternalTraceryPlusPlus.g:2132:1: ( rule__SubstoryDeclaration__Group__4__Impl rule__SubstoryDeclaration__Group__5 )
+            // InternalTraceryPlusPlus.g:2133:2: rule__SubstoryDeclaration__Group__4__Impl rule__SubstoryDeclaration__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_21);
             rule__SubstoryDeclaration__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SubstoryDeclaration__Group__5();
 
             state._fsp--;
 
@@ -6771,21 +6840,49 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryDeclaration__Group__4__Impl"
-    // InternalTraceryPlusPlus.g:2118:1: rule__SubstoryDeclaration__Group__4__Impl : ( 'end-substory' ) ;
+    // InternalTraceryPlusPlus.g:2140:1: rule__SubstoryDeclaration__Group__4__Impl : ( ( rule__SubstoryDeclaration__StoryAssignment_4 )* ) ;
     public final void rule__SubstoryDeclaration__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2122:1: ( ( 'end-substory' ) )
-            // InternalTraceryPlusPlus.g:2123:1: ( 'end-substory' )
+            // InternalTraceryPlusPlus.g:2144:1: ( ( ( rule__SubstoryDeclaration__StoryAssignment_4 )* ) )
+            // InternalTraceryPlusPlus.g:2145:1: ( ( rule__SubstoryDeclaration__StoryAssignment_4 )* )
             {
-            // InternalTraceryPlusPlus.g:2123:1: ( 'end-substory' )
-            // InternalTraceryPlusPlus.g:2124:2: 'end-substory'
+            // InternalTraceryPlusPlus.g:2145:1: ( ( rule__SubstoryDeclaration__StoryAssignment_4 )* )
+            // InternalTraceryPlusPlus.g:2146:2: ( rule__SubstoryDeclaration__StoryAssignment_4 )*
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_4()); 
-            match(input,44,FOLLOW_2); 
-             after(grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_4()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getStoryAssignment_4()); 
+            // InternalTraceryPlusPlus.g:2147:2: ( rule__SubstoryDeclaration__StoryAssignment_4 )*
+            loop28:
+            do {
+                int alt28=2;
+                int LA28_0 = input.LA(1);
+
+                if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_STRING)||LA28_0==47) ) {
+                    alt28=1;
+                }
+
+
+                switch (alt28) {
+            	case 1 :
+            	    // InternalTraceryPlusPlus.g:2147:3: rule__SubstoryDeclaration__StoryAssignment_4
+            	    {
+            	    pushFollow(FOLLOW_7);
+            	    rule__SubstoryDeclaration__StoryAssignment_4();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop28;
+                }
+            } while (true);
+
+             after(grammarAccess.getSubstoryDeclarationAccess().getStoryAssignment_4()); 
 
             }
 
@@ -6807,17 +6904,87 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__SubstoryDeclaration__Group__4__Impl"
 
 
+    // $ANTLR start "rule__SubstoryDeclaration__Group__5"
+    // InternalTraceryPlusPlus.g:2155:1: rule__SubstoryDeclaration__Group__5 : rule__SubstoryDeclaration__Group__5__Impl ;
+    public final void rule__SubstoryDeclaration__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryPlusPlus.g:2159:1: ( rule__SubstoryDeclaration__Group__5__Impl )
+            // InternalTraceryPlusPlus.g:2160:2: rule__SubstoryDeclaration__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SubstoryDeclaration__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubstoryDeclaration__Group__5"
+
+
+    // $ANTLR start "rule__SubstoryDeclaration__Group__5__Impl"
+    // InternalTraceryPlusPlus.g:2166:1: rule__SubstoryDeclaration__Group__5__Impl : ( 'end-substory' ) ;
+    public final void rule__SubstoryDeclaration__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryPlusPlus.g:2170:1: ( ( 'end-substory' ) )
+            // InternalTraceryPlusPlus.g:2171:1: ( 'end-substory' )
+            {
+            // InternalTraceryPlusPlus.g:2171:1: ( 'end-substory' )
+            // InternalTraceryPlusPlus.g:2172:2: 'end-substory'
+            {
+             before(grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_5()); 
+            match(input,46,FOLLOW_2); 
+             after(grammarAccess.getSubstoryDeclarationAccess().getEndSubstoryKeyword_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubstoryDeclaration__Group__5__Impl"
+
+
     // $ANTLR start "rule__NameExistingListAttribute__Group__0"
-    // InternalTraceryPlusPlus.g:2134:1: rule__NameExistingListAttribute__Group__0 : rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1 ;
+    // InternalTraceryPlusPlus.g:2182:1: rule__NameExistingListAttribute__Group__0 : rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1 ;
     public final void rule__NameExistingListAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2138:1: ( rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1 )
-            // InternalTraceryPlusPlus.g:2139:2: rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1
+            // InternalTraceryPlusPlus.g:2186:1: ( rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1 )
+            // InternalTraceryPlusPlus.g:2187:2: rule__NameExistingListAttribute__Group__0__Impl rule__NameExistingListAttribute__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__NameExistingListAttribute__Group__0__Impl();
 
             state._fsp--;
@@ -6846,21 +7013,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2146:1: rule__NameExistingListAttribute__Group__0__Impl : ( ( rule__NameExistingListAttribute__NameAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2194:1: rule__NameExistingListAttribute__Group__0__Impl : ( ( rule__NameExistingListAttribute__NameAssignment_0 ) ) ;
     public final void rule__NameExistingListAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2150:1: ( ( ( rule__NameExistingListAttribute__NameAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2151:1: ( ( rule__NameExistingListAttribute__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2198:1: ( ( ( rule__NameExistingListAttribute__NameAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2199:1: ( ( rule__NameExistingListAttribute__NameAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2151:1: ( ( rule__NameExistingListAttribute__NameAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2152:2: ( rule__NameExistingListAttribute__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:2199:1: ( ( rule__NameExistingListAttribute__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2200:2: ( rule__NameExistingListAttribute__NameAssignment_0 )
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getNameAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2153:2: ( rule__NameExistingListAttribute__NameAssignment_0 )
-            // InternalTraceryPlusPlus.g:2153:3: rule__NameExistingListAttribute__NameAssignment_0
+            // InternalTraceryPlusPlus.g:2201:2: ( rule__NameExistingListAttribute__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:2201:3: rule__NameExistingListAttribute__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NameExistingListAttribute__NameAssignment_0();
@@ -6893,16 +7060,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__Group__1"
-    // InternalTraceryPlusPlus.g:2161:1: rule__NameExistingListAttribute__Group__1 : rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2 ;
+    // InternalTraceryPlusPlus.g:2209:1: rule__NameExistingListAttribute__Group__1 : rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2 ;
     public final void rule__NameExistingListAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2165:1: ( rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2 )
-            // InternalTraceryPlusPlus.g:2166:2: rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2
+            // InternalTraceryPlusPlus.g:2213:1: ( rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2 )
+            // InternalTraceryPlusPlus.g:2214:2: rule__NameExistingListAttribute__Group__1__Impl rule__NameExistingListAttribute__Group__2
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_22);
             rule__NameExistingListAttribute__Group__1__Impl();
 
             state._fsp--;
@@ -6931,29 +7098,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2173:1: rule__NameExistingListAttribute__Group__1__Impl : ( ( rule__NameExistingListAttribute__Alternatives_1 )? ) ;
+    // InternalTraceryPlusPlus.g:2221:1: rule__NameExistingListAttribute__Group__1__Impl : ( ( rule__NameExistingListAttribute__Alternatives_1 )? ) ;
     public final void rule__NameExistingListAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2177:1: ( ( ( rule__NameExistingListAttribute__Alternatives_1 )? ) )
-            // InternalTraceryPlusPlus.g:2178:1: ( ( rule__NameExistingListAttribute__Alternatives_1 )? )
+            // InternalTraceryPlusPlus.g:2225:1: ( ( ( rule__NameExistingListAttribute__Alternatives_1 )? ) )
+            // InternalTraceryPlusPlus.g:2226:1: ( ( rule__NameExistingListAttribute__Alternatives_1 )? )
             {
-            // InternalTraceryPlusPlus.g:2178:1: ( ( rule__NameExistingListAttribute__Alternatives_1 )? )
-            // InternalTraceryPlusPlus.g:2179:2: ( rule__NameExistingListAttribute__Alternatives_1 )?
+            // InternalTraceryPlusPlus.g:2226:1: ( ( rule__NameExistingListAttribute__Alternatives_1 )? )
+            // InternalTraceryPlusPlus.g:2227:2: ( rule__NameExistingListAttribute__Alternatives_1 )?
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getAlternatives_1()); 
-            // InternalTraceryPlusPlus.g:2180:2: ( rule__NameExistingListAttribute__Alternatives_1 )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:2228:2: ( rule__NameExistingListAttribute__Alternatives_1 )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA27_0==22||(LA27_0>=27 && LA27_0<=30)||LA27_0==46) ) {
-                alt27=1;
+            if ( (LA29_0==22||(LA29_0>=29 && LA29_0<=32)||LA29_0==49) ) {
+                alt29=1;
             }
-            switch (alt27) {
+            switch (alt29) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:2180:3: rule__NameExistingListAttribute__Alternatives_1
+                    // InternalTraceryPlusPlus.g:2228:3: rule__NameExistingListAttribute__Alternatives_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__NameExistingListAttribute__Alternatives_1();
@@ -6989,14 +7156,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__Group__2"
-    // InternalTraceryPlusPlus.g:2188:1: rule__NameExistingListAttribute__Group__2 : rule__NameExistingListAttribute__Group__2__Impl ;
+    // InternalTraceryPlusPlus.g:2236:1: rule__NameExistingListAttribute__Group__2 : rule__NameExistingListAttribute__Group__2__Impl ;
     public final void rule__NameExistingListAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2192:1: ( rule__NameExistingListAttribute__Group__2__Impl )
-            // InternalTraceryPlusPlus.g:2193:2: rule__NameExistingListAttribute__Group__2__Impl
+            // InternalTraceryPlusPlus.g:2240:1: ( rule__NameExistingListAttribute__Group__2__Impl )
+            // InternalTraceryPlusPlus.g:2241:2: rule__NameExistingListAttribute__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NameExistingListAttribute__Group__2__Impl();
@@ -7022,21 +7189,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:2199:1: rule__NameExistingListAttribute__Group__2__Impl : ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) ) ;
+    // InternalTraceryPlusPlus.g:2247:1: rule__NameExistingListAttribute__Group__2__Impl : ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) ) ;
     public final void rule__NameExistingListAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2203:1: ( ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) ) )
-            // InternalTraceryPlusPlus.g:2204:1: ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2251:1: ( ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2252:1: ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) )
             {
-            // InternalTraceryPlusPlus.g:2204:1: ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) )
-            // InternalTraceryPlusPlus.g:2205:2: ( rule__NameExistingListAttribute__ValueAssignment_2 )
+            // InternalTraceryPlusPlus.g:2252:1: ( ( rule__NameExistingListAttribute__ValueAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2253:2: ( rule__NameExistingListAttribute__ValueAssignment_2 )
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getValueAssignment_2()); 
-            // InternalTraceryPlusPlus.g:2206:2: ( rule__NameExistingListAttribute__ValueAssignment_2 )
-            // InternalTraceryPlusPlus.g:2206:3: rule__NameExistingListAttribute__ValueAssignment_2
+            // InternalTraceryPlusPlus.g:2254:2: ( rule__NameExistingListAttribute__ValueAssignment_2 )
+            // InternalTraceryPlusPlus.g:2254:3: rule__NameExistingListAttribute__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__NameExistingListAttribute__ValueAssignment_2();
@@ -7069,14 +7236,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__0"
-    // InternalTraceryPlusPlus.g:2215:1: rule__NameValueAttribute__Group__0 : rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1 ;
+    // InternalTraceryPlusPlus.g:2263:1: rule__NameValueAttribute__Group__0 : rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1 ;
     public final void rule__NameValueAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2219:1: ( rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1 )
-            // InternalTraceryPlusPlus.g:2220:2: rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1
+            // InternalTraceryPlusPlus.g:2267:1: ( rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1 )
+            // InternalTraceryPlusPlus.g:2268:2: rule__NameValueAttribute__Group__0__Impl rule__NameValueAttribute__Group__1
             {
             pushFollow(FOLLOW_9);
             rule__NameValueAttribute__Group__0__Impl();
@@ -7107,21 +7274,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2227:1: rule__NameValueAttribute__Group__0__Impl : ( ( rule__NameValueAttribute__NameAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2275:1: rule__NameValueAttribute__Group__0__Impl : ( ( rule__NameValueAttribute__NameAssignment_0 ) ) ;
     public final void rule__NameValueAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2231:1: ( ( ( rule__NameValueAttribute__NameAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2232:1: ( ( rule__NameValueAttribute__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2279:1: ( ( ( rule__NameValueAttribute__NameAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2280:1: ( ( rule__NameValueAttribute__NameAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2232:1: ( ( rule__NameValueAttribute__NameAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2233:2: ( rule__NameValueAttribute__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:2280:1: ( ( rule__NameValueAttribute__NameAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2281:2: ( rule__NameValueAttribute__NameAssignment_0 )
             {
              before(grammarAccess.getNameValueAttributeAccess().getNameAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2234:2: ( rule__NameValueAttribute__NameAssignment_0 )
-            // InternalTraceryPlusPlus.g:2234:3: rule__NameValueAttribute__NameAssignment_0
+            // InternalTraceryPlusPlus.g:2282:2: ( rule__NameValueAttribute__NameAssignment_0 )
+            // InternalTraceryPlusPlus.g:2282:3: rule__NameValueAttribute__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NameValueAttribute__NameAssignment_0();
@@ -7154,14 +7321,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__1"
-    // InternalTraceryPlusPlus.g:2242:1: rule__NameValueAttribute__Group__1 : rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2 ;
+    // InternalTraceryPlusPlus.g:2290:1: rule__NameValueAttribute__Group__1 : rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2 ;
     public final void rule__NameValueAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2246:1: ( rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2 )
-            // InternalTraceryPlusPlus.g:2247:2: rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2
+            // InternalTraceryPlusPlus.g:2294:1: ( rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2 )
+            // InternalTraceryPlusPlus.g:2295:2: rule__NameValueAttribute__Group__1__Impl rule__NameValueAttribute__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__NameValueAttribute__Group__1__Impl();
@@ -7192,29 +7359,29 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2254:1: rule__NameValueAttribute__Group__1__Impl : ( ( ruleAssignmentOperator )? ) ;
+    // InternalTraceryPlusPlus.g:2302:1: rule__NameValueAttribute__Group__1__Impl : ( ( ruleAssignmentOperator )? ) ;
     public final void rule__NameValueAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2258:1: ( ( ( ruleAssignmentOperator )? ) )
-            // InternalTraceryPlusPlus.g:2259:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:2306:1: ( ( ( ruleAssignmentOperator )? ) )
+            // InternalTraceryPlusPlus.g:2307:1: ( ( ruleAssignmentOperator )? )
             {
-            // InternalTraceryPlusPlus.g:2259:1: ( ( ruleAssignmentOperator )? )
-            // InternalTraceryPlusPlus.g:2260:2: ( ruleAssignmentOperator )?
+            // InternalTraceryPlusPlus.g:2307:1: ( ( ruleAssignmentOperator )? )
+            // InternalTraceryPlusPlus.g:2308:2: ( ruleAssignmentOperator )?
             {
              before(grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1()); 
-            // InternalTraceryPlusPlus.g:2261:2: ( ruleAssignmentOperator )?
-            int alt28=2;
-            int LA28_0 = input.LA(1);
+            // InternalTraceryPlusPlus.g:2309:2: ( ruleAssignmentOperator )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( ((LA28_0>=27 && LA28_0<=30)||LA28_0==46) ) {
-                alt28=1;
+            if ( ((LA30_0>=29 && LA30_0<=32)||LA30_0==49) ) {
+                alt30=1;
             }
-            switch (alt28) {
+            switch (alt30) {
                 case 1 :
-                    // InternalTraceryPlusPlus.g:2261:3: ruleAssignmentOperator
+                    // InternalTraceryPlusPlus.g:2309:3: ruleAssignmentOperator
                     {
                     pushFollow(FOLLOW_2);
                     ruleAssignmentOperator();
@@ -7250,14 +7417,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__2"
-    // InternalTraceryPlusPlus.g:2269:1: rule__NameValueAttribute__Group__2 : rule__NameValueAttribute__Group__2__Impl ;
+    // InternalTraceryPlusPlus.g:2317:1: rule__NameValueAttribute__Group__2 : rule__NameValueAttribute__Group__2__Impl ;
     public final void rule__NameValueAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2273:1: ( rule__NameValueAttribute__Group__2__Impl )
-            // InternalTraceryPlusPlus.g:2274:2: rule__NameValueAttribute__Group__2__Impl
+            // InternalTraceryPlusPlus.g:2321:1: ( rule__NameValueAttribute__Group__2__Impl )
+            // InternalTraceryPlusPlus.g:2322:2: rule__NameValueAttribute__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NameValueAttribute__Group__2__Impl();
@@ -7283,21 +7450,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:2280:1: rule__NameValueAttribute__Group__2__Impl : ( ( rule__NameValueAttribute__ValueAssignment_2 ) ) ;
+    // InternalTraceryPlusPlus.g:2328:1: rule__NameValueAttribute__Group__2__Impl : ( ( rule__NameValueAttribute__ValueAssignment_2 ) ) ;
     public final void rule__NameValueAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2284:1: ( ( ( rule__NameValueAttribute__ValueAssignment_2 ) ) )
-            // InternalTraceryPlusPlus.g:2285:1: ( ( rule__NameValueAttribute__ValueAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2332:1: ( ( ( rule__NameValueAttribute__ValueAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2333:1: ( ( rule__NameValueAttribute__ValueAssignment_2 ) )
             {
-            // InternalTraceryPlusPlus.g:2285:1: ( ( rule__NameValueAttribute__ValueAssignment_2 ) )
-            // InternalTraceryPlusPlus.g:2286:2: ( rule__NameValueAttribute__ValueAssignment_2 )
+            // InternalTraceryPlusPlus.g:2333:1: ( ( rule__NameValueAttribute__ValueAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2334:2: ( rule__NameValueAttribute__ValueAssignment_2 )
             {
              before(grammarAccess.getNameValueAttributeAccess().getValueAssignment_2()); 
-            // InternalTraceryPlusPlus.g:2287:2: ( rule__NameValueAttribute__ValueAssignment_2 )
-            // InternalTraceryPlusPlus.g:2287:3: rule__NameValueAttribute__ValueAssignment_2
+            // InternalTraceryPlusPlus.g:2335:2: ( rule__NameValueAttribute__ValueAssignment_2 )
+            // InternalTraceryPlusPlus.g:2335:3: rule__NameValueAttribute__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__NameValueAttribute__ValueAssignment_2();
@@ -7330,16 +7497,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__Group__0"
-    // InternalTraceryPlusPlus.g:2296:1: rule__ListUse__Group__0 : rule__ListUse__Group__0__Impl rule__ListUse__Group__1 ;
+    // InternalTraceryPlusPlus.g:2344:1: rule__ListUse__Group__0 : rule__ListUse__Group__0__Impl rule__ListUse__Group__1 ;
     public final void rule__ListUse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2300:1: ( rule__ListUse__Group__0__Impl rule__ListUse__Group__1 )
-            // InternalTraceryPlusPlus.g:2301:2: rule__ListUse__Group__0__Impl rule__ListUse__Group__1
+            // InternalTraceryPlusPlus.g:2348:1: ( rule__ListUse__Group__0__Impl rule__ListUse__Group__1 )
+            // InternalTraceryPlusPlus.g:2349:2: rule__ListUse__Group__0__Impl rule__ListUse__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__ListUse__Group__0__Impl();
 
             state._fsp--;
@@ -7368,21 +7535,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2308:1: rule__ListUse__Group__0__Impl : ( ( rule__ListUse__VariableAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2356:1: rule__ListUse__Group__0__Impl : ( ( rule__ListUse__VariableAssignment_0 ) ) ;
     public final void rule__ListUse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2312:1: ( ( ( rule__ListUse__VariableAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2313:1: ( ( rule__ListUse__VariableAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2360:1: ( ( ( rule__ListUse__VariableAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2361:1: ( ( rule__ListUse__VariableAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2313:1: ( ( rule__ListUse__VariableAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2314:2: ( rule__ListUse__VariableAssignment_0 )
+            // InternalTraceryPlusPlus.g:2361:1: ( ( rule__ListUse__VariableAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2362:2: ( rule__ListUse__VariableAssignment_0 )
             {
              before(grammarAccess.getListUseAccess().getVariableAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2315:2: ( rule__ListUse__VariableAssignment_0 )
-            // InternalTraceryPlusPlus.g:2315:3: rule__ListUse__VariableAssignment_0
+            // InternalTraceryPlusPlus.g:2363:2: ( rule__ListUse__VariableAssignment_0 )
+            // InternalTraceryPlusPlus.g:2363:3: rule__ListUse__VariableAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ListUse__VariableAssignment_0();
@@ -7415,14 +7582,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__Group__1"
-    // InternalTraceryPlusPlus.g:2323:1: rule__ListUse__Group__1 : rule__ListUse__Group__1__Impl ;
+    // InternalTraceryPlusPlus.g:2371:1: rule__ListUse__Group__1 : rule__ListUse__Group__1__Impl ;
     public final void rule__ListUse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2327:1: ( rule__ListUse__Group__1__Impl )
-            // InternalTraceryPlusPlus.g:2328:2: rule__ListUse__Group__1__Impl
+            // InternalTraceryPlusPlus.g:2375:1: ( rule__ListUse__Group__1__Impl )
+            // InternalTraceryPlusPlus.g:2376:2: rule__ListUse__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ListUse__Group__1__Impl();
@@ -7448,35 +7615,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2334:1: rule__ListUse__Group__1__Impl : ( ( rule__ListUse__ModifiersAssignment_1 )* ) ;
+    // InternalTraceryPlusPlus.g:2382:1: rule__ListUse__Group__1__Impl : ( ( rule__ListUse__ModifiersAssignment_1 )* ) ;
     public final void rule__ListUse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2338:1: ( ( ( rule__ListUse__ModifiersAssignment_1 )* ) )
-            // InternalTraceryPlusPlus.g:2339:1: ( ( rule__ListUse__ModifiersAssignment_1 )* )
+            // InternalTraceryPlusPlus.g:2386:1: ( ( ( rule__ListUse__ModifiersAssignment_1 )* ) )
+            // InternalTraceryPlusPlus.g:2387:1: ( ( rule__ListUse__ModifiersAssignment_1 )* )
             {
-            // InternalTraceryPlusPlus.g:2339:1: ( ( rule__ListUse__ModifiersAssignment_1 )* )
-            // InternalTraceryPlusPlus.g:2340:2: ( rule__ListUse__ModifiersAssignment_1 )*
+            // InternalTraceryPlusPlus.g:2387:1: ( ( rule__ListUse__ModifiersAssignment_1 )* )
+            // InternalTraceryPlusPlus.g:2388:2: ( rule__ListUse__ModifiersAssignment_1 )*
             {
              before(grammarAccess.getListUseAccess().getModifiersAssignment_1()); 
-            // InternalTraceryPlusPlus.g:2341:2: ( rule__ListUse__ModifiersAssignment_1 )*
-            loop29:
+            // InternalTraceryPlusPlus.g:2389:2: ( rule__ListUse__ModifiersAssignment_1 )*
+            loop31:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( ((LA29_0>=11 && LA29_0<=15)) ) {
-                    alt29=1;
+                if ( ((LA31_0>=11 && LA31_0<=15)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:2341:3: rule__ListUse__ModifiersAssignment_1
+            	    // InternalTraceryPlusPlus.g:2389:3: rule__ListUse__ModifiersAssignment_1
             	    {
-            	    pushFollow(FOLLOW_23);
+            	    pushFollow(FOLLOW_24);
             	    rule__ListUse__ModifiersAssignment_1();
 
             	    state._fsp--;
@@ -7486,7 +7653,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop31;
                 }
             } while (true);
 
@@ -7513,16 +7680,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryUse__Group__0"
-    // InternalTraceryPlusPlus.g:2350:1: rule__SubstoryUse__Group__0 : rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1 ;
+    // InternalTraceryPlusPlus.g:2398:1: rule__SubstoryUse__Group__0 : rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1 ;
     public final void rule__SubstoryUse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2354:1: ( rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1 )
-            // InternalTraceryPlusPlus.g:2355:2: rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1
+            // InternalTraceryPlusPlus.g:2402:1: ( rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1 )
+            // InternalTraceryPlusPlus.g:2403:2: rule__SubstoryUse__Group__0__Impl rule__SubstoryUse__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_25);
             rule__SubstoryUse__Group__0__Impl();
 
             state._fsp--;
@@ -7551,21 +7718,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryUse__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2362:1: rule__SubstoryUse__Group__0__Impl : ( 'substory' ) ;
+    // InternalTraceryPlusPlus.g:2410:1: rule__SubstoryUse__Group__0__Impl : ( 'use' ) ;
     public final void rule__SubstoryUse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2366:1: ( ( 'substory' ) )
-            // InternalTraceryPlusPlus.g:2367:1: ( 'substory' )
+            // InternalTraceryPlusPlus.g:2414:1: ( ( 'use' ) )
+            // InternalTraceryPlusPlus.g:2415:1: ( 'use' )
             {
-            // InternalTraceryPlusPlus.g:2367:1: ( 'substory' )
-            // InternalTraceryPlusPlus.g:2368:2: 'substory'
+            // InternalTraceryPlusPlus.g:2415:1: ( 'use' )
+            // InternalTraceryPlusPlus.g:2416:2: 'use'
             {
-             before(grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_0()); 
-            match(input,43,FOLLOW_2); 
-             after(grammarAccess.getSubstoryUseAccess().getSubstoryKeyword_0()); 
+             before(grammarAccess.getSubstoryUseAccess().getUseKeyword_0()); 
+            match(input,47,FOLLOW_2); 
+             after(grammarAccess.getSubstoryUseAccess().getUseKeyword_0()); 
 
             }
 
@@ -7588,17 +7755,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryUse__Group__1"
-    // InternalTraceryPlusPlus.g:2377:1: rule__SubstoryUse__Group__1 : rule__SubstoryUse__Group__1__Impl ;
+    // InternalTraceryPlusPlus.g:2425:1: rule__SubstoryUse__Group__1 : rule__SubstoryUse__Group__1__Impl rule__SubstoryUse__Group__2 ;
     public final void rule__SubstoryUse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2381:1: ( rule__SubstoryUse__Group__1__Impl )
-            // InternalTraceryPlusPlus.g:2382:2: rule__SubstoryUse__Group__1__Impl
+            // InternalTraceryPlusPlus.g:2429:1: ( rule__SubstoryUse__Group__1__Impl rule__SubstoryUse__Group__2 )
+            // InternalTraceryPlusPlus.g:2430:2: rule__SubstoryUse__Group__1__Impl rule__SubstoryUse__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_25);
             rule__SubstoryUse__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SubstoryUse__Group__2();
 
             state._fsp--;
 
@@ -7621,31 +7793,42 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__SubstoryUse__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2388:1: rule__SubstoryUse__Group__1__Impl : ( ( rule__SubstoryUse__VariableAssignment_1 ) ) ;
+    // InternalTraceryPlusPlus.g:2437:1: rule__SubstoryUse__Group__1__Impl : ( ( rule__SubstoryUse__Alternatives_1 )? ) ;
     public final void rule__SubstoryUse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2392:1: ( ( ( rule__SubstoryUse__VariableAssignment_1 ) ) )
-            // InternalTraceryPlusPlus.g:2393:1: ( ( rule__SubstoryUse__VariableAssignment_1 ) )
+            // InternalTraceryPlusPlus.g:2441:1: ( ( ( rule__SubstoryUse__Alternatives_1 )? ) )
+            // InternalTraceryPlusPlus.g:2442:1: ( ( rule__SubstoryUse__Alternatives_1 )? )
             {
-            // InternalTraceryPlusPlus.g:2393:1: ( ( rule__SubstoryUse__VariableAssignment_1 ) )
-            // InternalTraceryPlusPlus.g:2394:2: ( rule__SubstoryUse__VariableAssignment_1 )
+            // InternalTraceryPlusPlus.g:2442:1: ( ( rule__SubstoryUse__Alternatives_1 )? )
+            // InternalTraceryPlusPlus.g:2443:2: ( rule__SubstoryUse__Alternatives_1 )?
             {
-             before(grammarAccess.getSubstoryUseAccess().getVariableAssignment_1()); 
-            // InternalTraceryPlusPlus.g:2395:2: ( rule__SubstoryUse__VariableAssignment_1 )
-            // InternalTraceryPlusPlus.g:2395:3: rule__SubstoryUse__VariableAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__SubstoryUse__VariableAssignment_1();
+             before(grammarAccess.getSubstoryUseAccess().getAlternatives_1()); 
+            // InternalTraceryPlusPlus.g:2444:2: ( rule__SubstoryUse__Alternatives_1 )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            state._fsp--;
+            if ( ((LA32_0>=23 && LA32_0<=24)) ) {
+                alt32=1;
+            }
+            switch (alt32) {
+                case 1 :
+                    // InternalTraceryPlusPlus.g:2444:3: rule__SubstoryUse__Alternatives_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__SubstoryUse__Alternatives_1();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getSubstoryUseAccess().getVariableAssignment_1()); 
+             after(grammarAccess.getSubstoryUseAccess().getAlternatives_1()); 
 
             }
 
@@ -7667,17 +7850,97 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__SubstoryUse__Group__1__Impl"
 
 
+    // $ANTLR start "rule__SubstoryUse__Group__2"
+    // InternalTraceryPlusPlus.g:2452:1: rule__SubstoryUse__Group__2 : rule__SubstoryUse__Group__2__Impl ;
+    public final void rule__SubstoryUse__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryPlusPlus.g:2456:1: ( rule__SubstoryUse__Group__2__Impl )
+            // InternalTraceryPlusPlus.g:2457:2: rule__SubstoryUse__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__SubstoryUse__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubstoryUse__Group__2"
+
+
+    // $ANTLR start "rule__SubstoryUse__Group__2__Impl"
+    // InternalTraceryPlusPlus.g:2463:1: rule__SubstoryUse__Group__2__Impl : ( ( rule__SubstoryUse__VariableAssignment_2 ) ) ;
+    public final void rule__SubstoryUse__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTraceryPlusPlus.g:2467:1: ( ( ( rule__SubstoryUse__VariableAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2468:1: ( ( rule__SubstoryUse__VariableAssignment_2 ) )
+            {
+            // InternalTraceryPlusPlus.g:2468:1: ( ( rule__SubstoryUse__VariableAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2469:2: ( rule__SubstoryUse__VariableAssignment_2 )
+            {
+             before(grammarAccess.getSubstoryUseAccess().getVariableAssignment_2()); 
+            // InternalTraceryPlusPlus.g:2470:2: ( rule__SubstoryUse__VariableAssignment_2 )
+            // InternalTraceryPlusPlus.g:2470:3: rule__SubstoryUse__VariableAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__SubstoryUse__VariableAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSubstoryUseAccess().getVariableAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SubstoryUse__Group__2__Impl"
+
+
     // $ANTLR start "rule__ObjectAttribute__Group__0"
-    // InternalTraceryPlusPlus.g:2404:1: rule__ObjectAttribute__Group__0 : rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 ;
+    // InternalTraceryPlusPlus.g:2479:1: rule__ObjectAttribute__Group__0 : rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 ;
     public final void rule__ObjectAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2408:1: ( rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 )
-            // InternalTraceryPlusPlus.g:2409:2: rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1
+            // InternalTraceryPlusPlus.g:2483:1: ( rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1 )
+            // InternalTraceryPlusPlus.g:2484:2: rule__ObjectAttribute__Group__0__Impl rule__ObjectAttribute__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_26);
             rule__ObjectAttribute__Group__0__Impl();
 
             state._fsp--;
@@ -7706,21 +7969,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2416:1: rule__ObjectAttribute__Group__0__Impl : ( ( rule__ObjectAttribute__ObjectAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2491:1: rule__ObjectAttribute__Group__0__Impl : ( ( rule__ObjectAttribute__ObjectAssignment_0 ) ) ;
     public final void rule__ObjectAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2420:1: ( ( ( rule__ObjectAttribute__ObjectAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2421:1: ( ( rule__ObjectAttribute__ObjectAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2495:1: ( ( ( rule__ObjectAttribute__ObjectAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2496:1: ( ( rule__ObjectAttribute__ObjectAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2421:1: ( ( rule__ObjectAttribute__ObjectAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2422:2: ( rule__ObjectAttribute__ObjectAssignment_0 )
+            // InternalTraceryPlusPlus.g:2496:1: ( ( rule__ObjectAttribute__ObjectAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2497:2: ( rule__ObjectAttribute__ObjectAssignment_0 )
             {
              before(grammarAccess.getObjectAttributeAccess().getObjectAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2423:2: ( rule__ObjectAttribute__ObjectAssignment_0 )
-            // InternalTraceryPlusPlus.g:2423:3: rule__ObjectAttribute__ObjectAssignment_0
+            // InternalTraceryPlusPlus.g:2498:2: ( rule__ObjectAttribute__ObjectAssignment_0 )
+            // InternalTraceryPlusPlus.g:2498:3: rule__ObjectAttribute__ObjectAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ObjectAttribute__ObjectAssignment_0();
@@ -7753,16 +8016,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__1"
-    // InternalTraceryPlusPlus.g:2431:1: rule__ObjectAttribute__Group__1 : rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 ;
+    // InternalTraceryPlusPlus.g:2506:1: rule__ObjectAttribute__Group__1 : rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 ;
     public final void rule__ObjectAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2435:1: ( rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 )
-            // InternalTraceryPlusPlus.g:2436:2: rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2
+            // InternalTraceryPlusPlus.g:2510:1: ( rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2 )
+            // InternalTraceryPlusPlus.g:2511:2: rule__ObjectAttribute__Group__1__Impl rule__ObjectAttribute__Group__2
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__ObjectAttribute__Group__1__Impl();
 
             state._fsp--;
@@ -7791,20 +8054,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2443:1: rule__ObjectAttribute__Group__1__Impl : ( '.' ) ;
+    // InternalTraceryPlusPlus.g:2518:1: rule__ObjectAttribute__Group__1__Impl : ( '.' ) ;
     public final void rule__ObjectAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2447:1: ( ( '.' ) )
-            // InternalTraceryPlusPlus.g:2448:1: ( '.' )
+            // InternalTraceryPlusPlus.g:2522:1: ( ( '.' ) )
+            // InternalTraceryPlusPlus.g:2523:1: ( '.' )
             {
-            // InternalTraceryPlusPlus.g:2448:1: ( '.' )
-            // InternalTraceryPlusPlus.g:2449:2: '.'
+            // InternalTraceryPlusPlus.g:2523:1: ( '.' )
+            // InternalTraceryPlusPlus.g:2524:2: '.'
             {
              before(grammarAccess.getObjectAttributeAccess().getFullStopKeyword_1()); 
-            match(input,45,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getObjectAttributeAccess().getFullStopKeyword_1()); 
 
             }
@@ -7828,16 +8091,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__2"
-    // InternalTraceryPlusPlus.g:2458:1: rule__ObjectAttribute__Group__2 : rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3 ;
+    // InternalTraceryPlusPlus.g:2533:1: rule__ObjectAttribute__Group__2 : rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3 ;
     public final void rule__ObjectAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2462:1: ( rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3 )
-            // InternalTraceryPlusPlus.g:2463:2: rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3
+            // InternalTraceryPlusPlus.g:2537:1: ( rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3 )
+            // InternalTraceryPlusPlus.g:2538:2: rule__ObjectAttribute__Group__2__Impl rule__ObjectAttribute__Group__3
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_23);
             rule__ObjectAttribute__Group__2__Impl();
 
             state._fsp--;
@@ -7866,21 +8129,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:2470:1: rule__ObjectAttribute__Group__2__Impl : ( ( rule__ObjectAttribute__AttributeAssignment_2 ) ) ;
+    // InternalTraceryPlusPlus.g:2545:1: rule__ObjectAttribute__Group__2__Impl : ( ( rule__ObjectAttribute__AttributeAssignment_2 ) ) ;
     public final void rule__ObjectAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2474:1: ( ( ( rule__ObjectAttribute__AttributeAssignment_2 ) ) )
-            // InternalTraceryPlusPlus.g:2475:1: ( ( rule__ObjectAttribute__AttributeAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2549:1: ( ( ( rule__ObjectAttribute__AttributeAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2550:1: ( ( rule__ObjectAttribute__AttributeAssignment_2 ) )
             {
-            // InternalTraceryPlusPlus.g:2475:1: ( ( rule__ObjectAttribute__AttributeAssignment_2 ) )
-            // InternalTraceryPlusPlus.g:2476:2: ( rule__ObjectAttribute__AttributeAssignment_2 )
+            // InternalTraceryPlusPlus.g:2550:1: ( ( rule__ObjectAttribute__AttributeAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2551:2: ( rule__ObjectAttribute__AttributeAssignment_2 )
             {
              before(grammarAccess.getObjectAttributeAccess().getAttributeAssignment_2()); 
-            // InternalTraceryPlusPlus.g:2477:2: ( rule__ObjectAttribute__AttributeAssignment_2 )
-            // InternalTraceryPlusPlus.g:2477:3: rule__ObjectAttribute__AttributeAssignment_2
+            // InternalTraceryPlusPlus.g:2552:2: ( rule__ObjectAttribute__AttributeAssignment_2 )
+            // InternalTraceryPlusPlus.g:2552:3: rule__ObjectAttribute__AttributeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ObjectAttribute__AttributeAssignment_2();
@@ -7913,14 +8176,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__3"
-    // InternalTraceryPlusPlus.g:2485:1: rule__ObjectAttribute__Group__3 : rule__ObjectAttribute__Group__3__Impl ;
+    // InternalTraceryPlusPlus.g:2560:1: rule__ObjectAttribute__Group__3 : rule__ObjectAttribute__Group__3__Impl ;
     public final void rule__ObjectAttribute__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2489:1: ( rule__ObjectAttribute__Group__3__Impl )
-            // InternalTraceryPlusPlus.g:2490:2: rule__ObjectAttribute__Group__3__Impl
+            // InternalTraceryPlusPlus.g:2564:1: ( rule__ObjectAttribute__Group__3__Impl )
+            // InternalTraceryPlusPlus.g:2565:2: rule__ObjectAttribute__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ObjectAttribute__Group__3__Impl();
@@ -7946,35 +8209,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__Group__3__Impl"
-    // InternalTraceryPlusPlus.g:2496:1: rule__ObjectAttribute__Group__3__Impl : ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* ) ;
+    // InternalTraceryPlusPlus.g:2571:1: rule__ObjectAttribute__Group__3__Impl : ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* ) ;
     public final void rule__ObjectAttribute__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2500:1: ( ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* ) )
-            // InternalTraceryPlusPlus.g:2501:1: ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* )
+            // InternalTraceryPlusPlus.g:2575:1: ( ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* ) )
+            // InternalTraceryPlusPlus.g:2576:1: ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* )
             {
-            // InternalTraceryPlusPlus.g:2501:1: ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* )
-            // InternalTraceryPlusPlus.g:2502:2: ( rule__ObjectAttribute__ModifiersAssignment_3 )*
+            // InternalTraceryPlusPlus.g:2576:1: ( ( rule__ObjectAttribute__ModifiersAssignment_3 )* )
+            // InternalTraceryPlusPlus.g:2577:2: ( rule__ObjectAttribute__ModifiersAssignment_3 )*
             {
              before(grammarAccess.getObjectAttributeAccess().getModifiersAssignment_3()); 
-            // InternalTraceryPlusPlus.g:2503:2: ( rule__ObjectAttribute__ModifiersAssignment_3 )*
-            loop30:
+            // InternalTraceryPlusPlus.g:2578:2: ( rule__ObjectAttribute__ModifiersAssignment_3 )*
+            loop33:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA30_0>=11 && LA30_0<=15)) ) {
-                    alt30=1;
+                if ( ((LA33_0>=11 && LA33_0<=15)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:2503:3: rule__ObjectAttribute__ModifiersAssignment_3
+            	    // InternalTraceryPlusPlus.g:2578:3: rule__ObjectAttribute__ModifiersAssignment_3
             	    {
-            	    pushFollow(FOLLOW_23);
+            	    pushFollow(FOLLOW_24);
             	    rule__ObjectAttribute__ModifiersAssignment_3();
 
             	    state._fsp--;
@@ -7984,7 +8247,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop33;
                 }
             } while (true);
 
@@ -8011,16 +8274,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__0"
-    // InternalTraceryPlusPlus.g:2512:1: rule__ObjectPronoun__Group__0 : rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1 ;
+    // InternalTraceryPlusPlus.g:2587:1: rule__ObjectPronoun__Group__0 : rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1 ;
     public final void rule__ObjectPronoun__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2516:1: ( rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1 )
-            // InternalTraceryPlusPlus.g:2517:2: rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1
+            // InternalTraceryPlusPlus.g:2591:1: ( rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1 )
+            // InternalTraceryPlusPlus.g:2592:2: rule__ObjectPronoun__Group__0__Impl rule__ObjectPronoun__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_26);
             rule__ObjectPronoun__Group__0__Impl();
 
             state._fsp--;
@@ -8049,21 +8312,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2524:1: rule__ObjectPronoun__Group__0__Impl : ( ( rule__ObjectPronoun__ObjectAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2599:1: rule__ObjectPronoun__Group__0__Impl : ( ( rule__ObjectPronoun__ObjectAssignment_0 ) ) ;
     public final void rule__ObjectPronoun__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2528:1: ( ( ( rule__ObjectPronoun__ObjectAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2529:1: ( ( rule__ObjectPronoun__ObjectAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2603:1: ( ( ( rule__ObjectPronoun__ObjectAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2604:1: ( ( rule__ObjectPronoun__ObjectAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2529:1: ( ( rule__ObjectPronoun__ObjectAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2530:2: ( rule__ObjectPronoun__ObjectAssignment_0 )
+            // InternalTraceryPlusPlus.g:2604:1: ( ( rule__ObjectPronoun__ObjectAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2605:2: ( rule__ObjectPronoun__ObjectAssignment_0 )
             {
              before(grammarAccess.getObjectPronounAccess().getObjectAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2531:2: ( rule__ObjectPronoun__ObjectAssignment_0 )
-            // InternalTraceryPlusPlus.g:2531:3: rule__ObjectPronoun__ObjectAssignment_0
+            // InternalTraceryPlusPlus.g:2606:2: ( rule__ObjectPronoun__ObjectAssignment_0 )
+            // InternalTraceryPlusPlus.g:2606:3: rule__ObjectPronoun__ObjectAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ObjectPronoun__ObjectAssignment_0();
@@ -8096,16 +8359,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__1"
-    // InternalTraceryPlusPlus.g:2539:1: rule__ObjectPronoun__Group__1 : rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2 ;
+    // InternalTraceryPlusPlus.g:2614:1: rule__ObjectPronoun__Group__1 : rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2 ;
     public final void rule__ObjectPronoun__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2543:1: ( rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2 )
-            // InternalTraceryPlusPlus.g:2544:2: rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2
+            // InternalTraceryPlusPlus.g:2618:1: ( rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2 )
+            // InternalTraceryPlusPlus.g:2619:2: rule__ObjectPronoun__Group__1__Impl rule__ObjectPronoun__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_27);
             rule__ObjectPronoun__Group__1__Impl();
 
             state._fsp--;
@@ -8134,20 +8397,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2551:1: rule__ObjectPronoun__Group__1__Impl : ( '.' ) ;
+    // InternalTraceryPlusPlus.g:2626:1: rule__ObjectPronoun__Group__1__Impl : ( '.' ) ;
     public final void rule__ObjectPronoun__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2555:1: ( ( '.' ) )
-            // InternalTraceryPlusPlus.g:2556:1: ( '.' )
+            // InternalTraceryPlusPlus.g:2630:1: ( ( '.' ) )
+            // InternalTraceryPlusPlus.g:2631:1: ( '.' )
             {
-            // InternalTraceryPlusPlus.g:2556:1: ( '.' )
-            // InternalTraceryPlusPlus.g:2557:2: '.'
+            // InternalTraceryPlusPlus.g:2631:1: ( '.' )
+            // InternalTraceryPlusPlus.g:2632:2: '.'
             {
              before(grammarAccess.getObjectPronounAccess().getFullStopKeyword_1()); 
-            match(input,45,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getObjectPronounAccess().getFullStopKeyword_1()); 
 
             }
@@ -8171,14 +8434,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__2"
-    // InternalTraceryPlusPlus.g:2566:1: rule__ObjectPronoun__Group__2 : rule__ObjectPronoun__Group__2__Impl ;
+    // InternalTraceryPlusPlus.g:2641:1: rule__ObjectPronoun__Group__2 : rule__ObjectPronoun__Group__2__Impl ;
     public final void rule__ObjectPronoun__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2570:1: ( rule__ObjectPronoun__Group__2__Impl )
-            // InternalTraceryPlusPlus.g:2571:2: rule__ObjectPronoun__Group__2__Impl
+            // InternalTraceryPlusPlus.g:2645:1: ( rule__ObjectPronoun__Group__2__Impl )
+            // InternalTraceryPlusPlus.g:2646:2: rule__ObjectPronoun__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ObjectPronoun__Group__2__Impl();
@@ -8204,21 +8467,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__Group__2__Impl"
-    // InternalTraceryPlusPlus.g:2577:1: rule__ObjectPronoun__Group__2__Impl : ( ( rule__ObjectPronoun__PronounAssignment_2 ) ) ;
+    // InternalTraceryPlusPlus.g:2652:1: rule__ObjectPronoun__Group__2__Impl : ( ( rule__ObjectPronoun__PronounAssignment_2 ) ) ;
     public final void rule__ObjectPronoun__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2581:1: ( ( ( rule__ObjectPronoun__PronounAssignment_2 ) ) )
-            // InternalTraceryPlusPlus.g:2582:1: ( ( rule__ObjectPronoun__PronounAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2656:1: ( ( ( rule__ObjectPronoun__PronounAssignment_2 ) ) )
+            // InternalTraceryPlusPlus.g:2657:1: ( ( rule__ObjectPronoun__PronounAssignment_2 ) )
             {
-            // InternalTraceryPlusPlus.g:2582:1: ( ( rule__ObjectPronoun__PronounAssignment_2 ) )
-            // InternalTraceryPlusPlus.g:2583:2: ( rule__ObjectPronoun__PronounAssignment_2 )
+            // InternalTraceryPlusPlus.g:2657:1: ( ( rule__ObjectPronoun__PronounAssignment_2 ) )
+            // InternalTraceryPlusPlus.g:2658:2: ( rule__ObjectPronoun__PronounAssignment_2 )
             {
              before(grammarAccess.getObjectPronounAccess().getPronounAssignment_2()); 
-            // InternalTraceryPlusPlus.g:2584:2: ( rule__ObjectPronoun__PronounAssignment_2 )
-            // InternalTraceryPlusPlus.g:2584:3: rule__ObjectPronoun__PronounAssignment_2
+            // InternalTraceryPlusPlus.g:2659:2: ( rule__ObjectPronoun__PronounAssignment_2 )
+            // InternalTraceryPlusPlus.g:2659:3: rule__ObjectPronoun__PronounAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ObjectPronoun__PronounAssignment_2();
@@ -8251,16 +8514,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group__0"
-    // InternalTraceryPlusPlus.g:2593:1: rule__WordList__Group__0 : rule__WordList__Group__0__Impl rule__WordList__Group__1 ;
+    // InternalTraceryPlusPlus.g:2668:1: rule__WordList__Group__0 : rule__WordList__Group__0__Impl rule__WordList__Group__1 ;
     public final void rule__WordList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2597:1: ( rule__WordList__Group__0__Impl rule__WordList__Group__1 )
-            // InternalTraceryPlusPlus.g:2598:2: rule__WordList__Group__0__Impl rule__WordList__Group__1
+            // InternalTraceryPlusPlus.g:2672:1: ( rule__WordList__Group__0__Impl rule__WordList__Group__1 )
+            // InternalTraceryPlusPlus.g:2673:2: rule__WordList__Group__0__Impl rule__WordList__Group__1
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_28);
             rule__WordList__Group__0__Impl();
 
             state._fsp--;
@@ -8289,21 +8552,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2605:1: rule__WordList__Group__0__Impl : ( ( rule__WordList__WordsAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2680:1: rule__WordList__Group__0__Impl : ( ( rule__WordList__WordsAssignment_0 ) ) ;
     public final void rule__WordList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2609:1: ( ( ( rule__WordList__WordsAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2610:1: ( ( rule__WordList__WordsAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2684:1: ( ( ( rule__WordList__WordsAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2685:1: ( ( rule__WordList__WordsAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2610:1: ( ( rule__WordList__WordsAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2611:2: ( rule__WordList__WordsAssignment_0 )
+            // InternalTraceryPlusPlus.g:2685:1: ( ( rule__WordList__WordsAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2686:2: ( rule__WordList__WordsAssignment_0 )
             {
              before(grammarAccess.getWordListAccess().getWordsAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2612:2: ( rule__WordList__WordsAssignment_0 )
-            // InternalTraceryPlusPlus.g:2612:3: rule__WordList__WordsAssignment_0
+            // InternalTraceryPlusPlus.g:2687:2: ( rule__WordList__WordsAssignment_0 )
+            // InternalTraceryPlusPlus.g:2687:3: rule__WordList__WordsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__WordList__WordsAssignment_0();
@@ -8336,14 +8599,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group__1"
-    // InternalTraceryPlusPlus.g:2620:1: rule__WordList__Group__1 : rule__WordList__Group__1__Impl ;
+    // InternalTraceryPlusPlus.g:2695:1: rule__WordList__Group__1 : rule__WordList__Group__1__Impl ;
     public final void rule__WordList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2624:1: ( rule__WordList__Group__1__Impl )
-            // InternalTraceryPlusPlus.g:2625:2: rule__WordList__Group__1__Impl
+            // InternalTraceryPlusPlus.g:2699:1: ( rule__WordList__Group__1__Impl )
+            // InternalTraceryPlusPlus.g:2700:2: rule__WordList__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WordList__Group__1__Impl();
@@ -8369,35 +8632,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2631:1: rule__WordList__Group__1__Impl : ( ( rule__WordList__Group_1__0 )* ) ;
+    // InternalTraceryPlusPlus.g:2706:1: rule__WordList__Group__1__Impl : ( ( rule__WordList__Group_1__0 )* ) ;
     public final void rule__WordList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2635:1: ( ( ( rule__WordList__Group_1__0 )* ) )
-            // InternalTraceryPlusPlus.g:2636:1: ( ( rule__WordList__Group_1__0 )* )
+            // InternalTraceryPlusPlus.g:2710:1: ( ( ( rule__WordList__Group_1__0 )* ) )
+            // InternalTraceryPlusPlus.g:2711:1: ( ( rule__WordList__Group_1__0 )* )
             {
-            // InternalTraceryPlusPlus.g:2636:1: ( ( rule__WordList__Group_1__0 )* )
-            // InternalTraceryPlusPlus.g:2637:2: ( rule__WordList__Group_1__0 )*
+            // InternalTraceryPlusPlus.g:2711:1: ( ( rule__WordList__Group_1__0 )* )
+            // InternalTraceryPlusPlus.g:2712:2: ( rule__WordList__Group_1__0 )*
             {
              before(grammarAccess.getWordListAccess().getGroup_1()); 
-            // InternalTraceryPlusPlus.g:2638:2: ( rule__WordList__Group_1__0 )*
-            loop31:
+            // InternalTraceryPlusPlus.g:2713:2: ( rule__WordList__Group_1__0 )*
+            loop34:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( ((LA31_0>=31 && LA31_0<=33)) ) {
-                    alt31=1;
+                if ( ((LA34_0>=33 && LA34_0<=35)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt34) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:2638:3: rule__WordList__Group_1__0
+            	    // InternalTraceryPlusPlus.g:2713:3: rule__WordList__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_27);
+            	    pushFollow(FOLLOW_29);
             	    rule__WordList__Group_1__0();
 
             	    state._fsp--;
@@ -8407,7 +8670,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop34;
                 }
             } while (true);
 
@@ -8434,16 +8697,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group_1__0"
-    // InternalTraceryPlusPlus.g:2647:1: rule__WordList__Group_1__0 : rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1 ;
+    // InternalTraceryPlusPlus.g:2722:1: rule__WordList__Group_1__0 : rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1 ;
     public final void rule__WordList__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2651:1: ( rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1 )
-            // InternalTraceryPlusPlus.g:2652:2: rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1
+            // InternalTraceryPlusPlus.g:2726:1: ( rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1 )
+            // InternalTraceryPlusPlus.g:2727:2: rule__WordList__Group_1__0__Impl rule__WordList__Group_1__1
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_30);
             rule__WordList__Group_1__0__Impl();
 
             state._fsp--;
@@ -8472,17 +8735,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group_1__0__Impl"
-    // InternalTraceryPlusPlus.g:2659:1: rule__WordList__Group_1__0__Impl : ( ruleSeparatorOr ) ;
+    // InternalTraceryPlusPlus.g:2734:1: rule__WordList__Group_1__0__Impl : ( ruleSeparatorOr ) ;
     public final void rule__WordList__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2663:1: ( ( ruleSeparatorOr ) )
-            // InternalTraceryPlusPlus.g:2664:1: ( ruleSeparatorOr )
+            // InternalTraceryPlusPlus.g:2738:1: ( ( ruleSeparatorOr ) )
+            // InternalTraceryPlusPlus.g:2739:1: ( ruleSeparatorOr )
             {
-            // InternalTraceryPlusPlus.g:2664:1: ( ruleSeparatorOr )
-            // InternalTraceryPlusPlus.g:2665:2: ruleSeparatorOr
+            // InternalTraceryPlusPlus.g:2739:1: ( ruleSeparatorOr )
+            // InternalTraceryPlusPlus.g:2740:2: ruleSeparatorOr
             {
              before(grammarAccess.getWordListAccess().getSeparatorOrParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -8513,14 +8776,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group_1__1"
-    // InternalTraceryPlusPlus.g:2674:1: rule__WordList__Group_1__1 : rule__WordList__Group_1__1__Impl ;
+    // InternalTraceryPlusPlus.g:2749:1: rule__WordList__Group_1__1 : rule__WordList__Group_1__1__Impl ;
     public final void rule__WordList__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2678:1: ( rule__WordList__Group_1__1__Impl )
-            // InternalTraceryPlusPlus.g:2679:2: rule__WordList__Group_1__1__Impl
+            // InternalTraceryPlusPlus.g:2753:1: ( rule__WordList__Group_1__1__Impl )
+            // InternalTraceryPlusPlus.g:2754:2: rule__WordList__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WordList__Group_1__1__Impl();
@@ -8546,21 +8809,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__Group_1__1__Impl"
-    // InternalTraceryPlusPlus.g:2685:1: rule__WordList__Group_1__1__Impl : ( ( rule__WordList__WordsAssignment_1_1 ) ) ;
+    // InternalTraceryPlusPlus.g:2760:1: rule__WordList__Group_1__1__Impl : ( ( rule__WordList__WordsAssignment_1_1 ) ) ;
     public final void rule__WordList__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2689:1: ( ( ( rule__WordList__WordsAssignment_1_1 ) ) )
-            // InternalTraceryPlusPlus.g:2690:1: ( ( rule__WordList__WordsAssignment_1_1 ) )
+            // InternalTraceryPlusPlus.g:2764:1: ( ( ( rule__WordList__WordsAssignment_1_1 ) ) )
+            // InternalTraceryPlusPlus.g:2765:1: ( ( rule__WordList__WordsAssignment_1_1 ) )
             {
-            // InternalTraceryPlusPlus.g:2690:1: ( ( rule__WordList__WordsAssignment_1_1 ) )
-            // InternalTraceryPlusPlus.g:2691:2: ( rule__WordList__WordsAssignment_1_1 )
+            // InternalTraceryPlusPlus.g:2765:1: ( ( rule__WordList__WordsAssignment_1_1 ) )
+            // InternalTraceryPlusPlus.g:2766:2: ( rule__WordList__WordsAssignment_1_1 )
             {
              before(grammarAccess.getWordListAccess().getWordsAssignment_1_1()); 
-            // InternalTraceryPlusPlus.g:2692:2: ( rule__WordList__WordsAssignment_1_1 )
-            // InternalTraceryPlusPlus.g:2692:3: rule__WordList__WordsAssignment_1_1
+            // InternalTraceryPlusPlus.g:2767:2: ( rule__WordList__WordsAssignment_1_1 )
+            // InternalTraceryPlusPlus.g:2767:3: rule__WordList__WordsAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__WordList__WordsAssignment_1_1();
@@ -8593,16 +8856,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group__0"
-    // InternalTraceryPlusPlus.g:2701:1: rule__AttributeList__Group__0 : rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 ;
+    // InternalTraceryPlusPlus.g:2776:1: rule__AttributeList__Group__0 : rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 ;
     public final void rule__AttributeList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2705:1: ( rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 )
-            // InternalTraceryPlusPlus.g:2706:2: rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1
+            // InternalTraceryPlusPlus.g:2780:1: ( rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1 )
+            // InternalTraceryPlusPlus.g:2781:2: rule__AttributeList__Group__0__Impl rule__AttributeList__Group__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_31);
             rule__AttributeList__Group__0__Impl();
 
             state._fsp--;
@@ -8631,21 +8894,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group__0__Impl"
-    // InternalTraceryPlusPlus.g:2713:1: rule__AttributeList__Group__0__Impl : ( ( rule__AttributeList__AttributesAssignment_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2788:1: rule__AttributeList__Group__0__Impl : ( ( rule__AttributeList__AttributesAssignment_0 ) ) ;
     public final void rule__AttributeList__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2717:1: ( ( ( rule__AttributeList__AttributesAssignment_0 ) ) )
-            // InternalTraceryPlusPlus.g:2718:1: ( ( rule__AttributeList__AttributesAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2792:1: ( ( ( rule__AttributeList__AttributesAssignment_0 ) ) )
+            // InternalTraceryPlusPlus.g:2793:1: ( ( rule__AttributeList__AttributesAssignment_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2718:1: ( ( rule__AttributeList__AttributesAssignment_0 ) )
-            // InternalTraceryPlusPlus.g:2719:2: ( rule__AttributeList__AttributesAssignment_0 )
+            // InternalTraceryPlusPlus.g:2793:1: ( ( rule__AttributeList__AttributesAssignment_0 ) )
+            // InternalTraceryPlusPlus.g:2794:2: ( rule__AttributeList__AttributesAssignment_0 )
             {
              before(grammarAccess.getAttributeListAccess().getAttributesAssignment_0()); 
-            // InternalTraceryPlusPlus.g:2720:2: ( rule__AttributeList__AttributesAssignment_0 )
-            // InternalTraceryPlusPlus.g:2720:3: rule__AttributeList__AttributesAssignment_0
+            // InternalTraceryPlusPlus.g:2795:2: ( rule__AttributeList__AttributesAssignment_0 )
+            // InternalTraceryPlusPlus.g:2795:3: rule__AttributeList__AttributesAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__AttributesAssignment_0();
@@ -8678,14 +8941,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group__1"
-    // InternalTraceryPlusPlus.g:2728:1: rule__AttributeList__Group__1 : rule__AttributeList__Group__1__Impl ;
+    // InternalTraceryPlusPlus.g:2803:1: rule__AttributeList__Group__1 : rule__AttributeList__Group__1__Impl ;
     public final void rule__AttributeList__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2732:1: ( rule__AttributeList__Group__1__Impl )
-            // InternalTraceryPlusPlus.g:2733:2: rule__AttributeList__Group__1__Impl
+            // InternalTraceryPlusPlus.g:2807:1: ( rule__AttributeList__Group__1__Impl )
+            // InternalTraceryPlusPlus.g:2808:2: rule__AttributeList__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__Group__1__Impl();
@@ -8711,35 +8974,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:2739:1: rule__AttributeList__Group__1__Impl : ( ( rule__AttributeList__Group_1__0 )* ) ;
+    // InternalTraceryPlusPlus.g:2814:1: rule__AttributeList__Group__1__Impl : ( ( rule__AttributeList__Group_1__0 )* ) ;
     public final void rule__AttributeList__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2743:1: ( ( ( rule__AttributeList__Group_1__0 )* ) )
-            // InternalTraceryPlusPlus.g:2744:1: ( ( rule__AttributeList__Group_1__0 )* )
+            // InternalTraceryPlusPlus.g:2818:1: ( ( ( rule__AttributeList__Group_1__0 )* ) )
+            // InternalTraceryPlusPlus.g:2819:1: ( ( rule__AttributeList__Group_1__0 )* )
             {
-            // InternalTraceryPlusPlus.g:2744:1: ( ( rule__AttributeList__Group_1__0 )* )
-            // InternalTraceryPlusPlus.g:2745:2: ( rule__AttributeList__Group_1__0 )*
+            // InternalTraceryPlusPlus.g:2819:1: ( ( rule__AttributeList__Group_1__0 )* )
+            // InternalTraceryPlusPlus.g:2820:2: ( rule__AttributeList__Group_1__0 )*
             {
              before(grammarAccess.getAttributeListAccess().getGroup_1()); 
-            // InternalTraceryPlusPlus.g:2746:2: ( rule__AttributeList__Group_1__0 )*
-            loop32:
+            // InternalTraceryPlusPlus.g:2821:2: ( rule__AttributeList__Group_1__0 )*
+            loop35:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA32_0==31||(LA32_0>=34 && LA32_0<=35)) ) {
-                    alt32=1;
+                if ( (LA35_0==33||(LA35_0>=36 && LA35_0<=37)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt35) {
             	case 1 :
-            	    // InternalTraceryPlusPlus.g:2746:3: rule__AttributeList__Group_1__0
+            	    // InternalTraceryPlusPlus.g:2821:3: rule__AttributeList__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_30);
+            	    pushFollow(FOLLOW_32);
             	    rule__AttributeList__Group_1__0();
 
             	    state._fsp--;
@@ -8749,7 +9012,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop35;
                 }
             } while (true);
 
@@ -8776,14 +9039,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group_1__0"
-    // InternalTraceryPlusPlus.g:2755:1: rule__AttributeList__Group_1__0 : rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1 ;
+    // InternalTraceryPlusPlus.g:2830:1: rule__AttributeList__Group_1__0 : rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1 ;
     public final void rule__AttributeList__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2759:1: ( rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1 )
-            // InternalTraceryPlusPlus.g:2760:2: rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1
+            // InternalTraceryPlusPlus.g:2834:1: ( rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1 )
+            // InternalTraceryPlusPlus.g:2835:2: rule__AttributeList__Group_1__0__Impl rule__AttributeList__Group_1__1
             {
             pushFollow(FOLLOW_17);
             rule__AttributeList__Group_1__0__Impl();
@@ -8814,17 +9077,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group_1__0__Impl"
-    // InternalTraceryPlusPlus.g:2767:1: rule__AttributeList__Group_1__0__Impl : ( ruleSeparatorAnd ) ;
+    // InternalTraceryPlusPlus.g:2842:1: rule__AttributeList__Group_1__0__Impl : ( ruleSeparatorAnd ) ;
     public final void rule__AttributeList__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2771:1: ( ( ruleSeparatorAnd ) )
-            // InternalTraceryPlusPlus.g:2772:1: ( ruleSeparatorAnd )
+            // InternalTraceryPlusPlus.g:2846:1: ( ( ruleSeparatorAnd ) )
+            // InternalTraceryPlusPlus.g:2847:1: ( ruleSeparatorAnd )
             {
-            // InternalTraceryPlusPlus.g:2772:1: ( ruleSeparatorAnd )
-            // InternalTraceryPlusPlus.g:2773:2: ruleSeparatorAnd
+            // InternalTraceryPlusPlus.g:2847:1: ( ruleSeparatorAnd )
+            // InternalTraceryPlusPlus.g:2848:2: ruleSeparatorAnd
             {
              before(grammarAccess.getAttributeListAccess().getSeparatorAndParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -8855,14 +9118,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group_1__1"
-    // InternalTraceryPlusPlus.g:2782:1: rule__AttributeList__Group_1__1 : rule__AttributeList__Group_1__1__Impl ;
+    // InternalTraceryPlusPlus.g:2857:1: rule__AttributeList__Group_1__1 : rule__AttributeList__Group_1__1__Impl ;
     public final void rule__AttributeList__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2786:1: ( rule__AttributeList__Group_1__1__Impl )
-            // InternalTraceryPlusPlus.g:2787:2: rule__AttributeList__Group_1__1__Impl
+            // InternalTraceryPlusPlus.g:2861:1: ( rule__AttributeList__Group_1__1__Impl )
+            // InternalTraceryPlusPlus.g:2862:2: rule__AttributeList__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__Group_1__1__Impl();
@@ -8888,21 +9151,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__Group_1__1__Impl"
-    // InternalTraceryPlusPlus.g:2793:1: rule__AttributeList__Group_1__1__Impl : ( ( rule__AttributeList__AttributesAssignment_1_1 ) ) ;
+    // InternalTraceryPlusPlus.g:2868:1: rule__AttributeList__Group_1__1__Impl : ( ( rule__AttributeList__AttributesAssignment_1_1 ) ) ;
     public final void rule__AttributeList__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2797:1: ( ( ( rule__AttributeList__AttributesAssignment_1_1 ) ) )
-            // InternalTraceryPlusPlus.g:2798:1: ( ( rule__AttributeList__AttributesAssignment_1_1 ) )
+            // InternalTraceryPlusPlus.g:2872:1: ( ( ( rule__AttributeList__AttributesAssignment_1_1 ) ) )
+            // InternalTraceryPlusPlus.g:2873:1: ( ( rule__AttributeList__AttributesAssignment_1_1 ) )
             {
-            // InternalTraceryPlusPlus.g:2798:1: ( ( rule__AttributeList__AttributesAssignment_1_1 ) )
-            // InternalTraceryPlusPlus.g:2799:2: ( rule__AttributeList__AttributesAssignment_1_1 )
+            // InternalTraceryPlusPlus.g:2873:1: ( ( rule__AttributeList__AttributesAssignment_1_1 ) )
+            // InternalTraceryPlusPlus.g:2874:2: ( rule__AttributeList__AttributesAssignment_1_1 )
             {
              before(grammarAccess.getAttributeListAccess().getAttributesAssignment_1_1()); 
-            // InternalTraceryPlusPlus.g:2800:2: ( rule__AttributeList__AttributesAssignment_1_1 )
-            // InternalTraceryPlusPlus.g:2800:3: rule__AttributeList__AttributesAssignment_1_1
+            // InternalTraceryPlusPlus.g:2875:2: ( rule__AttributeList__AttributesAssignment_1_1 )
+            // InternalTraceryPlusPlus.g:2875:3: rule__AttributeList__AttributesAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__AttributeList__AttributesAssignment_1_1();
@@ -8935,16 +9198,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AssignmentOperator__Group_4__0"
-    // InternalTraceryPlusPlus.g:2809:1: rule__AssignmentOperator__Group_4__0 : rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1 ;
+    // InternalTraceryPlusPlus.g:2884:1: rule__AssignmentOperator__Group_4__0 : rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1 ;
     public final void rule__AssignmentOperator__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2813:1: ( rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1 )
-            // InternalTraceryPlusPlus.g:2814:2: rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1
+            // InternalTraceryPlusPlus.g:2888:1: ( rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1 )
+            // InternalTraceryPlusPlus.g:2889:2: rule__AssignmentOperator__Group_4__0__Impl rule__AssignmentOperator__Group_4__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_33);
             rule__AssignmentOperator__Group_4__0__Impl();
 
             state._fsp--;
@@ -8973,20 +9236,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AssignmentOperator__Group_4__0__Impl"
-    // InternalTraceryPlusPlus.g:2821:1: rule__AssignmentOperator__Group_4__0__Impl : ( 'equal' ) ;
+    // InternalTraceryPlusPlus.g:2896:1: rule__AssignmentOperator__Group_4__0__Impl : ( 'equal' ) ;
     public final void rule__AssignmentOperator__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2825:1: ( ( 'equal' ) )
-            // InternalTraceryPlusPlus.g:2826:1: ( 'equal' )
+            // InternalTraceryPlusPlus.g:2900:1: ( ( 'equal' ) )
+            // InternalTraceryPlusPlus.g:2901:1: ( 'equal' )
             {
-            // InternalTraceryPlusPlus.g:2826:1: ( 'equal' )
-            // InternalTraceryPlusPlus.g:2827:2: 'equal'
+            // InternalTraceryPlusPlus.g:2901:1: ( 'equal' )
+            // InternalTraceryPlusPlus.g:2902:2: 'equal'
             {
              before(grammarAccess.getAssignmentOperatorAccess().getEqualKeyword_4_0()); 
-            match(input,46,FOLLOW_2); 
+            match(input,49,FOLLOW_2); 
              after(grammarAccess.getAssignmentOperatorAccess().getEqualKeyword_4_0()); 
 
             }
@@ -9010,14 +9273,14 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AssignmentOperator__Group_4__1"
-    // InternalTraceryPlusPlus.g:2836:1: rule__AssignmentOperator__Group_4__1 : rule__AssignmentOperator__Group_4__1__Impl ;
+    // InternalTraceryPlusPlus.g:2911:1: rule__AssignmentOperator__Group_4__1 : rule__AssignmentOperator__Group_4__1__Impl ;
     public final void rule__AssignmentOperator__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2840:1: ( rule__AssignmentOperator__Group_4__1__Impl )
-            // InternalTraceryPlusPlus.g:2841:2: rule__AssignmentOperator__Group_4__1__Impl
+            // InternalTraceryPlusPlus.g:2915:1: ( rule__AssignmentOperator__Group_4__1__Impl )
+            // InternalTraceryPlusPlus.g:2916:2: rule__AssignmentOperator__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AssignmentOperator__Group_4__1__Impl();
@@ -9043,20 +9306,20 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AssignmentOperator__Group_4__1__Impl"
-    // InternalTraceryPlusPlus.g:2847:1: rule__AssignmentOperator__Group_4__1__Impl : ( 'to' ) ;
+    // InternalTraceryPlusPlus.g:2922:1: rule__AssignmentOperator__Group_4__1__Impl : ( 'to' ) ;
     public final void rule__AssignmentOperator__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2851:1: ( ( 'to' ) )
-            // InternalTraceryPlusPlus.g:2852:1: ( 'to' )
+            // InternalTraceryPlusPlus.g:2926:1: ( ( 'to' ) )
+            // InternalTraceryPlusPlus.g:2927:1: ( 'to' )
             {
-            // InternalTraceryPlusPlus.g:2852:1: ( 'to' )
-            // InternalTraceryPlusPlus.g:2853:2: 'to'
+            // InternalTraceryPlusPlus.g:2927:1: ( 'to' )
+            // InternalTraceryPlusPlus.g:2928:2: 'to'
             {
              before(grammarAccess.getAssignmentOperatorAccess().getToKeyword_4_1()); 
-            match(input,47,FOLLOW_2); 
+            match(input,50,FOLLOW_2); 
              after(grammarAccess.getAssignmentOperatorAccess().getToKeyword_4_1()); 
 
             }
@@ -9080,17 +9343,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__StatementsAssignment_0"
-    // InternalTraceryPlusPlus.g:2863:1: rule__TraceryPlusPlusProgram__StatementsAssignment_0 : ( ruleStatement ) ;
+    // InternalTraceryPlusPlus.g:2938:1: rule__TraceryPlusPlusProgram__StatementsAssignment_0 : ( ruleStatement ) ;
     public final void rule__TraceryPlusPlusProgram__StatementsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2867:1: ( ( ruleStatement ) )
-            // InternalTraceryPlusPlus.g:2868:2: ( ruleStatement )
+            // InternalTraceryPlusPlus.g:2942:1: ( ( ruleStatement ) )
+            // InternalTraceryPlusPlus.g:2943:2: ( ruleStatement )
             {
-            // InternalTraceryPlusPlus.g:2868:2: ( ruleStatement )
-            // InternalTraceryPlusPlus.g:2869:3: ruleStatement
+            // InternalTraceryPlusPlus.g:2943:2: ( ruleStatement )
+            // InternalTraceryPlusPlus.g:2944:3: ruleStatement
             {
              before(grammarAccess.getTraceryPlusPlusProgramAccess().getStatementsStatementParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -9121,17 +9384,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__StoryAssignment_1"
-    // InternalTraceryPlusPlus.g:2878:1: rule__TraceryPlusPlusProgram__StoryAssignment_1 : ( ruleStory ) ;
+    // InternalTraceryPlusPlus.g:2953:1: rule__TraceryPlusPlusProgram__StoryAssignment_1 : ( ruleStory ) ;
     public final void rule__TraceryPlusPlusProgram__StoryAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2882:1: ( ( ruleStory ) )
-            // InternalTraceryPlusPlus.g:2883:2: ( ruleStory )
+            // InternalTraceryPlusPlus.g:2957:1: ( ( ruleStory ) )
+            // InternalTraceryPlusPlus.g:2958:2: ( ruleStory )
             {
-            // InternalTraceryPlusPlus.g:2883:2: ( ruleStory )
-            // InternalTraceryPlusPlus.g:2884:3: ruleStory
+            // InternalTraceryPlusPlus.g:2958:2: ( ruleStory )
+            // InternalTraceryPlusPlus.g:2959:3: ruleStory
             {
              before(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryStoryParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -9162,21 +9425,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Story__StoryAssignment_4"
-    // InternalTraceryPlusPlus.g:2893:1: rule__Story__StoryAssignment_4 : ( ( rule__Story__StoryAlternatives_4_0 ) ) ;
+    // InternalTraceryPlusPlus.g:2968:1: rule__Story__StoryAssignment_4 : ( ( rule__Story__StoryAlternatives_4_0 ) ) ;
     public final void rule__Story__StoryAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2897:1: ( ( ( rule__Story__StoryAlternatives_4_0 ) ) )
-            // InternalTraceryPlusPlus.g:2898:2: ( ( rule__Story__StoryAlternatives_4_0 ) )
+            // InternalTraceryPlusPlus.g:2972:1: ( ( ( rule__Story__StoryAlternatives_4_0 ) ) )
+            // InternalTraceryPlusPlus.g:2973:2: ( ( rule__Story__StoryAlternatives_4_0 ) )
             {
-            // InternalTraceryPlusPlus.g:2898:2: ( ( rule__Story__StoryAlternatives_4_0 ) )
-            // InternalTraceryPlusPlus.g:2899:3: ( rule__Story__StoryAlternatives_4_0 )
+            // InternalTraceryPlusPlus.g:2973:2: ( ( rule__Story__StoryAlternatives_4_0 ) )
+            // InternalTraceryPlusPlus.g:2974:3: ( rule__Story__StoryAlternatives_4_0 )
             {
              before(grammarAccess.getStoryAccess().getStoryAlternatives_4_0()); 
-            // InternalTraceryPlusPlus.g:2900:3: ( rule__Story__StoryAlternatives_4_0 )
-            // InternalTraceryPlusPlus.g:2900:4: rule__Story__StoryAlternatives_4_0
+            // InternalTraceryPlusPlus.g:2975:3: ( rule__Story__StoryAlternatives_4_0 )
+            // InternalTraceryPlusPlus.g:2975:4: rule__Story__StoryAlternatives_4_0
             {
             pushFollow(FOLLOW_2);
             rule__Story__StoryAlternatives_4_0();
@@ -9209,17 +9472,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__NameAssignment_0"
-    // InternalTraceryPlusPlus.g:2908:1: rule__ListDeclaration__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalTraceryPlusPlus.g:2983:1: rule__ListDeclaration__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__ListDeclaration__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2912:1: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:2913:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:2987:1: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:2988:2: ( RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:2913:2: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:2914:3: RULE_ID
+            // InternalTraceryPlusPlus.g:2988:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:2989:3: RULE_ID
             {
              before(grammarAccess.getListDeclarationAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9246,17 +9509,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListDeclaration__ListAssignment_3"
-    // InternalTraceryPlusPlus.g:2923:1: rule__ListDeclaration__ListAssignment_3 : ( ruleWordList ) ;
+    // InternalTraceryPlusPlus.g:2998:1: rule__ListDeclaration__ListAssignment_3 : ( ruleWordList ) ;
     public final void rule__ListDeclaration__ListAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2927:1: ( ( ruleWordList ) )
-            // InternalTraceryPlusPlus.g:2928:2: ( ruleWordList )
+            // InternalTraceryPlusPlus.g:3002:1: ( ( ruleWordList ) )
+            // InternalTraceryPlusPlus.g:3003:2: ( ruleWordList )
             {
-            // InternalTraceryPlusPlus.g:2928:2: ( ruleWordList )
-            // InternalTraceryPlusPlus.g:2929:3: ruleWordList
+            // InternalTraceryPlusPlus.g:3003:2: ( ruleWordList )
+            // InternalTraceryPlusPlus.g:3004:3: ruleWordList
             {
              before(grammarAccess.getListDeclarationAccess().getListWordListParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -9287,17 +9550,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__NameAssignment_3"
-    // InternalTraceryPlusPlus.g:2938:1: rule__ObjectDeclaration__NameAssignment_3 : ( RULE_ID ) ;
+    // InternalTraceryPlusPlus.g:3013:1: rule__ObjectDeclaration__NameAssignment_3 : ( RULE_ID ) ;
     public final void rule__ObjectDeclaration__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2942:1: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:2943:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3017:1: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3018:2: ( RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:2943:2: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:2944:3: RULE_ID
+            // InternalTraceryPlusPlus.g:3018:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3019:3: RULE_ID
             {
              before(grammarAccess.getObjectDeclarationAccess().getNameIDTerminalRuleCall_3_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9324,17 +9587,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__PronounsAssignment_4"
-    // InternalTraceryPlusPlus.g:2953:1: rule__ObjectDeclaration__PronounsAssignment_4 : ( rulePronouns ) ;
+    // InternalTraceryPlusPlus.g:3028:1: rule__ObjectDeclaration__PronounsAssignment_4 : ( rulePronouns ) ;
     public final void rule__ObjectDeclaration__PronounsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2957:1: ( ( rulePronouns ) )
-            // InternalTraceryPlusPlus.g:2958:2: ( rulePronouns )
+            // InternalTraceryPlusPlus.g:3032:1: ( ( rulePronouns ) )
+            // InternalTraceryPlusPlus.g:3033:2: ( rulePronouns )
             {
-            // InternalTraceryPlusPlus.g:2958:2: ( rulePronouns )
-            // InternalTraceryPlusPlus.g:2959:3: rulePronouns
+            // InternalTraceryPlusPlus.g:3033:2: ( rulePronouns )
+            // InternalTraceryPlusPlus.g:3034:3: rulePronouns
             {
              before(grammarAccess.getObjectDeclarationAccess().getPronounsPronounsParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -9365,17 +9628,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectDeclaration__AttributesAssignment_8"
-    // InternalTraceryPlusPlus.g:2968:1: rule__ObjectDeclaration__AttributesAssignment_8 : ( ruleAttributeList ) ;
+    // InternalTraceryPlusPlus.g:3043:1: rule__ObjectDeclaration__AttributesAssignment_8 : ( ruleAttributeList ) ;
     public final void rule__ObjectDeclaration__AttributesAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2972:1: ( ( ruleAttributeList ) )
-            // InternalTraceryPlusPlus.g:2973:2: ( ruleAttributeList )
+            // InternalTraceryPlusPlus.g:3047:1: ( ( ruleAttributeList ) )
+            // InternalTraceryPlusPlus.g:3048:2: ( ruleAttributeList )
             {
-            // InternalTraceryPlusPlus.g:2973:2: ( ruleAttributeList )
-            // InternalTraceryPlusPlus.g:2974:3: ruleAttributeList
+            // InternalTraceryPlusPlus.g:3048:2: ( ruleAttributeList )
+            // InternalTraceryPlusPlus.g:3049:3: ruleAttributeList
             {
              before(grammarAccess.getObjectDeclarationAccess().getAttributesAttributeListParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -9405,22 +9668,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__ObjectDeclaration__AttributesAssignment_8"
 
 
-    // $ANTLR start "rule__SubstoryDeclaration__NameAssignment_1"
-    // InternalTraceryPlusPlus.g:2983:1: rule__SubstoryDeclaration__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__SubstoryDeclaration__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__SubstoryDeclaration__NameAssignment_2"
+    // InternalTraceryPlusPlus.g:3058:1: rule__SubstoryDeclaration__NameAssignment_2 : ( RULE_ID ) ;
+    public final void rule__SubstoryDeclaration__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:2987:1: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:2988:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3062:1: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3063:2: ( RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:2988:2: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:2989:3: RULE_ID
+            // InternalTraceryPlusPlus.g:3063:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3064:3: RULE_ID
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getSubstoryDeclarationAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
 
@@ -9439,35 +9702,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SubstoryDeclaration__NameAssignment_1"
+    // $ANTLR end "rule__SubstoryDeclaration__NameAssignment_2"
 
 
-    // $ANTLR start "rule__SubstoryDeclaration__StoryAssignment_3"
-    // InternalTraceryPlusPlus.g:2998:1: rule__SubstoryDeclaration__StoryAssignment_3 : ( ( rule__SubstoryDeclaration__StoryAlternatives_3_0 ) ) ;
-    public final void rule__SubstoryDeclaration__StoryAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__SubstoryDeclaration__StoryAssignment_4"
+    // InternalTraceryPlusPlus.g:3073:1: rule__SubstoryDeclaration__StoryAssignment_4 : ( ( rule__SubstoryDeclaration__StoryAlternatives_4_0 ) ) ;
+    public final void rule__SubstoryDeclaration__StoryAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3002:1: ( ( ( rule__SubstoryDeclaration__StoryAlternatives_3_0 ) ) )
-            // InternalTraceryPlusPlus.g:3003:2: ( ( rule__SubstoryDeclaration__StoryAlternatives_3_0 ) )
+            // InternalTraceryPlusPlus.g:3077:1: ( ( ( rule__SubstoryDeclaration__StoryAlternatives_4_0 ) ) )
+            // InternalTraceryPlusPlus.g:3078:2: ( ( rule__SubstoryDeclaration__StoryAlternatives_4_0 ) )
             {
-            // InternalTraceryPlusPlus.g:3003:2: ( ( rule__SubstoryDeclaration__StoryAlternatives_3_0 ) )
-            // InternalTraceryPlusPlus.g:3004:3: ( rule__SubstoryDeclaration__StoryAlternatives_3_0 )
+            // InternalTraceryPlusPlus.g:3078:2: ( ( rule__SubstoryDeclaration__StoryAlternatives_4_0 ) )
+            // InternalTraceryPlusPlus.g:3079:3: ( rule__SubstoryDeclaration__StoryAlternatives_4_0 )
             {
-             before(grammarAccess.getSubstoryDeclarationAccess().getStoryAlternatives_3_0()); 
-            // InternalTraceryPlusPlus.g:3005:3: ( rule__SubstoryDeclaration__StoryAlternatives_3_0 )
-            // InternalTraceryPlusPlus.g:3005:4: rule__SubstoryDeclaration__StoryAlternatives_3_0
+             before(grammarAccess.getSubstoryDeclarationAccess().getStoryAlternatives_4_0()); 
+            // InternalTraceryPlusPlus.g:3080:3: ( rule__SubstoryDeclaration__StoryAlternatives_4_0 )
+            // InternalTraceryPlusPlus.g:3080:4: rule__SubstoryDeclaration__StoryAlternatives_4_0
             {
             pushFollow(FOLLOW_2);
-            rule__SubstoryDeclaration__StoryAlternatives_3_0();
+            rule__SubstoryDeclaration__StoryAlternatives_4_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSubstoryDeclarationAccess().getStoryAlternatives_3_0()); 
+             after(grammarAccess.getSubstoryDeclarationAccess().getStoryAlternatives_4_0()); 
 
             }
 
@@ -9486,21 +9749,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SubstoryDeclaration__StoryAssignment_3"
+    // $ANTLR end "rule__SubstoryDeclaration__StoryAssignment_4"
 
 
     // $ANTLR start "rule__Word__ValueAssignment"
-    // InternalTraceryPlusPlus.g:3013:1: rule__Word__ValueAssignment : ( RULE_STRING ) ;
+    // InternalTraceryPlusPlus.g:3088:1: rule__Word__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__Word__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3017:1: ( ( RULE_STRING ) )
-            // InternalTraceryPlusPlus.g:3018:2: ( RULE_STRING )
+            // InternalTraceryPlusPlus.g:3092:1: ( ( RULE_STRING ) )
+            // InternalTraceryPlusPlus.g:3093:2: ( RULE_STRING )
             {
-            // InternalTraceryPlusPlus.g:3018:2: ( RULE_STRING )
-            // InternalTraceryPlusPlus.g:3019:3: RULE_STRING
+            // InternalTraceryPlusPlus.g:3093:2: ( RULE_STRING )
+            // InternalTraceryPlusPlus.g:3094:3: RULE_STRING
             {
              before(grammarAccess.getWordAccess().getValueSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -9527,17 +9790,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__NameAssignment_0"
-    // InternalTraceryPlusPlus.g:3028:1: rule__NameExistingListAttribute__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalTraceryPlusPlus.g:3103:1: rule__NameExistingListAttribute__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__NameExistingListAttribute__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3032:1: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3033:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3107:1: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3108:2: ( RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:3033:2: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3034:3: RULE_ID
+            // InternalTraceryPlusPlus.g:3108:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3109:3: RULE_ID
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9564,21 +9827,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameExistingListAttribute__ValueAssignment_2"
-    // InternalTraceryPlusPlus.g:3043:1: rule__NameExistingListAttribute__ValueAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:3118:1: rule__NameExistingListAttribute__ValueAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__NameExistingListAttribute__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3047:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3048:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3122:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3123:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3048:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3049:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3123:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3124:3: ( RULE_ID )
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getValueListDeclarationCrossReference_2_0()); 
-            // InternalTraceryPlusPlus.g:3050:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3051:4: RULE_ID
+            // InternalTraceryPlusPlus.g:3125:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3126:4: RULE_ID
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getValueListDeclarationIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9609,17 +9872,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__NameAssignment_0"
-    // InternalTraceryPlusPlus.g:3062:1: rule__NameValueAttribute__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalTraceryPlusPlus.g:3137:1: rule__NameValueAttribute__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__NameValueAttribute__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3066:1: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3067:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3141:1: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3142:2: ( RULE_ID )
             {
-            // InternalTraceryPlusPlus.g:3067:2: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3068:3: RULE_ID
+            // InternalTraceryPlusPlus.g:3142:2: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3143:3: RULE_ID
             {
              before(grammarAccess.getNameValueAttributeAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9646,17 +9909,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__NameValueAttribute__ValueAssignment_2"
-    // InternalTraceryPlusPlus.g:3077:1: rule__NameValueAttribute__ValueAssignment_2 : ( ruleWord ) ;
+    // InternalTraceryPlusPlus.g:3152:1: rule__NameValueAttribute__ValueAssignment_2 : ( ruleWord ) ;
     public final void rule__NameValueAttribute__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3081:1: ( ( ruleWord ) )
-            // InternalTraceryPlusPlus.g:3082:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3156:1: ( ( ruleWord ) )
+            // InternalTraceryPlusPlus.g:3157:2: ( ruleWord )
             {
-            // InternalTraceryPlusPlus.g:3082:2: ( ruleWord )
-            // InternalTraceryPlusPlus.g:3083:3: ruleWord
+            // InternalTraceryPlusPlus.g:3157:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3158:3: ruleWord
             {
              before(grammarAccess.getNameValueAttributeAccess().getValueWordParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -9687,21 +9950,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__VariableAssignment_0"
-    // InternalTraceryPlusPlus.g:3092:1: rule__ListUse__VariableAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:3167:1: rule__ListUse__VariableAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ListUse__VariableAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3096:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3097:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3171:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3172:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3097:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3098:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3172:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3173:3: ( RULE_ID )
             {
              before(grammarAccess.getListUseAccess().getVariableListDeclarationCrossReference_0_0()); 
-            // InternalTraceryPlusPlus.g:3099:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3100:4: RULE_ID
+            // InternalTraceryPlusPlus.g:3174:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3175:4: RULE_ID
             {
              before(grammarAccess.getListUseAccess().getVariableListDeclarationIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9732,17 +9995,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ListUse__ModifiersAssignment_1"
-    // InternalTraceryPlusPlus.g:3111:1: rule__ListUse__ModifiersAssignment_1 : ( ruleModifier ) ;
+    // InternalTraceryPlusPlus.g:3186:1: rule__ListUse__ModifiersAssignment_1 : ( ruleModifier ) ;
     public final void rule__ListUse__ModifiersAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3115:1: ( ( ruleModifier ) )
-            // InternalTraceryPlusPlus.g:3116:2: ( ruleModifier )
+            // InternalTraceryPlusPlus.g:3190:1: ( ( ruleModifier ) )
+            // InternalTraceryPlusPlus.g:3191:2: ( ruleModifier )
             {
-            // InternalTraceryPlusPlus.g:3116:2: ( ruleModifier )
-            // InternalTraceryPlusPlus.g:3117:3: ruleModifier
+            // InternalTraceryPlusPlus.g:3191:2: ( ruleModifier )
+            // InternalTraceryPlusPlus.g:3192:3: ruleModifier
             {
              before(grammarAccess.getListUseAccess().getModifiersModifierParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -9772,30 +10035,30 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
     // $ANTLR end "rule__ListUse__ModifiersAssignment_1"
 
 
-    // $ANTLR start "rule__SubstoryUse__VariableAssignment_1"
-    // InternalTraceryPlusPlus.g:3126:1: rule__SubstoryUse__VariableAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__SubstoryUse__VariableAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__SubstoryUse__VariableAssignment_2"
+    // InternalTraceryPlusPlus.g:3201:1: rule__SubstoryUse__VariableAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__SubstoryUse__VariableAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3130:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3131:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3205:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3206:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3131:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3132:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3206:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3207:3: ( RULE_ID )
             {
-             before(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_1_0()); 
-            // InternalTraceryPlusPlus.g:3133:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3134:4: RULE_ID
+             before(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_2_0()); 
+            // InternalTraceryPlusPlus.g:3208:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3209:4: RULE_ID
             {
-             before(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_1_0()); 
+             after(grammarAccess.getSubstoryUseAccess().getVariableSubstoryDeclarationCrossReference_2_0()); 
 
             }
 
@@ -9814,25 +10077,25 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
         }
         return ;
     }
-    // $ANTLR end "rule__SubstoryUse__VariableAssignment_1"
+    // $ANTLR end "rule__SubstoryUse__VariableAssignment_2"
 
 
     // $ANTLR start "rule__ObjectAttribute__ObjectAssignment_0"
-    // InternalTraceryPlusPlus.g:3145:1: rule__ObjectAttribute__ObjectAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:3220:1: rule__ObjectAttribute__ObjectAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectAttribute__ObjectAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3149:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3150:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3224:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3225:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3150:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3151:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3225:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3226:3: ( RULE_ID )
             {
              before(grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationCrossReference_0_0()); 
-            // InternalTraceryPlusPlus.g:3152:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3153:4: RULE_ID
+            // InternalTraceryPlusPlus.g:3227:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3228:4: RULE_ID
             {
              before(grammarAccess.getObjectAttributeAccess().getObjectObjectDeclarationIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9863,21 +10126,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__AttributeAssignment_2"
-    // InternalTraceryPlusPlus.g:3164:1: rule__ObjectAttribute__AttributeAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:3239:1: rule__ObjectAttribute__AttributeAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectAttribute__AttributeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3168:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3169:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3243:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3244:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3169:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3170:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3244:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3245:3: ( RULE_ID )
             {
              before(grammarAccess.getObjectAttributeAccess().getAttributeAttributeCrossReference_2_0()); 
-            // InternalTraceryPlusPlus.g:3171:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3172:4: RULE_ID
+            // InternalTraceryPlusPlus.g:3246:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3247:4: RULE_ID
             {
              before(grammarAccess.getObjectAttributeAccess().getAttributeAttributeIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9908,17 +10171,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectAttribute__ModifiersAssignment_3"
-    // InternalTraceryPlusPlus.g:3183:1: rule__ObjectAttribute__ModifiersAssignment_3 : ( ruleModifier ) ;
+    // InternalTraceryPlusPlus.g:3258:1: rule__ObjectAttribute__ModifiersAssignment_3 : ( ruleModifier ) ;
     public final void rule__ObjectAttribute__ModifiersAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3187:1: ( ( ruleModifier ) )
-            // InternalTraceryPlusPlus.g:3188:2: ( ruleModifier )
+            // InternalTraceryPlusPlus.g:3262:1: ( ( ruleModifier ) )
+            // InternalTraceryPlusPlus.g:3263:2: ( ruleModifier )
             {
-            // InternalTraceryPlusPlus.g:3188:2: ( ruleModifier )
-            // InternalTraceryPlusPlus.g:3189:3: ruleModifier
+            // InternalTraceryPlusPlus.g:3263:2: ( ruleModifier )
+            // InternalTraceryPlusPlus.g:3264:3: ruleModifier
             {
              before(grammarAccess.getObjectAttributeAccess().getModifiersModifierParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -9949,21 +10212,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__ObjectAssignment_0"
-    // InternalTraceryPlusPlus.g:3198:1: rule__ObjectPronoun__ObjectAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalTraceryPlusPlus.g:3273:1: rule__ObjectPronoun__ObjectAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__ObjectPronoun__ObjectAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3202:1: ( ( ( RULE_ID ) ) )
-            // InternalTraceryPlusPlus.g:3203:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3277:1: ( ( ( RULE_ID ) ) )
+            // InternalTraceryPlusPlus.g:3278:2: ( ( RULE_ID ) )
             {
-            // InternalTraceryPlusPlus.g:3203:2: ( ( RULE_ID ) )
-            // InternalTraceryPlusPlus.g:3204:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3278:2: ( ( RULE_ID ) )
+            // InternalTraceryPlusPlus.g:3279:3: ( RULE_ID )
             {
              before(grammarAccess.getObjectPronounAccess().getObjectObjectDeclarationCrossReference_0_0()); 
-            // InternalTraceryPlusPlus.g:3205:3: ( RULE_ID )
-            // InternalTraceryPlusPlus.g:3206:4: RULE_ID
+            // InternalTraceryPlusPlus.g:3280:3: ( RULE_ID )
+            // InternalTraceryPlusPlus.g:3281:4: RULE_ID
             {
              before(grammarAccess.getObjectPronounAccess().getObjectObjectDeclarationIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -9994,17 +10257,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__ObjectPronoun__PronounAssignment_2"
-    // InternalTraceryPlusPlus.g:3217:1: rule__ObjectPronoun__PronounAssignment_2 : ( rulePronounIdentifier ) ;
+    // InternalTraceryPlusPlus.g:3292:1: rule__ObjectPronoun__PronounAssignment_2 : ( rulePronounIdentifier ) ;
     public final void rule__ObjectPronoun__PronounAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3221:1: ( ( rulePronounIdentifier ) )
-            // InternalTraceryPlusPlus.g:3222:2: ( rulePronounIdentifier )
+            // InternalTraceryPlusPlus.g:3296:1: ( ( rulePronounIdentifier ) )
+            // InternalTraceryPlusPlus.g:3297:2: ( rulePronounIdentifier )
             {
-            // InternalTraceryPlusPlus.g:3222:2: ( rulePronounIdentifier )
-            // InternalTraceryPlusPlus.g:3223:3: rulePronounIdentifier
+            // InternalTraceryPlusPlus.g:3297:2: ( rulePronounIdentifier )
+            // InternalTraceryPlusPlus.g:3298:3: rulePronounIdentifier
             {
              before(grammarAccess.getObjectPronounAccess().getPronounPronounIdentifierParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -10035,17 +10298,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__WordsAssignment_0"
-    // InternalTraceryPlusPlus.g:3232:1: rule__WordList__WordsAssignment_0 : ( ruleWord ) ;
+    // InternalTraceryPlusPlus.g:3307:1: rule__WordList__WordsAssignment_0 : ( ruleWord ) ;
     public final void rule__WordList__WordsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3236:1: ( ( ruleWord ) )
-            // InternalTraceryPlusPlus.g:3237:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3311:1: ( ( ruleWord ) )
+            // InternalTraceryPlusPlus.g:3312:2: ( ruleWord )
             {
-            // InternalTraceryPlusPlus.g:3237:2: ( ruleWord )
-            // InternalTraceryPlusPlus.g:3238:3: ruleWord
+            // InternalTraceryPlusPlus.g:3312:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3313:3: ruleWord
             {
              before(grammarAccess.getWordListAccess().getWordsWordParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -10076,17 +10339,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__WordList__WordsAssignment_1_1"
-    // InternalTraceryPlusPlus.g:3247:1: rule__WordList__WordsAssignment_1_1 : ( ruleWord ) ;
+    // InternalTraceryPlusPlus.g:3322:1: rule__WordList__WordsAssignment_1_1 : ( ruleWord ) ;
     public final void rule__WordList__WordsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3251:1: ( ( ruleWord ) )
-            // InternalTraceryPlusPlus.g:3252:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3326:1: ( ( ruleWord ) )
+            // InternalTraceryPlusPlus.g:3327:2: ( ruleWord )
             {
-            // InternalTraceryPlusPlus.g:3252:2: ( ruleWord )
-            // InternalTraceryPlusPlus.g:3253:3: ruleWord
+            // InternalTraceryPlusPlus.g:3327:2: ( ruleWord )
+            // InternalTraceryPlusPlus.g:3328:3: ruleWord
             {
              before(grammarAccess.getWordListAccess().getWordsWordParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -10117,17 +10380,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__AttributesAssignment_0"
-    // InternalTraceryPlusPlus.g:3262:1: rule__AttributeList__AttributesAssignment_0 : ( ruleAttribute ) ;
+    // InternalTraceryPlusPlus.g:3337:1: rule__AttributeList__AttributesAssignment_0 : ( ruleAttribute ) ;
     public final void rule__AttributeList__AttributesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3266:1: ( ( ruleAttribute ) )
-            // InternalTraceryPlusPlus.g:3267:2: ( ruleAttribute )
+            // InternalTraceryPlusPlus.g:3341:1: ( ( ruleAttribute ) )
+            // InternalTraceryPlusPlus.g:3342:2: ( ruleAttribute )
             {
-            // InternalTraceryPlusPlus.g:3267:2: ( ruleAttribute )
-            // InternalTraceryPlusPlus.g:3268:3: ruleAttribute
+            // InternalTraceryPlusPlus.g:3342:2: ( ruleAttribute )
+            // InternalTraceryPlusPlus.g:3343:3: ruleAttribute
             {
              before(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -10158,17 +10421,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__AttributeList__AttributesAssignment_1_1"
-    // InternalTraceryPlusPlus.g:3277:1: rule__AttributeList__AttributesAssignment_1_1 : ( ruleAttribute ) ;
+    // InternalTraceryPlusPlus.g:3352:1: rule__AttributeList__AttributesAssignment_1_1 : ( ruleAttribute ) ;
     public final void rule__AttributeList__AttributesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3281:1: ( ( ruleAttribute ) )
-            // InternalTraceryPlusPlus.g:3282:2: ( ruleAttribute )
+            // InternalTraceryPlusPlus.g:3356:1: ( ( ruleAttribute ) )
+            // InternalTraceryPlusPlus.g:3357:2: ( ruleAttribute )
             {
-            // InternalTraceryPlusPlus.g:3282:2: ( ruleAttribute )
-            // InternalTraceryPlusPlus.g:3283:3: ruleAttribute
+            // InternalTraceryPlusPlus.g:3357:2: ( ruleAttribute )
+            // InternalTraceryPlusPlus.g:3358:3: ruleAttribute
             {
              before(grammarAccess.getAttributeListAccess().getAttributesAttributeParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -10199,24 +10462,24 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Pronouns__ValueAssignment_0"
-    // InternalTraceryPlusPlus.g:3292:1: rule__Pronouns__ValueAssignment_0 : ( ( 'He' ) ) ;
+    // InternalTraceryPlusPlus.g:3367:1: rule__Pronouns__ValueAssignment_0 : ( ( 'He' ) ) ;
     public final void rule__Pronouns__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3296:1: ( ( ( 'He' ) ) )
-            // InternalTraceryPlusPlus.g:3297:2: ( ( 'He' ) )
+            // InternalTraceryPlusPlus.g:3371:1: ( ( ( 'He' ) ) )
+            // InternalTraceryPlusPlus.g:3372:2: ( ( 'He' ) )
             {
-            // InternalTraceryPlusPlus.g:3297:2: ( ( 'He' ) )
-            // InternalTraceryPlusPlus.g:3298:3: ( 'He' )
-            {
-             before(grammarAccess.getPronounsAccess().getValueHeKeyword_0_0()); 
-            // InternalTraceryPlusPlus.g:3299:3: ( 'He' )
-            // InternalTraceryPlusPlus.g:3300:4: 'He'
+            // InternalTraceryPlusPlus.g:3372:2: ( ( 'He' ) )
+            // InternalTraceryPlusPlus.g:3373:3: ( 'He' )
             {
              before(grammarAccess.getPronounsAccess().getValueHeKeyword_0_0()); 
-            match(input,48,FOLLOW_2); 
+            // InternalTraceryPlusPlus.g:3374:3: ( 'He' )
+            // InternalTraceryPlusPlus.g:3375:4: 'He'
+            {
+             before(grammarAccess.getPronounsAccess().getValueHeKeyword_0_0()); 
+            match(input,51,FOLLOW_2); 
              after(grammarAccess.getPronounsAccess().getValueHeKeyword_0_0()); 
 
             }
@@ -10244,24 +10507,24 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Pronouns__ValueAssignment_1"
-    // InternalTraceryPlusPlus.g:3311:1: rule__Pronouns__ValueAssignment_1 : ( ( 'She' ) ) ;
+    // InternalTraceryPlusPlus.g:3386:1: rule__Pronouns__ValueAssignment_1 : ( ( 'She' ) ) ;
     public final void rule__Pronouns__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3315:1: ( ( ( 'She' ) ) )
-            // InternalTraceryPlusPlus.g:3316:2: ( ( 'She' ) )
+            // InternalTraceryPlusPlus.g:3390:1: ( ( ( 'She' ) ) )
+            // InternalTraceryPlusPlus.g:3391:2: ( ( 'She' ) )
             {
-            // InternalTraceryPlusPlus.g:3316:2: ( ( 'She' ) )
-            // InternalTraceryPlusPlus.g:3317:3: ( 'She' )
-            {
-             before(grammarAccess.getPronounsAccess().getValueSheKeyword_1_0()); 
-            // InternalTraceryPlusPlus.g:3318:3: ( 'She' )
-            // InternalTraceryPlusPlus.g:3319:4: 'She'
+            // InternalTraceryPlusPlus.g:3391:2: ( ( 'She' ) )
+            // InternalTraceryPlusPlus.g:3392:3: ( 'She' )
             {
              before(grammarAccess.getPronounsAccess().getValueSheKeyword_1_0()); 
-            match(input,49,FOLLOW_2); 
+            // InternalTraceryPlusPlus.g:3393:3: ( 'She' )
+            // InternalTraceryPlusPlus.g:3394:4: 'She'
+            {
+             before(grammarAccess.getPronounsAccess().getValueSheKeyword_1_0()); 
+            match(input,52,FOLLOW_2); 
              after(grammarAccess.getPronounsAccess().getValueSheKeyword_1_0()); 
 
             }
@@ -10289,24 +10552,24 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Pronouns__ValueAssignment_2"
-    // InternalTraceryPlusPlus.g:3330:1: rule__Pronouns__ValueAssignment_2 : ( ( 'It' ) ) ;
+    // InternalTraceryPlusPlus.g:3405:1: rule__Pronouns__ValueAssignment_2 : ( ( 'It' ) ) ;
     public final void rule__Pronouns__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3334:1: ( ( ( 'It' ) ) )
-            // InternalTraceryPlusPlus.g:3335:2: ( ( 'It' ) )
+            // InternalTraceryPlusPlus.g:3409:1: ( ( ( 'It' ) ) )
+            // InternalTraceryPlusPlus.g:3410:2: ( ( 'It' ) )
             {
-            // InternalTraceryPlusPlus.g:3335:2: ( ( 'It' ) )
-            // InternalTraceryPlusPlus.g:3336:3: ( 'It' )
-            {
-             before(grammarAccess.getPronounsAccess().getValueItKeyword_2_0()); 
-            // InternalTraceryPlusPlus.g:3337:3: ( 'It' )
-            // InternalTraceryPlusPlus.g:3338:4: 'It'
+            // InternalTraceryPlusPlus.g:3410:2: ( ( 'It' ) )
+            // InternalTraceryPlusPlus.g:3411:3: ( 'It' )
             {
              before(grammarAccess.getPronounsAccess().getValueItKeyword_2_0()); 
-            match(input,50,FOLLOW_2); 
+            // InternalTraceryPlusPlus.g:3412:3: ( 'It' )
+            // InternalTraceryPlusPlus.g:3413:4: 'It'
+            {
+             before(grammarAccess.getPronounsAccess().getValueItKeyword_2_0()); 
+            match(input,53,FOLLOW_2); 
              after(grammarAccess.getPronounsAccess().getValueItKeyword_2_0()); 
 
             }
@@ -10334,24 +10597,24 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__Pronouns__ValueAssignment_3"
-    // InternalTraceryPlusPlus.g:3349:1: rule__Pronouns__ValueAssignment_3 : ( ( 'They' ) ) ;
+    // InternalTraceryPlusPlus.g:3424:1: rule__Pronouns__ValueAssignment_3 : ( ( 'They' ) ) ;
     public final void rule__Pronouns__ValueAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3353:1: ( ( ( 'They' ) ) )
-            // InternalTraceryPlusPlus.g:3354:2: ( ( 'They' ) )
+            // InternalTraceryPlusPlus.g:3428:1: ( ( ( 'They' ) ) )
+            // InternalTraceryPlusPlus.g:3429:2: ( ( 'They' ) )
             {
-            // InternalTraceryPlusPlus.g:3354:2: ( ( 'They' ) )
-            // InternalTraceryPlusPlus.g:3355:3: ( 'They' )
-            {
-             before(grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0()); 
-            // InternalTraceryPlusPlus.g:3356:3: ( 'They' )
-            // InternalTraceryPlusPlus.g:3357:4: 'They'
+            // InternalTraceryPlusPlus.g:3429:2: ( ( 'They' ) )
+            // InternalTraceryPlusPlus.g:3430:3: ( 'They' )
             {
              before(grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0()); 
-            match(input,51,FOLLOW_2); 
+            // InternalTraceryPlusPlus.g:3431:3: ( 'They' )
+            // InternalTraceryPlusPlus.g:3432:4: 'They'
+            {
+             before(grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0()); 
+            match(input,54,FOLLOW_2); 
              after(grammarAccess.getPronounsAccess().getValueTheyKeyword_3_0()); 
 
             }
@@ -10379,21 +10642,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__PronounIdentifier__NameAssignment"
-    // InternalTraceryPlusPlus.g:3368:1: rule__PronounIdentifier__NameAssignment : ( ( rule__PronounIdentifier__NameAlternatives_0 ) ) ;
+    // InternalTraceryPlusPlus.g:3443:1: rule__PronounIdentifier__NameAssignment : ( ( rule__PronounIdentifier__NameAlternatives_0 ) ) ;
     public final void rule__PronounIdentifier__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:3372:1: ( ( ( rule__PronounIdentifier__NameAlternatives_0 ) ) )
-            // InternalTraceryPlusPlus.g:3373:2: ( ( rule__PronounIdentifier__NameAlternatives_0 ) )
+            // InternalTraceryPlusPlus.g:3447:1: ( ( ( rule__PronounIdentifier__NameAlternatives_0 ) ) )
+            // InternalTraceryPlusPlus.g:3448:2: ( ( rule__PronounIdentifier__NameAlternatives_0 ) )
             {
-            // InternalTraceryPlusPlus.g:3373:2: ( ( rule__PronounIdentifier__NameAlternatives_0 ) )
-            // InternalTraceryPlusPlus.g:3374:3: ( rule__PronounIdentifier__NameAlternatives_0 )
+            // InternalTraceryPlusPlus.g:3448:2: ( ( rule__PronounIdentifier__NameAlternatives_0 ) )
+            // InternalTraceryPlusPlus.g:3449:3: ( rule__PronounIdentifier__NameAlternatives_0 )
             {
              before(grammarAccess.getPronounIdentifierAccess().getNameAlternatives_0()); 
-            // InternalTraceryPlusPlus.g:3375:3: ( rule__PronounIdentifier__NameAlternatives_0 )
-            // InternalTraceryPlusPlus.g:3375:4: rule__PronounIdentifier__NameAlternatives_0
+            // InternalTraceryPlusPlus.g:3450:3: ( rule__PronounIdentifier__NameAlternatives_0 )
+            // InternalTraceryPlusPlus.g:3450:4: rule__PronounIdentifier__NameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__PronounIdentifier__NameAlternatives_0();
@@ -10429,21 +10692,21 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
     protected DFA10 dfa10 = new DFA10(this);
     static final String dfa_1s = "\12\uffff";
-    static final String dfa_2s = "\6\4\1\57\2\uffff\1\4";
-    static final String dfa_3s = "\1\4\1\56\4\5\1\57\2\uffff\1\5";
-    static final String dfa_4s = "\7\uffff\1\1\1\2\1\uffff";
+    static final String dfa_2s = "\6\4\1\62\2\uffff\1\4";
+    static final String dfa_3s = "\1\4\1\61\4\5\1\62\2\uffff\1\5";
+    static final String dfa_4s = "\7\uffff\1\2\1\1\1\uffff";
     static final String dfa_5s = "\12\uffff}>";
     static final String[] dfa_6s = {
             "\1\1",
-            "\1\7\1\10\20\uffff\1\7\4\uffff\1\2\1\3\1\4\1\5\17\uffff\1\6",
-            "\1\7\1\10",
-            "\1\7\1\10",
-            "\1\7\1\10",
-            "\1\7\1\10",
+            "\1\10\1\7\20\uffff\1\10\6\uffff\1\2\1\3\1\4\1\5\20\uffff\1\6",
+            "\1\10\1\7",
+            "\1\10\1\7",
+            "\1\10\1\7",
+            "\1\10\1\7",
             "\1\11",
             "",
             "",
-            "\1\7\1\10"
+            "\1\10\1\7"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -10474,34 +10737,36 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x00000A0000000012L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000480078000030L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000080000000032L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000004000030000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000400078000020L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000280000800012L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00028001E0000030L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000800000000032L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000010000030000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00020001E0000020L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00000000000C0000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000300010L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000F000000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0078000000000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000030000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000440078000010L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000180000000030L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000400078400010L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000000000F800L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000000000F802L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000007800000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000380000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000380000002L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000C80000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000C80000002L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00021001E0000010L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000280000800010L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000C00000000030L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00020001E0400010L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000000000F800L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x000000000000F802L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000001800010L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000000001E000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000E00000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000E00000002L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000003200000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000003200000002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0004000000000000L});
 
 }
