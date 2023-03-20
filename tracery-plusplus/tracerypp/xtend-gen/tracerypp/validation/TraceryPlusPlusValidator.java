@@ -11,12 +11,11 @@ import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
-import tracerypp.traceryPlusPlus.Modifier;
-import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
 import tracerypp.traceryPlusPlus.SubstoryDeclaration;
+import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.Variable;
 
 /**
@@ -60,7 +59,7 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
           String _name_1 = obj.getName();
           String _plus_1 = (_plus + _name_1);
           String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
-          this.error(_plus_2, null);
+          this.error(_plus_2, variable, TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
         }
       }
     }
@@ -95,29 +94,11 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
         if (_equals) {
           String _attributeName_2 = this.getAttributeName(objectAttributes.get(i));
           String _plus = ("Attribute \'" + _attributeName_2);
-          String _plus_1 = (_plus + "\' is used more than once when defining the object.");
+          String _plus_1 = (_plus + "\' is used more than once when defining the object \'");
           String _name = object.getName();
           String _plus_2 = (_plus_1 + _name);
           String _plus_3 = (_plus_2 + "\'.");
-          this.error(_plus_3, null);
-        }
-      }
-    }
-  }
-
-  @Check
-  public void checkDuplicateModifiers(final ModifierList modifiers) {
-    final EList<Modifier> mods = modifiers.getModifiers();
-    for (int i = 0; (i < mods.size()); i++) {
-      for (int j = (i + 1); (j < mods.size()); j++) {
-        Modifier _get = mods.get(i);
-        Modifier _get_1 = mods.get(j);
-        boolean _equals = Objects.equal(_get, _get_1);
-        if (_equals) {
-          Modifier _get_2 = mods.get(i);
-          String _plus = ("Modifier \'" + _get_2);
-          String _plus_1 = (_plus + "\' is used more than once.");
-          this.error(_plus_1, null);
+          this.error(_plus_3, objectAttributes.get(j), TraceryPlusPlusPackage.Literals.ATTRIBUTE__NAME);
         }
       }
     }

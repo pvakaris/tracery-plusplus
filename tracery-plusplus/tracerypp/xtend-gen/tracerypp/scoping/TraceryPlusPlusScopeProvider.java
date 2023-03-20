@@ -4,14 +4,11 @@
 package tracerypp.scoping;
 
 import com.google.common.collect.Iterators;
-import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.eclipse.xtext.xbase.lib.ListExtensions;
@@ -38,22 +35,7 @@ public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvid
       final ObjectDeclaration objectDeclaration = context.getObject();
       IScope _xifexpression = null;
       if ((objectDeclaration != null)) {
-        IScope _xblockexpression_1 = null;
-        {
-          ArrayList<Attribute> attr = CollectionLiterals.<Attribute>newArrayList();
-          EList<Attribute> _attributes = objectDeclaration.getAttributes().getAttributes();
-          for (final Attribute a : _attributes) {
-            if ((a instanceof NameValueAttribute)) {
-              attr.add(a);
-            } else {
-              if ((a instanceof NameExistingListAttribute)) {
-                attr.add(a);
-              }
-            }
-          }
-          _xblockexpression_1 = Scopes.scopeFor(attr);
-        }
-        _xifexpression = _xblockexpression_1;
+        _xifexpression = Scopes.scopeFor(objectDeclaration.getAttributes().getAttributes());
       } else {
         _xifexpression = IScope.NULLSCOPE;
       }

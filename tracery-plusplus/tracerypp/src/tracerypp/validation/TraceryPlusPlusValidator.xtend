@@ -12,6 +12,7 @@ import tracerypp.traceryPlusPlus.ListDeclaration
 import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.SubstoryDeclaration
 import tracerypp.traceryPlusPlus.ModifierList
+import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage
 
 /**
  * This class contains custom validation rules. 
@@ -44,7 +45,7 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	        if (obj.name == variableName) {
 	            count += 1;
 	            if (count > 1) {
-	                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", null)
+	                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variable, TraceryPlusPlusPackage.Literals.VARIABLE__NAME)
 	            }
 	        }
 	   }
@@ -74,25 +75,12 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	   for (var i = 0; i < objectAttributes.size; i++) {
 	      for (var j = i + 1; j < objectAttributes.size; j++) {
 	         if (getAttributeName(objectAttributes.get(i)) == getAttributeName(objectAttributes.get(j))) {
-	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once when defining the object." + object.name + "'.", null)
+	            error("Attribute '" + getAttributeName(objectAttributes.get(i)) + "' is used more than once when defining the object '" + object.name + "'.", objectAttributes.get(j), TraceryPlusPlusPackage.Literals.ATTRIBUTE__NAME)
 	         }
 	      }
 	   }
 	}
 	
-	
-	// Validation rule to check for duplicate modifiers in the modifier list
-	@Check
-	def checkDuplicateModifiers(ModifierList modifiers) {
-		val mods = modifiers.modifiers
-	    for (var i = 0; i < mods.size; i++) {
-	      for (var j = i + 1; j < mods.size; j++) {
-	         if (mods.get(i) == mods.get(j)) {
-	            error("Modifier '" + mods.get(i) + "' is used more than once.", null)
-	         }
-	      }
-	   }
-	}
 	
 	
 	/*

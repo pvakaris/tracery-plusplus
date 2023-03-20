@@ -36,7 +36,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		
 		///*
 		// * Author: Vakaris Paulavicius
-		// * Version 1.0
+		// * Version 1.1
 		// */
 		//TraceryPlusPlusProgram:
 		//    // First all the necessary statements are declared and then the story structure is specified
@@ -1169,7 +1169,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	
 	///*
 	// * Author: Vakaris Paulavicius
-	// * Version 1.0
+	// * Version 1.1
 	// */
 	//TraceryPlusPlusProgram:
 	//    // First all the necessary statements are declared and then the story structure is specified

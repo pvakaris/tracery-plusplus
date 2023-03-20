@@ -27,19 +27,20 @@ class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {
 	def IScope scope_ObjectAttribute_attribute(ObjectAttribute context, EReference ref) {
         val objectDeclaration = context.object
         if (objectDeclaration !== null) {
-        	var attr = newArrayList
-        	for (a : objectDeclaration.attributes.attributes) {
-        		if (a instanceof NameValueAttribute){
-        			attr.add(a)
-        		}
-        		else if (a instanceof NameExistingListAttribute){
-        			attr.add(a)
-        		}
+        	scopeFor(objectDeclaration.attributes.attributes)
+//        	var attr = newArrayList
+//        	for (a : objectDeclaration.attributes.attributes) {
+//        		if (a instanceof NameValueAttribute){
+//        			attr.add(a)
+//        		}
+//        		else if (a instanceof NameExistingListAttribute){
+//        			attr.add(a)
+//        		}
 //        		else if (a instanceof JustNameAttribute) {
-//		    		return a.name.name
+//		    		attrs.add(a.name)
 //		    	}
-        	}
-        	scopeFor(attr)
+//        	}
+//        	scopeFor(attr)
         }
         else {
             IScope.NULLSCOPE
