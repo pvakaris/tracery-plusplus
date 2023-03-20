@@ -8,9 +8,13 @@ import com.google.common.collect.Iterables;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
+import tracerypp.traceryPlusPlus.Modifier;
+import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
@@ -43,41 +47,53 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
    * Check that there are no identical variable names
    */
   @Check
-  public void checkUniqueVariableName(final Variable variable) {
-    final String variableName = variable.getName();
-    final List<Variable> model = IterableExtensions.<Variable>toList(Iterables.<Variable>filter(variable.eContainer().eContents(), Variable.class));
-    int count = 0;
-    for (final Variable obj : model) {
-      String _name = obj.getName();
-      boolean _equals = Objects.equal(_name, variableName);
-      if (_equals) {
-        int _count = count;
-        count = (_count + 1);
-        if ((count > 1)) {
-          String _type = this.getType(obj);
-          String _plus = (_type + " with name \'");
-          String _name_1 = obj.getName();
-          String _plus_1 = (_plus + _name_1);
-          String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
-          this.error(_plus_2, variable, TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
+  public String checkUniqueVariableName(final Variable variable) {
+    String _xtrycatchfinallyexpression = null;
+    try {
+      final String variableName = variable.getName();
+      final List<Variable> model = IterableExtensions.<Variable>toList(Iterables.<Variable>filter(variable.eContainer().eContents(), Variable.class));
+      int count = 0;
+      for (final Variable obj : model) {
+        String _name = obj.getName();
+        boolean _equals = Objects.equal(_name, variableName);
+        if (_equals) {
+          int _count = count;
+          count = (_count + 1);
+          if ((count > 1)) {
+            String _type = this.getType(obj);
+            String _plus = (_type + " with name \'");
+            String _name_1 = obj.getName();
+            String _plus_1 = (_plus + _name_1);
+            String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
+            this.error(_plus_2, variable, 
+              TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
+          }
         }
       }
+    } catch (final Throwable _t) {
+      if (_t instanceof Throwable) {
+        final Throwable e = (Throwable)_t;
+        _xtrycatchfinallyexpression = InputOutput.<String>print(("Error: " + e));
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
     }
+    return _xtrycatchfinallyexpression;
   }
 
   @Check
-  public void checkUniqueObjectName(final ObjectDeclaration object) {
-    this.checkUniqueVariableName(object);
+  public String checkUniqueObjectName(final ObjectDeclaration object) {
+    return this.checkUniqueVariableName(object);
   }
 
   @Check
-  public void checkUniqueListName(final ListDeclaration list) {
-    this.checkUniqueVariableName(list);
+  public String checkUniqueListName(final ListDeclaration list) {
+    return this.checkUniqueVariableName(list);
   }
 
   @Check
-  public void checkUniqueSubstoryName(final SubstoryDeclaration substory) {
-    this.checkUniqueVariableName(substory);
+  public String checkUniqueSubstoryName(final SubstoryDeclaration substory) {
+    return this.checkUniqueVariableName(substory);
   }
 
   /**
@@ -104,11 +120,29 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
     }
   }
 
+  @Check
+  public void checkDuplicateModifiers(final ModifierList modifiers) {
+    final EList<Modifier> mods = modifiers.getModifiers();
+    for (int i = 0; (i < mods.size()); i++) {
+      for (int j = (i + 1); (j < mods.size()); j++) {
+        Modifier _get = mods.get(i);
+        Modifier _get_1 = mods.get(j);
+        boolean _equals = Objects.equal(_get, _get_1);
+        if (_equals) {
+          Modifier _get_2 = mods.get(i);
+          String _plus = ("Modifier \'" + _get_2);
+          String _plus_1 = (_plus + "\' is used more than once.");
+          this.error(_plus_1, null);
+        }
+      }
+    }
+  }
+
   /**
    * Was used before because the structure for retrieving the attribute name was different for
    * different ways of defining the attribute
    */
-  public String getAttributeName(final Attribute attribute) {
+  private String getAttributeName(final Attribute attribute) {
     if ((attribute instanceof NameExistingListAttribute)) {
       return ((NameExistingListAttribute)attribute).getName();
     } else {
@@ -122,7 +156,7 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
   /**
    * Used to get the text to be showed to the user when a mistake is detected defining a variable
    */
-  public String getType(final Variable obj) {
+  private String getType(final Variable obj) {
     boolean _matched = false;
     if (obj instanceof ObjectDeclaration) {
       _matched=true;

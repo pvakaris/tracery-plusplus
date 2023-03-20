@@ -38,17 +38,24 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	 */
 	@Check
 	def checkUniqueVariableName(Variable variable) {
-	   val variableName = variable.name
-	   val model = variable.eContainer().eContents.filter(Variable).toList
-	   var count = 0
-	   for (obj : model) {
-	        if (obj.name == variableName) {
-	            count += 1;
-	            if (count > 1) {
-	                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variable, TraceryPlusPlusPackage.Literals.VARIABLE__NAME)
-	            }
-	        }
-	   }
+		try {
+		   val variableName = variable.name
+		   val model = variable.eContainer().eContents.filter(Variable).toList
+		   var count = 0
+		   for (obj : model) {
+		        if (obj.name == variableName) {
+		            count += 1;
+		            if (count > 1) {
+		                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variable,
+		                	TraceryPlusPlusPackage.Literals.VARIABLE__NAME
+		                )
+		            }
+		        }
+			}
+		}
+		catch(Throwable e) {
+			print("Error: " + e)
+		}
 	}
 	
 	@Check
@@ -82,12 +89,24 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	}
 	
 	
+	// Validation rule to check for duplicate modifiers in the modifier list
+	@Check
+	def checkDuplicateModifiers(ModifierList modifiers) {
+		val mods = modifiers.modifiers
+	    for (var i = 0; i < mods.size; i++) {
+	      for (var j = i + 1; j < mods.size; j++) {
+	         if (mods.get(i) == mods.get(j)) {
+	            error("Modifier '" + mods.get(i) + "' is used more than once.", null)
+	         }
+	      }
+	   }
+	}
 	
 	/*
 	 * Was used before because the structure for retrieving the attribute name was different for
 	 * different ways of defining the attribute
 	 */
-	def getAttributeName(Attribute attribute) {
+	private def getAttributeName(Attribute attribute) {
     	if(attribute instanceof NameExistingListAttribute) {
     		return attribute.name
     	}
@@ -102,7 +121,7 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	/*
 	 * Used to get the text to be showed to the user when a mistake is detected defining a variable
 	 */
-	def getType(Variable obj) {
+	private def getType(Variable obj) {
         switch (obj) {
 	        ObjectDeclaration: return "Object"
 	        ListDeclaration: return "List"

@@ -10,7 +10,7 @@ generate traceryPlusPlus "http://www.TraceryPlusPlus.tracerypp"
 TraceryPlusPlusProgram:
 	// First all the necessary statements are declared and then the story structure is specified
 	statements += Statement*
-	story = Story
+	story = Story?
 ;
 	 
 Statement:
