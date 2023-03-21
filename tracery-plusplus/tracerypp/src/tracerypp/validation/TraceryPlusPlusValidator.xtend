@@ -88,7 +88,7 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	 */
 	@Check(NORMAL)
 	def checkIfStoryIsDefined(TraceryPlusPlusProgram program) {
-		if(program.story === null) {
+		if(program === null || program.story === null) {
 			warning("Define your story. This can be done by writing 'The story'", program.story, TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY)
 		}
 	}

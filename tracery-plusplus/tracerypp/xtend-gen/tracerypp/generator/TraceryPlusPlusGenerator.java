@@ -59,9 +59,7 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   }
 
   public CharSequence generate(final TraceryPlusPlusProgram program) {
-    Story _story = program.getStory();
-    boolean _tripleEquals = (_story == null);
-    if (_tripleEquals) {
+    if (((program == null) || (program.getStory() == null))) {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("{");
       _builder.newLine();

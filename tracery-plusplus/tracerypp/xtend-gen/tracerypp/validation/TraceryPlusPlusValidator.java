@@ -18,7 +18,6 @@ import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
-import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.SubstoryDeclaration;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
@@ -118,9 +117,7 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
    */
   @Check(CheckType.NORMAL)
   public void checkIfStoryIsDefined(final TraceryPlusPlusProgram program) {
-    Story _story = program.getStory();
-    boolean _tripleEquals = (_story == null);
-    if (_tripleEquals) {
+    if (((program == null) || (program.getStory() == null))) {
       this.warning("Define your story. This can be done by writing \'The story\'", program.getStory(), TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY);
     }
   }
