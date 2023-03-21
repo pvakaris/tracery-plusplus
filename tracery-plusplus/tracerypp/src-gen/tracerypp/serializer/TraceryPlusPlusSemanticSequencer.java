@@ -377,7 +377,7 @@ public class TraceryPlusPlusSemanticSequencer extends AbstractDelegatingSemantic
 	 *     TraceryPlusPlusProgram returns TraceryPlusPlusProgram
 	 *
 	 * Constraint:
-	 *     (statements+=Statement* story=Story)
+	 *     ((statements+=Statement+ story=Story) | story=Story)?
 	 * </pre>
 	 */
 	protected void sequence_TraceryPlusPlusProgram(ISerializationContext context, TraceryPlusPlusProgram semanticObject) {

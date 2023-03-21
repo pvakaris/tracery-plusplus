@@ -13,6 +13,7 @@ import tracerypp.traceryPlusPlus.Variable
 import tracerypp.traceryPlusPlus.SubstoryDeclaration
 import tracerypp.traceryPlusPlus.ModifierList
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
 
 /**
  * This class contains custom validation rules. 
@@ -37,40 +38,19 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	 * Check that there are no identical variable names
 	 */
 	@Check
-	def checkUniqueVariableName(Variable variable) {
-		try {
-		   val variableName = variable.name
-		   val model = variable.eContainer().eContents.filter(Variable).toList
-		   var count = 0
-		   for (obj : model) {
-		        if (obj.name == variableName) {
-		            count += 1;
-		            if (count > 1) {
-		                error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variable,
-		                	TraceryPlusPlusPackage.Literals.VARIABLE__NAME
-		                )
-		            }
-		        }
-			}
-		}
-		catch(Throwable e) {
-			print("Error: " + e)
-		}
-	}
-	
-	@Check
-	def checkUniqueObjectName(ObjectDeclaration object) {
-	    checkUniqueVariableName(object)
-	}
-	
-	@Check
-	def checkUniqueListName(ListDeclaration list) {
-	    checkUniqueVariableName(list)
-	}
-	
-	@Check
-	def checkUniqueSubstoryName(SubstoryDeclaration substory) {
-	    checkUniqueVariableName(substory)
+	def checkUniqueVariableName(TraceryPlusPlusProgram program) {
+	   val variables = program.statements.filter(Variable)
+	   
+		for (var i = 0; i < variables.size; i++) {
+	      for (var j = i + 1; j < variables.size; j++) {
+	      	
+	         if (variables.get(i).name == variables.get(j).name) {
+	         	val obj = variables.get(i)
+	            error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variables.get(j),
+		                	TraceryPlusPlusPackage.Literals.VARIABLE__NAME)
+	         }
+	      }
+   		}
 	}
 	
 	/*
@@ -100,6 +80,17 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	         }
 	      }
 	   }
+	}
+	
+    /*
+	 * Validation rule to check if the story is defined. The Story is left optional with the purpose to provide a better
+	 * message to the user
+	 */
+	@Check(NORMAL)
+	def checkIfStoryIsDefined(TraceryPlusPlusProgram program) {
+		if(program.story === null) {
+			warning("Define your story. This can be done by writing 'The story'", program.story, TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY)
+		}
 	}
 	
 	/*

@@ -153,7 +153,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTraceryPlusPlusProgram"
-    // InternalTraceryPlusPlus.g:72:1: ruleTraceryPlusPlusProgram returns [EObject current=null] : ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) ) ;
+    // InternalTraceryPlusPlus.g:72:1: ruleTraceryPlusPlusProgram returns [EObject current=null] : ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )? ) ;
     public final EObject ruleTraceryPlusPlusProgram() throws RecognitionException {
         EObject current = null;
 
@@ -166,11 +166,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTraceryPlusPlus.g:78:2: ( ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) ) )
-            // InternalTraceryPlusPlus.g:79:2: ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) )
+            // InternalTraceryPlusPlus.g:78:2: ( ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )? ) )
+            // InternalTraceryPlusPlus.g:79:2: ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )? )
             {
-            // InternalTraceryPlusPlus.g:79:2: ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) ) )
-            // InternalTraceryPlusPlus.g:80:3: ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )
+            // InternalTraceryPlusPlus.g:79:2: ( ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )? )
+            // InternalTraceryPlusPlus.g:80:3: ( (lv_statements_0_0= ruleStatement ) )* ( (lv_story_1_0= ruleStory ) )?
             {
             // InternalTraceryPlusPlus.g:80:3: ( (lv_statements_0_0= ruleStatement ) )*
             loop1:
@@ -221,34 +221,45 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalTraceryPlusPlus.g:99:3: ( (lv_story_1_0= ruleStory ) )
-            // InternalTraceryPlusPlus.g:100:4: (lv_story_1_0= ruleStory )
-            {
-            // InternalTraceryPlusPlus.g:100:4: (lv_story_1_0= ruleStory )
-            // InternalTraceryPlusPlus.g:101:5: lv_story_1_0= ruleStory
-            {
+            // InternalTraceryPlusPlus.g:99:3: ( (lv_story_1_0= ruleStory ) )?
+            int alt2=2;
+            int LA2_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryStoryParserRuleCall_1_0());
-            				
-            pushFollow(FOLLOW_2);
-            lv_story_1_0=ruleStory();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
-            					}
-            					set(
-            						current,
-            						"story",
-            						lv_story_1_0,
-            						"tracerypp.TraceryPlusPlus.Story");
-            					afterParserOrEnumRuleCall();
-            				
-
+            if ( (LA2_0==11) ) {
+                alt2=1;
             }
+            switch (alt2) {
+                case 1 :
+                    // InternalTraceryPlusPlus.g:100:4: (lv_story_1_0= ruleStory )
+                    {
+                    // InternalTraceryPlusPlus.g:100:4: (lv_story_1_0= ruleStory )
+                    // InternalTraceryPlusPlus.g:101:5: lv_story_1_0= ruleStory
+                    {
 
+                    					newCompositeNode(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryStoryParserRuleCall_1_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_story_1_0=ruleStory();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getTraceryPlusPlusProgramRule());
+                    					}
+                    					set(
+                    						current,
+                    						"story",
+                    						lv_story_1_0,
+                    						"tracerypp.TraceryPlusPlus.Story");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -412,32 +423,32 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:161:2: (this_ListDeclaration_0= ruleListDeclaration | this_ObjectDeclaration_1= ruleObjectDeclaration | this_SubstoryDeclaration_2= ruleSubstoryDeclaration )
             {
             // InternalTraceryPlusPlus.g:161:2: (this_ListDeclaration_0= ruleListDeclaration | this_ObjectDeclaration_1= ruleObjectDeclaration | this_SubstoryDeclaration_2= ruleSubstoryDeclaration )
-            int alt2=3;
+            int alt3=3;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
-                alt2=1;
+                alt3=1;
                 }
                 break;
             case 18:
                 {
-                alt2=2;
+                alt3=2;
                 }
                 break;
             case 24:
             case 25:
                 {
-                alt2=3;
+                alt3=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:162:3: this_ListDeclaration_0= ruleListDeclaration
                     {
@@ -570,35 +581,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:206:2: (this_ListUse_0= ruleListUse | this_ObjectUse_1= ruleObjectUse | this_SubstoryUse_2= ruleSubstoryUse )
             {
             // InternalTraceryPlusPlus.g:206:2: (this_ListUse_0= ruleListUse | this_ObjectUse_1= ruleObjectUse | this_SubstoryUse_2= ruleSubstoryUse )
-            int alt3=3;
-            int LA3_0 = input.LA(1);
+            int alt4=3;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_ID) ) {
-                int LA3_1 = input.LA(2);
+            if ( (LA4_0==RULE_ID) ) {
+                int LA4_1 = input.LA(2);
 
-                if ( (LA3_1==31||(LA3_1>=46 && LA3_1<=49)) ) {
-                    alt3=2;
+                if ( (LA4_1==31||(LA4_1>=46 && LA4_1<=49)) ) {
+                    alt4=2;
                 }
-                else if ( (LA3_1==EOF||(LA3_1>=RULE_ID && LA3_1<=RULE_STRING)||LA3_1==27||LA3_1==29||(LA3_1>=50 && LA3_1<=54)) ) {
-                    alt3=1;
+                else if ( (LA4_1==EOF||(LA4_1>=RULE_ID && LA4_1<=RULE_STRING)||LA4_1==27||LA4_1==29||(LA4_1>=50 && LA4_1<=54)) ) {
+                    alt4=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 3, 1, input);
+                        new NoViableAltException("", 4, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA3_0==29) ) {
-                alt3=3;
+            else if ( (LA4_0==29) ) {
+                alt4=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:207:3: this_ListUse_0= ruleListUse
                     {
@@ -753,13 +764,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_2, grammarAccess.getStoryAccess().getStoryKeyword_2());
             		
             // InternalTraceryPlusPlus.g:267:3: ( ruleAssignmentOperator )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA4_0==19||LA4_0==26||(LA4_0>=36 && LA4_0<=39)) ) {
-                alt4=1;
+            if ( (LA5_0==19||LA5_0==26||(LA5_0>=36 && LA5_0<=39)) ) {
+                alt5=1;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:268:4: ruleAssignmentOperator
                     {
@@ -781,17 +792,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:276:3: ( ( (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse ) ) )*
-            loop6:
+            loop7:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_STRING)||LA6_0==29) ) {
-                    alt6=1;
+                if ( ((LA7_0>=RULE_ID && LA7_0<=RULE_STRING)||LA7_0==29) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt7) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:277:4: ( (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse ) )
             	    {
@@ -799,22 +810,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    // InternalTraceryPlusPlus.g:278:5: (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse )
             	    {
             	    // InternalTraceryPlusPlus.g:278:5: (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse )
-            	    int alt5=2;
-            	    int LA5_0 = input.LA(1);
+            	    int alt6=2;
+            	    int LA6_0 = input.LA(1);
 
-            	    if ( (LA5_0==RULE_STRING) ) {
-            	        alt5=1;
+            	    if ( (LA6_0==RULE_STRING) ) {
+            	        alt6=1;
             	    }
-            	    else if ( (LA5_0==RULE_ID||LA5_0==29) ) {
-            	        alt5=2;
+            	    else if ( (LA6_0==RULE_ID||LA6_0==29) ) {
+            	        alt6=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 5, 0, input);
+            	            new NoViableAltException("", 6, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt5) {
+            	    switch (alt6) {
             	        case 1 :
             	            // InternalTraceryPlusPlus.g:279:6: lv_story_4_1= ruleWord
             	            {
@@ -876,7 +887,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop7;
                 }
             } while (true);
 
@@ -992,35 +1003,35 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:350:3: ( (otherlv_1= 'can' otherlv_2= 'have' otherlv_3= 'values' ) | (otherlv_4= 'can' otherlv_5= 'be' ) | ( (otherlv_6= 'has' | otherlv_7= 'have' ) otherlv_8= 'values' ) )
-            int alt8=3;
-            int LA8_0 = input.LA(1);
+            int alt9=3;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==13) ) {
-                int LA8_1 = input.LA(2);
+            if ( (LA9_0==13) ) {
+                int LA9_1 = input.LA(2);
 
-                if ( (LA8_1==16) ) {
-                    alt8=2;
+                if ( (LA9_1==16) ) {
+                    alt9=2;
                 }
-                else if ( (LA8_1==14) ) {
-                    alt8=1;
+                else if ( (LA9_1==14) ) {
+                    alt9=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 8, 1, input);
+                        new NoViableAltException("", 9, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA8_0==14||LA8_0==17) ) {
-                alt8=3;
+            else if ( (LA9_0==14||LA9_0==17) ) {
+                alt9=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:351:4: (otherlv_1= 'can' otherlv_2= 'have' otherlv_3= 'values' )
                     {
@@ -1072,22 +1083,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     // InternalTraceryPlusPlus.g:378:5: (otherlv_6= 'has' | otherlv_7= 'have' ) otherlv_8= 'values'
                     {
                     // InternalTraceryPlusPlus.g:378:5: (otherlv_6= 'has' | otherlv_7= 'have' )
-                    int alt7=2;
-                    int LA7_0 = input.LA(1);
+                    int alt8=2;
+                    int LA8_0 = input.LA(1);
 
-                    if ( (LA7_0==17) ) {
-                        alt7=1;
+                    if ( (LA8_0==17) ) {
+                        alt8=1;
                     }
-                    else if ( (LA7_0==14) ) {
-                        alt7=2;
+                    else if ( (LA8_0==14) ) {
+                        alt8=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 7, 0, input);
+                            new NoViableAltException("", 8, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt7) {
+                    switch (alt8) {
                         case 1 :
                             // InternalTraceryPlusPlus.g:379:6: otherlv_6= 'has'
                             {
@@ -1125,13 +1136,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:395:3: ( ruleAssignmentOperator )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==19||LA9_0==26||(LA9_0>=36 && LA9_0<=39)) ) {
-                alt9=1;
+            if ( (LA10_0==19||LA10_0==26||(LA10_0>=36 && LA10_0<=39)) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:396:4: ruleAssignmentOperator
                     {
@@ -1275,22 +1286,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_0, grammarAccess.getObjectDeclarationAccess().getThereKeyword_0());
             		
             // InternalTraceryPlusPlus.g:446:3: (otherlv_1= 'is' | otherlv_2= 'are' )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==19) ) {
-                alt10=1;
+            if ( (LA11_0==19) ) {
+                alt11=1;
             }
-            else if ( (LA10_0==20) ) {
-                alt10=2;
+            else if ( (LA11_0==20) ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:447:4: otherlv_1= 'is'
                     {
@@ -1315,16 +1326,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:457:3: (otherlv_3= 'a' | otherlv_4= 'an' )?
-            int alt11=3;
-            int LA11_0 = input.LA(1);
+            int alt12=3;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==21) ) {
-                alt11=1;
+            if ( (LA12_0==21) ) {
+                alt12=1;
             }
-            else if ( (LA11_0==22) ) {
-                alt11=2;
+            else if ( (LA12_0==22) ) {
+                alt12=2;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:458:4: otherlv_3= 'a'
                     {
@@ -1406,22 +1417,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:505:3: (otherlv_7= 'has' | otherlv_8= 'have' )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==17) ) {
-                alt12=1;
+            if ( (LA13_0==17) ) {
+                alt13=1;
             }
-            else if ( (LA12_0==14) ) {
-                alt12=2;
+            else if ( (LA13_0==14) ) {
+                alt13=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:506:4: otherlv_7= 'has'
                     {
@@ -1446,13 +1457,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:516:3: (otherlv_9= 'attributes' )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==23) ) {
-                alt13=1;
+            if ( (LA14_0==23) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:517:4: otherlv_9= 'attributes'
                     {
@@ -1467,13 +1478,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:522:3: ( ruleAssignmentOperator )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==19||LA14_0==26||(LA14_0>=36 && LA14_0<=39)) ) {
-                alt14=1;
+            if ( (LA15_0==19||LA15_0==26||(LA15_0>=36 && LA15_0<=39)) ) {
+                alt15=1;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:523:4: ruleAssignmentOperator
                     {
@@ -1609,13 +1620,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:569:3: (otherlv_0= 'define' )? otherlv_1= 'substory' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ':' ( ( (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse ) ) )* otherlv_5= 'end-substory'
             {
             // InternalTraceryPlusPlus.g:569:3: (otherlv_0= 'define' )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==24) ) {
-                alt15=1;
+            if ( (LA16_0==24) ) {
+                alt16=1;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:570:4: otherlv_0= 'define'
                     {
@@ -1664,17 +1675,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_3, grammarAccess.getSubstoryDeclarationAccess().getColonKeyword_3());
             		
             // InternalTraceryPlusPlus.g:601:3: ( ( (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse ) ) )*
-            loop17:
+            loop18:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( ((LA17_0>=RULE_ID && LA17_0<=RULE_STRING)||LA17_0==29) ) {
-                    alt17=1;
+                if ( ((LA18_0>=RULE_ID && LA18_0<=RULE_STRING)||LA18_0==29) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt18) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:602:4: ( (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse ) )
             	    {
@@ -1682,22 +1693,22 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    // InternalTraceryPlusPlus.g:603:5: (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse )
             	    {
             	    // InternalTraceryPlusPlus.g:603:5: (lv_story_4_1= ruleWord | lv_story_4_2= ruleVariableUse )
-            	    int alt16=2;
-            	    int LA16_0 = input.LA(1);
+            	    int alt17=2;
+            	    int LA17_0 = input.LA(1);
 
-            	    if ( (LA16_0==RULE_STRING) ) {
-            	        alt16=1;
+            	    if ( (LA17_0==RULE_STRING) ) {
+            	        alt17=1;
             	    }
-            	    else if ( (LA16_0==RULE_ID||LA16_0==29) ) {
-            	        alt16=2;
+            	    else if ( (LA17_0==RULE_ID||LA17_0==29) ) {
+            	        alt17=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 16, 0, input);
+            	            new NoViableAltException("", 17, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt16) {
+            	    switch (alt17) {
             	        case 1 :
             	            // InternalTraceryPlusPlus.g:604:6: lv_story_4_1= ruleWord
             	            {
@@ -1759,7 +1770,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop18;
                 }
             } while (true);
 
@@ -1938,9 +1949,9 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:695:2: (this_NameExistingListAttribute_0= ruleNameExistingListAttribute | this_NameValueAttribute_1= ruleNameValueAttribute )
             {
             // InternalTraceryPlusPlus.g:695:2: (this_NameExistingListAttribute_0= ruleNameExistingListAttribute | this_NameValueAttribute_1= ruleNameValueAttribute )
-            int alt18=2;
-            alt18 = dfa18.predict(input);
-            switch (alt18) {
+            int alt19=2;
+            alt19 = dfa19.predict(input);
+            switch (alt19) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:696:3: this_NameExistingListAttribute_0= ruleNameExistingListAttribute
                     {
@@ -2081,16 +2092,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:750:3: ( ruleAssignmentOperator | otherlv_2= 'from' )?
-            int alt19=3;
-            int LA19_0 = input.LA(1);
+            int alt20=3;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA19_0==19||LA19_0==26||(LA19_0>=36 && LA19_0<=39)) ) {
-                alt19=1;
+            if ( (LA20_0==19||LA20_0==26||(LA20_0>=36 && LA20_0<=39)) ) {
+                alt20=1;
             }
-            else if ( (LA19_0==28) ) {
-                alt19=2;
+            else if ( (LA20_0==28) ) {
+                alt20=2;
             }
-            switch (alt19) {
+            switch (alt20) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:751:4: ruleAssignmentOperator
                     {
@@ -2246,13 +2257,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:814:3: ( ruleAssignmentOperator )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            if ( (LA20_0==19||LA20_0==26||(LA20_0>=36 && LA20_0<=39)) ) {
-                alt20=1;
+            if ( (LA21_0==19||LA21_0==26||(LA21_0>=36 && LA21_0<=39)) ) {
+                alt21=1;
             }
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:815:4: ruleAssignmentOperator
                     {
@@ -2516,16 +2527,16 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_0, grammarAccess.getSubstoryUseAccess().getUseKeyword_0());
             		
             // InternalTraceryPlusPlus.g:916:3: (otherlv_1= 'substory' | otherlv_2= 'sub' )?
-            int alt21=3;
-            int LA21_0 = input.LA(1);
+            int alt22=3;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==25) ) {
-                alt21=1;
+            if ( (LA22_0==25) ) {
+                alt22=1;
             }
-            else if ( (LA21_0==30) ) {
-                alt21=2;
+            else if ( (LA22_0==30) ) {
+                alt22=2;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:917:4: otherlv_1= 'substory'
                     {
@@ -2646,32 +2657,32 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:958:2: (this_ObjectAttribute_0= ruleObjectAttribute | this_ObjectPronoun_1= ruleObjectPronoun )
             {
             // InternalTraceryPlusPlus.g:958:2: (this_ObjectAttribute_0= ruleObjectAttribute | this_ObjectPronoun_1= ruleObjectPronoun )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( (LA22_0==RULE_ID) ) {
-                int LA22_1 = input.LA(2);
+            if ( (LA23_0==RULE_ID) ) {
+                int LA23_1 = input.LA(2);
 
-                if ( (LA22_1==31) ) {
-                    alt22=1;
+                if ( (LA23_1==31) ) {
+                    alt23=1;
                 }
-                else if ( ((LA22_1>=46 && LA22_1<=49)) ) {
-                    alt22=2;
+                else if ( ((LA23_1>=46 && LA23_1<=49)) ) {
+                    alt23=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 22, 1, input);
+                        new NoViableAltException("", 23, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:959:3: this_ObjectAttribute_0= ruleObjectAttribute
                     {
@@ -3103,17 +3114,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:1133:3: ( ruleSeparatorOr ( (lv_words_2_0= ruleWord ) ) )*
-            loop23:
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA23_0>=41 && LA23_0<=43)) ) {
-                    alt23=1;
+                if ( ((LA24_0>=41 && LA24_0<=43)) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:1134:4: ruleSeparatorOr ( (lv_words_2_0= ruleWord ) )
             	    {
@@ -3164,7 +3175,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -3278,17 +3289,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:1199:3: ( ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) ) )*
-            loop24:
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==41||(LA24_0>=44 && LA24_0<=45)) ) {
-                    alt24=1;
+                if ( (LA25_0==41||(LA25_0>=44 && LA25_0<=45)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:1200:4: ruleSeparatorAnd ( (lv_attributes_2_0= ruleAttribute ) )
             	    {
@@ -3339,7 +3350,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -3425,36 +3436,36 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1247:4: (lv_value_0_1= 'He' | lv_value_0_2= 'She' | lv_value_0_3= 'It' | lv_value_0_4= 'They' )
             {
             // InternalTraceryPlusPlus.g:1247:4: (lv_value_0_1= 'He' | lv_value_0_2= 'She' | lv_value_0_3= 'It' | lv_value_0_4= 'They' )
-            int alt25=4;
+            int alt26=4;
             switch ( input.LA(1) ) {
             case 32:
                 {
-                alt25=1;
+                alt26=1;
                 }
                 break;
             case 33:
                 {
-                alt25=2;
+                alt26=2;
                 }
                 break;
             case 34:
                 {
-                alt25=3;
+                alt26=3;
                 }
                 break;
             case 35:
                 {
-                alt25=4;
+                alt26=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1248:5: lv_value_0_1= 'He'
                     {
@@ -3613,17 +3624,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             }
 
             // InternalTraceryPlusPlus.g:1319:3: ( (lv_modifiers_1_0= ruleModifier ) )*
-            loop26:
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( ((LA26_0>=50 && LA26_0<=54)) ) {
-                    alt26=1;
+                if ( ((LA27_0>=50 && LA27_0<=54)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:1320:4: (lv_modifiers_1_0= ruleModifier )
             	    {
@@ -3657,7 +3668,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop27;
                 }
             } while (true);
 
@@ -3734,41 +3745,41 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1356:2: (kw= '=' | kw= ':' | kw= '-' | kw= '-->' | ( (kw= 'is' )? kw= 'equal' kw= 'to' ) | kw= 'is' )
             {
             // InternalTraceryPlusPlus.g:1356:2: (kw= '=' | kw= ':' | kw= '-' | kw= '-->' | ( (kw= 'is' )? kw= 'equal' kw= 'to' ) | kw= 'is' )
-            int alt28=6;
+            int alt29=6;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt28=1;
+                alt29=1;
                 }
                 break;
             case 26:
                 {
-                alt28=2;
+                alt29=2;
                 }
                 break;
             case 37:
                 {
-                alt28=3;
+                alt29=3;
                 }
                 break;
             case 38:
                 {
-                alt28=4;
+                alt29=4;
                 }
                 break;
             case 19:
                 {
-                int LA28_5 = input.LA(2);
+                int LA29_5 = input.LA(2);
 
-                if ( (LA28_5==39) ) {
-                    alt28=5;
+                if ( (LA29_5==39) ) {
+                    alt29=5;
                 }
-                else if ( (LA28_5==EOF||(LA28_5>=RULE_ID && LA28_5<=RULE_STRING)||LA28_5==29) ) {
-                    alt28=6;
+                else if ( (LA29_5==EOF||(LA29_5>=RULE_ID && LA29_5<=RULE_STRING)||LA29_5==29) ) {
+                    alt29=6;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 28, 5, input);
+                        new NoViableAltException("", 29, 5, input);
 
                     throw nvae;
                 }
@@ -3776,17 +3787,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                 break;
             case 39:
                 {
-                alt28=5;
+                alt29=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 29, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt29) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1357:3: kw= '='
                     {
@@ -3838,13 +3849,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
                     // InternalTraceryPlusPlus.g:1382:4: (kw= 'is' )? kw= 'equal' kw= 'to'
                     {
                     // InternalTraceryPlusPlus.g:1382:4: (kw= 'is' )?
-                    int alt27=2;
-                    int LA27_0 = input.LA(1);
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
 
-                    if ( (LA27_0==19) ) {
-                        alt27=1;
+                    if ( (LA28_0==19) ) {
+                        alt28=1;
                     }
-                    switch (alt27) {
+                    switch (alt28) {
                         case 1 :
                             // InternalTraceryPlusPlus.g:1383:5: kw= 'is'
                             {
@@ -3959,31 +3970,31 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1424:2: (kw= ',' | kw= 'or' | kw= '||' )
             {
             // InternalTraceryPlusPlus.g:1424:2: (kw= ',' | kw= 'or' | kw= '||' )
-            int alt29=3;
+            int alt30=3;
             switch ( input.LA(1) ) {
             case 41:
                 {
-                alt29=1;
+                alt30=1;
                 }
                 break;
             case 42:
                 {
-                alt29=2;
+                alt30=2;
                 }
                 break;
             case 43:
                 {
-                alt29=3;
+                alt30=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 29, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1425:3: kw= ','
                     {
@@ -4090,31 +4101,31 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1460:2: (kw= ',' | kw= 'and' | kw= '&&' )
             {
             // InternalTraceryPlusPlus.g:1460:2: (kw= ',' | kw= 'and' | kw= '&&' )
-            int alt30=3;
+            int alt31=3;
             switch ( input.LA(1) ) {
             case 41:
                 {
-                alt30=1;
+                alt31=1;
                 }
                 break;
             case 44:
                 {
-                alt30=2;
+                alt31=2;
                 }
                 break;
             case 45:
                 {
-                alt30=3;
+                alt31=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1461:3: kw= ','
                     {
@@ -4188,36 +4199,36 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1489:2: ( (enumLiteral_0= ':they' ) | (enumLiteral_1= ':them' ) | (enumLiteral_2= ':their' ) | (enumLiteral_3= ':theirs' ) )
             {
             // InternalTraceryPlusPlus.g:1489:2: ( (enumLiteral_0= ':they' ) | (enumLiteral_1= ':them' ) | (enumLiteral_2= ':their' ) | (enumLiteral_3= ':theirs' ) )
-            int alt31=4;
+            int alt32=4;
             switch ( input.LA(1) ) {
             case 46:
                 {
-                alt31=1;
+                alt32=1;
                 }
                 break;
             case 47:
                 {
-                alt31=2;
+                alt32=2;
                 }
                 break;
             case 48:
                 {
-                alt31=3;
+                alt32=3;
                 }
                 break;
             case 49:
                 {
-                alt31=4;
+                alt32=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1490:3: (enumLiteral_0= ':they' )
                     {
@@ -4327,41 +4338,41 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
             // InternalTraceryPlusPlus.g:1532:2: ( (enumLiteral_0= '-capitalize' ) | (enumLiteral_1= '-CAPITALIZE' ) | (enumLiteral_2= '-s' ) | (enumLiteral_3= '-a' ) | (enumLiteral_4= '-ed' ) )
             {
             // InternalTraceryPlusPlus.g:1532:2: ( (enumLiteral_0= '-capitalize' ) | (enumLiteral_1= '-CAPITALIZE' ) | (enumLiteral_2= '-s' ) | (enumLiteral_3= '-a' ) | (enumLiteral_4= '-ed' ) )
-            int alt32=5;
+            int alt33=5;
             switch ( input.LA(1) ) {
             case 50:
                 {
-                alt32=1;
+                alt33=1;
                 }
                 break;
             case 51:
                 {
-                alt32=2;
+                alt33=2;
                 }
                 break;
             case 52:
                 {
-                alt32=3;
+                alt33=3;
                 }
                 break;
             case 53:
                 {
-                alt32=4;
+                alt33=4;
                 }
                 break;
             case 54:
                 {
-                alt32=5;
+                alt33=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1533:3: (enumLiteral_0= '-capitalize' )
                     {
@@ -4471,7 +4482,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA18 dfa18 = new DFA18(this);
+    protected DFA19 dfa19 = new DFA19(this);
     static final String dfa_1s = "\13\uffff";
     static final String dfa_2s = "\7\4\1\50\2\uffff\1\4";
     static final String dfa_3s = "\1\4\1\47\4\5\1\47\1\50\2\uffff\1\5";
@@ -4498,11 +4509,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
     static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
     static final short[][] dfa_6 = unpackEncodedStringArray(dfa_6s);
 
-    class DFA18 extends DFA {
+    class DFA19 extends DFA {
 
-        public DFA18(BaseRecognizer recognizer) {
+        public DFA19(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 18;
+            this.decisionNumber = 19;
             this.eot = dfa_1;
             this.eof = dfa_1;
             this.min = dfa_2;
@@ -4519,7 +4530,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000003040810L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000003040812L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000F024080032L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000020000032L});

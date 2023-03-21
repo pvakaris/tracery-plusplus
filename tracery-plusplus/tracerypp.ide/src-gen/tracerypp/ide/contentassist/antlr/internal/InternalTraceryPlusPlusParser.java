@@ -3064,11 +3064,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             if ( (LA13_0==RULE_ID) ) {
                 int LA13_1 = input.LA(2);
 
-                if ( ((LA13_1>=33 && LA13_1<=36)) ) {
-                    alt13=2;
-                }
-                else if ( (LA13_1==52) ) {
+                if ( (LA13_1==52) ) {
                     alt13=1;
+                }
+                else if ( ((LA13_1>=33 && LA13_1<=36)) ) {
+                    alt13=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3288,11 +3288,11 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
                 {
                 int LA15_5 = input.LA(2);
 
-                if ( (LA15_5==EOF||(LA15_5>=RULE_ID && LA15_5<=RULE_STRING)||LA15_5==51) ) {
-                    alt15=6;
-                }
-                else if ( (LA15_5==53) ) {
+                if ( (LA15_5==53) ) {
                     alt15=5;
+                }
+                else if ( (LA15_5==EOF||(LA15_5>=RULE_ID && LA15_5<=RULE_STRING)||LA15_5==51) ) {
+                    alt15=6;
                 }
                 else {
                     NoViableAltException nvae =
@@ -4063,27 +4063,38 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
 
 
     // $ANTLR start "rule__TraceryPlusPlusProgram__Group__1__Impl"
-    // InternalTraceryPlusPlus.g:1217:1: rule__TraceryPlusPlusProgram__Group__1__Impl : ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) ;
+    // InternalTraceryPlusPlus.g:1217:1: rule__TraceryPlusPlusProgram__Group__1__Impl : ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )? ) ;
     public final void rule__TraceryPlusPlusProgram__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTraceryPlusPlus.g:1221:1: ( ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) ) )
-            // InternalTraceryPlusPlus.g:1222:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
+            // InternalTraceryPlusPlus.g:1221:1: ( ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )? ) )
+            // InternalTraceryPlusPlus.g:1222:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )? )
             {
-            // InternalTraceryPlusPlus.g:1222:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 ) )
-            // InternalTraceryPlusPlus.g:1223:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
+            // InternalTraceryPlusPlus.g:1222:1: ( ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )? )
+            // InternalTraceryPlusPlus.g:1223:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )?
             {
              before(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1()); 
-            // InternalTraceryPlusPlus.g:1224:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )
-            // InternalTraceryPlusPlus.g:1224:3: rule__TraceryPlusPlusProgram__StoryAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__TraceryPlusPlusProgram__StoryAssignment_1();
+            // InternalTraceryPlusPlus.g:1224:2: ( rule__TraceryPlusPlusProgram__StoryAssignment_1 )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA21_0==42) ) {
+                alt21=1;
+            }
+            switch (alt21) {
+                case 1 :
+                    // InternalTraceryPlusPlus.g:1224:3: rule__TraceryPlusPlusProgram__StoryAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__TraceryPlusPlusProgram__StoryAssignment_1();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -4387,13 +4398,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getStoryAccess().getAssignmentOperatorParserRuleCall_3()); 
             // InternalTraceryPlusPlus.g:1333:2: ( ruleAssignmentOperator )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA21_0==13||(LA21_0>=24 && LA21_0<=27)||LA21_0==53) ) {
-                alt21=1;
+            if ( (LA22_0==13||(LA22_0>=24 && LA22_0<=27)||LA22_0==53) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1333:3: ruleAssignmentOperator
                     {
@@ -4478,17 +4489,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getStoryAccess().getStoryAssignment_4()); 
             // InternalTraceryPlusPlus.g:1359:2: ( rule__Story__StoryAssignment_4 )*
-            loop22:
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( ((LA22_0>=RULE_ID && LA22_0<=RULE_STRING)||LA22_0==51) ) {
-                    alt22=1;
+                if ( ((LA23_0>=RULE_ID && LA23_0<=RULE_STRING)||LA23_0==51) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:1359:3: rule__Story__StoryAssignment_4
             	    {
@@ -4502,7 +4513,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -4751,13 +4762,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getListDeclarationAccess().getAssignmentOperatorParserRuleCall_2()); 
             // InternalTraceryPlusPlus.g:1441:2: ( ruleAssignmentOperator )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA23_0==13||(LA23_0>=24 && LA23_0<=27)||LA23_0==53) ) {
-                alt23=1;
+            if ( (LA24_0==13||(LA24_0>=24 && LA24_0<=27)||LA24_0==53) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1441:3: ruleAssignmentOperator
                     {
@@ -5607,13 +5618,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getObjectDeclarationAccess().getAlternatives_2()); 
             // InternalTraceryPlusPlus.g:1738:2: ( rule__ObjectDeclaration__Alternatives_2 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( ((LA24_0>=15 && LA24_0<=16)) ) {
-                alt24=1;
+            if ( ((LA25_0>=15 && LA25_0<=16)) ) {
+                alt25=1;
             }
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1738:3: rule__ObjectDeclaration__Alternatives_2
                     {
@@ -5958,13 +5969,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getObjectDeclarationAccess().getAttributesKeyword_6()); 
             // InternalTraceryPlusPlus.g:1846:2: ( 'attributes' )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA25_0==48) ) {
-                alt25=1;
+            if ( (LA26_0==48) ) {
+                alt26=1;
             }
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1846:3: 'attributes'
                     {
@@ -6050,13 +6061,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getObjectDeclarationAccess().getAssignmentOperatorParserRuleCall_7()); 
             // InternalTraceryPlusPlus.g:1873:2: ( ruleAssignmentOperator )?
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA26_0==13||(LA26_0>=24 && LA26_0<=27)||LA26_0==53) ) {
-                alt26=1;
+            if ( (LA27_0==13||(LA27_0>=24 && LA27_0<=27)||LA27_0==53) ) {
+                alt27=1;
             }
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1873:3: ruleAssignmentOperator
                     {
@@ -6226,13 +6237,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSubstoryDeclarationAccess().getDefineKeyword_0()); 
             // InternalTraceryPlusPlus.g:1927:2: ( 'define' )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA27_0==49) ) {
-                alt27=1;
+            if ( (LA28_0==49) ) {
+                alt28=1;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:1927:3: 'define'
                     {
@@ -6553,17 +6564,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSubstoryDeclarationAccess().getStoryAssignment_4()); 
             // InternalTraceryPlusPlus.g:2035:2: ( rule__SubstoryDeclaration__StoryAssignment_4 )*
-            loop28:
+            loop29:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( ((LA28_0>=RULE_ID && LA28_0<=RULE_STRING)||LA28_0==51) ) {
-                    alt28=1;
+                if ( ((LA29_0>=RULE_ID && LA29_0<=RULE_STRING)||LA29_0==51) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt29) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:2035:3: rule__SubstoryDeclaration__StoryAssignment_4
             	    {
@@ -6577,7 +6588,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop29;
                 }
             } while (true);
 
@@ -6811,13 +6822,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getNameExistingListAttributeAccess().getAlternatives_1()); 
             // InternalTraceryPlusPlus.g:2116:2: ( rule__NameExistingListAttribute__Alternatives_1 )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( (LA29_0==13||LA29_0==17||(LA29_0>=24 && LA29_0<=27)||LA29_0==53) ) {
-                alt29=1;
+            if ( (LA30_0==13||LA30_0==17||(LA30_0>=24 && LA30_0<=27)||LA30_0==53) ) {
+                alt30=1;
             }
-            switch (alt29) {
+            switch (alt30) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:2116:3: rule__NameExistingListAttribute__Alternatives_1
                     {
@@ -7072,13 +7083,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getNameValueAttributeAccess().getAssignmentOperatorParserRuleCall_1()); 
             // InternalTraceryPlusPlus.g:2197:2: ( ruleAssignmentOperator )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==13||(LA30_0>=24 && LA30_0<=27)||LA30_0==53) ) {
-                alt30=1;
+            if ( (LA31_0==13||(LA31_0>=24 && LA31_0<=27)||LA31_0==53) ) {
+                alt31=1;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:2197:3: ruleAssignmentOperator
                     {
@@ -7488,13 +7499,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getSubstoryUseAccess().getAlternatives_1()); 
             // InternalTraceryPlusPlus.g:2332:2: ( rule__SubstoryUse__Alternatives_1 )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( ((LA31_0>=18 && LA31_0<=19)) ) {
-                alt31=1;
+            if ( ((LA32_0>=18 && LA32_0<=19)) ) {
+                alt32=1;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:2332:3: rule__SubstoryUse__Alternatives_1
                     {
@@ -8234,17 +8245,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getWordListAccess().getGroup_1()); 
             // InternalTraceryPlusPlus.g:2574:2: ( rule__WordList__Group_1__0 )*
-            loop32:
+            loop33:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA32_0>=28 && LA32_0<=30)) ) {
-                    alt32=1;
+                if ( ((LA33_0>=28 && LA33_0<=30)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt33) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:2574:3: rule__WordList__Group_1__0
             	    {
@@ -8258,7 +8269,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop33;
                 }
             } while (true);
 
@@ -8576,17 +8587,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getAttributeListAccess().getGroup_1()); 
             // InternalTraceryPlusPlus.g:2682:2: ( rule__AttributeList__Group_1__0 )*
-            loop33:
+            loop34:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA33_0==28||(LA33_0>=31 && LA33_0<=32)) ) {
-                    alt33=1;
+                if ( (LA34_0==28||(LA34_0>=31 && LA34_0<=32)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt34) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:2682:3: rule__AttributeList__Group_1__0
             	    {
@@ -8600,7 +8611,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop34;
                 }
             } while (true);
 
@@ -8908,17 +8919,17 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getModifierListAccess().getModifiersAssignment_1()); 
             // InternalTraceryPlusPlus.g:2790:2: ( rule__ModifierList__ModifiersAssignment_1 )*
-            loop34:
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( ((LA34_0>=37 && LA34_0<=41)) ) {
-                    alt34=1;
+                if ( ((LA35_0>=37 && LA35_0<=41)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
             	    // InternalTraceryPlusPlus.g:2790:3: rule__ModifierList__ModifiersAssignment_1
             	    {
@@ -8932,7 +8943,7 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
@@ -9011,13 +9022,13 @@ public class InternalTraceryPlusPlusParser extends AbstractInternalContentAssist
             {
              before(grammarAccess.getAssignmentOperatorAccess().getIsKeyword_4_0()); 
             // InternalTraceryPlusPlus.g:2818:2: ( 'is' )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA35_0==13) ) {
-                alt35=1;
+            if ( (LA36_0==13) ) {
+                alt36=1;
             }
-            switch (alt35) {
+            switch (alt36) {
                 case 1 :
                     // InternalTraceryPlusPlus.g:2818:3: 'is'
                     {

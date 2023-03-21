@@ -5,11 +5,11 @@ package tracerypp.validation;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
-import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
-import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.validation.CheckType;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
@@ -18,8 +18,10 @@ import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.Story;
 import tracerypp.traceryPlusPlus.SubstoryDeclaration;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
+import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Variable;
 
 /**
@@ -47,53 +49,25 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
    * Check that there are no identical variable names
    */
   @Check
-  public String checkUniqueVariableName(final Variable variable) {
-    String _xtrycatchfinallyexpression = null;
-    try {
-      final String variableName = variable.getName();
-      final List<Variable> model = IterableExtensions.<Variable>toList(Iterables.<Variable>filter(variable.eContainer().eContents(), Variable.class));
-      int count = 0;
-      for (final Variable obj : model) {
-        String _name = obj.getName();
-        boolean _equals = Objects.equal(_name, variableName);
+  public void checkUniqueVariableName(final TraceryPlusPlusProgram program) {
+    final Iterable<Variable> variables = Iterables.<Variable>filter(program.getStatements(), Variable.class);
+    for (int i = 0; (i < IterableExtensions.size(variables)); i++) {
+      for (int j = (i + 1); (j < IterableExtensions.size(variables)); j++) {
+        String _name = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[i]).getName();
+        String _name_1 = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[j]).getName();
+        boolean _equals = Objects.equal(_name, _name_1);
         if (_equals) {
-          int _count = count;
-          count = (_count + 1);
-          if ((count > 1)) {
-            String _type = this.getType(obj);
-            String _plus = (_type + " with name \'");
-            String _name_1 = obj.getName();
-            String _plus_1 = (_plus + _name_1);
-            String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
-            this.error(_plus_2, variable, 
-              TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
-          }
+          final Variable obj = ((Variable[])Conversions.unwrapArray(variables, Variable.class))[i];
+          String _type = this.getType(obj);
+          String _plus = (_type + " with name \'");
+          String _name_2 = obj.getName();
+          String _plus_1 = (_plus + _name_2);
+          String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
+          this.error(_plus_2, ((EObject[])Conversions.unwrapArray(variables, EObject.class))[j], 
+            TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
         }
       }
-    } catch (final Throwable _t) {
-      if (_t instanceof Throwable) {
-        final Throwable e = (Throwable)_t;
-        _xtrycatchfinallyexpression = InputOutput.<String>print(("Error: " + e));
-      } else {
-        throw Exceptions.sneakyThrow(_t);
-      }
     }
-    return _xtrycatchfinallyexpression;
-  }
-
-  @Check
-  public String checkUniqueObjectName(final ObjectDeclaration object) {
-    return this.checkUniqueVariableName(object);
-  }
-
-  @Check
-  public String checkUniqueListName(final ListDeclaration list) {
-    return this.checkUniqueVariableName(list);
-  }
-
-  @Check
-  public String checkUniqueSubstoryName(final SubstoryDeclaration substory) {
-    return this.checkUniqueVariableName(substory);
   }
 
   /**
@@ -135,6 +109,19 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
           this.error(_plus_1, null);
         }
       }
+    }
+  }
+
+  /**
+   * Validation rule to check if the story is defined. The Story is left optional with the purpose to provide a better
+   * message to the user
+   */
+  @Check(CheckType.NORMAL)
+  public void checkIfStoryIsDefined(final TraceryPlusPlusProgram program) {
+    Story _story = program.getStory();
+    boolean _tripleEquals = (_story == null);
+    if (_tripleEquals) {
+      this.warning("Define your story. This can be done by writing \'The story\'", program.getStory(), TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY);
     }
   }
 

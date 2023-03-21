@@ -51,6 +51,13 @@ class TraceryPlusPlusGenerator extends AbstractGenerator {
 	
 	// Generate the content of the file
 	def CharSequence generate(TraceryPlusPlusProgram program) {
+		if (program.story === null) {
+			return '''
+				{
+					"warning": "To get Tracery code, create the Story element"
+				}
+			'''
+		}
 		
 		var substoryObjectInitialisations = getSubstoryObjectDeclarations(program.statements)
 		var storyObjectInitialisations = getStoryObjectDeclarations(program.story, program.statements)

@@ -1221,7 +1221,7 @@ rule__TraceryPlusPlusProgram__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1()); }
-	(rule__TraceryPlusPlusProgram__StoryAssignment_1)
+	(rule__TraceryPlusPlusProgram__StoryAssignment_1)?
 	{ after(grammarAccess.getTraceryPlusPlusProgramAccess().getStoryAssignment_1()); }
 )
 ;

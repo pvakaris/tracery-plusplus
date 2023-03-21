@@ -41,13 +41,13 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//TraceryPlusPlusProgram:
 		//    // First all the necessary statements are declared and then the story structure is specified
 		//    statements += Statement*
-		//    story = Story
+		//    story = Story?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//// First all the necessary statements are declared and then the story structure is specified
 		//statements += Statement*
-		//story = Story
+		//story = Story?
 		public Group getGroup() { return cGroup; }
 		
 		//// First all the necessary statements are declared and then the story structure is specified
@@ -57,7 +57,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 		//Statement
 		public RuleCall getStatementsStatementParserRuleCall_0_0() { return cStatementsStatementParserRuleCall_0_0; }
 		
-		//story = Story
+		//story = Story?
 		public Assignment getStoryAssignment_1() { return cStoryAssignment_1; }
 		
 		//Story
@@ -1174,7 +1174,7 @@ public class TraceryPlusPlusGrammarAccess extends AbstractElementFinder.Abstract
 	//TraceryPlusPlusProgram:
 	//    // First all the necessary statements are declared and then the story structure is specified
 	//    statements += Statement*
-	//    story = Story
+	//    story = Story?
 	//;
 	public TraceryPlusPlusProgramElements getTraceryPlusPlusProgramAccess() {
 		return pTraceryPlusPlusProgram;

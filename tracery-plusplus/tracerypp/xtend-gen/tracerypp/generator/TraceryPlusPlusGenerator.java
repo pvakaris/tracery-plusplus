@@ -59,78 +59,91 @@ public class TraceryPlusPlusGenerator extends AbstractGenerator {
   }
 
   public CharSequence generate(final TraceryPlusPlusProgram program) {
+    Story _story = program.getStory();
+    boolean _tripleEquals = (_story == null);
+    if (_tripleEquals) {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("{");
+      _builder.newLine();
+      _builder.append("\t");
+      _builder.append("\"warning\": \"To get Tracery code, create the Story element\"");
+      _builder.newLine();
+      _builder.append("}");
+      _builder.newLine();
+      return _builder;
+    }
     ArrayList<String> substoryObjectInitialisations = this.getSubstoryObjectDeclarations(program.getStatements());
     ArrayList<String> storyObjectInitialisations = this.getStoryObjectDeclarations(program.getStory(), program.getStatements());
     ArrayList<String> allObjectNames = this.getObjectNames(substoryObjectInitialisations);
     allObjectNames.addAll(this.getObjectNames(storyObjectInitialisations));
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("{");
-    _builder.newLine();
-    _builder.append("\t");
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("{");
+    _builder_1.newLine();
+    _builder_1.append("\t");
     {
       Iterable<ListDeclaration> _filter = Iterables.<ListDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), ListDeclaration.class);
       for(final ListDeclaration listDeclaration : _filter) {
         String _generateJsonListDeclaration = this.generateJsonListDeclaration(listDeclaration);
         String _plus = (_generateJsonListDeclaration + "\n");
-        _builder.append(_plus, "\t");
+        _builder_1.append(_plus, "\t");
       }
     }
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
     {
       for(final String initSubObj : substoryObjectInitialisations) {
-        _builder.append((initSubObj + "\n"), "\t");
+        _builder_1.append((initSubObj + "\n"), "\t");
       }
     }
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
     {
       for(final String initStoryObj : storyObjectInitialisations) {
-        _builder.append((initStoryObj + "\n"), "\t");
+        _builder_1.append((initStoryObj + "\n"), "\t");
       }
     }
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
     {
       Iterable<SubstoryDeclaration> _filter_1 = Iterables.<SubstoryDeclaration>filter((Iterables.<Variable>filter(program.getStatements(), Variable.class)), SubstoryDeclaration.class);
       for(final SubstoryDeclaration substory : _filter_1) {
-        _builder.append("\"");
+        _builder_1.append("\"");
         String _string = substory.getName().toString();
-        _builder.append(_string, "\t");
-        _builder.append("\": [\"");
+        _builder_1.append(_string, "\t");
+        _builder_1.append("\": [\"");
         final Function1<EObject, String> _function = (EObject it) -> {
           return this.generateJsonStoryEntry(it, substory.getName().toString());
         };
         String _join = IterableExtensions.join(ListExtensions.<EObject, String>map(substory.getStory(), _function), "");
-        _builder.append(_join, "\t");
-        _builder.append("\"],");
-        _builder.append("\n", "\t");
+        _builder_1.append(_join, "\t");
+        _builder_1.append("\"],");
+        _builder_1.append("\n", "\t");
       }
     }
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("\"story\": [\"");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
+    _builder_1.append("\"story\": [\"");
     final Function1<EObject, String> _function_1 = (EObject it) -> {
       return this.generateJsonStoryEntry(it, "story");
     };
     String _join_1 = IterableExtensions.join(ListExtensions.<EObject, String>map(program.getStory().getStory(), _function_1), "");
-    _builder.append(_join_1, "\t");
-    _builder.append("\"],");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("\"origin\": [\"#");
+    _builder_1.append(_join_1, "\t");
+    _builder_1.append("\"],");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("\t");
+    _builder_1.append("\"origin\": [\"#");
     {
       for(final String entry : allObjectNames) {
-        _builder.append("[#");
-        _builder.append(entry, "\t");
-        _builder.append("#]");
+        _builder_1.append("[#");
+        _builder_1.append(entry, "\t");
+        _builder_1.append("#]");
       }
     }
-    _builder.append("story#\"]");
-    _builder.newLineIfNotEmpty();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
+    _builder_1.append("story#\"]");
+    _builder_1.newLineIfNotEmpty();
+    _builder_1.append("}");
+    _builder_1.newLine();
+    return _builder_1;
   }
 
   public ArrayList<String> getObjectNames(final List<String> declarations) {
