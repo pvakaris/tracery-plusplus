@@ -4,6 +4,10 @@
 package tracerypp.ui.quickfix
 
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
+//import org.eclipse.xtext.ui.editor.quickfix.Fix
+//import org.eclipse.xtext.validation.Issue
+//import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
+//import tracerypp.validation.TraceryPlusPlusValidator
 
 /**
  * Custom quickfixes.
@@ -12,13 +16,10 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
  */
 class TraceryPlusPlusQuickfixProvider extends DefaultQuickfixProvider {
 
-//	@Fix(TraceryPlusPlusValidator.INVALID_NAME)
-//	def capitalizeName(Issue issue, IssueResolutionAcceptor acceptor) {
-//		acceptor.accept(issue, 'Capitalize name', 'Capitalize the name.', 'upcase.png') [
-//			context |
-//			val xtextDocument = context.xtextDocument
-//			val firstLetter = xtextDocument.get(issue.offset, 1)
-//			xtextDocument.replace(issue.offset, 1, firstLetter.toUpperCase)
+//	@Fix(TraceryPlusPlusValidator.NO_STORY)
+//	def addStory(Issue issue, IssueResolutionAcceptor acceptor) {
+//		acceptor.accept(issue, "Add story", "Add 'The story' element to the project", null)[context |
+//			val document = context.xtextDocument
 //		]
 //	}
 }

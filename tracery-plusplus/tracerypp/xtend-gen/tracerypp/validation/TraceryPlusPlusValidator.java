@@ -5,6 +5,7 @@ package tracerypp.validation;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
@@ -13,12 +14,15 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import tracerypp.traceryPlusPlus.Attribute;
 import tracerypp.traceryPlusPlus.ListDeclaration;
+import tracerypp.traceryPlusPlus.ListUse;
 import tracerypp.traceryPlusPlus.Modifier;
 import tracerypp.traceryPlusPlus.ModifierList;
 import tracerypp.traceryPlusPlus.NameExistingListAttribute;
 import tracerypp.traceryPlusPlus.NameValueAttribute;
 import tracerypp.traceryPlusPlus.ObjectDeclaration;
+import tracerypp.traceryPlusPlus.ObjectUse;
 import tracerypp.traceryPlusPlus.SubstoryDeclaration;
+import tracerypp.traceryPlusPlus.SubstoryUse;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage;
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram;
 import tracerypp.traceryPlusPlus.Variable;
@@ -32,6 +36,8 @@ import tracerypp.traceryPlusPlus.Variable;
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
+  public static final String NO_STORY = "tracer ypp.NO_STORY";
+
   /**
    * The variable name 'story' is reserved and thus cannot be specified as any variable name
    */
@@ -52,21 +58,146 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
     final Iterable<Variable> variables = Iterables.<Variable>filter(program.getStatements(), Variable.class);
     for (int i = 0; (i < IterableExtensions.size(variables)); i++) {
       for (int j = (i + 1); (j < IterableExtensions.size(variables)); j++) {
-        String _name = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[i]).getName();
-        String _name_1 = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[j]).getName();
-        boolean _equals = Objects.equal(_name, _name_1);
+        String _string = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[i]).getName().toString();
+        String _string_1 = (((Variable[])Conversions.unwrapArray(variables, Variable.class))[j]).getName().toString();
+        boolean _equals = Objects.equal(_string, _string_1);
         if (_equals) {
           final Variable obj = ((Variable[])Conversions.unwrapArray(variables, Variable.class))[i];
           String _type = this.getType(obj);
           String _plus = (_type + " with name \'");
-          String _name_2 = obj.getName();
-          String _plus_1 = (_plus + _name_2);
+          String _name = obj.getName();
+          String _plus_1 = (_plus + _name);
           String _plus_2 = (_plus_1 + "\' already exists. Please choose other name.");
           this.error(_plus_2, ((EObject[])Conversions.unwrapArray(variables, EObject.class))[j], 
             TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
         }
       }
     }
+  }
+
+  /**
+   * Give warnings for those variables that are never used | THE SEMANTIC CHECK
+   */
+  @Check
+  public void checkForUnusedVariables(final TraceryPlusPlusProgram program) {
+    final Iterable<Variable> variables = Iterables.<Variable>filter(program.getStatements(), Variable.class);
+    for (final Variable v : variables) {
+      boolean _checkIfUsed = this.checkIfUsed(v, program);
+      boolean _not = (!_checkIfUsed);
+      if (_not) {
+        String _type = this.getType(v);
+        String _plus = (_type + " \'");
+        String _name = v.getName();
+        String _plus_1 = (_plus + _name);
+        String _plus_2 = (_plus_1 + "\' is never referenced.");
+        this.warning(_plus_2, v, TraceryPlusPlusPackage.Literals.VARIABLE__NAME);
+      }
+    }
+  }
+
+  protected boolean _checkIfUsed(final ObjectDeclaration variable, final TraceryPlusPlusProgram program) {
+    final EList<EObject> story = program.getStory().getStory();
+    for (final EObject element : story) {
+      if ((element instanceof ObjectUse)) {
+        String _name = ((ObjectUse)element).getObject().getName();
+        String _name_1 = variable.getName();
+        boolean _equals = Objects.equal(_name, _name_1);
+        if (_equals) {
+          return true;
+        }
+      }
+    }
+    final Iterable<SubstoryDeclaration> substories = Iterables.<SubstoryDeclaration>filter(program.getStatements(), SubstoryDeclaration.class);
+    for (final SubstoryDeclaration sub : substories) {
+      EList<EObject> _story = sub.getStory();
+      for (final EObject element_1 : _story) {
+        if ((element_1 instanceof ObjectUse)) {
+          String _name_2 = ((ObjectUse)element_1).getObject().getName();
+          String _name_3 = variable.getName();
+          boolean _equals_1 = Objects.equal(_name_2, _name_3);
+          if (_equals_1) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  protected boolean _checkIfUsed(final ListDeclaration variable, final TraceryPlusPlusProgram program) {
+    final EList<EObject> story = program.getStory().getStory();
+    for (final EObject element : story) {
+      if ((element instanceof ListUse)) {
+        String _name = ((ListUse)element).getVariable().getName();
+        String _name_1 = variable.getName();
+        boolean _equals = Objects.equal(_name, _name_1);
+        if (_equals) {
+          return true;
+        }
+      }
+    }
+    final Iterable<SubstoryDeclaration> substories = Iterables.<SubstoryDeclaration>filter(program.getStatements(), SubstoryDeclaration.class);
+    for (final SubstoryDeclaration sub : substories) {
+      EList<EObject> _story = sub.getStory();
+      for (final EObject element_1 : _story) {
+        if ((element_1 instanceof ListUse)) {
+          String _name_2 = ((ListUse)element_1).getVariable().getName();
+          String _name_3 = variable.getName();
+          boolean _equals_1 = Objects.equal(_name_2, _name_3);
+          if (_equals_1) {
+            return true;
+          }
+        }
+      }
+    }
+    final Iterable<ObjectDeclaration> objects = Iterables.<ObjectDeclaration>filter(program.getStatements(), ObjectDeclaration.class);
+    for (final ObjectDeclaration obj : objects) {
+      EList<Attribute> _attributes = obj.getAttributes().getAttributes();
+      for (final Attribute attr : _attributes) {
+        if ((attr instanceof NameExistingListAttribute)) {
+          String _name_4 = ((NameExistingListAttribute)attr).getValue().getName();
+          String _name_5 = variable.getName();
+          boolean _equals_2 = Objects.equal(_name_4, _name_5);
+          if (_equals_2) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  protected boolean _checkIfUsed(final SubstoryDeclaration variable, final TraceryPlusPlusProgram program) {
+    final EList<EObject> story = program.getStory().getStory();
+    for (final EObject element : story) {
+      if ((element instanceof SubstoryUse)) {
+        String _name = ((SubstoryUse)element).getVariable().getName();
+        String _name_1 = variable.getName();
+        boolean _equals = Objects.equal(_name, _name_1);
+        if (_equals) {
+          return true;
+        }
+      }
+    }
+    final Iterable<SubstoryDeclaration> substories = Iterables.<SubstoryDeclaration>filter(program.getStatements(), SubstoryDeclaration.class);
+    for (final SubstoryDeclaration sub : substories) {
+      EList<EObject> _story = sub.getStory();
+      for (final EObject element_1 : _story) {
+        if ((element_1 instanceof SubstoryUse)) {
+          String _name_2 = ((SubstoryUse)element_1).getVariable().getName();
+          String _name_3 = variable.getName();
+          boolean _equals_1 = Objects.equal(_name_2, _name_3);
+          if (_equals_1) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
+  protected boolean _checkIfUsed(final Variable variable, final TraceryPlusPlusProgram program) {
+    return true;
   }
 
   /**
@@ -118,7 +249,7 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
   @Check(CheckType.NORMAL)
   public void checkIfStoryIsDefined(final TraceryPlusPlusProgram program) {
     if (((program == null) || (program.getStory() == null))) {
-      this.warning("Define your story. This can be done by writing \'The story\'", program.getStory(), TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY);
+      this.warning("Define your story. This can be done by writing \'The story\'", program.getStory(), TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY, TraceryPlusPlusValidator.NO_STORY);
     }
   }
 
@@ -159,5 +290,20 @@ public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
       }
     }
     return "Variable";
+  }
+
+  public boolean checkIfUsed(final Variable variable, final TraceryPlusPlusProgram program) {
+    if (variable instanceof ListDeclaration) {
+      return _checkIfUsed((ListDeclaration)variable, program);
+    } else if (variable instanceof ObjectDeclaration) {
+      return _checkIfUsed((ObjectDeclaration)variable, program);
+    } else if (variable instanceof SubstoryDeclaration) {
+      return _checkIfUsed((SubstoryDeclaration)variable, program);
+    } else if (variable != null) {
+      return _checkIfUsed(variable, program);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(variable, program).toString());
+    }
   }
 }

@@ -1,16 +1,12 @@
-// Story creation demo
-
 possible_princess_names_list has values "Cinderella", "Aurora", "Belle", "Rapunzel", "Jasmine", "Merida", "Elsa", "Moana", "Anna", "Tiana"
 possible_prince_names_list can be: "Prince Charming" or "Phillip" or "Beast" or "Flynn Rider" or "Aladdin" or "Naveen" or "Kristoff" or "Hercules" or "John Smith" or "Li Shang"
 possible_villain_names_list can be: "Maleficent", "Jafar", "Ursula", "Scar", "Cruella de Vil", "Gaston", "Hades", "Captain Hook", "Evil Queen", "Yzma", "Shere Khan", "Doctor Facilier", "Mother Gothel", "Queen of Hearts", "Gotham's Joker", "Thanos", "Darth Vader", "Kylo Ren", "Lord Voldemort", "Sauron"
 
-color can be: "red", "blue", "green", "yellow", "purple", "pink", "orange", "black", "white", "gray"
 trait can be:"bravery", "cleverness", "kindness", "charisma", "beauty", "wit", "independence", "generosity", "resourcefulness", "compassion"
 
 personality can have values: "brave", "clever", "handsome", "charming", "mysterious", "enchanting", "fierce", "graceful", "majestic", "daring"
 villain_personality can have values: 'wicked', 'malevolent', 'sinister', 'villainous', 'diabolical', 'maleficent', 'malignant', 'nefarious', 'demonic', 'fiendish', 'cruel', 'malicious', 'satanic', 'devilish', 'corrupt', 'perverse'
 villain_occupation can be: "evil queen", "dragon", "witch", "sorcerer", "giant", "ogre", "demon", "monster", "villain", "curse"
-negative_adverb can have values: "unhappily", "miserably", "gloomily", "melancholically", "sorrowfully", "regrettably", "unfortunately", "woefully", "piteously", "pathetically"
 location_list has values: "castle", "kingdom", "forest", "desert", "island", "mountain", "ocean", "city", "village", "cave"
 favourite_food_list has values: "pumpkin pie", "chocolate cake", "apple tart", "strawberry sorbet", "crème brûlée", "cheesecake", "lemon meringue pie", "carrot cake", "banana bread", "pecan pie"
 friend can be: "Fairy Godmother", "Wizard Merlin", "Hobbit Samwise", "Lion Aslan", "Dragon Saphira", "Dwarf Gimli", "Elf Legolas", "Owl Hedwig", "Dog Fang", "Cat Crookshanks"

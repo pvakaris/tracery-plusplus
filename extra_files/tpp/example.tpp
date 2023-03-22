@@ -8,7 +8,6 @@ place can be: "road" or "street" or "beach"
 time_of_day can be: "morning" or "afternoon" or "evening" or "night"
 firm can have values: "JPMorgan", "HSBC", "Barclays"
 occupation can be: "teacher" or "plumber" or "astronaut" or "banker" or "dancer"
-negative_adj can have values: "bad", "horrible"
 
 There is a hero
 He has attributes: name = "John", occupation = occupation

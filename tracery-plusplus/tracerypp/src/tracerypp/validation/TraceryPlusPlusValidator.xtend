@@ -14,6 +14,9 @@ import tracerypp.traceryPlusPlus.SubstoryDeclaration
 import tracerypp.traceryPlusPlus.ModifierList
 import tracerypp.traceryPlusPlus.TraceryPlusPlusPackage
 import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
+import tracerypp.traceryPlusPlus.ObjectUse
+import tracerypp.traceryPlusPlus.ListUse
+import tracerypp.traceryPlusPlus.SubstoryUse
 
 /**
  * This class contains custom validation rules. 
@@ -23,6 +26,8 @@ import tracerypp.traceryPlusPlus.TraceryPlusPlusProgram
  * Version 1.1
  */
 class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
+
+	public static val NO_STORY = 'tracer ypp.NO_STORY'
 
 	/*
 	 * The variable name 'story' is reserved and thus cannot be specified as any variable name
@@ -44,13 +49,120 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 		for (var i = 0; i < variables.size; i++) {
 	      for (var j = i + 1; j < variables.size; j++) {
 	      	
-	         if (variables.get(i).name == variables.get(j).name) {
+	         if (variables.get(i).name.toString() == variables.get(j).name.toString()) {
 	         	val obj = variables.get(i)
 	            error(getType(obj) + " with name '" + obj.name + "' already exists. Please choose other name.", variables.get(j),
 		                	TraceryPlusPlusPackage.Literals.VARIABLE__NAME)
 	         }
 	      }
    		}
+	}
+	
+	/*
+	 * Give warnings for those variables that are never used | THE SEMANTIC CHECK
+	 */
+	@Check
+	def checkForUnusedVariables(TraceryPlusPlusProgram program) {
+	   val variables = program.statements.filter(Variable)
+	   for(v : variables) {
+	   	 if (!v.checkIfUsed(program)) {
+	   	 	warning(getType(v) + " '" + v.name + "' is never referenced.", v, TraceryPlusPlusPackage.Literals.VARIABLE__NAME)
+	   	 }
+	   }
+	}
+	
+	dispatch def checkIfUsed(ObjectDeclaration variable, TraceryPlusPlusProgram program) {
+		// Check for Object uses in the main story
+		val story = program.story.story
+		for (element : story) {
+	        if (element instanceof ObjectUse) {
+	        	if (element.object.name == variable.name) {
+	        		return true
+	        	}
+	        }
+    	}
+    	
+    	// Check for Object uses in each substory
+    	val substories = program.statements.filter(SubstoryDeclaration)
+    	for (sub : substories) {
+    		for(element : sub.story) {
+    			if (element instanceof ObjectUse) {
+		        	if (element.object.name == variable.name) {
+		        		return true
+		        	}
+	        	}
+    		}
+    	}
+    	return false
+	}
+	
+	dispatch def checkIfUsed(ListDeclaration variable, TraceryPlusPlusProgram program) {
+		// Check for List uses in the main story
+		val story = program.story.story
+		for (element : story) {
+	        if (element instanceof ListUse) {
+	        	if (element.variable.name == variable.name) {
+	        		return true
+	        	}
+	        }
+    	}
+    	
+    	// Check for List uses in each substory
+    	val substories = program.statements.filter(SubstoryDeclaration)
+    	for (sub : substories) {
+    		for(element : sub.story) {
+    			if (element instanceof ListUse) {
+		        	if (element.variable.name == variable.name) {
+		        		return true
+		        	}
+	        	}
+    		}
+    	}
+    	
+    	// Check for List uses as some values for some object attributes
+    	val objects = program.statements.filter(ObjectDeclaration)
+    	for(obj : objects) {
+    		for(attr : obj.attributes.attributes) {
+    			if(attr instanceof NameExistingListAttribute) {
+    				if(attr.value.name == variable.name) {
+    					return true
+    				}
+    			}
+    		}
+    	}
+    	
+    	return false
+	}
+	
+	
+	dispatch def checkIfUsed(SubstoryDeclaration variable, TraceryPlusPlusProgram program) {
+		// Check for Substory uses in the main story
+		val story = program.story.story
+		for (element : story) {
+	        if (element instanceof SubstoryUse) {
+	        	if (element.variable.name == variable.name) {
+	        		return true
+	        	}
+	        }
+    	}
+    	
+    	// Check for Substory uses in each substory
+    	val substories = program.statements.filter(SubstoryDeclaration)
+    	for (sub : substories) {
+    		for(element : sub.story) {
+    			if (element instanceof SubstoryUse) {
+		        	if (element.variable.name == variable.name) {
+		        		return true
+		        	}
+	        	}
+    		}
+    	}
+    	return false
+	}
+	
+	// Should never be called
+	dispatch def checkIfUsed(Variable variable, TraceryPlusPlusProgram program) {
+		return true
 	}
 	
 	/*
@@ -89,7 +201,7 @@ class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {
 	@Check(NORMAL)
 	def checkIfStoryIsDefined(TraceryPlusPlusProgram program) {
 		if(program === null || program.story === null) {
-			warning("Define your story. This can be done by writing 'The story'", program.story, TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY)
+			warning("Define your story. This can be done by writing 'The story'", program.story, TraceryPlusPlusPackage.Literals.TRACERY_PLUS_PLUS_PROGRAM__STORY, NO_STORY)
 		}
 	}
 	
