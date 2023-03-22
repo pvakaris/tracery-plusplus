@@ -1,0 +1,27 @@
+/* XPECT_SETUP tracerypp.XPectTests END_SETUP*/
+
+
+fruit can have values: "banana", "apple"
+// XPECT errors --> "List with name 'fruit' already exists. Please choose other name." at "fruit"
+fruit can have values: "orange", "lemon", "lime"
+
+There is a hero
+He has attributes name = "John"
+// XPECT errors --> "Object with name 'hero' already exists. Please choose other name." at "hero"
+There is a hero
+He has attributes name = "James"
+
+food can be: "burger", "melon"
+// XPECT errors --> "List with name 'food' already exists. Please choose other name." at "food"
+There is a food
+It has taste equal to "sour"
+
+
+There is a fish
+It has type --> "salmon"
+// XPECT errors --> "Object with name 'fish' already exists. Please choose other name." at "fish"
+fish can be: "salmon", "cod"
+
+The story:
+
+"Hello, my name is "hero.name" my favourite food is "food" and "fish.type". And I also like: "fruit" and "food.taste" "fish"."

@@ -1,0 +1,32 @@
+/* XPECT_SETUP tracerypp.XPectTests END_SETUP*/
+
+/*
+   XPECT generated ---
+{
+	"color": ["green", "blue", "red", "white", "black", "yellow", "orange"],
+	"shape": ["square", "circle", "triangle", "hexagon"],
+	"setFigure-small": ["[figureShape-small:#shape#][figureColor-small:#color#][figureB-small:b][figureThey-small:it][figureThem-small:it][figureTheir-small:its][figureTheirs-small:its]"],
+	"small": ["I am a small #figureColor-small# #figureShape-small#."],
+	"big": ["#small# #small#"],
+	"story": ["#big#"],
+	"origin": ["#[#setFigure-small#]story#"]
+}
+   ---
+ */
+
+color can have values: "green" or "blue" or "red" or "white" or "black" or "yellow" or "orange"
+shape can be "square", "circle", "triangle", "hexagon"
+
+There is a figure
+It has shape --> shape and color from color, b = "b"
+
+substory small:
+	"I am a small "figure.color" "figure.shape"."
+end-substory
+
+substory big:
+	use substory small" "use substory small
+end-substory
+
+The story:
+	use big

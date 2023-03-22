@@ -1,0 +1,11 @@
+/* XPECT_SETUP tracerypp.XPectTests END_SETUP*/
+
+color can have values: "red", "green"
+
+There is a hero
+He has attributes name = "John"
+
+The story:
+
+// XPECT errors --> "Modifier '-a' is used more than once." at "-a-a"
+"Hello, my name is "hero.name" my favourite colour is "color-a-a"."

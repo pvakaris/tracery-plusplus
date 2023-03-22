@@ -1,0 +1,11 @@
+/* XPECT_SETUP tracerypp.XPectTests END_SETUP*/
+
+color can have values: "red", "green"
+
+There is a hero
+// XPECT errors --> "Attribute 'name' is used more than once when defining the object 'hero'." at "name"
+He has attributes name = "John" and name = "James"
+
+The story:
+
+"Hello, my name is "hero.name" my favourite colour is "color"."

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: Tests
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: tracerypp;bundle-version="1.0.0",
+ tracerypp.ui;bundle-version="1.0.0",
+ org.eclipse.xpect.xtext.lib;bundle-version="0.2.0",
+ org.eclipse.xtext.xbase;bundle-version="2.30.0",
+ org.eclipse.xpect.xtext.xbase.lib;bundle-version="0.2.0"
+Automatic-Module-Name: Tests
+Bundle-RequiredExecutionEnvironment: JavaSE-17
