@@ -1,9 +1,0 @@
-/* XPECT_SETUP tracerypp.XPectTests END_SETUP*/
-color can have values: "red", "green"
-
-fruit can have values: "banana", "apple"
-
-There is a hero
-He has attributes name = "John"
-
-// XPECT warnings --> "Define your story. This can be done by writing 'The story'"
