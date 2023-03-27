@@ -80,7 +80,6 @@ Would generate the following: `His name is John.` This is because the object was
 **File extension is .tpp**
 
 ```
-
 color can have values: "green" or "blue" or "red" or "white" or "black" or "yellow" or "orange"
 fruit can be: "banana", "apple", "orange", "mango", "pear"
 
@@ -103,13 +102,11 @@ The story:
 	"Yesterday in the " time_of_day " I " action-ed " from my position at " firm ". "
 	fruit-a-capitalize " was lying on the ground. "
 	hero.name " was slowly walking on the streets of " country.capital", looking at the beautiful old architecture."
-
 ```
 
 The generated JSON object would look like this:
 
 ```
-
 {
 	"color": ["green", "blue", "red", "white", "black", "yellow", "orange"],
 	"fruit": ["banana", "apple", "orange", "mango", "pear"],
@@ -124,7 +121,6 @@ The generated JSON object would look like this:
 	"story": ["#color.capitalize# was the sky and #name.capitalize# was walking down the #place#. Yesterday in the #time_of_day# I #action.ed# from my position at #firm#. #fruit.a.capitalize# was lying on the ground. #heroName-story# was slowly walking on the streets of #countryCapital-story#, looking at the beautiful old architecture."],
 	"origin": ["#[#setHero-story#][#setCountry-story#]story#"]
 }
-
 ```
 
 **For more examples please visit [here](./extra_files/tpp/).**
