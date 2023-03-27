@@ -25,7 +25,7 @@ import tracerypp.traceryPlusPlus.ObjectDeclaration;
  * on how and when to use it.
  * 
  * Author: Vakaris Paulavicius
- * Version 1.1
+ * Version 1.2
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusScopeProvider extends AbstractDeclarativeScopeProvider {

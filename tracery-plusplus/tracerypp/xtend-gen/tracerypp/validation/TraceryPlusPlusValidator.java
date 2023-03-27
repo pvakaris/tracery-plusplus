@@ -32,7 +32,7 @@ import tracerypp.traceryPlusPlus.Variable;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  * 
  * Author: Vakaris Paulavicius
- * Version 1.1
+ * Version 1.2
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusValidator extends AbstractTraceryPlusPlusValidator {

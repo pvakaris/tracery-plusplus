@@ -43,7 +43,7 @@ import tracerypp.traceryPlusPlus.Word;
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  * 
  * Author: Vakaris Paulavicius
- * Version 1.0
+ * Version 1.2
  */
 @SuppressWarnings("all")
 public class TraceryPlusPlusGenerator extends AbstractGenerator {
